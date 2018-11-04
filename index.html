@@ -4,7 +4,10 @@ title: 신록예찬
 subtitle: latale, statistics
 use-site-title: true
 ---
-<div class="site-category">
+
+<div class="posts-list">
+  {% for post in paginator.posts %}
+  <div class="site-category">
   <ul>
     
     {% assign pages_list = site.pages %}
@@ -17,11 +20,9 @@ use-site-title: true
       {% endif %}
     {% endfor %}
     
-</ul>
-</div>
+  </ul>
+  </div>
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
   <article class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
 	  <h2 class="post-title">{{ post.title }}</h2>
