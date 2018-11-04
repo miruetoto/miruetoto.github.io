@@ -22,11 +22,11 @@ description: 신록예찬's 블로그 (통계학에 대하여)
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
-navbar-links:
-  About Me: "aboutme"
-  Categories:
-  - (얕은)통계학 : "https://miruetoto.github.io/category/ttml/"
-  - 확률론 : "https://miruetoto.github.io/category/prob/"
+#navbar-links:
+#  About Me: "aboutme"
+#  Categories:
+#  - (얕은)통계학 : "https://miruetoto.github.io/category/ttml/"
+#  - 확률론 : "https://miruetoto.github.io/category/prob/"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
