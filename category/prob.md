@@ -2,7 +2,7 @@
 
 layout: category
 
-title: 
+title: 확률론
 
 ---
 
