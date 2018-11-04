@@ -1,7 +1,9 @@
 ---
 layout: page
-title: About me
-subtitle: Guild of Sin-Ye, Seoul National University  
+title: 신록예찬
 ---
 
-- Sinlog Yechan 
+- 라테일 소울리스원 신록예찬 (신예)
+- 라테일 파픈스타 백제의미소 (무늬만신예)  
+- 통계학이 좋아요
+- 머신러닝 싫어요 
