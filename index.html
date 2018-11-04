@@ -4,6 +4,19 @@ title: 신록예찬
 subtitle: latale, statistics
 use-site-title: true
 ---
+  <ul>
+    
+    {% assign pages_list = site.pages %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "category" %}
+          <li><a class="category-link {% if page.url == node.url %} active{% endif %}"
+          href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    
+</ul>
 
 <div class="posts-list">
   {% for post in paginator.posts %}
