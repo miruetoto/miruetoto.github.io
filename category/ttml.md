@@ -1,7 +1,4 @@
 ---
-
 layout: category
-
-title: 통통 머신러닝
-
+title: (얕은)통계학
 ---
