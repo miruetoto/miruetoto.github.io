@@ -134,7 +134,7 @@ f({\bf x})=\sum_{i=1}^{n} \theta_i K_h({\bf x},{\bf x}_ i)
 
 - 지금까지 살펴본 모델은 모두 선형모델이다. 선형모델이라는 뜻은 $f(x)$를 아래와 같은 방식으로 표현한다는 의미이다. 
 \begin{align}
-f(x)=\sum \textup{coef}\times \textup{basis} 
+f(x)=\sum coef \times basis 
 \end{align}
 여기에서 coef는 parameter로 이해해도 된다. 왜 우리는 선형모델을 가정할까? 선형모델을 가정하면 최소제곱법과 같은 방법을 활용하여 parameter를 매우 쉬운 연산만으로 구할 수 있다는 장점이 있다. 앞에서 살펴본 커널의 경우도 밴드윗을 $h$로 고정하고 중심도 $x_i$로 고정된 상태에서 $\theta_i$를 구하는것은 선형모델이다. (하지만 만약에 커널모델에서 $h$와 $\theta_i$를 동시에 구해야 한다면 이것은 비선형 방정식을 풀어야한다.)  
 
@@ -149,7 +149,7 @@ f(x)=\sum \textup{coef}\times \textup{basis}
   
 - (선형) 모델링이 아래와 같이 자료가 표현될것이다. 
 \begin{align}
-y_i=f(x)=\sum  \textup{coef}\times \textup{basis} = \sum_{j=1}^{p} \theta_j B_j(x)
+y_i=f(x)=\sum coef \times basis = \sum_{j=1}^{p} \theta_j B_j(x)
 \end{align}
 여기에서 $B_j(x)$는 원래 데이터를 가지고 만든 어떠한 basis이다. 그리고 $\theta_j$는 그러한 basis에 해당하는 coef이다. 귀찮으니까 그냥 앞으로 $B_j(x)=X[,j]$라고 생각하고 $\theta_j=\beta_j$라고 생각하자. 그러면 모든 (선형)모델은 아래와 같이 쓸 수 있다. 
 \begin{align}
