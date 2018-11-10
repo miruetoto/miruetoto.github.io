@@ -147,4 +147,7 @@ f(x)=\sum \textup{coef}\times \textup{basis}
   2. 각 basis의 coef를 구한다. 
   <br/><br/>
   
-- 최소제곱학습법을 활용하여 파라메터를 구하는 방법이 있다. 약점은 디자인매트릭스 $\Psi$
+- 최소제곱학습법을 활용하여 파라메터를 구하는 방법이 있다. 
+\begin{align}
+f(x)=\sum  \textup{coef}\times \textup{basis} = \sum_{j=1}^{p} \theta_j B_j(x)
+\end{align}
