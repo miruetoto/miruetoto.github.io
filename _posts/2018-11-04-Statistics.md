@@ -147,11 +147,13 @@ f(x)=\sum coef \times basis
   2. 각 basis의 coef를 구한다. 
   <br/><br/>
   
-- (선형) 모델링이 아래와 같이 자료가 표현될것이다. 
+- 위의 1. 의 과정이 끝나면 즉 (선형) 모델링이 끝나면 아래와 같이 자료가 표현될것이다. 
 \begin{align}
 y_i=f(x)=\sum coef \times basis = \sum_{j=1}^{p} \theta_j B_j(x)
 \end{align}
 여기에서 $B_j(x)$는 원래 데이터를 가지고 만든 어떠한 basis이다. 그리고 $\theta_j$는 그러한 basis에 해당하는 coef이다. 귀찮으니까 그냥 앞으로 $B_j(x)=X[,j]$라고 생각하고 $\theta_j=\beta_j$라고 생각하자. 그러면 모든 (선형)모델은 아래와 같이 쓸 수 있다. 
 \begin{align}
 \{bf y}={\bf X\beta} +{\bf \epsilon}
-\end{aling}
+\end{align}
+
+- 이제 남은것은 2.의 과정 즉 coef $\bf \beta$를 구하는 것이다. 
