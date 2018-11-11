@@ -153,7 +153,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 여기에서 $B_j(x)$는 원래 데이터를 가지고 만든 어떠한 basis이다. 그리고 $\theta_j$는 그러한 basis에 해당하는 coef이다. 귀찮으니까 그냥 앞으로 $B_j(x)=X[,j]$라고 생각하고 $\theta_j=\beta_j$라고 생각하자. 그러면 모든 (선형)모델은 아래와 같이 쓸 수 있다. 
 \begin{align}
-\{bf y}={\bf X\beta} +{\bf \epsilon}
+{\bf y}={\bf X\beta} +{\bf \epsilon}
 \end{align}
 
 - 이제 남은것은 2.의 과정 즉 coef $\bf \beta$를 구하는 것이다. 보통 LS방법으로 구하면 
@@ -162,4 +162,22 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 와 같이 된다. 
 
-- 
+- 가끔 가다가 오차항의 분산이 일정하지 않을수도있다. 예를들어서 $i \in \\{1,\dots,500\\}$에서는 분산이 $1$인 정규분포를 따르고 $i \in \\{501,\dots,1000\\}$에서는 분산이 $2$인 정규분포를 따른다고 하자. 이 경우에도 
+\begin{align}
+\sum_{i=1}^{1000}(y_i-\hat{y}_ i)^2
+\end{align}
+을 최소화하는 아이디어는 좀 곤란하다. 기본적으로 $i=1,\dots,500$에서 $E(y_i-\hat{y}_ i)^2$와 $i=501,\dots,1000$에서 $E(y_i-\hat{y}_ i)^2$의 값은 다르기 떄문이다. 따라서 $i=501,\dots,1000$에 해당하는 loss를 정의할떄는 일정한 가중치 $w_i$를 줘야 한다고 생각하는데 이 아이디어가 바로 WLS의 핵심아이디어이다. 
+
+- 위의 예제의 $V(\bf \epsilon)=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 따라서 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}),\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
+\begin{align}
+\bf Py=PX\beta+P\epsilon
+\end{align}
+이 된다. 그럼 이때 $V({\bf P \epsilon})=I$ 이다. LSE를 쓰면 
+\begin{align}
+\bf \hat{\beta}=(X'P'PX)^{-1}X'P'Py  
+\end{align}
+가 된다. 
+
+
+
+$V(\epsilon)$의 대각
