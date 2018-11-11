@@ -182,4 +182,4 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 와 같이 설정하는 것과 동일한 효과를 준다. 
 
-- 좀 더 일반적으로 $V({\bf \epsilon}={\bf \Sigma}$인 경우를 살펴보아도 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 
+- 좀 더 일반적으로 $V({\bf \epsilon}={\bf \Sigma}$인 경우를 살펴보아도 $\bf y=X\beta + \epsilon$의 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 문제는 ${\bf \Sigma}^{-\frac{1}{2}}$가 존재하느냐는 것인데 $\bf {\Sigma}$가 real, symm, positive definite이므로 이러한 행렬을 항상 잡을 수 있다.  
