@@ -182,6 +182,6 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 와 같이 설정하는 것과 동일한 효과를 준다. 
 
-- 좀 더 일반적으로 $V({\bf \epsilon}={\bf \Sigma}$인 경우를 살펴보아도 $\bf y=X\beta + \epsilon$의 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 문제는 ${\bf \Sigma}^{-\frac{1}{2}}$이 존재하느냐는 것인데 이것은 잘 생각해보면 존재한다는 것을 쉽게 알 수 있다.  
+- 좀 더 일반적으로 $V({\bf \epsilon}={\bf \Sigma}$인 경우를 살펴보아도 $\bf y=X\beta + \epsilon$의 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 문제는 ${\bf \Sigma}^{-\frac{1}{2}}$이 존재하느냐는 것이다. 이것은 잘 생각해보면 당연하다는 것을 알 수 있다. 우선 $\Sigma$는 real, symm, positive definite(=pd)이다. 이러한 행렬을 편의상 real-symm-pd 행렬이라고 하자. ***모든 real-symm-pd 행렬 $A_ {n \times n}$은 고유치가 모두 양수이고 고유벡터가 서로 정규직교하도록 분해할 수 있다는 정리가 있다. (그리고 역도 성립함)*** 이거를 잘 이용하면 1) $\Sigma$의 역행렬 $\Sigma^{-1}$이 존재한다. 2) $\Sigma^{-1}$역시 real-symm-pd이다. 3) $\Sigma^{-1}=\Sigma^{-\frac{1}{2}}\Sigma^{-\frac{1}{2}}$를 만족하는 $\Sigma^{-\frac{1}{2}}$이 존재함을 순차적으로 (매우쉽게) 보일 수 있다. 
 
 - 
