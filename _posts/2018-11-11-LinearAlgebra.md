@@ -21,8 +21,8 @@ dim(A)<-c(2,2)
 ```
 고유값은 $(1-\lambda)^2-1=0$을 풀어서 나오니까 $\lambda=0$이 된다. 고유벡터 ${\bf v}=c(v1,v2)$는 아래 2개의 식을 연립해서 풀면된다. 
 \begin{align}
-0 \times v1 + 1 \times v2 = 0 \\ 
-1 \times v1 + 0 \times v2 = 0 \\ 
+0 \times v1 + 1 \times v2 = 0  \\\\ 
+1 \times v1 + 0 \times v2 = 0 
 \end{align}
 
 
