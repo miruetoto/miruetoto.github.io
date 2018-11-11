@@ -166,13 +166,13 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \begin{align}
 \sum_{i=1}^{1000}(y_i-\hat{y}_ i)^2
 \end{align}
-을 최소화하는 아이디어는 좀 곤란하다. 기본적으로 $i=1,\dots,500$에서 $E(y_i-\hat{y}_ i)^2$와 $i=501,\dots,1000$에서 $E(y_i-\hat{y}_ i)^2$의 값은 다르기 때문이다. 따라서 $i=501,\dots,1000$에 해당하는 loss를 정의할때는 일정한 가중치 $w_i$를 줘야 한다고 생각하는데 이 아이디어가 바로 WLS의 핵심아이디어이다. 
+을 최소화하는 아이디어는 좀 곤란하다. 기본적으로 $i=1,\dots,500$에서 $E(y_i-\hat{y}_ i)^2$와 $i=501,\dots,1000$에서 $E(y_i-\hat{y}_ i)^2$의 값은 다르기 때문이다. 뒤에 값이 앞의 값보다 2배정도 크기 때문에 뒤의 값의 loss를 우선적으로 줄이는 쪽으로 LSE가 구해질 가능성이 높다. 따라서 $i=501,\dots,1000$에 해당하는 loss를 구할때는 $\frac{1}{2}$씩 곱해보는 것이 더 현명할 수 있다. 이것이 WLS의 핵심아이디어이다. 
 
-- 위의 예제의 $V({\bf \epsilon})=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 따라서 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}},\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
+- 좀 더 살펴보자. 위의 예제에서 오차항의 분산은 $V({\bf \epsilon})=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}},\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
 \begin{align}
 \bf Py=PX\beta+P\epsilon
 \end{align}
-이 된다. 그럼 이때 $V({\bf P \epsilon})=I$ 이다. LSE를 쓰면 
+이 된다. 그럼 이때 $V({\bf P \epsilon})=I$ 이다. 이제 분산이 똑같아 졌으니까 LSE를 써도 괜찮을 것 같다. LSE를 쓰면 
 \begin{align}
 \bf \hat{\beta}=(X'P'PX)^{-1}X'P'Py  
 \end{align}
@@ -183,9 +183,19 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 와 같이 설정하는 것과 동일한 효과를 준다. 
 
 - 좀 더 일반적으로 $V({\bf \epsilon})={\bf \Sigma}$인 경우를 살펴보아도 $\bf y=X\beta + \epsilon$의 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 문제는 ${\bf \Sigma}^{-\frac{1}{2}}$이 존재하느냐는 것이다. 이것은 잘 생각해보면 당연하다는 것을 알 수 있다. 우선 $\Sigma$는 *real, symm, positive definite*이다. 이러한 행렬을 편의상 *real-symm-pd* 행렬이라고 하자. 아래와 같은 사실이 있다. 
->{ ***모든 real-symm-pd 행렬 $A_ {n \times n}$은 고유치가 모두 양수이고 고유벡터가 서로 정규직교하도록 분해할 수 있다. (그리고 역도 성립함)***<br/>}
+>***모든 real-symm-pd 행렬 $A_ {n \times n}$은 고유치가 모두 양수이고 고유벡터가 서로 정규직교하도록 분해할 수 있다. (그리고 역도 성립함)***<br/><br/>
 이걸 잘 이용하면 1) $\Sigma$의 역행렬 $\Sigma^{-1}$이 존재한다. 2) $\Sigma^{-1}$역시 real-symm-pd이다. 3) $\Sigma^{-1}=\Sigma^{-\frac{1}{2}}\Sigma^{-\frac{1}{2}}$를 만족하는 $\Sigma^{-\frac{1}{2}}$이 존재함을 순차적으로 (매우쉽게) 보일 수 있다. 
 
-- 즉 $\epsilon$의 분산구조가 어떠한 형태를 가지든 간에 그것이 *real-symm-pd*이기만 하면 위와 같은 방법으로 LSE를 구할 수 있다는 것을 의미한다.  이때 *real-symm*은 분산의 정의상 무조건 성립하는것이고 가끔씩 $\epsilon$의 공분산행렬이 pd가 아니고 *semi_pd*가 되는 경우가 가끔 있는데 ($\epsilon$이 랜덤변수가 아니고 상수라든가 하는 경우) 이러한 경우만 조심하면 된다. 통계학에서는 그냥 분산이 *semi_pd*인 경우는 없다고 생각하는게 정신건강에 좋다. 
+- 즉 $\epsilon$의 분산구조가 어떠한 형태를 가지든 간에 그것이 *real-symm-pd*이기만 하면 위와 같은 방법으로 LSE를 구할 수 있다는 것을 의미한다.  이때 *real-symm*은 분산의 정의상 무조건 성립하는것이고 가끔씩 $\epsilon$의 공분산행렬이 *pd*가 아니고 *semi_pd*가 되는 경우가 가끔 있는데 ($\epsilon$이 랜덤변수가 아니고 상수라든가 하는 경우) 이러한 경우만 조심하면 된다. 통계학에서는 그냥 분산이 *semi_pd*인 경우는 없다고 생각하는게 정신건강에 좋다. 
 
-- 만약에 $(X'X)^{-1}$가 존재하지 않는다면 어떻게 되는가? 본질적으로 이런 경우는 $\bf X$의 랭크가 $p$보다 작은 경우, 그래서 결국 $\bf X'X$의 랭크가 $p$보다 작게되어 역행렬을 못구하는 경우에 생긴다. 이러한 일은 1) $n<p$ 이거나 2) $\bf X$중에서 선형적으로 종속된 변수들이 있을 경우 자주 발생한다. 1)의 경우는 $rank({\bf X})=n$이고 2)의 경우는 $rank({\bf X})=p-선형종속된 변수들$이 된다.  
+- 만약에 $\bf (X'X)^{-1}$가 존재하지 않는다면 어떻게 되는가? 본질적으로 이런 경우는 $\bf X$의 랭크가 $p$보다 작은 경우, 그래서 결국 $\bf X'X$의 랭크가 $p$보다 작게되어 역행렬을 못구하는 경우에 생긴다. 이러한 일은 1) $n<p$ 이거나 2) $\bf X$중에서 선형적으로 종속된 변수들이 있을 경우 자주 발생한다. 1)의 경우는 
+\begin{align}
+rank({\bf X})=n
+\end{align}
+가 되고 2)의 경우는 
+\begin{align}
+rank({\bf X})=p-선형종속된 변수들
+\end{align}
+이 된다.  
+
+- 
