@@ -168,7 +168,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 을 최소화하는 아이디어는 좀 곤란하다. 기본적으로 $i=1,\dots,500$에서 $E(y_i-\hat{y}_ i)^2$와 $i=501,\dots,1000$에서 $E(y_i-\hat{y}_ i)^2$의 값은 다르기 때문이다. 따라서 $i=501,\dots,1000$에 해당하는 loss를 정의할때는 일정한 가중치 $w_i$를 줘야 한다고 생각하는데 이 아이디어가 바로 WLS의 핵심아이디어이다. 
 
-- 위의 예제의 $V(\bf \epsilon)=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 따라서 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}),\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
+- 위의 예제의 $V(\bf \epsilon)=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 따라서 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}},\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
 \begin{align}
 \bf Py=PX\beta+P\epsilon
 \end{align}
@@ -182,4 +182,4 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 와 같이 설정하는 것과 동일한 효과를 준다. 
 
-- 
+- 좀 더 일반적으로 $V({\bf \epsilon}={\bf \Sigma}$인 경우를 살펴보아도 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 
