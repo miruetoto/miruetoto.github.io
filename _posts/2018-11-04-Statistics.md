@@ -176,8 +176,8 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \begin{align}
 \bf \hat{\beta}=(X'P'PX)^{-1}X'P'Py  
 \end{align}
-가 된다. 
-
-
-
-$V(\epsilon)$의 대각
+가 된다. $P'P=P^2=diag(1,\dots,1,\frac{1}{2},\dots,\frac{1}{2})$가 된다. 이는 결국 loss함수를 
+\begin{align}
+\sum_{i=1}^{500} (y_i-\hat{y}_ i)^2+ \frac{1}{2} \sum_{i=501}^{1000} (y_i-\hat{y}_ i)^2
+\end{align}
+와 같이 설정하는 것과 동일한 효과를 준다. 
