@@ -168,7 +168,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 을 최소화하는 아이디어는 좀 곤란하다. 기본적으로 $i=1,\dots,500$에서 $E(y_i-\hat{y}_ i)^2$와 $i=501,\dots,1000$에서 $E(y_i-\hat{y}_ i)^2$의 값은 다르기 때문이다. 따라서 $i=501,\dots,1000$에 해당하는 loss를 정의할때는 일정한 가중치 $w_i$를 줘야 한다고 생각하는데 이 아이디어가 바로 WLS의 핵심아이디어이다. 
 
-- 위의 예제의 $V(\bf \epsilon)=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 따라서 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}},\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
+- 위의 예제의 $V({\bf \epsilon})=diag(1,\dots,1,2,\dots,2)$와 같은 형태가 된다. 따라서 적당한 행렬 ${\bf P}=diag(1,\dots,1,\frac{1}{\sqrt{2}},\dots,\frac{1}{\sqrt{2}})$을 가져와서 $\bf y=X \beta +\epsilon$의 양변에 곱하면 
 \begin{align}
 \bf Py=PX\beta+P\epsilon
 \end{align}
@@ -176,7 +176,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \begin{align}
 \bf \hat{\beta}=(X'P'PX)^{-1}X'P'Py  
 \end{align}
-가 된다. $P'P=P^2=diag(1,\dots,1,\frac{1}{2},\dots,\frac{1}{2})$가 된다. 이는 결국 loss함수를 
+가 된다. ${\bf P'P}={\bf P^2}=diag(1,\dots,1,\frac{1}{2},\dots,\frac{1}{2})$가 된다. 이는 결국 loss함수를 
 \begin{align}
 \sum_{i=1}^{500} (y_i-\hat{y}_ i)^2+ \frac{1}{2} \sum_{i=501}^{1000} (y_i-\hat{y}_ i)^2
 \end{align}
@@ -184,6 +184,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 
 - 좀 더 일반적으로 $V({\bf \epsilon})={\bf \Sigma}$인 경우를 살펴보아도 $\bf y=X\beta + \epsilon$의 양변에 ${\bf \Sigma}^{-\frac{1}{2}}$를 곱해주면 문제가 간단하다. 문제는 ${\bf \Sigma}^{-\frac{1}{2}}$이 존재하느냐는 것이다. 이것은 잘 생각해보면 당연하다는 것을 알 수 있다. 우선 $\Sigma$는 real, symm, positive definite이다. 이러한 행렬을 편의상 real-symm-pd 행렬이라고 하자. 아래와 같은 사실이 있다. 
 > ***모든 real-symm-pd 행렬 $A_ {n \times n}$은 고유치가 모두 양수이고 고유벡터가 서로 정규직교하도록 분해할 수 있다. (그리고 역도 성립함)***<br/>
+
 이걸 잘 이용하면 1) $\Sigma$의 역행렬 $\Sigma^{-1}$이 존재한다. 2) $\Sigma^{-1}$역시 real-symm-pd이다. 3) $\Sigma^{-1}=\Sigma^{-\frac{1}{2}}\Sigma^{-\frac{1}{2}}$를 만족하는 $\Sigma^{-\frac{1}{2}}$이 존재함을 순차적으로 (매우쉽게) 보일 수 있다. 
 
 - 즉 $\epsilon$의 분산구조가 어떠한 형태를 가지든 간에 그것이 real-symm-pd이기만 하면 위와 같은 방법으로 lse를 구할 수 있다는 것을 의미한다.  이때 real-symm은 분산의 정의상 무조건 성립하는것이고 가끔씩 $\epsilon$의 공분산행렬이 pd가 아니고 semi_pd가 되는 경우가 가끔 있는데 ($\epsilon$이 랜덤변수가 아니고 상수라든가 하는 경우) 이러한 경우만 조심하면 된다. 통계학에서는 그냥 분산이 semi_pd인 경우는 없다고 생각하는게 정신건강에 좋다. 
