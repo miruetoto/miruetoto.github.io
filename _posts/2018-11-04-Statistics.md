@@ -109,7 +109,7 @@ y_i=f(x_i)+\epsilon_i
 y_i=f({\bf x}_ i) +\epsilon_i
 \end{align}
 따라서 2차원인 경우는 기저를 어떻게 잡아야 할까? 보통 아래와 같이 2가지 경우가 있다.
-    - 확장: $f(x11)$, $f(x12)$, $f(x21)$, $f(x22)$의 basis를 알고 있을 때 이를 적당히 확장하여 $f({\bf x})$을 만듬. 
+    - basis expansion(=parametric): $f(x11)$, $f(x12)$, $f(x21)$, $f(x22)$의 basis를 알고 있을 때 이를 적당히 확장하여 $f({\bf x})$의 basis를 만듬. 
     
     - nonparametric: 자료 $\\{x_i\\}$를 활용하여 $f({\bf x})$에  기저를 바로 찾음.
 
