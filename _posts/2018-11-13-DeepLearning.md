@@ -23,5 +23,5 @@ x_i \approx G(z_i; {\bf \theta_g})
 \begin{cases}
 D(x) \approx 1, ~x \in \\{x_i\\} \\ 
 D(x) \approx 0, ~x \in \\{G(z_i;{\bf \theta_g})\\}
-\end{cases
+\end{cases}
 \end{align}
