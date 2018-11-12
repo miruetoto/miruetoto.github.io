@@ -8,15 +8,14 @@ title: (믿거나 말거나) 딥러닝
 ### GAN 
 - 우리가 관측한 자료 $\\{x_i\\}_ {i=1}^{n}$가 평균이 $500$이고 분산이 $5^2$인 정규분포 생성된다고 가정하자. 
 
-- $G$는 주어진 자료 $\\{x_i\\}_ {i=1}^{n}$로부터 generator's distribution $p_g(x)$를 알고 싶다. 즉 $G$의 목적은 
+- 제너레이터는 주어진 자료 $\\{x_i\\}_ {i=1}^{n}$로부터 generator's distribution $p_g(x)$를 알고 싶다. 즉 제너레이터의 목적은 
 \begin{align}
-p_g(x)=\frac{1}{\sqrt{10\pi}}\exp\left(\frac{-(x-500)^2}{2\times 5^2}\right)
+p_g(x)=\frac{1}{\sqrt{5\times 2\pi}}\exp\left(\frac{-(x-500)^2}{2\times 5^2}\right)
 \end{align}
-
-- $\\{z_i\\}_ {i=1}^{n}$를 평균이 0이고 분산이 1인 정규분포 $p_z(z)$에서 발생시킨다. 그리고
+를 학습하는 것이다. $G$는 이러한 목적을 달성하기 위해서 평균이 0이고 분산이 1인 정규분포 $p_z(z)$에서 *노이즈* $\\{z_i\\}_ {i=1}^{n}$를 발생시키고 *노이즈* 로 부터 $x_i$를 학습하는 MLP를 쌓는다. 즉 아래를 만족하는 적당한 함수 $G$를 학습한다.  
 \begin{align}
-x_i \approx G(z_i; \theta_g)
+x_i \approx G(z_i; {\bf \theta_g})
 \end{align}
-가 되도록 MLP를 쌓는다. 당연히 $G(z_i)=5\times z_i + 500$이 되도록 학습이 될 것이고 이때 $\theta_g=(500,5)$가 된다. 
+당연히 $G(z_i)=5\times z_i + 500$이 되도록 학습이 될 것이고 이때 ${\bf \theta_g}=(500,5)$가 된다. 
 
 - 
