@@ -10,7 +10,7 @@ title: (믿거나 말거나) 딥러닝
 
 - $G$는 주어진 자료 $\\{x_i\\}_ {i=1}^{n}$로부터 generator's distribution $p_g(x)$를 알고 싶다. 즉 $G$의 목적은 
 \begin{align}
-p_g(x)=\frac{1}{\sqrt{10\pi}}\exp^{\frac{-1}{2}\left(\frac{x-500}{25}\right)^2}
+p_g(x)=\frac{1}{\sqrt{10\pi}}\exp\left(\frac{-(x-500)^2}{2\times 5^2}\right)
 \end{align}
 
 - $\\{z_i\\}_ {i=1}^{n}$를 평균이 0이고 분산이 1인 정규분포 $p_z(z)$에서 발생시킨다. 그리고
