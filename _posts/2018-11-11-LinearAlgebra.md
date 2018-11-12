@@ -10,6 +10,27 @@ title: (모르면 창피한) 선형대수학
 \end{align}
 주의할것은 $0$-벡터는 고유벡터로 취급하지 않는다는 것이다. 
 
+- 고유값이 없는 정사각행렬은 없다. 고유값이 없다는 말은 $det({\bf A}-\lambda {\bf I})=0$을 만족하는 $\lambda$가 없다는 말인데 임의의 $n$차 다항식의 해는 항상 존재하므로 어떠한 정사각행렬 ${\bf A}_ {n \times n}$도 $n$개의 고유값을 가진다. 
+
+- 고유벡터가 없는 정사각행렬은 없다. 일단 ${\bf A}_ {n \times n}$는 항상 $n$개의 고유값을 가진다. 그중에서 하나의 고유값 $\lambda^*$를 fix했다고 하자. 그러면 고유벡터가 없다는 말은 
+\begin{align}
+\left({\bf A}-\lambda^* {\bf I}\right)=0
+\end{align}
+를 만족하는 벡터 $\bf v$는 오직 $\bf v=0$인 경우일 때 뿐이란 것을 의미한다. 그런데 고유값의 정의상 $det({\bf A}-\lambda^* {\bf I})=0$이 된다. 따라서 행렬 ${\bf A}-\lambda^* {\bf I}$은 *sing*-매트릭스가 된다. 따라서 ${\bf A}-\lambda^* {\bf I}$의 모든 row는 일차독립이 아니다. 따라서  $({\bf A}-\lambda^* {\bf I})\bf v=0$을 만족하는 $\bf v \neq 0$ 인 벡터가 적어도 하나는 존재한다. 이것은 고유벡터의 $\bf v$ 정의를 만족하므로 고유벡터가 없는 정사각행렬은 없다. 
+
+- 따라서 모은 정사각행렬은 고유벡터와 고유값을 반드시 가진다. 
+
+- ***$\lambda$가 $\bf A$의 고유값이라면 $\lambda^2$은 ${\bf A}^2$의 고유값이다.***  아래식을 관찰하면 쉽게 증명할 수 있다. 
+\begin{align}
+{\bf A^2 v}= {\bf A A v} = \lambda {\bf A  v} = \lambda^2 {\bf v}
+\end{align}
+위 사실의 역도 성립한다. 즉 ***$\lambda^2$이 $\bf A^2$의 고유값이라면 $\lambda$는 $\bf A$의 고유값이다.***
+\begin{aling}
+{\bf A^2 v}= \lambda^2 {\bf v} = 
+\end{align}
+
+
+
 - ***tri-매트릭스의 고유값은 대각선값들이다.***
 
 - $\bf A=I$의 고유값은 $1$이고 고유벡터는 ***all non-zero vectors***다.
