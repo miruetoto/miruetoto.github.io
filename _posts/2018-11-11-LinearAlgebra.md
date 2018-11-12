@@ -30,11 +30,19 @@ title: (모르면 창피한) 선형대수학
 
 - $A_{n \times n}$모든 col의 합이 1인 행렬을 *markov*-매트릭스라고 한다. ***markov-매트릭스의 고유값들중 최소한 하나는 1이고 나머지 고유값은 모두 1보다 작다.*** 이 사실도 그냥 증명없이 외우자. 
 
-- ***임의의 $2\times 2$-행렬 ${\bf A}=rbind(c(a,b),c(c,d))$의 에서 고정된 고유값 $\lambda^* $에 대한 고유벡터는 $c(-b,a-\lambda^* )$이다.*** 우선 임의의 $2 \times 2$-행렬의 고유값과 고유벡터는 항상 존재한다. 고정된 고유값 $\lambda^* $에 대한 *characteristic polynomial*은 아래와 같이 쓸 수 있다. 
+- ***임의의 $2\times 2$-행렬 ${\bf A}=rbind(c(a,b),c(c,d))$에서 고정된 고유값 $\lambda^* $에 대한 고유벡터는 $c(-b,a-\lambda^* )$이다.*** 이건 그냥 혼자 유추한것인데 상당히 유용하다. 증명은 그렇게 어렵지 않다. 우선 임의의 $2 \times 2$-행렬의 고유값과 고유벡터는 항상 존재한다. 고정된 고유값 $\lambda^* $에 대한 *characteristic polynomial*은 아래와 같이 쓸 수 있다. 
 \begin{align}
 det\left({\bf A}-\lambda^* {\bf I}\right)=0
 \end{align}
-앞에서 언급하였듯이 고유치 $\lambda^* $의 정의에 의해서 위의 식은 항상 성립한다. 따라서 행렬 ${\bf A}-\lambda^* {\bf I}$는 *sing*-매트릭스이다. 따라서 0을 고유값으로 가지며 0에 해당하는 고유벡터는 $(-b,a-\lambda)$이다. 
+앞에서 언급하였듯이 고유치 $\lambda^* $의 정의에 의해서 위의 식은 항상 성립한다. 따라서 행렬 ${\bf A}-\lambda^* {\bf I}$는 *sing*-매트릭스이다. 따라서 0을 고유값으로 가지며 0에 해당하는 고유벡터는 ${\bf v}=(-b,a-\lambda^* )$이다. 그런데 ${\bf v}$는 행렬 ${\bf A}-\lambda^* {\bf I}$에서 고유값 0에 대한 고유벡터이기도 하지만 행렬 ${\bf A}$에서 고유값 $\lambda^* $에 대한 고유벡터이기도 하다. 왜냐하면 
+\begin{align}
+\left({\bf A}-\lambda^* {\bf I}\right){\bf v}=0
+\end{align}
+이므로, 
+\begin{align}
+{\bf Av}=\lambda^* {\bf v}
+\end{align}
+이기 때문이다. 
 
 - 매트릭스 ${\bf A}=rbind(c(0.5,0.5),c(0.5,0.5))$를 생각하여 보자. $\bf A$는 *sing*-매트릭스이므로 0을 고유값으로 가진다. 또한 $\bf A$는 *markov*-매트릭스 이므로 1을 고유값으로 가진다(그리고 다른 고유값은 모두 1보다 작음). 종합하면 $\bf A$의 고유값은 0과 1이다. 따라서 고유벡터는 $c(-0.5,0.5)$, $c(-0.5,-0.5)$이다. 
 
