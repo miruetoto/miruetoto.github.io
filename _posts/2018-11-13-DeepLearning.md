@@ -48,13 +48,13 @@ V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x
 \end{align}
 이다. 
 
-- 보면 알겠지만 <br/>
-1) $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$는 $E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x)]$ 의 샘플버전이고<br/>
+- 보면 알겠지만 <br/><br/>
+1) $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$는 $E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x)]$ 의 샘플버전이고<br/><br/>
 2) $\frac{1}{n} \sum_{i=1}^{n} \log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right)$는 $ E_{z \sim p_z(z)}[\log (1-D_{\bf \theta_d}(G_{\bf \theta_g}(z))]$의 샘플버전이다. 
 
-- 따라서 <br/>
-1) $\frac{1}{n} \sum_{i=1}^{n} \log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right)$ <br/>
-2) $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$ <br/>
+- 따라서 <br/><br/>
+1) $\frac{1}{n} \sum_{i=1}^{n} \log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right)$ <br/><br/>
+2) $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$ <br/><br/>
 를 최소화하는 $\bf \theta_d$, $\bf \theta_g$를 반복적으로 찾아가면서 업데이트하면 쉽게 문제를 해결할 수 있다. 
 
 - GAN의 아이디어는 매우 참신하지만 몇 가지 문제점이 있다. 
