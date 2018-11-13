@@ -57,7 +57,13 @@ V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x
 를 최소화하는 $\bf \theta_d$, $\bf \theta_g$를 반복적으로 찾아가면서 업데이트하면 쉽게 문제를 해결할 수 있다. 
 
 ### BEGAN 
-- BEGAN을 이해하기 전에 Wasserstein distance를 먼저 이해해야 한다. Wasserstein distance는 두 확률분포가 얼마나 유사한지를 측정하는 함수이다. 예를 들어서 $N(0,1)$과 $N(300,20)$ 두 분포의 Wasserstein distance를 계산하여 보자. 두 분포의 결합분포는 평균이 ${\bf \mu}=c(0,300)$이고 분산이 ${\bf \Sigma}=rbind(c(1,\sigma_{12}),c(\sigma{21},20))$인 정규분포가 된다. 
+- BEGAN을 이해하기 전에 Wasserstein-distance를 먼저 이해해야 한다. Wasserstein-distance는 두 분포함수 $F_{X}(x)$와 $G_{Y}(x)$가 얼마나 유사한지를 측정하는 함수이다. 여기에서 분포함수 $F_X(x)$란 확률변수 $X$가 정의되었을 경우 $F_X(x)=P(X\leq x)$를 만족하는 $\mathbb{R} \rightarrow [0,1]$인 함수이다. 참고로 임의의 확률변수 $X$에 대한 분포함수는 항상 존재한다(확률분포함수는 항상 존재하지는 않음).  
+
+
+
+
+$N(0,1)$과 $N(300,20)$이라고 하자. 
+두 분포의 Wasserstein distance를 계산하여 보자. 두 분포의 결합분포는 평균이 ${\bf \mu}=c(0,300)$이고 분산이 ${\bf \Sigma}=rbind(c(1,\sigma_{12}),c(\sigma{21},20))$인 정규분포가 된다. 여기에서 $\sigma_{12}=\sigma_{21}$이다. 따라서 두 변수
 
 
 
