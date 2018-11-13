@@ -52,14 +52,12 @@ V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x
 1) $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$는 $E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x)]$ 의 샘플버전이고<br/>
 2) $\frac{1}{n} \sum_{i=1}^{n} \log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right)$는 $ E_{z \sim p_z(z)}[\log (1-D_{\bf \theta_d}(G_{\bf \theta_g}(z))]$의 샘플버전이다. 
 
+- 따라서 <br/>
+1) $\frac{1}{n} \sum_{i=1}^{n} \log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right)$ <br/>
+2) $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$ <br/>
+를 최소화하는 $\bf \theta_d$, $\bf \theta_g$를 반복적으로 찾아가면서 업데이트하면 쉽게 문제를 해결할 수 있다. 
+
+- GAN의 아이디어는 매우 참신하지만 몇 가지 문제점이 있다. 
+1. 
+
 - 
-
-
-
-
-- 이 식이 생각보다 오묘하다. $\max_{D} V(D,G)$가 어떻게 달성되는지 생각하여보자. 사실상 $\max_{D} V(D,G)$는 오로지 디스크리미네이터의 입장에서 본 로스함수이다. 디스크리미네이터는 1) 매우 일을 잘하는 경우: 즉 진짜 데이터와 가짜 데이터를 너무 잘 구분하는 경우 2) 일을 안하는 경우: 진짜 데이터와 가짜데이터를 전혀 구분하지 못하는 경우 그니까 그냥 랜덤으로 찍는다든가.. 3) 매우 일을 못하는 경우: 진짜 데이터와 가짜 데이터를 완벽하게 반대로 구분하고 있는 경우가 있을 수 있다. 다시 $V(D,G)$함수를 살펴보자. 
-\begin{align}
-V(D,G)=E_{x \sim p_{data}}[\log D(x)] + E_{z \sim p_z(z)}[\log (1-D(G(x))]
-\end{align}
-$V(D,G)$ 최대가 되는 경우는 1) 과 3)이다. 
-
