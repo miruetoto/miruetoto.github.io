@@ -61,15 +61,13 @@ V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x
 
 - 각설하고 $X \sim N(0,1)$이고 $Y \sim N(300,20)$이라고 하자. 확률변수 $X$와 $Y$에 의해서 유도된 분포함수를 $F_X(x)$, $F_Y(y)$라고 하자. 두분포함수 $F_X(x)$, $F_Y(y)$의 와썰스테인-디스턴스는 아래와 같이 정의된다. 
 \begin{align}
-$W(F_X(x),F_Y(y)):= \inf_ {F_{XY}} E_{F_{XY}}\|X-Y\|.  
+W(F_X(x),F_Y(y)):= \inf_ {F_{XY}} E_{F_{XY}}\|X-Y\|.  
 \end{align}
-여기에서 $F_{X,Y}(x,y)$는 확률벡터 $(X,Y)$의 결합확률 밀도함수이다. 
-
-
-$N(0,1)$과 $N(300,20)$이라고 하자. 
-두 분포의 Wasserstein distance를 계산하여 보자. 두 분포의 결합분포는 평균이 ${\bf \mu}=c(0,300)$이고 분산이 ${\bf \Sigma}=rbind(c(1,\sigma_{12}),c(\sigma{21},20))$인 정규분포가 된다. 여기에서 $\sigma_{12}=\sigma_{21}$이다. 따라서 두 변수
-
-
+여기에서 $F_{X,Y}(x,y)$는 확률벡터 $(X,Y)$의 결합확률 밀도함수이다. $F_{X,Y}(x,y)$는 다양한 형태를 가질수 있다. 왜냐하면 $(X,Y)$의 분포가 다양한 모양을 가질 수 있기 때문이다. 만약에 $X$와 $Y$가 독립이면 
+\begin{align}
+(X,Y) \sim N\left(\begin{bmatrix} 0 \\ 300 \end{bmatrix},  \right)
+\end{align}
+이 될 것이다. 
 
 
 
