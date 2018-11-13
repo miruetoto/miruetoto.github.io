@@ -38,10 +38,11 @@ $\\{x_i\\}$는 총 $n$개 있고, $\\{G(z_i;{\bf \theta_g})\\}$역시 총 $n$개
 
 - 우리가 원하는 것은 <br/><br/>
 ***"굉장히 성능이 좋은 디스크리미네이터조차도 구분하기가 쉽지않은 가짜 샘플을 만드는 제너레이너를 찾는 것"***<br/><br/>
-이 가장좋다. 요걸 달성하기 위해서는 아래를 구하면 된다.    
+이 가장좋다. 따라서 요걸 달성하기 위해서는 아래를 구하면 된다.    
 \begin{align}
-\underset{G}{\operatorname{argmin}} \max_{D} V(D,G)~, V(D,G)=E_{x \sim p_{data}}[\log D(x)] + E_{z \sim p_z(z)}[\log (1-D(G(x))]
+\underset{G_{\bf \theta_g}}{\operatorname{argmin}} \max_{D_{\bf \theta_d} V(D_{\bf \theta_d},G_{\bf \theta_g}) ~~ where ~~ V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x)] + E_{z \sim p_z(z)}[\log (1-D_{\bf \theta_d}(G_{\bf \theta_g}(z))]
 \end{align}
+보면 알겠지만 
 
 - 
 
