@@ -26,38 +26,25 @@ $\\{x_i\\}$는 총 $n$개 있고, $\\{G(z_i;{\bf \theta_g})\\}$역시 총 $n$개
 > $y_i \in \\{x_i\\}$이면 $D_{\bf \theta_d}(y_i) \approx 1$이다. <br/><br/>
 > $y_i \in \\{G_{\bf \theta_g}(z_i)\\}$이면 $D_{\bf \theta_d}(y_i) \approx 0$이다. 
 
-- 디스크리미네이터의 관점에서 보자. 디스크리미네이터는 1) $D_{\bf \theta_d}(G_{\bf \theta_g}(x_i))$의 값들이 작을 수록 2) $D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))$의 값들이 클수록 학습이 잘 되었다고 볼 수 있다. 따라서 디스크리미네이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 
+- 디스크리미네이터의 관점에서 보자. 디스크리미네이터는 1) $D_{\bf \theta_d}(G_{\bf \theta_g}(x_i))$의 값들이 작을 수록 2) $D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))$의 값들이 클수록 학습이 잘 되었다고 볼 수 있다. 따라서 디스크리미네이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 이때 (편의상) $\bf \theta_g$는 고정된 값이라고 생각하자. 
 \begin{align}
-\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} \left[ \sum_{i=1}\log D_{\bf \theta_d}(x_i) +\log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right) \right] 
+\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} \left[ \log D_{\bf \theta_d}(x_i) +\log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right) \right] 
 \end{align}
 
-
-- 제너레이터 관점에서 보자. 고정된 $\theta_d^{(0)}$에 대하여 $D_{\bf \theta_d^{(0)}}(G_{\bf \theta_g}(z_i))$값들이 커야지 학습이 잘 된 것이다. 즉 제너레이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 
+- 반면에 제너레이터는 $D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))$값들이 커야지 학습이 잘 된 것이고 볼 수 있다. 즉 제너레이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 
 \begin{align}
-\underset{\bf \theta_d}{\operatorname{argmax}}\frac{1}{n}\sum_{i=1}^{n} D_ {\bf \theta_d^{(0)}}(G_{\bf \theta_g}(z_i))
+\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} \log \left(1-D_ {\bf \theta_d}(G_{\bf \theta_g}(z_i))\right)
 \end{align}
-위의 문제를 풀기 위해서 아래의 식을 풀어도 괜찮다. 
-\begin{align}
-\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} \log \left(1-D^{(0)}_ {\bf \theta_d^{(0)}}(G_{\bf \theta_g}(z_i))\right)
-\end{align}
-위의 식을 풀어서 업데이트한 값을 $\theta_
 
-- 
-
-아래와 같은 함수를 생각하여 보자. 
-\begin{align}
-V(D,G)=E_{x \sim p_{data}}[\log D(x)] + E_{z \sim p_z(z)}[\log (1-D(G(x))]
-\end{align}
-함수 $V$는 입력으로 $D$와 $G$를 받는다. 제너레이터가 $G$를 잘 학습했을경우 오른쪽항이 작아진다. 제너레이터 입장에서 보면 왼쪽항은 노상관이다. 따라서 제너레이터의 관점에서는 
-\begin{align}
-
-\end{align}
-반면에 디스크리미네이터는 왼쪽항을 작게만들어야 하며 오른쪽항은 크게 만들어야 한다. 우리의 관점에서 보면 <br/><br/>
+- 우리가 원하는 것은 <br/><br/>
 ***"굉장히 성능이 좋은 디스크리미네이터조차도 구분하기가 쉽지않은 가짜 샘플을 만드는 제너레이너를 찾는 것"***<br/><br/>
 이 가장좋다. 요걸 달성하기 위해서는 아래를 구하면 된다.    
 \begin{align}
-\underset{G}{\operatorname{argmin}} \max_{D} V(D,G)
+\underset{G}{\operatorname{argmin}} \max_{D} V(D,G)~, V(D,G)=E_{x \sim p_{data}}[\log D(x)] + E_{z \sim p_z(z)}[\log (1-D(G(x))]
 \end{align}
+
+- 
+
 
 - 이 식이 생각보다 오묘하다. $\max_{D} V(D,G)$가 어떻게 달성되는지 생각하여보자. 사실상 $\max_{D} V(D,G)$는 오로지 디스크리미네이터의 입장에서 본 로스함수이다. 디스크리미네이터는 1) 매우 일을 잘하는 경우: 즉 진짜 데이터와 가짜 데이터를 너무 잘 구분하는 경우 2) 일을 안하는 경우: 진짜 데이터와 가짜데이터를 전혀 구분하지 못하는 경우 그니까 그냥 랜덤으로 찍는다든가.. 3) 매우 일을 못하는 경우: 진짜 데이터와 가짜 데이터를 완벽하게 반대로 구분하고 있는 경우가 있을 수 있다. 다시 $V(D,G)$함수를 살펴보자. 
 \begin{align}
