@@ -63,11 +63,13 @@ V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x
 \begin{align}
 W(F_X(x),F_Y(y)):= \inf_ {F_{XY}} E_{F_{XY}}\|X-Y\|.  
 \end{align}
-여기에서 $F_{X,Y}(x,y)$는 확률벡터 $(X,Y)$의 결합확률 밀도함수이다. $F_{X,Y}(x,y)$는 다양한 형태를 가질수 있다. 왜냐하면 $(X,Y)$의 분포가 다양한 모양을 가질 수 있기 때문이다. 만약에 $X$와 $Y$가 독립이면 
+여기에서 $F_{X,Y}(x,y)$는 확률벡터 $c(X,Y)$의 결합확률 밀도함수이다. $F_{X,Y}(x,y)$는 다양한 형태를 가질수 있다. 왜냐하면 $c(X,Y)$의 분포가 다양한 모양을 가질 수 있기 때문이다. 만약에 $X$와 $Y$가 독립이면 
 \begin{align}
-(X,Y) \sim N\left(\begin{bmatrix} 0 \\\\ 300 \end{bmatrix}, \begin{bmatrix}1 & 5\rho \\\\ 5\rho & 25 \end{bmatrix} \right)
+c(X,Y) \sim N\left(\begin{bmatrix} 0 \\\\ 300 \end{bmatrix}, \begin{bmatrix}1 & 0 \\\\ 0 & 25 \end{bmatrix} \right)
 \end{align}
-이 될 것이다. 
-
-
+이 될 것이다. 독립이 아니면 $\rho$값에 따라서 아래와 같은 형태를 가질것이다. 
+\begin{align}
+c(X,Y) \sim N\left(\begin{bmatrix} 0 \\\\ 300 \end{bmatrix}, \begin{bmatrix}1 & 5\rho \\\\ 5\rho & 25 \end{bmatrix} \right)
+\end{align}
+따라서 $
 
