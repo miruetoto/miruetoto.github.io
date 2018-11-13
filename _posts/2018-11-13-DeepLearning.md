@@ -38,7 +38,7 @@ $\\{x_i\\}$는 총 $n$개 있고, $\\{G(z_i;{\bf \theta_g})\\}$역시 총 $n$개
 
 - 우리가 원하는 것은 <br/><br/>
 ***"굉장히 성능이 좋은 디스크리미네이터조차도 구분하기가 쉽지않은 가짜 샘플을 만드는 제너레이너를 찾는 것"***<br/><br/>
-이 가장좋다. 따라서 요걸 달성하기 위해서는 아래를 구하면 된다.    
+이다. 따라서 요걸 달성하기 위해서는 아래를 구하면 된다.    
 \begin{align}
 \underset{G_{\bf \theta_g}}{\operatorname{argmin}} \max_{D_{\bf \theta_d}} V(D_{\bf \theta_d},G_{\bf \theta_g})
 \end{align}
@@ -46,9 +46,14 @@ $\\{x_i\\}$는 총 $n$개 있고, $\\{G(z_i;{\bf \theta_g})\\}$역시 총 $n$개
 \begin{align}
 V(D_{\bf \theta_d},G_{\bf \theta_g})=E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x)] + E_{z \sim p_z(z)}[\log (1-D_{\bf \theta_d}(G_{\bf \theta_g}(z))]
 \end{align}
-이다. 보면 알겠지만 
+이다. 
+
+- 보면 알겠지만 $\frac{1}{n} \sum_{i=1}^{n}\log D_{\bf \theta_d}(x_i)$는 $E_{x \sim p_{data}}[\log D_{\bf \theta_d}(x)]$ 의 샘플버전이고 $\frac{1}{n} \sum_{i=1}^{n} \log \left(1- D_{\bf \theta_d}(G_{\bf \theta_g}(z_i)) \right)$은 $ E_{z \sim p_z(z)}[\log (1-D_{\bf \theta_d}(G_{\bf \theta_g}(z))]
+\end{align}$의 샘플버전이다. 
 
 - 
+
+
 
 
 - 이 식이 생각보다 오묘하다. $\max_{D} V(D,G)$가 어떻게 달성되는지 생각하여보자. 사실상 $\max_{D} V(D,G)$는 오로지 디스크리미네이터의 입장에서 본 로스함수이다. 디스크리미네이터는 1) 매우 일을 잘하는 경우: 즉 진짜 데이터와 가짜 데이터를 너무 잘 구분하는 경우 2) 일을 안하는 경우: 진짜 데이터와 가짜데이터를 전혀 구분하지 못하는 경우 그니까 그냥 랜덤으로 찍는다든가.. 3) 매우 일을 못하는 경우: 진짜 데이터와 가짜 데이터를 완벽하게 반대로 구분하고 있는 경우가 있을 수 있다. 다시 $V(D,G)$함수를 살펴보자. 
