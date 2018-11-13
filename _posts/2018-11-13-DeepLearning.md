@@ -26,16 +26,19 @@ $\\{x_i\\}$는 총 $n$개 있고, $\\{G(z_i;{\bf \theta_g})\\}$역시 총 $n$개
 > $y_i \in \\{x_i\\}$이면 $D_{\bf \theta_d}(y_i) \approx 1$이다. <br/><br/>
 > $y_i \in \\{G_{\bf \theta_g}(z_i)\\}$이면 $D_{\bf \theta_d}(y_i) \approx 0$이다. 
 
-- 제너레이터 관점에서 보면 $D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))$값들이 커야지 학습이 잘 된 것이다. 즉 제너레이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 
+- 제너레이터 관점에서 보자. 고정된 $D^{(0)}$에 대하여 $D^{(0)}_{\bf \theta_d}(G_{\bf \theta_g}(z_i))$값들이 커야지 학습이 잘 된 것이다. 즉 제너레이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 
 \begin{align}
-\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))
+\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} D^{(0)} _{\bf \theta_d}(G_{\bf \theta_g}(z_i))
 \end{align}
 위의 문제를 풀기 위해서 아래의 식을 풀어도 괜찮다. 
 \begin{align}
-\frac{1}{n}\sum_{i=1}^{n} \log \left(1-D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))\right)
+\underset{\bf \theta_d}{\operatorname{argmax}}\frac{1}{n}\sum_{i=1}^{n} \log \left(1-D^{(0)} _{\bf \theta_d}(G_{\bf \theta_g}(z_i))\right)
 \end{align}
 
-- 디스크리미네이터는 $D(x_i)$의 값들이 작을 수록 학습이 잘 되었다고 볼 수 있다. 
+- 디스크리미네이터의 관점에서 보자. 1) $D_{\bf \theta_d}(G_{\bf \theta_g}(x_i))$의 값들이 작을 수록 2) $D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))$의 값들이 클수록 학습이 잘 되었다고 볼 수 있다. 따라서 디스크리미네이터는 아래식을 만족하는 $\bf \theta_d$를 찾고 싶어한다. 
+\begin{align}
+\underset{\bf \theta_d}{\operatorname{argmin}}\frac{1}{n}\sum_{i=1}^{n} D_{\bf \theta_d}(G_{\bf \theta_g}(z_i))
+\end{align}
 
 - 
 
