@@ -18,4 +18,5 @@ title: (듀렛) 확률론
 - $\Omega=[0,1]$.
 - ${\cal F}_ 0=\sigma({\cal O})$, where ${\cal O}=all~ openset~ in~ [0,1]$. 
 - $P$ is Lebesgue measure. 
-함수 $X:\Omega \rightarrow \mathbb{R}$를 $X(\omega)=\omega$와 같이 정의하자. 모든 $B \in {\cal B}$에 대하여 $X^{-1}(B) \in {\cal F}_0$이므로, $X$는 $(\Omega,{\cal F}_0)$에서 $(\mathbb{R},{\cal B})$로의 measuable mapping이다.
+
+함수 $X:\Omega \rightarrow \mathbb{R}$를 $X(\omega)=\omega$와 같이 정의하자. 모든 $B \in {\cal B}$에 대하여 $X^{-1}(B) \in {\cal F}_ 0$이므로, $X$는 $(\Omega,{\cal F}_ 0)$에서 $(\mathbb{R},{\cal B})$로의 measuable mapping이다.
