@@ -28,7 +28,10 @@ title: (듀렛) 확률론
 \begin{align}
 {\cal O}=\\{O: O \subset \mathbb{R},~ ~ ~ O~ is ~ open set \\}
 \end{align}
-이다. $\cal R$은 $\cal O$를 포함하는 가장 작은 시그마필드이다. 즉 1) ${\cal R} \superset {\cal O}$이고 2) ${\cal R}$ is $\sigma$-field, 이다. 
+이다. $\cal R$은 $\cal O$를 포함하는 가장 작은 시그마필드이다. 즉 1) ${\cal O} \superset {\cal R}$이고 2) "${\cal R}$ is $\sigma$-field." 이다. 이것을 기호로는 아래와 같이 쓴다. 
+\begin{align}
+{\cal R}=\sigma({\cal O})
+\end{align}
 
 ### 대수의법칙 
 
