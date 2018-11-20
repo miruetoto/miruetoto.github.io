@@ -210,4 +210,7 @@ rank({\bf X})=p-l
 \begin{align}
 \sum_{i=1}^{n} \||z_i {\bf T}'-x_i \||^2= \sum_{i=1}^{n}  \|| x_i {\bf T} {\bf T}' - x_i \||^2 
 \end{align}
-
+고정된 $i$에 대하여 $|| x_i {\bf T} {\bf T}' - x_i \||^2 $을 풀면 $x_ix_i' -x_i{\bf T}{\bf T}' x_i'$가 되므로 위의식은 아래와 같이 정리된다. 
+\begin{align}
+\sum_{i=1}^{n}  \|| x_i {\bf T} {\bf T}' - x_i \||^2 = -tr({\bf T}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X'})
+\end{align}
