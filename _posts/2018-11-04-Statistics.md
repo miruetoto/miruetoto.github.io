@@ -206,7 +206,7 @@ rank({\bf X})=p-l
 {\bf Z}_ {n\times p'} = {\bf X}_ {n \times p} {\bf T}_ {p \times p'} 
 \end{align}
 
-- 일반적으로 $z_i \apporx x_i$가 되도록 선형변환 $\bf T$를 잡고 싶다면  $z_i$와 $x_i$의 거리차가 작게되도록 만드는 $\bf T$를 구하면 된다. 그런데 $z_i$와 $x_i$의 차원이 다르므로 직접거리를 잴 수없다. 따라서 $z_i$에 ${\bf T}'$를 곱한 아래식을 최소화 한다. 
+- 일반적으로 $z_i \approx x_i$가 되도록 선형변환 $\bf T$를 잡고 싶다면  $z_i$와 $x_i$의 거리차가 작게되도록 만드는 $\bf T$를 구하면 된다. 그런데 $z_i$와 $x_i$의 차원이 다르므로 직접거리를 잴 수없다. 따라서 $z_i$에 ${\bf T}'$를 곱한 아래식을 최소화 한다. 
 \begin{align}
 ({\bf X} {\bf T} {\bf T}' - {\bf X})
 \end{align}
