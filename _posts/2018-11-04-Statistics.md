@@ -210,3 +210,4 @@ rank({\bf X})=p-l
 \begin{align}
 ({\bf X} {\bf T} {\bf T}' - {\bf X})
 \end{align}
+
