@@ -216,4 +216,7 @@ rank({\bf X})=p-l
 \begin{align}
 \sum_{i=1}^{n}  \\| x_i {\bf T} {\bf T'} - x_i \\|^2 = -tr({\bf T'}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X})
 \end{align}
-
+여기에서 ${\bf X}$는 *given*되어 있으므로 결국 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
+\begin{align}
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})
+\end{align}
