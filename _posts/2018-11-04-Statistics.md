@@ -220,3 +220,5 @@ rank({\bf X})=p-l
 \begin{align}
 tr({\bf T'}{\bf X'}{\bf X}{\bf T})
 \end{align}
+
+- ${\bf X}{\bf T}={\bf Z}$임을 떠올리면 결국 PCA는 ${\bf Z}'{\bf Z}$를 최대화하는 행렬 ${\bf T}$를 구하는것으로 이해하면 된다. 
