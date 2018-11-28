@@ -37,6 +37,11 @@ title: (모르면 창피한) 선형대수학
 
 - **모든 *Hermitian*-매트릭스는 1) 실수의 고유값을 가지며 2) 아이겐벡터들이 서로 직교한다.** 행렬 $\bf A$의 성분들이 모두 실수이면 *symm*-매트릭스가 곧 *에르미트*-매트릭스가 된다. 따라서 **"모든 *real-symm*-매트릭스는 1) 실수의 고유값을 가지며 2) 고유벡터들이 서로 직교한다."** 라고 생각할 수 있다. 
 
+- *real-symm*-매트릭스 $\bf A_ {n \times n}$는 아래와 같이 표현할 수 있다. 특별히 수학적인 의미가 있는건 아니고 단순히 전개한것 뿐이지만 매트릭스 표현법에 익숙해지기 위해서 한번 읽어보자. 
+\begin{align}
+{\bf A}cbind({\bf v}_ 1, \dots, {\bf v}_ n)=cbind({\bf A}{\bf v}_ 1, \dots, {\bf A}{\bf v}_ n)=cbind(\lambda_1 {\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) 
+\end{align}
+
 - 임의의 매트릭스 ${\bf A}_ {n \times n}$의 모든 고유값이 양수일때 이러한 행렬 $\bf A$를 *pd*-매트릭스라고 부른다. 고유값이 양수이려면 일단 고유값이 실수이어야 하므로 $\bf A$는 일단 *에르미트*-행렬이어야 한다(혹은 *real-symm*-매트릭스이거나). *pd*-매트릭스의 정의로부터 아래식이 성립한다. 
 \begin{align}
 rbind({\bf v}_ 1',\dots,{\bf v}_ n'){\bf A}cbind({\bf v}_ 1,\dots,{\bf v}_ n) ={\bf v}'\lambda{\bf v}>0 
