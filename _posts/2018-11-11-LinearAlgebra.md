@@ -33,7 +33,7 @@ title: (모르면 창피한) 선형대수학
   4. 하지만 한개의 고유치에 반드시 한개의 고유벡터"만" 대응할 필요는 없다. 때에 따라서 한개의 고유치에 여러개의 고유벡터가 대응할수도 있다. <br/>
   5. 이러한 경우를 종합하면 $n \times n$-행렬의 아이겐벡터가 *span*하는 차원이 $n$보다 작을경우는 1) 고유값들이 중복근을 가지며 (즉 2의 케이스) 2) 그 중복근에 대응하는 고유벡터들이 *span*하는 공간의 차원이 중복근의 수보다 작은 경우이다. **그리고 바로 이 경우가 ${\bf A}_ {n \times n}$을 대각화할 수 없는 경우에 해당한다.** <br/>
   
-- ${\bf A}_ {n\times n}$이 대각화가능할 필요충분조건은 $\bf A$의 고유벡터들이 *span*하는 공간이 $n$차원일 경우이다. 가끔 가다가 ${\bf A}_ {n\times n}$이 대각화가능할 필요충분조건이 $\bf A$의 랭크가 $n$이라고 착각하는 사람들이 있는데 이것은 사실이 아니다. $\bf A$의 랭크가 $n$이 아니어도 대각화 가능한 행렬은 얼마든지 있다. 바로 위에서 예를 든것처럼 ${\bf A}=0$도 대각화 가능하고 ${\bf A}=rbind(c(1,2),c(2,4))$와 같은 행렬도 *real-symm*-매트릭스이므로 이므로 대각화 가능하다. 
+- ${\bf A}_ {n\times n}$이 대각화가능할 필요충분조건은 $\bf A$의 고유벡터들이 *span*하는 공간이 $n$차원일 경우이다. 가끔 가다가 ${\bf A}_ {n\times n}$이 대각화가능할 필요충분조건이 $\bf A$의 랭크가 $n$이라고 착각하는 사람들이 있는데 이것은 사실이 아니다. $\bf A$의 랭크가 $n$이 아니어도 대각화 가능한 행렬은 얼마든지 있다. 바로 위에서 예를 든것처럼 ${\bf A}=0$도 대각화 가능하고 ${\bf A}=rbind(c(1,2),c(2,4))$와 같은 행렬도 (*real-symm*-매트릭스이므로) 대각화 가능하다. 
 
 - **모든 *Hermitian*-매트릭스는 1) 실수의 고유값을 가지며 2) 아이겐벡터들이 서로 직교한다.** 행렬 $\bf A$의 성분들이 모두 실수이면 *symm*-매트릭스가 곧 *에르미트*-매트릭스가 된다. 따라서 **"모든 *real-symm*-매트릭스는 1) 실수의 고유값을 가지며 2) 고유벡터들이 서로 직교한다."** 라고 생각할 수 있다. 
 
@@ -42,11 +42,14 @@ title: (모르면 창피한) 선형대수학
 {\bf A}cbind({\bf v}_ 1, \dots, {\bf v}_ n)&=cbind({\bf A}{\bf v}_ 1, \dots, {\bf A}{\bf v}_ n)=cbind(\lambda_1 {\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) \\\\ 
 &=cbind({\bf v}_ 1, \dots, {\bf v}_ n)diag(\lambda_1,\dots,\lambda_n)
 \end{align}
-따라서 *real-symm*-매트릭스 $\bf A_ {n \times n}$는 아래와 같이 표현 가능하다. 
+따라서 *real-symm*-매트릭스 ${\bf A}_ {n \times n}$는 아래와 같이 표현 가능하다. 
 \begin{align}
 {\bf A}{\bf P}={\bf P}{\bf D} ~~ or ~~ {\bf A}={\bf P}{\bf D}{\bf P}'
 \end{align}
-여기에서 ${\bf P}=cbind({\bf v}_ 1, \dots, {\bf v}_ n)$이고 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이다. 
+여기에서 ${\bf P}=cbind({\bf v}_ 1, \dots, {\bf v}_ n)$이고 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이다. 그리고 ${\bf A}={\bf P}{\bf D}{\bf P}'$를 그대로 풀면 아래와 같이 쓸 수 있다. 
+\begin{align}
+{\bf A}=cbind({\bf v}_ 1, \dots, {\bf v}_ n) diag(\lambda_1, \dots, \lambda_n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n)
+\end{align}
 
 - 임의의 매트릭스 ${\bf A}_ {n \times n}$의 모든 고유값이 양수일때 이러한 행렬 $\bf A$를 *pd*-매트릭스라고 부른다. 고유값이 양수이려면 일단 고유값이 실수이어야 하므로 $\bf A$는 일단 *에르미트*-행렬이어야 한다(혹은 *real-symm*-매트릭스이거나). *pd*-매트릭스의 정의로부터 아래식이 성립한다. 
 \begin{align}
