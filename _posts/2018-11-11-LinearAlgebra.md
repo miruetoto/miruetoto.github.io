@@ -39,12 +39,12 @@ title: (모르면 창피한) 선형대수학
 
 - *real-symm*-매트릭스 $\bf A_ {n \times n}$는 아래와 같이 표현할 수 있다. 특별히 수학적인 의미가 있는건 아니고 단순히 전개한것 뿐이지만 매트릭스 표현법에 익숙해지기 위해서 한번 읽어보자. 
 \begin{align}
-{\bf A}cbind({\bf v}_ 1, \dots, {\bf v}_ n)&=cbind({\bf A}{\bf v}_ 1, \dots, {\bf A}{\bf v}_ n)=cbind(\lambda_1 {\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) \\ 
+{\bf A}cbind({\bf v}_ 1, \dots, {\bf v}_ n)&=cbind({\bf A}{\bf v}_ 1, \dots, {\bf A}{\bf v}_ n)=cbind(\lambda_1 {\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) \\\\ 
 &=cbind({\bf v}_ 1, \dots, {\bf v}_ n)diag(\lambda_1,\dots,\lambda_n)
 \end{align}
 따라서 *real-symm*-매트릭스 $\bf A_ {n \times n}$는 아래와 같이 표현 가능하다. 
 \begin{align}
-{\bf A}={\bf P}{\bf D}{\bf P}'
+{\bf A}{\bf P}={\bf P}{\bf D} ~~ or ~~ {\bf A}={\bf P}{\bf D}{\bf P}'
 \end{align}
 여기에서 ${\bf P}=cbind({\bf v}_ 1, \dots, {\bf v}_ n)$이고 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이다. 
 
