@@ -39,7 +39,7 @@ title: (모르면 창피한) 선형대수학
 
 - 임의의 매트릭스 ${\bf A}_ {n \times n}$의 모든 고유값이 양수일때 이러한 행렬 $\bf A$를 *pd*-매트릭스라고 부른다. 고유값이 양수이려면 일단 고유값이 실수이어야 하므로 $\bf A$는 일단 *에르미트*-행렬이어야 한다(혹은 *real-symm*-매트릭스이거나). *pd*-매트릭스의 정의로부터 아래식이 성립한다. 
 \begin{align}
-{\bf v}'{\bf A}cbind({\bf v}_ 1,\dots,{\bf v}_ n) ={\bf v}'\lambda{\bf v}>0 
+rbind({\bf v}_ 1',\dots,{\bf v}_ n'){\bf A}cbind({\bf v}_ 1,\dots,{\bf v}_ n) ={\bf v}'\lambda{\bf v}>0 
 \end{align}
 여기에서 
 
