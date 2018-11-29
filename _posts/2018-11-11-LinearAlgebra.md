@@ -48,7 +48,7 @@ title: (모르면 창피한) 선형대수학
 \end{align}
 여기에서 ${\bf P}=cbind({\bf v}_ 1, \dots, {\bf v}_ n)$이고 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이다. 그리고 ${\bf A}={\bf P}{\bf D}{\bf P}'$를 그대로 풀면 아래와 같이 쓸 수 있다. 
 \begin{align}
-{\bf A}&=cbind({\bf v}_ 1, \dots, {\bf v}_ n) diag(\lambda_1, \dots, \lambda_n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\\\\\
+{\bf A}&=cbind({\bf v}_ 1, \dots, {\bf v}_ n) diag(\lambda_1, \dots, \lambda_n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\\\
 &=cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\\\\\ 
 &=\sum_{i=1}^{n} \lambda_i {\bf v}_ i {\bf v}'_ i
 \end{align}
@@ -69,7 +69,7 @@ title: (모르면 창피한) 선형대수학
 \begin{align}
 {\bf x}^{H}{\bf A}{\bf x}>0
 \end{align}
-이는 ${\bf A}=PDP'$꼴로 변형하고 위의 식의 대입하면 쉽게 증명할 수 있다. 반대로 어떠한 정사각행렬 ${\bf A}$가 모든 *non-zero vector* ${\bf x}$에 대하여 위의 식을 만족하면 이 행렬 ${\bf A}$는 1) *에르미트*-매트릭스이며 2) 모든 고유치가 양수인 행렬이 된다. 즉 아래식은 *(에르미트)-pd*-매트릭스의 정의처럼 사용가능하다. 
+이는 ${\bf A}=PDP^{H}$꼴로 변형하고 위의 식의 대입하면 쉽게 증명할 수 있다. 반대로 어떠한 정사각행렬 ${\bf A}$가 모든 *non-zero vector* ${\bf x}$에 대하여 위의 식을 만족하면 이 행렬 ${\bf A}$는 1) *에르미트*-매트릭스이며 2) 모든 고유치가 양수인 행렬이 된다. 즉 아래조건은 *(에르미트)-pd*-매트릭스의 정의처럼 사용가능하다. 
 \begin{align}
 \forall {\bf x}\neq {\bf 0}: ~~ {\bf x}^{H}{\bf A}{\bf x}>0
 \end{align}
