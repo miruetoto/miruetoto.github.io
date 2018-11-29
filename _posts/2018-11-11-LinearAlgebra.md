@@ -48,8 +48,8 @@ title: (모르면 창피한) 선형대수학
 \end{align}
 여기에서 ${\bf P}=cbind({\bf v}_ 1, \dots, {\bf v}_ n)$이고 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이다. 그리고 ${\bf A}={\bf P}{\bf D}{\bf P}'$를 그대로 풀면 아래와 같이 쓸 수 있다. 
 \begin{align}
-{\bf A}&=cbind({\bf v}_ 1, \dots, {\bf v}_ n) diag(\lambda_1, \dots, \lambda_n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\
-&=cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\
+{\bf A}&=cbind({\bf v}_ 1, \dots, {\bf v}_ n) diag(\lambda_1, \dots, \lambda_n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\ \\\\
+&=cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\ \\
 &=\sum_{i=1}^{n} \lambda_i {\bf v}_ i {\bf v}'_ i
 \end{align}
 특히 
