@@ -49,7 +49,7 @@ title: (모르면 창피한) 선형대수학
 여기에서 ${\bf P}=cbind({\bf v}_ 1, \dots, {\bf v}_ n)$이고 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이다. 그리고 ${\bf A}={\bf P}{\bf D}{\bf P}'$를 그대로 풀면 아래와 같이 쓸 수 있다. 
 \begin{align}
 {\bf A}&=cbind({\bf v}_ 1, \dots, {\bf v}_ n) diag(\lambda_1, \dots, \lambda_n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\\\\\
-&=cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\
+&=cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n) \\\\\\\\ 
 &=\sum_{i=1}^{n} \lambda_i {\bf v}_ i {\bf v}'_ i
 \end{align}
 특히 
@@ -65,19 +65,15 @@ title: (모르면 창피한) 선형대수학
   2. $cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n)=\sum_{i=1}^{n} \lambda_i {\bf v}_ i {\bf v}'_ i$. <br/><br/>
 
 
-- *real-symm*-매트릭스 ${\bf A}_ {n \times n}$의 모든 고유값이 양수일때 이러한 행렬 $\bf A$를 *pd*-매트릭스라고 부른다. 고유값이 양수이려면 일단 고유값이 실수이어야 하므로 $\bf A$는 일단 *에르미트*-행렬이어야 한다(혹은 *real-symm*-매트릭스이거나). *pd*-매트릭스의 정의로부터 아래식이 성립한다. 
-\begin{align}
-rbind({\bf v}_ 1',\dots,{\bf v}_ n'){\bf A}cbind({\bf v}_ 1,\dots,{\bf v}_ n) ={\bf v}'\lambda{\bf v}>0 
-\end{align}
-여기에서 
-
-
-*에르미트*-매트릭스 ${\bf A}$가 임의의 *non-zero vector* ${\bf x}$에 대하여 아래식을 만족하면 *pd*-매트릭스라고 부른다. 
+- *에르미트*-매트릭스 ${\bf A}_ {n \times n}$의 모든 고유값이 양수일때 이러한 행렬 $\bf A$를 *(에르미트)-pd*-매트릭스라고 부른다. *pd*-매트릭스는 기본적으로 *에르미트*-매트릭스이어야 하므로 이를 앞으로 *(에르미트)-pd*-매트릭스라 표현하겠다. *(에르미트)-pd*-매트릭스는 말그대로 1) 에르미트2) 모든고유치가 양수라는 조건을 만족해야하는데 이러한 2가지 조건이 만족되면 모든 *non-zero vector* ${\bf x}$에 대하여 아래식을 만족한다. 
 \begin{align}
 {\bf x}^{H}{\bf A}{\bf x}>0
 \end{align}
+이는 ${\bf A}=PDP'$꼴로 변형하고 위의 식의 대입하면 쉽게 증명할 수 있다. 반대로 어떠한 정사각행렬 ${\bf A}$가 모든 *non-zero vector* ${\bf x}$에 대하여 위의 식을 만족하면 이 행렬 ${\bf A}$는 1) *에르미트*-매트릭스이며 2) 모든 고유치가 양수인 행렬이 된다. 즉 아래식은 *(에르미트)-pd*-매트릭스의 정의처럼 사용가능하다. 
+\begin{align}
+\forall {\bf x}\neq {\bf 0}: ~~ {\bf x}^{H}{\bf A}{\bf x}>0
+\end{align}
 
-- 
 
 
 --- 
