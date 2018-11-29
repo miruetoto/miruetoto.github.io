@@ -61,6 +61,7 @@ title: (모르면 창피한) 선형대수학
 {\bf A}{\bf P}={\bf P}{\bf D}
 \end{align}
 와 같은 표현도 자주나오므로 익숙해지는 것이 좋다. 또한 위의 과정에서 아래와 같이 매트릭스 계산하는 방식도 눈여겨볼만 하다. 
+
   1. $cbind(\lambda_1 {\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) = cbind({\bf v}_ 1, \dots, {\bf v}_ n)diag(\lambda_1,\dots,\lambda_n)$. <br/>
   2. $cbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n {\bf v}_ n) rbind({\bf v}'_ 1, \dots, {\bf v}'_ n)=\sum_{i=1}^{n} \lambda_i {\bf v}_ i {\bf v}'_ i$. <br/><br/>
 
@@ -74,7 +75,7 @@ title: (모르면 창피한) 선형대수학
 \forall {\bf x}\neq {\bf 0}: ~~ {\bf x}^{H}{\bf A}{\bf x}>0
 \end{align}
 
-- 
+- SVD
 
 --- 
 ### 미세먼지 팁 
