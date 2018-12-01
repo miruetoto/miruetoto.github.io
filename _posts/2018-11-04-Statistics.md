@@ -204,7 +204,10 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 
 ***주성분분석***
 
-- 일반적으로 ${\bf z}_ i \approx {\bf x}_ i$가 되도록 선형변환 $\bf T$를 잡고 싶다면  $z_i$와 $x_i$의 거리차가 작게되도록 만드는 ${\bf T}$를 구하면 된다. 그런데 $z_i$와 $x_i$의 차원이 다르므로 직접거리를 잴 수 없다. 따라서 $z_i$에 ${\bf T'}$를 곱한 아래식을 최소화 한다. 
+- 주성분 분석은 (1) ${\bf z}_ i$가 ${\bf x}_ i$의 정사영이라는 제약아래에서 (2) ${\bf z}_ i \approx {\bf x}_ i$가 최대한 만족하도록 하는 선형변환 ${\bf T}$를 찾고자 하는 기법이다. 여기에서 (1)은  ${\bf T}'{\bf T}={\bf I}_ {p' \times p'}$이라는 조건과 동치이다(이게 이해안되면 선대다시공부해야함). 
+
+
+- (2)를 만족하기 위해서는 $\sum_{i=1}^{n} \\| {\bf z}_ i - {\bf x}_ i \\|^2$을 최소화 하면 될것이다. 그런데 $z_i$와 $x_i$의 차원이 다르므로 직접거리를 잴 수 없다. 따라서 $z_i$에 ${\bf T'}$를 곱한 아래식을 최소화 한다. 
 \begin{align}
 \sum_{i=1}^{n} \\|z_i {\bf T'}-x_i \\|^2= \sum_ {i=1}^{n}  \\| x_i {\bf T} {\bf T'} - x_i \\|^2 
 \end{align}
@@ -217,10 +220,8 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 tr({\bf T'}{\bf X'}{\bf X}{\bf T})
 \end{align}
 
-- ${\bf X}{\bf T}={\bf Z}$임을 떠올리면 결국 PCA는 $tr({\bf Z}'{\bf Z})$를 최대화하는 행렬 ${\bf T}$를 구하는것으로 이해하면 된다. 이때 중요한것은 ${\bf T}'{\bf T}={\bf I}_ {p' \times p'}$이어야 한다는 것이다. 
+- ${\bf X}{\bf T}={\bf Z}$임을 떠올리면 결국 PCA는 $tr({\bf Z}'{\bf Z})$를 최대화하는 행렬 ${\bf T}$를 구하는것으로 이해하면 된다. 
 
 - 어거지로 좀 때려맞추다보면 ${\bf T}$가 ${\bf X'}{\bf X}$의 eigen-vector들로 이루어질 경우에 $tr({\bf Z}'{\bf Z})$가 최대화 된다는 것을 쉽게 알 수 있다. <br/><br/>
   - ${\bf Z'}{\bf Z}={\bf T'}{\bf X'}{\bf X}{\bf T}={\bf T'}{\bf X'}{\bf X}c(t_1,\dots,t_{p'})={\bf T'}cbind({\bf X'}{\bf X}t_1,\dots, {\bf X'}{\bf X}t_{p'})$
   - 
-
-\end{align}
