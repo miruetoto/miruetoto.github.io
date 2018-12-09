@@ -124,4 +124,4 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 rbind({\bf X}_ 1',\dots,{\bf X}_ p') cbind({\bf X}_ 1,\dots,{\bf X}_ p)= \left( {\bf X}'_ i {\bf X}_ j \right)_ {i,j}
 \end{align}
 
-- 
+- $\frac{\beta'\beta}{\patial \beta}$
