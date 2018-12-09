@@ -108,7 +108,10 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 - ${\bf A}$가 *orthogonal*-매트릭스이면 모든 고유값들의 절대값이 1이다. 즉 $\|\lambda\|=1$이다. 이것은 귀류법을 쓰면 쉽게 증명가능하다.
 
 ### 통계학과를 위한 매트릭스 연산들
-- ${\bf X}=cbind(X_1,\dots,X_p)=rbind(x_1,\dots,x_n)$. 
+- 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같은 기호로 표현하면 편리하다. 
+\begin{align}
+{\bf X}=cbind(X_1,\dots,X_p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
+\end{align}
 
 
 
