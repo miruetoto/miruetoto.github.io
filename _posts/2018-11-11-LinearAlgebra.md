@@ -110,9 +110,16 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 ### 통계학과를 위한 매트릭스 연산들
 - 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같은 기호로 표현하면 편리하다. 
 \begin{align}
-{\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
+{\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
 \end{align}
 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 
 
-- 
+- ${\bf X}'$는 아래와 같이 계산한다. 
+\begin{align}
+{\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
+\end{align}
 
+- ${\bf X}'{\bf X}$는 아래와 같다. 
+\begin{align}
+rbind({\bf X}_ 1',\dots,{\bf X}_ p') cbind({\bf X}_ 1,\dots,{\bf X}_ p)= \left( {\bf X}_ i {\bf X}_ j \right)_ {i,j}
+\end{align}
