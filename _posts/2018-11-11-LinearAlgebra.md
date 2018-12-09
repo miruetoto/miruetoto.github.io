@@ -123,5 +123,9 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 \begin{align}
 rbind({\bf X}_ 1',\dots,{\bf X}_ p') cbind({\bf X}_ 1,\dots,{\bf X}_ p)= \left( {\bf X}'_ i {\bf X}_ j \right)_ {i,j}
 \end{align}
+혹은 
+\begin{align}
+cbind({\bf x}_ 1',\dots, {\bf x}_ n') rbind({\bf x}_ 1,\dots, {\bf x}_ n) = \sum_{i=1}^{n} {\bf x}_ i' {\bf x}_ i
+\end{align}
 
 - $\frac{\beta'\beta}{\partial \beta}$
