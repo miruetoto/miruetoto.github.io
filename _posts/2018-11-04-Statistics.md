@@ -220,7 +220,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 tr({\bf T'}{\bf X'}{\bf X}{\bf T})
 \end{align}
 
-- ${\bf X}{\bf T}={\bf Z}$임을 떠올리면 결국 PCA는 $tr({\bf Z}'{\bf Z})$를 최대화하는 행렬 ${\bf T}$를 구하는것으로 이해하면 된다. 
+- ${\bf X}{\bf T}={\bf Z}$임을 떠올리면 결국 PCA는 ${\bf T}{\bf T}'={\bf I}$라는 제약조건하에서 $tr({\bf Z}'{\bf Z})$를 최대화하는 행렬 ${\bf T}$를 구하는것으로 이해하면 된다. 
 
 - 어거지로 좀 때려맞추다보면 ${\bf T}$가 ${\bf X'}{\bf X}$의 eigen-vector들로 이루어질 경우에 $tr({\bf Z}'{\bf Z})$가 최대화 된다는 것을 쉽게 알 수 있다. <br/><br/>
   - ${\bf Z'}{\bf Z}={\bf T'}{\bf X'}{\bf X}{\bf T}={\bf T'}{\bf X'}{\bf X}c(t_1,\dots,t_{p'})={\bf T'}cbind({\bf X'}{\bf X}t_1,\dots, {\bf X'}{\bf X}t_{p'})$
