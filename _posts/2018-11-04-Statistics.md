@@ -217,5 +217,7 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 여기에서 ${\bf X}$는 *given*되어 있으므로 결국 PCA는 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
 \begin{align}
-tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf T}{\bf T}'-{\bf I}\right)
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf I}-{\bf T}{\bf T}'\right)
 \end{align}
+
+- 매트릭스
