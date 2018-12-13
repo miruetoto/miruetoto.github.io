@@ -210,17 +210,12 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \begin{align}
 \sum_{i=1}^{n} \\|{\bf z}_ i {\bf T'}-{\bf x}_ i \\|^2= \sum_ {i=1}^{n}  \\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 
 \end{align}
-고정된 $i$에 대하여 $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 되므로 위의식은 아래와 같이 정리된다. 
+고정된 $i$에 대하여 $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 된다. (이것은 ${\bf a}$가 row-vector일때 $\\|{\bf a}\\|^2={\bf a}{\bf a}'$임을 이용하면 쉽게 구할수 있음.)
+따라서 위의식은 아래와 같이 정리된다. 
 \begin{align}
 \sum_{i=1}^{n}  \\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 = -tr({\bf T'}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X})
 \end{align}
-여기에서 ${\bf X}$는 *given*되어 있으므로 결국 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
+여기에서 ${\bf X}$는 *given*되어 있으므로 결국 PCA는 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
 \begin{align}
-tr({\bf T'}{\bf X'}{\bf X}{\bf T})
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf T}{\bf T}'-{\bf I}\right)
 \end{align}
-
-- ${\bf X}{\bf T}={\bf Z}$임을 떠올리면 결국 PCA는 ${\bf T}{\bf T}'={\bf I}$라는 제약조건하에서 $tr({\bf Z}'{\bf Z})$를 최대화하는 행렬 ${\bf T}$를 구하는것으로 이해하면 된다. 
-
-- 어거지로 좀 때려맞추다보면 ${\bf T}$가 ${\bf X'}{\bf X}$의 eigen-vector들로 이루어질 경우에 $tr({\bf Z}'{\bf Z})$가 최대화 된다는 것을 쉽게 알 수 있다. <br/><br/>
-  - ${\bf Z'}{\bf Z}={\bf T'}{\bf X'}{\bf X}{\bf T}={\bf T'}{\bf X'}{\bf X}c(t_1,\dots,t_{p'})={\bf T'}cbind({\bf X'}{\bf X}t_1,\dots, {\bf X'}{\bf X}t_{p'})$
-  - 
