@@ -17,7 +17,7 @@ title: (매우 얕은) 통계학
 
 ***Anomaly detection***
 - 주어진 입력표본 $\\{x_i\\}_ {i=1}^{n}$에 포함된 비정상적인 값을 발견하는 문제이다. 
-- 밀집해있는 자료를 정상으로 간주하고 그 군집으로부터 멀리 떨어진 자료를 비정상으로 간주한다. (Line형태로 군집이 이루어지면 어쩔꺼야? ㅋㅋ) 
+- 밀집해있는 자료를 정상으로 간주하고 그 군집으로부터 멀리 떨어진 자료를 비정상으로 간주한다. 
 
 ***Clustering*** 
 - 표본간의 유사도를 측정하는 방법을 적절히 선택하는 것이 중요하다. 
@@ -25,8 +25,7 @@ title: (매우 얕은) 통계학
 - hst에서도 전체 smoothness를 정의하는 어떠한 방법이 있으면 좋겠네. Total variation의 개념과도 연결되는것 같다? 
 
 ***Dimensionality reduction***
-- 입력차원 $\\{ cbind(x_{i1},\dots,x_{ip}) \\}_ {i=1}^{n}$의 차원이 매우 클때 그것을 낮은차원의 자료들 $\\{ cbind(z_ {i1},\dots,z_{ip'}) \\}_ {i=1}^{n}$로 바꾸는 방법
-- 차원축소를 수행하는 연산이 선형이면 적당한 행렬 ${\bf T}_ {p \times p'}$를 사용하여 $cbind(z_{i1}, \dots, z_{ip'})=cbind(x_{i1},\dots,x_{ip'}){\bf T}$와 같은 방식으로 쓸 수 있음.
+- 입력차원이 클때 그것을 낮은차원의 자료들로 바꾸는 방법이다. 
 
 ---
 
@@ -53,6 +52,7 @@ title: (매우 얕은) 통계학
 
 
 ***Frequentis vs Bayesian***
+- ~~솔직히 아직도 차이 잘 모르겠다.~~ 
 - Frequentist는 $\theta$를 확률변수로 보지 않는다. (fixed paramater라고 생각함.)
 - Bayesian은 $\theta$를 확률변수라고 생각한다. 
 - 따라서 Frequentist는 $\theta$의 값을 MLE와 같은 방법으로 구하려고 하지만 Bayesian는 $\theta$의 (posterior) distribution 관심이 있다. 
@@ -215,11 +215,20 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \end{align}
 잠깐 세부계산을 살펴보자. <br/><br/>
 1) $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 되는것은 ${\bf a}$가 row-vector일때 $\\|{\bf a}\\|^2={\bf a}{\bf a}'$임을 이용하면 쉽게 구할 수 있다. <br/><br/>
-2) $\sum_{i=1}^{n}{\bf x}_ i {\bf x}_ i'=tr({\bf X}{\bf X}')=tr({\bf X}'{\bf X})$가 된다. 여기에서 두번째 등호가 성립하는 이유는 $tr({\bf A})=tr({\bf A}')$를 사용해도 되고 $tr({\bf A}{\bf B})=tr({\bf B}{\bf A})$를 사용해도 된다. 혹은 매트릭스쿡북 p6-(17) 공식 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 이용할수도 있다. 매트릭스쿡북의 공식은 col-vector일때를 기준으로 쓴 것이므로 row-vector인 ${\bf x}_ i$의 경우는 $ {\bf x}_ i {\bf x}_ i'=tr({\bf x}_ i' {\bf x}_ i)$와 같이 적용할 수 있다. 따라서 $\sum_{i=1}^{n} {\bf x}_ i {\bf x}_ i' =\sum_{i=1}^{n}tr({\bf x}_ i' {\bf x}_ i)=tr(\sum_{i=1}^{n}{\bf x}_ i' {\bf x}_ i)=tr({\bf X}'{\bf X})$가 된다.  <br/><br/>
-3) 위에서 언급한 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 다시 이용하면 ${\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T'} {\bf x}_ i'{\bf x}_ i {\bf T})$가 된다. 따라서 $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr\left({\bf T}'\left(\sum_i^n {\bf x}_ i'{\bf x}_ i \right) {\bf T}\right)=tr({\bf T}'{\bf X}'{\bf X}{\bf T})$가 된다. <br/><br/>
 
-- 여기에서 ${\bf X}$는 *given*되어 있으므로 결국 PCA는 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
+2) $\sum_{i=1}^{n}{\bf x}_ i {\bf x}_ i'=tr({\bf X}{\bf X}')=tr({\bf X}'{\bf X})$가 된다. 여기에서 두번째 등호가 성립하는 이유는 $tr({\bf A})=tr({\bf A}')$를 사용해도 되고 $tr({\bf A}{\bf B})=tr({\bf B}{\bf A})$를 사용해도 된다. <br/><br/>
+
+3) 혹은 매트릭스쿡북 p6-(17) 공식 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 이용하여 2)의 수식을 계산할 수도 있다. 
+매트릭스쿡북의 공식은 col-vector일때를 기준으로 쓴 것이므로 row-vector인 ${\bf x}_ i$의 경우는 $ {\bf x}_ i {\bf x}_ i'=tr({\bf x}_ i' {\bf x}_ i)$와 같이 적용할 수 있다. 따라서 $\sum_{i=1}^{n} {\bf x}_ i {\bf x}_ i' =\sum_{i=1}^{n}tr({\bf x}_ i' {\bf x}_ i)=tr(\sum_{i=1}^{n}{\bf x}_ i' {\bf x}_ i)=tr({\bf X}'{\bf X})$가 된다.  <br/><br/>
+
+4) 위에서 언급한 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 다시 이용하면 ${\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T'} {\bf x}_ i'{\bf x}_ i {\bf T})$가 된다. 따라서 $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr\left({\bf T}'\left(\sum_i^n {\bf x}_ i'{\bf x}_ i \right) {\bf T}\right)=tr({\bf T}'{\bf X}'{\bf X}{\bf T})$가 된다. <br/><br/>
+
+- 세부 계산때문에 다소 난잡해졌지만 PCA는 결국 ${\bf T}'{\bf T}={\bf I}$라는 제약조건하에서 아래식을 최소화하는 ${\bf T}$를 찾으면 된다. 
 \begin{align}
-tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf I}-{\bf T}{\bf T}'\right)
+-tr({\bf T'}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X})
+\end{align}
+여기에서 ${\bf X}$는 *given*되어 있으므로 ${\bf T}$에 대한 상수이다. 라그랑주 승수법을 사용하면 결국 PCA는 아래식을 최대화하는 $({\bf T},\lambda)$를 찾으면 된다. 
+\begin{align}
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf I}-{\bf T}'{\bf T}\right)
 \end{align}
 
