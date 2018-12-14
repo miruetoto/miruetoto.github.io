@@ -205,7 +205,6 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 
 - 주성분 분석은 (1) ${\bf z}_ i$가 ${\bf x}_ i$의 정사영이라는 제약아래에서 (2) ${\bf z}_ i \approx {\bf x}_ i$가 최대한 만족하도록 하는 선형변환 ${\bf T}$를 찾고자 하는 기법이다. 여기에서 (1)은  ${\bf T}'{\bf T}={\bf I}_ {p' \times p'}$이라는 조건과 동치이다(이게 이해안되면 선대다시공부해야함). 
 
-
 - (2)를 만족하기 위해서는 $\sum_{i=1}^{n} \\| {\bf z}_ i - {\bf x}_ i \\|^2$을 최소화 하면 될것이다. 그런데 ${\bf z}_ i$와 ${\bf x}_ i$의 차원이 다르므로 직접거리를 잴 수 없다. 따라서 ${\bf z}_ i$에 ${\bf T'}$를 곱한 아래식을 최소화 한다. 
 \begin{align}
 \sum_{i=1}^{n} \\|{\bf z}_ i {\bf T'}-{\bf x}_ i \\|^2= \sum_ {i=1}^{n}  \\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 
@@ -214,12 +213,12 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \begin{align}
 \sum_{i=1}^{n}  \\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 = -tr({\bf T'}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X})
 \end{align}
-잠깐 세부계산을 살펴보자. 
-1) $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 되는것은 ${\bf a}$가 row-vector일때 $\\|{\bf a}\\|^2={\bf a}{\bf a}'$임을 이용하면 쉽게 구할 수 있다. 
-2) $\sum_{i=1}^{n}{\bf x}_ i {\bf x}_ i'=tr({\bf X}{\bf X}')=tr({\bf X}'{\bf X})$가 된다. 여기에서 두번째 등호가 성립하는 이유는 $tr({\bf A})=tr({\bf A}')$를 사용해도 되고 $tr({\bf A}{\bf B})=tr({\bf B}{\bf A})$를 사용해도 된다. 혹은 매트릭스쿡북 p6-(17) 공식 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 이용할수도 있다. 그러면 $\sum_{i=1}^{n} {\bf x}_ i {\bf x}_ i ' =\sum_{i=1}^{n}tr({\bf x}_ i' {\bf x}_ i)=tr(\sum_{i=1}^{n}{\bf x}_ i' {\bf x}_ i)=tr({\bf X}'{\bf X})$가 된다.  
-3) 위에서 언급한 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 다시 이용하면 ${\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T'} {\bf x}_ i'{\bf x}_ i {\bf T})$가 된다. 따라서 $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr\left({\bf T}'\left(\sum_i^n {\bf x}_ i'{\bf x}_ i \right) {\bf T}\right)=tr({\bf T}'{\bf X}'{\bf X}{\bf T})$가 된다. 
+잠깐 세부계산을 살펴보자. <br/><br/>
+1) $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 되는것은 ${\bf a}$가 row-vector일때 $\\|{\bf a}\\|^2={\bf a}{\bf a}'$임을 이용하면 쉽게 구할 수 있다. <br/><br/>
+2) $\sum_{i=1}^{n}{\bf x}_ i {\bf x}_ i'=tr({\bf X}{\bf X}')=tr({\bf X}'{\bf X})$가 된다. 여기에서 두번째 등호가 성립하는 이유는 $tr({\bf A})=tr({\bf A}')$를 사용해도 되고 $tr({\bf A}{\bf B})=tr({\bf B}{\bf A})$를 사용해도 된다. 혹은 매트릭스쿡북 p6-(17) 공식 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 이용할수도 있다. 매트릭스쿡북의 공식은 col-vector일때를 기준으로 쓴 것이므로 row-vector인 ${\bf x}_ i$의 경우는 $ {\bf x}_ i {\bf x}_ i'=tr({\bf x}_ i' {\bf x}_ i)$와 같이 적용할 수 있다. 따라서 $\sum_{i=1}^{n} {\bf x}_ i {\bf x}_ i' =\sum_{i=1}^{n}tr({\bf x}_ i' {\bf x}_ i)=tr(\sum_{i=1}^{n}{\bf x}_ i' {\bf x}_ i)=tr({\bf X}'{\bf X})$가 된다.  <br/><br/>
+3) 위에서 언급한 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 다시 이용하면 ${\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T'} {\bf x}_ i'{\bf x}_ i {\bf T})$가 된다. 따라서 $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr\left({\bf T}'\left(\sum_i^n {\bf x}_ i'{\bf x}_ i \right) {\bf T}\right)=tr({\bf T}'{\bf X}'{\bf X}{\bf T})$가 된다. <br/><br/>
 
-여기에서 ${\bf X}$는 *given*되어 있으므로 결국 PCA는 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
+- 여기에서 ${\bf X}$는 *given*되어 있으므로 결국 PCA는 아래식을 최대화하는 ${\bf T}$를 찾으면 된다. 
 \begin{align}
 tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf I}-{\bf T}{\bf T}'\right)
 \end{align}
