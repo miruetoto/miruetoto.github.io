@@ -214,19 +214,15 @@ y_i=f(x_i)+\epsilon_i=\sum coef \times basis +\epsilon_i= \sum_{j=1}^{p} \theta_
 \sum_{i=1}^{n}  \\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 = -tr({\bf T'}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X})
 \end{align}
 잠깐 세부계산을 살펴보자. <br/><br/>
-1) $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 되는것은 ${\bf a}$가 row-vector일때 $\\|{\bf a}\\|^2={\bf a}{\bf a}'$임을 이용하면 쉽게 구할 수 있다. <br/>
-2) $\sum_{i=1}^{n}{\bf x}_ i {\bf x}_ i'=tr({\bf X}{\bf X}')=tr({\bf X}'{\bf X})$가 된다. 여기에서 두번째 등호가 성립하는 이유는 $tr({\bf A})=tr({\bf A}')$를 사용해도 되고 $tr({\bf A}{\bf B})=tr({\bf B}{\bf A})$를 사용해도 된다. <br/>
+1) $\\| {\bf x}_ i {\bf T} {\bf T'} - {\bf x}_ i \\|^2 $을 풀면 ${\bf x}_ i{\bf x}_ i' -{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'$가 되는것은 ${\bf a}$가 row-vector일때 $\\|{\bf a}\\|^2={\bf a}{\bf a}'$임을 이용하면 쉽게 구할 수 있다. <br/><br/>
+2) $\sum_{i=1}^{n}{\bf x}_ i {\bf x}_ i'=tr({\bf X}{\bf X}')=tr({\bf X}'{\bf X})$가 된다. 여기에서 두번째 등호가 성립하는 이유는 $tr({\bf A})=tr({\bf A}')$를 사용해도 되고 $tr({\bf A}{\bf B})=tr({\bf B}{\bf A})$를 사용해도 된다. <br/><br/>
 3) 혹은 매트릭스쿡북 p6-(17) 공식 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 이용하여 2)의 수식을 계산할 수도 있다. 
 매트릭스쿡북의 공식은 col-vector일때를 기준으로 쓴 것이므로 row-vector인 ${\bf x}_ i$의 경우는 $ {\bf x}_ i {\bf x}_ i'=tr({\bf x}_ i' {\bf x}_ i)$와 같이 적용할 수 있다. 따라서 
-\begin{align}
-\sum_{i=1}^{n} {\bf x}_ i {\bf x}_ i' =\sum_{i=1}^{n}tr({\bf x}_ i' {\bf x}_ i)=tr(\sum_{i=1}^{n}{\bf x}_ i' {\bf x}_ i)=tr({\bf X}'{\bf X})
-\end{align}
-와 같이 된다.  <br/>
+$\sum_{i=1}^{n} {\bf x}_ i {\bf x}_ i' =\sum_{i=1}^{n}tr({\bf x}_ i' {\bf x}_ i)=tr(\sum_{i=1}^{n}{\bf x}_ i' {\bf x}_ i)=tr({\bf X}'{\bf X})$
+와 같이 된다.  <br/><br/>
 4) 위에서 언급한 ${\bf a}'{\bf a}=tr({\bf a}{\bf a}')$를 다시 이용하면 ${\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T'} {\bf x}_ i'{\bf x}_ i {\bf T})$가 된다. 따라서 
-\begin{align}
-\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T}'\sum_i^n {\bf x}_ i'{\bf x}_ i  {\bf T})=tr({\bf T}'{\bf X}'{\bf X}{\bf T})
-\end{align}
-가 된다. <br/>
+$\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T}'\sum_i^n {\bf x}_ i'{\bf x}_ i  {\bf T})=tr({\bf T}'{\bf X}'{\bf X}{\bf T})$
+가 된다. <br/><br/>
 
 - 세부 계산때문에 다소 난잡해졌지만 PCA는 결국 ${\bf T}'{\bf T}={\bf I}$라는 제약조건하에서 아래식을 최소화하는 ${\bf T}$를 찾으면 된다. 
 \begin{align}
