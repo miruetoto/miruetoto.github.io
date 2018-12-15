@@ -34,13 +34,13 @@ title: (모르면 창피한) 선형대수학
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
-- ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$이라고 하자. ${\bf A}_ {p \times p}$에 대하여 아래처럼 쓸 수 있다.  
+- ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$이라고 하자. ${\bf A}$에 대하여 아래처럼 쓸 수 있다.  
 <br/><br/>
-  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_p {\bf A}_ p)$ 
-  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_p)rbind({\bf a}_ 1, \dots, {\bf a}_ p)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ p)$<br/><br/>
+  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_p {\bf A}_ p)$, 이때 ${\bf A}_ p =A[,p]$이다.  
+  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_p)rbind({\bf a}_ 1, \dots, {\bf a}_ p)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ p)$, 이때 ${\bf a}_ n =A[n,]$이다. <br/><br/>
 
-- 따라서 ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$, ${\bf V}'_ {p \times p}$, ${\bf U}_ {n \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
-  - ${\bf U}_ {n \times p} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf U}_ 1,\dots, \lambda_p{\bf U}_ p)$
+- 따라서 ${\bf U}_ {n \times p}$, ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$, ${\bf V}'_ {p \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
+  - ${\bf U} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf U}_ 1,\dots, \lambda_p{\bf U}_ p)$
   - ${\bf D}{\bf V}'=diag(\lambda_1,\dots,\lambda_p)rbind({\bf V}_ 1', \dots, {\bf V}_ p')=rbind(\lambda_1{\bf V}_ 1', \dots, \lambda_p{\bf U}_ p')$
   - ${\bf U}{\bf D}{\bf V}'= \sum_{i =1}^{p} \lambda_i {\bf U}_ i {\bf V}_ i'$. <br/><br/>
   
