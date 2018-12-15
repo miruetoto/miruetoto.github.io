@@ -34,19 +34,19 @@ title: (모르면 창피한) 선형대수학
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
-- ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf A}_ {n \times n}$에 대하여 아래처럼 쓸 수 있다.  
+- ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$이라고 하자. ${\bf A}_ {p \times p}$에 대하여 아래처럼 쓸 수 있다.  
 <br/><br/>
-  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ n)diag(\lambda_1,\dots,\lambda_n)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_n {\bf A}_ n)$ 
-  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ n)$<br/><br/>
+  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_p {\bf A}_ p)$ 
+  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_p)rbind({\bf a}_ 1, \dots, {\bf a}_ p)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ p)$<br/><br/>
 
-- 따라서 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$, ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
-  - ${\bf U}_ {p \times n} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ n)diag(\lambda_1,\dots,\lambda_n)$
-  - ${\bf D}{\bf U}'=diag(\lambda_1,\dots,\lambda_n)rbind({\bf U}_ 1', \dots, {\bf U}_ n')=rbind(\lambda_1{\bf U}_ 1', \dots, \lambda_n{\bf U}_ n')$
-  - ${\bf V}{\bf D}{\bf U}'= \sum_{i =1}^{n} \lambda_i {\bf V}_ i {\bf U}_ i'$. <br/><br/>
+- 따라서 ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$, ${\bf V}'_ {p \times p}$, ${\bf U}_ {n \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
+  - ${\bf U}_ {n \times p} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf U}_ 1,\dots, \lambda_p{\bf U}_ p)$
+  - ${\bf D}{\bf V}'=diag(\lambda_1,\dots,\lambda_p)rbind({\bf V}_ 1', \dots, {\bf V}_ p')=rbind(\lambda_1{\bf V}_ 1', \dots, \lambda_p{\bf U}_ p')$
+  - ${\bf U}{\bf D}{\bf V}'= \sum_{i =1}^{p} \lambda_i {\bf U}_ i {\bf V}_ i'$. <br/><br/>
   
 - 가끔씩 ${\bf D}$를 정사각행렬이 아니라 사각행렬로 ${\bf D}_ {n \times m}$로 정의할때도 있다. 가령 예를 들어 ${\bf D}_ {2 \times 3}=rbind(c(\lambda_1,0,0),c(0,\lambda_2,0))$ 혹은 ${\bf D}_ {3\times 2}=rbind(c(\lambda_1,0),c(0,\lambda_2),c(0,0))$과 같이 정의하는 식이다. 위의 두 경우 모두 편의상 $diag(\lambda_1,\lambda_2)$로 표현가능하다. 그리고 이 경우에는 행렬곱을 $min(n,m)$까지만 전개하면된다. 즉 아래와 같은 식이다. <br/><br/>
-  - $cbind({\bf V}_ 1,{\bf V}_ 2,{\bf V}_ 3){\bf D}_ {3 \times 2}=cbind({\bf V}_ 1,{\bf V}_ 2,{\bf V}_ 3)diag(\lambda_1,\lambda_2)=cbind(\lambda_1{\bf V}_ 1,\lambda_2{\bf V}_ 2)$.
-  - ${\bf D}_ {2 \times 3} rbind({\bf U}'_ 1, {\bf U}'_ 2)= diag(\lambda_1,\lambda_2)rbind({\bf U}'_ 1, {\bf U}'_ 2)=rbind(\lambda_1{\bf U}'_ 1, \lambda_2{\bf U}'_ 2)$. 
+  - $cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3)diag(\lambda_1,\lambda_2)=cbind(\lambda_1{\bf U}_ 1,\lambda_2{\bf U}_ 2)$.
+  - ${\bf D}_ {2 \times 3} rbind({\bf V}'_ 1, {\bf V}'_ 2)= diag(\lambda_1,\lambda_2)rbind({\bf V}'_ 1, {\bf V}'_ 2)=rbind(\lambda_1{\bf V}'_ 1, \lambda_2{\bf V}'_ 2)$. 
  
 
 ***trace***
