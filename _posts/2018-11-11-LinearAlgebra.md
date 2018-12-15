@@ -36,8 +36,8 @@ title: (모르면 창피한) 선형대수학
 
 - ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$이라고 하자. ${\bf A}$에 대하여 아래처럼 쓸 수 있다.  
 <br/><br/>
-  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_p {\bf A}_ p)$, 이때 ${\bf A}_ p =A[,p]$이다.  
-  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_p)rbind({\bf a}_ 1, \dots, {\bf a}_ p)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ p)$, 이때 ${\bf a}_ n =A[n,]$이다. <br/><br/>
+  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_p {\bf A}_ p)$.  
+  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_p)rbind({\bf a}_ 1, \dots, {\bf a}_ p)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ p)$. <br/><br/>
 
 - 따라서 ${\bf U}_ {n \times p}$, ${\bf D}=diag(\lambda_1,\dots,\lambda_p)$, ${\bf V}'_ {p \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
   - ${\bf U} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ p)diag(\lambda_1,\dots,\lambda_p)=cbind(\lambda_1{\bf U}_ 1,\dots, \lambda_p{\bf U}_ p)$
