@@ -61,7 +61,9 @@ title: (모르면 창피한) 선형대수학
 {\bf a}{\bf a}'=tr({\bf a}'{\bf a})
 \end{align}
 
-
+--- 
+### 미분 (Derivatives) 
+- 
 
 ---
 
