@@ -41,7 +41,7 @@ title: (모르면 창피한) 선형대수학
 \end{align}
 
 
-### Eigenvalues, Eigenvectors.  
+### Decomp - Eigenvalue and Eigenvectors.  
 - 임의의 정사각행렬 ${\bf A}_ {n \times n}$에 대하여 어떠한 벡터 ${\bf v}_ {n \times 1} \neq {\bf 0}$가 적당한값 $\lambda$에 대하여 아래식을 만족하면 $\bf v$를 $\bf A$의 고유벡터라고 한다. 
 \begin{align}
 {\bf A v}= \lambda {\bf v}
@@ -112,7 +112,7 @@ title: (모르면 창피한) 선형대수학
 \end{align}
 
 --- 
-### Eigenvalue, Eigenvector에 대한 미세먼지 팁 
+***Eigenvalue, Eigenvector에 대한 미세먼지 팁****
 - **모든 고유값들의 합은 원래 행렬의 trace와 같고 모든 고유값들의 곱은 원래 행렬의 determinent와 같다. 이 사실은 임의의 정사각행렬에서 성립한다.** 즉 임의의 정사각행렬에서 $tr({\bf A}_ {n \times n})=\sum_{i=1}^{n} \lambda_i$이고 $det({\bf A}_ {n \times n})=\prod_{i=1}^{n}\lambda_i$이다. 이 사실은 그냥 증명없이 외우자. 
 
 - ***sing*-매트릭스의 고유값에는 0이 적어도 하나는 포함되어 있다.** 이 사실은 **모든 고유값들의 곱은 원래 행렬의 determinent와 같다**는 사실을 떠올리면 쉽게 이해할 수 있다. 
@@ -143,6 +143,6 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 
 
 --- 
-### Singular Value Decomposition
+### Decomp - Singular Value Decomposition
 - ㅇㅇ
 
