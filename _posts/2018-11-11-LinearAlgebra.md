@@ -37,6 +37,7 @@ title: (모르면 창피한) 선형대수학
 - ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래가 성립한다. <br/><br/>
   - ${\bf V}{\bf D}=cbind({\bf V}_ 1, \dots, {\bf V}_ n)diag(\lambda_1,\dots,\lambda_n)=cbind(\lambda_1{\bf V}_ 1,\dots,\lambda_n {\bf V}_ n)$ 
   - ${\bf D}{\bf V}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf v}_ 1, \dots, {\bf v}_ n)=rbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n{\bf v}_ n)$
+  - ${\bf U}_ {p \times n} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ n)diag(\lambda_1,\dots,\lambda_n)$
 
 
 ***trace***
