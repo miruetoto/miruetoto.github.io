@@ -38,7 +38,8 @@ title: (모르면 창피한) 선형대수학
   - ${\bf V}{\bf D}=cbind({\bf V}_ 1, \dots, {\bf V}_ n)diag(\lambda_1,\dots,\lambda_n)=cbind(\lambda_1{\bf V}_ 1,\dots,\lambda_n {\bf V}_ n)$ 
   - ${\bf D}{\bf V}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf v}_ 1, \dots, {\bf v}_ n)=rbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n{\bf v}_ n)$
   - ${\bf U}_ {p \times n} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ n)diag(\lambda_1,\dots,\lambda_n)$
-
+  - ${\bf D}{\bf U}'=diag(\lambda_1,\dots,\lambda_n)rbind({\bf U}_ 1', \dots, {\bf U}_ n')=rbind(\lambda_1{\bf U}_ 1', \dots, \lambda_n{\bf U}_ n')$
+  - ${\bf V}{\bf D}{\bf U}'= \sum_{i =1}^{n} \lambda_i {\bf V}_ i {\bf U}_ i'$. 
 
 ***trace***
 - $tr({\bf A})=tr({\bf A}')$
