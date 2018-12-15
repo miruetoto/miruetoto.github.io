@@ -5,8 +5,10 @@ title: (모르면 창피한) 선형대수학
 
 선형대수학은 학부 1학년에 배우는 매우 쉬운 과목이지만 기본적인 개념이 헷갈릴때가 있다. 그럴때 마다 다시 선형대수학책을 꺼내들고 공부하게 되는데 이러한 무의미한 반복을 줄이고 싶다. 또 선형대수학책을 다시 꺼내는것 자체가 솔직히 너무 창피하다. 그래서 공부하고 싶었다, 몰라서 창피하지 않게 하려고. 그래서 본 문서의 제목은 모르면 창피한 선형대수학이다. 그리고 본 문서에서 정리하는 선형대수학은 통계학과 연관성이 있는 내용위주로 정리하였음을 미리 밝힌다(난 통계학과니깐!). 본 문서를 만들때 참고한 문헌은 아래와 같다. 
 
-- Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical University of Denmark, 7(15), 510.
-- 
+- Petersen, K. B., & Pedersen, M. S. (2008). The matrix cookbook. Technical University of Denmark, 7(15), 510.
+- Strang, G. (2006). Linear Algebra and Its Applications. Thomson, Brooks/Cole
+
+--- 
 
 ### (통계학과를 위한) 기본 매트릭스 연산
 
