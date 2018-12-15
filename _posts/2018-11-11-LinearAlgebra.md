@@ -25,7 +25,7 @@ title: (모르면 창피한) 선형대수학
 {\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
 \end{align}
 - 복소행렬의 경우는 transpose대신에 $H$를 사용한다. 
-- 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. col-vector일 경우와 row-vector일 경우정의가 다르다. 즉 $\\| {\bf X}_ p \\|_2^2={\bf X}_ p'{\bf X}_ p$이고 
+- 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. col-vector일 경우와 row-vector일 경우정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 
 
 ***행렬곱***
 - ${\bf X}'{\bf X}$는 아래와 같이 표현할 수 있다. <br/><br/>
