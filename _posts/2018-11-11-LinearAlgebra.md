@@ -34,14 +34,19 @@ title: (모르면 창피한) 선형대수학
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
-- ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$에 대하여 아래처럼 쓸 수 있다.  
+- ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf A}_ {n \times n}$에 대하여 아래처럼 쓸 수 있다.  
 <br/><br/>
-  - ${\bf V}{\bf D}=cbind({\bf V}_ 1, \dots, {\bf V}_ n)diag(\lambda_1,\dots,\lambda_n)=cbind(\lambda_1{\bf V}_ 1,\dots,\lambda_n {\bf V}_ n)$ 
-  - ${\bf D}{\bf V}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf v}_ 1, \dots, {\bf v}_ n)=rbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n{\bf v}_ n)$<br/><br/>
-따라서 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$, ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
+  - ${\bf A}{\bf D}=cbind({\bf A}_ 1, \dots, {\bf A}_ n)diag(\lambda_1,\dots,\lambda_n)=cbind(\lambda_1{\bf A}_ 1,\dots,\lambda_n {\bf A}_ n)$ 
+  - ${\bf D}{\bf A}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n)=rbind(\lambda_1{\bf a}_ 1, \dots, \lambda_n{\bf a}_ n)$<br/><br/>
+
+- 따라서 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$, ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
   - ${\bf U}_ {p \times n} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ n)diag(\lambda_1,\dots,\lambda_n)$
   - ${\bf D}{\bf U}'=diag(\lambda_1,\dots,\lambda_n)rbind({\bf U}_ 1', \dots, {\bf U}_ n')=rbind(\lambda_1{\bf U}_ 1', \dots, \lambda_n{\bf U}_ n')$
-  - ${\bf V}{\bf D}{\bf U}'= \sum_{i =1}^{n} \lambda_i {\bf V}_ i {\bf U}_ i'$. 
+  - ${\bf V}{\bf D}{\bf U}'= \sum_{i =1}^{n} \lambda_i {\bf V}_ i {\bf U}_ i'$. <br/><br/>
+  
+- 가끔씩 ${\bf D}$를 정사각행렬이 아니라 사각행렬로 정의할때도 있다. 가령 예를 들어 ${\bf D}=rbind(c(1,0,0),c(0,2,0))$ 혹은 ${\bf D}=rbind(c(1,0),c(0,2),c(0,0))$과 같이 정의하는 식이다. 이 경우에는 
+  
+ 
 
 ***trace***
 - $tr({\bf A})=tr({\bf A}')$
