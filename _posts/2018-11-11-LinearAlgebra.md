@@ -25,7 +25,7 @@ title: (모르면 창피한) 선형대수학
 {\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
 \end{align}
 - 복소행렬의 경우는 transpose대신에 $H$를 사용한다. 
-- 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. col-vector일 경우와 row-vector일 경우정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 
+- 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 $\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'$이다. 
 
 ***행렬곱***
 - ${\bf X}'{\bf X}$는 아래와 같이 표현할 수 있다. <br/><br/>
@@ -34,8 +34,9 @@ title: (모르면 창피한) 선형대수학
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
-- ${\bf D}=diag(\lambda_1,\dots,lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래가 성립한다. <br/><br/>
-  - ${\bf A}{\bf D}=rbind
+- ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래가 성립한다. <br/><br/>
+  - ${\bf V}{\bf D}=rbind({\bf v}_ 1, \dots, {\bf v}_ n)diag(\lambda_1,\dots,\lambda_n)$ 
+  - 
 
 
 ***trace***
