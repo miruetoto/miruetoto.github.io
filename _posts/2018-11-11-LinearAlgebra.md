@@ -34,9 +34,11 @@ title: (모르면 창피한) 선형대수학
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
-- ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래가 성립한다. <br/><br/>
+- ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$에 대하여 아래처럼 쓸 수 있다.  
+<br/><br/>
   - ${\bf V}{\bf D}=cbind({\bf V}_ 1, \dots, {\bf V}_ n)diag(\lambda_1,\dots,\lambda_n)=cbind(\lambda_1{\bf V}_ 1,\dots,\lambda_n {\bf V}_ n)$ 
-  - ${\bf D}{\bf V}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf v}_ 1, \dots, {\bf v}_ n)=rbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n{\bf v}_ n)$
+  - ${\bf D}{\bf V}=diag(\lambda_1,\dots,\lambda_n)rbind({\bf v}_ 1, \dots, {\bf v}_ n)=rbind(\lambda_1{\bf v}_ 1, \dots, \lambda_n{\bf v}_ n)$<br/><br/>
+따라서 ${\bf D}=diag(\lambda_1,\dots,\lambda_n)$, ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래와 같이 쓸 수 있다.<br/><br/> 
   - ${\bf U}_ {p \times n} {\bf D}=cbind({\bf U}_ 1,\dots, {\bf U}_ n)diag(\lambda_1,\dots,\lambda_n)$
   - ${\bf D}{\bf U}'=diag(\lambda_1,\dots,\lambda_n)rbind({\bf U}_ 1', \dots, {\bf U}_ n')=rbind(\lambda_1{\bf U}_ 1', \dots, \lambda_n{\bf U}_ n')$
   - ${\bf V}{\bf D}{\bf U}'= \sum_{i =1}^{n} \lambda_i {\bf V}_ i {\bf U}_ i'$. 
