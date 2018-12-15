@@ -105,6 +105,7 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 
 - ${\bf A}$가 *orthogonal*-매트릭스이면 모든 고유값들의 절대값이 1이다. 즉 $\|\lambda\|=1$이다. 이것은 귀류법을 쓰면 쉽게 증명가능하다.
 
+
 --- 
 ### Singular Value Decomposition
 - ㅇㅇ
@@ -112,24 +113,30 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 ---
 
 ### (통계학과를 위한) 기본 매트릭스 연산
+
+***디자인매트릭스의 표현법***
 - 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같은 기호로 표현하면 편리하다. 
 \begin{align}
 {\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
 \end{align}
-여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 
+여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 이때 ${\bf x}_ n$과 같은 경우는 row-vector임을 유의하자. 
 
-***transpose와 행렬곱셈*** 
-- ${\bf X}'$는 아래와 같이 계산한다. 
+***transpose*** 
+- ${\bf X}'$는 아래와 같이 표현할 수 있다. 
 \begin{align}
 {\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
 \end{align}
+- 복소행렬의 경우는 transpose대신에 $H$를 사용한다. 
+- 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. col-vector일 경우와 row-vector일 경우정의가 다르다. 즉 $\\| {\bf X}_ p \\|_2^2={\bf X}_ p'{\bf X}_ p$이고 
 
+***행렬곱***
 - ${\bf X}'{\bf X}$는 아래와 같이 표현할 수 있다. <br/><br/>
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') cbind({\bf X}_ 1,\dots,{\bf X}_ p)= \left( {\bf X}'_ i {\bf X}_ j \right)_ {ij}$ 
   - $cbind({\bf x}_ 1',\dots, {\bf x}_ n') rbind({\bf x}_ 1,\dots, {\bf x}_ n) = \sum_{i=1}^{n} {\bf x}_ i' {\bf x}_ i$
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
+***trace***
 - trace와 관련해서는 $tr({\bf A})=tr({\bf A}')$, $tr({\bf A}{\bf B}{\bf C})=tr({\bf B}{\bf C}{\bf A})=tr({\bf C}{\bf A}{\bf B})$를 기억하면 편하다. 그리고 ${\bf a}$가 col-vector일 경우 아래식이 성립함을 기억하면 편리하다. 
 \begin{align}
 {\bf a}'{\bf a}=tr({\bf a}{\bf a}')
