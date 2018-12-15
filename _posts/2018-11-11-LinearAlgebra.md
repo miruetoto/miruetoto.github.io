@@ -34,11 +34,23 @@ title: (모르면 창피한) 선형대수학
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
+- ${\bf D}=diag(\lambda_1,\dots,lambda_n)$이라고 하자. ${\bf V}_ {n \times n}$, ${\bf U}'_ {n \times p}$에 대하여 아래가 성립한다. <br/><br/>
+  - ${\bf A}{\bf D}=rbind
+
+
 ***trace***
-- trace와 관련해서는 $tr({\bf A})=tr({\bf A}')$, $tr({\bf A}{\bf B}{\bf C})=tr({\bf B}{\bf C}{\bf A})=tr({\bf C}{\bf A}{\bf B})$를 기억하면 편하다. 그리고 ${\bf a}$가 col-vector일 경우 아래식이 성립함을 기억하면 편리하다. 
+- $tr({\bf A})=tr({\bf A}')$
+- $tr({\bf A}{\bf B}{\bf C})=tr({\bf B}{\bf C}{\bf A})=tr({\bf C}{\bf A}{\bf B})$
+- ${\bf a}$가 col-vector일 경우 아래식이 성립한다. 
 \begin{align}
 {\bf a}'{\bf a}=tr({\bf a}{\bf a}')
 \end{align}
+당연한 소리지만 ${\bf a}$가 row-vector일 경우는 아래와 같이 된다. 
+\begin{align}
+{\bf a}{\bf a}'=tr({\bf a}'{\bf a})
+\end{align}
+
+
 
 ---
 
