@@ -5,7 +5,7 @@ title: (모르면 창피한) 선형대수학
 
 선형대수학은 학부 1학년에 배우는 매우 쉬운 과목이지만 기본적인 개념이 헷갈릴때가 있다. 그럴때 마다 다시 선형대수학책을 꺼내들고 공부하게 되는데 이러한 무의미한 반복을 줄이고 싶다. 또 선형대수학책을 다시 꺼내는것 자체가 솔직히 너무 창피하다. 그래서 공부하고 싶었다, 몰라서 창피하지 않게 하려고. 그래서 본 문서의 제목은 모르면 창피한 선형대수학이다. 그리고 본 문서에서 정리하는 선형대수학은 통계학과 연관성이 있는 내용위주로 정리하였음을 미리 밝힌다(난 통계학과니깐!). 
 
-### Eigenvalues, Eigenvectors, SVD. 
+### Eigenvalues, Eigenvectors.  
 - 임의의 정사각행렬 ${\bf A}_ {n \times n}$에 대하여 어떠한 벡터 ${\bf v}_ {n \times 1} \neq {\bf 0}$가 적당한값 $\lambda$에 대하여 아래식을 만족하면 $\bf v$를 $\bf A$의 고유벡터라고 한다. 
 \begin{align}
 {\bf A v}= \lambda {\bf v}
@@ -75,8 +75,6 @@ title: (모르면 창피한) 선형대수학
 \forall {\bf x}\neq {\bf 0}: ~~ {\bf x}^{H}{\bf A}{\bf x}>0
 \end{align}
 
-- SVD
-
 --- 
 ### Eigenvalue, Eigenvector에 대한 미세먼지 팁 
 - **모든 고유값들의 합은 원래 행렬의 trace와 같고 모든 고유값들의 곱은 원래 행렬의 determinent와 같다. 이 사실은 임의의 정사각행렬에서 성립한다.** 즉 임의의 정사각행렬에서 $tr({\bf A}_ {n \times n})=\sum_{i=1}^{n} \lambda_i$이고 $det({\bf A}_ {n \times n})=\prod_{i=1}^{n}\lambda_i$이다. 이 사실은 그냥 증명없이 외우자. 
@@ -106,14 +104,20 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
 - 임의의 정사각행렬 ${\bf A}$의 값이 모두 실수여도 그 고유값이 반드시 실수인것은 아니다. ${\bf A}=rbind(c(0,-1),c(1,0))$을 생각하여 보자. $\lambda_1+\lambda_2=0$ 이고 $\lambda_1 \lambda_2=1$이다. $i$와 $-i$가 해당조건을 만족하므로 ${\bf A}$의 고유값은 $i$와 $-i$이다. 이때 고유값 $i$에 대응하는 고유벡터는 $c(1,-i)$이고 고유값 $-i$에 대응하는 고유벡터는 $c(1,i)$이다. 
 
 - ${\bf A}$가 *orthogonal*-매트릭스이면 모든 고유값들의 절대값이 1이다. 즉 $\|\lambda\|=1$이다. 이것은 귀류법을 쓰면 쉽게 증명가능하다.
+--- 
+### Singular Value Decomposition
+- ㅇㅇ
 
-### 통계학과를 위한 매트릭스 연산들
+---
+
+### (통계학과를 위한) 기본 매트릭스 연산
 - 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같은 기호로 표현하면 편리하다. 
 \begin{align}
 {\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
 \end{align}
 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 
 
+***transpose와 행렬곱셈*** 
 - ${\bf X}'$는 아래와 같이 계산한다. 
 \begin{align}
 {\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
@@ -125,4 +129,9 @@ det\left({\bf A}-\lambda^* {\bf I}\right)=0
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') {\bf X} = rbind({\bf X}_ 1'{\bf X},\dots,{\bf X}_ p' {\bf X})$ 
   - ${\bf X}' cbind({\bf X}_ 1,\dots,{\bf X}_ p)=  cbind({\bf X}'{\bf X}_ 1,\dots,{\bf X}'{\bf X}_ p)$<br/><br/>
 
+- trace와 관련해서는 $tr({\bf A})=tr({\bf A}')$, $tr({\bf A}{\bf B}{\bf C})=tr({\bf B}{\bf C}{\bf A})=tr({\bf C}{\bf A}{\bf B})$를 기억하면 편하다. 그리고 ${\bf a}$가 col-vector일 경우 아래식이 성립함을 기억하면 편리하다. 
+\begin{align}
+{\bf a}'{\bf a}=tr({\bf a}{\bf a}')
+\end{align}
 
+- 
