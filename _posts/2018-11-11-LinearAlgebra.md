@@ -18,6 +18,11 @@ title: (모르면 창피한) 선형대수학
 {\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
 \end{align}
 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 이때 ${\bf x}_ n$과 같은 경우는 row-vector임을 유의하자. 
+- 이 챕터에서는 위와 유사한 방식으로 매트릭스를 ${\bf A}$와 같이 인덱스가 없는 대문자 볼드체로 종종 표시할 것이다. 
+- 매트릭스 ${\bf A}$의 column은 ${\bf A}_ 1, {\bf A}_ 2, \dots$와 같이 인덱스가 있는 대문자 볼드체로 종종 표시할 것이다. 물론 일반적인 교재에서는 ${\bf A}_ 1$는 보통 매트릭스를 의미하기 때문에 헷갈릴 수 있다. 일반적으로 ${\bf A}=cbind({\bf A}_ 1, {\bf A}_ 2, \dots, {\bf A}_ p)$와 같이 명확하게 초반에 명시를 하겠다.   
+- 매트릭스 ${\bf A}$의 row는 ${\bf a}_ 1, {\bf a}_ 2, \dots$와 같은 방식으로 종종 표시할 것이다. 이역시 ${\bf A}=rbind({\bf a}_ 1, {\bf a}_ 2, \dots, {\bf a}_ p)$와 같이 명확하게 초반에 명시를 하겠다.   
+- 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 
+
 
 ***transpose*** 
 - ${\bf X}'$는 아래와 같이 표현할 수 있다. 
@@ -62,6 +67,12 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 
 --- 
 ### 미분 (Derivatives) 
+- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 col-vector이다. 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 
+
+- 이챕터에서는 일반적으로 벡터 ${\bf x}$혹은 매트릭스 ${\bf X}$로 미분을 할 것이다. 
+- 이챕터에서 ${\bf X}$는 특별한 스트럭처가 없다고 가정할 것이다. 만약에 ${\bf X}$가 스트럭쳐가 있다면 (예를들면 *symm*-매트릭스라든가, *pd*-매트릭스라든가) 미분결과가 달라지게 된다. 
+
+- $\frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}$
 - 
 
 ---
