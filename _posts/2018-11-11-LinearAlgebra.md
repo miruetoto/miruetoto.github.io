@@ -44,14 +44,9 @@ title: (모르면 창피한) 선형대수학
   - ${\bf D}{\bf V}'=diag(\lambda_1,\dots,\lambda_p)rbind({\bf V}_ 1', \dots, {\bf V}_ p')=rbind(\lambda_1{\bf V}_ 1', \dots, \lambda_p{\bf U}_ p')$
   - ${\bf U}{\bf D}{\bf V}'= \sum_{i =1}^{p} \lambda_i {\bf U}_ i {\bf V}_ i'$. <br/><br/>
   
-- 가끔씩 ${\bf D}$를 정사각행렬이 아니라 사각행렬로 ${\bf D}_ {n \times m}$로 정의할때도 있다. 가령 예를 들어 ${\bf D}_ {2 \times 3}=rbind(c(\lambda_1,0,0),c(0,\lambda_2,0))$ 혹은 ${\bf D}_ {3\times 2}=rbind(c(\lambda_1,0),c(0,\lambda_2),c(0,0))$과 같이 정의하는 식이다. 위의 두 경우 모두 편의상 $diag(\lambda_1,\lambda_2)$로 표현가능하다. 그리고 이 경우에는 행렬곱을 $min(n,m)$까지만 전개하면된다. 즉 아래와 같은 식이다. 
-\begin{align}
-cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3)diag(\lambda_1,\lambda_2)=cbind(\lambda_1{\bf U}_ 1,\lambda_2{\bf U}_ 2)
-\end{align}
-혹은
-\begin{align}
-{\bf D}_ {2 \times 3} rbind({\bf V}'_ 1, {\bf V}'_ 2)= diag(\lambda_1,\lambda_2)rbind({\bf V}'_ 1, {\bf V}'_ 2)=rbind(\lambda_1{\bf V}'_ 1, \lambda_2{\bf V}'_ 2)
-\end{align}
+- 가끔씩 ${\bf D}$를 정사각행렬이 아니라 사각행렬로 ${\bf D}_ {n \times m}$로 정의할때도 있다. 가령 예를 들어 ${\bf D}_ {2 \times 3}=rbind(c(\lambda_1,0,0),c(0,\lambda_2,0))$ 혹은 ${\bf D}_ {3\times 2}=rbind(c(\lambda_1,0),c(0,\lambda_2),c(0,0))$과 같이 정의하는 식이다. 위의 두 경우 모두 편의상 $diag(\lambda_1,\lambda_2)$로 표현가능하다. 그리고 이 경우에는 행렬곱을 $min(n,m)$까지만 전개하면된다. 예를들면 아래와 같은 식으로 말이다. <br/><br/>
+1) $cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3)diag(\lambda_1,\lambda_2)=cbind(\lambda_1{\bf U}_ 1,\lambda_2{\bf U}_ 2)$ <br/>
+2) ${\bf D}_ {2 \times 3} rbind({\bf V}'_ 1, {\bf V}'_ 2)= diag(\lambda_1,\lambda_2)rbind({\bf V}'_ 1, {\bf V}'_ 2)=rbind(\lambda_1{\bf V}'_ 1, \lambda_2{\bf V}'_ 2)$
  
 
 ***trace***
