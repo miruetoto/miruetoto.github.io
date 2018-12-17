@@ -230,6 +230,10 @@ $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T}'\sum_i^n {\bf x}_ i
 \end{align}
 여기에서 ${\bf X}$는 *given*되어 있으므로 ${\bf T}$에 대한 상수이다. 라그랑주 승수법을 사용하면 결국 PCA는 아래식을 최대화하는 $({\bf T},\lambda)$를 찾으면 된다. 
 \begin{align}
-tr({\bf T'}{\bf X'}{\bf X}{\bf T})+\lambda \left({\bf I}-{\bf T}'{\bf T}\right)
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ \diag(\lambda_1,\dots, \lambda_p) \left({\bf I}-{\bf T}'{\bf T}\right)
 \end{align}
-
+위의 식을 ${\bf T}$로 미분하면 아래와 같이 된다. 
+\begin{align}
+2{\bf X}'{\bf X}{\bf T}- 2{\bf T}{\bf D}
+\end{align}
+또한 $\lambda$로 미분하면 ${\bf T}'{\bf T}={\bf I}$가 된다. ${\bf T}$가 두 식을 연립하여 
