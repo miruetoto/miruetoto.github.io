@@ -72,15 +72,32 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 - 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 col-vector이다. 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 
 - 이 챕터에서는 벡터 ${\bf x}$혹은 매트릭스 ${\bf X}$로 주로 미분 할 것이다. 
 - 이 챕터에서 ${\bf X}$는 특별한 스트럭처가 없다고 가정할 것이다. 만약에 ${\bf X}$가 스트럭쳐가 있다면 (예를들면 *symm*-매트릭스라든가, *pd*-매트릭스라든가) 미분결과가 달라지게 된다. 
-- 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 수식의 끝에 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
+- 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
 --- 
-- $\frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}$ 이다. 눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 
-- $\frac{\partial {\bf a}'{\bf X}{\bf b}}{\partial{\bf X}}={\bf a}{\bf b}'$ 이다. 이때 ${\bf a}_ {n \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {p \times 1}$이라고 하자. 이 역시 아래와 같은 사실을 관찰할 수 있다. (1) 분자는 스칼라이며 (2) 분모는 $n \times p$ 매트릭스이다. (3) 결과는 $n \times p$ 매트릭스이다. 
+- 매트릭스 쿡북 (69)을 참고하면 아래식이 성립함을 알 수 있다. 
+\begin{align}
+\frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}
+\end{align}
+눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 
+- 매트릭스 쿡북 (70)을 참고하면 아래식이 성립함을 알 수 있다. 
+\begin{align}
+\frac{\partial {\bf a}'{\bf X}{\bf b}}{\partial{\bf X}}={\bf a}{\bf b}'
+\end{align}
+편의상 ${\bf a}_ {n \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {p \times 1}$이라고 하자. 이 역시 아래와 같은 사실을 관찰할 수 있다. (1) 분자는 스칼라이며 (2) 분모는 $n \times p$ 매트릭스이다. (3) 결과는 $n \times p$ 매트릭스이다. 
 
-- $\frac{\partial {\bf a}'{\bf X}'{\bf b}}{\partial{\bf X}}={\bf b}'{\bf a}'$ 이다. 이 경우는 ${\bf a}_ {p \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {n \times 1}$와 같이 생각할 수 있다. 이 경우 역시 (1) 스칼라 분자를 (2) 매트릭스로 미분할때 (3) 결과가 분모와 같은 차원의 매트릭스가 나옴을 확인할 수 있다. 
+- 매트릭스 쿡북 (71)을 참고하면 아래식이 성립함을 알 수 있다. 
+\begin{align}
+\frac{\partial {\bf a}'{\bf X}'{\bf b}}{\partial{\bf X}}={\bf b}{\bf a}' 
+\end{align}
+이다. 이 경우는 ${\bf a}_ {p \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {n \times 1}$와 같이 생각할 수 있다. 이 경우 역시 (1) 스칼라 분자를 (2) 매트릭스로 미분할때 (3) 결과가 분모와 같은 차원의 매트릭스가 나옴을 확인할 수 있다. 
 
-- 
+
+- 매트릭스 쿡북 (77)을 참고하면 아래식이 성립함을 알 수 있다. 
+\begin{align}
+\frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}
+\end{align} 
+여기에서는 편의상 ${\bf a}_ {p \times 1}, {\bf b}_ {p \times 1}, {\bf X}_ {n \times p}$라고 생각하자. 
 
 ---
 
