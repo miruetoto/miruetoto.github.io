@@ -25,7 +25,6 @@ title: (내 맘대로) 선형대수학
 - 매트릭스 ${\bf A}$의 row는 ${\bf a}_ 1, {\bf a}_ 2, \dots$와 같은 방식으로 종종 표시할 것이다. 이 역시 헷갈리는 표현인데 일반적인 교재에서 ${\bf a}_ 1$와 같은것은 col-vector를 의미하기 때문이다(여기서는 row-vector). 따라서 이 역시 ${\bf A}=rbind({\bf a}_ 1, {\bf a}_ 2, \dots, {\bf a}_ p)$와 같이 될 수 있는 한 명확하게 명시를 하겠다.    
 - 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 
 
-
 ***transpose*** 
 - ${\bf X}'$는 아래와 같이 표현할 수 있다. 
 \begin{align}
