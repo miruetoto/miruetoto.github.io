@@ -35,6 +35,11 @@ title: (내 맘대로) 선형대수학
 - 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 $\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'$이다. 
 
 ***행렬곱***
+- 임의의 행렬 ${\bf X}_ {n \times p}$, ${\bf T}_ {p \times p'}$에 대하여 행렬곱 ${\bf X}{\bf T}$의 각 원소를 아래와 같이 정의한다. 
+\begin{align}
+({\bf X}{\bf T})_ {ij}=\sum_{k=1}^{p} x_{ik}t_{kj}
+\end{align}
+
 - ${\bf X}'{\bf X}$는 아래와 같이 표현할 수 있다. <br/><br/>
   - $rbind({\bf X}_ 1',\dots,{\bf X}_ p') cbind({\bf X}_ 1,\dots,{\bf X}_ p)= \left( {\bf X}'_ i {\bf X}_ j \right)_ {ij}$ 
   - $cbind({\bf x}_ 1',\dots, {\bf x}_ n') rbind({\bf x}_ 1,\dots, {\bf x}_ n) = \sum_{i=1}^{n} {\bf x}_ i' {\bf x}_ i$
