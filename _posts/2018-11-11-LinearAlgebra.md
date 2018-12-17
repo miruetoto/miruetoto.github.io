@@ -75,29 +75,33 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
 --- 
-- 매트릭스 쿡북 (69)을 참고하면 아래식이 성립함을 알 수 있다. 
+- 아래식이 성립한다. (매트릭스 쿡북 (69)) 
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}
 \end{align}
 눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 
-- 매트릭스 쿡북 (70)을 참고하면 아래식이 성립함을 알 수 있다. 
+- 아래식이 성립한다. (매트릭스 쿡북 (70))
 \begin{align}
 \frac{\partial {\bf a}'{\bf X}{\bf b}}{\partial{\bf X}}={\bf a}{\bf b}'
 \end{align}
 편의상 ${\bf a}_ {n \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {p \times 1}$이라고 하자. 이 역시 아래와 같은 사실을 관찰할 수 있다. (1) 분자는 스칼라이며 (2) 분모는 $n \times p$ 매트릭스이다. (3) 결과는 $n \times p$ 매트릭스이다. 
 
-- 매트릭스 쿡북 (71)을 참고하면 아래식이 성립함을 알 수 있다. 
+- 아래식이 성립한다. (매트릭스 쿡북 (71)) 
 \begin{align}
 \frac{\partial {\bf a}'{\bf X}'{\bf b}}{\partial{\bf X}}={\bf b}{\bf a}' 
 \end{align}
 이다. 이 경우는 ${\bf a}_ {p \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {n \times 1}$와 같이 생각할 수 있다. 이 경우 역시 (1) 스칼라 분자를 (2) 매트릭스로 미분할때 (3) 결과가 분모와 같은 차원의 매트릭스가 나옴을 확인할 수 있다. 
 
 
-- 매트릭스 쿡북 (77)을 참고하면 아래식이 성립함을 알 수 있다. 
+- 아래식이 성립한다. (매트릭스 쿡북 (77))
 \begin{align}
-\frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}
+\frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}={\bf X}({\bf b}{\bf c}'+{\bf c}{\bf b}')
 \end{align} 
 여기에서는 편의상 ${\bf a}_ {p \times 1}, {\bf b}_ {p \times 1}, {\bf X}_ {n \times p}$라고 생각하자. 
+\begin{align}
+\frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}=\frac{{\bf b}'{\partial \bf X}'{\bf X}{\bf c}}{\partial {\bf X}}+ \frac{{\bf b}'{\bf X}'{\partial \bf X}{\bf c}}{\partial {\bf X}}
+\end{align} 
+
 
 ---
 
