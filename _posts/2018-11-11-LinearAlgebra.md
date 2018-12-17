@@ -110,7 +110,7 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 
 - 아래식이 성립한다. (매트릭스 쿡북, 78) 
 \begin{align}
-...
+...asdf
 \end{align} 
 
 ---
