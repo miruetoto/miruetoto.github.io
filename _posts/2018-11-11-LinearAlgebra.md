@@ -98,6 +98,20 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 이다. 이 경우는 ${\bf a}_ {p \times 1}, {\bf X}_ {n \times p}, {\bf b}_ {n \times 1}$와 같이 생각할 수 있다. 이 경우 역시 (1) 스칼라 분자를 (2) 매트릭스로 미분할때 (3) 결과가 분모와 같은 차원의 매트릭스가 나옴을 확인할 수 있다. 
 
 
+- 아래식이 성립한다. (매트릭스 쿡북 (77))
+\begin{align}
+\frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}={\bf X}({\bf b}{\bf c}'+{\bf c}{\bf b}')
+\end{align} 
+간단하게 증명과정을 살펴보자. 여기에서는 편의상 ${\bf a}_ {p \times 1}, {\bf b}_ {p \times 1}, {\bf X}_ {n \times p}$라고 생각하자. 
+\begin{align}
+\frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}=\frac{{\bf b}'{\partial \bf X}'{\bf X}{\bf c}}{\partial {\bf X}}+ \frac{{\bf b}'{\bf X}'{\partial \bf X}{\bf c}}{\partial {\bf X}}
+\end{align} 
+와 같이 쓸 수 있다. 왼쪽항과 오른쪽항을 각각 계산하여 보자. 먼저 왼쪽을 살펴보자. 
+\begin{align}
+\frac{{\bf b}'{\partial \bf X}'{\bf X}{\bf c}}{\partial {\bf X}}
+\end{align}
+
+
 ---
 
 ### Decomp - Eigenvalues and Eigenvectors.  
