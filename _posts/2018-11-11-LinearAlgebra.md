@@ -112,7 +112,11 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}
 \end{align}
-편의상 ${\bf B}_ {n \times p}, {\bf x}_ {p \times 1}$라고 가정하겠다. ${\bf x}=rbind(x_1,\dots,x_p)$와 같이 생각 할 수 있는데 따라서 $\partial {\bf x}=rbind(\partial x_1, \dots, \partial x_p)$와 같이 볼 수 있다. 
+편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 아래와 같은 표기법을 도입하자. 
+\begin{align}
+\frac{\partial {bf B}{\bf x}}{\partial {\bf x}}=\frac{\partial {bf B}{\bf x}}{\partial rbind(x_1,\dots,x_p)}=rbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
+\end{align}
+ 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (78)) 
 \begin{align}
