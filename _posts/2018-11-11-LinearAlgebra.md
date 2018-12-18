@@ -105,7 +105,7 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 
 \begin{align}
 \frac{\partial {\bf b}'{\bf X}'{\bf X}{\bf c}}{\partial {\bf X}}
-=\frac{{\bf b}' \partial {\bf X}'{\bf X}{\bf c}}{\partial {\bf X}} +  
+=\frac{{\bf b}' }{\partial {\bf X}} +  
 \end{align} 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (78)) 
