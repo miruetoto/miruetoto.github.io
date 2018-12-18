@@ -112,12 +112,10 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial y}{\partial{\bf x}}=rbind(\frac{\partial y}{\partial x_1},\dots,\frac{\partial y}{\partial x_n})
 \end{align}
-이는 아래와 같이 생각할 수 있다. 
+만약에 $\frac{\partial}{\partial {\bf x}}:=rbind(\frac{\partial}{\partial x_1},\dots,\frac{\partial}{\partial x_n})$이라고 치면 위의 식은 아래와 같이 생각할 수 있다. 
 \begin{align}
 \frac{\partial y}{\partial{\bf x}}=rbind(\frac{\partial}{\partial x_1},\dots,\frac{\partial}{\partial x_n})y= rbind(\frac{\partial y}{\partial x_1},\dots,\frac{\partial y}{\partial x_n})
 \end{align}
-
-
 아래와 같이 생각하면 편리하다. 
 \begin{align}
 \frac{\partial {\bf x}}{y}=rbind(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y})
