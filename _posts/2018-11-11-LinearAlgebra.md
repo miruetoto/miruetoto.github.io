@@ -108,7 +108,17 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \end{align} 
 와 같이 쓸 수 있다. 왼쪽항과 오른쪽항을 각각 계산하여 보자. 먼저 왼쪽항 $\frac{ {\bf b}'{\partial \bf X}'{\bf X}{\bf c}}{\partial {\bf X}}$를 살펴보자. 여기에서 우리는 ${\bf X}{\bf c}$를 ${\bf X}$와 상관없는 어떤 임의의 상수벡터 ${\bf c}_ {n \times 1}^* $로 생각할 수 있다. (1) 분자는 스칼라이고 (2) 분모는 매트릭스이므로 (3) 미분한값은 $n \times p$의 차원을 가진 매트릭스가 나와야 한다. 따라서 ${\bf c}^* {\bf b}'={\bf X}{\bf c}{\bf b}' $가 왼쪽항을 미분한값이 된다. 마찬가지로 오른쪽 항을 미분한 값은 ${\bf X}{\bf b}{\bf c}'$가 된다. 따라서 왼쪽항과 오른쪽 항을 더하면 ${\bf X}({\bf b}{\bf c}'+{\bf c}{\bf b}')$가 된다. 
 
-- 지금까지는 (1) 분자가 스칼라이고 (2) 분모가 벡터 혹은 매트릭스인 경우를 다루었다. 이 경우 (3) 결과는 항상 분모의 차원과 같은 특징이 있었다. 그래서 보통 (3)의 특징을 이용하여 결과의 차원을 어거지로 짜맞추는 식으로 증명을 하였다. 하지만 이것은 엄밀한 증명법은 아니다. 또한 때때로 벡터를 벡터로 미분한다든지 하는 상황이 존재할 수 있다. 따라서 보다 엄밀하게 매트릭스-데리베이티브를 따지는 기술이 필요하다. 아래와 같이 생각하면 편리하다. 
+- 지금까지는 (1) 분자가 스칼라이고 (2) 분모가 벡터 혹은 매트릭스인 경우를 다루었다. 이 경우 (3) 결과는 항상 분모의 차원과 같은 특징이 있었다. 그래서 보통 (3)의 특징을 이용하여 결과의 차원을 어거지로 짜맞추는 식으로 증명을 하였다. 하지만 이것은 엄밀한 증명법은 아니다. 또한 때때로 벡터를 벡터로 미분한다든지 하는 상황이 존재할 수 있다. 따라서 보다 엄밀하게 매트릭스-데리베이티브를 따지는 기술이 필요하다. 그러기 위해서는 1) 스칼라를 벡터로 미분 할 경우 2) 벡터를 스칼라로 미분 할 경우 3) 벡터를 벡터로 미분 할 경우를 각각 엄밀하게 정의할 필요가 있다. 먼저 스칼라를 벡터로 미분할경우는 이제껏 살펴본 바와 같이 아래처럼 정의한다. 
+\begin{align}
+\frac{\partial y}{\partial{\bf x}}=rbind(\frac{\partial y}{\partial x_1},\dots,\frac{\partial y}{\partial x_n})
+\end{align}
+이는 아래와 같이 생각할 수 있다. 
+\begin{align}
+\frac{\partial y}{\partial{\bf x}}=rbind(\frac{\partial}{\partial x_1},\dots,\frac{\partial}{\partial x_n})y= rbind(\frac{\partial y}{\partial x_1},\dots,\frac{\partial y}{\partial x_n})
+\end{align}
+
+
+아래와 같이 생각하면 편리하다. 
 \begin{align}
 \frac{\partial {\bf x}}{y}=rbind(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y})
 \end{align}
