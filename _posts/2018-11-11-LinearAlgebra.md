@@ -108,32 +108,23 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \end{align} 
 와 같이 쓸 수 있다. 왼쪽항과 오른쪽항을 각각 계산하여 보자. 먼저 왼쪽항 $\frac{ {\bf b}'{\partial \bf X}'{\bf X}{\bf c}}{\partial {\bf X}}$를 살펴보자. 여기에서 우리는 ${\bf X}{\bf c}$를 ${\bf X}$와 상관없는 어떤 임의의 상수벡터 ${\bf c}_ {n \times 1}^* $로 생각할 수 있다. (1) 분자는 스칼라이고 (2) 분모는 매트릭스이므로 (3) 미분한값은 $n \times p$의 차원을 가진 매트릭스가 나와야 한다. 따라서 ${\bf c}^* {\bf b}'={\bf X}{\bf c}{\bf b}' $가 왼쪽항을 미분한값이 된다. 마찬가지로 오른쪽 항을 미분한 값은 ${\bf X}{\bf b}{\bf c}'$가 된다. 따라서 왼쪽항과 오른쪽 항을 더하면 ${\bf X}({\bf b}{\bf c}'+{\bf c}{\bf b}')$가 된다. 
 
-- 지금까지는 (1) 분자가 스칼라이고 (2) 분모가 벡터 혹은 매트릭스인 경우를 다루었다. 이 경우 (3) 결과는 항상 분모의 차원과 같은 특징이 있었다. 그래서 보통 (3)의 특징을 이용하여 결과의 차원을 어거지로 짜맞추는 식으로 증명을 하였다. 하지만 이것은 엄밀한 증명법은 아니다. 또한 때때로 벡터를 벡터로 미분한다든지 하는 상황이 존재할 수 있다. 따라서 보다 엄밀하게 매트릭스-데리베이티브를 따지는 기술이 필요하다. 그러기 위해서는 1) 스칼라를 벡터로 미분 할 경우 2) 벡터를 스칼라로 미분 할 경우 3) 벡터를 벡터로 미분 할 경우를 각각 엄밀하게 정의할 필요가 있다. 먼저 스칼라를 벡터로 미분할경우는 이제껏 살펴본 바와 같이 아래처럼 정의한다. 
+- 지금까지는 (1) 분자가 스칼라이고 (2) 분모가 벡터 혹은 매트릭스인 경우를 다루었다. 이 경우 (3) 결과는 항상 분모의 차원과 같은 특징이 있었다. 그래서 보통 (3)의 특징을 이용하여 결과의 차원을 어거지로 짜맞추는 식으로 증명을 하였다. 하지만 벡터를 벡터로 미분한다든지 하는 상황이 존재할 수 있다. 이러한 경우에도 자유롭게 미분을 사용할 수 있어야 한다. 예제로 아래를 증명하여 보자. 
 \begin{align}
-\frac{\partial y}{\partial{\bf x}}=rbind(\frac{\partial y}{\partial x_1},\dots,\frac{\partial y}{\partial x_n})
-\end{align}
-만약에 $\frac{\partial}{\partial {\bf x}}:=rbind(\frac{\partial}{\partial x_1},\dots,\frac{\partial}{\partial x_n})$이라고 치면 위의 식은 아래와 같이 생각할 수 있다. 
-\begin{align}
-\frac{\partial y}{\partial{\bf x}}=rbind(\frac{\partial}{\partial x_1},\dots,\frac{\partial}{\partial x_n})y= rbind(\frac{\partial y}{\partial x_1},\dots,\frac{\partial y}{\partial x_n})
-\end{align}
-아래와 같이 생각하면 편리하다. 
-\begin{align}
-\frac{\partial {\bf x}}{y}=rbind(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y})
-\end{align}
-
-
-- 예제로 아래를 증명하여 보자. 
-\begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}={\bf B}' 
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}={\bf B}
 \end{align}
 편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 아래와 같은 표기법을 도입하자. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=\frac{\partial {\bf B}{\bf x}}{\partial rbind(x_1,\dots,x_p)}=rbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=\frac{\partial {\bf B}{\bf x}}{\partial cbind(x_1,\dots,x_p)}=cbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
 \end{align}
 여기에서 ${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} {\bf B}_ i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=rbind( {\bf B}_ 1, \dots, {\bf B}_ p )=(cbind({\bf B}'_ 1 \dots, {\bf B}'_ p))'={\bf B}' 
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=cbind( {\bf B}_ 1, \dots, {\bf B}_ p )={\bf B}
 \end{align}
+또한 비슷한 논리로 아래가 성립함을 알 수 있다. 
+\begin{align}
+\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = {\bf B}'
+\end{align}
+
 
 - 아래식이 성립한다. (매트릭스 쿡북 (78)) 
 \begin{align}
