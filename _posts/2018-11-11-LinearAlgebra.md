@@ -110,8 +110,10 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 
 - 아래식이 성립한다. (매트릭스 쿡북 (78)) 
 \begin{align}
-\frac{\partial ({\bf B}{\bf x}+{\bf b})' {\bf C} ({\bf D}{\bf x}+{\bf d})}{\partial {\bf x}} 
+\frac{\partial ({\bf B}{\bf x}+{\bf b})' {\bf C} ({\bf D}{\bf x}+{\bf d})}{\partial {\bf x}} = {\bf B}'{\bf C}({\bf D}{\bf x}+{\bf d})+{\bf D}'{\bf C}'({\bf B}{\bf x}+{\bf b})
 \end{align} 
+
+
 
 ---
 
