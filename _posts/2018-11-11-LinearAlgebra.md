@@ -130,11 +130,11 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = {\bf B}'
 \end{align}
-${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)$이므로, ${\bf x}'{\bf B}=cbind(x_1,\dots,x_p)rbind({\bf B}'_ 1,\dots, {\bf B}'_ p)=\sum_{i=1}^{p} {\bf B}_ i x_i$가 성립하고 따라서 
+간단하게 계산해보면 ${\bf x}'{\bf B}'=cbind(x_1,\dots,x_p)rbind({\bf B}'_ 1,\dots, {\bf B}'_ p)=\sum_{i=1}^{p} x_i {\bf B}_ i $가 성립하고 따라서 
 \begin{align}
 \frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind({\bf B}_ 1, \dots, {\bf B}_ p)= (cbind({\bf B}_ 1,\dots, {\bf B}_ p ))'={\bf B}'
 \end{align}
-이다. 위의 두가지를 보면서 알수 있는것은 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 
+이다. 위의 두가지를 보면서 알수 있는것은 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 
 
 - 
 
