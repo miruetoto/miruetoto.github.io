@@ -114,7 +114,7 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \end{align}
 편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 아래와 같은 표기법을 도입하자. 
 \begin{align}
-\frac{\partial {bf B}{\bf x}}{\partial {\bf x}}=\frac{\partial {bf B}{\bf x}}{\partial rbind(x_1,\dots,x_p)}=rbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=\frac{\partial {\bf B}{\bf x}}{\partial rbind(x_1,\dots,x_p)}=rbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
 \end{align}
  
 
