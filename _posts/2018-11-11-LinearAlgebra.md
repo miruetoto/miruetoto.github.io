@@ -108,6 +108,12 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \end{align} 
 와 같이 쓸 수 있다. 왼쪽항과 오른쪽항을 각각 계산하여 보자. 먼저 왼쪽항 $\frac{ {\bf b}'{\partial \bf X}'{\bf X}{\bf c}}{\partial {\bf X}}$를 살펴보자. 여기에서 우리는 ${\bf X}{\bf c}$를 ${\bf X}$와 상관없는 어떤 임의의 상수벡터 ${\bf c}_ {n \times 1}^* $로 생각할 수 있다. (1) 분자는 스칼라이고 (2) 분모는 매트릭스이므로 (3) 미분한값은 $n \times p$의 차원을 가진 매트릭스가 나와야 한다. 따라서 ${\bf c}^* {\bf b}'={\bf X}{\bf c}{\bf b}' $가 왼쪽항을 미분한값이 된다. 마찬가지로 오른쪽 항을 미분한 값은 ${\bf X}{\bf b}{\bf c}'$가 된다. 따라서 왼쪽항과 오른쪽 항을 더하면 ${\bf X}({\bf b}{\bf c}'+{\bf c}{\bf b}')$가 된다. 
 
+- 아래식이 성립한다. (매트릭스 쿡북 (78)) 
+\begin{align}
+\frac{\partial ({\bf B}{\bf x}+{\bf b})' {\bf C} ({\bf D}{\bf x}+{\bf d})}{\partial {\bf x}} = {\bf B}'{\bf C}({\bf D}{\bf x}+{\bf d})+{\bf D}'{\bf C}'({\bf B}{\bf x}+{\bf b})
+\end{align} 
+증명은 분자를 쭉 풀어서 비슷한 논리로 하면 된다. 별로 특별할게 없는듯. 
+
 - 지금까지는 (1) 분자가 스칼라이고 (2) 분모가 벡터 혹은 매트릭스인 경우를 다루었다. 이 경우 (3) 결과는 항상 분모의 차원과 같은 특징이 있었다. 그래서 보통 (3)의 특징을 이용하여 결과의 차원을 어거지로 짜맞추는 식으로 증명을 하였다. 하지만 벡터를 벡터로 미분한다든지 하는 상황이 존재할 수 있다. 이러한 경우에도 자유롭게 미분을 사용할 수 있어야 한다. 예제로 아래를 증명하여 보자. 
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}={\bf B}
@@ -120,17 +126,15 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=cbind( {\bf B}_ 1, \dots, {\bf B}_ p )={\bf B}
 \end{align}
-또한 비슷한 논리로 아래가 성립함을 알 수 있다. 
+또한 비슷한 논리로 아래가 성립함을 쉽게 보일 수 있다. 
 \begin{align}
 \frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = {\bf B}'
 \end{align}
-
-
-- 아래식이 성립한다. (매트릭스 쿡북 (78)) 
+${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)$이므로, ${\bf x}'{\bf B}=cbind(x_1,\dots,x_p)rbind({\bf B}'_ 1,\dots, {\bf B}'_ p)=\sum_{i=1}^{p} {\bf B}_ i x_i$가 성립하고 따라서 
 \begin{align}
-\frac{\partial ({\bf B}{\bf x}+{\bf b})' {\bf C} ({\bf D}{\bf x}+{\bf d})}{\partial {\bf x}} = {\bf B}'{\bf C}({\bf D}{\bf x}+{\bf d})+{\bf D}'{\bf C}'({\bf B}{\bf x}+{\bf b})
-\end{align} 
-증명은 분자를 쭉 풀어서 비슷한 논리로 하면 된다. 별로 특별할게 없는듯. 
+\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind({\bf B}_ 1, \dots, {\bf B}_ p)= (cbind({\bf B}_ 1,\dots, {\bf B}_ p ))'={\bf B}'
+\end{align}
+이다. 위의 두가지를 보면서 알수 있는것은 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 
 
 - 
 
