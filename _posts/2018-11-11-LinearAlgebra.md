@@ -116,7 +116,10 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=\frac{\partial {\bf B}{\bf x}}{\partial rbind(x_1,\dots,x_p)}=rbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
 \end{align}
- 
+여기에서 ${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} B_i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
+\begin{align}
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=rbind( {\bf B}_ 1, \dots, {\bf B}_ p )=(cbind({\bf B}'_ 1 \dots, {\bf B}'_ p))'={\bf B}' 
+\end{align}
 
 - 아래식이 성립한다. (매트릭스 쿡북 (78)) 
 \begin{align}
