@@ -136,7 +136,11 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \end{align}
 이다. 위의 두가지를 보면서 알수 있는것은 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 
 
-- 
+- 아래식이 성립한다. (매트릭스 쿡북 (81))
+\begin{align}
+\frac{ \partial {\bf x}'{\bf B}{\bf x}}{\partial {\bf x}} = ({\bf B} +{\bf B}') {\bf x}
+\end{align}
+편의상 ${\bf B}_ {n \times n}$, ${\bf x}_ {n \times 1}$으로 가정하자. 
 
 
 ---
