@@ -128,7 +128,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align}
 를 정의할수 있는데 이때 $f(x)$를 $X$의 ***pdf*** 라고 한다. 참고로 $\mu$가 $F$에 대응하듯이 $f$에 대응하는 어떠한 메져 $\nu$를 생각할 수 있다. 즉 아래와 같은 성질을 만족하는 $\nu$를 생각할 수 있다.
 \begin{align}
-
+\mu(B)=\int_B \mu dx
 \end{align}
 
 ### 대수의법칙 
