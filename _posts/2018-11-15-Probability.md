@@ -122,7 +122,11 @@ X \in {\cal F}
 \begin{align}
 F(x)=\mu((-\infty,x])=P(\\{\omega: X(\omega) \leq x\\})
 \end{align}
-$F(x)$는 $X$의 ***cdf***라고 표현하기도 한다. 만약에 $F(x)$가 $x$에 대하여 미분가능하다면 $f(x):=\frac{\partial F(x)}{\partial x}$를 정의할수 있는데 이때 $f(x)$를 $X$의 ***pdf***라고 한다. 
+$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 만약에 $F(x)$가 $x$에 대하여 미분가능하다면 
+\begin{align}
+f(x):=\frac{\partial}{\partial x}F(x) 
+\end{align}
+를 정의할수 있는데 이때 $f(x)$를 $X$의 ***pdf*** 라고 한다. 
 
 ### 대수의법칙 
 
