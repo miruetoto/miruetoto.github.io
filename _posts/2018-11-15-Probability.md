@@ -5,6 +5,8 @@ title: (듀렛) 확률론
 
 본 포스팅은 대학원 교재인 듀렛책을 바탕으로 작성하였다. 
 
+--- 
+
 ### Measure Theory (1) 
 이 챕터에서는 듀렛책에서 Probability Spaces, Distributions, Random variable에 대한 내용을 다룬다. 전반적으로 적분이전의 measure theory에 관한 내용이다. 
 
@@ -140,22 +142,20 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align}
 여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu \ll \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ***라돈-니코딤*** 정리에 의하여 알려져 있다. 여기에서 $\mu \ll \lambda$는 메져 $\mu$가 메져 $\lambda$에 대하여 ***absolutely continuous*** 하다는 의미이다(제발 매우작다라고 해석하지 말자). 원래 ***라돈-니코딤***은 $\mu$, $\lambda$가 $\sigma$-finite 메져라는 조건이 추가적으로 필요한데 이 경우에는 $\mu$는 확률측도이고 $\lambda$는 르벡측도이므로 이 조건이 그냥 만족된다. 
 
+--- 
 ### Measure Theory (2) : Integration 
 
 - 
 
-
+--- 
 ### Independence 
 
+--- 
 ### Weak Laws of Large Numbers
 
+--- 
 ### Strong Law of Large Numbers
 
+--- 
 ### Convergence of Random Series
 
-### 대수의법칙 
-
-### 중심극한정리 
-
-### 마틴게일 
-- Durret책을 보면 Conditional Expectation $E(X \vert {\cal F})$를 확률변수 $Y$라고 생각한다. 우선 Conditional Expectation이 왜 확률변수인지부터 설명하는것이 좋을 것 같다. 우선 적당한 확률변수 $X$를 정의하여 보자. 확률변수 즉 메저러블맵핑을 $X$를 정의하기 위해서 적당한 두 메저러블-스페이스를 $(\Omega,\{\cal F})$, $(S,{\cal S})$를 정의한다. 일반적으로 $\Omega=[0,1]$, ${\cal F}_ 0 = \sigma({\cal O})$, $S=\mathbb{R}$, ${\cal S}=\{\cal B}$이다. 즉 $X:([0,1],\sigma([0,1])) \rightarrow (\mathbb{R},{\cal R})$이다. 
