@@ -146,7 +146,9 @@ f(x):=\frac{\partial}{\partial x}F(x)
 ### Measure Theory (2) : Integration 
 여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 
 
-- 여기에서는 메저러블-맵핑 $f:(\Omega,{\cal F}) \rightarrow (\mathbb{R},{\cal R})$에 대한 적분을 정의한다. 
+- $f:\Omega \righatarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 $\sigma$-finite 메저라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 
+
+- 적분을 정의하기 
 
 --- 
 ### Independence 
