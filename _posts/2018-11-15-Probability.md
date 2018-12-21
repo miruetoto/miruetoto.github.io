@@ -118,11 +118,15 @@ X \in {\cal F}
 \begin{align}
 \mu(B)=P(\\{\omega: X(\omega) \in B\\})
 \end{align}
-참고로 이때 $\mu$는 확률측도가 된다(증명은 알아서 하든가 아니면 그냥 믿든가). 따라서 $(\mathbb{R},{\cal R},\mu)$는 확률공간이 된다. 여기에서 $\mu$가 $X$에 의해서 정의되므로 확률공간 $(\mathbb{R},{\cal R},\mu)$ 역시 $X$에 의해서 정의되는데 이러한 이유로 **확률공간 $(\mathbb{R},{\cal R},\mu)$를 $X$에 의해서 유도된 확률공간이라고 표현하기도 한다.** 여기까지 잘 정의하였다면 ***distribution function***을 정의할 수 있다. 확률변수 $X$의 ***distribution function*** $F:\mathbb{R} \rightarrow [0,1]$는 아래와 같이 정의한다. 
+참고로 이때 $\mu$는 확률측도가 된다(증명은 알아서 하든가 아니면 그냥 믿든가). 따라서 $(\mathbb{R},{\cal R},\mu)$는 확률공간이 된다. 여기에서 $\mu$가 $X$에 의해서 정의되므로 확률공간 $(\mathbb{R},{\cal R},\mu)$ 역시 $X$에 의해서 정의되는데 이러한 이유로 **확률공간 $(\mathbb{R},{\cal R},\mu)$를 $X$에 의해서 유도된 확률공간이라고 표현하기도 한다.** 
+
+- 확률변수 $X$에 대한 ***distribution*** $\mu$까지 잘 정의하였다면 확률변수 $X$에 대한 ***distribution function***을 정의할 수 있다. 확률변수 $X$의 ***distribution function*** $F:\mathbb{R} \rightarrow [0,1]$는 아래와 같이 정의한다. 
 \begin{align}
 F(x)=\mu((-\infty,x])=P(\\{\omega: X(\omega) \leq x\\})
 \end{align}
-$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 만약에 $F(x)$가 $x$에 대하여 미분가능하다면 
+$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 
+
+- 만약에 $F(x)$가 $x$에 대하여 미분가능하다면 
 \begin{align}
 f(x):=\frac{\partial}{\partial x}F(x) 
 \end{align}
@@ -130,7 +134,9 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \begin{align}
 \mu(B)=\int_B \nu d\lambda 
 \end{align}
-여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu \ll  \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ***라돈-니코딤*** 정리에 의하여 알려져 있다. 
+여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu \ll \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ***라돈-니코딤*** 정리에 의하여 알려져 있다. 여기에서 $\mu \ll \lambda$는 메져 $\mu$가 메져 $\lambda$에 대하여 ***absolutely continuous*** 하다는 의미이다(제발 매우작다라고 해석하지 말자). 원래 ***라돈-니코딤***은 $\mu$, $\lambda$가 $sigma$-finite 메져라는 조건이 추가적으로 필요한데 이 경우에는 $\mu$는 확률측도이고 $\lambda$는 르벡측도이므로 이 조건이 그냥 만족된다. 
+
+- 
 
 ### 대수의법칙 
 
