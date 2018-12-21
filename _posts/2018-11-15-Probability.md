@@ -124,7 +124,7 @@ X \in {\cal F}
 \begin{align}
 F(x)=\mu((-\infty,x])=P(\\{\omega: X(\omega) \leq x\\})
 \end{align}
-$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 
+$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 참고로 $F(x)$는 (1) $F(-\infty)=0, F(\infty)=1$을 만족하고 (2) 비감소이며 (3) 오른쪽 연속인 함수가 된다. 그리고 임의의 함수 $F(x)$가 위의 3가지 조건을 만족하면 $F(x)$는 어떠한 확률변수 $X(\omega):\sup \\{ y : F(y)<\omega \\}$의 ***distribution***이 된다.
 
 - 만약에 $F(x)$가 $x$에 대하여 미분가능하다면 
 \begin{align}
@@ -134,7 +134,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \begin{align}
 \mu(B)=\int_B \nu d\lambda 
 \end{align}
-여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu \ll \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ***라돈-니코딤*** 정리에 의하여 알려져 있다. 여기에서 $\mu \ll \lambda$는 메져 $\mu$가 메져 $\lambda$에 대하여 ***absolutely continuous*** 하다는 의미이다(제발 매우작다라고 해석하지 말자). 원래 ***라돈-니코딤***은 $\mu$, $\lambda$가 $sigma$-finite 메져라는 조건이 추가적으로 필요한데 이 경우에는 $\mu$는 확률측도이고 $\lambda$는 르벡측도이므로 이 조건이 그냥 만족된다. 
+여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu \ll \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ***라돈-니코딤*** 정리에 의하여 알려져 있다. 여기에서 $\mu \ll \lambda$는 메져 $\mu$가 메져 $\lambda$에 대하여 ***absolutely continuous*** 하다는 의미이다(제발 매우작다라고 해석하지 말자). 원래 ***라돈-니코딤***은 $\mu$, $\lambda$가 $\sigma$-finite 메져라는 조건이 추가적으로 필요한데 이 경우에는 $\mu$는 확률측도이고 $\lambda$는 르벡측도이므로 이 조건이 그냥 만족된다. 
 
 - 
 
