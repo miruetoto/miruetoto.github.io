@@ -146,7 +146,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 ### Measure Theory (2) : Integration 
 여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 
 
-- 
+- 여기에서는 메저러블-맵핑 $f:(\Omega,{\cal F}) \rightarrow (\mathbb{R},{\cal R})$에 대한 적분을 정의한다. 
 
 --- 
 ### Independence 
