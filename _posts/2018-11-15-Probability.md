@@ -124,7 +124,7 @@ X \in {\cal F}
 \begin{align}
 F(x)=\mu((-\infty,x])=P(\\{\omega: X(\omega) \leq x\\})
 \end{align}
-$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 참고로 $F(x)$는 (1) $F(-\infty)=0, F(\infty)=1$을 만족하고 (2) 비감소이며 (3) 오른쪽 연속인 함수가 된다. 그리고 임의의 함수 $F(x)$가 위의 3가지 조건을 만족하면 $F(x)$는 어떠한 확률변수 $X(\omega):\sup \\{ y : F(y)<\omega \\}$의 ***distribution***이 된다.
+$F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 참고로 $F(x)$는 (1) $F(-\infty)=0, F(\infty)=1$을 만족하고 (2) 비감소이며 (3) 오른쪽 연속인 함수가 된다. 그리고 임의의 함수 $F(x)$가 위의 3가지 조건을 만족하면 $F(x)$는 확률변수 $X(\omega):=\sup \\{ y : F(y)<\omega \\}$의 ***distribution***이 된다.
 
 - 만약에 $F(x)$가 $x$에 대하여 미분가능하다면 
 \begin{align}
