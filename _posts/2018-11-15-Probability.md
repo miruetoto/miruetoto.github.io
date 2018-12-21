@@ -130,7 +130,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \begin{align}
 \mu(B)=\int_B \nu d\lambda 
 \end{align}
-여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu << \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ****라돈-니코딤*** 정리에 의하여 알려져 있다. 
+여기에서 $\lambda$는 르벡메져이다. 참고로 $\mu \ll  \lambda$이기만 하면 위의 식을 만족하는 메져 $\nu$가 반드시 존재함이 ***라돈-니코딤*** 정리에 의하여 알려져 있다. 
 
 ### 대수의법칙 
 
