@@ -148,7 +148,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 
 - $f:\Omega \righatarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 $\sigma$-finite 메저라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 
 
-- 적분을 정의하기 
+- 적분을 정의하기 위해서는 (1) 메저러블-맵핑 $f$ (2) $f$를 정의하기 위한 공간 {\cal F} (원래는 $(\Omega, {\cal F}),~(\mathbb{R},{\cal R})$가 모두 필요하지만 사실상 ${\cal F}$만 고려해도 된다고 여러번 언급한바 있음) (3) ${\cal F}$엣 정의된 $\sigma$-finite 메져 $\mu$가 필요하다. 
 
 --- 
 ### Independence 
