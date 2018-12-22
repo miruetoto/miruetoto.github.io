@@ -146,7 +146,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 ### Measure Theory (2) : Integration 
 여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 
 
-- $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 $\sigma$-finite 메저라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 (1) $f$를 $\mu$로 적분한것 즉 
+- $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 **$\sigma$-finite measure** 라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 (1) $f$를 $\mu$로 적분한것 즉 
 \begin{align}
 \int f d \mu
 \end{align}
@@ -158,6 +158,8 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \int f+g d\mu = \int f d \mu + \int g d \mu 
 \end{align} 
 와 같은 것들을 의미한다. 
+
+- $\int f d \mu$를 정의하기 위해 필요한 기본가정을 살펴보자. 당연히 $\int f d \mu$를 계산하기 위해서는 보는것처럼 매저러블 맵핑 $f$가 정의되어야 하며, 메져 $\mu$가 정의되어야 한다. 그리고 $f$와 $\mu$를 정의하기 위한 시그마필드 $\cal F$가 정의되어야 한다. 참고로 메저러블 맵핑 $f$를 정의하기 위해서는 기본적으로 $(\Omega,{\cal F}),~ (\mathbb{R},{\cal R})$이 모두 필요하지만 편의상 ${\cal F}$만 필요하다고 생각해도 무방하다는 것을 앞에서 설명하였다. 그리고 주몰할만한 점이 하나 있는데 $f$와 $\mu$는 같은 시그마필드 ${\cal F}$에서 정의되고 있다는 것이다. 이것은 우리가 지금 정의하고 싶은 적분이 고등학교때 배운 적분처럼 실수축위에서 이루어지고 있는 것이 아니라 $(\Omega,{\cal F})$에서 이루어 지고 있다는 것을 생각하면 쉽게 이해할 수 있다. 그리고 또 하나 필요한 가정은 $\mu$가 **$\sigma$-finite measure** 라는 것이다. 이걸 이용하면 임의의 $A \in {\cal F}$에 대하여서도 $\mu(A)<\infty$가 성립하게 되어서 $d \mu$부분을 상당히 안정적으로 정의할 수 있다. 
 
 - 우선 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
 ''$f$가 simple function이 아닐 경우에 $\mu$에 대한 적분을 어떻게 정의할 수 있을것인가?''
