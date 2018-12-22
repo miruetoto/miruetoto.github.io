@@ -146,20 +146,20 @@ f(x):=\frac{\partial}{\partial x}F(x)
 ### Measure Theory (2) : Integration 
 여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 
 
-- $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 $\sigma$-finite 메저라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 $f$를 $\mu$로 적분한것 즉 
+- $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 $\sigma$-finite 메저라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 (1) $f$를 $\mu$로 적분한것 즉 
 \begin{align}
 \int f d \mu
 \end{align}
-를 정의하고 적분관련 성질을 자유자재로 계산하고 싶은 것이다. 예를들어 
+를 ***잘*** 정의하고 (2) 적분관련 성질들을 자유자재로 계산할 수 있는 ***적당한 조건***을 알아보는 것이다. 여기에서 적분관련 성질들은 예를들어 
 \begin{align}
 \int af d\mu = a \int f d \mu 
 \end{align} 
 \begin{align}
 \int f+g d\mu = \int f d \mu + \int g d \mu 
 \end{align} 
-와 같은 것들을 말이다. 
+와 같은 것들을 의미한다. 
 
-- 우선 $\int f d\mu$를 정의하기 위해서는 (1) 메저러블-맵핑 $f$ (2) $f$를 정의하기 위한 공간 {\cal F} (원래는 $(\Omega, {\cal F}),~(\mathbb{R},{\cal R})$가 모두 필요하지만 사실상 ${\cal F}$만 고려해도 된다고 여러번 언급한바 있음) (3) ${\cal F}$엣 정의된 $\sigma$-finite 메져 $\mu$가 필요하다. 
+- 우선 적분을 잘 정의하는 방법을 살펴보자. $f$가 simple
 
 
 --- 
