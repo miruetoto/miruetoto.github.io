@@ -159,11 +159,17 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align} 
 와 같은 것들을 의미한다. 
 
-- 우선 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때 메져 $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
-''$f$가 simple function 이 아닐 경우에 어떻게 적분을 정의할 수 있을것인가?''
+- 우선 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
+''$f$가 simple function이 아닐 경우에 $\mu$에 대한 적분을 어떻게 정의할 수 있을것인가?''
 <br/><br/>
-가 된다. 
-
+가 된다. 결론적으로 (1) $f$가 **bounded function** 인 경우에는 $f$를 두 **simple function** $\phi$, $\psi$ 사이에 끼워넣고, 즉 $\phi < f < \psi$ 와 같이 만든다음 $\phi$와 $\psi$함수를 $\mu$로 적분한 값의 $\sup$과 $\inf$로 정의한다. 즉 아래와 같이 말이다. 
+\begin{align}
+\int f d\mu = \sup_{\phi \leq f} \int \phi d\mu = \inf_{\psi \geq f} \int \psi d\mu. 
+\end{align}
+참고로 위의 정의가 말이되려면 $\sup_{\phi \leq f} \int \phi d\mu = \inf_{\psi \geq f} \int \psi d\mu$가 성립해야 하는데 이것이 성립하는 것은 듀렛책에 증명이 되어있다. 그리고 이 결과를 확장하면 (2) $f$가 **non-negative function** 인 경우에도 $\mu$에 대한 적분을 아래와 같이 쉽게 정의할 수 있다. 
+\begin{align}
+\int f d\mu = 
+\end{align}
 
 
 --- 
