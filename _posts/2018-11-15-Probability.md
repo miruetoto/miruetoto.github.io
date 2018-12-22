@@ -159,7 +159,11 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align} 
 와 같은 것들을 의미한다. 
 
-- 우선 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이는 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 simple function일 경우에는 적분을 매우 명확하게 정의할 수 있다. 
+- 우선 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때 메져 $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
+''$f$가 simple function 이 아닐 경우에 어떻게 적분을 정의할 수 있을것인가?''
+<br/><br/>
+가 된다. 
+
 
 
 --- 
