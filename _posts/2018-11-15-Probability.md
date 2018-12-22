@@ -8,7 +8,7 @@ title: (듀렛) 확률론
 --- 
 
 ### Measure Theory (1) 
-여기서는 듀렛책 챕터 1.1~1.3 사이의 내용을 다룬다. 이 내용들은 Probability Spaces, Distributions, Random variable에 대한 내용인데 전반적으로 적분이전의 measure theory에 관한 내용이다. 개인적으로 책이 상당히 두서없이 정리되어 있다고 생각한다. 그래서 나도 두서없이 내맘대로 정리하였다. 
+- 여기서는 듀렛책 챕터 1.1~1.3 사이의 내용을 다룬다. 이 내용들은 Probability Spaces, Distributions, Random variable에 대한 내용인데 전반적으로 적분이전의 measure theory에 관한 내용이다. 개인적으로 책이 상당히 두서없이 정리되어 있다고 생각한다. 그래서 나도 두서없이 내맘대로 정리하였다. 
 
 - 확률변수 $X$에 대한 정의를 생각하여 보자. 확률변수는 본질적으로 메저러블-맵핑이므로 메저러블-매핑의 정의에 대하여 알아보자. 어떠한 맵핑 $X$가 메저러블-스페이스 $(\Omega,{\cal F})$와 메저러블-스페이스 $(S,{\cal S})$를 이어주는 메저러블-맵핑이라는 의미는 1) $X$가 $\Omega$에서 $S$로 가는 함수이고 즉 $X:\Omega \rightarrow S$이고 2) $X^{-1}$가 
 \begin{align}
@@ -144,7 +144,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 
 --- 
 ### Measure Theory (2) : Integration 
-여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 
+- 여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 이곳에서는 메저러블 맵핑 $f$의 적분을 다룬다. 
 
 - $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 **$\sigma$-finite measure** 라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 (1) $f$를 $\mu$로 적분한것 즉 
 \begin{align}
