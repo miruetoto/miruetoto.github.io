@@ -160,7 +160,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 
 - 왜 적분을 **measure theory** 를 이용하여 정의할까? 고등학교때 정의하던대로 하면 안되나? 다 이유가 있어서 이렇게 정의하는 것이다. **measure theory** 를 이용하여 적분을 정의하면 고등학교때 배운 논리로 정의하기 애매하 적분들을 매우 깔끔하게 정의할 수 있다는 장점이 있다. 가령 예를들면 모든 유리수에서 $1$의 값을 가지고 나머지는 $0$을 가지는 함수 $f$를 생각하여 보자. 즉 $f$는 아래와 같다. 
 \begin{align}
-f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\ 0 & x \notin \mathbb{Q} \end{cases}
+f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \end{align}
 이 함수 $f$에 대한 적분은 고등학교때 배운 **구분구적법** 혹은 **리만적분** 과 같은 방식으로는 정의할 수 없다(얼핏 생각하면 **리만적분**으로는 가능할것 같은데 불가능하다고 한다 $f$를 리만적분하면 0과 1사이의 임의의 값이 랜덤으로 정의된다고 한다). 하지만 **measure theory**를 이용하면 
 \begin{align}
