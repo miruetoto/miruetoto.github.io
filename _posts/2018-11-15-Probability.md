@@ -159,7 +159,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align} 
 와 같은 것들을 의미한다. 
 
-- 우선 적분을 잘 정의하는 방법을 살펴보자. $f$가 simple
+- 우선 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이는 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 simple function일 경우에는 적분을 매우 명확하게 정의할 수 있다. 
 
 
 --- 
