@@ -213,6 +213,11 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
+- 이제 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
+\begin{align}
+\lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu
+\end{align}
+
 
 ***useful inequalities***
 - 여기에서는 적분 혹은 평균과 관련된 유용한 부등식들을 정리하였다. 
