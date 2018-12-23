@@ -188,6 +188,16 @@ f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \int f d\mu = \sup_{0\leq h \leq f} \int h d \mu
 \end{align}
 
+- 일반적인 $f$는 아래와 같이 표현가능하다. 
+\begin{align}
+f=f^+ -f^-
+\end{align}
+따라서 $\int f d\mu$는 아래와 같이 정의할 수 있다. 
+\begin{align}
+\int f d\mu = \int f^+ d\mu + \int f^- d\mu
+\end{align}
+
+
 
 --- 
 ### Independence 
