@@ -226,12 +226,23 @@ f=f^+ -f^-
 - 듀렛책 P.26. Thm 1.6.8.에서 $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
 - 듀렛책 P.27. Thm 1.6.9에서 $Ef(X)=\int_{\Omega} f(y)\mu(dy)$임을 보였다. 이게 무슨기호인지도 몰겠음. 
 
-- 확률변수 $X_1$과 $X_2$를 각각 $(\Omega_1,{\cal F}_1, \mu_1)$와 $(\Omega_1,{\cal F}_1, \mu_1)$에서 정의하자. 확률벡터 $(X_1,X_2)$를 정의하기 위한 공간을 construct하자. 먼저 
+- 두개의 메저러블 맵핑 $X_1$과 $X_2$를 각각 $(\Omega_1,{\cal F}_ 1, P_1)$와 $(\Omega_2,{\cal F}_ 2, P_2)$에서 정의하자. 확률벡터 $(X_1,X_2)$를 정의하기 위한 공간을 construct하자. 먼저 
 \begin{align}
 \Omega=\Omega_1 \times \Omega_2= \\{(x_1,x_2):x_1 \in \Omega_1, x_2 \in \Omega_2\\}
 \end{align}
-와 같이 설정하자. 
-
+와 같이 설정하자. 그리고 ${\cal S}$를 아래와 같이 정의하자. 
+\begin{align}
+{\cal S}=\\{A\times B: A \in {\cal F}_ 1, B \in {\cal F}_ 2\\}
+\end{align}
+이때 ${\cal S}$는 semi-algebra가 된다고 한다. ${\cal F}$를 아래와 같이 정의한다. 
+\begin{align}
+{\cal F}=\sigma({\cal S})
+\end{align}
+이제 공간 $(\Omega,{\cal F})$는 확률벡터 $(X_1,X_2)$가 정의 될 수 있는 공간이 되었다. 즉 확률벡터 $(X_1,X_2)$는 $(\Omega,{\cal F})$에서의 메저러블-맵핑이 된다. 이제 확률벡터 $(X_1,X_2)$의 분포를 결정할 수 있는 메져 $P$만 정의하면 된다. 일반적인 길이의 개념을 넓이로 확장시키면 메져 $P$가 아래의 성질을 만족하는 것이 합리적이라고 생각된다. 
+\begin{align}
+P(A \times B)=P_1(A) \times P_2(B)
+\end{align}
+듀렛책의 thm 1.7.1에 의하면 이러한 메져 $P$가 유니크하게 존재한다고 한다. 
 
 
 ***useful inequalities***
