@@ -226,7 +226,12 @@ f=f^+ -f^-
 - 듀렛책 P.26. Thm 1.6.8.에서 $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
 - 듀렛책 P.27. Thm 1.6.9에서 $Ef(X)=\int_{\Omega} f(y)\mu(dy)$임을 보였다. 이게 무슨기호인지도 몰겠음. 
 
-- 확률변수 $X$와 $Y$를 각각 $(\Omega_1,{\cal F}_1, \mu_1)$, $(\Omega_1,{\cal F}_1, \mu_1)$에서 정의하자. 
+- 확률변수 $X_1$과 $X_2$를 각각 $(\Omega_1,{\cal F}_1, \mu_1)$와 $(\Omega_1,{\cal F}_1, \mu_1)$에서 정의하자. 확률벡터 $(X_1,X_2)$를 정의하기 위한 공간을 construct하자. 먼저 
+\begin{align}
+\Omega=\Omega_1 \times \Omega_2= \\{(x_1,x_2):x_1 \in \Omega_1, x_2 \in \Omega_2\\}
+\end{align}
+와 같이 설정하자. 
+
 
 
 ***useful inequalities***
