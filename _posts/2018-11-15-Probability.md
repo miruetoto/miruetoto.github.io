@@ -166,10 +166,10 @@ f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \begin{align}
 \int f d\lambda=0
 \end{align}
-으로 깔끔하게 정의된다. 여기에서 $\lambda$는 르벡메져이며 이러한 적분을 **르벡적분**이라고 한다. 기본적으로 **구분구적법** 이나 **리만적분** 은 $f$가 연속이거나 부분적으로 연속이어야 할 것 같은 느낌인데 **measure theory**를 이용한 **르벡적분** 은 $f$가 매저러블 맵핑이기만 하면 되므로 좀 더 적분을 정의할 수 있는 함수의 선택폭이 넓다. 일단 ${\cal R}$자체가 거의 대부분의 ''subset of $\mathbb{R}$''을 커버하고 있기 때문에 ${\cal R}$-메저러블하지 않는 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는 편이 좋다. 즉 **르벡적분** 불가능한 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는것이 맞다(뭐 칸토르집합에서만 1의 값을 가지고 그렇지 않은 경우에서는 0의 값을 가지는 이상한 함수 $f$만 아니라며 말이다).  
+으로 깔끔하게 정의된다. 여기에서 $\lambda$는 르벡메져이며 이러한 적분을 **르벡적분**이라고 한다. 기본적으로 **구분구적법** 이나 **리만적분** 은 $f$가 연속이거나 부분적으로 연속이어야 할 것 같은 느낌인데 **measure theory**를 이용한 **르벡적분** 은 $f$가 매저러블 맵핑이기만 하면 되므로 좀 더 적분을 정의할 수 있는 함수의 선택폭이 넓다. 일단 ${\cal R}$자체가 거의 대부분의 ''subset of $\mathbb{R}$''을 커버하고 있기 때문에 ${\cal R}$-메저러블하지 않는 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는 편이 좋다. 즉 **르벡적분** 불가능한 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는것이 맞다(뭐 칸토르집합에서만 1의 값을 가지고 그렇지 않은 경우에서는 0의 값을 가지는 이상한 함수 $f$만 아니라며 말이다).
 
 - 이제 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
-''$f$가 simple function이 아닐 경우에 $\mu$에 대한 적분을 어떻게 정의할 수 있을것인가?''
+''$f$가 simple function이 아닐 경우에도 $\mu$에 대한 적분을 모순없이 잘 정의할 수 있을까?''
 <br/><br/>
 가 된다. 결론적으로 (1) $f$가 **bounded function** 인 경우 (2) $f$가 **non-negative function**인 경우 (3) $\int |f| d\mu < \infty$인 경우에서는 적분값 
 \begin{align}
@@ -183,9 +183,9 @@ f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \end{align}
 참고로 위의 정의가 말이 되려면 즉 **모순이 되지 않으려면** $\sup_{\phi \leq f} \int \phi d\mu = \inf_{\psi \geq f} \int \psi d\mu$가 성립해야 하는데 이것이 성립하는 것은 듀렛책에 증명이 되어있다. 
 
-- 위의 결과를  (2) $f$가 **non-negative function** 인 경우에도 $\mu$에 대한 적분을 아래와 같이 쉽게 정의할 수 있다. 
+- 위의 결과를 이용하면 (2) $f$가 **non-negative function**인 경우에도 $\mu$에 대한 적분을 쉽게 정의할 수 있다. 먼저 $h$를 $0\leq h \leq f$를 만족하는 **bounded function**이라고 하자. $\int f d\mu$는 아래와 같이 $\int h d \mu$의 sup으로 정의할 수 있다. 
 \begin{align}
-\int f d\mu = 
+\int f d\mu = \sup_{0\leq h \leq f} \int h d \mu
 \end{align}
 
 
