@@ -194,11 +194,24 @@ f=f^+ -f^-
 \end{align}
 따라서 $\int f d\mu$는 아래와 같이 정의할 수 있다. 
 \begin{align}
-\int f d\mu = \int f^+ d\mu + \int f^- d\mu
+\int f d\mu = \int f^+ d\mu - \int f^- d\mu
 \end{align}
-단지 위의 식이 **잘** 정의되려면 $\int f^+ d\mu$와 $\int f^- d\mu$이 모두 무한대이면 안되는데 이런 경우는 $\int |f| d\mu < \infty$라는 조건에 의해서 방지된다. 
+단지 위의 식이 **잘** 정의되려면 $\int f^+ d\mu$와 $\int f^- d\mu$이 모두 무한대이면 안되는데 이런 경우는 $\int |f| d\mu < \infty$라는 조건에 의해서 방지된다. 참고로 $\int |f| d\mu < \infty$를 만족하는 $f$를 우리는 **integrable하다**고 한다. 
 
-- 
+- $(\Omega, {\cal F},\mu)=(\mathbb{R}, {\cal R}, \mu)$이고 적분을 하는 메져 $\mu$가 $\mu((a,b])=F(b)-F(a)$와 같은 꼴로 표현가능하다면 우리는 $\int f d\lambda$를 아래와 같이 쓸 수 있다. 
+\begin{align}
+\int f d\mu = \int f(x) dF(x)
+\end{align}
+예를들어 $(\Omega, {\cal F},\mu)=(\mathbb{R}, {\cal R}, \lambda)$와 같은 상황을 생각해보자. 여기에서는 적분을 수행하는 메져가 르벡메져이고 르벡메져 $\lambda$는 $\lambda((a,b])=b-a$꼴로 쓸 수 있으므로 
+\begin{align}
+\int f d\lambda = \int f(x) dx
+\end{align}
+와 같이 나타낼 수 있다. 
+
+- $\Omega$가 countable set이고 ${\cal F}$는 ''all subset of $\Omega$'' 라고 하자. $\mu$는 counting measure라고 하자. 이때는 $\int f d\mu$는 아래와 같이 나타낼 수 있다. 
+\begin{align}
+\int f d \mu = \sum_{i \in \Omega} f(i).
+\end{align}
 
 
 --- 
