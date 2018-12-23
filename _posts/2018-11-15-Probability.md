@@ -213,6 +213,11 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
+- 적분과 관련된 유용한 공식으로 Jensen's inequality와 Holder's inequality가 있다. Jensen'의 부등식은 임의의 convex 함수 $\phi$에 대하여 아래가 성립한다는 것인데 
+\begin{align}
+\phi \left( \int f d\mu \right) \leq \int \phi (f) d \mu
+\end{align}
+이것을 적용한 대표적인 예제는 확률변수 $X$에 대하여 $E^2(X) \leq E(X^2)$이 성립하는 것이다. 
 
 --- 
 ### Independence 
