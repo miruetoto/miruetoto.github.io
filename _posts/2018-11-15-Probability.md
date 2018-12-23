@@ -221,8 +221,12 @@ f=f^+ -f^-
 \begin{align}
 \liminf_{n \rightarrow \infty} \int f_n d\mu \leq \int \left(\liminf_{n\rightarrow \infty} f_n \right) d\mu 
 \end{align}
+여기에서 $f_n \geq 0$이다. 
 
-- 
+- 듀렛책 P.26. Thm 1.6.8.에서 $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
+- 듀렛책 P.27. Thm 1.6.9에서 $Ef(X)=\int_{\Omega} f(y)\mu(dy)$임을 보였다. 이게 무슨기호인지도 몰겠음. 
+
+- 확률변수 $X$와 $Y$를 각각 $(\Omega_1,{\cal F}_1, \mu_1)$, $(\Omega_1,{\cal F}_1, \mu_1)$에서 정의하자. 
 
 
 ***useful inequalities***
