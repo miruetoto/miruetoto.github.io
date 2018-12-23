@@ -188,7 +188,7 @@ f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \int f d\mu = \sup_{0\leq h \leq f} \int h d \mu
 \end{align}
 
-- 일반적인 $f$는 아래와 같이 표현가능하다. 
+- 이제 (3)의 경우를 살펴보자. 일반적인 $f$는 아래와 같이 표현가능하다. 
 \begin{align}
 f=f^+ -f^-
 \end{align}
@@ -196,7 +196,9 @@ f=f^+ -f^-
 \begin{align}
 \int f d\mu = \int f^+ d\mu + \int f^- d\mu
 \end{align}
+단지 위의 식이 **잘** 정의되려면 $\int f^+ d\mu$와 $\int f^- d\mu$이 모두 무한대이면 안되는데 이런 경우는 $\int |f| d\mu < \infty$라는 조건에 의해서 방지된다. 
 
+- 
 
 
 --- 
