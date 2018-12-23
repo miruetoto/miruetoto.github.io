@@ -221,7 +221,14 @@ f=f^+ -f^-
 \phi \left( \int f d\mu \right) \leq \int \phi (f) d \mu
 \end{align}
 이것을 적용한 대표적인 예제는 확률변수 $X$에 대하여 $E^2(X) \leq E(X^2)$이 성립하는 것이다. 
+
 - Holder's inequality: 횔더스-인이퀼리티를 정의하기 위해서는 $$\\| f \\|_p$를 정의해야 한다.  
+
+- Minkowski's inequality: 민코우스키-인이퀄리티는 
+
+- Chebyshev's inequality: 쳬비쉐프-인이퀄리티는 
+
+- Markov's inequality: 마코브-인이퀄리티는 
 
 --- 
 ### Independence 
