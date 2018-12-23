@@ -217,6 +217,12 @@ f=f^+ -f^-
 \begin{align}
 \lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu
 \end{align}
+결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 잘 정의할 수 있기만 하면 되는 느낌이다. (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 는 없어서 Fatou lemma를 추가적으로 증명한다. 참고로 파토우 레마는 아래와 같다. 
+\begin{align}
+\lim \inf_{n \rightarrow \infty} \inf f_n d\mu \leq \int \left(\lim\inf_{n\rightarrow \infty} f_n \right) d\mu 
+\end{align}
+
+- 
 
 
 ***useful inequalities***
