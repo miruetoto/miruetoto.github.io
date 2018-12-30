@@ -244,7 +244,14 @@ f=f^+ -f^-
 \begin{align}
 \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int f d \mu 
 \end{align}
-라고 쓸 수 있는 조건을 알아보자. $f_n \rightarrow f$ **a.s**라고 생각하는 것이 정신건강에 좋지만 $f_n \rightarrow f$ **in measure $\mu$** 이어도 되는 것으로 알고 있다(확실하지 않다).
+라고 쓸 수 있는 조건을 알아보자. 당연히 모든 $x$에 대하여 
+\begin{align}
+\lim_{n \rightarrow \infty} f_n(x)= f(x)
+\end{align}
+이면 되겠지만 
+
+
+$f_n \rightarrow f$ **a.s**라고 생각하는 것이 정신건강에 좋지만 $f_n \rightarrow f$ **in measure $\mu$** 이어도 되는 것으로 알고 있다(확실하지 않다).
 
 - $X_n$이  $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
 
