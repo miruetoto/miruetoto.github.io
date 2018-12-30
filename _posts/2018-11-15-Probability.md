@@ -166,7 +166,11 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align}
 는 같은 기호이다. (Chung 책 p.42를 참고하면 알 수 있음) 
 
-- 다시 본론으로 돌아오자. $\int f d \mu$를 정의하기 위해 필요한 기본가정을 살펴보자. 당연히 $\int f d \mu$를 계산하기 위해서는 보는것처럼 매저러블 맵핑 $f$가 정의되어야 하며, 메져 $\mu$가 정의되어야 한다. 그리고 $f$와 $\mu$를 정의하기 위한 시그마필드 $\cal F$가 정의되어야 한다. 참고로 메저러블 맵핑 $f$를 정의하기 위해서는 기본적으로 $(\Omega,{\cal F}),~ (\mathbb{R},{\cal R})$이 모두 필요하지만 편의상 ${\cal F}$만 필요하다고 생각해도 무방하다는 것을 앞에서 설명하였다. 그리고 주목할만한 점이 하나 있는데 $f$와 $\mu$는 같은 시그마필드 ${\cal F}$에서 정의되고 있다는 것이다. 이것은 우리가 지금 정의하고 싶은 적분이 고등학교때 배운 적분처럼 실수축위에서 이루어지고 있는 것이 아니라 $(\Omega,{\cal F})$에서 이루어 지고 있다는 것을 생각하면 쉽게 이해할 수 있다. 그리고 또 하나 필요한 가정은 $\mu$가 **$\sigma$-finite measure** 라는 것이다. 이걸 이용하면 임의의 $A \in {\cal F}$에 대하여서도 $\mu(A)<\infty$가 성립하게 되어서 $d \mu$부분을 상당히 안정적으로 정의할 수 있다. 
+- 다시 본론으로 돌아오자. $\int f d \mu$를 정의하기 위해 필요한 기본가정을 살펴보자. 당연히 $\int f d \mu$를 계산하기 위해서는 보는것처럼 매저러블 맵핑 $f$가 정의되어야 하며, 메져 $\mu$가 정의되어야 한다. 그리고 $f$와 $\mu$를 정의하기 위한 시그마필드 $\cal F$가 정의되어야 한다. 참고로 메저러블 맵핑 $f$를 정의하기 위해서는 기본적으로 $(\Omega,{\cal F}),~ (\mathbb{R},{\cal R})$이 모두 필요하지만 편의상 ${\cal F}$만 필요하다고 생각해도 무방하다는 것을 앞에서 설명하였다. 그리고 주목할만한 점이 하나 있는데 $f$와 $\mu$는 같은 시그마필드 ${\cal F}$에서 정의되고 있다는 것이다. 이것은 우리가 지금 정의하고 싶은 적분이 고등학교때 배운 적분처럼 실수축위에서 이루어지고 있는 것이 아니라 $(\Omega,{\cal F})$에서 이루어 지고 있다는 것을 생각하면 쉽게 이해할 수 있다. 그리고 또 하나 필요한 가정은 $\mu$가 **$\sigma$-finite measure** 라는 것이다. 이걸 이용하면 임의의 $A \in {\cal F}$에 대하여서도 $\mu(A)<\infty$가 성립하게 되어서 $d \mu$부분을 상당히 안정적으로 정의할 수 있다. 요약하면 
+\begin{align}
+\int f d \mu
+\end{align}
+를 정의하기 위해서는 1) $f$가 ${\cal F}$에 대한 메저러블펑션이며 2) $\mu$가 ${\cal F}$에 대한 **$\sigma$-finite measure**이어야 한다(그리고 $f$와 $\mu$는 같은 시그마필드 ${\cal F}$를 공유해야함). 
 
 - 왜 적분을 **measure theory** 를 이용하여 정의할까? 고등학교때 정의하던대로 하면 안되나? 다 이유가 있어서 이렇게 정의하는 것이다. **measure theory** 를 이용하여 적분을 정의하면 고등학교때 배운 논리로 정의하기 애매하 적분들을 매우 깔끔하게 정의할 수 있다는 장점이 있다. 가령 예를들면 모든 유리수에서 $1$의 값을 가지고 나머지는 $0$을 가지는 함수 $f$를 생각하여 보자. 즉 $f$는 아래와 같다. 
 \begin{align}
@@ -178,7 +182,7 @@ f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \end{align}
 으로 깔끔하게 정의된다. 여기에서 $\lambda$는 르벡메져이며 이러한 적분을 **르벡적분**이라고 한다. 기본적으로 **구분구적법** 이나 **리만적분** 은 $f$가 연속이거나 부분적으로 연속이어야 할 것 같은 느낌인데 **measure theory**를 이용한 **르벡적분** 은 $f$가 매저러블 맵핑이기만 하면 되므로 좀 더 적분을 정의할 수 있는 함수의 선택폭이 넓다. 일단 ${\cal R}$자체가 거의 대부분의 ''subset of $\mathbb{R}$''을 커버하고 있기 때문에 ${\cal R}$-메저러블하지 않는 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는 편이 좋다. 즉 **르벡적분** 불가능한 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는것이 맞다(뭐 칸토르집합에서만 1의 값을 가지고 그렇지 않은 경우에서는 0의 값을 가지는 이상한 함수 $f$만 아니라며 말이다).
 
-- 이제 적분을 잘 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
+- 이제 적분을 **모순없이** 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
 ''$f$가 simple function이 아닐 경우에도 $\mu$에 대한 적분을 모순없이 잘 정의할 수 있을까?''
 <br/><br/>
 가 된다. 결론적으로 (1) $f$가 **bounded function** 인 경우 (2) $f$가 **non-negative function**인 경우 (3) $\int |f| d\mu < \infty$인 경우에서는 적분값 
@@ -206,7 +210,7 @@ f=f^+ -f^-
 \begin{align}
 \int f d\mu = \int f^+ d\mu - \int f^- d\mu
 \end{align}
-단지 위의 식이 **잘** 정의되려면 $\int f^+ d\mu$와 $\int f^- d\mu$이 모두 무한대이면 안되는데 이런 경우는 $\int |f| d\mu < \infty$라는 조건에 의해서 방지된다. 참고로 $\int |f| d\mu < \infty$를 만족하는 $f$를 우리는 **integrable하다**고 한다. 
+단지 위의 식이 **모순없이** 정의되려면 $\int f^+ d\mu$와 $\int f^- d\mu$이 모두 무한대이면 안되는데 이런 경우는 $\int |f| d\mu < \infty$라는 조건에 의해서 방지된다. 참고로 $\int |f| d\mu < \infty$를 만족하는 $f$를 우리는 **integrable하다**고 한다. 
 
 - $(\Omega, {\cal F},\mu)=(\mathbb{R}, {\cal R}, \mu)$이고 적분을 하는 메져 $\mu$가 $\mu((a,b])=F(b)-F(a)$와 같은 꼴로 표현가능하다면 우리는 $\int f d\lambda$를 아래와 같이 쓸 수 있다. 
 \begin{align}
@@ -227,7 +231,7 @@ f=f^+ -f^-
 \begin{align}
 \lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu
 \end{align}
-결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 잘 정의할 수 있기만 하면 되는 느낌이다. (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 는 없어서 Fatou lemma를 추가적으로 증명한다. 참고로 파토우 레마는 아래와 같다. 
+결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 **모순없이** 정의할 수 있기만 하면 되는 느낌이다. (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 는 없어서 Fatou lemma를 추가적으로 증명한다. 참고로 파토우 레마는 아래와 같다. 
 \begin{align}
 \liminf_{n \rightarrow \infty} \int f_n d\mu \leq \int \left(\liminf_{n\rightarrow \infty} f_n \right) d\mu 
 \end{align}
