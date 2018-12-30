@@ -227,18 +227,27 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
-- 이제 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
+- 이제 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
 \begin{align}
 \lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu
 \end{align}
-결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 **모순없이** 정의할 수 있기만 하면 되는 느낌이다(심지어 (3)의 조건은 (1)의 조건을 포함하므로 결론적으로 $\lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu$가 성립하기 위해서는 i) $f_n$이 모두 non-negative function이거나 ii) $f_n$이 모두 integrable 하면 된다는 것을 알 수 있음). (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 
-증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 는 없어서 Fatou lemma를 추가적으로 증명한다. 참고로 파토우 레마는 아래와 같다. 
+결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 **모순없이** 정의할 수 있기만 하면 되는 느낌이다. 심지어 (3)의 조건은 (1)의 조건을 포함하므로 결론적으로 극한이 적분안으로 들어오기 위해서는 1) $f_n$이 모두 non-negative function이거나 2) $f_n$이 모두 integrable 하면 된다는 것을 알 수 있다.
+
+- 위의 과정에서 (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 
+증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 없어서 Fatou lemma를 추가적으로 증명한다. 참고로 파토우 레마는 아래와 같다. 
 \begin{align}
 \liminf_{n \rightarrow \infty} \int f_n d\mu \leq \int \left(\liminf_{n\rightarrow \infty} f_n \right) d\mu 
 \end{align}
 여기에서 $f_n \geq 0$이다. 
 
-- 듀렛책 P.26. Thm 1.6.8.에서 $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
+- 이제 
+\begin{align}
+\int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int f d \mu 
+\end{align}
+라고 쓸 수 있는 조건을 알아보자. $f_n \rightarrow f$ **a.s**라고 생각하는 것이 정신건강에 좋지만 $f_n \rightarrow f$ **in measure $\mu$** 이어도 되는 것으로 알고 있다(확실하지 않다).
+
+- $X_n$이  $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
+
 - 듀렛책 P.27. Thm 1.6.9에서 $Ef(X)=\int_{\Omega} f(y)\mu(dy)$임을 보였다. 이게 무슨기호인지도 몰겠음. 
 
 - 두개의 메저러블 맵핑 $X_1$과 $X_2$를 각각 $(\Omega_1,{\cal F}_ 1, P_1)$와 $(\Omega_2,{\cal F}_ 2, P_2)$에서 정의하자. 확률벡터 $(X_1,X_2)$를 정의하기 위한 공간을 construct하자. 먼저 
