@@ -272,6 +272,7 @@ P(A \times B)=P_1(A) \times P_2(B)
 \end{align}
 듀렛책의 thm 1.7.1에 의하면 이러한 메져 $P$가 유니크하게 존재한다고 한다. 
 
+- LGE에서 
 
 ***useful inequalities***
 - 여기에서는 적분 혹은 평균과 관련된 유용한 부등식들을 정리하였다. 
