@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 강화학습
+title: 강화학습 (작성중)
 ---
 
 ### 간단한 그리드 
