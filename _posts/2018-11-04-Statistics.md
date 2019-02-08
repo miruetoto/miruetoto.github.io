@@ -4,7 +4,9 @@ title: (얕은) 통계학
 ---
 ### About this post 
 - 본 포스트는 계속 작성중이다. 
+
 - 본 포스트에서는 통계학에 대한 전반적인 내용을 소개한다. 매우 많은 범위를 가볍게만 훑을 생각이라 제목은 (얕은) 통계학이다. 
+
 - 본 포스팅에 포함되는 내용의 범위는 1) 통계학과라면 응당 알아야할 내용 (기본 교양같은거) 2) 그중에서 이론통계(=수리통계)와 확률론계열을 제외한 부분이다. 따라서 회귀분석류를 포함한 대학원 응용통계 혹은 대학원 고급통계의 내용을 커버한다고 볼 수 있다. 
 
 ### 통계학의 과제
@@ -12,7 +14,9 @@ title: (얕은) 통계학
 
 ***Regression***
 - $y_i=f(x_i)+\epsilon_i$형태의 모델임. 
+
 - $\\{(x_i,y_i)\\}_ {i=1}^{n}$에서 $f$를 학습하는 방식임. 
+
 - 회귀는 결국 function estimation. 
 
 ***Classification***
@@ -20,11 +24,14 @@ title: (얕은) 통계학
 
 ***Anomaly detection***
 - 주어진 입력표본 $\\{x_i\\}_ {i=1}^{n}$에 포함된 비정상적인 값을 발견하는 문제이다. 
+
 - 밀집해있는 자료를 정상으로 간주하고 그 군집으로부터 멀리 떨어진 자료를 비정상으로 간주한다. 
 
 ***Clustering*** 
 - 표본간의 유사도를 측정하는 방법을 적절히 선택하는 것이 중요하다. 
+
 - 이때 그래프라플라시안을 활용하면 좋을듯? smoothness개념 
+
 - hst에서도 전체 smoothness를 정의하는 어떠한 방법이 있으면 좋겠네. Total variation의 개념과도 연결되는것 같다? 
 
 ***Dimensionality reduction***
@@ -37,27 +44,35 @@ title: (얕은) 통계학
 
 ***Generative model vs Discriminative model***
 - $28\times 28$-pixel 의 이미지자료가 있다고 하자. 따라서 이 경우 ${\bf X}_ {n\times 784}$가 된다. 
+
 - $y_{n\times 1}$이라고 하고, $y \in \\{0,\dots,9\\}$라고 하자. 
+
 - 어쨋든 ${\bf X}$와 $y$를 통하여 conditional pdf $f(y|{\bf X})$를 알 수 있다. 결국 분류문제는 아래식을 풀어서 $\hat{y}$을 구하는 과정으로 이해할 수 있다. 
   \begin{align}
   \hat{y}=\underset{y}{\operatorname{argmax}} f(y|{\bf X})
   \end{align}
+
 - 그런데 위에서 $f(y|{\bf X})$를 최대화하는 대신에 $f({\bf X},y)$를 최대화해도 문제없는데 그 이유는 아래식이 성립하기 때문이다. 
   \begin{align}
   f(y|{\bf X})=\frac{f({\bf X},y)}{f({\bf X})} \propto f({\bf X},y)
   \end{align}
   이처럼 $\hat{y}$는 $f({\bf X},y)$를 최대화 하거나 $f(y|{\bf X})$를 최대화 함으로써 구할 수 있는데 $f({\bf X},y)$를 최대화 하여 구하자는 주의가 *Generative model*을 지지하는 사람들이고  $f(y|{\bf X})$를 최대화 하여 구하자는 사람들은 *Discriminative model*을 지지하는 사람들이다.  
+
 - 일반적으로 $f({\bf X},y)$를 알면 $f(y|{\bf X})$를 쉽게 계산할 수 있지만(아래식참고) 반대는 불가능하므로 $f({\bf X},y)$를 아는게 더 어려운 일이다. 
   \begin{align}
   f(y|{\bf X})=\frac{f({\bf X},y)}{f({\bf X})}=\frac{f({\bf X},y)}{\sum_y f({\bf X},y)}
   \end{align}
+
 - 따라서 더 구하기 힘든함수 $f({\bf X},y)$를 알아내서 $\hat{y}$를 구하는 것보다는 좀 더 구하기 쉬운 함수 $f(y \vert {\bf X})$ 를 알아낸 다음에 $\hat{y}$을 구하는 것이 더 효과적이다. 이것이 SVM을 창시한 뱁닉(Vapnik)의 아이디어이다. 
 
 
 ***Frequentis vs Bayesian***
 - ~~솔직히 아직도 차이 잘 모르겠다.~~ 
+
 - Frequentist는 $\theta$를 확률변수로 보지 않는다. (fixed paramater라고 생각함.)
+
 - Bayesian은 $\theta$를 확률변수라고 생각한다. 
+
 - 따라서 Frequentist는 $\theta$의 값을 MLE와 같은 방법으로 구하려고 하지만 Bayesian는 $\theta$의 (posterior) distribution 관심이 있다. 
 
 ---
@@ -233,7 +248,7 @@ $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T}'\sum_i^n {\bf x}_ i
 \end{align}
 여기에서 ${\bf X}$는 *given*되어 있으므로 ${\bf T}$에 대한 상수이다. 라그랑주 승수법을 사용하면 결국 PCA는 아래식을 최대화하는 $({\bf T},\lambda)$를 찾으면 된다. 
 \begin{align}
-tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ \diag(\lambda_1,\dots, \lambda_p) \left({\bf I}-{\bf T}'{\bf T}\right)
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ diag(\lambda_1,\dots, \lambda_p) \left({\bf I}-{\bf T}'{\bf T}\right)
 \end{align}
 위의 식을 ${\bf T}$로 미분하면 아래와 같이 된다. 
 \begin{align}
