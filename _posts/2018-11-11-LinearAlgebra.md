@@ -3,10 +3,14 @@ layout: post
 title: (내맘대로 정리한) 선형대수학
 ---
 ### About this post
-- 본 포스트는 아직 작성중이다. 
+- 본 포스트는 계속 작성중이다. 
+
 - 선형대수학은 학부 1학년에 배우는 매우 쉬운 과목이지만 기본적인 개념이 헷갈릴때가 있다. 그럴때 마다 다시 선형대수학책을 꺼내들고 공부하게 되는데 이러한 무의미한 반복을 줄이고 싶어서 포스팅을 시작하였다. 
+
 - 본 포스트에서 정리하는 선형대수학은 통계학과 연관성이 있는 내용위주로 정리하였음을 미리 밝힌다. 
+
 - 본 포스트를 만들때 참고한 문헌은 **Petersen, K. B., & Pedersen, M. S. (2008). The matrix cookbook. Technical University of Denmark, 7(15), 510.** 와 **Strang, G. (2006). Linear Algebra and Its Applications. Thomson, Brooks/Cole** 이다. 
+
 - 본 포스트에서는 나만 쓰는 notation이 있다. 예를들면 $rbind(c(1,2),c(2,4))$라든가 $X[,1]$과 같은 식의 기호이다. 이것은 R프로그래머라면 익숙한 기호이지만 그렇지 않은사람에게는 낯설 수 있다. 나는 이러한 notation이 익숙하여 내맘대로 쓰겠다. 그래서 포스트의 제목은 내맘대로 정리한 선형대수학이다. 
 
 ### (통계학과를 위한) 기본 매트릭스 연산
@@ -17,9 +21,13 @@ title: (내맘대로 정리한) 선형대수학
 {\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
 \end{align}
 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 이때 ${\bf x}_ n$과 같은 경우는 row-vector임을 유의하자. 
+
 - 이 챕터에서는 위와 유사한 방식으로 매트릭스를 ${\bf A}$와 같이 인덱스가 없는 대문자 볼드체로 종종 표시할 것이다. 
+
 - 매트릭스 ${\bf A}$의 column은 ${\bf A}_ 1, {\bf A}_ 2, \dots$와 같이 인덱스가 있는 대문자 볼드체로 종종 표시할 것이다. 물론 일반적인 교재에서는 ${\bf A}_ 1$는 보통 매트릭스를 의미하기 때문에 헷갈릴 수 있다. 따라서 ${\bf A}=cbind({\bf A}_ 1, {\bf A}_ 2, \dots, {\bf A}_ p)$와 같이 될수 있는 한 명확하게 명시를 하겠다.   
+
 - 매트릭스 ${\bf A}$의 row는 ${\bf a}_ 1, {\bf a}_ 2, \dots$와 같은 방식으로 종종 표시할 것이다. 이 역시 헷갈리는 표현인데 일반적인 교재에서 ${\bf a}_ 1$와 같은것은 col-vector를 의미하기 때문이다(여기서는 row-vector). 따라서 이 역시 ${\bf A}=rbind({\bf a}_ 1, {\bf a}_ 2, \dots, {\bf a}_ p)$와 같이 될 수 있는 한 명확하게 명시를 하겠다.    
+
 - 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 
 
 ***transpose*** 
@@ -27,7 +35,9 @@ title: (내맘대로 정리한) 선형대수학
 \begin{align}
 {\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
 \end{align}
+
 - 복소행렬의 경우는 transpose대신에 $H$를 사용한다. 
+
 - 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 $\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'$이다. 
 
 ***행렬곱***
@@ -58,7 +68,9 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 
 ***trace***
 - $tr({\bf A})=tr({\bf A}')$
+
 - $tr({\bf A}{\bf B}{\bf C})=tr({\bf B}{\bf C}{\bf A})=tr({\bf C}{\bf A}{\bf B})$
+
 - ${\bf a}$가 col-vector일 경우 아래식이 성립한다. 
 \begin{align}
 {\bf a}'{\bf a}=tr({\bf a}{\bf a}')
@@ -71,8 +83,11 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 --- 
 ### 미분 (Derivatives) 
 - 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 col-vector이다. 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 
+
 - 이 챕터에서는 벡터 ${\bf x}$혹은 매트릭스 ${\bf X}$로 주로 미분 할 것이다. 
+
 - 이 챕터에서 ${\bf X}$는 특별한 스트럭처가 없다고 가정할 것이다. 만약에 ${\bf X}$가 스트럭쳐가 있다면 (예를들면 *symm*-매트릭스라든가, *pd*-매트릭스라든가) 미분결과가 달라지게 된다. 
+
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
 --- 
