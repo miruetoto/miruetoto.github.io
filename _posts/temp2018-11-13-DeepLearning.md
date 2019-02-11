@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: () 딥러닝 
+title: (얕은) 딥러닝 
 ---
 
 ### About this document
