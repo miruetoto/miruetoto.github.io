@@ -51,7 +51,7 @@ u[i,1],\dots,u[i,4]
 \begin{align}
 \begin{cases}
 {\bf U}^{(1)}[i,1]={\bf X}[i,1]{\bf W}^{(1)}[1,1]+\dots+{\bf X}[i,3]{\bf W}^{(1)}[1,3] \\\\ \\\\
-\dots \\\\ \\\\
+\dots \\\\ 
 {\bf U}^{(1)}[i,4]={\bf X}[i,1]{\bf W}^{(1)}[4,1]+\dots+{\bf X}[i,3]{\bf W}^{(1)}[4,3]
 \end{cases}
 \end{align}
