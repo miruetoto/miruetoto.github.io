@@ -69,7 +69,7 @@ g^{(L)}:\mathbb{R}^{p_L} \rightarrow \mathbb{R}^{p_L}
 \end{align}
 여기에서 오퍼레이터 ${\cal G}^{(1)}$은 아래의 식을 만족한다고 하자.(나만쓰는 노테이션인듯)
 \begin{align}
-{\cal G}^{(1)}  {\bf U}^{(1)}_ {n \times p_1} :=rbind(g^{(1)}\left( {\bf U}^{(1)}[1,] \right) \dots, g^{(1)}\left({\bf U}^{(1)}[n,] \right))
+{\cal G}^{(1)}  {\bf U}^{(1)}_ {n \times p_1} :=rbind\left(g^{(1)}\left( {\bf U}^{(1)}[1,] \right) \dots, g^{(1)}\left({\bf U}^{(1)}[n,] \right)\right)
 \end{align}
 
 
