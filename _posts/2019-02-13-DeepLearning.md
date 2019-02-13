@@ -57,9 +57,9 @@ title: (얕은) 딥러닝
 \end{align}
 모든 observation을 고려하면 위의식은 아래와 같이간결하게 된다. 
 \begin{align}
-{\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}_ {p \times p_1}
+{\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}^{(1)}_ {p \times p_1}
 \end{align}
-고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)}[i,]=f^{(1)}{\bf U}^{(1)}[i,]$이 된다. 여기에서 $f^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)}_ [i,]$와 ${\bf Z}^{(1)}_ [i,]$는 모두 길이가 $p_1$인 벡터이므로 
+고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)}_ [i,]=f^{(1)}{\bf U}^{(1)}[i,]$이 된다. 여기에서 $f^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 벡터이므로 
 \begin{align}
 f^{(L)}:\mathbb{R}^{p_L} \rightarrow \mathbb{R}^{p_L}
 \end{align}
