@@ -59,10 +59,11 @@ title: (얕은) 딥러닝
 \begin{align}
 {\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}^{(1)}_ {p \times p_1}
 \end{align}
-고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)} [i,]=g^{(1)} \left( {\bf U}^{(1)}[i,]\right)$이 된다. 여기에서 $g^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 벡터이므로 
+고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)} [i,]=g^{(1)} \left( {\bf U}^{(1)}[i,]\right)$이 된다. 여기에서 $g^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 row-vector이므로 $g^{(L)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping하는 변환이 된다. 즉 
 \begin{align}
-g^{(L)}:\mathbb{R}^{p_L} \rightarrow \mathbb{R}^{p_L}
+g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_1}): a_1,\dots,a_{p_1} \in \mathbb{R}\\}
 \end{align}
+
 인 함수가 된다. 따라서 모든 observation을 고려하면 위의 구조는 아래와 같이 간단히 쓸 수 있다. 
 \begin{align}
 {\bf Z}^{(1)}_ {n \times p_1}={\cal G}^{(1)} \left \\{ {\bf U}^{(1)}_ {n \times p_1} \right \\}
