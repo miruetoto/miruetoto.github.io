@@ -96,7 +96,7 @@ g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots
 와 같이된다. 하지만 위와 같이 row-vector에서 row-vector로 맵핑되는 경우는 거의 없으며 스칼라에서 스칼라로 맵핑되거나 (항등함수, 로지스틱함수, 렐루) 벡터에서 스칼라로 맵핑(맥스아웃함수,소프트맥스)된다. 다음은 (고정된 관측치 $i$에 대한) 활성화 함수의 종류이다. <br/><br/>
 	1. 항등함수: ${\bf Z}^{(L)}[i,j]={\bf U}^{(L)}[i,j]$
 	2. 로지스틱함수: ${\bf Z}^{(L)}[i,j]=\frac{1}{1+\exp\left(-{\bf U}^{(L)}[i,j]\right)}$
-	3. 소프트맥스함수: ${\bf Z}^{(L)}[i,j]=\frac{e^{-{\bf U}^{(L)}[i,j]}{\sum_{j=1}^{p_L}\exp\left(-{\bf U}^{(L)}[i,j]\right)}$
+	3. 소프트맥스함수: ${\bf Z}^{(L)}[i,j]=\frac{\exp\left(-{\bf U}^{(L)}[i,j]\right)}{\sum_{j=1}^{p_L}\exp\left(-{\bf U}^{(L)}[i,j]\right)}$
 	
 
 - 다시한번 말하지만 항등함수와 로지스틱함수는 $z[i,1]$의 값을 구하는 오직 $u[i,1]$값만을 필요로 하지만 소프트맥스함수는 $z[i,1]$의 값을 구하는데 $u[i,1],\dots u[i,10]$의 값을 모두 필요로 한다. 즉 항등함수와 로지스틱 함수는 모두 $f:\mathbb{R} \rightarrow \mathbb{R}$이고, 소프트맥스함수는 $f:\mathbb{R}^{10}\rightarrow \mathbb{R}$이다. 
