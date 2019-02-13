@@ -65,12 +65,13 @@ g^{(L)}:\mathbb{R}^{p_L} \rightarrow \mathbb{R}^{p_L}
 \end{align}
 인 함수가 된다. 따라서 모든 observation을 고려하면 위의 구조는 아래와 같이 간단히 쓸 수 있다. 
 \begin{align}
-{\bf Z}^{(1)}_ {n \times p_1}={\cal G}^{(1)} \left \{ {\bf U}^{(1)}_ {n \times p_1} \right \}
+{\bf Z}^{(1)}_ {n \times p_1}={\cal G}^{(1)} \left \\{ {\bf U}^{(1)}_ {n \times p_1} \right \\}
 \end{align}
 여기에서 오퍼레이터 ${\cal G}^{(1)}$은 아래의 식을 만족한다고 하자.(나만쓰는 노테이션인듯)
 \begin{align}
-{\cal G}^{(1)}  {\bf U}^{(1)}_ {n \times p_1} :=rbind\left(g^{(1)}\left( {\bf U}^{(1)}[1,] \right) \dots, g^{(1)}\left({\bf U}^{(1)}[n,] \right)\right)
+{\cal G}^{(1)}  \left \\{ {\bf U}^{(1)}_ {n \times p_1} \right \\} :=rbind\left(g^{(1)}\left( {\bf U}^{(1)}[1,] \right) \dots, g^{(1)}\left({\bf U}^{(1)}[n,] \right)\right)
 \end{align}
+이전 노드의 출력은 다음노드의 입력이 되므로 아래식이 성립한다. 
 
 
 - ***아웃풋레이어***: (하나의 observation에 대한) 아웃풋레이어의 노드수는 $\bf{y}$에 포함된 설명변수의 수이다. 즉 만약에 ${\bf y}_ {n \times 1}$라면 아웃레이어의 노드수는 $1$개가 되어야 한다. 위의그림이 이러한 경우에 해당된다. 
