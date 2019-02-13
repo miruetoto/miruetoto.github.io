@@ -55,7 +55,7 @@ title: (얕은) 딥러닝
 {\bf U}^{(1)}[i,4]={\bf X}[i,1]{\bf W}^{(1)}[4,1]+\dots+{\bf X}[i,3]{\bf W}^{(1)}[4,3]
 \end{cases}
 \end{align}
-모든 observation을 고려하면 위의식은 아래와 같이간결하게 된다. 
+모든 observation을 고려하면 위의식은 아래와 같이 간결하게 된다. 
 \begin{align}
 {\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}^{(1)}_ {p \times p_1}
 \end{align}
@@ -63,7 +63,6 @@ title: (얕은) 딥러닝
 \begin{align}
 g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_1}): a_1,\dots,a_{p_1} \in \mathbb{R}\\}
 \end{align}
-
 인 함수가 된다. 따라서 모든 observation을 고려하면 위의 구조는 아래와 같이 간단히 쓸 수 있다. 
 \begin{align}
 {\bf Z}^{(1)}_ {n \times p_1}={\cal G}^{(1)} \left \\{ {\bf U}^{(1)}_ {n \times p_1} \right \\}
@@ -73,9 +72,18 @@ g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots
 {\cal G}^{(1)}  \left \\{ {\bf U}^{(1)}_ {n \times p_1} \right \\} :=rbind\left(g^{(1)}\left( {\bf U}^{(1)}[1,] \right) \dots, g^{(1)}\left({\bf U}^{(1)}[n,] \right)\right)
 \end{align}
 이전 노드의 출력은 다음노드의 입력이 되므로 아래식이 성립한다. 
-
+\begin{align}
+{\bf U}_ {n \times p_1}^{(2)}={\bf Z}^{(1)}_ {n \times p_1} {\bf W}^{(2)}_ {p_1 \times p_2}
+\end{align}
+순차적으로 아래가 성립한다.
+\begin{align}
+{\bf Z}^{(2)}_ {n \times p_2}={\cal G}^{(2)} \left \\{ {\bf U}^{(2)}_ {n \times p_2} \right \\}
+\end{align}
 
 - ***아웃풋레이어***: (하나의 observation에 대한) 아웃풋레이어의 노드수는 $\bf{y}$에 포함된 설명변수의 수이다. 즉 만약에 ${\bf y}_ {n \times 1}$라면 아웃레이어의 노드수는 $1$개가 되어야 한다. 위의그림이 이러한 경우에 해당된다. 
+\begin{align}
+{\bf y}_ {n \times 1}={\bf Z}^{(2)}_ {n \times p_2} {\bf W}^{(3)}_ {p_2 \times 1}
+\end{align}
 
 - 앞먹임신경망에 대하여 논의하기 전에 유닛이 무엇인지 아는게 편함. 
 하나의 obs $x[i,]$이 있다고 하자. 여기에서 $x[i,]$는 3개의 성분을 가지고 있다고 하자. 즉 $$x[i,]=[x[i,1],x[i,2],x[i,3]].$$ 
