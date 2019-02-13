@@ -84,7 +84,7 @@ g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots
 일반적으로 임의의 $L$번째 층에 대하여 아래식이 성립함을 기억하면 된다.
 \begin{align}
 \begin{cases}
-{\bf U}_ {n \times p_L}^{(L)}={\bf Z}^{(L-1)}_ {n \times p_{L-1}} {\bf W}^{(L)}_ {p_{L-1} \times p_L} \\\\ \\\\
+{\bf U}_ {n \times p_L}^{(L)}={\bf Z}^{(L-1)}_ {n \times p_{L-1}} {\bf W}^{(L)}_ {p_{L-1} \times p_L} \\\\ \\
 {\bf Z}^{(L)}_ {n \times p_L}={\cal G}^{(L)} \left \\{ {\bf U}^{(L)}_ {n \times p_L} \right \\}
 \end{cases}
 \end{align}
