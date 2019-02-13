@@ -61,9 +61,9 @@ title: (얕은) 딥러닝
 \begin{align}
 {\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}^{(1)}_ {p \times p_1}
 \end{align}
-고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)} [i,]=g^{(1)} \left( {\bf U}^{(1)}[i,]\right)$이 된다. 여기에서 $g^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 row-vector이므로 $g^{(L)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping되는 변환이 된다. 즉 
+고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)} [i,]=g^{(1)} \left( {\bf U}^{(1)}[i,]\right)$이 된다. 여기에서 $g^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 row-vector이므로 $g^{(1)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping되는 변환이 된다. 즉 
 \begin{align}
-g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_1}): a_1,\dots,a_{p_1} \in \mathbb{R}\\}
+g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_L}): a_1,\dots,a_{p_L} \in \mathbb{R}\\}
 \end{align}
 인 함수가 된다. 따라서 모든 observation을 고려하면 위의 구조는 아래와 같이 간단히 쓸 수 있다. 
 \begin{align}
@@ -91,7 +91,7 @@ g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots
 
 - 앞에서 말한것 처럼 $g^{(L)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping되는 변환이 된다. 즉 
 \begin{align}
-g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_1}): a_1,\dots,a_{p_1} \in \mathbb{R}\\}
+g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_L}): a_1,\dots,a_{p_L} \in \mathbb{R}\\}
 \end{align}
 와 같이된다. 하지만 위와 같이 row-vector에서 row-vector로 맵핑되는 경우는 거의 없으며 스칼라에서 스칼라로 맵핑되거나 (항등함수, 로지스틱함수, 렐루) 벡터에서 스칼라로 맵핑(맥스아웃함수,소프트맥스)된다. 다음은 (고정된 관측치 $i$에 대한) 활성화 함수의 종류이다. <br/><br/>
 	1. 항등함수: ${\bf Z}^{(L)}[i,j]={\bf U}^{(L)}[i,j]$
