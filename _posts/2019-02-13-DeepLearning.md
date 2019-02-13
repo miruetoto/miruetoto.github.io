@@ -57,7 +57,7 @@ title: (얕은) 딥러닝
 \end{align}
 모든 observation을 고려하면 위의식은 아래와 같이간결하게 된다. 
 \begin{align}
-{\bf U}_ {n \times p_1}={\bf X}_ {n \times p} {\bf W}_ {p \times p_1}
+{\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}_ {p \times p_1}
 \end{align}
 
 
