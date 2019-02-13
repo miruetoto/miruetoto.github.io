@@ -61,7 +61,7 @@ title: (얕은) 딥러닝
 \begin{align}
 {\bf U}_ {n \times p_1}^{(1)}={\bf X}_ {n \times p} {\bf W}^{(1)}_ {p \times p_1}
 \end{align}
-고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)} [i,]=g^{(1)} \left( {\bf U}^{(1)}[i,]\right)$이 된다. 여기에서 $g^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 row-vector이므로 $g^{(L)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping하는 변환이 된다. 즉 
+고정된 $i$번째 observation에 대하여 첫번째 레이어의 출력은 ${\bf Z}^{(1)} [i,]=g^{(1)} \left( {\bf U}^{(1)}[i,]\right)$이 된다. 여기에서 $g^{(L)}$은 $L$번째 레이어에 대한 활성화 함수를 의미한다. 여기에서 ${\bf U}^{(1)} [i,]$와 ${\bf Z}^{(1)} [i,]$는 모두 길이가 $p_1$인 row-vector이므로 $g^{(L)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping되는 변환이 된다. 즉 
 \begin{align}
 g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_1}): a_1,\dots,a_{p_1} \in \mathbb{R}\\}
 \end{align}
@@ -89,6 +89,17 @@ g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots
 \end{cases}
 \end{align}
 
+- 앞에서 말한것 처럼 $g^{(L)}$은 길이가 $p_1$인 row-vector를 길이가 $p_1$인 row-vector로 mapping되는 변환이 된다. 즉 
+\begin{align}
+g^{(L)}: {\cal A} \rightarrow {\cal A} ~~ where ~~ {\cal A}:=\\{(cbind(a_1,\dots,a_{p_1}): a_1,\dots,a_{p_1} \in \mathbb{R}\\}
+\end{align}
+와 같이된다. 하지만 위와 같이 row-vector에서 row-vector로 맵핑되는 경우는 거의 없으며 스칼라에서 스칼라로 맵핑되거나 (항등함수, 로지스틱함수, 렐루) 벡터에서 스칼라로 맵핑(맥스아웃함수,소프트맥스)된다. 다음은 활성화 함수의 종류이다. <br/>
+	1. 항등함수: ${\bf Z}^{(L)}[i,j]={\bf U}^{(L})[i,j]~~ where ~~ i =1,\dots n ~~ and ~~ j = 1,\dots, p_L$. 
+	2. 로지스틱함수: $z[i,1]=\frac{1}{1+e^{-u[i,1]}}$. 
+	3. 소프트맥스함수: $z[i,1]=\frac{e^{-u[i,1]}}{sum(e^{-u[i,]})}$
+
+- 다시한번 말하지만 항등함수와 로지스틱함수는 $z[i,1]$의 값을 구하는 오직 $u[i,1]$값만을 필요로 하지만 소프트맥스함수는 $z[i,1]$의 값을 구하는데 $u[i,1],\dots u[i,10]$의 값을 모두 필요로 한다. 즉 항등함수와 로지스틱 함수는 모두 $f:\mathbb{R} \rightarrow \mathbb{R}$이고, 소프트맥스함수는 $f:\mathbb{R}^{10}\rightarrow \mathbb{R}$이다. 
+
 ***아웃풋레이어***: 
 - (하나의 observation에 대한) 아웃풋레이어의 노드수는 $\bf{y}$에 포함된 설명변수의 수이다. 즉 만약에 ${\bf y}_ {n \times 1}$라면 아웃레이어의 노드수는 $1$개가 되어야 한다. 위의그림이 이러한 경우에 해당된다. 
 \begin{align}
@@ -112,13 +123,6 @@ $$u[i,2]=x[i,1]w[1,2]+x[i,2]w[2,2]+x[i,3]w[3,2]+b[2]$$
 - 관측치가 $n$개이고 $X$의 feature가 1024개 있다고 하자. $Y$의 feature는 10개 있다고 하자. 층은 1개만 쌓자. $X$의 차원은 $n\times 1024$임. $W$의 차원은 $1024 \times 10$이고 $U$의 차원은 $n \times 10$이 된다. 식으로는 아래와 같이 된다.
 $$U_{n\times 10}=X_{n\times 1024}W_{1024\times 10}$$
 이때 $u[i,]$는 가로로 10개의 값이 들어가 있는 메트릭스이다.
-
-- 활성화 함수 $f$는 벡터 $[u[i,1]\dots,u[i,10]$와 벡터 $[z[i,1],\dots,z[i,10]]$사이의 맵핑을 정의하는 함수이다. 즉 $f:\mathbb{R}^{10} -\rightarrow \mathbb{R}^{10}$임. 하지만 보통 벡터에서 벡터로 맵핑되는 경우는 거의 없으며 스칼라에서 스칼라로 맵핑되거나 (항등함수, 로지스틱함수, 렐루) 벡터에서 스칼라로 맵핑(맥스아웃함수,소프트맥스)된다. 
-	1. 항등함수: $z[i,1]=u[i,1]$. 
-	2. 로지스틱함수: $z[i,1]=\frac{1}{1+e^{-u[i,1]}}$. 
-	3. 소프트맥스함수: $z[i,1]=\frac{e^{-u[i,1]}}{sum(e^{-u[i,]})}$
-
-- 다시한번 말하지만 항등함수와 로지스틱함수는 $z[i,1]$의 값을 구하는 오직 $u[i,1]$값만을 필요로 하지만 소프트맥스함수는 $z[i,1]$의 값을 구하는데 $u[i,1],\dots u[i,10]$의 값을 모두 필요로 한다. 즉 항등함수와 로지스틱 함수는 모두 $f:\mathbb{R} \rightarrow \mathbb{R}$이고, 소프트맥스함수는 $f:\mathbb{R}^{10}\rightarrow \mathbb{R}$이다. 
 
 - 층이 여러층 있을경우 층마다 다른활성화함수를 쓰는건 가능하다. 예를들어 1층에서 시그모이드를 쓰고 2층에서 렐루를 쓸 수 있음. 
 
