@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: (내맘대로 정리한) 선형대수학
+title: 내맘대로 정리한 선형대수학
 ---
 ### About this post
 - 본 포스트는 계속 작성중이다. 
