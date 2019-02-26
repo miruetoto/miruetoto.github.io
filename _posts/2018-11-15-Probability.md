@@ -251,7 +251,10 @@ f=f^+ -f^-
 \begin{align}
 \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int f d \mu 
 \end{align}
-임을 주장할 수 있다. 그리고 $f_n \rightarrow f$ **in measure $\mu$** 이어도 되는 것으로 알고 있는데 이건 확실하지 않다. 그래서 그냥 $f_n \rightarrow f$ **a.s**라고 기억하는 것이 정신건강에 좋다. 
+임을 주장할 수 있다. 사실 $f_n \rightarrow f$ **in measure $\mu$** 이어도 되는 것으로 알고 있다. 왜냐하면  $f_n \rightarrow f$ **in measure $\mu$** 의 의미는 임의의 $\epsilon>0$에 대하여 $\mu(\\{x: \\| f(x)-f_n(x) \\|> \epsilon \\}) \rightarrow 0$이라는 의미인데 
+
+
+그래서 그냥 $f_n \rightarrow f$ **a.s**라고 기억하는 것이 정신건강에 좋다. 
 
 - $X_n$이  $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
 
