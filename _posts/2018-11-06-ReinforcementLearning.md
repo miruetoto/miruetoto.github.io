@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (얕은) 강화학습
+title: 강화학습
 ---
 
 ### About this document
