@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: (듀렛) 확률론
+title: 확률론 1 
 --- 
 
 ### About this post
