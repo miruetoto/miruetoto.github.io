@@ -230,7 +230,7 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
-- 이제 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
+- 이제 임의의 가측함수열 $\\{f_n\\}$과 가측함수$f$를 상상하여 보자. $f_n \rightarrow f$ **pointwisely** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
 \begin{align}
 \lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu
 \end{align}
