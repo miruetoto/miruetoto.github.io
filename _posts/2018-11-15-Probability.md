@@ -136,7 +136,7 @@ $F(x)$는 $X$의 ***cdf*** 라고 표현하기도 한다. 참고로 $F(x)$는 (1
 \begin{align}
 f(x):=\frac{\partial}{\partial x}F(x) 
 \end{align}
-를 정의할수 있는데 이때 $f(x)$를 $X$의 ***pdf*** 라고 한다. 참고로 $\mu$가 $F$에 대응하듯이 (recall $F(x)=\mu((-\infty,x])$) $f$에 대응하는 어떠한 메져 $\nu$를 생각할 수 있다. 즉 임의의 $B \in {\cal B}$에 대하여 아래와 같은 성질을 만족하는 $\nu$를 생각할 수 있다.
+를 정의할수 있는데 이때 $f(x)$를 $X$의 ***pdf*** 라고 한다. 참고로 $\mu$와 $F$가 $F(x)=\mu((-\infty,x])$ 와 같은 관계를 가지듯이 $f$와 어떠한 관계를 가지는 메져 $\nu$를 생각할 수 있다. 즉 임의의 $B \in {\cal B}$에 대하여 아래와 같은 성질을 만족하는 $\nu$를 생각할 수 있다.
 \begin{align}
 \mu(B)=\int_B \nu d\lambda 
 \end{align}
