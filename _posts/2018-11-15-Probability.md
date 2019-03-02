@@ -230,9 +230,9 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
-- 이제 임의의 가측함수열 $\\{f_n\\}$과 가측함수$f$를 상상하여 보자. $f_n \rightarrow f$ **pointwisely** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
+- $f$가 메저러블 맵핑이고 $\\{f_n\\}$이 sequence of measurable mapping 이라고 하자. 모든 $x$에 대하여 $\lim_{n \rightarrow \infty} f_n(x)= f(x)$ 인 경우 우리는 $f_n$이 $f$로 **pointwise convergence** 한다고 말한다. 기호로는 간단히 $f_n \rightarrow f$ **pw** 와 같이 쓰도록하자. 이제 $f_n \rightarrow f$ **pw** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
 \begin{align}
-\lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu
+\lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int \left f d\mu
 \end{align}
 결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 **모순없이** 정의할 수 있기만 하면 되는 느낌이다. 심지어 (3)의 조건은 (1)의 조건을 포함하므로 결론적으로 극한이 적분안으로 들어오기 위해서는 1) $f_n$이 모두 non-negative function이거나 2) $f_n$이 모두 integrable 하면 된다는 것을 알 수 있다.
 
