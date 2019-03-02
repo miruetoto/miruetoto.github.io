@@ -146,7 +146,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 ### Measure Theory (2) : Integration 
 - 여기에서는 듀렛책 챕터 1.4~1.7의 내용을 다룬다. 이곳에서는 메저러블 맵핑 $f$의 적분을 다룬다. 
 
-- $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 **$\sigma$-finite measure** 라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 (1) $f$를 $\mu$로 적분한것 즉 
+- $f:\Omega \rightarrow \mathbb{R}$가 두 가측공간 $(\Omega,{\cal F})$와 $(\mathbb{R},{\cal R})$를 이어주는 매저러블-맵핑이라고 하자. 그리고 $\mu:{\cal F} \rightarrow \mathbb{R}$는 ${\cal F}$에서의 메저라고 하자. 여기에서 특별히 $\mu$는 **$\sigma$-finite measure** 라고 정의한다(사실 우리가 관심 있는것은 $f=X$이며 $\mu=P$인 경우이지만 일단 일반적은 측도론에서 이야기 하도록 하자). 이 챕터에서 우리의 관심은 (1) 메저러블-맵핑 $f$를 메저$\mu$로 적분한것 즉 
 \begin{align}
 \int f d \mu
 \end{align}
@@ -159,7 +159,7 @@ f(x):=\frac{\partial}{\partial x}F(x)
 \end{align} 
 와 같은 것들을 의미한다. 
 
-- 여기서 잠깐 정리해둘 노테이션이 있는데 
+- 여기서 잠깐 정리해둘 노테이션이 있는데 메저러블-맵핑 $f$와 메저 $\mu$에 대하여 
 \begin{align}
 \int f d \mu
 \end{align}
@@ -185,7 +185,7 @@ f(x)=\begin{cases} 1 & x \in \mathbb{Q} \\\\ 0 & x \notin \mathbb{Q} \end{cases}
 \end{align}
 으로 깔끔하게 정의된다. 여기에서 $\lambda$는 르벡메져이며 이러한 적분을 **르벡적분**이라고 한다. 기본적으로 **구분구적법** 이나 **리만적분** 은 $f$가 연속이거나 부분적으로 연속이어야 할 것 같은 느낌인데 **measure theory**를 이용한 **르벡적분** 은 $f$가 매저러블 맵핑이기만 하면 되므로 좀 더 적분을 정의할 수 있는 함수의 선택폭이 넓다. 일단 ${\cal R}$자체가 거의 대부분의 ''subset of $\mathbb{R}$''을 커버하고 있기 때문에 ${\cal R}$-메저러블하지 않는 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는 편이 좋다. 즉 **르벡적분** 불가능한 함수 $f:\mathbb{R} \rightarrow \mathbb{R}$는 거의 없다고 보는것이 맞다(뭐 칸토르집합에서만 1의 값을 가지고 그렇지 않은 경우에서는 0의 값을 가지는 이상한 함수 $f$만 아니라며 말이다).
 
-- 이제 적분을 **모순없이** 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
+- 이제 메저러블-맵핑 $f$의 적분을 **모순없이** 정의하는 방법을 살펴보자. 적분은 기본적으로 넓이를 구하는 개념이므로 $f:\Omega \rightarrow \mathbb{R}$가 **simple function** 일때  $\mu:{\cal F} \rightarrow \mathbb{R}$에 대한 적분은 사각형넓이의 유한합으로 매우 명확히 정의할 수 있다. 여기까지는 당연한거라서 우리의 관심은 <br/><br/>
 ''$f$가 simple function이 아닐 경우에도 $\mu$에 대한 적분을 모순없이 잘 정의할 수 있을까?''
 <br/><br/>
 가 된다. 결론적으로 (1) $f$가 **bounded function** 인 경우 (2) $f$가 **non-negative function**인 경우 (3) $\int |f| d\mu < \infty$인 경우에서는 적분값 
@@ -230,7 +230,7 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
-- $f$가 메저러블 맵핑이고 $\\{f_n\\}$이 sequence of measurable mapping 이라고 하자. 모든 $x$에 대하여 $\lim_{n \rightarrow \infty} f_n(x)= f(x)$ 인 경우 우리는 $f_n$이 $f$로 **pointwise convergence** 한다고 말한다. 기호로는 간단히 $f_n \rightarrow f$ **pw** 와 같이 쓰도록하자. 이제 $f_n \rightarrow f$ **pw** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
+- $f$가 메저러블 맵핑이고 $\\{f_n\\}$이 sequence of measurable mapping 이라고 하자. 이제 $f_n \rightarrow f$ **a.s.** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. (사실 BCT의 경우 $f_n \rightarrow f$ **in measure $\mu$** 인 경우가 듀렛책에 증명되어 있다. 하지만 그냥 모든 경우에 $f_n \rightarrow f$ **a.s.** 라고 기억하는것이 정신건강에 좋다.)
 \begin{align}
 \lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int \left f d\mu
 \end{align}
@@ -242,19 +242,6 @@ f=f^+ -f^-
 \liminf_{n \rightarrow \infty} \int f_n d\mu \leq \int \left(\liminf_{n\rightarrow \infty} f_n \right) d\mu 
 \end{align}
 여기에서 $f_n \geq 0$이다. 
-
-- 이제 
-\begin{align}
-\int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int f d \mu 
-\end{align}
-라고 쓸 수 있는 조건을 알아보자. 당연히 모든 $x$에 대하여 $\lim_{n \rightarrow \infty} f_n(x)= f(x)$ 이면 되겠지만(**pointwise convergence**라고 함) 현실적으로 이런 조건은 너무 강해서 좀더 약한 조건이면 좋겠다. 일반적으로 $f_n \rightarrow f$ **a.s**이면 무리가 없이
-\begin{align}
-\int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int f d \mu 
-\end{align}
-임을 주장할 수 있다. 사실 $f_n \rightarrow f$ **in measure $\mu$** 이어도 되는 것으로 알고 있다. 왜냐하면  $f_n \rightarrow f$ **in measure $\mu$** 의 의미는 임의의 $\epsilon>0$에 대하여 $\mu(\\{x: \\| f(x)-f_n(x) \\|> \epsilon \\}) \rightarrow 0$이라는 의미인데 
-
-
-그래서 그냥 $f_n \rightarrow f$ **a.s**라고 기억하는 것이 정신건강에 좋다. 
 
 - $X_n$이  $h$가 적당한 조건을 만족하는 연속함수일경우 $Eh(X_n) \rightarrow Eh(X)$가 됨을 보였다. 
 
