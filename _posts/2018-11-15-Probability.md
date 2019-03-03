@@ -236,7 +236,7 @@ f=f^+ -f^-
 \end{align}
 결론적으로 말해서 (1) $f_n$이 모두 **bounded function**이거나 (2) $f_n$이 모두 **non-negative function**이거나 (3) $f_n$이 모두 **integrable**하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 **모순없이** 정의할 수 있기만 하면 되는 느낌이다. 심지어 (3)의 조건은 (1)의 조건을 포함하므로 결론적으로 극한이 적분안으로 들어오기 위해서는 1) $f_n$이 모두 **non-negative function**이거나 2) $f_n$이 모두 **integrable** 하면 된다는 것을 알 수 있다.
 - 위의 과정에서 (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 
-증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 없어서 Fatou lemma를 추가적으로 증명한다. 각 정리들의 정확하게 써보자. 참고로 책마다 BCT, MCT, DCT, Fatou lemma가 성립하기 위한 조건들이 조금씩 다르다. 여러책을 살펴본 결과 Chung 3판 p.48에서 정리한것을 외우는 것이 정신건강에 좋다고 생각하였다. 정리한 것을 요약하여보자. 우선 (1) sequence of msrable mapping $\\{f_n\\}$의 수렴은 모두 **a.s.** 수렴을 가정한다. 즉 BCT, DCT 에서는 $f_n \rightarrow f$ **a.s.** 를 가정하고 MCT에서는 $f_n \uparrow f$ **a.s.** 를 가정한다. 그리고 (2) sequence of msrable mapping $\\{f_n\\}$과 관련된 bound 역시 모두 **a.e.** 를 가정한다. 즉 MCT나 fatou lemma에서 $f_n \geq 0$ **a.e.** 이며, BCT에서는 $f_n \leq M$ **a.e.** 를 가정한다. 
+증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 없어서 Fatou lemma를 추가적으로 증명한다. 각 정리들의 정확하게 써보자. 참고로 책마다 BCT, MCT, DCT, Fatou lemma가 성립하기 위한 조건들이 조금씩 다르다. 여러책을 살펴본 결과 Chung 3판 p.48에서 정리한것을 외우는 것이 정신건강에 좋다고 생각하였다. 정리한 것을 요약하여보자. 우선 (1) sequence of msrable mapping $\\{f_n\\}$의 수렴은 모두 **a.s.** 수렴을 가정한다. 즉 BCT, DCT 에서는 $f_n \rightarrow f$ **a.s.** 를 가정하고 MCT에서는 $f_n \uparrow f$ **a.s.** 를 가정한다. 그리고 (2) sequence of msrable mapping $\\{f_n\\}$과 관련된 bound 역시 모두 **a.e.** 를 가정한다. 즉 MCT나 Fatou lemma에서 $f_n \geq 0$ **a.e.** 이며, BCT에서는 $f_n \leq M$ **a.e.** 를 가정한다. 
 
 - 참고로 BCT의 경우 $f_n \rightarrow f$ **in measure $\mu$** 인 경우에도 성립함이 듀렛책 4판 p.25에 증명되어 있다. 증명은 그렇게 어려운 편이 아니니 관심이 있으면 참고하길 바란다. 
 
@@ -244,15 +244,19 @@ f=f^+ -f^-
 \begin{align}
 \liminf_{n \rightarrow \infty} \int f_n d\mu \geq \int \left(\liminf_{n\rightarrow \infty} f_n \right) d\mu 
 \end{align}
-여기에서 $f_n \geq 0$ **a.e.** 이다. 
+여기에서 $f_n \geq 0$ **a.e.** 이다. 생각보다 안외워지므로 자주 보길 바란다. 
 
-- 듀렛책 4판 p.29에 $X_n \rightarrow X$ **a.s.** 이고 $h$가 적당한 조건을 만족하는 연속함수일경우 
+- (듀렛책 4판 p.29, Thm 1.6.8) $X_n \rightarrow X$ **a.s.** 이고 $h$가 **(bounded 비슷한) 적당한 조건**을 만족하는 연속함수일경우 
 \begin{align}
 Eh(X_n) \rightarrow Eh(X)
 \end{align}
-가 됨을 보였다. 여기에서 $h$는 적당히 **random variable** $X$의 **image** 에서 그 값이 bounded 되어있는 연속함수인 느낌이다. 조건들을 정확하게 쓴다면 적당한 연속함수 $g,h$에 대하여 다음을 만족하는 것이다. (1) $g \leq 0$ and $g(x) \rightarrow \infty$ as $|x| \rightarrow \infty$ (2) 
+가 됨을 보였다. 여기에서 $h$는 **random variable** $X$의 **image** 에서 그 값이 적당하게 bound 되어 있는 연속함수인 느낌이다. 조건들을 정확하게 쓴다면 적당한 연속함수 $g,h$에 대하여 다음을 만족하는 것이다. (1) $g \leq 0$ and $g(x) \rightarrow \infty$ as $|x| \rightarrow \infty$ (2) $|h(x)|/g(x) \rightarrow 0$ as $|x| \righatarrow \infty$ (3) $Eg(X_n) \leq K < \infty$ for all $n$. 이때 $g$는 $h$의 성질을 좀더 명확하게 정의해주는 어떠한 보조함수라고 생각할 수 있다. (1)과 (3)은 이러한 보조함수 $g(x)$의 성질들을 의미하는데 $g(x)$는 $|x|$가 무한대로 갈때 발산하지만 $E(g(X_n))$의 값은 유한한 즉 **random varialbe** $X$의 **image** 에서는 그 값이 상당히 안정되어 있는 느낌을 준다. 즉 $g$는 전체적으로는 bound 되어있지 않지만 중요한 부분, 즉 $X$의 image에서는 적당히 bound 되어있는 함수라고 해석할 수 있다. 이런 결과와 (2) 를 종합하여 보면 $h$역시 $g$처럼 전체적으로는 bound 되어있지 않지만 중요한 부분 즉 $X$의 image에서는 적당히 bound 되어있는 함수라고 해석 할 수 있다.  
 
-- 듀렛책 P.27. Thm 1.6.9에서 $Ef(X)=\int_{\Omega} f(y)\mu(dy)$임을 보였다. 이게 무슨기호인지도 몰겠음. 
+- (듀렛책 4판 P.30, Thm 1.6.9) 임의의 random variable $X$와 **적당한 조건을 만족하는** measurealbe mapping $f$에 대하여 아래식이 성립한다. 
+\begin{align}
+Ef(X)=\int_{\Omega} f(y)\mu(dy)
+\end{align}
+여기에서 $\mu$는 random varialbe $X$의 **distribution function** 이다. 즉 $\mu(A) = P(X \in A)$가 성립한다. 
 
 - 두개의 메저러블 맵핑 $X_1$과 $X_2$를 각각 $(\Omega_1,{\cal F}_ 1, P_1)$와 $(\Omega_2,{\cal F}_ 2, P_2)$에서 정의하자. 확률벡터 $(X_1,X_2)$를 정의하기 위한 공간을 construct하자. 먼저 
 \begin{align}
