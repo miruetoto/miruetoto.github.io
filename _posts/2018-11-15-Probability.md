@@ -230,14 +230,18 @@ f=f^+ -f^-
 \int f d \mu = \sum_{i \in \Omega} f(i).
 \end{align}
 
-- $f$가 메저러블 맵핑이고 $\\{f_n\\}$이 sequence of measurable mapping 이라고 하자. 이제 $f_n \rightarrow f$ **a.s.** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. (사실 BCT의 경우 $f_n \rightarrow f$ **in measure $\mu$** 인 경우가 듀렛책에 증명되어 있다. 하지만 그냥 모든 경우에 $f_n \rightarrow f$ **a.s.** 라고 기억하는것이 정신건강에 좋다.)
+- $f$가 메저러블 맵핑이고 $\\{f_n\\}$이 sequence of measurable mapping 이라고 하자. 이제 $f_n \rightarrow f$ **a.s.** 일 경우 극한이 적분안으로 들어오는 조건 즉 아래의 식이 만족하는 조건을 찾는 것에 관심을 가져보자. 
 \begin{align}
-\lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int \left f d\mu
+\lim_{n \rightarrow \infty} \int f_n d\mu = \int \left( \lim_{n \rightarrow \infty} f_n \right) d\mu = \int f d\mu
 \end{align}
 결론적으로 말해서 (1) $f_n$이 모두 bounded function이거나 (2) $f_n$이 모두 non-negative function이거나 (3) $f_n$이 모두 integrable하면 된다. 신기하게도 모든 $n$에 대하여 $\int f_n d \mu$를 **모순없이** 정의할 수 있기만 하면 되는 느낌이다. 심지어 (3)의 조건은 (1)의 조건을 포함하므로 결론적으로 극한이 적분안으로 들어오기 위해서는 1) $f_n$이 모두 non-negative function이거나 2) $f_n$이 모두 integrable 하면 된다는 것을 알 수 있다.
 
+- 사실 BCT의 경우 $f_n \rightarrow f$ **in measure $\mu$** 인 경우가 듀렛책에 증명되어 있다. 하지만 그냥 모든 경우에 $f_n \rightarrow f$ **a.s.** 라고 기억하는것이 정신건강에 좋다. 관련내용들은 chung p.48에 정리되어있다.
+
 - 위의 과정에서 (1)의 경우를 정리한 것이 BCT이며 (2)의 경우을 정리한것이 MCT이고 (3)의 경우를 정리한것이 DCT이다. 
-증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 없어서 Fatou lemma를 추가적으로 증명한다. 참고로 파토우 레마는 아래와 같다. 
+증명은 당연히 BCT $\rightarrow$ MCT $\rightarrow$ DCT 순서로 하며 MCT는 BCT로부터 바로 증명할 수 없어서 Fatou lemma를 추가적으로 증명한다. 
+
+- 참고로 파토우 레마는 아래와 같다. 
 \begin{align}
 \liminf_{n \rightarrow \infty} \int f_n d\mu \leq \int \left(\liminf_{n\rightarrow \infty} f_n \right) d\mu 
 \end{align}
