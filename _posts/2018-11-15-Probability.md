@@ -256,11 +256,11 @@ Eh(X_n) \rightarrow Eh(X)
   (3) $Eg(X_n) \leq K < \infty$ for all $n$. <br/><br/>
 (1)과 (3)은 이러한 보조함수 $g(x)$의 성질들을 의미하는데 $g(x)$는 $|x|$가 무한대로 갈때 발산하지만 $E(g(X_n))$의 값은 유한한 즉 **random varialbe** $X$의 **image** 에서는 그 값이 상당히 안정되어 있는 느낌을 준다. 즉 $g$는 전체적으로는 bound 되어있지 않지만 중요한 부분, 즉 $X$의 image에서는 적당히 bound 되어있는 함수라고 해석할 수 있다. 이런 결과와 (2) 를 종합하여 보면 $h$역시 $g$처럼 전체적으로는 bound 되어있지 않지만 중요한 부분 즉 $X$의 image에서는 적당히 bound 되어있는 함수라고 해석 할 수 있다.  
 
-- **(듀렛책 4판 P.30, Thm 1.6.9)** $X$를 $(\Omega, {\cal F})$와 $(S,{\cal S})$를 이어주는 메저러블-맵핑이라고 하자. $X$는 random variable일수도 있고, random vector 일수도 있다. 만약에 $X$가 random vector라면 $(S,{\cal S})=(\mathbb{R}^2,{\cal R}^2)$가 된다. 이제 $X$가 아니라 function of $X$에 관심을 가져보자. 함수 $f$를 $(S,{\cal S})$와 $(\mathbb{R},{\cal R})$를 이어주는 메저러블-맵핑이라고 하면 $f$는 function of $X$가 되며 $f(X)$역시 메저러블-맵핑이 된다. 만약에 $X$의 평균이 아니라 function of $X$의 평균, 즉 $f(X)$의 평균을 계산하고 싶다면 어떻게 해야하는가? 이런 경우는 매우 흔한데 대표적으로 $X$의 분산을 계산하고 싶을 경우도 이에 해당한다. 듀렛책에서는 $f$가 **적당한 조건을 만족할때** 아래와 같이 $f(X)$의 평균을 계산할 수 있다고 제시한다. 
+- **(듀렛책 4판 P.30, Thm 1.6.9)** $X$를 $(\Omega, {\cal F})$와 $(S,{\cal S})$를 이어주는 메저러블-맵핑이라고 하자. $X$는 random variable일수도 있고, random vector 일수도 있다. 만약에 $X$가 random vector라면 $(S,{\cal S})=(\mathbb{R}^2,{\cal R}^2)$가 된다. 이제 $X$가 아니라 function of $X$에 관심을 가져보자. 함수 $f$를 $(S,{\cal S})$와 $(\mathbb{R},{\cal R})$를 이어주는 메저러블-맵핑이라고 하면 $f$는 function of $X$가 되며 $f(X)$역시 메저러블-맵핑이 된다.(즉 $f(X)$역시 확률변수가 된다는 의미임) 만약에 $X$의 평균이 아니라 function of $X$의 평균, 즉 $f(X)$의 평균을 계산하고 싶다면 어떻게 해야하는가? 이런 경우는 매우 흔한데 대표적으로 $X$의 분산을 계산하고 싶은 경우도 이에 해당한다. 듀렛책에서는 $f(X)$가 양수이거나 적분가능할때 (즉 $f \geq 0$ 이거나 $E|f(X)|< \infty$일때) 아래와 같이 $f(X)$의 평균을 계산할 수 있다고 제시한다. 
 \begin{align}
 Ef(X)=\int_{} f(y)\mu(dy)
 \end{align}
-여기에서 $\mu$는 random varialbe $X$의 **distribution function** 이다. 즉 $\mu(A) = P(X \in A)$가 성립한다. 
+여기에서 $\mu$는 random varialbe $X$의 **distribution function** 이다. 즉 $\mu(A) = P(X \in A)$가 성립한다.
 
 - 두개의 메저러블 맵핑 $X_1$과 $X_2$를 각각 $(\Omega_1,{\cal F}_ 1, P_1)$와 $(\Omega_2,{\cal F}_ 2, P_2)$에서 정의하자. 확률벡터 $(X_1,X_2)$를 정의하기 위한 공간을 construct하자. 먼저 
 \begin{align}
@@ -279,8 +279,6 @@ Ef(X)=\int_{} f(y)\mu(dy)
 P(A \times B)=P_1(A) \times P_2(B)
 \end{align}
 듀렛책의 thm 1.7.1에 의하면 이러한 메져 $P$가 유니크하게 존재한다고 한다. 
-
-- LGE에서 
 
 ***useful inequalities***
 - 여기에서는 적분 혹은 평균과 관련된 유용한 부등식들을 정리하였다. 
