@@ -1,0 +1,43 @@
+## Hst 
+import numpy as np 
+import pandas as pd 
+## 1. hst 함수의 입력데이터 형성 (X, linkmatrix)
+X = np.random.randn(3000)
+linkmatrix = np.zeros(3000*3000)
+linkmatrix.shape=(3000,3000) 
+    ## 혹은 linkmatrix=np.ones((3000,3000))와 같이 해도 된다. 
+
+for i in range(0, 3000) : 
+    for j in range(0, 3000) : 
+        if abs(i-j) <= 1 : linkmatrix[i,j]= 1 
+            
+
+
+
+### 2. Next ground 함수 만들기 
+def nextground(X,linkmatrix,b=np.std(X)):
+    nextX = np.zeros(len(X)) 
+    for i in range(0,len(X)):
+        for j in range(i,len(X)):
+            if linkmatrix[i,j]==1 :
+                if X[i]>X[j] : 
+                    nextX[i]=X[i]
+                else: 
+                    nextX[i]=X[i]+b
+            else: 
+                nextX[i]=X[i]
+    return nextX
+
+### 3. hst 함수 만들기 
+def hst(f,linkmatrix,tau,b=np.std(f)): 
+    Y = np.zeros((len(X)))
+    return f
+
+X= [1,2,3,4,3,2,1]
+linkmatrix=np.zeros((7,7))
+for i in range(0, 7) : 
+    for j in range(0, 7) : 
+        if abs(i-j) <= 1 : linkmatrix[i,j]= 1 
+print(linkmatrix) 
+
+nextground(X,linkmatrix)
