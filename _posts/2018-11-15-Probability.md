@@ -251,12 +251,12 @@ f=f^+ -f^-
 Eh(X_n) \rightarrow Eh(X)
 \end{align}
 가 성립한다. 여기에서 $h$는 **random variable** $X$의 **image** 에서 그 값이 **적당하게 bound 되어 있는 연속함수**인 느낌이다. 함수 $h$에 대한 조건을 좀 더 명확하게 정의하기 위해서 듀렛책에서는 어떤 보조함수 $g$를 도입하여 두 연속함수 $g,h$가 아래의 조건을 만족한다고 가정하였다. <br/><br/>
-  (1) $g \leq 0$ and $g(x) \rightarrow \infty$ as $|x| \rightarrow \infty$ <br/><br/>
+  (1) $g \geq 0$ and $g(x) \rightarrow \infty$ as $|x| \rightarrow \infty$ <br/><br/>
   (2) $|h(x)|/g(x) \rightarrow 0$ as $|x| \rightarrow \infty$ <br/><br/>
   (3) $Eg(X_n) \leq K < \infty$ for all $n$. <br/><br/>
 (1)과 (3)은 이러한 보조함수 $g(x)$의 성질들을 의미하는데 $g(x)$는 $|x|$가 무한대로 갈때 발산하지만 $E(g(X_n))$의 값은 유한한 즉 **random varialbe** $X$의 **image** 에서는 그 값이 상당히 안정되어 있는 느낌을 준다. 즉 $g$는 전체적으로는 bound 되어있지 않지만 중요한 부분, 즉 $X$의 image에서는 적당히 bound 되어있는 함수라고 해석할 수 있다. 이런 결과와 (2) 를 종합하여 보면 $h$역시 $g$처럼 전체적으로는 bound 되어있지 않지만 중요한 부분 즉 $X$의 image에서는 적당히 bound 되어있는 함수라고 해석 할 수 있다.  
 
-- (듀렛책 4판 P.30, Thm 1.6.9) 임의의 random variable $X$와 **적당한 조건을 만족하는** measurealbe mapping $f$에 대하여 아래식이 성립한다. 
+- (듀렛책 4판 P.30, Thm 1.6.9) $X$를 $(\Omega, {\cal F})$와 $(S,{\cal S})$를 이어주는 메저러블 맵핍이라고 하자. $X$는 random variable일수도 있고, random vector일수도 있다. 만약에 $X$가 random vector라면 $(S,{\cal S}=(\mathbb{R}^2,{\cal R}^2)$가 된다.  **적당한 조건을 만족하는** measurealbe mapping $f:(S,{\cal S}) \rightarrow (\mathbb{R},{\cal R})$에 대하여 아래식이 성립한다. 
 \begin{align}
 Ef(X)=\int_{\Omega} f(y)\mu(dy)
 \end{align}
