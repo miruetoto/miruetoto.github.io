@@ -1,6 +1,8 @@
 ---
-la
-----
+layout: post 
+title: 딥러
+---
+
 
 cpu - [INTEL] 코어9세대 i5-9600k 정품박스(커피레이크 리프레스/3.72GHz/9MB/쿨러미포함) : 312,500
 메인보드 - [GIGABYTE] Z390 GAMING X 게이밍에디션 제이씨현 (인텔z390/atx) : 199,000
