@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 응용통계 혹은 고급통계
+title: (정리) 응용통계 혹은 고급통계
 ---
 ### About this post 
 - 본 포스트는 계속 작성중이다. 
