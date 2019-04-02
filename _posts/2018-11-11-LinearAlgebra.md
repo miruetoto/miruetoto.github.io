@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: 내맘대로 정리한 선형대수학
+title: (정리) 선형대수학
 ---
 ### About this post
 - 본 포스트는 계속 작성중이다. 
@@ -11,7 +11,7 @@ title: 내맘대로 정리한 선형대수학
 
 - 본 포스트를 만들때 참고한 문헌은 **Petersen, K. B., & Pedersen, M. S. (2008). The matrix cookbook. Technical University of Denmark, 7(15), 510.** 와 **Strang, G. (2006). Linear Algebra and Its Applications. Thomson, Brooks/Cole** 이다. 
 
-- 본 포스트에서는 나만 쓰는 notation이 있다. 예를들면 $rbind(c(1,2),c(2,4))$라든가 $X[,1]$과 같은 식의 기호이다. 이것은 R프로그래머라면 익숙한 기호이지만 그렇지 않은사람에게는 낯설 수 있다. 나는 이러한 notation이 익숙하여 내맘대로 쓰겠다. 그래서 포스트의 제목은 내맘대로 정리한 선형대수학이다. 
+- 본 포스트에서는 나만 쓰는 notation이 있다. 예를들면 $rbind(c(1,2),c(2,4))$라든가 $X[,1]$과 같은 식의 기호이다. 이것은 R프로그래머라면 익숙한 기호이지만 그렇지 않은사람에게는 낯설 수 있다. 나는 이러한 notation이 익숙하여 내맘대로 쓰겠다.
 
 ### (통계학과를 위한) 기본 매트릭스 연산
 
