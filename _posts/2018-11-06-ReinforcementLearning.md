@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 강화학습
+title: (정리) 강화학습
 ---
 
 ### About this document
