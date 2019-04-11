@@ -133,76 +133,76 @@
 %\title{\bf Elastic-Band Transform: A New Look for Multiscale Method
 %\medskip
 %}
-
+	
 %\maketitle
-
+	
 \newpage
 %\thispagestyle{empty}
-
+	
 \begin{center}
-{\LARGE\bf Elastic-Band Transform: A New Way for Multiscale Method
-\medskip
-}
-\vskip 7mm
-{\large\sc Guebin Choi and Hee-Seok Oh}\\
-{\large Seoul National University\\
-Seoul 08826, Korea}
+	{\LARGE\bf Elastic-Band Transform: A New Way for Multiscale Method
+		\medskip
+	}
+	\vskip 7mm
+	{\large\sc Guebin Choi and Hee-Seok Oh}\\
+	{\large Seoul National University\\
+		Seoul 08826, Korea}
 \end{center}
 \vskip 5mm
-
+	
 \noindent 
 {\bf Abstract}: This paper presents a new multiscale transformation method for statistical analysis of one-dimensional data such as time series and functional data under the concept of the scale-space approach. The proposed method uses regular observations (eye scanning) with a range of different intervals. The results, termed `elastic-band transform' can be considered as a collection of observations over various intervals (length of elastic-band) of viewing. It is motivated by a way that people look at an object such as a sequence of data repeatedly in order to overview a global structure of it as well as find some specific features of it. Some measures based on elastic-bands are considered for describing characteristics of data, and multiscale visualizations induced by the measures are developed for understanding of data and detecting important structures of them. The proposed transform holds inherently some strengths for analyzing periodic signals because of its definition induced by collection of regular observations; hence, statistical applications such as detection and signal extraction of periodic signals are studied.  
 \vskip 2mm
 \noindent {\it Keywords}: Detection; Extraction; Multiscale method; Periodic signal; Transformation; Visualization 
 \pagenumbering{arabic}
-
- 
+	
 %\newpage
 \pagenumbering{arabic}
-
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MAIN BODy OF PAPER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \section{Introduction}
 In this paper, we propose a new transformation technique, termed `elastic-band transform', which adopts a multiscale concept of scale-space theory in computer vision. This new transformation is motivated by human perception and cognition, which looks  through an object (data) with a range of different intervals in order to capture a global structure of data and find some local features of them. 
-
+	
 For a particular example that motivates and clarifies our proposal, we consider a sinusoidal signal
 $
 x(t)=\sin(2\pi t)\cos(20\pi t),~ t\in[-0.2,0.2] 
 $
 in Figure \ref{fig:int}(a). Suppose that we run our eyes over the signal from left to right repeatedly. The red line in Figure \ref{fig:int}(b) can be considered as a path of eyes when we look over the data with a certain interval $\tau$. Figure \ref{fig:int}(c) shows three paths according to three different initial points of glimpse with holding the same interval $\tau$, which seemingly represent some rough examination of the data. In order to complete our examination, we perform numerous repeated glimpses of the data with different initial points and the same interval $\tau$, which provides the resulting (gray) paths in Figure \ref{fig:int}(d). With a close looking at it, the lines form something like a bunch of elastic-bands. Interestingly, it is capable of capturing a global mean structure of the data by the shape of the bunch and understanding local variations of them through time-varying thickness (volume) of the bunch.  
-
+	
 \begin{figure}[!h]
-\centering
-\includegraphics[width=0.85\linewidth]{intro.pdf}
-\vspace{-4mm}
-\caption{(a) Signal $x(t)$, (b) a path of eyes with a certain interval, (c) three different paths of eyes, (d) numerous paths, (e) three different paths with a large value of $\tau$, and (f) numerous paths with the large $\tau$.} 
-\label{fig:int}
+	\centering
+	\includegraphics[width=0.85\linewidth]{intro.pdf}
+	\vspace{-4mm}
+	\caption{(a) Signal $x(t)$, (b) a path of eyes with a certain interval, (c) three different paths of eyes, (d) numerous paths, (e) three different paths with a large value of $\tau$, and (f) numerous paths with the large $\tau$.} 
+	\label{fig:int}
 \end{figure}
-
+	
 On the other hand, we take a larger interval $\tau$ than the value of $\tau$ used in Figures \ref{fig:int}(c) and (d), that is, stretch the elastic-band, and obtain three paths according to different initial points. As shown in Figure \ref{fig:int}(e), the corresponding examination is getting sparse since it uses a large length of elastic-band $\tau$, and sequentially, it provides more paths due to the increased number of initial points. Figure \ref{fig:int}(f) shows the resulting paths with the large value of $\tau$ and numerous starting points for glimpse. From the results in Figures \ref{fig:int}(d) and (f), we make some observations. First, the bunch that is form of variational tube seemingly represents local variability of the data. Second, the bunch is affected by the length of elastic-band $\tau$. It seems that the value of $\tau$ is closely related to the degree of  `visibility' of the data. As one can see, the bunch constructed by the smaller $\tau$ used in Figure \ref{fig:int}(d) relatively identifies the detailed features of the data, compared to the result of Figure \ref{fig:int}(f). In other words, the two bunches constructed by two lengths $\tau$'s can be interpreted as ``zoom-in (shrinking) and zoom-out (stretching)" of the data. Third, suppose that we have an imaginary central line of the bunch along the time domain. The central line represents the temporal trend of the data according to the value of $\tau$.   
-
+	
 From the above simple example, we introduce a preliminary definition of the proposed elastic-band transform that represents data over various scales controlled by the interval parameter $\tau$, and demonstrate its utility for multiscale method. Furthermore, the proposed transform has inherent periodic feature due to its definition that uses the collection of regular observations by the parameter $\tau$; hence, it might be useful for analyzing periodic signals. Here are the main contributions of our study.   
+
 \begin{itemize}
 \item Multiscale visualization: We define elastic-band transform mathematically that formulates the above idea. For statistical analysis, we consider several measures based on elastic-band transform, which describe some characteristics of data. In addition, we propose two-dimensional visualization maps by elastic-band transform-based statistics, which are useful for understanding the dependent structure of data and detecting the change-points of them. 
-
+		
 \item Detection: We study on detection of some structures of random processes using elastic-band transform. In particular, we consider a testing procedure of the periodicity of cyclostationary processes and discuss a change-point detection problem. 
-
+		
 \item Periodic signal analysis: We propose a practical algorithm that extracts some meaningful components from a periodic signal that is not necessary to be a sinusoid. Some theoretical properties regarding the proposed algorithm are investigated. 
 \end{itemize} 
-
+	
 The remainder of this paper is organized as follows. Section 2 defines elastic-band transform and explores it with some examples, and further discusses the potential usefulness of it as a multiscale method. Some statistics based on elastic-band transform and related visualization methods are presented. In Section 3, testing procedures for change-point detection based on elastic-band transform are discussed. Section 4 presents a practical algorithm for periodic signal extraction with some theoretical properties. Finally, concluding remarks are given in Section 5 where a possible use for denoising is briefly discussed as a future research topic.
-
+	
 Before closing this section, we remark some existing methods that may share the multiscale concept of the proposed method. For example, SiZer by Chaudhuri and Marron (1999) is a visualization technique that displays smoothed data as a function of location and bandwidth over a range of bandwidths. Fryzlewicz and Oh (2011) proposed thick-pen transformation which plots time series data over a range of thickness values of pen. Both SiZer and thick-pen transformation are motivated by the scale-space theory. In literature, there are numerous studies related to scale-space concept that understands the underlying structure of data according to different scales. Furthermore, some Bayesian approaches to scale regression have been studied (Er\"ast\"o and Holmstr\"om, 2005; Holmstr\"om, 2010a). For an extensive review of statistical scale-space methods, see Holmstr\"oma (2010b) and Holmstr\"oma and Pasanena (2017). 
-
+	
 We further remark that the proposed transformation is designed by interpolation scheme. Employing interpolation for multiscale methods is not unusual. Donoho (1992) constructed interpolation wavelet bases of the whole space of uniformly continuous signals with the supremum norm. The lifting scheme by Sweldens (1997) builds filters over data domain as a succession of split, predict and update steps, where  interpolation is used for prediction. The empirical mode decomposition (EMD) by Huang et al. (1998) is a data-driven method for extracting some meaningful modes from a given signal. The first step of EMD is to construct upper and lower envelopes by interpolating the local maxima and local minima, respectively. Unlike interpolating wavelets and lifting scheme that generate filters (basis functions) for multiscale representation, the proposed transform is primarily developed for visualization and statistical procedure (although it is closely related to designing filters in Section 4). Moreover, a special feature that distinguishes our transformation from EMD is exploring dependent structure and mimicking human perception, even though both methods work on signal decomposition in a data-driven way. More recently, Dragomiretskiy and Zosso (2014) developed variational mode decomposition (VMD) for tone detection and separation of a signal. VMD first conducts discrete Fourier transform for detecting frequency information of each mode and then identifies several meaningful modes using the detected main frequencies. For this procedure, it is required to preset the number of modes for the decomposition.  
-
-
+	
+	
 \section{Elastic-Band Transform and Visualization}
 \subsection{Definition of Elastic-Band Transform}
 In this section, we introduce the elastic-band transform of a real-valued equally spaced sequence and provide some examples for clarifying the transformation. Let $\mathcal{T}$ be a set of the interval parameter $\tau$.  
-
+	
 \begin{dfn}\label{df:ebt1}
 Let ${\bf x}$ be an equally spaced sequence such that ${\bf x}=\{x_i:  x_i=x(t_i), i \in \mathbb{Z} \}$
 where $x(t)$ denotes a continuous-time signal, $t_i=iT$ is sampling instant and $T$ denotes sampling interval. For any $\tau \in \mathcal{T}\subset \mathbb{N}$, the $\ell$th {\it elastic-band} of ${\bf x}$ is defined as ${\bf x}^{\ell,\tau}=\{x_{i}^{\ell,\tau}: x_{i}^{\ell,\tau} =l^{\ell,\tau}(iT), i \in \mathbb{Z} \}$ where, for $\ell \leq \tau$, and $l^{\ell,\tau}(t)$ is a linear spline function that interpolates $\{\dots,x_{\ell-\tau},x_{\ell},x_{\ell+\tau},\dots\}$.
@@ -215,13 +215,13 @@ $
 EBT^{{\bf x},\tau}=\{EB^{{\bf x},\tau}: \tau \in {\cal T} \}.
 $
 \end{dfn}
-
+	
 \textcolor{red}{Note that the original signal ${\bf x}$ can be always reconstructed by $EBT^{{\bf x},\tau}$ using
 $
 x_i=x_{i}^{i-q\tau,\tau},
 $
 where $q$ denotes the quotient of $i$ divided by $\tau$}. In Definition 1, a linear interpolation is used to define elastic-band ${\bf x}^{\ell,\tau}$. An implementation of elastic-bands is rather simple. Let $x(t)=\cos(\pi t^2),~t\in \mathbb{R}$ be the source signal and $x_i:=x(t_i)=x(iT),~ i \in \mathbb{Z}$ be the corresponding discrete-time signal with sampling period $T=1/10$. From the definition, we obtain the $\ell$th elastic-band ${\bf x}^{\ell,\tau}$ with the length of elastic-band $\tau$ by repeating the following steps over $\ell\in\{1,2,\ldots,\tau\}$: (i) Do sampling $\{\dots,x_{\ell-\tau}, x_\ell, x_{\ell+\tau},\dots \}$ from ${\bf x}$. (ii) Perform a linear interpolation between any two adjacent points in $\{\dots,x_{\ell-\tau}, x_\ell, x_{\ell+\tau},\dots \}$, i.e., connect points in $\{\dots,x_{\ell-\tau}, x_\ell, x_{\ell+\tau},\dots \}$ linearly, and then construct a linearly interpolated line $l^{\ell,\tau}(t)$. (iii) Obtain the $\ell$th elastic-band ${\bf x}^{\ell,\tau}=\{x_{i}^{\ell,\tau}: x_{i}^{\ell,\tau} =l^{\ell,\tau}(iT), i \in \mathbb{Z} \}$.
-
+	
 Figure \ref{fig:makeeb}(a) shows a sequence ${\bf x}$ from $x(t)=\cos(\pi t^2)$, $0\leq t \leq 2$, and  Figure \ref{fig:makeeb}(b) displays the resulting $\{\dots,x_{1-\tau}, x_1, x_{1+\tau},\dots \}$ obtained by $\tau=3$ in Step 1, where red dots denote the sampled points in $\mathcal{X}^1$. Figures \ref{fig:makeeb}(c) and (d) show the results of Steps 2 and 3, respectively, where solid lines denote a linearly interpolated function $l^{1,3}(t)$ and red dots in Figure \ref{fig:makeeb}(d) represent the $\ell=1$th elastic-band ${\bf x}^{1,3}$. Similarly, Figure \ref{fig:makeeb}(e) shows a linearly interpolated function $l^{2,3}(t)$ and the corresponding elastic-band ${\bf x}^{2,3}$, and Figure \ref{fig:makeeb}(f) displays $l^{3,3}(t)$ and ${\bf x}^{3,3}$. In this example, the bunch of elastic-bands with length $\tau=3$ denotes $EB^{{\bf x},\tau}=\{{\bf x}^{\ell,\tau}: \ell =1,2,3\}.  $, which includes dots in Figures \ref{fig:makeeb}(d), (e) and (f). 
 \begin{figure}
 \centering
@@ -230,13 +230,11 @@ Figure \ref{fig:makeeb}(a) shows a sequence ${\bf x}$ from $x(t)=\cos(\pi t^2)$,
 \caption{(a) Sequence ${\bf x}$, (b)--(d) sampled points in $\{\dots,x_{1-\tau}, x_1, x_{1+\tau},\dots \}$, interpolation $l^{1,3}(t)$ and elastic-band ${\bf x}^{1,3}$ by Steps 1--3, respectively, (e) $l^{2,3}(t)$ and ${\bf x}^{2,3}$, and (f) $l^{3,3}(t)$ and ${\bf x}^{3,3}$.}
 \label{fig:makeeb}
 \end{figure}
-
+	
 In general, it is feasible to use any other interpolation method for elastic-bands. Definition 2 below uses cubic spline interpolation for it.  
-
+	
 \begin{dfn}\label{df:ebt2} 
-Let ${\bf x}$ be an equally spaced sequence such that ${\bf x}=\{x_i:  x_i=x(t_i), i \in \mathbb{Z} \}$
-where $x(t)$ denotes a continuous-time signal, $t_i=iT$ is sampling instant and $T$ denotes sampling interval. For any $\tau \in \mathcal{T}\subset \mathbb{N}$, the $\ell$th {\it elastic-band} of ${\bf x}$ is defined as ${\bf x}^{\ell,\tau}=\{x_{i}^{\ell,\tau}: x_{i}^{\ell,\tau} =s^{\ell,\tau}(iT), i \in \mathbb{Z} \}$ where, for $\ell \leq \tau$, and $s^{\ell,\tau}(t)$ is a cubic spline function that interpolates $\{\dots,x_{\ell-\tau},x_{\ell},x_{\ell+\tau},\dots\}$.
-Then, for a fixed $\tau$, a bunch of the above elastic-bands ${\bf x}^{\ell,\tau}$ is expressed as
+Let ${\bf x}$ be an equally spaced sequence such that ${\bf x}=\{x_i:  x_i=x(t_i), i \in \mathbb{Z} \}$ where $x(t)$ denotes a continuous-time signal, $t_i=iT$ is sampling instant and $T$ denotes sampling interval. For any $\tau \in \mathcal{T}\subset \mathbb{N}$, the $\ell$th {\it elastic-band} of ${\bf x}$ is defined as ${\bf x}^{\ell,\tau}=\{x_{i}^{\ell,\tau}: x_{i}^{\ell,\tau} =s^{\ell,\tau}(iT), i \in \mathbb{Z} \}$ where, for $\ell \leq \tau$, and $s^{\ell,\tau}(t)$ is a cubic spline function that interpolates $\{\dots,x_{\ell-\tau},x_{\ell},x_{\ell+\tau},\dots\}$. Then, for a fixed $\tau$, a bunch of the above elastic-bands ${\bf x}^{\ell,\tau}$ is expressed as
 $
 EB^{{\bf x},\tau}=\{{\bf x}^{\ell,\tau}: \ell =1,2,\dots,\tau \}. 
 $
@@ -245,9 +243,9 @@ $
 EBT^{{\bf x},\tau}=\{EB^{{\bf x},\tau}: \tau \in {\cal T} \}.
 $	
 \end{dfn}
-
+	
 In this study, we use only Definitions 1 and 2, and further, unless otherwise indicated, all elastic-bands and their dictionary are obtained by Definition 1. With Definition 2, we construct elastic-bands for the discrete-time signal used in Figure \ref{fig:makeeb}, which are shown in Figure \ref{fig:makeeb2}. The difference between Figures \ref{fig:makeeb} and \ref{fig:makeeb2} is due to the interpolation method for definition of elastic-bands. Figures \ref{fig:makeeb2}(c) and (d) show a cubic spline function  $s^{1,3}(t)$ and the corresponding elastic-band ${\bf x}^{1,3}$, and Figures  \ref{fig:makeeb2}(e) and (f) display ${\bf x}^{\ell,3}$ and the corresponding cubic interpolated functions $s^{\ell,3}(t)$ for $\ell=2,3$. For a fixed $\tau=3$, the resulting dictionary is $EB^{{\bf x},\tau}$. 
-
+	
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.97\linewidth]{ebt_ex2.pdf}
@@ -255,10 +253,10 @@ In this study, we use only Definitions 1 and 2, and further, unless otherwise in
 \caption{(a) Sequence ${\bf x}$, (b)--(d) sampled points in $\mathcal{X}^1$, interpolation $s^{1,3}(t)$ and elastic-band ${\bf x}^{1,3}$ by Steps 1--3, respectively, (e) $s^{2,3}(t)$ and ${\bf x}^{2,3}$, and (f) $s^{3,3}(t)$ and ${\bf x}^{3,3}$.}
 \label{fig:makeeb2}
 \end{figure}
-
+	
 \subsection{Statistical Measure of Elastic-Bands} \label{sec:Statistics of EBT}
 We consider some statistics based on elastic-bands of data, which are key components for statistical inference and visualization technique. These are divided into two groups: the first group consists of measures that represent the central tendency of data such as mean and median, and the second one includes some measures that characterize the dispersion of data such as standard deviation and median absolute deviation. 
-
+	
 Let ${\bf x}$ be a sequence of observations and $EB^{{\bf x},\tau}$ be the set of elastic-bands of ${\bf x}$ with a specific value of $\tau$. 
 We consider the mean or median of $EB^{{\bf x},\tau}$ \textcolor{red}{defined} ${\bf m}^{{\bf x},\tau}$ for a central tendency of elastic-bands, and the variance or range of $EB^{{\bf x},\tau}$ \textcolor{red}{defined} ${\bf v}^{{\bf x},\tau}$ as a dispersion measure of them. We summarize some descriptive statistics of ${\bf m}^{{\bf x},\tau}$ and ${\bf v}^{{\bf x},\tau}$ for a fixed $\tau$: \textcolor{red}{(1) Mean of elastic-bands ${\bf m}^{{\bf x},\tau}$ is defined as average value of ${\bf x}^{1,\tau},{\bf x}^{2,\tau},\dots,{\bf x}^{\tau,\tau}$ at each (time) location. In other words, 
 $
@@ -284,9 +282,9 @@ $
 {\bf v}^{{\bf x},\tau}={\bf u}^{{\bf x},\tau}-{\bf l}^{{\bf x},\tau}
 $
 where ${\bf u}^{{\bf x},\tau}=\{u_i^{{\bf x},\tau}:u_i^{{\bf x},\tau}=\max (x_i^{1,\tau},\dots,x_i^{\tau,\tau}), i \in \mathbb{Z}\}$ and ${\bf l}^{{\bf x},\tau}=\{l_i^{{\bf x},\tau}:l_i^{{\bf x},\tau}=\min (x_i^{1,\tau},\dots,x_i^{\tau,\tau}), i \in \mathbb{Z}\}$ denote upper and lower envelopes of elastic-bands, respectively.} The derivations of ${\bf m}^{{\bf x},\tau}$ and ${\bf v}^{{\bf x},\tau}$ are not limited in the above definitions. ${\bf m}^{{\bf x},\tau}$ and ${\bf v}^{{\bf x},\tau}$ can be further defined by other measures such as trimmed mean and median absolute deviation of elastic-bands.
-
+	
 Moreover, we consider derivative statistics of elastic-bands. These measure the extent that $m_i^{{\bf x},\tau}$ or $v_i^{{\bf x},\tau}$ changes with respect to time $i$ or interval $\tau$, which might be useful for further characterization of the data. Here are some derivative statistics of elastic-bands for a fixed $\tau$: (1)  The rate of change of $v_i^{{\bf x},\tau}$ with respect to $i$ is defined as $\frac{\Delta v_i^{{\bf x},\tau}}{\Delta i}$. (2) The rate of change of $m_i^{{\bf x},\tau}$ with respect to $i$ is given by $\frac{\Delta m_i^{{\bf x},\tau}}{\Delta i}$. \textcolor{red}{The next two are some statistic for fixed $i$:} (3) The rate of change of $v_i^{{\bf x},\tau}$ with respect to $\tau$ is expressed as $\frac{\Delta v_i^{{\bf x},\tau}}{\Delta \tau}$. (4) The rate of change of $m_i^{{\bf x},\tau}$ with respect to $\tau$ is defined as $\frac{\Delta m_i^{{\bf x},\tau}}{\Delta \tau}$.
-
+	
 Some remarks of statistics generated by elastic-band transform of ${\bf x}$, say ${\bf k}^{{\bf x},\tau}$ are two-fold. First, each measure ${\bf k}^{{\bf x},\tau}$ is a sequence itself; it holds {\em localized information} such as local mean or local variability of ${\bf x}$ \textcolor{red}{at each time point}. \textcolor{red}{To understand this, let's recall the following:} For fixed $i$, $k_{i}^{{\bf x},\tau}$ is a function of $\{x_{i}^{1,\tau},\dots,x_{i}^{\tau,\tau} \}$ and  \textcolor{red}{values of $\{x_{i}^{1,\tau},\dots,x_{i}^{\tau,\tau} \}$ are determinded only for values near $x_i$}; thus, ${\bf k}^{{\bf x},\tau}$ reflects a local characteristic of ${\bf x}$. For example, ${\bf k}^{{\bf x},\tau}:={\bf m}^{{\bf x},\tau}=\{m_i^{{\bf x},\tau}:m_i^{{\bf x},\tau}= \frac{1}{\tau}\sum_{\ell=1}^{\tau}x_{i}^{\ell,\tau}, i \in \mathbb{Z}\}$ provides the local average of data, and  ${\bf k}^{{\bf x},\tau}:={\bf v}^{{\bf x},\tau}=\{v_i^{{\bf x},\tau}:v_i^{{\bf x},\tau}=\frac{1}{\tau-1}\sum_{\ell=1}^{\tau}\Big(x_{i}^{\ell,\tau}-\frac{1}{\tau}\sum_{\ell=1}^{\tau}x_{i}^{\ell,\tau}\Big)^2, i \in \mathbb{Z}\}$ contains information of local variability of ${\bf x}$ at each time point. Second, each measure ${\bf k}^{{\bf x},\tau}$ has a multiscale property. In other words, the parameter $\tau$ controls the degree of the `localization' of ${\bf k}^{{\bf x},\tau}$.  As $\tau$ increases, ${\bf k}^{{\bf x},\tau}:={\bf m}^{{\bf x},\tau}$ tends to capture global scale feature of ${\bf x}$ and vice versa. For clarification of our discussion, we consider a sinusoidal signal $x(t)=\cos(2\pi t)+\cos(3\pi t),~t\in \mathbb{R}$, and its discrete-time signal  $x_i=x(iT),~ i \in \mathbb{Z}$ with sampling period $T=1/100$. Figure \ref{fig:MV}(a) shows sampled observations of $x(t)$ with $-1 \leq t \leq 1$, and three bunches of elastic-bands $EB^{{\bf x},\tau}$'s with $\tau=30,40,50$ are respectively shown in Figures \ref{fig:MV}(b)--(d). Measures ${\bf m}^{{\bf x},\tau}=\{m_i^{{\bf x},\tau}:m_i^{{\bf x},\tau}= \frac{1}{\tau}\sum_{\ell=1}^{\tau}x_{i}^{\ell,\tau}, i \in \mathbb{Z}\}$ and ${\bf v}^{{\bf x},\tau}=\{v_i^{{\bf x},\tau}:v_i^{{\bf x},\tau}=\frac{1}{\tau-1}\sum_{\ell=1}^{\tau}\Big(x_{i}^{\ell,\tau}-\frac{1}{\tau}\sum_{\ell=1}^{\tau}x_{i}^{\ell,\tau}\Big)^2, i \in \mathbb{Z}\}$ are shown in Figures \ref{fig:MV}(e) and (f), respectively with $\tau=30,40,50$. As the value of $\tau$ increases, ${\bf m}^{{\bf x},\tau}$ is getting smoother, and thus, it focuses on representing the global trend of the data. On the other hand, it is clearly shown that the dispersion measure ${\bf v}^{{\bf x},\tau}$ becomes larger as $\tau$ increases. Figures \ref{fig:MV}(e) and (f) can be considered as a summary of Figures \ref{fig:MV}(b)--(d): In the case of ``zoom-in" ($\tau=30$), the bunch of elastic-bands marked as the shadow of Figure \ref{fig:MV}(b) is rather narrow and captures some spatial variation of the signal $x(t)$, whereas in the case of  ``zoom-out" ($\tau=50$), the bunch of elastic-bands in Figure \ref{fig:MV}(d) seemingly represents a rough pattern of the signal without holding detailed temporal variation of it.  
 \begin{figure}[!h]
 \centering
@@ -319,68 +317,65 @@ where $f_i=E(X_i)$, and $\epsilon_i$'s are independent identically distributed r
 with the triangular kernel 
 \[
 K(u)=\left\{
-		\begin{array}{ll}
-			1-|u|, &~|u|<1\\
-			0, &~\mbox{ otherwise}, 		
-			\end{array}
-			\right.
+\begin{array}{ll}
+1-|u|, &~|u|<1\\
+0, &~\mbox{ otherwise}, 		
+\end{array}
+\right.
 \]
 and $\lambda:=\tau T$. Thus, it can be shown that ${\bf m}^{{\bf x},\tau}$ of (\ref{NWest}) is a consistent estimator of $f_i$, i.e. ${\bf m}^{{\bf x},\tau}$ converges in probability to $f_i$, as $T\to 0$, $\tau\to \infty$ and $\tau T\to 0$.}
-
- 
+	
 \subsection{Visualization by Elastic-Band Transform}
 \label{sec:Visualization}
 Here we discuss multiscale visualizations based on elastic-bands ${\bf x}^{\ell,\tau}$, termed {\it M-map} and {\it V-map} that are two-dimensional array (matrix) with the $(i,\tau)$th element as $m_i^{{\bf x},\tau}$ and $v_i^{{\bf x},\tau}$, respectively. For further analysis, we consider derivatives of M-map and V-map with respect to $i$  and $\tau$, termed {\it DM-map} and {\it DV-map}, which are defined as two-dimensional array with the $(i,\tau)$th element as $\Delta m_i^{{\bf x},\tau}/\Delta i$ ($\Delta m_i^{{\bf x},\tau}/\Delta \tau$) and $\Delta v_i^{{\bf x},\tau}/\Delta i$ ($\Delta v_i^{{\bf x},\tau}/\Delta \tau$). These are multiscale mappings that represent the data at different scales. In fact, this multiscale concept can be shared with that of scalogram of \cite{scalo}, SiZer map of Chaudhuri and Marron (1999) and thick-pen map of \cite{thickpen}. For utility of visualization, we consider two numerical examples. 
- 
-\textcolor{red}{Before exploring the examples for M-map and V-map, let's clarify some notations of random elements. 
-Let $(\Omega,{\cal F},P)$ be a probability space where $\Omega$ is a sample space and ${\cal F}$ is a $\sigma$-algebra and $P$ is a probability measure. Let $\mathbb{T}$ be an arbitrary (uncountable) index set which can be interpreted as time, and let $\mathbb{R}^{\mathbb{T}}$ be the product space generated by taking a copy of $\mathbb{R}$ for each element of $\mathbb{T}$. The {\em stochastic process}  $X(\omega,t)$ is a measurable mapping $X:\Omega \rightarrow \mathbb{R}^{\mathbb{T}}$ which maps elements of sample space and real valued function. Note that stochastic process can also be represented as mapping from $\Omega \times \mathbb{T} \rightarrow \mathbb{R}$. For any fixed $\omega \in \Omega$, the mapping $x: \mathbb{T} \rightarrow \mathbb{R}$ is called {\em sample function} or {\em realization} of $X(t,\omega)$. The set of all possible $x(t)$ is called {\em ensemble} of $X(t,\omega)$. Let $E\left[X(t,\omega)\right]=\int _{\Omega} X dP$ be the mean of $X(t,\omega)$ and $V\left[X(t,\omega) \right]=\int_{\Omega} X^2 dP - \left(\int_{\Omega} X dP \right)^2$ be variance of $X(t,\omega)$. Note that $E\left[X(t,\omega)\right]$ is ensemble average. $E\left[X(t,\omega)\right]$ should not confused with $\int_{t \in \mathbb{T}}x(t)dt$ which means the mean on time axis of $x(t)$. Let ${\bf x}=:\{x_i:x_i=x(t_i)=x(iT), i \in \mathbb{Z} \}$ be an eqaully spaced sequence from $x(t)$ as we have defined so far. As ${\bf x}$ corresponds to $x(t)$, there exists random element ${\bf X}$ corresponding to $X(t,\omega)$ which can be defined as ${\bf X}:=\{X_i(\omega):X_i(\omega)=X(t_i,\omega)=X(iT,\omega), i \in \mathbb{Z}, \omega \in \Omega \}$. The sequence ${\bf X}$ is called a {\em timeseries} and the element $X_i(\omega)$ of the set ${\bf X}$ is called a {\em random variable}. From now on we do not use the symbols ${\cal F}$, $\omega$ and $\Omega$ when we define each random element. In other words, the stochastic process will simply be written as $X(t)$ instead of $X(t,\omega)$ and the random variable will be written as $X_i$ instead of $X_i(\omega)$. The purpose of above notation is 1) to make the notation more concise and 2) to avoid confusion with some notation related to signal processing theory such as Fourier transform ${\cal F}$, frequency $\omega$ and the like, which are to be newly defined in section 4.}
+	
+\textcolor{red}{Before exploring the examples for M-map and V-map, let's clarify some notations of random elements. Let $(\Omega,{\cal F},P)$ be a probability space where $\Omega$ is a sample space and ${\cal F}$ is a $\sigma$-algebra and $P$ is a probability measure. Let $\mathbb{T}$ be an arbitrary (uncountable) index set which can be interpreted as time, and let $\mathbb{R}^{\mathbb{T}}$ be the product space generated by taking a copy of $\mathbb{R}$ for each element of $\mathbb{T}$. The {\em stochastic process}  $X(\omega,t)$ is a measurable mapping $X:\Omega \rightarrow \mathbb{R}^{\mathbb{T}}$ which maps elements of sample space and real valued function. Note that stochastic process can also be represented as mapping from $\Omega \times \mathbb{T} \rightarrow \mathbb{R}$. For any fixed $\omega \in \Omega$, the mapping $x: \mathbb{T} \rightarrow \mathbb{R}$ is called {\em sample function} or {\em realization} of $X(t,\omega)$. The set of all possible $x(t)$ is called {\em ensemble} of $X(t,\omega)$. Let $E\left[X(t,\omega)\right]=\int _{\Omega} X dP$ be the mean of $X(t,\omega)$ and $V\left[X(t,\omega) \right]=\int_{\Omega} X^2 dP - \left(\int_{\Omega} X dP \right)^2$ be variance of $X(t,\omega)$. Note that $E\left[X(t,\omega)\right]$ is ensemble average. $E\left[X(t,\omega)\right]$ should not confused with $\int_{t \in \mathbb{T}}x(t)dt$ which means the mean on time axis of $x(t)$. Let ${\bf x}=:\{x_i:x_i=x(t_i)=x(iT), i \in \mathbb{Z} \}$ be an eqaully spaced sequence from $x(t)$ as we have defined so far. As ${\bf x}$ corresponds to $x(t)$, there exists random element ${\bf X}$ corresponding to $X(t,\omega)$ which can be defined as ${\bf X}:=\{X_i(\omega):X_i(\omega)=X(t_i,\omega)=X(iT,\omega), i \in \mathbb{Z}, \omega \in \Omega \}$. The sequence ${\bf X}$ is called a {\em timeseries} and the element $X_i(\omega)$ of the set ${\bf X}$ is called a {\em random variable}. From now on we do not use the symbols ${\cal F}$, $\omega$ and $\Omega$ when we define each random element. In other words, the stochastic process will simply be written as $X(t)$ instead of $X(t,\omega)$ and the random variable will be written as $X_i$ instead of $X_i(\omega)$. The purpose of above notation is 1) to make the notation more concise and 2) to avoid confusion with some notation related to signal processing theory such as Fourier transform ${\cal F}$, frequency $\omega$ and the like, which are to be newly defined in section 4.}
+\noindent {\bf Example 2.1}: \textcolor{red}{Suppose that a specific realization $x(t)$ is obtained from a Gaussian process $X(t)$. Suppose that we observed sequence ${\bf x}$ from timeseries ${\bf X}$ such that $X_i \sim N(\mu_i,\sigma_i)$ for $i \in \{1,\dots,1500\}$ where} 
+\[
+\mu_i=\left\{
+\begin{array}{ll}
+0.0, &~1\le i \le 300\\
+1.5, &~301\le i \le 900\\
+3.0,&~901\le i \le 1050\\
+4.5, &~1051\le i \le 1200\\
+6.0, &~1201\le i \le 1350\\
+7.5, &~1351\le i \le 1500,\\
 
- \noindent {\bf Example 2.1}: \textcolor{red}{Suppose that a specific realization $x(t)$ is obtained from a Gaussian process $X(t)$. Suppose that we observed sequence ${\bf x}$ from timeseries ${\bf X}$ such that $X_i \sim N(\mu_i,\sigma_i)$ for $i \in \{1,\dots,1500\}$ where} 
- \[
- \mu_i=\left\{
- \begin{array}{ll}
- 0.0, &~1\le i \le 300\\
- 1.5, &~301\le i \le 900\\
- 3.0,&~901\le i \le 1050\\
- 4.5, &~1051\le i \le 1200\\
- 6.0, &~1201\le i \le 1350\\
- 7.5, &~1351\le i \le 1500,\\
- 
- \end{array}
- \right.
- \quad\mbox{and}\quad~~  	
- \sigma_i=\left\{
- \begin{array}{ll}
- 0.5 &~1\le i \le300\\
- 3.0, &~301\le i \le600\\
- 2.0, &~601\le i \le750\\
- 1.0, &~751\le i \le1500.\\
- 
- \end{array}
- \right.		
- \]
- \textcolor{red}{The mean structure of the timeseries ${\bf X}$ varies over time $i=300,900,1050,1200,1350$, and the variance of the ${\bf X}$ changes at $i=300,600,750$ as well. Figure \ref{fig:cp}(a) shows ${\bf x}$ which is a realization of timeseries ${\bf X}$. M-map and V-map for sequence ${\bf x}$ with the ranges of $\tau\in\mathcal{T}=\{11,\ldots,200\}$ and $\tau \in \mathcal{T}=\{51,\ldots,200\}$ are respectively shown in Figures \ref{fig:cp}(b) and (d).} Here mean and variance of elastic-bands are used for M-map and V-map, respectively. The magnitudes (colors) of M-map change abruptly near $i=300,900,1050,1200,1350$, which efficiently identifies the changes of $\mu_i$'s. The magnitudes of V-map change  around  $i=300,600,750$ in which the values of $\sigma_i$ change. We observe that both temporal and dependent structures of the data can be effectively captured by M-map and V-map. Hence, this visualization technique is useful for understanding some structures of the data, compared to the conventional plot in Figure \ref{fig:cp}(a). 
-  \begin{figure}[!h]
- 	\centering
- 	\includegraphics[width=0.95\linewidth]{MmapVmap.png}
- 	\vspace{-5mm}
- 	\caption{(a) \textcolor{red}{A single possible realization of ${\bf X}$}, (b) M-map of ${\bf x}$ with $\tau\in\mathcal{T}=\{11,\dots,200\}$, (c) DM-map w.r.t. $i$ with $\tau\in\mathcal{T}=\{51,\dots,100\}$, (d) V-map of ${\bf x}$ with $\tau\in\mathcal{T}=\{51,\dots,200\}$, (e) DV-map w.r.t. $i$ with $\tau\in\mathcal{T}=\{51,\dots,200\}$, and  (f) DM-map w.r.t. $i$ with $\tau\in\mathcal{T}=\{101,\dots,200\}$.}
- 	\label{fig:cp}
- \end{figure}
- 
+\end{array}
+\right.
+\quad\mbox{and}\quad~~  	
+\sigma_i=\left\{
+\begin{array}{ll}
+0.5 &~1\le i \le300\\
+3.0, &~301\le i \le600\\
+2.0, &~601\le i \le750\\
+1.0, &~751\le i \le1500.\\
+
+\end{array}
+\right.		
+\]
+\textcolor{red}{The mean structure of the timeseries ${\bf X}$ varies over time $i=300,900,1050,1200,1350$, and the variance of the ${\bf X}$ changes at $i=300,600,750$ as well. Figure \ref{fig:cp}(a) shows ${\bf x}$ which is a realization of timeseries ${\bf X}$. M-map and V-map for sequence ${\bf x}$ with the ranges of $\tau\in\mathcal{T}=\{11,\ldots,200\}$ and $\tau \in \mathcal{T}=\{51,\ldots,200\}$ are respectively shown in Figures \ref{fig:cp}(b) and (d).} Here mean and variance of elastic-bands are used for M-map and V-map, respectively. The magnitudes (colors) of M-map change abruptly near $i=300,900,1050,1200,1350$, which efficiently identifies the changes of $\mu_i$'s. The magnitudes of V-map change  around  $i=300,600,750$ in which the values of $\sigma_i$ change. We observe that both temporal and dependent structures of the data can be effectively captured by M-map and V-map. Hence, this visualization technique is useful for understanding some structures of the data, compared to the conventional plot in Figure \ref{fig:cp}(a). 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.95\linewidth]{MmapVmap.png}
+\vspace{-5mm}
+\caption{(a) \textcolor{red}{A single possible realization of ${\bf X}$}, (b) M-map of ${\bf x}$ with $\tau\in\mathcal{T}=\{11,\dots,200\}$, (c) DM-map w.r.t. $i$ with $\tau\in\mathcal{T}=\{51,\dots,100\}$, (d) V-map of ${\bf x}$ with $\tau\in\mathcal{T}=\{51,\dots,200\}$, (e) DV-map w.r.t. $i$ with $\tau\in\mathcal{T}=\{51,\dots,200\}$, and  (f) DM-map w.r.t. $i$ with $\tau\in\mathcal{T}=\{101,\dots,200\}$.}
+\label{fig:cp}
+\end{figure}
+	
 Moreover, Figures \ref{fig:cp}(c) and (e) show DM-map and DV-map with respect to $i$, respectively, which may detect the changes of temporal and dependent structures of the data well. The dashed vertical lines denote the change-points of mean or variance of the data. Figures \ref{fig:cp}(c) and (f) show both DM-maps with respect to $i$ for $\tau\in{\cal T}=\{51,\dots,100\}$ and $\tau\in{\cal T}=\{101,\dots,200\}$, respectively. From Figure \ref{fig:cp}(c), we detect that the mean of the process is abruptly changed in the vicinity of $i = 900,1050,1200,1350$, while it seems that from Figure \ref{fig:cp}(f), the values of DM-map in the range of $i>900$ are not changed, which may be mistakenly interpreted that the process has a certain trend instead of several mean changes. 
-
- \noindent {\bf Example 2.2}: ~We analyze ECG data from R package {\tt wavelets}, which consist of 2048 samples with sampling rate $180$Hz as shown in Figure \ref{fig:ecg_visualization}(a). The unit of $x$-axis is second. Figures \ref{fig:ecg_visualization}(b) and (c) show M-map and V-map of the ECG data, respectively. Here mean and variance of elastic-bands are used for M-map and V-map, respectively. The M-map shows the temporal variation of the ECG data over various $\tau$'s, where the magnitudes are relatively high between 3 and 4 seconds and low around 9 seconds. It seems that the map represents the temporal mean pattern of the data well. Moreover, from V-map of the data, we observe some interesting aspects: (i) The V-map shows several vertical lines, which are identical to temporal pulse locations of the data. It implies that the V-map detects a dependent structure of the data efficiently. (ii)  The V-map shows light blue horizon lines in the range of $\tau=120,\ldots,140$ where the corresponding values of V-map are relatively large. This is because that the ECG signal has maximum or minimum repeatedly with varying periods in $\tau=120,\ldots,140$. From Proposition~\ref{variancemax} below, it can be obtained that the value of ${\bf v}^{{\bf x},\tau}$ has the maximum value at $\xi$ when \textcolor{red}{ECG data ${\bf x}$} is a periodic sequence with period $\xi$. Thus, the light blue lines in the V-map represent time-varying period (frequency) of the ECG data. 
- \begin{figure}
- 	\centering
- 	\includegraphics[width=0.99\linewidth]{MmapVmapECG.png}
- 	\vspace{-5mm}
- 	\caption{(a) ECG signal ${\bf x}$, (b) M-map of ${\bf x}$ with $\tau\in\{11,\dots,200\}$, (c) V-map of ${\bf x}$ with $\tau\in\{51,\dots,200\}$, (d) DV-map of ${\bf x}$ w.r.t. $i$ with $\tau\in\{51,\dots,100\}$, (e) DV-map w.r.t. $\tau$ with $\tau\in\{51,\dots,200\}$, and (f) spectrogram of $\{X_i\}$.}
- 	\label{fig:ecg_visualization}
- \end{figure}
- 
+	
+\noindent {\bf Example 2.2}: ~We analyze ECG data from R package {\tt wavelets}, which consist of 2048 samples with sampling rate $180$Hz as shown in Figure \ref{fig:ecg_visualization}(a). The unit of $x$-axis is second. Figures \ref{fig:ecg_visualization}(b) and (c) show M-map and V-map of the ECG data, respectively. Here mean and variance of elastic-bands are used for M-map and V-map, respectively. The M-map shows the temporal variation of the ECG data over various $\tau$'s, where the magnitudes are relatively high between 3 and 4 seconds and low around 9 seconds. It seems that the map represents the temporal mean pattern of the data well. Moreover, from V-map of the data, we observe some interesting aspects: (i) The V-map shows several vertical lines, which are identical to temporal pulse locations of the data. It implies that the V-map detects a dependent structure of the data efficiently. (ii)  The V-map shows light blue horizon lines in the range of $\tau=120,\ldots,140$ where the corresponding values of V-map are relatively large. This is because that the ECG signal has maximum or minimum repeatedly with varying periods in $\tau=120,\ldots,140$. From Proposition~\ref{variancemax} below, it can be obtained that the value of ${\bf v}^{{\bf x},\tau}$ has the maximum value at $\xi$ when \textcolor{red}{ECG data ${\bf x}$} is a periodic sequence with period $\xi$. Thus, the light blue lines in the V-map represent time-varying period (frequency) of the ECG data. 
+\begin{figure}
+\centering
+\includegraphics[width=0.99\linewidth]{MmapVmapECG.png}
+\vspace{-5mm}
+\caption{(a) ECG signal ${\bf x}$, (b) M-map of ${\bf x}$ with $\tau\in\{11,\dots,200\}$, (c) V-map of ${\bf x}$ with $\tau\in\{51,\dots,200\}$, (d) DV-map of ${\bf x}$ w.r.t. $i$ with $\tau\in\{51,\dots,100\}$, (e) DV-map w.r.t. $\tau$ with $\tau\in\{51,\dots,200\}$, and (f) spectrogram of $\{X_i\}$.}
+\label{fig:ecg_visualization}
+\end{figure}
+	
 Furthermore, from Figure \ref{fig:ecg_visualization}(d), we identify the change of dependent structures from the result of the DV-map  with respect to time $i$. Figure \ref{fig:ecg_visualization}(e) shows the DV-map with respect to time $\tau$, which detects time-varying period of the data clearly. From the results of V-map and DV-map in Figures \ref{fig:ecg_visualization}(c) and (e), we observe that the local period of the data is varying over pulses, which implies that the heart rate of the corresponding subject is not regular. In fact, it is difficult to identify this particular observation from looking at the original data in Figure \ref{fig:ecg_visualization}(a). Hence, V-map and DV-map may be useful to distinguish abnormal patients from patients who have a steady heart rate. 
- 
+	
 As a benefit of this visualization, it is not limited to sinusoidal signals. It is applicable for any shape of pulses due to the derivation of elastic-band transform. In fact, the spectrogram based on short-time Fourier transform is restricted to sinusoidal signals. Figure \ref{fig:ecg_visualization}(f) displays the spectrogram of the ECG signal generated from {\tt spectrogram} function of R package {\tt phonTools}. As one can see, the spectrogram has several vertical lines that represent the local peaks of the data, such as the vertical lines in the V-map. However, unlike the V-map, the spectrogram does not detect subtle changes of the period.
 \begin{prop}
 \label{variancemax}
@@ -388,32 +383,45 @@ As a benefit of this visualization, it is not limited to sinusoidal signals. It 
 $$
 {\bf V}^{{\bf X},\tau}=\left\{V_i^{{\bf X},\tau}:V_i^{{\bf X},\tau}=\frac{1}{\tau-1}\sum_{\ell=1}^{\tau}\Big(X_{i}^{\ell,\tau}-\frac{1}{\tau}\sum_{\ell=1}^{\tau}X_{i}^{\ell,\tau}\Big)^2, i \in \mathbb{Z}\right \}.
 $$
-where $X_i^{\ell,\tau}$ is element of ${\bf X}^{\ell,\tau}$ which is $\ell$th elastic-band of ${\bf X}$. 
-Assume further that $E(X_i)=E(X_{i+\xi})$ and $\tau<2\xi$. Then, $E[V_i^{{\bf X},\tau}]$ is uniquely maximized at $\tau=\xi$ for each $i$. }
+where $X_i^{\ell,\tau}$ is element of ${\bf X}^{\ell,\tau}$ which is $\ell$th elastic-band of ${\bf X}$. Assume further that $E(X_i)=E(X_{i+\xi})$ and $\tau<2\xi$. Then, $E[V_i^{{\bf X},\tau}]$ is uniquely maximized at $\tau=\xi$ for each $i$. }
 \end{prop}
-
+	
 A proof of Proposition~\ref{variancemax} is provided in Appendix. 
- 
 
 \section{Detection by Elastic-Band Transform}
 %Here we discuss testing procedures for detection of statistical structures of random processes using elastic-band transform,  which are motivated by visualization of it.  
-
+	
 \subsection{Test for Periodicity of Cyclostationary Processes}
 %We investigate that the proposed elastic-band transform provides a useful tool for testing the periodicity of cyclostationary processes. 
-A real-valued stochastic process $X(t)$ is said to be {\em second-order cyclostationary in the wide sense} or {\em periodically correlated} if its mean function $\mu(t):=E\left[ X(t) \right]$ and covariance function $\gamma(t,h):=E\left[ (X(t+h)-\mu(t+h))(X(t)-\mu(t)) \right]$ are periodic function with a period $\theta$, i.e., $\mu(t+\theta)=\mu_{X}(t)$ and $\gamma(t+\theta,h)=\gamma(t,h)$ for any real value $t,h$. 
-\textcolor{red}{Let ${\bf X}^T=\{X_i^T:X_i^T=X(iT), i \in \mathbb{Z}\}$ be timeseries corresponding to $X(t)$ for some $T \in \mathbb{T}:=\{T_n:T_n=\theta / n, n \in \mathbb{N}\}$. Since $X(t)$ is cyclostationary process with period $\theta$ the timeseries ${\bf X}^T$ is cyclostationary series with period $\xi=\theta/T$. Since $T$ is element of $\mathbb{T}$,  $\xi$ is element of $\mathbb{N}$. Now let's consider a bunch of timeseries ${\bf X}^{\mathbb{T}}=\{{\bf X}^{T_n}:T_n \in \mathbb{T}\}$.  Note that the series of timeseries 
+A real-valued stochastic process $X(t)$ is said to be {\em second-order cyclostationary in the wide sense} or {\em periodically correlated} if its mean function $\mu(t):=E\left[ X(t) \right]$ and covariance function $\gamma(t,h):=E\left[ (X(t+h)-\mu(t+h))(X(t)-\mu(t)) \right]$ are periodic function with a period $\theta_0$, i.e., $\mu(t+\theta_0)=\mu_{X}(t)$ and $\gamma(t+\theta_0,h)=\gamma(t,h)$ for any real value $t,h$. 	
+\textcolor{red}{Let ${\bf X}^T=\{X_i^T:X_i^T=X(iT), i \in \mathbb{Z}\}$ be timeseries corresponding to $X(t)$ for some $T \in \mathbb{T}:=\{T_n:T_n=\theta_0 / n, n \in \mathbb{N}\}$. Since $X(t)$ is cyclostationary process with period $\theta_0$ the timeseries ${\bf X}^T$ is cyclostationary series with period $\xi=\theta_0/T$. Since $T$ is element of $\mathbb{T}$,  $\xi$ is element of $\mathbb{N}$. Now let's consider a bunch of timeseries ${\bf X}^{\mathbb{T}}=\{{\bf X}^{T_n}:T_n \in \mathbb{T}\}$.  Note that the series of timeseries 
 \[
 {\bf X}^{T_1},{\bf X}^{T_2},\dots,{\bf X}^{T_n},\dots
 \]
-which is indexed by sampling period $T_n \in \mathbb{T}$ converge to $X(t)$ as $n \rightarrow \infty$. } 
-
+which is indexed by sampling period $T_n \in \mathbb{T}$ become $X(t)$ as $n \rightarrow \infty$.}
+	
 We now consider an elastic-band transform-based estimator of the period $\theta$ and investigate its consistency property. To that end, we first investigate a property of ${\bf V}^{{\bf X},\tau}$ that provides a key condition for our consistency result. In fact, the following result is an extension of Proposition~\ref{variancemax} to cyclostationary processes. 
-
+	
 \begin{prop}\label{vi}
-\textcolor{red}{Let $X(t)$ be a periodically correlated process with a period $\theta$, and let ${\bf X}^T$ be a timeseries corresponding to $X(t)$ for $T \in \mathbb{T}=\{T_n:T_n=\theta/n  \}$ so ${\bf X}$ is a periodically correlated with a period $\xi=\theta/T$. Then, it follows that $E[V_i^{{\bf X},\tau}]$ is uniquely maximized at $\tau=\xi$ for each $i$ when $\tau <2 \xi$, where ${\bf V}^{{\bf X},\tau}$ denotes variance of elastic-bands of ${\bf X}$.}
+\textcolor{red}{Let $X(t)$ be a periodically correlated process with a period $\theta_0$, and let ${\bf X}^T$ be a timeseries corresponding to $X(t)$ for $T \in \mathbb{T}=\{T_n:T_n=\theta_0/n  \}$ so ${\bf X}$ is a periodically correlated with a period $\xi=\theta_0/T$. Then, it follows that $E[V_i^{{\bf X},\tau}]$ is uniquely maximized at $\tau=\xi$ for each $i$ when $\tau <2 \xi$, where $V_i^{{\bf X},\tau}$ denotes variance of elastic-bands of ${\bf X}$ for each $i$.}
 %i.e., $${\bf V}^{{\bf X},\tau}=\left\{V_i^{{\bf X},\tau}:V_i^{{\bf X},\tau}=\frac{1}{\tau-1}\sum_{\ell=1}^{\tau}\Big(X_{i}^{\ell,\tau}-\frac{1}{\tau}\sum_{\ell=1}^{\tau}X_{i}^{\ell,\tau}\Big)^2, i \in \mathbb{Z}\right \}.$$}
 \end{prop}
 A proof of Proposition~\ref{vi} is provided in Appendix. From Proposition~\ref{vi}, we may estimate the period $\xi$ of ${\bf X}$ by maximizing an empirical version of $E[V_i^{{\bf X},\tau}]$. 
+Now let's define $V^{X,\theta}{(t)}$ which can be considered as continuous version of ${\bf V}^{{\bf X},\tau}$. Let $L^{\ell,\theta}(t)$ is a linear spline function that interpolates 
+\begin{align*}
+\{\dots,X(\ell-\theta),X(\ell),X(\ell+\theta),\dots\}. 
+\end{align*}
+where $\ell \in (0,\theta]$. For fixed $t$ and $\theta$ there are uncountably many values $L^{\ell,\theta}(t)$ indexed by $\ell$. Now let's consider mean and variance of above values. Define 
+\[
+M^{X,\theta}(t)=\int_0^{\theta}L^{\ell,\theta}(t)d\ell
+\]
+and 
+\[
+V^{X,\theta}(t)=\int_0^{\theta}\left(L^{\ell,\theta}(t) - M^{X,\theta}(t)\right)^2 d\ell
+\]
+which are continuous version of ${\bf M}^{{\bf X},\tau}$ and ${\bf V}^{{\bf X},\tau}$, respectively. Intuitively, it can be seen that $EV^{X,\theta}(t)$ has maximum value for any $t$ when $\theta=\theta_0$ by Proposition~\ref{vi}. More formally, you can argue as follows. 
+
+For fixed $t_0$, define a open ball such that ${\cal B}=\{t:|t-t_0|<\epsilon\}$ where $\epsilon>0$. There exist that sequence $\{k_n\}$ such that $k_nT_n \rightarrow t_0$ and $k_n = \argmin \{i:|iT_n-t_0|,i\in \mathbb{Z}\}$. Thus $k_n$ is index of sequence ${\bf X}^{T_n}$ which minimizes the value of $|k_nT_n-t_0|$. From Proposition~\ref{vi} we have some facts that (1) maximum value of $E\left(V_i^{{\bf X}^{T_n},\tau}\right)$ when $\tau=n$ for every $i$ (2) $E\left(V_i^{{\bf X}^{T_n},\tau}\right)$ has same values for each $i$. 
 
 \begin{thm}
 \label{consist}
@@ -423,26 +431,25 @@ A proof of Proposition~\ref{vi} is provided in Appendix. From Proposition~\ref{v
 \]
 where $\bar{V}_i^{{\bf X}^{T_n},\tau}=\frac{1}{n}\sum_{j=i}^{i+n-1} V_j^{{\bf X}^{T_n},{\tau}}$. We assume that, for each $i$,
 \begin{itemize}
-\item[(A1)] $E[V_i^{{\bf X}^{T_n},\tau}]<\infty$ for all $n \in \mathbb{N}$.
-%\item[(A2)] There exists a compact set ${\cal C}:=[t_1,t_2] \supset  \{T\tau_1, T(\tau_1+1)\dots,T\tau_2\}$ such that $$\tau^*=\underset{\tau \in \{\tau_1, \tau_1+1, \dots,\tau_2\}}{\argmax}~ E[{\bf v}^{{\bf x},\tau}]$$ is unique, and  $\tau_1 T \to t_1$,  $\tau_2 T \to t_2$ as $\tau_1, \tau_2 \to \infty$ and $T \to 0$. 
-\item[(A3)] $\underset{\tau < 2n}{\sup}\bigg|\bar{V}_i^{{\bf X}^{T_n},\tau}-E\big[V_i^{{\bf X}^{T_n},\tau}\big]\bigg| \overset{p}{\longrightarrow} 0.$ as $n \rightarrow \infty$ 
+	\item[(A1)] $E[V_i^{{\bf X}^{T_n},\tau}]<\infty$ for all $n \in \mathbb{N}$.
+	%\item[(A2)] There exists a compact set ${\cal C}:=[t_1,t_2] \supset  \{T\tau_1, T(\tau_1+1)\dots,T\tau_2\}$ such that $$\tau^*=\underset{\tau \in \{\tau_1, \tau_1+1, \dots,\tau_2\}}{\argmax}~ E[{\bf v}^{{\bf x},\tau}]$$ is unique, and  $\tau_1 T \to t_1$,  $\tau_2 T \to t_2$ as $\tau_1, \tau_2 \to \infty$ and $T \to 0$. 
+	\item[(A3)] $\underset{\tau < 2n}{\sup}\bigg|\bar{V}_i^{{\bf X}^{T_n},\tau}-E\big[V_i^{{\bf X}^{T_n},\tau}\big]\bigg| \overset{p}{\longrightarrow} 0.$ as $n \rightarrow \infty$ 
 \end{itemize}
 Then, we obtain that, for each $i$, $\check \theta_i^n \overset{p}{\longrightarrow} \theta$ as $n \rightarrow \infty$. }
 \end{thm}
 A proof of Theorem~\ref{consist} is provided in Appendix. Theorem~\ref{consist} implies that for each $i$, $T\hat{\tau}_i^{*}$ is a reasonable estimator of $\theta^*$. In other words, if $X_t$ has the period $\theta^*$ regardless of time $t$, then the value of $T\hat{\tau}_i^{*}$ might represent the period $\theta^*$ over all time points $i$'s; hence, it is feasible to identify changes of $\theta^*$ through $T\hat{\tau}_i^{*}$. We note that the quantity $\frac{1}{1-2\lfloor-\tau/2\rfloor}\sum_{j=i+\lfloor-\tau/2\rfloor}^{i-\lfloor-\tau/2\rfloor} V_j^{\tau}(\{X_i\})$ denotes an average value of variance $V_i^{\tau}$ of elastic-bands around index $i$. 
-
+	
 The following result is obtained by modifying Theorem 2 of Fryzlewicz and Oh (2011) for testing periodicity. It shows that the CUSUM statistic $Z_n(u)$ based on $T\hat{\tau}_i^{*}$ converges in distribution to Brownian bridge under some assumptions.   
-
+	
 \begin{thm}
 Let $\{X_i\}$ be a sequence from $X(t)$ with sampling period $T$. Let $\{X_i\}$ be a periodically correlated process with period $\theta^*=T\tau^*$.  An estimator $\hat\tau^*$ is defined in Theorem~\ref{consist}. We assume (A1)--(A3) in Theorem~\ref{consist} and additionally the following two conditions,  
 \begin{itemize}
-\item[(A4)] Let $\{X_i\}$ be $\alpha$ mixing with a mixing coefficient $\alpha_m$ satisfying $\alpha_m=O(m^{-s})$ for some $s>\frac{r}{r-2}$.
-
-\item[(A5)] As $T\to 0$ and $n \to \infty$, it follows that 
-\[
-\frac{1}{2n+1}\textup{Var}\Big(\sum_{j=i-n}^{i+n}\hat{\tau}_j^*\Big) \longrightarrow \sigma^2<\infty,
-\]
-where $n=-\lfloor -\tau/2 \rfloor$.
+	\item[(A4)] Let $\{X_i\}$ be $\alpha$ mixing with a mixing coefficient $\alpha_m$ satisfying $\alpha_m=O(m^{-s})$ for some $s>\frac{r}{r-2}$.
+	\item[(A5)] As $T\to 0$ and $n \to \infty$, it follows that 
+		\[
+		\frac{1}{2n+1}\textup{Var}\Big(\sum_{j=i-n}^{i+n}\hat{\tau}_j^*\Big) \longrightarrow \sigma^2<\infty,
+		\]
+		where $n=-\lfloor -\tau/2 \rfloor$.
 \end{itemize}
 Then, we obtain that, as $T\rightarrow 0$, $\tau \rightarrow \infty$ and $n \rightarrow \infty$,   
 \[
@@ -455,6 +462,8 @@ Z_n(u):=Y_n(u)-\frac{\lfloor nu\rfloor}{n}Y_n(1) \overset{d}{\longrightarrow} B_
 where $B_u^0$ is the standard Brownian bridge process on $[0,1]$.  
 \end{thm}
 \begin{proof} 
+	
+	
 Let $K_i:=T\hat{\tau}_i^*-E(T\hat{\tau}_i^*)$. It is clear that $\sup(E|K_i|^r)^{\frac{1}{r}}<\infty$ due to the condition (A2). Furthermore,  by Theorem 14.1 in Davidson (1994), $\{K_i\}$ is also $\alpha$-mixing with the mixing coefficients $\alpha_m$ satisfying $\alpha_m=O(m^{-s})$. Thus $\{K_i\}$ is $L_2$-NED process of size $-\frac{1}{2}$, and then satisfies the conditions of Corollary 29.7 in Davidson (1994). From the fact that $T\hat{\tau}_{i}^*$ is a consistent estimator of $\theta^*$ for all $i$'s, the desired result is obtained.
 \end{proof}
 From the above results, a practical procedure for testing periodicity of cyclostationary processes can be derived as follows: 
@@ -470,27 +479,27 @@ From the above results, a practical procedure for testing periodicity of cyclost
 
 For evaluation of the above procedure, we consider a simulated ECG signal that is generated by a Matlab code at https://www.physionet.org/physiotools/ecgsyn/Matlab/. For our analysis, we generate an ECG signal of 1Hz over all times and then add Gaussian noises with SNR = 2 to mimic a real ECG signal, where the value of $\tau^*$ is 90 in the entire time domain. For an alternative signal, we generate an ECG signal whose pulse changes from 1Hz to 1.056Hz at time point 10 seconds as shown in Figure \ref{fig:periodchange}(b), where the value of $\tau^*$ is changed from 90 to 95. The V-maps of both signals are shown in Figures \ref{fig:periodchange}(c) and (d), respectively. As one can see, it is not easy to identify the difference between two signals through the visual inspection of time series plots in Figures \ref{fig:periodchange}(a) and (b), while it seems from the V-map in Figure \ref{fig:periodchange}(d) that it is capable of detecting the change-point of the period around time point 10 seconds.  
 
- \begin{figure}
-	\centering
-	\includegraphics[width=0.95\linewidth]{period_change.png}
-	\vspace{-5mm}
-	\caption{(a) ECG signal of 1Hz in the entire time domain, (b) ECG signal whose pulse changes from 1Hz to 1.056Hz after 10 seconds,  (c) V-map of (a), and (d) V-map of (b).}
-	\label{fig:periodchange}
+\begin{figure}
+\centering
+\includegraphics[width=0.95\linewidth]{period_change.png}
+\vspace{-5mm}
+\caption{(a) ECG signal of 1Hz in the entire time domain, (b) ECG signal whose pulse changes from 1Hz to 1.056Hz after 10 seconds,  (c) V-map of (a), and (d) V-map of (b).}
+\label{fig:periodchange}
 \end{figure}
 
 We now perform the above testing procedure for periodicity test of the simulated ECG signal. Let $\tau_1^*$ be the cycle of the ECG data before 10 seconds and $\tau_2^*$ be the cycle after 10 seconds. We consider five different combinations of $(\tau_1^*,\tau_2^*)$ as (90,90), (90,91), (90,92), (90,93) and (90,94). Over 100 simulation data sets, we calculate average $p$-value for each combination. The results are listed in Table 1, where the proposed testing procedure detects the change of cycle well even for the case $(\tau_1^*, \tau_2^*) = (90,91)$ which may be difficult to identify such a small difference by visual inspection. 
 \begin{table}[]
-	\centering
-	\caption{Test for changes in periodicity of the simulated ECG data}
-	\vspace{-2mm}
-	\label{tb:ECGperiod1}
-	\begin{tabular}{c|ccccccccccc}
-		\toprule
-		$(\tau_1^*,\tau_2^*)$ &(90,90) & (90,91) & (90,92) & (90,93) & (90,94) \\ \midrule
-		averaged $p$-value & 0.250 & 0.046 & 0.024 & 0.009 & 0.002 \\
- \bottomrule
-	\end{tabular}
-	
+\centering
+\caption{Test for changes in periodicity of the simulated ECG data}
+\vspace{-2mm}
+\label{tb:ECGperiod1}
+\begin{tabular}{c|ccccccccccc}
+	\toprule
+	$(\tau_1^*,\tau_2^*)$ &(90,90) & (90,91) & (90,92) & (90,93) & (90,94) \\ \midrule
+	averaged $p$-value & 0.250 & 0.046 & 0.024 & 0.009 & 0.002 \\
+	\bottomrule
+\end{tabular}
+
 \end{table}
 
 \subsection{Multiscale Change-Point Detection}
@@ -509,11 +518,11 @@ where $\epsilon_i$'s are independent random variables of $N(0,\sigma_i^2)$ and
 Figure \ref{fig:cppointdetection} shows a realization of the Gaussian process. It seems to have two change-points: the first one appears around $i=50$, which is relatively small and thus tends to be negligible, and the second change occurs around $i=150$ with a large amount. Furthermore, the dependent structure of the process abruptly changes at $i=50$ and gradually increases after $i=150$. One thing that we want to point out is that although the point $i=150$ where a large change occurs seems to be significant, it may be paid more attention to identify the point $i=50$ as a precursor. For example, in the case of a seismic wave, a $P$-wave with small amplitudes arrives before $S$-wave with large amplitudes reaches, and it is important to detect the arrival time of the $P$-wave.  
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.78\linewidth]{cpsignal.pdf}
-	\vspace{-4mm}
-	\caption{Realizations of $\{X_i\}$.}
-	\label{fig:cppointdetection}
+\centering
+\includegraphics[width=0.78\linewidth]{cpsignal.pdf}
+\vspace{-4mm}
+\caption{Realizations of $\{X_i\}$.}
+\label{fig:cppointdetection}
 \end{figure}
 
 For detection of the change-point $i=50$ or/and $i=150$, we consider employing the method by Vogt and Dette (2015) that estimates a change-point in a locally stationary process, which is suitable for modeling gradual changes. Here we choose $\lambda_i^\tau:=V_i^\tau$, where $\lambda_i^\tau$ denotes a time-varying feature suggested by Vogt and Dette (2015). Note that $\lambda_i^\tau$ is uniquely determined by a set of moments $\{E[h(X_i)]:h\in{\cal H} \}$, where ${\cal H}$ denotes a family of measurable functions.
@@ -523,11 +532,11 @@ Over 1000 simulation data sets, we calculate average values of estimated change-
 We remark that the reason to use the method of Vogt and Dette (2015) is two-fold: (a) In our study, we analyze the change-points  based on some statistics by elastic-bands of $\{X_i\}$ instead of the raw data $\{X_i\}$, which can be shared with Vogt and Dette (2015) that suggested a method for detecting change-points using a function of $\{X_i\}$ rather than $\{X_i\}$. (b) In the simulated example, we consider the situation of the processes as ``the data change slowly after $i$'', which goes along with the line of gradual change-points by Vogt and Dette (2015).
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.99\linewidth]{cphist.pdf}
-	\vspace{-3mm}
-	\caption{Histograms of detected points by the proposed method over various $\tau$'s.}
-	\label{fig:cphist}
+\centering
+\includegraphics[width=0.99\linewidth]{cphist.pdf}
+\vspace{-3mm}
+\caption{Histograms of detected points by the proposed method over various $\tau$'s.}
+\label{fig:cphist}
 \end{figure}
 
 
@@ -546,11 +555,11 @@ where $\epsilon_i$'s are independent random variables of $N(0,\sigma_i^2)$ and $
 	\vspace{-2mm}
 	\label{tb:sig}
 	{\small 
-	\begin{tabular}{lccccc}
-	\hline
-	$i$          & $1\leq i \leq 20$ & $21\leq i \leq 40$  & $41\leq i \leq 60$  & $61\leq i \leq 80$  & $81 \leq i \leq 100$            \\ \hline
-	$\sigma_i$ & 1 & 1.2 & 1.4 & 1.6 &$2.6\times \kappa$ \\ \hline
-	\end{tabular}
+		\begin{tabular}{lccccc}
+			\hline
+			$i$          & $1\leq i \leq 20$ & $21\leq i \leq 40$  & $41\leq i \leq 60$  & $61\leq i \leq 80$  & $81 \leq i \leq 100$            \\ \hline
+			$\sigma_i$ & 1 & 1.2 & 1.4 & 1.6 &$2.6\times \kappa$ \\ \hline
+		\end{tabular}
 	}
 \end{table}
 Figure \ref{fig:cppointdetection} shows realizations of Gaussian process according to four different $\kappa=1,2,3,4$. As one can see, it is difficult to identify the first change-point of variance at $i=20$ due to such a small change. To evaluate the effect of $\tau$, we consider employing the change-point detection method by Vogt and Dette (2015) that estimates a change-point in a locally stationary process, which is suitable for modeling gradual changes. Here we choose $\lambda_i^\tau:=V_i^\tau$, where $\lambda_i^\tau$ denotes a time-varying feature suggested by Vogt and Dette (2015). Note that $\lambda_i^\tau$ is uniquely determined by a set of moments $\{E[h(X_i)]:h\in{\cal H} \}$, where ${\cal H}$ denotes a family of measurable functions.
@@ -568,14 +577,14 @@ Figure \ref{fig:cppointdetection} shows realizations of Gaussian process accordi
 	\vspace{-2mm}
 	\label{tb:CPdetection}
 	{\small 
-	\begin{tabular}{@{}c|ccccccccccc@{}}
-		\toprule
-			  &$\tau=5$ & $\tau=7$ & $\tau=9$ & $\tau=11$ & $\tau=13$ & $\tau=15$ & $\tau=17$ & $\tau=19$   \\ \midrule
-		$\kappa=1$ & 84.42 & 88.96 & 91.52 & 93.14 & 92.58 & 93.84 & 94.00 & 94.20 \\ \midrule
-		$\kappa=2$ & 51.58 & 68.66 & 80.12 & 83.34 & 84.36 & 88.40 & 88.20 & 88.86 \\ \midrule
-		$\kappa=3$ & 27.10 & 42.16 & 52.10 & 62.96 & 68.42 & 74.32 & 76.34 & 79.78 \\ \midrule				
-		$\kappa=4$ & 21.72 & 29.34 & 39.10 & 46.68 & 56.94 & 60.20 & 67.02 & 69.28 \\ \bottomrule
-	\end{tabular}
+		\begin{tabular}{@{}c|ccccccccccc@{}}
+			\toprule
+			&$\tau=5$ & $\tau=7$ & $\tau=9$ & $\tau=11$ & $\tau=13$ & $\tau=15$ & $\tau=17$ & $\tau=19$   \\ \midrule
+			$\kappa=1$ & 84.42 & 88.96 & 91.52 & 93.14 & 92.58 & 93.84 & 94.00 & 94.20 \\ \midrule
+			$\kappa=2$ & 51.58 & 68.66 & 80.12 & 83.34 & 84.36 & 88.40 & 88.20 & 88.86 \\ \midrule
+			$\kappa=3$ & 27.10 & 42.16 & 52.10 & 62.96 & 68.42 & 74.32 & 76.34 & 79.78 \\ \midrule				
+			$\kappa=4$ & 21.72 & 29.34 & 39.10 & 46.68 & 56.94 & 60.20 & 67.02 & 69.28 \\ \bottomrule
+		\end{tabular}
 	}
 \end{table}
 We first generate four Gaussian processes according to different $\kappa$'s, and then detect the first change-point, $i_0=20$ by the method of Vogt and Dette (2015). Over 50 simulation data sets, we calculate average values of estimated change-points according to different $\tau$'s and $\kappa$'s, which are listed in Table  \ref{tb:CPdetection}. In overall, as the value of $\tau$ decreases and the value of $\kappa$ increases, the estimated change-points are close to the first change-point, $i_0=20$. One thing we would like to point out is that the first `real' change-point might be varying over scale. In other words, the point $i_0=20$ may not be a significant change-point with a large scale of $\tau$ as like the results in Figures 6(c) and (f). We remark that the reason to use the method of Vogt and Dette (2015) is two-fold: (1) In our study, we analyze the change-points  based on some statistics by elastic-bands of $\{X_i\}$ instead of the raw data $\{X_i\}$, which can be shared with Vogt and Dette (2015) that suggested a method for detecting change-points using a function of $\{X_i\}$ rather than $\{X_i\}$. (2) In this simulated example, we consider the situation of the processes as ``the data change slowly after $i_0$'' rather than ``the data has a single abrupt change in $i_0$'', which goes along with the line of gradual change-points by Vogt and Dette (2015).
@@ -594,9 +603,9 @@ $
 $ 
 as an estimator of $m_i$. The rationale of the above quantity is as follows. The $\ell$th elastic-band of the sequence $\{X_i\}$ can be expressed as 
 \begin{eqnarray*}
-X_{i,\ell}^{\tau_0}&=&
-\frac{\ell (m_{i+\ell-\tau_0}\times c_{i+\ell-\tau_0})+(\tau_0-\ell)(m_{i+\ell-\tau_0}\times c_{i+\ell-\tau_0})}{\tau_0}\\
-&=&c_{i+\ell}\times \frac{\ell m_{i+\ell-\tau_0}+(\tau_0-\ell)m_{i+\ell-\tau_0}}{\tau_0}=c_{i+\ell}\times m_{i,\ell}^{\tau_0}. 
+	X_{i,\ell}^{\tau_0}&=&
+	\frac{\ell (m_{i+\ell-\tau_0}\times c_{i+\ell-\tau_0})+(\tau_0-\ell)(m_{i+\ell-\tau_0}\times c_{i+\ell-\tau_0})}{\tau_0}\\
+	&=&c_{i+\ell}\times \frac{\ell m_{i+\ell-\tau_0}+(\tau_0-\ell)m_{i+\ell-\tau_0}}{\tau_0}=c_{i+\ell}\times m_{i,\ell}^{\tau_0}. 
 \end{eqnarray*}
 Thus, by the assumption of $m_i$, it follows that
 $
@@ -716,7 +725,7 @@ A proof of Corollary~\ref{cor1} is provided in Appendix.
 %For evaluation of the proposed SE-algorithm for signal extraction, we conduct some numerical examples. 
 
 \noindent {\bf Example 4.1}: 
- We consider a composite sinusoidal signal as 
+We consider a composite sinusoidal signal as 
 $
 X(t)=p(t)+q(t):=\cos(80 \pi t)+\cos(14\pi t).
 $ 
@@ -741,11 +750,11 @@ $
 where 
 \[
 p(t)=\left\{
-		\begin{array}{ll}
-			-1, &~t\in \bigcup_{k =-\infty}^{\infty} \big[\frac{40k}{1000},\frac{20+40k}{1000}\big) \\
-			 1, &~t\in \bigcup_{k=-\infty}^{\infty} \big[\frac{20+40k}{1000},\frac{40(k+1)}{1000}\big)		
-			\end{array}
-			\right.
+\begin{array}{ll}
+-1, &~t\in \bigcup_{k =-\infty}^{\infty} \big[\frac{40k}{1000},\frac{20+40k}{1000}\big) \\
+1, &~t\in \bigcup_{k=-\infty}^{\infty} \big[\frac{20+40k}{1000},\frac{40(k+1)}{1000}\big)		
+\end{array}
+\right.
 \quad\mbox{and}\quad  q(t)=\cos(7 \pi t).			
 \]
 Note that the component $p(t)$ is not sinusoidal. We obtain a sequence $X_i=p_i+q_i$ with $T=1/1000$, where $p_i=p_{i+40}$, and $q_i$ satisfies  
@@ -939,7 +948,7 @@ Suppose that we observe a sequence of $\{X_i:=X(t_i)\}$ from an additive model $
 To alleviate this problem, we consider a practical procedure based on  elastic-band transform that adjusts a bandwidth which is inversely proportional to the value of ${\bf v}^{{\bf x},\tau}$. Note that ${\bf v}^{{\bf x},\tau}$ reflects the local variation of $X_i$. For this purpose, we consider re-indexing of the design point $t_i$. Here are the steps of the proposed algorithm. 
 \begin{itemize}
 \item [1.] Construct a continuous signal $Y(t)$ such that $Y(t):=X(t_i)$ at $t=t_i$ and $Y(t):=X_i+(X_{i+1}-X_i)\frac{t-t_i}{t_{i+1}-t_i}$ at $t\in(t_i,t_{i+1})$. 
-	
+
 \item [2.] Compute a cumulative volume of elastic-bands of $Y(t)$, $Y^\tau_\ell(t)$ defined as, for a given $\tau$ and $\lambda:=\tau/n$,  
 $
 \mbox{CumV}(t,\lambda)=\int_0^t\Big(\max\{Y^\tau_\ell(s)\}_{\ell=1,\ldots,\tau}-\min\{Y^\tau_\ell(s)\}_{\ell=1,\ldots,\tau}\Big)ds,
@@ -967,206 +976,390 @@ Figure \ref{denoising} illustrates the steps of the above algorithm for particul
 \label{denoising}
 \end{figure}
 \begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.93\linewidth]{denoising.pdf}
-	\vspace{-3mm}
-	\caption{Denoising results by (a) wavelet shrinkage, (b) smoothing splines, and (c) the proposed algorithm.} 
-	\label{fig:donoho4}
+\centering
+\includegraphics[width=0.93\linewidth]{denoising.pdf}
+\vspace{-3mm}
+\caption{Denoising results by (a) wavelet shrinkage, (b) smoothing splines, and (c) the proposed algorithm.} 
+\label{fig:donoho4}
 \end{figure}
 
 The basic rationale of the algorithm is that the re-indexing of the data by a single $\tau$ (or $\lambda=\tau/n$) makes the local variations of the data become almost identical. In other words, the single $\tau$ for calculating $\{Y(s_i^\tau)\}$ in the index set $\{s_1^\tau,\dots,s_n^\tau\}$ rather acts like data-adaptively varying $\tau$. 
 
 For a small numerical experiment, we perform our algorithm to four test functions of Donoho and Johnstone (1994) with SNR=3. Figure \ref{fig:donoho4} shows the fitting results by wavelet shrinkage with EBayesThresh (Johnstone and Silverman, 2005), smoothing splines and our algorithm. It seems that the proposed algorithm works well for the cases of Black and Bump functions. We remark that, in this experiment, the value of $\tau$ in our algorithm is determined by two-fold cross-validation of Nason (1996). More methodological and theoretical developments for denoising are in progress and will appear elsewhere. 
 
+
 \section*{Appendix}
 \subsubsection*{A.1. Proof of Proposition~\ref{variancemax}}
 \begin{proof} 
-By a simple (but tedious) algebra with the definition of elastic-band, $E\big[{\bf v}^{{\bf x},\tau}\big]$ can be expressed as
+\textcolor{red}{
+For fixed $i$ and $\ell$ there exist $\tilde \ell \in \{1,\dots,\tau \}$ such that 
+\begin{align*}
+X_{i}^{\ell,\tau}=\frac{\tilde \ell X_{i+\tilde \ell-\tau}+ (\tau-\tilde \ell)X_{i+\tilde \ell}}{\tau}. 
+\end{align*}
+Thus $M_i^{{\bf X},\tau}$ can be expressed as 
+\begin{align*}
+M_i^{{\bf X},\tau}
+=\frac{1}{\tau}\sum_{\ell=1}^{\tau} \frac{\ell X_{i+\ell-\tau}+ (\tau-\ell)X_{i+\ell}}{\tau}
+=\frac{1}{\tau^2}\sum_{\ell=1}^{\tau} \ell X_{i+\ell-\tau}
+	+ \frac{1}{\tau^2}\sum_{\ell=1}^{\tau}(\tau-\ell)X_{i+\ell}.
+\end{align*}
+In here 
+\begin{align*}
+\sum_{\ell=1}^{\tau} \ell X_{i+\ell-\tau}=\sum_{k=i-\tau+1}^{i} (\tau+(k-i)) X_{k}
+\end{align*}
+and 
+\begin{align*}
+\sum_{\ell=1}^{\tau} (\tau-\ell) X_{i+\ell}=\sum_{k=i+1}^{i+\tau} (\tau-(k-i)) X_{k}.
+\end{align*}
+Thus 
+\begin{align*}
+M_i^{{\bf X},\tau}
+&=\sum_{k=i-\tau+1}^{i} \frac{\tau+(k-i)}{\tau^2} X_{k}
++\sum_{k=i+1}^{i+\tau} \frac{\tau-(k-i)}{\tau^2} X_{k}
+=\sum_{k=i-\tau+1}^{i+\tau} \frac{\tau-|k-i|}{\tau^2} X_{k}  \\ 
+&=\sum_{k=i-\tau+1}^{i+\tau-1} \frac{\tau-|k-i|}{\tau^2} X_{k}.
+\end{align*}
+For fixed $i$, $V_{i}^{{\bf X},\tau}$ can be expressed as 
+\begin{align*}
+V_{i}^{{\bf X},\tau}
+&=\frac{1}{\tau-1}\sum_{\ell=1}^{\tau}\left(X_i^{\ell,\tau}-M_i^{{\bf X},\tau} \right)^2
+=\frac{1}{\tau-1}\sum_{\ell=1}^{\tau}\left(X_i^{\ell,\tau}\right)^2-\frac{\tau}{\tau-1}\left(M_i^{{\bf X},\tau} \right)^2.
+\end{align*}
+In here 
+\begin{align*}
+\sum_{\ell=1}^{\tau}\left(X_i^{\ell,\tau}\right)^2 
+&=\sum_{\ell=1}^{\tau}\left(\frac{\ell X_{i+\ell-\tau}+ (\tau-\ell)X_{i+\ell}}{\tau}  \right)^2 \\ 
+&=\sum_{\ell=1}^{\tau}\frac{\ell^2}{\tau^2} X_{i+\ell-\tau}^2 
++ \sum_{\ell=1}^{\tau}\frac{(\tau-\ell)^2}{\tau^2}X_{i+\ell}^2 
++ \sum_{\ell=1}^{\tau}\frac{2\ell(\tau-\ell)}{\tau^2}X_{i+\ell-\tau}X_{i+\ell}.
+\end{align*}
+Note that first two terms can be summarized as
+\begin{align*}
+\sum_{\ell=1}^{\tau} & \frac{\ell^2}{\tau^2} X_{i+\ell-\tau}^2 
++ \sum_{\ell=1}^{\tau}\frac{(\tau-\ell)^2}{\tau^2}X_{i+\ell}^2 \\
+&=\sum_{m=i-\tau+1}^{i}\frac{(\tau+(m-i))^2}{\tau^2} X_m^2 
++ \sum_{m=i+1}^{i+\tau-1}\frac{(\tau-(m-i))^2}{\tau^2}X_m^2 \\  
+&=\sum_{m=i-\tau+1}^{i+\tau-1}\frac{(\tau-|m-i|)^2}{\tau^2} X_m^2 \\
+&=\sum_{m,k=i-\tau+1}^{i+\tau-1}\tilde a_{m,k} X_mX_k 
+\end{align*}
+where 
 \[
-E\left[{\bf v}^{{\bf x},\tau}\right]=\sum_{m,k=i-\tau+1}^{i+\tau-1}a_{m,k}E(X_mX_k)
+\tilde a_{m,k}=\begin{cases} 
+\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^2}&  |m-k|=0 \\ 
+0 & \mbox{otherwise}.
+\end{cases}
+\]
+and last term can be summarized as 
+\begin{align*}
+\sum_{\ell=1}^{\tau}\frac{2\ell(\tau-\ell)}{\tau^2}X_{i+\ell-\tau}X_{i+\ell}=\sum_{m,k=i-\tau+1}^{i+\tau-1}\tilde b_{m,k}X_mX_k
+\end{align*}
+where 
+\[
+\tilde b_{m,k}=\begin{cases} 
+\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^2}&  |m-k|=\tau \\ 
+0 & \mbox{otherwise}. 
+\end{cases}
+\]
+The term $\left(M_i^{{\bf X},\tau} \right)^2$ can be expressed as 
+\begin{align*}
+\left(M_i^{{\bf X},\tau} \right)^2=\sum_{m,k=i-\tau+1}^{i+\tau-1}\tilde c_{m,k}X_mX_k
+\end{align*}
+where 
+\[
+\tilde c_{m,k}=\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^4}.
+\]
+Thus 
+\begin{align*}
+V_{i}^{{\bf X},\tau}=\sum_{m,k=i-\tau+1}^{i+\tau-1}\left(\frac{\tilde a_{m,k}+\tilde b_{m,k}}{\tau-1}-\frac{\tau\tilde c_{m,k}}{\tau-1}\right)X_mX_k.
+\end{align*}
+If $|m-k|=0$ or $|m-k|=\tau$ then coefficient of $X_mX_k$ is
+\begin{align*}
+\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^2(\tau-1)}-\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^3(\tau-1)}=\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^3}. 
+\end{align*}
+If $|m-k|\notin \{0,\tau\}$ then coefficient of $X_mX_k$ is just $\frac{-\tau\tilde c_{m,k}}{\tau-1}$, i.e.,
+\begin{align*}
+-\frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^3(\tau-1)}.
+\end{align*}
+} %End of textcolor
+Thus by a simple (but tedious) algebra with the definition of elastic-band, $E\big[V_i^{{\bf X},\tau}\big]$ can be expressed as
+\[
+E\left[V_i^{{\bf X},\tau}\right]=\sum_{m,k=i-\tau+1}^{i+\tau-1}a_{m,k}E(X_mX_k)
 \]
 with 
 \[
 a_{m,k}=\begin{cases} 
 \frac{(\tau-|m-i|)(\tau-|k-i|)}{\tau^3}&  |m-k|=0,~\tau \\ 
-\frac{-(\tau-|m-i|)(\tau-|k-i|)}{\tau^3(\tau-1)} & \mbox{otherwise}
+\frac{-(\tau-|m-i|)(\tau-|k-i|)}{\tau^3(\tau-1)} & \mbox{otherwise}.
 \end{cases}
 \]
-for $m,k \in \{i-\tau+1,\dots,i+\tau-1\}$. Note that $E(X_mX_k)=\mu_m\mu_k$ for $m\neq k$ and  $E(X_m^2)=\sigma^2+\mu_m^2$ otherwise, where $\mu_k:=E(X_m)$ and $\sigma^2:=Var(X_m)$.  From the fact that $\mu_{m}=\mu_{m+\tau^*}$, it follows that 
+Note that $E(X_mX_k)=\mu_m\mu_k$ for $m\neq k$ and  $E(X_m^2)=\sigma^2+\mu_m^2$ otherwise, where $\mu_k:=E(X_m)$ and $\sigma^2:=Var(X_m)$. From the fact that $\mu_{m}=\mu_{m+\xi}$, it follows that 
 \begin{eqnarray*}
-E\left[{\bf v}^{{\bf x},\tau}\right]&=&\sum_{\underset{m\neq k}{m,k=i-\tau+1}}^{i+\tau-1}a_{m,k}\mu_m\mu_k+\sum_{m=i-\tau+1}^{i+\tau-1}a_{m,m}(\sigma^2+\mu_m^2)\\ 
-	&=&\sum_{\underset{m\neq k}{m,k=i}}^{i+\tau^*-1}b_{m,k}\mu_m\mu_k+\sum_{m=i}^{i+\tau^*-1}b_{m,m}(\sigma^2+\mu_m^2),
+E\left[V_i^{{\bf X},\tau}\right]&=&\sum_{\underset{m\neq k}{m,k=i-\tau+1}}^{i+\tau-1}a_{m,k}\mu_m\mu_k+\sum_{m=i-\tau+1}^{i+\tau-1}a_{m,m}(\sigma^2+\mu_m^2)\\ 
+	&=&\sum_{\underset{m\neq k}{m,k=i}}^{i+\xi-1}b_{m,k}\mu_m\mu_k+\sum_{m=i}^{i+\xi-1}b_{m,m}(\sigma^2+\mu_m^2),
 \end{eqnarray*}
-where $b_{m,k}=\sum_{(z_1,z_2)\in Z_1\times Z_2}a_{m+z_1\tau^*,k+z_2\tau^*}$, $Z_1=\left\{z_1: |i-(m+z_1\tau^*)|<\tau, z_1\in\mathbb{Z}\right\}$, and $Z_2=\left\{z_2: |i-(k+z_2\tau^*)|<\tau, z_2\in\mathbb{Z} \right\}$. Note that $z_1$ and $z_2$ can take values only $\{-1,0,1\}$ since $\tau<2\tau^*$. It can be easily obtained that $b_{m,k}$ satisfy the following three conditions: (i) $\sum_{k=i}^{i+\tau^*-1}b_{m,k}=0$, (ii) $\sum_{l=i}^{i+\tau^*-1}b_{l,m}=0$, and (iii) $0\le b_{m,m}\le \frac{1}{\tau}$.  
+where $b_{m,k}=\sum_{(z_1,z_2)\in Z_1\times Z_2}a_{m+z_1\xi,k+z_2\xi}$, $Z_1=\left\{z_1: |i-(m+z_1\xi)|<\tau, z_1\in\mathbb{Z}\right\}$, and $Z_2=\left\{z_2: |i-(k+z_2\xi)|<\tau, z_2\in\mathbb{Z} \right\}$. Note that $z_1$ and $z_2$ can take values only $\{-1,0,1\}$ since $\tau<2\xi$. It can be easily obtained that $b_{m,k}$ satisfy the following three conditions: (i) $\sum_{k=i}^{i+\xi-1}b_{m,k}=0$, (ii) $\sum_{l=i}^{i+\xi-1}b_{l,m}=0$, and (iii) $0\le b_{m,m}\le \frac{1}{\tau}$.  
 
-In order to maximize $E\big[{\bf v}^{{\bf x},\tau}\big]$ subject to the three conditions (i)--(iii), we consider the following Lagrangian $\cal L$
+In order to maximize $E\big[V_i^{{\bf X},\tau}\big]$ subject to the three conditions (i)--(iii), we consider the following Lagrangian $\cal L$
 \begin{align*}
-{\cal L}&=\sum_{\underset{m\neq k}{m,k=i}}^{i+\tau^*-1}b_{m,k}\mu_m\mu_k+\sum_{m=i}^{i+\tau^*-1}b_{m,m}(\sigma^2+\mu_m^2)+\sum_{m=i}^{i+\tau^*-1}\alpha_{m}\Big(\sum_{k=i}^{i+\tau^*-1}b_{m,k}\Big)\\&~~~+
-\sum_{m=i}^{i+\tau^*-1}\beta_{m}\Big(\sum_{l=i}^{i+\tau^*-1}b_{l,m}\Big)+
-\sum_{m=i}^{i+\tau^*-1}\gamma_{m}\Big(\frac{1}{\tau}-b_{m,m}\Big)+\sum_{m=i}^{i+\tau^*-1}\delta_{m}b_{m,m}. 
+{\cal L}&=\sum_{\underset{m\neq k}{m,k=i}}^{i+\xi-1}b_{m,k}\mu_m\mu_k+\sum_{m=i}^{i+\xi-1}b_{m,m}(\sigma^2+\mu_m^2)+\sum_{m=i}^{i+\xi-1}\alpha_{m}\Big(\sum_{k=i}^{i+\xi-1}b_{m,k}\Big)\\&~~~+
+\sum_{m=i}^{i+\xi-1}\beta_{m}\Big(\sum_{l=i}^{i+\xi-1}b_{l,m}\Big)+
+\sum_{m=i}^{i+\xi-1}\gamma_{m}\Big(\frac{1}{\tau}-b_{m,m}\Big)+\sum_{m=i}^{i+\xi-1}\delta_{m}b_{m,m}. 
 \end{align*}
 Thus, we obtain the following equations for solutions:  
-$\bullet$ $\frac{\partial {\cal L}}{\partial b_{m,m}}= \sigma^2+\mu_m^2+\alpha_m+\beta_m-\gamma_{m}+\delta_m=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial b_{m,k}}= 2\mu_m\mu_k+\alpha_m+\alpha_k+\beta_m+\beta_k=0,~m\neq k$, $\bullet$ $\frac{\partial {\cal L}}{\partial \alpha_{m}}=\sum_{k=i}^{i+\tau^*-1}b_{m,k}=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial \beta_{m}}=\sum_{l=i}^{i+\tau^*-1}b_{l,m}=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial \gamma_{m}}= \frac{1}{\tau}-b_{m,m}=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial \delta_{m}}= b_{m,m}=0$, $\bullet$ $	\gamma_{m}\geq 0$, and $\bullet$ $\delta_{m}\geq 0$. Note that for $m\in \{i,i+1,\dots,i+\tau^*-1\}$, $\gamma_m$ and $\delta_m$ cannot be greater than $0$ at the same time since $\frac{\partial {\cal L}}{\partial \gamma_{m}}$ and $\frac{\partial {\cal L}}{\partial \delta_{m}}$ cannot be $0$ at the same time. 
+$\bullet$ $\frac{\partial {\cal L}}{\partial b_{m,m}}= \sigma^2+\mu_m^2+\alpha_m+\beta_m-\gamma_{m}+\delta_m=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial b_{m,k}}= 2\mu_m\mu_k+\alpha_m+\alpha_k+\beta_m+\beta_k=0,~m\neq k$, $\bullet$ $\frac{\partial {\cal L}}{\partial \alpha_{m}}=\sum_{k=i}^{i+\xi-1}b_{m,k}=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial \beta_{m}}=\sum_{l=i}^{i+\xi-1}b_{l,m}=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial \gamma_{m}}= \frac{1}{\tau}-b_{m,m}=0$, $\bullet$ $\frac{\partial {\cal L}}{\partial \delta_{m}}= b_{m,m}=0$, $\bullet$ $	\gamma_{m}\geq 0$, and $\bullet$ $\delta_{m}\geq 0$. Note that for $m\in \{i,i+1,\dots,i+\xi-1\}$, $\gamma_m$ and $\delta_m$ cannot be greater than $0$ at the same time since $\frac{\partial {\cal L}}{\partial \gamma_{m}}$ and $\frac{\partial {\cal L}}{\partial \delta_{m}}$ cannot be $0$ at the same time. 
 
-Suppose that $\gamma_{m}=0$ and $\delta_m>0$ for $m\in \{i,i+1,\dots,i+\tau^*-1\}$. Then $\frac{\partial {\cal L}}{\partial b_{m,m}}=0$ implies that $\alpha_m+\beta_m=-\delta_m -\sigma^2-\mu_m^2$. Thus, $\frac{\partial {\cal L}}{\partial b_{m,k}}=0$ is equivalent to $(\mu_m-\mu_k)^2+2\sigma^2+\delta_m+\delta_k=0$, so it cannot be happen. 
+Suppose that $\gamma_{m}=0$ and $\delta_m>0$ for $m\in \{i,i+1,\dots,i+\xi-1\}$. Then $\frac{\partial {\cal L}}{\partial b_{m,m}}=0$ implies that $\alpha_m+\beta_m=-\delta_m -\sigma^2-\mu_m^2$. Thus, $\frac{\partial {\cal L}}{\partial b_{m,k}}=0$ is equivalent to $(\mu_m-\mu_k)^2+2\sigma^2+\delta_m+\delta_k=0$, so it cannot be happen. 
 
-On the other hand, if $\gamma_m>0$ and $\delta_m=0$ for $m\in \{i,i+1,\dots,i+\tau^*-1\}$,  then the conditions for solutions are $\bullet$ $(\mu_m-\mu_k)^2=\gamma_{m}+\gamma_{k},~m\neq k$,  $\bullet$ $b_{m,m}=\frac{1}{\tau}$, $\bullet$ $\sum_{k=i}^{i+\tau^*-1}b_{m,k}=0$, and $\bullet$ $\sum_{l=i}^{i+\tau^*-1}b_{l,m}=0$. Note that $b_{m,m}<\frac{1}{\tau}$ except $\tau=\tau^*$ because all elements in $\{a_{m+z_1\tau^*,m+z_1\tau^*}: z_1 \in Z_1\}$  are negative except $a_{m,m}$. Thus, the above optimal conditions are satisfied only when $\tau = \tau^*$, and in this cases, each $b_{m,k}$ is for $l,h=1,2,\dots,\tau^*-1$,  
+On the other hand, if $\gamma_m>0$ and $\delta_m=0$ for $m\in \{i,i+1,\dots,i+\xi-1\}$,  then the conditions for solutions are $\bullet$ $(\mu_m-\mu_k)^2=\gamma_{m}+\gamma_{k},~m\neq k$,  $\bullet$ $b_{m,m}=\frac{1}{\tau}$, $\bullet$ $\sum_{k=i}^{i+\xi-1}b_{m,k}=0$, and $\bullet$ $\sum_{l=i}^{i+\xi-1}b_{l,m}=0$. Note that $b_{m,m}<\frac{1}{\tau}$ except $\tau=\xi$ because all elements in $\{a_{m+z_1\xi,m+z_1\xi}: z_1 \in Z_1\}$  are negative except $a_{m,m}$. Thus, the above optimal conditions are satisfied only when $\tau = \xi$, and in this cases, each $b_{m,k}$ is for $l,h=1,2,\dots,\xi-1$,  
 \begin{eqnarray*}
-& &b_{i,i}=a_{i,i}=\frac{1}{\tau^*},\\ 
-& &b_{i+l,i+l}=a_{i+l,i+l}+a_{i+l-\tau^*,i+l}+a_{i+l,i+l-\tau^*}+a_{i+l-\tau^*,i+l-\tau^*}=\frac{1}{\tau^*},\\ 
-& &b_{i,i+l}=a_{i,i+l}+a_{i,i+l-\tau^*}=-\frac{1}{\tau^*(\tau^*-1)},\\ 
-& &b_{i+l,i}=a_{i+l,i}+a_{i+l-\tau^*,i}=-\frac{1}{\tau^*(\tau^*-1)},\\ 
-& &b_{i+l,i+h}=a_{i+l,i+h}+a_{i+l-\tau^*,i+h}+a_{i+l,i+h-\tau^*}+a_{i+l-\tau^*,i+h-\tau^*}=-\frac{1}{\tau^*(\tau^*-1)}. 
+& &b_{i,i}=a_{i,i}=\frac{1}{\xi},\\ 
+& &b_{i+l,i+l}=a_{i+l,i+l}+a_{i+l-\xi,i+l}+a_{i+l,i+l-\xi}+a_{i+l-\xi,i+l-\xi}=\frac{1}{\xi},\\ 
+& &b_{i,i+l}=a_{i,i+l}+a_{i,i+l-\xi}=-\frac{1}{\xi(\xi-1)},\\ 
+& &b_{i+l,i}=a_{i+l,i}+a_{i+l-\xi,i}=-\frac{1}{\xi(\xi-1)},\\ 
+& &b_{i+l,i+h}=a_{i+l,i+h}+a_{i+l-\xi,i+h}+a_{i+l,i+h-\xi}+a_{i+l-\xi,i+h-\xi}=-\frac{1}{\xi(\xi-1)}. 
 \end{eqnarray*}
 
-Finally suppose that there exists a nonempty set $A \subset \{i,i+1,\ldots,i+\tau^*-1\}$ such that $\gamma_m=0,~m\in A$ and  $\gamma_m>0,~m\in A^c$. It implies that $b_{m,m}=0,~m\in A$ and $b_{m,m}=\frac{1}{\tau},~m\in A^c$, which cannot be happen either. Therefore, $E[{\bf v}^{{\bf x},\tau}]$ is uniquely maximized at $\tau=\tau^*$.
+Finally suppose that there exists a nonempty set $A \subset \{i,i+1,\ldots,i+\xi-1\}$ such that $\gamma_m=0,~m\in A$ and  $\gamma_m>0,~m\in A^c$. It implies that $b_{m,m}=0,~m\in A$ and $b_{m,m}=\frac{1}{\tau},~m\in A^c$, which cannot be happen either. Therefore, for each $i$, $E[V_i^{{\bf X},\tau}]$ is uniquely maximized at $\tau=\xi$.
 \end{proof}
 
 \subsubsection*{A.2. Proof of Proposition~\ref{vi}}
 \begin{proof} 
-Note that $E(X_mX_k)=E\big[(X_m-\mu_m)(X_k-\mu_k)\big]+\mu_m\mu_k$, where $\mu_k:=E(X_k)$.  Since $\{X_i\}$ is a periodically correlated process, it follows that 
+Note that $E(X_mX_k)=E\big[(X_m-\mu_m)(X_k-\mu_k)\big]+\mu_m\mu_k$, where $\mu_k:=E(X_k)$.  Since $\bf X$ is a periodically correlated process, it follows that 
 $
-E(X_mX_k)=E(X_{m+\tau^*}X_k)=E(X_mX_{k+\tau^*}).
+E(X_mX_k)=E(X_{m+\xi}X_k)=E(X_mX_{k+\xi}).
 $
-Thus, from the expression of $E\left[{\bf v}^{{\bf x},\tau}\right]$ in A.1, it can be expressed as 
+Thus, from the expression of $E\left[V_i^{{\bf X},\tau}\right]$ in A.1, it can be expressed as 
 \[
-E\left[{\bf v}^{{\bf x},\tau}\right]=\sum_{m,k=i-\tau+1}^{i+\tau-1}a_{m,k}E(X_mX_k)=\sum_{m,k=i}^{i+\tau^*-1}b_{m,k}E(X_mX_k),
+E\left[V_i^{{\bf X},\tau}\right]=\sum_{m,k=i-\tau+1}^{i+\tau-1}a_{m,k}E(X_mX_k)=\sum_{m,k=i}^{i+\xi-1}b_{m,k}E(X_mX_k),
 \]
 where the expression and conditions of $b_{m,k}$ are provided in A.1. Therefore, it can be proved by the procedure of Proposition~\ref{variancemax}. 
 \end{proof}
 
 \subsubsection*{A.3. Proof of Theorem~\ref{consist}}
 \begin{proof}
-For proof, we have modified the proof of Theorem 5.2.3 of Bickel and Doksum (2015). Let $n:=-\lfloor -\tau/2 \rfloor$, $D(t,\theta)=D(iT,\tau T):=-E[{\bf v}^{{\bf x},\tau}]$, and $D_n(t,\theta)=D_n(iT,\tau T):=-\frac{1}{1+2n}\sum_{j=i+n}^{i-n} V_j^{\tau}(\{X_i\})$. We define that, for each $t$, 
+\textcolor{red}{
+For proof, we have modified the proof of Theorem 5.2.3 of Bickel and Doksum (2015). For fiexed $t$, let $D_0(\theta)=-E[V(t)]$. and $D_n(\theta)=-\bar{V}(t)$. Let 
 \[
-\theta^*=\argmin_{\theta \in {\cal C}} D(t,\theta)\quad\mbox{and}\quad \hat{\theta}_t^*=\argmin_{\theta \in {\cal C}} D_n(t,\theta). 
+\theta_0=\argmin_{\theta \in {\cal C}} D_0(\theta)\quad\mbox{and}\quad \theta_n=\argmin_{\theta \in {\cal C}} D_n(\theta). 
 \]
-For any $\epsilon>0$, we further define ${\cal C}_1:=\left\{\theta: |\theta - \theta^* |\leq \epsilon \right\}\cap {\cal C}$ and ${\cal C}_2:=\left\{\theta: |\theta - \theta^* |>\epsilon \right\}\cap {\cal C}$. Assume that $\hat{\theta}^*_t \in {\cal C}_2$. Then, it follows that,  for each $t$, 
-\[
-\theta^*=\argmin_{\theta \in {\cal C}_1} D(t,\theta)\quad\mbox{and}\quad \hat{\theta}_t^*=\argmin_{\theta \in {\cal C}_2} D_n(t,\theta).
-\]	
-Thus, we have 
-\begin{eqnarray*}
-\underset{\theta \in {\cal C}_2}{\inf}D(t,\theta) &\le& \underset{\theta \in {\cal C}_2}{\inf} D_n(t,\theta)+ \underset{\theta \in {\cal C}}{\sup}\left|D_n(t,\theta)-D(t,\theta)\right| \\ 
-&\le& \underset{\theta \in {\cal C}_1}{\inf} D_n(t,\theta)+ \underset{\theta \in {\cal C}}{\sup}\left|D_n(t,\theta)-D(t,\theta)\right| \\ 
-& \le & \underset{\theta \in {\cal C}_1}{\inf} D(t,\theta)+ 2~\underset{\theta \in {\cal C}}{\sup}\left|D_n(t,\theta)-D(t,\theta)\right| \\
-&=& D(t,\theta^*) + 2~\underset{\theta \in {\cal C}}{\sup}\left|D_n(t,\theta)-D(t,\theta)\right|.
-\end{eqnarray*}
-Hence, we obtain that as $T\rightarrow 0$, $\tau \rightarrow \infty$,  
-\[
-P\left(\hat{\theta}_t^* \in {\cal C}_2 \right) \le P\left(\underset{\theta \in {\cal C}}{\sup}\left|D_n(t,\theta)-D(t,\theta)\right|  \geq \delta(\epsilon) \right) \longrightarrow 0,  
-\]	
-where $\delta(\epsilon):= \frac{1}{2}\Big[\underset{\theta \in {\cal C}_2}{\inf}D(t,\theta)-D(t,\theta^*)\Big].$	
-\end{proof} 
+Suppose $|\theta_n-\theta_0|>\epsilon$. Put $\Delta_n=\sup_{\theta \in {\cal C}}|D_n(\theta)-D_0(\theta)|$. 
+\newline
+\textbf{Claim 1: } $\left| \inf_{|\theta-\theta_0|>\epsilon}D_0(\theta)-\inf_{|\theta-\theta_0|>\epsilon}D_n(\theta)  \right|  \leq \Delta_n$. 
+\begin{proof}
+Clearly, following equation holds for any $\theta \in \{\theta: |\theta - \theta_0|>\epsilon \}$
+\begin{align*}
+D_0(\theta) = \left( D_0(\theta) - D_n(\theta) \right) + D_n(\theta).
+\end{align*}
+Using the fact that $\sup (f+g) \leq \sup f +\sup g$ where $f,g$ are any realvalued functions, we can get 
+\begin{align*}
+\sup_{|\theta - \theta_0|>\epsilon} D_0(\theta) 
+& \leq \sup_{|\theta - \theta_0|>\epsilon} \left( D_0(\theta) - D_n(\theta) \right) + \sup_{|\theta - \theta_0|>\epsilon}  D_n(\theta)  \\
+& \leq \sup_{|\theta - \theta_0|>\epsilon} \left| D_0(\theta) - D_n(\theta) \right| + \sup_{|\theta - \theta_0|>\epsilon} D_n(\theta).
+\end{align*}
+Thus
+\begin{align*}
+\sup_{|\theta - \theta_0|>\epsilon} D_0(\theta)  - \sup_{|\theta - \theta_0|>\epsilon} D_n(\theta) 
+\leq \sup_{|\theta - \theta_0|>\epsilon} \left| D_0(\theta) - D_n(\theta) \right|.
+\end{align*}
+A similar argument can be obtained below as well.
+\begin{align*}
+\underset{|\theta - \theta_0|>\epsilon}{\operatorname{sup}} D_n(\theta)  - \underset{|\theta - \theta_0|>\epsilon}{\operatorname{sup}}  D_0(\theta) 
+\leq \underset{|\theta - \theta_0|>\epsilon}{\operatorname{sup}} \left| D_0(\theta) - D_n(\theta) \right|.
+\end{align*}
+Thus
+\begin{align*}
+\left | \underset{|\theta-\theta_0|>\epsilon}{\operatorname{sup}} D_n(\theta)  - \underset{|\theta-\theta_0|>\epsilon}{\operatorname{sup}}  D_0(\theta) \right| 
+\leq \underset{|\theta-\theta_0|>\epsilon}{\operatorname{sup}} \left| D_0(\theta) - D_n(\theta) \right| 
+\end{align*}
+Substitute $-D_n(\theta)$ for $D_n(\theta)$ and substitute $-D_0(\theta)$ for $D_0(\theta)$ and using the facts that
+\begin{align*}
+\underset{|\theta-\theta_0|>\epsilon}{\operatorname{sup}} -D_n(\theta)= - \underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_n(\theta) \\ 
+\underset{|\theta-\theta_0|>\epsilon}{\operatorname{sup}} -D_0(\theta)= - \underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_0(\theta)
+\end{align*}
+we get 
+\begin{align*}
+\left| \underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_n(\theta)  - \underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}}  D_0(\theta) \right| 
+\leq \underset{|\theta-\theta_0|>\epsilon}{\operatorname{sup}} \left| D_0(\theta) - D_n(\theta) \right|. 
+\end{align*}
+Thus 
+\begin{align*}
+\left| \underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_n(\theta)  - \underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}}  D_0(\theta) \right| \leq \Delta_n. 
+\end{align*}
+\end{proof}
+We get from claim 1 that 
+\begin{align*}
+\underset{|\theta-\theta_0|>\epsilon}{\inf}D_0(\theta) - \underset{|\theta-\theta_0|>\epsilon}{\inf} D_n(\theta)  
+\leq 
+\left|\underset{|\theta-\theta_0|>\epsilon}{\inf}D_0(\theta) - \underset{|\theta-\theta_0|>\epsilon}{\inf} D_n(\theta) \right|
+\leq \Delta_n,
+\end{align*}
+so 
+\begin{align*}
+\underset{|\theta-\theta_0|>\epsilon}{\inf}D_0(\theta) \leq \underset{|\theta-\theta_0|>\epsilon}{\inf} D_n(\theta)+\Delta_n. 
+\end{align*}
+The condition $|\theta_n-\theta_0|>\epsilon$ 
+implies 
+$\underset{|\theta-\theta_0|>\epsilon}{\inf} D_n(\theta) \leq \underset{|\theta-\theta_0|\leq \epsilon}{\inf} D_n(\theta)$
+thus 
+\begin{align}
+\underset{|\theta-\theta_0|>\epsilon}{\inf}D_0(\theta) \leq \underset{|\theta-\theta_0|\leq \epsilon}{\inf} D_n(\theta)+\Delta_n.
+\label{eq:thm32_1}
+\end{align}
+Using an argument similar to claim 1 we get 
+\begin{align*}
+\underset{|\theta-\theta_0|\leq\epsilon}{\inf}D_n(\theta) - \underset{|\theta-\theta_0|\leq\epsilon}{\inf} D_0(\theta)  
+\leq 
+\left|\underset{|\theta-\theta_0|\leq \epsilon}{\inf}D_0(\theta) - \underset{|\theta-\theta_0|\leq \epsilon}{\inf} D_n(\theta) \right|
+\leq \Delta_n,
+\end{align*}
+so 
+\begin{align}
+\underset{|\theta-\theta_0|\leq \epsilon}{\inf}D_n(\theta) \leq \underset{|\theta-\theta_0|\leq\epsilon}{\inf} D_0(\theta)+\Delta_n. 
+\label{eq:thm32_2}
+\end{align}
+From (\ref{eq:thm32_1}) and (\ref{eq:thm32_2}), we have
+\begin{align*}
+\underset{|\theta-\theta_0|>\epsilon}{\inf}D_0(\theta) \leq \underset{|\theta-\theta_0|\leq \epsilon}{\inf} D_n(\theta)+\Delta_n \leq \underset{|\theta-\theta_0|\leq\epsilon}{\inf} D_0(\theta)+2\Delta_n=D_0(\theta_0)+2\Delta_n. 
+\end{align*}
+Let $\delta(\epsilon):= \frac{1}{2}\Big[\underset{|\theta-\theta_0|>\epsilon}{\inf}D_0(\theta)-D_0(\theta_0)\Big]$ then 
+$\Delta_n \geq \delta(\epsilon)$. Thus 
+\begin{align*}
+P\left(\left|\theta_n-\theta_0\right|>\epsilon\right) \leq P\left(\Delta_n\leq \delta(\epsilon)\right).
+\end{align*}
+Since $\Delta_n \overset{p}{\rightarrow} 0$, the proof is done when $\delta(\epsilon)>0$. It is left in claim 2 to prove that $\delta(\epsilon)$ is positive.}
+\end{proof}
+\noindent\textbf{Claim 2: } $\delta(\epsilon)>0$. 
+\begin{proof}
+\textcolor{red}{Before starting the proof, we would like to mention that the uniqueness of $\theta_0$ does not necessarily guarantee $\delta(\epsilon)>0$. Even if $\theta_0$ is unique we can have 
+\begin{align*}
+\underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_0(\theta) = D_0(\theta_0).
+\end{align*}
+Now let's start the proof. Since ${\cal C}$ is compact there exist sequence $\{\theta_k\}$ in $\{\theta: |\theta-\theta_0|>\epsilon\}$ such that 
+\begin{align*}
+\lim_{k\rightarrow \infty} D_0(\theta_k) = \underset{|\theta- \theta_0|>\epsilon}{\operatorname{inf}} D_0(\theta).
+\end{align*}
+Suppose that $\theta_k \rightarrow \tilde \theta_0$ as $k\rightarrow \infty$. From $\theta_k \in \{\theta: |\theta-\theta_0|>\epsilon\}$ we have $|\theta_0-\tilde\theta_0|\geq \epsilon$ thus $\theta_0 \neq \tilde\theta_0$. From the continuity of $D_0(\theta)$ we get $\lim_{k\rightarrow \infty} D_0(\theta_k)=D_0(\tilde\theta_0)$. Thus
+\begin{align*}
+D_0(\tilde\theta_0)=\underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_0(\theta). 
+\end{align*}
+From the uniqueness of $\theta_0$ we have 
+\begin{align*}
+D_0(\theta_0)<D_0(\tilde\theta_0)=\underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_0(\theta).
+\end{align*}
+Thus
+\begin{align*}
+0<\underset{|\theta-\theta_0|>\epsilon}{\operatorname{inf}} D_0(\theta) - D_0(\theta_0).
+\end{align*}}
+\end{proof}
 
 \subsubsection*{A.4. Proof of Lemma~\ref{lem1}}
 \begin{proof}
-From Definition 2 that defines elastic-bands by cubic spline function, there exists $\ell^*\in \{1,2,\dots,\tau_0\}$ such that 
-\[
-X_{i,\ell}^{\tau_0}=X_{i+\ell^*-\tau_0}+b_{i+\ell^*-\tau_0}(\tau_0-\ell^*)+c_{i+\ell^*-\tau_0}(\tau_0-\ell^*)^2+d_{i+\ell^*-\tau_0}(\tau_0-\ell^*)^3
-\]
-for each $\ell$ and $i$ (de Boor, 1978). Here $b_{i+\ell^*-\tau_0}$, $c_{i+\ell^*-\tau_0}$ and $d_{i+\ell^*-\tau_0}$ are obtained by solving the following equations: (i) $X_{i+\ell^*}=X_{i+\ell^*-\tau_0}+\tau_0b_{i+\ell^*-\tau_0}+\tau_0^2c_{i+\ell^*-\tau_0}+\tau_0^3d_{i+\ell^*-\tau_0}$, (ii) $b_{i+\ell^*}=b_{i+\ell^*-\tau_0}+2\tau_0c_{i+\ell^*-\tau_0}+3\tau_0^2d_{i+\ell^*-\tau_0}$, and (iii) $2c_{i+\ell^*}=2c_{i+\ell^*-\tau_0}+6\tau_0d_{i+\ell^*-\tau_0}$. Then $Z$-transforms of the above three equations are 
-\begin{eqnarray}
-\label{eq:Z-transform}
-X(z)z^{\ell^*}&=&X(z)z^{\ell^*-\tau_0}+\tau_0b(z)z^{\ell^*-\tau_0}+\tau_0^2c(z)z^{\ell^*-\tau_0}+\tau_0^3d(z)z^{\ell^*-\tau_0}\nonumber\\
-b(z)z^{\ell^*}&=&b(z)z^{\ell^*-\tau_0}+2\tau_0c(z)z^{\ell^*-\tau_0}+3\tau_0^2d(z)z^{\ell^*-\tau_0}\nonumber\\
-2c(z)z^{\ell^*}&=&2c(z)z^{\ell^*-\tau_0}+6\tau_0d(z)z^{\ell^*-\tau_0}.\nonumber 
-\end{eqnarray}
-So, the solutions of the above equations are $b(z)= \frac{-3z^{-\tau_0}+3z^{-\tau_0}}{\tau_0(z^{\tau_0}+4+z^{-\tau_0})}X(z)$, 
-$c(z)= \frac{3z^{-\tau_0}-6+3z^{\tau_0}}{\tau_0^2(z^{\tau_0}+4+z^{-\tau_0})}X(z)$, and 
-$d(z)= \frac{-z^{-\tau_0}+3-3z^{\tau_0}+z^{2\tau_0}}{\tau_0^3(z^{\tau_0}+4+z^{-\tau_0})}X(z)$.  Thus, $Z$-transform of $X_{i,\ell}^{\tau}$ is 
-\begin{align*}
-{\cal Z}\{X_{i,\ell}^{\tau_0}\}=&X(z)z^{\ell^*-\tau_0}+b(z)z^{\ell^*-\tau_0}(\tau_0-\ell^*)+c(z)z^{\ell^*-\tau_0}(\tau_0-\ell^*)^2+d(z)z^{\ell^*-\tau_0}(\tau_0-\ell^*)^3\\
-=&\left[z^{\ell^*-\tau_0}+H_b(z)(\tau_0-\ell^*)z^{\ell^*-\tau_0}+H_c(z)(\tau_0-\ell^*)^2z^{\ell^*-\tau_0}+H_d(z)(\tau_0-\ell^*)^3z^{\ell^*-\tau_0} \right]X(z), 
-\end{align*}
-where $H_b(z)=\frac{3\tau_0^2(z^{\tau_0}+1)(z^{\tau_0}-1)}{\tau_0^3(z^{2\tau_0}+4z^{\tau_0}+1)}$, $H_c(z)=\frac{3\tau_0(z^{\tau_0}-1)^2}{\tau_0^3(z^{2\tau_0}+4z^{\tau_0}+1)}$ and $H_c(z)=\frac{(z^{\tau_0}-1)^3}{\tau_0^3(z^{2\tau_0}+4z^{\tau_0}+1)}$. Hence,  $Z$-transform of $M_{i}^{\tau_0}\{X_i\}$ can be expressed as 
-$
-{\cal Z}\{M_i^{\tau_0}\{X_i\}\}=H_{\tau_0}(z)X(z), 
-$
-where 
-\begin{align*}\label{eq:Hz}
-H_{\tau_0}(z)=&\frac{1}{\tau_0}\sum_{\ell^*=1}^{\tau_0}z^{\ell^*-\tau_0}+\frac{H_b(z)}{\tau_0}\sum_{\ell^*=1}^{\tau_0}(\tau_0-\ell^*)z^{\ell^*-\tau_0}+\frac{H_c(z)}{\tau_0}\sum_{\ell^*=1}^{\tau_0}(\tau_0-\ell^*)^2z^{\ell^*-\tau_0} \\
-&+\frac{H_d(z)}{\tau_0}\sum_{\ell^*=1}^{\tau_0}(\tau_0-\ell^*)^3z^{\ell^*-\tau_0}. 
-\end{align*}
-Suppose that $z=e^{\frac{2\pi m j}{\tau_0}}$ for $m=1,\dots,\tau_0-1$. Then $H_b(z)=H_c(z)=H_d(z)=0$ and 
-\begin{align*}
-\frac{1}{\tau_0}\sum_{\ell^*=1}^{\tau_0}z^{\ell^*-\tau_0}&=\frac{z^{-\tau_0+1}(1-z^{\tau_0})}{\tau_0(1-z)}=\frac{z^{-\tau_0+1}}{\tau_0(z-1)}\prod_{m=0}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)\\
-&=\frac{z^{-\tau_0+1}}{\tau_0}\prod_{m=1}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)=0.
-\end{align*}
-Therefore, $H_{\tau_0}(z)=0$ at $z=e^{\frac{2\pi m j}{\tau_0}}$ for $m=1,\dots,\tau_0-1$ and $H_{\tau_0}(\omega)=0$ for $\omega \in \big\{\omega:\omega=\frac{2\pi k}{\tau_0}\pm 2n\pi,~\textup{for } \ell=1,\dots,\tau_0~\textup{and } n\in \mathbb{N}\big\}$.
+	From Definition 2 that defines elastic-bands by cubic spline function, there exists $\ell^*\in \{1,2,\dots,\tau_0\}$ such that 
+	\[
+	X_{i,\ell}^{\tau_0}=X_{i+\ell^*-\tau_0}+b_{i+\ell^*-\tau_0}(\tau_0-\ell^*)+c_{i+\ell^*-\tau_0}(\tau_0-\ell^*)^2+d_{i+\ell^*-\tau_0}(\tau_0-\ell^*)^3
+	\]
+	for each $\ell$ and $i$ (de Boor, 1978). Here $b_{i+\ell^*-\tau_0}$, $c_{i+\ell^*-\tau_0}$ and $d_{i+\ell^*-\tau_0}$ are obtained by solving the following equations: (i) $X_{i+\ell^*}=X_{i+\ell^*-\tau_0}+\tau_0b_{i+\ell^*-\tau_0}+\tau_0^2c_{i+\ell^*-\tau_0}+\tau_0^3d_{i+\ell^*-\tau_0}$, (ii) $b_{i+\ell^*}=b_{i+\ell^*-\tau_0}+2\tau_0c_{i+\ell^*-\tau_0}+3\tau_0^2d_{i+\ell^*-\tau_0}$, and (iii) $2c_{i+\ell^*}=2c_{i+\ell^*-\tau_0}+6\tau_0d_{i+\ell^*-\tau_0}$. Then $Z$-transforms of the above three equations are 
+	\begin{eqnarray}
+	\label{eq:Z-transform}
+	X(z)z^{\ell^*}&=&X(z)z^{\ell^*-\tau_0}+\tau_0b(z)z^{\ell^*-\tau_0}+\tau_0^2c(z)z^{\ell^*-\tau_0}+\tau_0^3d(z)z^{\ell^*-\tau_0}\nonumber\\
+	b(z)z^{\ell^*}&=&b(z)z^{\ell^*-\tau_0}+2\tau_0c(z)z^{\ell^*-\tau_0}+3\tau_0^2d(z)z^{\ell^*-\tau_0}\nonumber\\
+	2c(z)z^{\ell^*}&=&2c(z)z^{\ell^*-\tau_0}+6\tau_0d(z)z^{\ell^*-\tau_0}.\nonumber 
+	\end{eqnarray}
+	So, the solutions of the above equations are $b(z)= \frac{-3z^{-\tau_0}+3z^{-\tau_0}}{\tau_0(z^{\tau_0}+4+z^{-\tau_0})}X(z)$, 
+	$c(z)= \frac{3z^{-\tau_0}-6+3z^{\tau_0}}{\tau_0^2(z^{\tau_0}+4+z^{-\tau_0})}X(z)$, and 
+	$d(z)= \frac{-z^{-\tau_0}+3-3z^{\tau_0}+z^{2\tau_0}}{\tau_0^3(z^{\tau_0}+4+z^{-\tau_0})}X(z)$.  Thus, $Z$-transform of $X_{i,\ell}^{\tau}$ is 
+	\begin{align*}
+	{\cal Z}\{X_{i,\ell}^{\tau_0}\}=&X(z)z^{\ell^*-\tau_0}+b(z)z^{\ell^*-\tau_0}(\tau_0-\ell^*)+c(z)z^{\ell^*-\tau_0}(\tau_0-\ell^*)^2+d(z)z^{\ell^*-\tau_0}(\tau_0-\ell^*)^3\\
+	=&\left[z^{\ell^*-\tau_0}+H_b(z)(\tau_0-\ell^*)z^{\ell^*-\tau_0}+H_c(z)(\tau_0-\ell^*)^2z^{\ell^*-\tau_0}+H_d(z)(\tau_0-\ell^*)^3z^{\ell^*-\tau_0} \right]X(z), 
+	\end{align*}
+	where $H_b(z)=\frac{3\tau_0^2(z^{\tau_0}+1)(z^{\tau_0}-1)}{\tau_0^3(z^{2\tau_0}+4z^{\tau_0}+1)}$, $H_c(z)=\frac{3\tau_0(z^{\tau_0}-1)^2}{\tau_0^3(z^{2\tau_0}+4z^{\tau_0}+1)}$ and $H_c(z)=\frac{(z^{\tau_0}-1)^3}{\tau_0^3(z^{2\tau_0}+4z^{\tau_0}+1)}$. Hence,  $Z$-transform of $M_{i}^{\tau_0}\{X_i\}$ can be expressed as 
+	$
+	{\cal Z}\{M_i^{\tau_0}\{X_i\}\}=H_{\tau_0}(z)X(z), 
+	$
+	where 
+	\begin{align*}\label{eq:Hz}
+	H_{\tau_0}(z)=&\frac{1}{\tau_0}\sum_{\ell^*=1}^{\tau_0}z^{\ell^*-\tau_0}+\frac{H_b(z)}{\tau_0}\sum_{\ell^*=1}^{\tau_0}(\tau_0-\ell^*)z^{\ell^*-\tau_0}+\frac{H_c(z)}{\tau_0}\sum_{\ell^*=1}^{\tau_0}(\tau_0-\ell^*)^2z^{\ell^*-\tau_0} \\
+	&+\frac{H_d(z)}{\tau_0}\sum_{\ell^*=1}^{\tau_0}(\tau_0-\ell^*)^3z^{\ell^*-\tau_0}. 
+	\end{align*}
+	Suppose that $z=e^{\frac{2\pi m j}{\tau_0}}$ for $m=1,\dots,\tau_0-1$. Then $H_b(z)=H_c(z)=H_d(z)=0$ and 
+	\begin{align*}
+	\frac{1}{\tau_0}\sum_{\ell^*=1}^{\tau_0}z^{\ell^*-\tau_0}&=\frac{z^{-\tau_0+1}(1-z^{\tau_0})}{\tau_0(1-z)}=\frac{z^{-\tau_0+1}}{\tau_0(z-1)}\prod_{m=0}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)\\
+	&=\frac{z^{-\tau_0+1}}{\tau_0}\prod_{m=1}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)=0.
+	\end{align*}
+	Therefore, $H_{\tau_0}(z)=0$ at $z=e^{\frac{2\pi m j}{\tau_0}}$ for $m=1,\dots,\tau_0-1$ and $H_{\tau_0}(\omega)=0$ for $\omega \in \big\{\omega:\omega=\frac{2\pi k}{\tau_0}\pm 2n\pi,~\textup{for } \ell=1,\dots,\tau_0~\textup{and } n\in \mathbb{N}\big\}$.
 \end{proof}
 
 \subsubsection*{A.5. Proof of Lemma~\ref{lem2}}
 \begin{proof}
-Define the cubic B-spline function $B(t)$ as
-\[
-B(t)=\begin{cases}
-\frac{2}{3}-t^2\left(1-\frac{1}{2}|t|\right), & |t|\leq 1 \\ 
-\frac{1}{6}(2-|t|)^3,& 1<|t|<2 \\ 
-0,&\mbox{otherwise}. 
-\end{cases}
-\]
-Cubic spline function can be expressed as a linear combination of B-splines. Thus, the sum of $\tau_0$ cubic spline functions is 
-\begin{align*}
-\sum_{\ell=1}^{\tau_0}S_{\ell}^{\tau_0}(t)=&\sum_{\ell=1}^{\tau_0}\sum_{k=-\infty}^{\infty}6B_{\ell+k\tau_0}(t)w_{\ell+k\tau_0}=\sum_{\ell=1}^{\tau_0}\sum_{k=-\infty}^{\infty}6B\Big(k-\frac{t-\ell T}{\tau_0T}\Big)w_{\ell+k\tau_0}\\
-=&\sum_{\ell=1}^{\tau_0}6(B\ast w)\Big(\frac{t-\ell T}{\tau_0T}\Big)
-=6(B\ast w)\Big(\frac{t}{\tau_0T}\Big) \ast \sum_{\ell=1}^{\tau_0} \delta\Big(t-\ell T\Big), 
-\end{align*}
-where $w(t)=\sum_{k=-\infty}^{\infty}w_{\ell+k\tau_0}\delta(t-k)$. Here $w_i$ denotes an inverse $Z$-transform of $W(z)=\frac{X(z)}{z+4+z^{-1}}$, and $W(z)$ is derived by Aldroubi et al. (1992). Note that $B(t)=\phi(t)^{*4}$, where $\phi(x)=1$ for $|t|\leq 1/2$ and $\phi(x)=0$ for otherwise, and $x^{*k}=\underset{k}{\underbrace{x*x*\dots*x}}$ denotes convolution power. Fourier transform of $B\left(\frac{t}{\tau_0T}\right)$ is given by 
-\[
-{\cal F}\Big\{B\Big(\frac{t}{\tau_0T}\Big)\Big\}={\cal F}\Big\{\phi\Big(\frac{t}{\tau_0T}\Big)\Big\}^4 \geq 0
-\]
-since $\phi\big(\frac{t}{\tau_0T}\big)$ is symmetric. The term $w\big(\frac{t}{\tau_0T}\big) \ast \sum_{\ell=1}^{\tau_0}\delta\big(\frac{t-\ell T}{\tau_0T}\big)$ can be expressed as $w_{\delta}(t)=\sum_{i=-\infty}^{\infty} w_i\delta(t-iT)$ that is continuous-time representation of discrete-time signal $w_i$. Fourier transform of $w_{\delta}(t)$ is 
-\[
-{\cal F}\{w_{\delta}(t)\}=\frac{X_{\delta}(\omega)}{e^{j\omega\tau_0}+4+e^{-j\omega\tau_0}}, 
-\]
-where $X_{\delta}(\omega)$ denotes Fourier transform of $X_{\delta}(t)=\sum_{i=-\infty}^{\infty} X_i\delta(t-iT)$. Note that $e^{j\omega\tau_0}+4+e^{-j\omega\tau_0}=\left(e^{j\omega\tau_0/2}+e^{-j\omega\tau_0/2}\right)^2+2>0$.
-Thus, Fourier transform of $M_{i}^{\tau_0}(\{\delta_i\})$ is real and positive. Since $H_{\tau_0}(\omega)$ is maximized at $\omega=0$ and the maximum value is 1, by Lemma~\ref{lem1}, it follows that
-$
-0<H_{\tau_0}(\omega)\leq 1
-$ 
-except for $\omega \in \big\{\omega:\omega=\frac{2\pi k}{\tau_0}\pm 2n\pi,~\textup{for } k=1,\dots,\tau_0~\textup{and } n\in \mathbb{N}\big\}$. 
+	Define the cubic B-spline function $B(t)$ as
+	\[
+	B(t)=\begin{cases}
+	\frac{2}{3}-t^2\left(1-\frac{1}{2}|t|\right), & |t|\leq 1 \\ 
+	\frac{1}{6}(2-|t|)^3,& 1<|t|<2 \\ 
+	0,&\mbox{otherwise}. 
+	\end{cases}
+	\]
+	Cubic spline function can be expressed as a linear combination of B-splines. Thus, the sum of $\tau_0$ cubic spline functions is 
+	\begin{align*}
+	\sum_{\ell=1}^{\tau_0}S_{\ell}^{\tau_0}(t)=&\sum_{\ell=1}^{\tau_0}\sum_{k=-\infty}^{\infty}6B_{\ell+k\tau_0}(t)w_{\ell+k\tau_0}=\sum_{\ell=1}^{\tau_0}\sum_{k=-\infty}^{\infty}6B\Big(k-\frac{t-\ell T}{\tau_0T}\Big)w_{\ell+k\tau_0}\\
+	=&\sum_{\ell=1}^{\tau_0}6(B\ast w)\Big(\frac{t-\ell T}{\tau_0T}\Big)
+	=6(B\ast w)\Big(\frac{t}{\tau_0T}\Big) \ast \sum_{\ell=1}^{\tau_0} \delta\Big(t-\ell T\Big), 
+	\end{align*}
+	where $w(t)=\sum_{k=-\infty}^{\infty}w_{\ell+k\tau_0}\delta(t-k)$. Here $w_i$ denotes an inverse $Z$-transform of $W(z)=\frac{X(z)}{z+4+z^{-1}}$, and $W(z)$ is derived by Aldroubi et al. (1992). Note that $B(t)=\phi(t)^{*4}$, where $\phi(x)=1$ for $|t|\leq 1/2$ and $\phi(x)=0$ for otherwise, and $x^{*k}=\underset{k}{\underbrace{x*x*\dots*x}}$ denotes convolution power. Fourier transform of $B\left(\frac{t}{\tau_0T}\right)$ is given by 
+	\[
+	{\cal F}\Big\{B\Big(\frac{t}{\tau_0T}\Big)\Big\}={\cal F}\Big\{\phi\Big(\frac{t}{\tau_0T}\Big)\Big\}^4 \geq 0
+	\]
+	since $\phi\big(\frac{t}{\tau_0T}\big)$ is symmetric. The term $w\big(\frac{t}{\tau_0T}\big) \ast \sum_{\ell=1}^{\tau_0}\delta\big(\frac{t-\ell T}{\tau_0T}\big)$ can be expressed as $w_{\delta}(t)=\sum_{i=-\infty}^{\infty} w_i\delta(t-iT)$ that is continuous-time representation of discrete-time signal $w_i$. Fourier transform of $w_{\delta}(t)$ is 
+	\[
+	{\cal F}\{w_{\delta}(t)\}=\frac{X_{\delta}(\omega)}{e^{j\omega\tau_0}+4+e^{-j\omega\tau_0}}, 
+	\]
+	where $X_{\delta}(\omega)$ denotes Fourier transform of $X_{\delta}(t)=\sum_{i=-\infty}^{\infty} X_i\delta(t-iT)$. Note that $e^{j\omega\tau_0}+4+e^{-j\omega\tau_0}=\left(e^{j\omega\tau_0/2}+e^{-j\omega\tau_0/2}\right)^2+2>0$.
+	Thus, Fourier transform of $M_{i}^{\tau_0}(\{\delta_i\})$ is real and positive. Since $H_{\tau_0}(\omega)$ is maximized at $\omega=0$ and the maximum value is 1, by Lemma~\ref{lem1}, it follows that
+	$
+	0<H_{\tau_0}(\omega)\leq 1
+	$ 
+	except for $\omega \in \big\{\omega:\omega=\frac{2\pi k}{\tau_0}\pm 2n\pi,~\textup{for } k=1,\dots,\tau_0~\textup{and } n\in \mathbb{N}\big\}$. 
 \end{proof}
 
 
 \subsubsection*{A.6. Proof of Corollary~\ref{cor1}}
 \begin{proof}
-Note that for each $\ell$ and $i$, there exist $\ell^*\in \{1,2,\dots,\tau_0\}$ such that 
-\[
-X_{i,\ell}^{\tau_0}=\frac{\ell^*X_{i+\ell^*-\tau_0}+(\tau_0-\ell^*)X_{i+\ell^*}}{\tau_0},
-\]
-thus Z-transform of $X_{i,\ell}^{\tau_0}$ is 
-\[
-{\cal Z}\{X_{i,\ell^*}^{\tau_0}\}=\frac{\ell^*}{\tau_0}X(z)z^{\ell^*-\tau_0}+\frac{\tau_0-\ell^*}{\tau_0}X(z)z^{\ell^*}.
-\]
-Thus 
-\[
-{\cal Z}\{M_{i}^{\tau_0}\}=\frac{1}{\tau_0}\left[\sum_{\ell^*=1}^{\tau_0}z^{\ell^*}+\frac{z^{-\tau_0}-1}{\tau_0}\sum_{\ell^*=1}^{\tau_0}\ell^* z^{\ell^*}\right]X(z)
-=\frac{1}{\tau_0}\left[ S_1+ \frac{z^{-\tau_0}-1}{\tau_0}S_2 \right]X(z)
-\]
-where $S_1=\sum_{\ell^*=1}^{\tau_0}z^{\ell^*}$ and $S_2=\sum_{\ell^*=1}^{\tau_0}\ell^* z^{\ell^*}$. Using the fact that 
-$S_2=\frac{S_1 -\tau_0 z^{\tau_0+1}}{1-z}$ then
-\begin{align*}
-S_1+\frac{z^{-\tau_0}-1}{\tau_0}S_2=&S_1+\frac{z^{-\tau_0}-1}{\tau_0}\frac{S_1 -\tau_0 z^{\tau_0+1}}{1-z}=S_1+S_1\frac{-(1-z^{-\tau_0})}{\tau_0(1-z)}-S_1
-=S_1^2\frac{1}{\tau_0 z^{\tau_0+1}}
-\end{align*}
-Thus the transfer function $H_{\tau_0}(z)$ can be defined by 
-$H_{\tau_0}(z)=\left(\frac{S_1z^{\frac{-\tau_0-1}{2}}}{\tau_0}\right)^2$. To consider the Fourier response, set $z=e^{j\omega}$. 
-Note that $\left(\frac{S_1z^{\frac{-\tau_0-1}{2}}}{\tau_0}\right)$ is real since 
-$
-\left(\frac{z(z^{\tau_0}-1)}{\tau_0(z-1)}\right) z^{\frac{-\tau_0-1}{2}}=\left(\frac{z^{-1}(z^{-\tau_0}+1)}{\tau_0(z^{-1}-1)}\right) z^{\frac{\tau_0+1}{2}}
-$
-thus $H_{\tau_0}(z)$ is real and positive. 
-Now observe that  $H_{\tau_0}(z)=|H_{\tau_0}(z)|=\left|S_1^2\right|\frac{1}{\tau_0^2}\leq 1$. Thus 
-\[
-0\leq 1-H_{\tau_0}(z) \leq 1. 
-\]
-Since $S_1=\frac{z(1-z^{\tau_0})}{1-z}=\frac{z}{z-1}\prod_{m=0}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)=z\prod_{m=1}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)
-$, $S_1=0$ when $z=e^{\frac{2\pi m j}{\tau_0}}$ for all $m=1,\dots,\tau_0-1$. Thus 
-\[
-0\leq 1-H_{\tau_0}(\omega) < 1
-\]
-except for $\omega \in \big\{\omega: \omega=\frac{2\pi k}{\tau_0}, \textup{~for all } k=1,\dots,\tau_0~\textup{and } n\in \mathbb{N}\big\}$. 
+	Note that for each $\ell$ and $i$, there exist $\ell^*\in \{1,2,\dots,\tau_0\}$ such that 
+	\[
+	X_{i,\ell}^{\tau_0}=\frac{\ell^*X_{i+\ell^*-\tau_0}+(\tau_0-\ell^*)X_{i+\ell^*}}{\tau_0},
+	\]
+	thus Z-transform of $X_{i,\ell}^{\tau_0}$ is 
+	\[
+	{\cal Z}\{X_{i,\ell^*}^{\tau_0}\}=\frac{\ell^*}{\tau_0}X(z)z^{\ell^*-\tau_0}+\frac{\tau_0-\ell^*}{\tau_0}X(z)z^{\ell^*}.
+	\]
+	Thus 
+	\[
+	{\cal Z}\{M_{i}^{\tau_0}\}=\frac{1}{\tau_0}\left[\sum_{\ell^*=1}^{\tau_0}z^{\ell^*}+\frac{z^{-\tau_0}-1}{\tau_0}\sum_{\ell^*=1}^{\tau_0}\ell^* z^{\ell^*}\right]X(z)
+	=\frac{1}{\tau_0}\left[ S_1+ \frac{z^{-\tau_0}-1}{\tau_0}S_2 \right]X(z)
+	\]
+	where $S_1=\sum_{\ell^*=1}^{\tau_0}z^{\ell^*}$ and $S_2=\sum_{\ell^*=1}^{\tau_0}\ell^* z^{\ell^*}$. Using the fact that 
+	$S_2=\frac{S_1 -\tau_0 z^{\tau_0+1}}{1-z}$ then
+	\begin{align*}
+	S_1+\frac{z^{-\tau_0}-1}{\tau_0}S_2=&S_1+\frac{z^{-\tau_0}-1}{\tau_0}\frac{S_1 -\tau_0 z^{\tau_0+1}}{1-z}=S_1+S_1\frac{-(1-z^{-\tau_0})}{\tau_0(1-z)}-S_1
+	=S_1^2\frac{1}{\tau_0 z^{\tau_0+1}}
+	\end{align*}
+	Thus the transfer function $H_{\tau_0}(z)$ can be defined by 
+	$H_{\tau_0}(z)=\left(\frac{S_1z^{\frac{-\tau_0-1}{2}}}{\tau_0}\right)^2$. To consider the Fourier response, set $z=e^{j\omega}$. 
+	Note that $\left(\frac{S_1z^{\frac{-\tau_0-1}{2}}}{\tau_0}\right)$ is real since 
+	$
+	\left(\frac{z(z^{\tau_0}-1)}{\tau_0(z-1)}\right) z^{\frac{-\tau_0-1}{2}}=\left(\frac{z^{-1}(z^{-\tau_0}+1)}{\tau_0(z^{-1}-1)}\right) z^{\frac{\tau_0+1}{2}}
+	$
+	thus $H_{\tau_0}(z)$ is real and positive. 
+	Now observe that  $H_{\tau_0}(z)=|H_{\tau_0}(z)|=\left|S_1^2\right|\frac{1}{\tau_0^2}\leq 1$. Thus 
+	\[
+	0\leq 1-H_{\tau_0}(z) \leq 1. 
+	\]
+	Since $S_1=\frac{z(1-z^{\tau_0})}{1-z}=\frac{z}{z-1}\prod_{m=0}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)=z\prod_{m=1}^{\tau_0-1}\left(z-e^{\frac{2\pi m j}{\tau_0}}\right)
+	$, $S_1=0$ when $z=e^{\frac{2\pi m j}{\tau_0}}$ for all $m=1,\dots,\tau_0-1$. Thus 
+	\[
+	0\leq 1-H_{\tau_0}(\omega) < 1
+	\]
+	except for $\omega \in \big\{\omega: \omega=\frac{2\pi k}{\tau_0}, \textup{~for all } k=1,\dots,\tau_0~\textup{and } n\in \mathbb{N}\big\}$. 
 \end{proof}
 
 
@@ -1175,111 +1368,73 @@ except for $\omega \in \big\{\omega: \omega=\frac{2\pi k}{\tau_0}, \textup{~for 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Create a bibliography directory and place your .bib file there.
 \begin{thebibliography}{}
-\bibitem[{Aldroubi(1992)}]{Aldroubi} Aldroubi, A., Unser, M. and Eden, M. (1992). Cardinal spline filters: Stability and convergence to the ideal sinc interpolator. {\it Signal Processing}, {\bf 28}, 127--138.
-
-\bibitem[{Bickel(2015)}]{Bickel} Bickel, P. J. and Doksum, K. A. (2015). {\it Mathematical Statistics: Basic Ideas and Selected Topics},  Volume I, Second Edition, CRC Press, Boca Raton. 
-
-\bibitem[{Chaudhuri(1999)}]{Chaudhuri1999} Chaudhuri, P. and Marron, J.~S. (1999).  SiZer for exploration of structures in curves.  {\it Journal of the American Statistical Association}, {\bf 94}, 807--823.
-
-%\bibitem[{Cline(1991)}]{Bound1} Cline, D. B. H. and Hart, J. D. (1991). Kernel estimation of densities of discontinuous derivatives.
-%{\it Statistics}, {\bf 22}, 69--84.
-
-\bibitem[{Boor(1978)}]{Boor} de Boor, C. (1978). {\it A Practical Guide to Splines}. Springer, New York. 
-
-\bibitem[{Davidson(1994)}]{Davidson} Davidson, J. (1994). {\it Stochastic Limit Theory}. Oxford University Press, Oxford. 
-
-\bibitem[{Donoho(1992)}]{Donoho1992} Donoho, D. L. (1992). Interpolating wavelet transforms. Technical Report 408, Department of Statistics, Stanford University. 
-
-\bibitem[{Donoho(1994)}]{Bound3} Donoho, D. L. and Johnstone, I. M. (1994). Ideal spatial adaptation by wavelet shrinkage. {\it Biometrika}, {\bf 81}, 425--455.
-
-\bibitem[{Dragomiretskiy(2014)}]{VMD} Dragomiretskiy, K. and Zosso, D. (2014). Variational mode decomposition. {\it IEEE Transactions on Signal Processing}, {\bf 62}, 531--544.
-
-\bibitem[{Holm(2005)}]{Holm2005}  Er\"ast\"o, P. and Holmstr\"om, L. (2005). Bayesian multiscale smoothing for making inferences about features in scatter plots. {\it Journal of Computational and Graphical Statistics}, {\bf 14}, 569--589.
-
-\bibitem[{Fryzlewicz and Oh(2011)}]{thickpen} Fryzlewicz, P. and Oh, H.-S. (2011). Thick pen transformation for time series. {\it Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, {\bf 73}, 499--529.
-
-%\bibitem[{Gilles(2013)}]{ECGdata} Gilles, J. (2013). Empirical wavelet transform. {\it IEEE Transactions on Signal Processing}, {\bf 61}, 3999--4010.
-
-%\bibitem[{Hannig(2006)}]{Hannig2006} Hannig, J. and Lee, T. C. M. (2006). Robust SiZer for exploration of regression structures and outlier detection. {\it Journal of Computational and Graphical Statistics}, {\bf 15}, 101--117.
-
-%\bibitem[{Hannig(2013)}]{Hannig2013}  Hannig, J., Lee, T. and Park, C. (2013). Metrics for SiZer map comparison. {\it Stat}, {\bf 2}, 49--60.
-
-%\bibitem[{Haykin(2007)}]{Signals} Haykin, S. and Van Veen, B. (2007). {\it Signals and Systems}, John Wiley \& Sons, New York.
-
-%\bibitem[{BSiZer(2010)}]{BSiZer2010} Holmstr\"om, L. (2010a). BSiZer.  {\it Wiley Interdisciplinary Reviews: Computational Statistics}, {\bf 2}, 526--534. 
-
-\bibitem[{Holm(2010)}]{Holm2010} Holmstr\"oma, L. (2010b). Scale space methods. {\it Wiley Interdisciplinary Reviews: Computational Statistics}, {\bf 2}, 150--159.
-
-\bibitem[{Holm(2017)}]{Holm2017} Holmstr\"oma, L. and Pasanena, L. (2017). Statistical scale space methods. {\it International Statistical Review}, {\bf 85}, 1--30.  
-
-\bibitem[{Huang(1998)}]{EMD} Huang, N. E., Shen, Z., Long, S. R., Wu, M. C., Shih, H. H., Zheng, Q., ... and Liu, H. H. (1998). The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis. {\it Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences}, {\bf 454},  903--995. 
-
-\bibitem[{Johnstone(2005)}]{Johnstone2005} Johnstone, I. M. and Silverman, B. W. (2005). Empirical Bayes selection of wavelet thresholds. {\it Annals of Statistics}, {\bf 33}, 1700--1752. 
-
-\bibitem[{Kennedy(1976)}]{Kennedy} Kennedy, D. (1976) The distribution of the maximum Brownian excursion. {\it Journal of Applied Probability}, {\bf 13}, 371--376.
-
-%\bibitem[{Huang(2015)}]{Bandpass} Huang, A., Liu, M. Y. and Yu, W. T. (2015). Bandpass empirical mode decomposition using a rolling ball algorithm. {\it Advances in Adaptive Data Analysis}, {\bf 7},1550003.
-
-%\bibitem[{Lindeberg(1944)}]{scalespace} Lindeberg, T. (1994). {\it Scale-Space Theory in Computer Vision}, Springer Science \& Business Media, New York.
-
-\bibitem[{Nason(1996)}]{Nason1996} Nason, G. P. (1996). Wavelet shrinkage using cross-validation. {\it Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, {\bf 58}, 463--479.
-
-%\bibitem[{Pasanena(2013)}]{Pasanena2013} Pasanena, L., Launonena, I, and Holmstr\"oma, L. (2013). A scale space multiresolution method for extraction of time series features. {\it Stat}, {\bf 2}, 273--291. 
-
-%\bibitem[{Park(2009)}]{Park2009} Park, C., Hannig, J. and Kang, K. H. (2009). Improved SiZer for time series. {\it Statistica Sinica}, {\bf 19}, 1511--1530. 
-
-%\bibitem[{Park(2010)}]{Park2010} Park, C, Lee, T. C. and Hannig, J. (2010). Multiscale exploratory analysis of regression quantiles using quantile SiZer. {\it Journal of Computational and Graphical Statistics}, {\bf 19}, 497--513.
-
-\bibitem[{Rioul(1991)}]{scalo} Rioul, O. and Vetterli, M. (1991). Wavelets and signal processing. {\it IEEE Signal Processing Magazine}, {\bf 8}, 14--38.
-
-%\bibitem[{Schuster(1985)}]{Bound2} Schuster, E.F. (1985). Incorporating support constraints into nonparametric estimators of densities.  {\it Communications in Statistics, Part A - Theory and Methods}, {\bf 14}, 1123--1136.
-
-%\bibitem[{Silverman(1986)}]{Bound3} Silverman, B.W. (1986). {\it Density Estimation for Statistics and Data Analysis}, Chapman and Hall, London. 
-
-\bibitem[{Sweldens(1997)}]{Sweldens1997} Sweldens, W. (1997). The lifting scheme: A construction of second-generation wavelets. {\it SIAM Journal on Mathematical Analysis}, {\bf 29}, 511--546.
-
-\bibitem[{Vogt(2015)}]{Vogt} Vogt, M. and Dette, H. (2015). Detecting gradual changes in locally stationary processes. {\it Annals of Statistics}, {\bf 43}, 713--740.
+	\bibitem[{Aldroubi(1992)}]{Aldroubi} Aldroubi, A., Unser, M. and Eden, M. (1992). Cardinal spline filters: Stability and convergence to the ideal sinc interpolator. {\it Signal Processing}, {\bf 28}, 127--138.
+	
+	\bibitem[{Bickel(2015)}]{Bickel} Bickel, P. J. and Doksum, K. A. (2015). {\it Mathematical Statistics: Basic Ideas and Selected Topics},  Volume I, Second Edition, CRC Press, Boca Raton. 
+	
+	\bibitem[{Chaudhuri(1999)}]{Chaudhuri1999} Chaudhuri, P. and Marron, J.~S. (1999).  SiZer for exploration of structures in curves.  {\it Journal of the American Statistical Association}, {\bf 94}, 807--823.
+	
+	%\bibitem[{Cline(1991)}]{Bound1} Cline, D. B. H. and Hart, J. D. (1991). Kernel estimation of densities of discontinuous derivatives.
+	%{\it Statistics}, {\bf 22}, 69--84.
+	
+	\bibitem[{Boor(1978)}]{Boor} de Boor, C. (1978). {\it A Practical Guide to Splines}. Springer, New York. 
+	
+	\bibitem[{Davidson(1994)}]{Davidson} Davidson, J. (1994). {\it Stochastic Limit Theory}. Oxford University Press, Oxford. 
+	
+	\bibitem[{Donoho(1992)}]{Donoho1992} Donoho, D. L. (1992). Interpolating wavelet transforms. Technical Report 408, Department of Statistics, Stanford University. 
+	
+	\bibitem[{Donoho(1994)}]{Bound3} Donoho, D. L. and Johnstone, I. M. (1994). Ideal spatial adaptation by wavelet shrinkage. {\it Biometrika}, {\bf 81}, 425--455.
+	
+	\bibitem[{Dragomiretskiy(2014)}]{VMD} Dragomiretskiy, K. and Zosso, D. (2014). Variational mode decomposition. {\it IEEE Transactions on Signal Processing}, {\bf 62}, 531--544.
+	
+	\bibitem[{Holm(2005)}]{Holm2005}  Er\"ast\"o, P. and Holmstr\"om, L. (2005). Bayesian multiscale smoothing for making inferences about features in scatter plots. {\it Journal of Computational and Graphical Statistics}, {\bf 14}, 569--589.
+	
+	\bibitem[{Fryzlewicz and Oh(2011)}]{thickpen} Fryzlewicz, P. and Oh, H.-S. (2011). Thick pen transformation for time series. {\it Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, {\bf 73}, 499--529.
+	
+	%\bibitem[{Gilles(2013)}]{ECGdata} Gilles, J. (2013). Empirical wavelet transform. {\it IEEE Transactions on Signal Processing}, {\bf 61}, 3999--4010.
+	
+	%\bibitem[{Hannig(2006)}]{Hannig2006} Hannig, J. and Lee, T. C. M. (2006). Robust SiZer for exploration of regression structures and outlier detection. {\it Journal of Computational and Graphical Statistics}, {\bf 15}, 101--117.
+	
+	%\bibitem[{Hannig(2013)}]{Hannig2013}  Hannig, J., Lee, T. and Park, C. (2013). Metrics for SiZer map comparison. {\it Stat}, {\bf 2}, 49--60.
+	
+	%\bibitem[{Haykin(2007)}]{Signals} Haykin, S. and Van Veen, B. (2007). {\it Signals and Systems}, John Wiley \& Sons, New York.
+	
+	%\bibitem[{BSiZer(2010)}]{BSiZer2010} Holmstr\"om, L. (2010a). BSiZer.  {\it Wiley Interdisciplinary Reviews: Computational Statistics}, {\bf 2}, 526--534. 
+	
+	\bibitem[{Holm(2010)}]{Holm2010} Holmstr\"oma, L. (2010b). Scale space methods. {\it Wiley Interdisciplinary Reviews: Computational Statistics}, {\bf 2}, 150--159.
+	
+	\bibitem[{Holm(2017)}]{Holm2017} Holmstr\"oma, L. and Pasanena, L. (2017). Statistical scale space methods. {\it International Statistical Review}, {\bf 85}, 1--30.  
+	
+	\bibitem[{Huang(1998)}]{EMD} Huang, N. E., Shen, Z., Long, S. R., Wu, M. C., Shih, H. H., Zheng, Q., ... and Liu, H. H. (1998). The empirical mode decomposition and the Hilbert spectrum for nonlinear and non-stationary time series analysis. {\it Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences}, {\bf 454},  903--995. 
+	
+	\bibitem[{Johnstone(2005)}]{Johnstone2005} Johnstone, I. M. and Silverman, B. W. (2005). Empirical Bayes selection of wavelet thresholds. {\it Annals of Statistics}, {\bf 33}, 1700--1752. 
+	
+	\bibitem[{Kennedy(1976)}]{Kennedy} Kennedy, D. (1976) The distribution of the maximum Brownian excursion. {\it Journal of Applied Probability}, {\bf 13}, 371--376.
+	
+	%\bibitem[{Huang(2015)}]{Bandpass} Huang, A., Liu, M. Y. and Yu, W. T. (2015). Bandpass empirical mode decomposition using a rolling ball algorithm. {\it Advances in Adaptive Data Analysis}, {\bf 7},1550003.
+	
+	%\bibitem[{Lindeberg(1944)}]{scalespace} Lindeberg, T. (1994). {\it Scale-Space Theory in Computer Vision}, Springer Science \& Business Media, New York.
+	
+	\bibitem[{Nason(1996)}]{Nason1996} Nason, G. P. (1996). Wavelet shrinkage using cross-validation. {\it Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, {\bf 58}, 463--479.
+	
+	%\bibitem[{Pasanena(2013)}]{Pasanena2013} Pasanena, L., Launonena, I, and Holmstr\"oma, L. (2013). A scale space multiresolution method for extraction of time series features. {\it Stat}, {\bf 2}, 273--291. 
+	
+	%\bibitem[{Park(2009)}]{Park2009} Park, C., Hannig, J. and Kang, K. H. (2009). Improved SiZer for time series. {\it Statistica Sinica}, {\bf 19}, 1511--1530. 
+	
+	%\bibitem[{Park(2010)}]{Park2010} Park, C, Lee, T. C. and Hannig, J. (2010). Multiscale exploratory analysis of regression quantiles using quantile SiZer. {\it Journal of Computational and Graphical Statistics}, {\bf 19}, 497--513.
+	
+	\bibitem[{Rioul(1991)}]{scalo} Rioul, O. and Vetterli, M. (1991). Wavelets and signal processing. {\it IEEE Signal Processing Magazine}, {\bf 8}, 14--38.
+	
+	%\bibitem[{Schuster(1985)}]{Bound2} Schuster, E.F. (1985). Incorporating support constraints into nonparametric estimators of densities.  {\it Communications in Statistics, Part A - Theory and Methods}, {\bf 14}, 1123--1136.
+	
+	%\bibitem[{Silverman(1986)}]{Bound3} Silverman, B.W. (1986). {\it Density Estimation for Statistics and Data Analysis}, Chapman and Hall, London. 
+	
+	\bibitem[{Sweldens(1997)}]{Sweldens1997} Sweldens, W. (1997). The lifting scheme: A construction of second-generation wavelets. {\it SIAM Journal on Mathematical Analysis}, {\bf 29}, 511--546.
+	
+	\bibitem[{Vogt(2015)}]{Vogt} Vogt, M. and Dette, H. (2015). Detecting gradual changes in locally stationary processes. {\it Annals of Statistics}, {\bf 43}, 713--740.
 \end{thebibliography}
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % END OF TEMPLATE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
