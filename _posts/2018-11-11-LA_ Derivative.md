@@ -3,13 +3,10 @@ layout: post
 title: (정리) 선형대수학 - 미분
 ---
 ### About this post
-- 본 포스트는 계속 작성중이다. 
+- 이번에는 행렬의 미분에 대하여 다룬다. 
 
-- 선형대수학은 학부 1학년에 배우는 매우 쉬운 과목이지만 기본적인 개념이 헷갈릴때가 있다. 그럴때 마다 다시 선형대수학책을 꺼내들고 공부하게 되는데 이러한 무의미한 반복을 줄이고 싶어서 포스팅을 시작하였다. 
-
-- 본 포스트에서 정리하는 선형대수학은 통계학과 연관성이 있는 내용위주로 정리하였음을 미리 밝힌다. 
-
-- 본 포스트를 만들때 참고한 문헌은 **Petersen, K. B., & Pedersen, M. S. (2008). The matrix cookbook. Technical University of Denmark, 7(15), 510.** 와 **Strang, G. (2006). Linear Algebra and Its Applications. Thomson, Brooks/Cole** 이다. 
+- 본 포스트를 만들때 참고한 문헌은 아래와 같다. <br/>
+Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical University of Denmark, 7(15), 510.
 
 - 본 포스트에서는 나만 쓰는 notation이 있다. 예를들면 $rbind(c(1,2),c(2,4))$라든가 $X[,1]$과 같은 식의 기호이다. 이것은 R프로그래머라면 익숙한 기호이지만 그렇지 않은사람에게는 낯설 수 있다. 나는 이러한 notation이 익숙하여 내맘대로 쓰겠다.
 
