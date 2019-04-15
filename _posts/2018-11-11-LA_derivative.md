@@ -2,6 +2,7 @@
 layout: post 
 title: (정리) 선형대수학 - 미분
 ---
+
 ### About this post
 - 이번에는 행렬의 미분에 대하여 다룬다. 
 
