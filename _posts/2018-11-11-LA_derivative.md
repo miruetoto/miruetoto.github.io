@@ -128,7 +128,7 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \end{align}
 편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 아래와 같은 표기법을 도입하자. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=\frac{\partial {\bf B}{\bf x}}{\partial cbind(x_1,\dots,x_p)}=cbind( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} ) 
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=\frac{\partial {\bf B}{\bf x}}{\partial cbind(x_1,\dots,x_p)}=cbind\left( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} \right) 
 \end{align}
 여기에서 ${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} {\bf B}_ i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
 \begin{align}
