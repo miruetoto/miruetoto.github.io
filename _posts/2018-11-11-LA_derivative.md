@@ -49,7 +49,8 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 
 - 임의의 매트릭스 ${\bf X}_ {n \times p}$에 대하여 ${\bf X}'$는 아래와 같이 표현할 수 있다. 
 \begin{align}
-{\bf X}=cbind({\bf X}_ 1, \dots, {\bf X}_ p) \Longrightarrow {\bf X}'=\left[cbind({\bf X}_ 1, \dots, {\bf X}_ p)\right]^T=rbind({\bf X}_ 1',\dots,{\bf X}_ p') 
+{\bf X}=cbind({\bf X}_ 1, \dots, {\bf X}_ p) \\\\ 
+\Longrightarrow {\bf X}'=\left[cbind({\bf X}_ 1, \dots, {\bf X}_ p)\right]^T=rbind({\bf X}_ 1',\dots,{\bf X}_ p') 
 \end{align}
 .. 
 \begin{align}
