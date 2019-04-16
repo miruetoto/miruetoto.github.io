@@ -57,11 +57,17 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 \end{align}
 ***case 2*** <br/>
 \begin{align}
-{\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
+{\bf X}=rbind({\bf x}_ 1, \dots, {\bf x}_ n) \\\\ 
+\end{align}
+\begin{align}
+{\bf X}'=\left[rbind({\bf x}_ 1,\dots,{\bf x}_ n)\right]^T = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
 \end{align}
 ***case 3*** <br/>
 \begin{align}
-{\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
+{\bf X}=\left(x_{ij}\right) \\\\ 
+\end{align}
+\begin{align}
+{\bf X}'=\left(x_{ji}\right)
 \end{align}
 
 -  
