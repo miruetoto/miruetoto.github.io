@@ -252,6 +252,11 @@ tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ diag(\lambda_1,\dots, \lambda_p) \left({\bf 
 \end{align}
 위의 식을 ${\bf T}$로 미분하면 아래와 같이 된다. 
 \begin{align}
-2{\bf X}'{\bf X}{\bf T}- 2{\bf T}{\bf D}
+2{\bf X}'{\bf X}{\bf T}- 2{\bf T}{\bf \Lambda}
 \end{align}
-또한 $\lambda$로 미분하면 ${\bf T}'{\bf T}={\bf I}$가 된다. ${\bf T}$가 두 식을 연립하여 
+또한 $\lambda$로 미분하면 ${\bf T}'{\bf T}={\bf I}$가 된다. 두 식을 연립하면 아래와 같이 된다. 
+\begin{align}
+\begin{cases}
+{\bf X}'{\bf X}{\bf T}={\bf T}{\bf \Lambda}
+\end{cases}
+\end{align}
