@@ -97,6 +97,7 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}
 =\frac{\partial \sum_{i=1}^{n}x_i a_i}{\partial c(x_1,\dots,x_n)}
+=c\left(\frac{\partial}{\partial x_1}\sum_{i=1}^{n}x_i a_i}, \dots,  \frac{\partial}{\partial x_n}\sum_{i=1}^{n}x_i a_i} \right)
 \end{align}
 눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 
 
