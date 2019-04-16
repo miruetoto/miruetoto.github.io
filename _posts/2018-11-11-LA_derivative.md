@@ -97,9 +97,11 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}
 =\frac{\partial \sum_{i=1}^{n}x_i a_i}{\partial c(x_1,\dots,x_n)}
-=c\left(\frac{\partial}{\partial x_1}\sum_{i=1}^{n}x_i a_i}, \dots,  \frac{\partial}{\partial x_n}\sum_{i=1}^{n}x_i a_i} \right)
+=c\left(\frac{\partial}{\partial x_1}\sum_{i=1}^{n}x_i a_i, \dots,  \frac{\partial}{\partial x_n}\sum_{i=1}^{n}x_i a_i \right)
+=c\left(a_1,\dots,a_n\right)
+={\bf a}
 \end{align}
-눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 
+반대측도 비슷한논리로 증명하면 된다. 위에서 눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (행벡터일수도 있고 열벡터일수도 있다) (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 이 사실들을 기억하면 좀 더 쉽게 결과를 외울 수 있다. 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (70))
 \begin{align}
