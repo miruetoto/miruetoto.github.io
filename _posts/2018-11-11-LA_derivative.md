@@ -21,17 +21,17 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \end{align}
 와 같이 될 수 있는 한 명확하게 명시를 하겠다.    
 
-- 위의 내용을 종합하면 보통 통계학과에서 사용하는 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같이 표현가능하다. 
-\begin{align}
-{\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
-\end{align}
-R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이 된다. 이때 ${\bf x}_ n$과 같은 경우는 row-vector임을 유의하자. 
-
 - 이인석교수의 교재에서는 매트릭스 ${\bf X}$를 아래와 같이 표현가능하다. 이 역시 매우 유용한 표현이다. 
 \begin{align}
 {\bf X}=\left(x_{ij}\right)
 \end{align}
 처음에는 이러한 표현이 매우 헷갈려서 정신병 걸릴거 같았지만 나중에는 이 표현을 안쓰는 것이 더 암걸릴것 같은 고통을 주므로 그냥 쓰기로 결정하였다. 
+
+- 위의 내용을 종합하면 보통 통계학과에서 사용하는 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같이 표현가능하다. 
+\begin{align}
+{\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)=\left(x_{ij}\right)
+\end{align}
+R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이고 $x_{ij}={\bf X}[i,j]$가 된다. 이때 ${\bf x}_ n$은 row-vector임을 유의하자. 
 
 - 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 일반적인 col-vector ${\bf a}$는 아래와 같이 표현할 수 있다. 
 \begin{align}
