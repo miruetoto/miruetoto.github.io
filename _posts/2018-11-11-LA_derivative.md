@@ -9,9 +9,8 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 
 - 본 포스트에서는 나만 쓰는 notation이 있다. 예를들면 $rbind(c(1,2),c(2,4))$라든가 $X[,1]$과 같은 식의 기호이다. 이것은 R프로그래머라면 익숙한 기호이지만 그렇지 않은사람에게는 낯설 수 있다. 나는 이러한 notation이 익숙하여 내맘대로 쓰겠다.
 
-### (통계학과를 위한) 기본 매트릭스 연산
+### 매트릭스 표현법
 
-***매트릭스의 표현법***
 - 보통 통계학과에서 사용하는 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같은 기호로 표현하면 편리하다. 
 \begin{align}
 {\bf X}=cbind({\bf X}_ 1,\dots,{\bf X}_ p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)
@@ -25,6 +24,8 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 - 매트릭스 ${\bf X}$의 row는 ${\bf x}_ 1, {\bf x}_ 2, \dots$와 같은 방식으로 종종 표시할 것이다. 따라서 매트릭스 ${\bf a}_ 1$은 매트릭스 ${\bf A}$의 첫번째 row가 된다. 이 역시 헷갈리는 표현인데 일반적인 교재에서 ${\bf a}_ 1$와 같은것은 col-vector를 의미하기 때문이다(여기서는 row-vector). 따라서 이 역시 ${\bf A}=rbind({\bf a}_ 1, {\bf a}_ 2, \dots, {\bf a}_ p)$와 같이 될 수 있는 한 명확하게 명시를 하겠다.    
 
 - 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 
+
+### 매트릭스 연산
 
 ***transpose*** 
 - ${\bf X}'$는 아래와 같이 표현할 수 있다. 
@@ -78,18 +79,24 @@ cbind({\bf U}_ 1,{\bf U}_ 2,{\bf U}_ 3){\bf D}_ {3 \times 2}=cbind({\bf U}_ 1,{\
 
 --- 
 ### 미분 (Derivatives) 
-- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 col-vector이다. 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 
-
-- 이 챕터에서는 벡터 ${\bf x}$혹은 매트릭스 ${\bf X}$로 주로 미분 할 것이다. 
+- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 col-vector이다. 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 특별한 언급이 없으면 col-vector는 $n\times 1$ 차원을 가진다고 생각하고 매트릭스는 $n \times p$의 차원을 가진다고 가정하였다. 
 
 - 이 챕터에서 ${\bf X}$는 특별한 스트럭처가 없다고 가정할 것이다. 만약에 ${\bf X}$가 스트럭쳐가 있다면 (예를들면 *symm*-매트릭스라든가, *pd*-매트릭스라든가) 미분결과가 달라지게 된다. 
 
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
 --- 
+
+- 이제 아래식부터는 공식의 나열 그리고 증명의 나열이다. 
+
 - 아래식이 성립한다. (매트릭스 쿡북 (69)) 
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}
+\end{align}
+증명은 다음과 같이 한다. 
+\begin{align}
+\frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}
+=\frac{\partial \sum_{i=1}^{n}x_i a_i}{\partial c(x_1,\dots,x_n)}
 \end{align}
 눈 여겨 볼 사실은 아래와 같다. (1) 분자는 스칼라이다. (2) 분모는 벡터이다. (3) 스칼라를 벡터로 나누면 분모와 같은 차원의 벡터가 결과로 나온다. 
 
