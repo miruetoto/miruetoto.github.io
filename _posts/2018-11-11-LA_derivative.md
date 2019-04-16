@@ -48,21 +48,21 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 - 매트릭스 ${\bf X}$의 트랜스포즈는 보통 ${\bf X}^T$로 표시한다. 혼란의 여지가 없을 경우 노테이션의 간략화를 위하여 ${\bf X}'$와 같이 표현할 수 있다. 매트릭스 ${\bf X}$가 복소행렬일 경우는 트랜스포즈를 사용하지 않고 **컨쥬게이트-트랜스포즈**(conjugate transpose)를 사용한다. 컨쥬게이트-트랜스포즈는 **에르미트-트랜스포즈**(Hermitian transpose), **에르미트-어드조인트**(Hermitian adjoint) 등으로 불리기도 한다. 기호로는 ${\bf X}^H$로 표시한다. 
 
 - 임의의 매트릭스 ${\bf X}_ {n \times p}$에 대하여 ${\bf X}'$는 아래와 같이 표현할 수 있다. <br/><br/>
-***case 1***: ${\bf X}$가 col-vector의 결합으로 표현된 경우 <br/><br/>
+***case 1***: ${\bf X}$가 col-vector의 결합으로 표현된 경우 <br/>
 \begin{align}
 \begin{cases}
 {\bf X}=cbind({\bf X}_ 1, \dots, {\bf X}_ p) \\\\ 
 {\bf X}'=\left[cbind({\bf X}_ 1, \dots, {\bf X}_ p)\right]^T=rbind({\bf X}_ 1',\dots,{\bf X}_ p') ,
 \end{cases}
 \end{align}
-***case 2***: ${\bf X}$가 row-vector의 결합으로 표현된 경우<br/><br/>
+***case 2***: ${\bf X}$가 row-vector의 결합으로 표현된 경우<br/>
 \begin{align}
 \begin{cases}
 {\bf X}=rbind({\bf x}_ 1, \dots, {\bf x}_ n) \\\\ 
 {\bf X}'=\left[rbind({\bf x}_ 1,\dots,{\bf x}_ n)\right]^T = cbind({\bf x}_ 1', \dots, {\bf x}_ n'),
 \end{cases}
 \end{align}
-***case 3***: ${\bf X}$가 원소 그자체로 표현된 경우 <br/><br/>
+***case 3***: ${\bf X}$가 원소 그자체로 표현된 경우 <br/>
 \begin{align}
 \begin{cases}
 {\bf X}=\left(x_{ij}\right) \\\\ 
