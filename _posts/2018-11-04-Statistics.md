@@ -266,5 +266,5 @@ tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ {\bf \Lambda} \left({\bf I}-{\bf T}'{\bf T}\
 \begin{cases}
 {\bf T}=cbind({\bf V}_1, \dots, {\bf V}_{p'})  \\\\ 
 {\bf V}=cbind({\bf T}_ {p \times p'}, {\bf 0}_ {p\times(p-p')})
-\begin{cases}
+\end{cases}
 \end{align}
