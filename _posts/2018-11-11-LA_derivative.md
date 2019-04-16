@@ -21,11 +21,18 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 
 - 이인석교수의 교재에서는 매트릭스 ${\bf X}$를 아래와 같이 표현가능하다. 이 역시 매우 유용한 표현이다. 
 \begin{align}
-{\bf X}=\left(x_ij\right)
+{\bf X}=\left(x_{ij}\right)
 \end{align}
+처음에는 이러한 표현이 매우 헷갈려서 정신병 걸릴거 같았지만 나중에는 이 표현을 안쓰는 것이 더 암걸릴것 같은 고통을 주므로 그냥 쓰기로 결정하였다. 
 
-
-- 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 
+- 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 일반적인 col-vector ${\bf a}$는 아래와 같이 표현할 수 있다. 
+\begin{align}
+{\bf a}=c(a_1,\dots,a_n)=rbind(a_1,\dots,a_n)
+\end{align}
+이와 유사한 논리로 row-vector 역시 표현할 수 있다. 예를들어 임의의 디자인매트릭스 ${\bf X}_ {n \times p}$의 첫번째 row-vector ${\bf x}_ 1$은 아래와 같이 표현가능하다. 
+\begin{align}
+{\bf x}_ 1=cbind(x_{11},\dots,x_{1p})=c(x_{11},\dots,x_{1p})
+\end{align}
 
 ### 매트릭스 연산
 
