@@ -33,7 +33,7 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \end{align}
 R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이고 $x_{ij}={\bf X}[i,j]$가 된다. 이때 ${\bf x}_ n$은 row-vector임을 유의하자. 
 
-- 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 일반적인 col-vector ${\bf a}$는 아래와 같이 표현할 수 있다. 
+- 일반적인 row-vector 혹은 col-vector는 ${\bf a}, {\bf b}, {\bf x}$와 같이 인덱스가 없는 소문자 볼드체로 표시할 것이다. 가급적이면 row-vector인지 col-vector인지 명확하게 명시할 예정이지만 만약에 언급이 없다면 col-vector로 생각해도 된다. 일반적인 col-vector ${\bf a}_ {n \times 1}$는 아래와 같이 표현할 수 있다. 
 \begin{align}
 {\bf a}=c(a_1,\dots,a_n)=rbind(a_1,\dots,a_n)
 \end{align}
