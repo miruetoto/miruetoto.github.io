@@ -19,8 +19,6 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 
 --- 
 
-- 이제 아래식부터는 공식의 나열 그리고 증명의 나열이다. 
-
 ### 스칼라의 미분 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (69)) 
