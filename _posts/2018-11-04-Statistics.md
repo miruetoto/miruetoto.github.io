@@ -261,10 +261,17 @@ tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ {\bf \Lambda} \left({\bf I}-{\bf T}'{\bf T}\
 {\bf T}'{\bf T}={\bf I}
 \end{cases}
 \end{align}
-결론적으로 말하면 위의 식을 만족하는 ${\bf T}_ {p\times p'}$는 ${\bf X}'{\bf X}$의 고유벡터 ${\bf V}_ {p\times p}$에서 뒷부분의 고유벡터를 자른것과 같다. 즉 
+결론적으로 말하면 위의 식을 만족하는 ${\bf T}_ {p\times p'}$는 ${\bf X}'{\bf X}$의 고유벡터 ${\bf V}_ {p\times p}$에서 **뒷부분에 위치한 덜 중요해보이는 $(p-p')$개의 고유벡터를 삭제한 것**과 같다. 즉 
 \begin{align}
 \begin{cases}
-{\bf T}=cbind({\bf V}_ 1, \dots, {\bf V}_ {p'})  \\\\ 
-{\bf V}=cbind({\bf T}_ {p \times p'}, {\bf 0}_ {p\times(p-p')})
+{\bf T}_ {p \times p'}=cbind({\bf V}_ 1, \dots, {\bf V}_ {p'})  \\\\ 
+{\bf V}_ {p \tiems p}=cbind({\bf T}_ {p \times p'}, {\bf 0}_ {p\times(p-p')})
+\end{cases}
+\end{align}
+이다. 또한 ${\bf \Lambda}$는 ${\bf X}'{\bf X}$의 고유벡터 ${\bf D}_ {p\times p}$에서 **뒷부분에 위치한 덜 중요한해보이는 $(p-p')$개의 고유치를 삭제한것**과 같다. 즉 
+\begin{align}
+\begin{cases}
+{\bf \Lambda}_ {p' \times p'}=cbind({\bf V}_ 1, \dots, {\bf V}_ {p'})  \\\\ 
+{\bf D}_ {p \tiems p}=cbind({\bf T}_ {p \times p'}, {\bf 0}_ {p\times(p-p')})
 \end{cases}
 \end{align}
