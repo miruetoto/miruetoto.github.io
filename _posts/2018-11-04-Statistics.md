@@ -281,7 +281,7 @@ tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ {\bf \Lambda} \left({\bf I}-{\bf T}'{\bf T}\
 \begin{align}
 \begin{cases}
 {\bf \Lambda}_ {p' \times p'}=diag(\lambda_ 1, \dots, \lambda_ {p'})  \\\\ 
-{\bf D}_ {p \times p}=diag(\lambda_ 1 , \dots , \lambda_ p})
+{\bf D}_ {p \times p}=diag(\lambda_ 1 , \dots , \lambda_ p)
 \end{cases}
 \end{align}
 이다. 증명은 그냥 ${\bf X}'{\bf X}{\bf T}={\bf T}{\bf \Lambda}$에다가 ${\bf T}_ {p \times p'}=cbind({\bf V}_ 1, \dots, {\bf V}_ {p'})$를 대입하면 쉽게 할 수 있다. (식 ${\bf T}'{\bf T}={\bf I}$는 고유벡터의 정의에 의해서 그냥 성립하므로 체크할 필요도 없다.) 
