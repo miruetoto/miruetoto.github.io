@@ -39,7 +39,7 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 \end{align}
 이와 유사한 논리로 row-vector 역시 표현할 수 있다. 예를들어 임의의 디자인매트릭스 ${\bf X}_ {n \times p}$의 첫번째 row-vector ${\bf x}_ 1$은 아래와 같이 표현가능하다. 
 \begin{align}
-{\bf x}_ 1=cbind(x_{11},\dots,x_{1p})=\left(rbind(x_{11},\dots,x_{1p})\right)'=\left(c(x_{11},\dots,x_{1p})\right)'
+{\bf x}_ 1=cbind(x_{11},\dots,x_{1p})=\left[rbind(x_{11},\dots,x_{1p})\right]^T=\left[c(x_{11},\dots,x_{1p})\right]^T
 \end{align}
 
 ### 매트릭스 연산
