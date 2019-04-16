@@ -268,7 +268,7 @@ tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ {\bf \Lambda} \left({\bf I}-{\bf T}'{\bf T}\
 {\bf V}_ {p \tiems p}=cbind({\bf T}_ {p \times p'}, {\bf 0}_ {p\times(p-p')})
 \end{cases}
 \end{align}
-이다. 또한 ${\bf \Lambda}$는 ${\bf X}'{\bf X}$의 고유벡터 ${\bf D}_ {p\times p}$에서 **뒷부분에 위치한 덜 중요한해보이는 $(p-p')$개의 고유치를 삭제한것**과 같다. 즉 
+이다. 또한 ${\bf \Lambda}$는 ${\bf X}'{\bf X}$의 고유벡터 ${\bf D}_ {p\times p}$에서 **뒷 부분에 위치한 덜 중요해보이는 $(p-p')$개의 고유치를 삭제한것**과 같다. 즉 
 \begin{align}
 \begin{cases}
 {\bf \Lambda}_ {p' \times p'}=cbind({\bf V}_ 1, \dots, {\bf V}_ {p'})  \\\\ 
