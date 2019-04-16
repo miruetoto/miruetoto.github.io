@@ -73,14 +73,14 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 - 위와 같은 표현은 벡터에서도 가능하다. 임의의 col-vector ${\bf a}_ {n \times 1}$에 대하여 아래와 같이 쓸 수 있다.  
 \begin{align}
 \begin{cases}
-{\bf a}= c(a_1,\dots,a_n)
+{\bf a}= c(a_1,\dots,a_n) \\\\ 
 {\bf a}'= \left[c(a_1,\dots,a_n)\right]^T=cbind(a_1',\dots,a_n')=cbind(a_1,\dots,a_n).
 \end{cases}
 \end{align}
 또한 매트릭스 ${\bf X}_ {n \times p}$의 첫번째 row-vector ${\bf x}_ 1$에 대하여 아래와 같이 쓸 수 있다. 
 \begin{align}
 \begin{cases}
-{\bf x}_ 1= cbind(x_{11},\dots,x_{1p})
+{\bf x}_ 1= cbind(x_{11},\dots,x_{1p}) \\\\ 
 \left({\bf x}_ 1 \right)^T = \left[cbind(x_{11},\dots,x_{1p})\right]^T=rbind(x_{11},\dots,x_{1p})=c(x_{11},\dots,x_{1p}).
 \end{cases}
 \end{align}
