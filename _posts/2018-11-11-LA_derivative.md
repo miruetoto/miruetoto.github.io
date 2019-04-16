@@ -45,12 +45,18 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 ### 매트릭스 연산
 
 ***transpose*** 
-- ${\bf X}'$는 아래와 같이 표현할 수 있다. 
+- 트랜스포즈는 보통 $T$로 표시한다. 혼란의 여지가 없을 경우 노테이션의 간략화를 위하여 $'$와 같이 표현할 수 있다. 복소행렬의 경우는 transpose대신에 $H$를 사용한다. 
+
+- 임의의 매트릭스 ${\bf X}_ {n \times p}$에 대하여 ${\bf X}'$는 아래와 같이 표현할 수 있다. 
+\begin{align}
+{\bf X}=cbind({\bf X}_ 1, \dots, {\bf X}_ p) \Longrightarrow {\bf X}'=\left[cbind({\bf X}_ 1, \dots, {\bf X}_ p)\right]^T=rbind({\bf X}_ 1',\dots,{\bf X}_ p') 
+\end{align}
+.. 
 \begin{align}
 {\bf X}'=rbind({\bf X}_ 1',\dots,{\bf X}_ p') = cbind({\bf x}_ 1', \dots, {\bf x}_ n')
 \end{align}
 
-- 복소행렬의 경우는 transpose대신에 $H$를 사용한다. 
+-  
 
 - 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 $\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'$이다. 
 
