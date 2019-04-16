@@ -77,15 +77,13 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 \begin{align}
 {\bf a}'= \left[c(a_1,\dots,a_n)\right]^T=cbind(a_1',\dots,a_n')=cbind(a_1,\dots,a_n).
 \end{align}
-또한 매트릭스 ${\bf X}_ {n \times p}$의 첫번째 row-vector ${\bf x}_ 1}$에 대하여 아래와 같이 쓸 수 있다. 
+또한 매트릭스 ${\bf X}_ {n \times p}$의 첫번째 row-vector ${\bf x}_ 1$에 대하여 아래와 같이 쓸 수 있다. 
 \begin{align}
 {\bf x}_ 1= cbind(x_{11},\dots,x_{1p})
 \end{align}
 \begin{align}
-\left({\bf x}_ 1 \right)^T= \left[cbind(x_{11},\dots,x_{1p})\right]^T=rbind(x_{11},\dots,x_{1p})=c(x_{11},\dots,x_{1p}).
+\left({\bf x}_ 1 \right)^T = \left[cbind(x_{11},\dots,x_{1p})\right]^T=rbind(x_{11},\dots,x_{1p})=c(x_{11},\dots,x_{1p}).
 \end{align}
-
-
 
 - 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 $\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'$이다. 
 
