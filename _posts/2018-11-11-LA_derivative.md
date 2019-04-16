@@ -70,7 +70,11 @@ R문법으로 해석하면 여기에서 ${\bf X}_ p ={\bf X}[,p]$이고, ${\bf x
 {\bf X}'=\left(x_{ji}\right)
 \end{align}
 
--  
+- 위와 같은 표현은 벡터에서도 가능하다. 임의의 col-vector ${\bf a}_ {n \times 1}$에 대하여 
+\begin{align}
+{\bf a}_ {n \times 1} = 
+\end{align}
+
 
 - 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 $\\| {\bf X}_ p \\|_ 2^2={\bf X}_ p'{\bf X}_ p$이고 $\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'$이다. 
 
