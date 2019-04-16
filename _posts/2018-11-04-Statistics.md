@@ -246,17 +246,19 @@ $\sum_i^{n}{\bf x}_ i {\bf T}{\bf T'} {\bf x}_ i'=tr({\bf T}'\sum_i^n {\bf x}_ i
 \begin{align}
 -tr({\bf T'}{\bf X'}{\bf X}{\bf T})+tr({\bf X'}{\bf X})
 \end{align}
-여기에서 ${\bf X}$는 *given*되어 있으므로 ${\bf T}$에 대한 상수이다. 라그랑주 승수법을 사용하면 결국 PCA는 아래식을 최대화하는 $({\bf T},\lambda)$를 찾으면 된다. 
+여기에서 ${\bf X}$는 *given*되어 있으므로 ${\bf T}$에 대한 상수이다. 라그랑주 승수법을 사용하면 결국 PCA는 아래식을 최대화하는 $({\bf T},{\bf \Lambda})$를 찾으면 된다. 
 \begin{align}
-tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ diag(\lambda_1,\dots, \lambda_p) \left({\bf I}-{\bf T}'{\bf T}\right)
+tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ {\bf \Lambda} \left({\bf I}-{\bf T}'{\bf T}\right)
 \end{align}
-위의 식을 ${\bf T}$로 미분하면 아래와 같이 된다. 
+여기에서 ${\bf \Lambda}= diag(\lambda_1,\dots, \lambda_p)$이다. 위의 식을 ${\bf T}$로 미분하면 아래와 같이 된다. 
 \begin{align}
 2{\bf X}'{\bf X}{\bf T}- 2{\bf T}{\bf \Lambda}
 \end{align}
-또한 $\lambda$로 미분하면 ${\bf T}'{\bf T}={\bf I}$가 된다. 두 식을 연립하면 아래와 같이 된다. 
+또한 ${\bf \Lambda}$로 미분하면 ${\bf T}'{\bf T}={\bf I}$가 된다. 두 식을 연립하면 아래와 같이 된다. 
 \begin{align}
 \begin{cases}
-{\bf X}'{\bf X}{\bf T}={\bf T}{\bf \Lambda}
+{\bf X}'{\bf X}{\bf T}={\bf T}{\bf \Lambda} \\\\ 
+{\bf T}'{\bf T}={\bf I}
 \end{cases}
 \end{align}
+결론적으로 말하면 위의 식을 만족하는 ${\bf T}$는 
