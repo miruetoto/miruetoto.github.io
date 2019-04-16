@@ -264,7 +264,7 @@ tr({\bf T'}{\bf X'}{\bf X}{\bf T})+ {\bf \Lambda} \left({\bf I}-{\bf T}'{\bf T}\
 결론적으로 말하면 위의 식을 만족하는 ${\bf T}_ {p\times p'}$는 ${\bf X}'{\bf X}$의 고유벡터 ${\bf V}_ {p\times p}$에서 뒷부분의 고유벡터를 자른것과 같다. 즉 
 \begin{align}
 \begin{cases}
-{\bf T}=cbind({\bf V}_1, \dots, {\bf V}_{p'})  \\\\ 
+{\bf T}=cbind({\bf V}_ 1, \dots, {\bf V}_ {p'})  \\\\ 
 {\bf V}=cbind({\bf T}_ {p \times p'}, {\bf 0}_ {p\times(p-p')})
 \end{cases}
 \end{align}
