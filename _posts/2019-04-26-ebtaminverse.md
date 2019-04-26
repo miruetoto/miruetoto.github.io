@@ -18,5 +18,5 @@ $\tau=5$일 경우에 ${\bf x}$의 고무줄 변환을 생각하여 보자. 각 
 \end{align}
 이제 $p_1,\dots,p_5$를 추정하기 위해서 아래의 식을 풀것을 제안하자. 
 \begin{align}
-\underset{\\{p_1,p_2,p_3,p_4,p_5\\}}{\operatorname{argmin}} VAR\left(\\{{\bf x}^{1,5}/p_1,\dots,{\bf x}^{5,5}/p_5\\}\right)
+\underset{\\{p_1,p_2,p_3,p_4,p_5\\}}{\operatorname{argmin}} 
 \end{align}
