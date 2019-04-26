@@ -16,4 +16,7 @@ $\tau=5$일 경우에 ${\bf x}$의 고무줄 변환을 생각하여 보자. 각 
 \begin{align}
 {\bf x}^{1,5}=p_1 \times {\bf q}^{1,5}, \dots, {\bf x}^{5,5}=p_5 \times {\bf q}^{5,5}.
 \end{align}
-이제 여기에서 $p
+이제 $p_1,\dots,p_5$를 추정하기 위해서 아래의 식을 최소화하는 것을 생각하여 보자. 
+\begin{align}
+ddd
+\end{align}
