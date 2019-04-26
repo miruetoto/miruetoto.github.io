@@ -10,5 +10,10 @@ title: (논문) 고무줄변환, inverse AM
 \end{align}
 그리고 또 다른 신호 ${\bf q}$가 있다고 하자. 두 신호의 곱은 아래와 같이 표현된다. 
 \begin{align}
-{\bf pq}=\\{\dots,1 q_1,2q_2,3q_3,4q_4,5q_5,1q_6,2q_7,3q_8,4q_9,5q_{10},\dots\\}
+{\bf x}={\bf pq}=\\{\dots,1 q_1,2q_2,3q_3,4q_4,5q_5,1q_6,2q_7,3q_8,4q_9,5q_{10},\dots\\}
 \end{align}
+$\tau=5$일 경우에 ${\bf x}$의 고무줄 변환을 생각하여 보자. 각 고무줄들은 아래와 같이 표현된다. 
+\begin{align}
+{\bf x}^{1,5}=p_1 \times {\bf q}^{1,5}, \dots, {\bf x}^{5,5}=p_5 \times {\bf q}^{5,5}.
+\end{align}
+이제 여기에서 $p
