@@ -6,7 +6,7 @@ title: (논문) 고무줄변환, inverse AM
 ### inverse AM
 - 아래와 같은 주기신호가 있다고 하자. 
 \begin{align}
-{\bf p}=\\{\dots,,2,3,2,3,2,3,\dots\\}
+{\bf p}=\\{\dots,2,3,2,3,2,3,\dots\\}
 \end{align}
 그리고 또 다른 신호 ${\bf q}$가 있다고 하자. 두 신호의 곱은 아래와 같이 표현된다. 
 \begin{align}
@@ -22,7 +22,4 @@ $\tau=2$일 경우에 ${\bf x}$의 고무줄 변환을 생각하여 보자. 각 
 ~~ s.t. ~~ \sum_{\ell=1}^{\xi}p_{\ell}^2=1
 \end{align}
 우리의 경우에는 $p_1=2$, $p_2=3$ 이므로 아래와 같이 쓸 수 있다. 
-\begin{align}
-\underset{\\{p_1,p_2}\\}}{\operatorname{argmin}}\left( \frac{x_i^{1,2}}{p_1}-\frac{1}{2} \left( \frac{x_{1}^{1,2}}{p_{1}}+ \frac{x_{i}^{2,2}}{p_{2}}\right) \right)^2 + 
-~~ s.t. ~~ \sum_{\ell=1}^{\xi}p_{\ell}^2=1
-\end{align}
+
