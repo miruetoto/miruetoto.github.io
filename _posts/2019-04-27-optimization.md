@@ -12,13 +12,16 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 
 - 이 챕터에서는 아래와 같은 형태의 함수에 대한 최적화 문제를 다룬다.
 \begin{align}
-\underset{ {\bf x} \in \mathbb{R}^n }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad
+\underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad
 \begin{cases} {\bf c}_ i({\bf x})=0,~ i \in {\cal E} \\\\ 
 {\bf c}_ i({\bf x})\geq 0, ~i \in {\cal I} 
 \end{cases}
 \end{align}
 
-- asdf
+- 여기에서 $\Omega=\{{\bf x}^p=c_i( {\bf x}^p ) =0 , i \in {\cal E} ~ ; ~ c_i({\bf x}) \geq 0, i \in {\cal I} \}$ 를 feasible set 이라고 정의하자. 그러면 우리가 풀고자 하는 문제는 아래와 같이 단순화 하여 표기할 수 있다. 
+\begin{align}
+\underset{ {\bf x} \in \Omega }{ \operatorname{min} } f({\bf x}) 
+\end{align}
 
 #### A Single Equality constraint 
 
