@@ -14,7 +14,7 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^n }{ \operatorname{min} } f({\bf x}) \mbox{ subject to }
 \begin{cases} {\bf c}_ i {\bf x}=0,~ i \in {\cal E} \\\\ 
-{\bf c}_ i {\bf x}\leq 0, ~i \in {\cal I} 
+{\bf c}_ i {\bf x}\geq 0, ~i \in {\cal I} 
 \end{cases}
 \end{align}
 
