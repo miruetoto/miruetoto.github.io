@@ -18,7 +18,9 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 \end{cases}
 \end{align}
 
-- 여기에서 $\Omega=\{{\bf x}^p=c_i( {\bf x}^p ) =0 , i \in {\cal E} ~ ; ~ c_i({\bf x}) \geq 0, i \in {\cal I} \}$ 를 feasible set 이라고 정의하자. 그러면 우리가 풀고자 하는 문제는 아래와 같이 단순화 하여 표기할 수 있다. 
+- 일반적으로 $f$와 $c_i$는 ${\bf x}$의 모든 원소들에 대하여 편미분가능하다고 가정한다. 이것을 단순히 줄여서 $f$와 $c_i$는 ${\bf x}$에 대하여 미분가능하다고 하자. 여기에서 몇몇 사람들은 $c_i({\bf x})$가 ${\bf x}$로 미분가능해야 한다는것이 너무 강한 조건이라고 생각할 수 있다. 예를들어 $c({\bf x})=\| {\bf x} \|_ 1 \leq 1$와 같은 다이아몬드 형태의 제약조건은 미분가능하지 않다. 하지만 이러한 제약은 미분가능한 제약조건들의 합으로 표현될 수 있다. 이 뿐만 아니라 많은 경우에서 미분불가능해보이는 많은 제약조건들이 미분가능한 제약조건들의 합으로 표현가능하다. 따라서 $c_i({\bf x})$가 ${\bf x}$로 미분가능해야 한다는 제약이 그렇게 강한 조건은 아니다. 
+
+- 여기에서 $\Omega=\{{\bf x}^p=c_i( {\bf x}^p ) =0 , i \in {\cal E} ~ ; ~ c_i({\bf x}) \geq 0, i \in {\cal I} \}$ 를 **feasible set** 이라고 한다. feasible set을 이용하면 우리가 풀고자 하는 문제는 아래와 같이 단순화 하여 표기할 수 있다. (표기의 단순화만 있을뿐 **feasible set**을 도입하여 생기는 계산상의 이득은 없는듯 하다.) 
 \begin{align}
 \underset{ {\bf x} \in \Omega }{ \operatorname{min} } f({\bf x}) 
 \end{align}
