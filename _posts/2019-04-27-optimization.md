@@ -24,12 +24,10 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \end{align}
 와 같은 다이아몬드 형태의 제약조건은 미분가능하지 않기 때문에 우리가 풀수 없는 문제라 생각할 수 있다. 하지만  제약은 미분가능한 제약조건들의 합으로 표현될 수 있다. 이 뿐만 아니라 많은 경우에서 미분불가능해보이는 많은 제약조건들이 미분가능한 제약조건들의 합으로 표현가능하다. 따라서 $c_i({\bf x})$가 ${\bf x}$로 미분가능해야 한다는 제약이 그렇게 강한 조건은 아니다. 
 
-
-- 여기에서 $\Omega=\{{\bf x}^p=c_i( {\bf x}^p ) =0 , i \in {\cal E} ~ ; ~ c_i({\bf x}) \geq 0, i \in {\cal I} \}$ 를 **feasible set** 이라고 한다. **feasible set**을 이용하면 우리가 풀고자 하는 문제는 아래와 같이 단순화 하여 표기할 수 있다. (표기의 단순화만 있을뿐 **feasible set**을 도입하여 생기는 계산상의 이득은 없는듯 하다.) 
-\begin{align}
-\underset{ {\bf x} \in \Omega }{ \operatorname{min} } f({\bf x}) 
-\end{align}
-
 #### A Single Equality constraint 
 
-- 
+- 아래와 같이 하나의 **등호** 로 이루어진 제약조건을 가지는 경우를 상상하여 보자. 
+\begin{align}
+\underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x})=0
+\end{align}
+
