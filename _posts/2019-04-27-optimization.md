@@ -15,7 +15,6 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 \underset{{\bf x} \in \mathbb{R}^n}{\operatorname{min}} f({\bf x})
 \end{align}
 
-
 - asdf
 
 #### A Single Equality constraint 
