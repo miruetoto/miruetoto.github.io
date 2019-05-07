@@ -27,7 +27,13 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 
 #### A Single Equality constraint 
 
-- asdf
+- 아래와 같이 **등호** 로 이루어진 하나의 제약조건을 가지는 경우를 상상하여 보자. 
+\begin{align}
+\underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x})=0
+\end{align}
+
+- 
+
 
 - If we plot the feasible region for any given constrained optimization problem, we usually observe many kinks and sharp edges. Does this mean that the constraint functions that describe these regions are nonsmooth? The answer is often no, because the nonsmooth boundaries can often be described by a collection of smooth constraint functions
 
