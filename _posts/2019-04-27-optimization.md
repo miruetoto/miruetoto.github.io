@@ -13,8 +13,8 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 - 이 챕터에서는 아래와 같은 형태의 함수에 대한 최적화 문제를 다룬다.
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^n }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad
-\begin{cases} {\bf c}_ i {\bf x}=0,~ i \in {\cal E} \\\\ 
-{\bf c}_ i {\bf x}\geq 0, ~i \in {\cal I} 
+\begin{cases} {\bf c}_ i({\bf x})=0,~ i \in {\cal E} \\\\ 
+{\bf c}_ i({\bf x})\geq 0, ~i \in {\cal I} 
 \end{cases}
 \end{align}
 
