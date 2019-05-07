@@ -8,9 +8,17 @@ title: (정리) 최적화
 - 이 포스트는 최적화 이론에 대한 내용을 정리한 것이다. 아래의 교재를 정리하였다. 이 교재는 약 25400번 정도 레퍼된 엄청난 교재이다. <br/>
 Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Business Media.
 
-
 ### Ch 12. Theory of Constrained Optimization
 
+- 이 챕터에서는 아래와 같은 형태의 함수에 대한 최적화 문제를 다룬다.
+\begin{align}
+\min_{{\bf x} \in \mathbb{R}^n\} f({\bf x})~~ subject ~ to ~~ \begin{cases} {\bf c}_ i {\bf x}=0,~ i \in {\cal E} \\ \\ {\bf c}_ i {\bf x}\leq 0, ~i \in {\cal I} \end{cases}
+\end{align}
+
+
+#### A Single Equality constraint 
+
+- 
 - If we plot the feasible region for any given constrained optimization problem, we usually observe many kinks and sharp edges. Does this mean that the constraint functions that describe these regions are nonsmooth? The answer is often no, because the nonsmooth boundaries can often be described by a collection of smooth constraint functions
 
 - Nonsmooth, unconstrained optimization problems can sometimes be reformulated as smooth constrained problems. 
