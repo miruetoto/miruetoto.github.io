@@ -11,14 +11,21 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 ### Ch 12. Theory of Constrained Optimization
 
 - 이 챕터에서는 아래와 같은 형태의 함수에 대한 최적화 문제를 다룬다.
+\begin{align}
+\underset{{\bf x} \in \mathbb{R}^n}{\operatorname{min}} f({\bf x}) 
+~~ subject ~ to ~~ 
+\begin{cases} {\bf c}_ i {\bf x}=0,~ i \in {\cal E} \\\\ 
+{\bf c}_ i {\bf x}\leq 0, ~i \in {\cal I} 
+\end{cases}
+\end{align}
 
-- asdf
 
 - asdf
 
 #### A Single Equality constraint 
 
 - asdf
+
 - If we plot the feasible region for any given constrained optimization problem, we usually observe many kinks and sharp edges. Does this mean that the constraint functions that describe these regions are nonsmooth? The answer is often no, because the nonsmooth boundaries can often be described by a collection of smooth constraint functions
 
 - Nonsmooth, unconstrained optimization problems can sometimes be reformulated as smooth constrained problems. 
