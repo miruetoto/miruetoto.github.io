@@ -12,9 +12,8 @@ Nocedal, J., \& Wright, S. (2006). Numerical optimization. Springer Science & Bu
 
 - 이 챕터에서는 아래와 같은 형태의 함수에 대한 최적화 문제를 다룬다.
 \begin{align}
-\min_{{\bf x} \in \mathbb{R}^n\} f({\bf x})
+\underset{{\bf x} \in \mathbb{R}^n\}{\operatorname{min}} f({\bf x})
 \end{align}
-
 
 #### A Single Equality constraint 
 
