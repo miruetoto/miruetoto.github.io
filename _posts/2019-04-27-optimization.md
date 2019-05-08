@@ -30,9 +30,9 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \end{align}
 제약조건 $c({\bf x})$위에서 점들이 움직이려면 임의의 점 ${\bf x}$에 대하여 $c({\bf x})={\bf 0} \mbox{ and } c({\bf x}+{\bf d})={\bf 0}$를 만족하는 ${\bf d}$를 찾아야 한다. 테일러 정리에 의하여 아래식이 성립한다. 
 \begin{align}
-{\bf 0}=c({\bf x}+{\bf d}) \approx c({\bf x})+ \bigtriangledown c({\bf x})^T {\bf d}
+{\bf 0}=c({\bf x}+{\bf d}) \approx c({\bf x})+ \frac{1}{d{\bf x}} c({\bf x})^T {\bf d}
 \end{align}
-그런데 $c({\bf x})={\bf 0} \mbox{ and } c({\bf x}+{\bf d})={\bf 0}$ 이 만족해야 하므로, $\bigtriangledown c({\bf x})^T {\bf d}={\bf 0}$ 이어야 한다. 즉 ${\bf d}$는 $c({\bf x})$의 그래디언트와 수직인 방향으로 움직이면 된다는 것을 알 수 있다. 한편 ${\bf d}$는 아래를 만족하도록 선택되어야 한다. 
+그런데 $c({\bf x})={\bf 0} \mbox{ and } c({\bf x}+{\bf d})={\bf 0}$ 이 만족해야 하므로, $\frac{1}{d{\bf x}} c({\bf x})^T {\bf d}={\bf 0}$ 이어야 한다. 즉 ${\bf d}$는 $c({\bf x})$의 그래디언트와 수직인 방향으로 움직이면 된다는 것을 알 수 있다. 한편 ${\bf d}$는 아래를 만족하도록 선택되어야 한다. 
 \begin{align}
 f({\bf x})> f({\bf x}+{\bf d})
 \end{align}
@@ -40,21 +40,21 @@ f({\bf x})> f({\bf x}+{\bf d})
 \begin{align}
 f({\bf x}) - f({\bf x}+{\bf d}) \approx {\bf 0}
 \end{align}
-가 만족할때까지 ${\bf d}$를 찾는다. 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})+ \bigtriangledown f({\bf x})^T {\bf d}$ 이므로 결국 $ f({\bf x})^T {\bf d} ={\bf 0} $ 이 되는 순간까지 ${\bf d}$를 업데이트 하면 됨을 알 수 있다. 결론적으로 ${\bf d}$는 $\bigtriangledown f({\bf x})^T {\bf d} ={\bf 0}$ 이고 $\bigtriangledown c({\bf x})^T {\bf d}={\bf 0}$ 인 지점까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
+가 만족할때까지 ${\bf d}$를 찾는다. 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})+ \frac{1}{d{\bf x}} f({\bf x})^T {\bf d}$ 이므로 결국 $ f({\bf x})^T {\bf d} ={\bf 0} $ 이 되는 순간까지 ${\bf d}$를 업데이트 하면 됨을 알 수 있다. 결론적으로 ${\bf d}$는 $\frac{1}{d{\bf x}} f({\bf x})^T {\bf d} ={\bf 0}$ 이고 $\frac{1}{d{\bf x}} c({\bf x})^T {\bf d}={\bf 0}$ 인 지점까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
 \begin{align}
-\bigtriangledown f({\bf x}) = \lambda \bigtriangledown c({\bf x})
+\bigtriangledown f({\bf x}) = \lambda \frac{1}{d{\bf x}} c({\bf x})
 \end{align}
 결국 우리는 아래 2가지의 식을 동시에 만족하는 ${\bf x}$를 찾으면 된다. 
 \begin{align}
 \begin{cases}
-\bigtriangledown f({\bf x}) - \lambda \bigtriangledown c({\bf x}) = {\bf 0} \\\\
+\frac{1}{d{\bf x}} f({\bf x}) - \lambda \frac{1}{d{\bf x}} c({\bf x}) = {\bf 0} \\\\ \\\\
 c({\bf x}) ={\bf 0}
 \end{cases}
 \end{align}
 이는 ${\cal L}({\bf x},\lambda)=f({\bf x}) - \lambda  c({\bf x})$ 에 대하여 아래식을 푸는것과 동치이다. 
 \begin{align}
 \begin{cases}
-\frac{1}{d{\bf x}} {\cal L}({\bf x},\lambda) = {\bf 0} \\\\
-c({\bf x}) ={\bf 0}
+\frac{1}{d{\bf x}} {\cal L}({\bf x},\lambda) = {\bf 0} \\\\ \\\\
+\frac{1}{d\lambda}c({\bf x}) ={\bf 0}
 \end{cases}
 \end{align}
