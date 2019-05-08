@@ -90,7 +90,11 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^* \geq {\bf 0}
 \begin{align}
 c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T \left(\frac{1}{\delta}{\bf d}^* \right)   \geq {\bf 0}
 \end{align}
-${\bf d}={\bf d}^* $ 가 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 를 만족하면 ${\bf d}=\frac{1}{\delta}{\bf d}^* $ 도 만족하므로  $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 를 만족하는 ${\bf d}$가 존재하면 아래의 세 부등식을 만족하는 ${\bf d}$는 항상 잡을 수 있다. 
+${\bf d}={\bf d}^* $ 가 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 를 만족하면 ${\bf d}=\frac{1}{\delta}{\bf d}^* $ 역시 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0}$ 를 만족한다. 따라서 
+\begin{align}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0}
+\end{align}
+를 만족하는 ${\bf d}={\bf d}^* $가 존재하면 아래의 세 부등식을 만족하는 ${\bf d}=\frac{1}{\delta}{\bf d}^* $는 항상 잡을 수 있다. 
 \begin{align}
 \begin{cases}
 \left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
