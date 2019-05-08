@@ -36,11 +36,14 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \begin{align}
 f({\bf x})> f({\bf x}+{\bf d})
 \end{align}
-따라서 
+여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})+ \left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d}$ 이므로 결국아래 2식이 동시에 만족될때까지 ${\bf d}$를 찾는다. 
 \begin{align}
-f({\bf x}) - f({\bf x}+{\bf d}) \approx {\bf 0}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} \leq {\bf 0} \\\\ \\\\
+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0} 
+\end{cases}
 \end{align}
-가 만족할때까지 ${\bf d}$를 찾는다. 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})+ \left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d}$ 이므로 결국 $ \left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} ={\bf 0} $ 이 되는 순간까지 ${\bf d}$를 업데이트 하면 됨을 알 수 있다. 결론적으로 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} ={\bf 0}$ 이고 $\left(\frac{1}{d{\bf x}} c({\bf x})\right)^T {\bf d}={\bf 0}$ 인 지점까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
+위의 수식을 동시에 만족하는 ${\bf d}$를 찾지 못하면 업데이트를 멈춘다. 따라서 결론적으로 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T$와 $\left(\frac{1}{d{\bf x}} c({\bf x})\right)^T$ 이 평행이 될대까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
 \begin{align}
 \bigtriangledown f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
 \end{align}
