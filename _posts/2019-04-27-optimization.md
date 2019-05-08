@@ -34,4 +34,12 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \begin{align}
 {\bf 0}=c({\bf x}+{\bf d}) \approx c({\bf x})+ \bigtriangledown c({\bf x})^T {\bf d}
 \end{align}
-그런데 $c({\bf x})=0 \mbox{ and } c({\bf x}+{\bf d})=0$ 이 만족해야 하므로, $\bigtriangledown c({\bf x})^T {\bf d}=0$ 이어야 한다. 즉 ${\bf d}$는 $c({\bf x})$의 그래디언트와 수직인 방향으로 움직이면 된다는 것을 알 수 있다. 
+그런데 $c({\bf x})=0 \mbox{ and } c({\bf x}+{\bf d})=0$ 이 만족해야 하므로, $\bigtriangledown c({\bf x})^T {\bf d}=0$ 이어야 한다. 즉 ${\bf d}$는 $c({\bf x})$의 그래디언트와 수직인 방향으로 움직이면 된다는 것을 알 수 있다. 한편 ${\bf d}$는 아래를 만족하도록 선택되어야 한다. 
+\begin{align}
+f({\bf x})> f({\bf x}+{\bf d})
+\end{align}
+따라서 
+\begin{align}
+f({\bf x}) - f({\bf x}+{\bf d}) \approx 0 
+\end{align}
+가 만족할때까지 ${\bf d}$를 찾는다. 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})$ 이므로 
