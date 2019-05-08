@@ -30,4 +30,8 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x})=0
 \end{align}
-제약조건 $c({\bf x})$위에서 점들이 움직이려면 임의의 점 ${\bf x}$에 대하여 $c({\bf x})=0 \mbox{ and } c({\bf x}+{\bf d})=0$를 만족하는 ${\bf d}$를 찾아야 한다. 
+제약조건 $c({\bf x})$위에서 점들이 움직이려면 임의의 점 ${\bf x}$에 대하여 $c({\bf x})=0 \mbox{ and } c({\bf x}+{\bf d})=0$를 만족하는 ${\bf d}$를 찾아야 한다. 테일러 정리에 의하여 아래식이 성립한다. 
+\begin{align}
+{\bf 0}=c({\bf x}+{\bf d}) \approx c({\bf x})+ \bigtriangledown c({\bf x})^T {\bf d}
+\end{align}
+그런데 $c({\bf x})=0 \mbox{ and } c({\bf x}+{\bf d})=0$ 이 만족해야 하므로, $\bigtriangledown c({\bf x})^T {\bf d}=0$ 이어야 한다. 즉 ${\bf d}$는 $c({\bf x})$의 그래디언트와 수직인 방향으로 움직이면 된다는 것을 알 수 있다. 
