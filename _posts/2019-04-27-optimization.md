@@ -70,7 +70,8 @@ c({\bf x}) ={\bf 0}
 \begin{align}
 \begin{cases}
 \left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
-\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0} 
+c({\bf x}) \leq 0 \\\\ 
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \leq {\bf 0} \\\\ 
 \end{cases}
 \end{align}
 
