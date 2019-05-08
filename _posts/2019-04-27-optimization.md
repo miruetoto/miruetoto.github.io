@@ -77,6 +77,20 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 <br/>
 **CASE 1** : 먼저 $c({\bf x}) > 0$ 라고 가정하자. $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 을 만족하는 ${\bf d}$가 존재한다고 하자. 이러한 ${\bf d}$를 ${\bf d}^* $ 라고 정의하자. 두번째 부등호는 당연히 성립하므로, 세번째 부등호가 성립하는지 살펴보자. ${\bf d}={\bf d}^* $ 를 대입하면 
 \begin{align}
-c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^*
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^* \geq {\bf 0}
 \end{align}
-가 되는데, $c({\bf x})>{\bf 0}$이므로 
+가 되는데, $c({\bf x})>{\bf 0}$이므로 아래식을 만족하는 적당히 작은 $\delta$가 존재할 것이다. 
+\begin{align}
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T \left(\frac{1}{\delta}{\bf d}^* \right)   \geq {\bf 0}
+\end{align}
+${\bf d}={\bf d}^* $ 가 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 를 만족하면 ${\bf d}=\frac{1}{\delta}{\bf d}^* $ 도 만족하므로  $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 를 만족하는 ${\bf d}$가 존재하면 아래의 세 부등식을 만족하는 ${\bf d}$는 항상 잡을 수 있다. 
+\begin{align}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
+c({\bf x}) \geq 0 \\\\ 
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
+\end{cases}
+\end{align}
+따라서 이러한 ${\bf d}$를 못찾는 경우는 $\frac{d}{d{\bf x}} f({\bf x})= {\bf 0} $ 인 경우뿐이다. 
+<br/><br/>
+**CASE 2** : $c({\bf x}) = 0$ 이라고 하면 
