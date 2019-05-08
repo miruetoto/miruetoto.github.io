@@ -75,7 +75,14 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \end{cases}
 \end{align}
 <br/>
-**CASE 1** : 먼저 $c({\bf x}) > 0$ 라고 가정하자. $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 을 만족하는 ${\bf d}$가 존재한다고 하자. 이러한 ${\bf d}$를 ${\bf d}^* $ 라고 정의하자. 두번째 부등호는 당연히 성립하므로, 세번째 부등호가 성립하는지 살펴보자. ${\bf d}={\bf d}^* $ 를 대입하면 
+**CASE 1** : 먼저 $c({\bf x}) > 0$ 라고 가정하자. 그럼 아래를 풀면 된다. 
+\begin{align}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
+\end{cases}
+\end{align}
+이때 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 을 만족하는 ${\bf d}$가 존재한다고 하자. 이러한 ${\bf d}$를 ${\bf d}^* $ 라고 정의하자. 이제 $c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0}$ 가 성립하는지 살펴보자. ${\bf d}={\bf d}^* $ 를 대입하면 
 \begin{align}
 c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^* \geq {\bf 0}
 \end{align}
@@ -93,7 +100,14 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \end{align}
 따라서 이러한 ${\bf d}$를 못찾는 경우는 $\frac{d}{d{\bf x}} f({\bf x})= {\bf 0} $ 인 경우뿐이다. 
 <br/><br/>
-**CASE 2** : $c({\bf x}) = 0$ 이라고 하면 
+**CASE 2** : $c({\bf x}) = 0$ 이라고 하자. 그럼 아래를 풀면 된다. 
+\begin{align}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
+\end{cases}
+\end{align}
+
 \begin{align}
 \frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
 \end{align}
@@ -106,6 +120,7 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \end{cases}
 \end{align}
 <br/><br/>
+
 종합하면 아래를 풀면 된다. 
 \begin{align}
 \begin{cases}
