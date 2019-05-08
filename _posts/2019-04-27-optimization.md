@@ -124,11 +124,12 @@ c({\bf x}) > 0 \\\\ \\\\
 \frac{d}{d{\bf x}} f({\bf x})= {\bf 0} 
 \end{cases}
 \end{align}
+<br/>
 \begin{align}
 case (2) : 
 \begin{cases}
 c({\bf x}) = 0 \\\\ \\\\
-frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x}) \quad \mbox{for some} \lambda \geq 0 
+\frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x}) \quad \mbox{for some}\quad \lambda \geq 0 
 \end{cases}
 \end{align}
 
