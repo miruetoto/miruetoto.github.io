@@ -111,20 +111,11 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
 \end{cases}
 \end{align}
-
+이 조건은 $f$와 $c$의 그래디언트가 서로 반대방향임을 의미하므로 적당한 양수 $\lambda \leq 0$에 대하여 아래식이 성립함을 보이면 된다. 
 \begin{align}
-\frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
-\end{align}
-인 경우를 제외하고는 항상 아래 세 부등식을 만족하는 ${\bf d}$를 구할 수 있다. 
-\begin{align}
-\begin{cases}
-\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
-c({\bf x}) \geq 0 \\\\ 
-c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
-\end{cases}
+\frac{d}{d{\bf x}} f({\bf x})\right)^T  - \lambda \frac{d}{d{\bf x}} c({\bf x})\right)^T  \leq {\bf 0}
 \end{align}
 <br/><br/>
-
 종합하면 아래를 풀면 된다. 
 \begin{align}
 \begin{cases}
