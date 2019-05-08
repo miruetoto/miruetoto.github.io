@@ -106,12 +106,18 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \end{cases}
 \end{align}
 <br/><br/>
-종합하면 아래와 같다. 
+종합하면 아래를 풀면 된다. 
 \begin{align}
 \begin{cases}
-\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
-c({\bf x}) > 0 \\\\ 
+c({\bf x}) > 0 \\\\ \\\\
 \frac{d}{d{\bf x}} f({\bf x})= {\bf 0} 
 \end{cases}
 \end{align}
-<br/><br/>
+\begin{align}
+\begin{cases}
+c({\bf x}) = 0 \\\\ \\\\
+\frac{d}{d{\bf x}} f({\bf x}) - \lambda \frac{d}{d{\bf x}} c({\bf x}) = {\bf 0} 
+\end{cases}
+\end{align}
+
+
