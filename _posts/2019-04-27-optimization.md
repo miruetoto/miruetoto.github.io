@@ -111,22 +111,16 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
 \end{cases}
 \end{align}
-이 조건은 $f$와 $c$의 그래디언트가 서로 반대방향임을 의미하므로 적당한 양수 $\lambda \leq 0$에 대하여 아래식이 성립함을 보이면 된다. 
+내적의 정의를 잘 생각해보면 위의 조건은 (1) $f$의 그레디언트와 ${\bf d}$가 둔각을 이루고 (2) $c$의 그레디언트와 ${\bf d}$는 예각을 이루는 조건이다. 이러한 ${\bf d}$는 $f$ 그레디언트 $\frac{d}{d{\bf x}} f({\bf x})$와 $c$의 그레디언트 $\frac{d}{d{\bf x}} c({\bf x})$ 가 완전히 같은 방향을 바라보지만 않는 이상 항상 찾을 수 있다. 따라서 $\lambda \geq 0$에 대하여 아래식이 성립하는 경우를 제외하고는 항상 ${\bf d}$를 업데이트 할 수 있다. 
 \begin{align}
-\frac{d}{d{\bf x}} f({\bf x})  - \lambda \frac{d}{d{\bf x}} c({\bf x})  \leq {\bf 0}
-\end{align}
+\frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
+\end{aling}
 <br/><br/>
-종합하면 아래를 풀면 된다. 
+위의 **CASE** 들을 종합하면 아래를 풀면 된다. 
 \begin{align}
 \begin{cases}
 c({\bf x}) > 0 \\\\ \\\\
 \frac{d}{d{\bf x}} f({\bf x})= {\bf 0} 
-\end{cases}
-\end{align}
-\begin{align}
-\begin{cases}
-c({\bf x}) = 0 \\\\ \\\\
-\frac{d}{d{\bf x}} f({\bf x}) - \lambda \frac{d}{d{\bf x}} c({\bf x}) = {\bf 0} 
 \end{cases}
 \end{align}
 
