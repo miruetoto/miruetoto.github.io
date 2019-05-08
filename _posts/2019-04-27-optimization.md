@@ -24,8 +24,6 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \end{align}
 와 같은 다이아몬드 형태의 제약조건은 미분가능하지 않기 때문에 우리가 풀수 없는 문제라 생각할 수 있다. 하지만  제약은 미분가능한 제약조건들의 합으로 표현될 수 있다. 이 뿐만 아니라 많은 경우에서 미분불가능해보이는 많은 제약조건들이 미분가능한 제약조건들의 합으로 표현가능하다. 따라서 $c_i({\bf x})$가 ${\bf x}$로 미분가능해야 한다는 제약이 그렇게 강한 조건은 아니다. 
 
-#### A Single Equality constraint 
-
 - 아래와 같이 하나의 **등호** 로 이루어진 제약조건을 가지는 경우를 상상하여 보자. 
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x})=0
@@ -42,4 +40,9 @@ f({\bf x})> f({\bf x}+{\bf d})
 \begin{align}
 f({\bf x}) - f({\bf x}+{\bf d}) \approx 0 
 \end{align}
-가 만족할때까지 ${\bf d}$를 찾는다. 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})$ 이므로 
+가 만족할때까지 ${\bf d}$를 찾는다. 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})+ \bigtriangledown f({\bf x})^T {\bf d}$ 이므로 결국 $ f({\bf x})^T {\bf d} =0 $ 이 되는 순간까지 ${\bf d}$를 업데이트 하면 됨을 알 수 있다. 결론적으로 ${\bf d}$는 $\bigtriangledown f({\bf x})^T {\bf d} =0$ 이고 $\bigtriangledown c({\bf x})^T {\bf d}=0$ 인 지점까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
+\begin{align}
+\bigtriangledown f({\bf x}) = \lambda \bigtriangledown c({\bf x})
+\end{align}
+
+- 
