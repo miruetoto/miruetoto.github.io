@@ -116,12 +116,19 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
 \end{align}
 <br/><br/>
-위의 **CASE** 들을 종합하면 아래를 풀면 된다. 
+위의 사실들을 종합하면 아래의 2개를 각각 연립하여 풀고 두 연립방정식의 해를 합치면 된다. 
 \begin{align}
+case (1) : 
 \begin{cases}
 c({\bf x}) > 0 \\\\ \\\\
 \frac{d}{d{\bf x}} f({\bf x})= {\bf 0} 
 \end{cases}
 \end{align}
-
+\begin{align}
+case (2) : 
+\begin{cases}
+c({\bf x}) = 0 \\\\ \\\\
+frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x}) \quad \mbox{for some} \lambda \geq 0 
+\end{cases}
+\end{align}
 
