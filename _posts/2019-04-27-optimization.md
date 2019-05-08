@@ -30,4 +30,4 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x})=0
 \end{align}
-지점 ${\bf x}$에서 출발하여 
+제약조건 $c({\bf x})$위에서 점들이 움직이려면 임의의 점 ${\bf x}$에 대하여 $c({\bf x})=0 \mbox{ and } c({\bf x}+{\bf d})=0$를 만족하는 ${\bf d}$를 찾아야 한다. 
