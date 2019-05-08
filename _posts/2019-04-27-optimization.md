@@ -75,4 +75,8 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 \end{cases}
 \end{align}
 <br/>
-**CASE1** : 먼저 $c({\bf x}) > 0$ 라고 가정하자. 
+**CASE 1** : 먼저 $c({\bf x}) > 0$ 라고 가정하자. $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} $ 을 만족하는 ${\bf d}$가 존재한다고 하자. 이러한 ${\bf d}$를 ${\bf d}^* $ 라고 정의하자. 두번째 부등호는 당연히 성립하므로, 세번째 부등호가 성립하는지 살펴보자. ${\bf d}={\bf d}^* $ 를 대입하면 
+\begin{align}
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^*
+\end{align}
+가 되는데, $c({\bf x})>{\bf 0}$이므로 
