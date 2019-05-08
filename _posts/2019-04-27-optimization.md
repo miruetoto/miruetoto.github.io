@@ -43,7 +43,7 @@ f({\bf x} )> f({\bf x}+{\bf d})
 \left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0} 
 \end{cases}
 \end{align}
-위의 수식을 동시에 만족하는 ${\bf d}$를 찾지 못하면 업데이트를 멈춘다. 잘 생각해보면 특정한 ${\bf d}^* $가 $\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^* = {\bf 0}$를 만족한다면 $-{\bf d}^* $ 역시 $\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d}^* = {\bf 0}$ 를 만족한다. ${\bf d}^* $ 혹은 $-{\bf d}^* $ 둘중하나는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0}$ 를 만족하므로 위의 부등식을 만족하는 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} = {\bf 0}$인 경우를 제외하고 항상 찾을 수 있다. 결론적으로 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T$와 $\left(\frac{1}{d{\bf x}} c({\bf x})\right)^T$ 이 평행이 될대까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
+위의 수식을 동시에 만족하는 ${\bf d}$를 찾지 못하면 업데이트를 멈춘다. 잘 생각해보면 특정한 ${\bf d}={\bf d}^* $가 $\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0}$를 만족한다면 ${\bf d}=-{\bf d}^* $ 역시 $\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0}$ 를 만족한다. ${\bf d}={\bf d}^* $ 혹은 ${\bf d}=-{\bf d}^* $ 둘중하나는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0}$ 를 만족하므로 위의 부등식을 만족하는 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} = {\bf 0}$인 경우를 제외하고 항상 찾을 수 있다. 결론적으로 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T$와 $\left(\frac{1}{d{\bf x}} c({\bf x})\right)^T$ 이 평행이 될대까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
 \begin{align}
 \bigtriangledown f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
 \end{align}
@@ -74,4 +74,5 @@ c({\bf x}) \geq 0 \\\\
 c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
 \end{cases}
 \end{align}
-
+<br/>
+**CASE1** : 먼저 $c({\bf x}) > 0$ 라고 가정하자. 
