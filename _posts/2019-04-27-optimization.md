@@ -30,4 +30,4 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x})=0
 \end{align}
-
+지점 ${\bf x}$에서 출발하여 
