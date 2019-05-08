@@ -45,7 +45,7 @@ f({\bf x} )> f({\bf x}+{\bf d})
 \end{align}
 위의 수식을 동시에 만족하는 ${\bf d}$를 찾지 못하면 업데이트를 멈춘다. 잘 생각해보면 특정한 ${\bf d}={\bf d}^* $가 $\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0}$를 만족한다면 ${\bf d}=-{\bf d}^* $ 역시 $\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0}$ 를 만족한다. ${\bf d}={\bf d}^* $ 혹은 ${\bf d}=-{\bf d}^* $ 둘중하나는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0}$ 를 만족하므로 위의 부등식을 만족하는 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} = {\bf 0}$인 경우를 제외하고 항상 찾을 수 있다. 결론적으로 ${\bf d}$는 $\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T$와 $\left(\frac{1}{d{\bf x}} c({\bf x})\right)^T$ 이 평행이 될대까지 업데이트 해야함을 알 수 있는데 이를 수식으로 쓰면 아래와 같다. 
 \begin{align}
-\bigtriangledown f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
+\frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
 \end{align}
 결국 우리는 아래 2가지의 식을 동시에 만족하는 ${\bf x}$를 찾으면 된다. 
 \begin{align}
@@ -94,3 +94,24 @@ c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\
 따라서 이러한 ${\bf d}$를 못찾는 경우는 $\frac{d}{d{\bf x}} f({\bf x})= {\bf 0} $ 인 경우뿐이다. 
 <br/><br/>
 **CASE 2** : $c({\bf x}) = 0$ 이라고 하면 
+\begin{align}
+\frac{d}{d{\bf x}} f({\bf x}) = \lambda \frac{d}{d{\bf x}} c({\bf x})
+\end{align}
+인 경우를 제외하고는 항상 아래 세 부등식을 만족하는 ${\bf d}$를 구할 수 있다. 
+\begin{align}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
+c({\bf x}) \geq 0 \\\\ 
+c({\bf x})+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} \geq {\bf 0} \\\\ 
+\end{cases}
+\end{align}
+<br/><br/>
+종합하면 아래와 같다. 
+\begin{align}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
+c({\bf x}) > 0 \\\\ 
+\frac{d}{d{\bf x}} f({\bf x})= {\bf 0} 
+\end{cases}
+\end{align}
+<br/><br/>
