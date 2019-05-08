@@ -61,5 +61,5 @@ c({\bf x}) ={\bf 0}
 
 - 아래와 같이 하나의 **부등호** 로 이루어진 제약조건을 가지는 경우를 상상하여 보자. 
 \begin{align}
-\underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x}) \leq 0
+\underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x}) \geq 0
 \end{align}
