@@ -34,12 +34,12 @@ c({\bf x})=\| {\bf x} \|_ 1 \leq 1
 \end{align}
 그런데 $c({\bf x})={\bf 0} \mbox{ and } c({\bf x}+{\bf d})={\bf 0}$ 이 만족해야 하므로, $\left(\frac{d}{d{\bf x}} c({\bf x}) \right)^T {\bf d}={\bf 0}$ 이어야 한다. 즉 ${\bf d}$는 $c({\bf x})$의 그래디언트와 수직인 방향으로 움직이면 된다는 것을 알 수 있다. 한편 ${\bf d}$는 아래를 만족하도록 선택되어야 한다. 
 \begin{align}
-f({\bf x})> f({\bf x}+{\bf d})
+f({\bf x} )> f({\bf x}+{\bf d})
 \end{align}
 여기에서 $f({\bf x}+{\bf d}) \approx f({\bf x})+ \left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d}$ 이므로 결국아래 2식이 동시에 만족될때까지 ${\bf d}$를 찾는다. 
 \begin{align}
 \begin{cases}
-\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} \leq {\bf 0} \\\\ \\\\
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
 \left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0} 
 \end{cases}
 \end{align}
@@ -66,3 +66,11 @@ c({\bf x}) ={\bf 0}
 \begin{align}
 \underset{ {\bf x} \in \mathbb{R}^p }{ \operatorname{min} } f({\bf x}) \quad \mbox{ subject to } \quad c({\bf x}) \geq 0
 \end{align}
+이 경우는 아래의 제약을 만족하는 ${\bf d}$를 계속 찾으면 된다. 
+\begin{align}
+\begin{cases}
+\left(\frac{d}{d{\bf x}} f({\bf x})\right)^T {\bf d} < {\bf 0} \\\\ \\\\
+\left(\frac{d}{d{\bf x}} c({\bf x})\right)^T {\bf d} = {\bf 0} 
+\end{cases}
+\end{align}
+
