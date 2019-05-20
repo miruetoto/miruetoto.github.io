@@ -1,0 +1,13 @@
+---
+layout: post
+title: (리뷰) The Emerging Field of Signal Processing on Graphs
+---
+
+### About this doc
+- 이 포스팅은 아래의 논문을 요약한 것이다. 개인적으로 좋아하는 논문이다. <br/>
+Shuman, D. I., Narang, S. K., Frossard, P., Ortega, A., & Vandergheynst, P. (2012). The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. arXiv preprint arXiv:1211.0053.
+
+- 그래프형태의 도메인을 가지는 신호에 대한 여러연구들을 잘 요약하였다. 개인적으로 저자들이 글을 잘 쓰는 것 같다. 영어를 잘하는 것도 있지만 글을 매우 잘쓴다고 생각하였다. 
+
+### Introduction
+- 그래프신호는 내가 알고있는 선에서는 가장 일반적인(generic) 자료의 표현형태이다. 모든 타임시리즈는 그래프로 표현될 수 있으며 모든 이미지역시 그래프로 표현될 수 있다. 뿐만 아니라 불규칙적으로 관측한 자료도 표현가능하다. 
