@@ -21,7 +21,7 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 --- 
 
 ### 미분에 대한 간단한 정의 
-**(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
+- **(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
 \frac{\partial {\bf x}}{\partial y}=\frac{\partial rbind(x_1,\dots,x_n)}{\partial y}= rbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
 \end{align}
@@ -29,7 +29,8 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \frac{\partial {\bf x}'}{\partial y}=\frac{\partial cbind(x_1,\dots,x_n)}{\partial y}= cbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
 \end{align}
-**(2)** 스칼라를 col-vector으로 미분하는 경우는 아래와 같다. 
+
+- **(2)** 스칼라를 col-vector으로 미분하는 경우는 아래와 같다. 
 \begin{align}
 \frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial rbind(y_1,\dots,y_n)}= rbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
 \end{align}
@@ -37,7 +38,8 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
 \end{align}
-**(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 사실 매트릭스 쿡북에도 (32) 공식 밑에 
+
+- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 사실 매트릭스 쿡북에도 (32) 공식 밑에 
 \begin{align}
 \left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
 \end{align}
@@ -72,7 +74,8 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind(B_1',\dots,B_p')= (cbind(B_1,\dots, B_p))'={\bf B}'
 \end{align}
 이다. <br/>
-**(4)** 스칼라를 매트릭스로 미분하는 경우를 살펴보자. 임의의 스칼라를 ${\bf X}_ {n \times p}$로 미분하는것에 대한 기호를 약속하여 보자. 별로 특별할건 없다. 
+
+- **(4)** 스칼라를 매트릭스로 미분하는 경우를 살펴보자. 임의의 스칼라를 ${\bf X}_ {n \times p}$로 미분하는것에 대한 기호를 약속하여 보자. 별로 특별할건 없다. 
 \begin{align}
 \frac{\partial a}{\partial {\bf X}}=cbind\left( \frac{\partial a}{\partial X_1},\dots,\frac{\partial a}{\partial X_p} \right)
 \end{align}
