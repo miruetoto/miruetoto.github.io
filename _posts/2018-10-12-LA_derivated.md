@@ -116,6 +116,22 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 =2{\bf x}
 \end{align}
 
+- 아래식이 성립한다. (카셀라책 p.154, Table 4.1) 
+\begin{align}
+\frac{\partial {\bf b}'{\bf A}{\bf x}}{\partial{\bf x}}={\bf A}'{\bf b}
+\end{align}
+증명은 다음과 같이 한다. 편의상 ${\bf b}_ {n \times 1}$, ${\bf A}_ {n\times p}$, ${\bf x}_ {p \times 1}$이라고 하자. 피미분함수를 풀어보면 아래와 같이 된다. 
+\begin{align}
+cbind(b_1,\dots,b_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n ) {\bf x} 
+= \sum_{i=1}^{n} b_i {\bf a}_ i {\bf x}
+= \sum_{i=1}^{n}\sum_{j=1}^{p} b_i a_{ij} x_j
+\end{align}
+이것을 ${\bf x}=rbind(x_1,\dots,x_p)$로 미분하면 
+\begin{align}
+rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
+\end{align}
+와 같이 된다. 
+
 - 아래식이 성립한다. (매트릭스 쿡북 (70))
 \begin{align}
 \frac{\partial {\bf a}'{\bf X}{\bf b}}{\partial{\bf X}}={\bf a}{\bf b}'
