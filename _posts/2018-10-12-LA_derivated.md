@@ -18,10 +18,16 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
-- 기본적으로 아래들이 성립한다고 가정한다. 
+- 기본적으로 아래들이 성립한다고 가정한다. <br/>
+**(1)** 벡터를 스칼라로 미분하는 경우
 \begin{align}
 \frac{\partial {\bf x}}{\partial y}=\frac{\partial rbind(x_1,\dots,x_n)}{\partial y}= rbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
 \end{align}
+**(2)** 스칼라를 벡터로 미분하는 경우 
+\begin{align}
+\frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial rbind(y_1,\dots,y_n)}= rbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
+\end{align}
+
 
 --- 
 
