@@ -27,7 +27,6 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \frac{\partial {\bf x}'}{\partial y}=\frac{\partial cbind(x_1,\dots,x_n)}{\partial y}= cbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
 \end{align}
-
 **(2)** 스칼라를 col-vector으로 미분하는 경우는 아래와 같다. 
 \begin{align}
 \frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial rbind(y_1,\dots,y_n)}= rbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
@@ -36,8 +35,15 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
 \end{align}
+**(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 사실 매트릭스 쿡북에도 (32) 공식 밑에 
+\begin{align}
+\left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
+\end{align}
+와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. 교재 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 과 임의의 row-vector ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
+\begin{align}
+\frac{\partial {\bf x}'}{{\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
+\end{align}
 
-**(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 
 
 --- 
 
