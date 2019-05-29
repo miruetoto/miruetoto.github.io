@@ -108,12 +108,13 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf x}'{\bf x}}{\partial{\bf x}}=2{\bf x}
 \end{align}
-
-- 아래식이 성립한다. (카셀라책 p.154, Table 4.1) 
+증명은 다음과 같이 한다. 
 \begin{align}
-\frac{\partial {\bf x}{\bf x}'}{\partial{\bf x}}=2{\bf x}'
+\frac{\partial {\bf x}'{\bf x}}{\partial{\bf x}}
+=\frac{\partial \sum_{i=1}^{n}x_i^2}{\partial rbind(x_1,\dots,x_n)}
+=rbind\left(2x_1,\dots,2x_n\right)
+=2{\bf x}
 \end{align}
-
 
 - 아래식이 성립한다. (매트릭스 쿡북 (70))
 \begin{align}
