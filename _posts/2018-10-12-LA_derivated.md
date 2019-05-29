@@ -18,6 +18,9 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
+--- 
+
+### 미분에 대한 간단한 정의 
 - 기본적으로 아래들이 성립한다고 가정한다. <br/>
 **(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
@@ -39,10 +42,38 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
 \end{align}
-와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. "Casella, G., Fienberg, S., \& Olkin, I. (2007). Matrix Algebra: Theory, Computations, and Applications in Statistics. Springer New York." 의 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 과 임의의 row-vector ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
+와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. 교재 <br/>
+Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computations, and Applications in Statistics. Springer New York.<br/>
+의 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 과 임의의 row-vector ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
 \begin{align}
 \frac{\partial {\bf x}'}{\partial {\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
 \end{align}
+다만 편의상 
+\begin{align}
+\frac{\partial {\bf x}'}{\partial {\bf y}}=\frac{\partial {\bf x}}{\partial {\bf y}}
+\end{align}
+와 같이 쓰기도 한다고 덧붙이긴 했다. 이제 예제로 아래를 증명하여 보자. 이거는 매트릭스 쿡북에는 없는 공식이지만 너무 중요해보이는 공식이라 연습삼아서 풀어보겠다. 
+\begin{align}
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}={\bf B}
+\end{align}
+편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 아래와 같은 표기법을 도입하자. 
+\begin{align}
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=\frac{\partial {\bf B}{\bf x}}{\partial cbind(x_1,\dots,x_p)}=cbind\left( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} \right) 
+\end{align}
+여기에서 ${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} {\bf B}_ i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
+\begin{align}
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=cbind( {\bf B}_ 1, \dots, {\bf B}_ p )={\bf B}
+\end{align}
+또한 비슷한 논리로 아래가 성립함을 쉽게 보일 수 있다. 
+\begin{align}
+\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = {\bf B}'
+\end{align}
+간단하게 계산해보면 ${\bf x}'{\bf B}'=cbind(x_1,\dots,x_p)rbind({\bf B}'_ 1,\dots, {\bf B}'_ p)=\sum_{i=1}^{p} x_i {\bf B}_ i $가 성립하고 따라서 
+\begin{align}
+\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind({\bf B}_ 1, \dots, {\bf B}_ p)= (cbind({\bf B}_ 1,\dots, {\bf B}_ p ))'={\bf B}'
+\end{align}
+이다.<br/>
+**(4)** 
 
 
 --- 
