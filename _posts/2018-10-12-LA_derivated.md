@@ -104,7 +104,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \end{align}
 반대측도 비슷한논리로 증명하면 된다.
 
-- 아래식이 성립한다. (카셀라책 p.154, Table 4.1) 
+- 아래식이 성립한다. (카셀라책 p.154, table 4.1) 
 \begin{align}
 \frac{\partial {\bf x}'{\bf x}}{\partial{\bf x}}=2{\bf x}
 \end{align}
@@ -116,7 +116,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 =2{\bf x}
 \end{align}
 
-- 아래식이 성립한다. (카셀라책 p.154, Table 4.1) 
+- 아래식이 성립한다. (카셀라책 p.154, table 4.1) 
 \begin{align}
 \frac{\partial {\bf b}'{\bf A}{\bf x}}{\partial{\bf x}}={\bf A}'{\bf b}
 \end{align}
@@ -131,7 +131,19 @@ cbind(b_1,\dots,b_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n ) {\bf x}
 rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
 =rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)
 \end{align}
-이 된다. $rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)=rbind(A_1',\dots,A_p'){\bf b}$ 임을 이용하면 증명이 
+이 된다. 이제 $rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)=rbind(A_1',\dots,A_p'){\bf b}$ 임을 이용하면 증명이 끝난다. 
+
+- 아래식이 성립한다. (카셀라책 p.154, table 4.1) 
+\begin{align}
+\frac{\partial {\bf x}'{\bf A}{\bf b}}{\partial{\bf x}}={\bf b}'{\bf A}
+\end{align}
+증명은 위와 유사하다. 
+
+- 아래식이 성립한다. (카셀라책 p.154, table 4.1 / 매트릭스 쿡북 (81))
+\begin{align}
+\frac{ \partial {\bf x}'{\bf B}{\bf x}}{\partial {\bf x}} = ({\bf B} +{\bf B}') {\bf x}
+\end{align}
+이거 증명이 생각보다 어렵다. 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (70))
 \begin{align}
@@ -161,9 +173,3 @@ rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
 \frac{\partial ({\bf B}{\bf x}+{\bf b})' {\bf C} ({\bf D}{\bf x}+{\bf d})}{\partial {\bf x}} = {\bf B}'{\bf C}({\bf D}{\bf x}+{\bf d})+{\bf D}'{\bf C}'({\bf B}{\bf x}+{\bf b})
 \end{align} 
 증명은 분자를 쭉 풀어서 비슷한 논리로 하면 된다. 별로 특별할게 없는듯. 
-
-- 아래식이 성립한다. (매트릭스 쿡북 (81))
-\begin{align}
-\frac{ \partial {\bf x}'{\bf B}{\bf x}}{\partial {\bf x}} = ({\bf B} +{\bf B}') {\bf x}
-\end{align}
-편의상 ${\bf B}_ {n \times n}$, ${\bf x}_ {n \times 1}$으로 가정하자. 
