@@ -129,9 +129,9 @@ cbind(b_1,\dots,b_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n ) {\bf x}
 이것을 ${\bf x}=rbind(x_1,\dots,x_p)$로 미분하면 
 \begin{align}
 rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
-=rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)=rbind(A_1'\dots,A_p'){\bf b}={\bf A}'{\bf b}
+=rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)
 \end{align}
-와 같이 되므로 증명이 끝난다. 
+이 된다. $rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)=rbind(A_1',\dots,A_p'){\bf b}$ 임을 이용하면 증명이 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (70))
 \begin{align}
