@@ -39,9 +39,9 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
 \end{align}
-와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. 교재 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 과 임의의 row-vector ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
+와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. "Casella, G., Fienberg, S., \& Olkin, I. (2007). Matrix Algebra: Theory, Computations, and Applications in Statistics. Springer New York." 의 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 과 임의의 row-vector ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
 \begin{align}
-\frac{\partial {\bf x}'}{{\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
+\frac{\partial {\bf x}'}{\partial {\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
 \end{align}
 
 
