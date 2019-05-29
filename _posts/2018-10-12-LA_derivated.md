@@ -91,7 +91,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 
 ### 공식
 
-- 아래식이 성립한다. (카셀라책 Table 4.1 / 매트릭스 쿡북 (69)) 
+- 아래식이 성립한다. (카셀라책 p.154, Table 4.1 / 매트릭스 쿡북 (69)) 
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}
 \end{align}
@@ -99,11 +99,20 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}
 =\frac{\partial \sum_{i=1}^{n}x_i a_i}{\partial rbind(x_1,\dots,x_n)}
-=rbind\left(\frac{\partial}{\partial x_1}\sum_{i=1}^{n}x_i a_i, \dots,  \frac{\partial}{\partial x_n}\sum_{i=1}^{n}x_i a_i \right)
 =rbind\left(a_1,\dots,a_n\right)
 ={\bf a}
 \end{align}
 반대측도 비슷한논리로 증명하면 된다.
+
+- 아래식이 성립한다. (카셀라책 p.154, Table 4.1) 
+\begin{align}
+\frac{\partial {\bf x}'{\bf x}}{\partial{\bf x}}=2{\bf x}
+\end{align}
+
+- 아래식이 성립한다. (카셀라책 p.154, Table 4.1) 
+\begin{align}
+\frac{\partial {\bf x}{\bf x}'}{\partial{\bf x}}=2{\bf x}'
+\end{align}
 
 
 - 아래식이 성립한다. (매트릭스 쿡북 (70))
