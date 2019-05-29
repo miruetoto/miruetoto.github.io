@@ -19,15 +19,25 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
 - 기본적으로 아래들이 성립한다고 가정한다. <br/>
-**(1)** 벡터를 스칼라로 미분하는 경우
+**(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
 \frac{\partial {\bf x}}{\partial y}=\frac{\partial rbind(x_1,\dots,x_n)}{\partial y}= rbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
 \end{align}
-**(2)** 스칼라를 벡터로 미분하는 경우 
+이와 유사하게 row-vector을 스칼라로 미분하는 경우도 아래와 같다. 
+\begin{align}
+\frac{\partial {\bf x}'}{\partial y}=\frac{\partial cbind(x_1,\dots,x_n)}{\partial y}= cbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
+\end{align}
+
+**(2)** 스칼라를 col-vector으로 미분하는 경우는 아래와 같다. 
 \begin{align}
 \frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial rbind(y_1,\dots,y_n)}= rbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
 \end{align}
+이와 유사하게 스칼라를 row-vector으로 미분하는 경우도 아래와 같다. 
+\begin{align}
+\frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
+\end{align}
 
+**(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 
 
 --- 
 
