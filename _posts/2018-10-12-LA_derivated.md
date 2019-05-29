@@ -56,30 +56,30 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}={\bf B}
 \end{align}
-편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 아래와 같은 표기법을 도입하자. 
+편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=\frac{\partial {\bf B}{\bf x}}{\partial cbind(x_1,\dots,x_p)}=cbind\left( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} \right) 
 \end{align}
-여기에서 ${\bf B}{\bf x}= cbind({\bf B}_ 1, \dots, {\bf B}_ p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} {\bf B}_ i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
+여기에서 ${\bf B}{\bf x}= cbind(B_1,\dots,B_p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} B_i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}}=cbind( {\bf B}_ 1, \dots, {\bf B}_ p )={\bf B}
+\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=cbind(B_1,\dots,B_p)={\bf B}
 \end{align}
 또한 비슷한 논리로 아래가 성립함을 쉽게 보일 수 있다. 
 \begin{align}
 \frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = {\bf B}'
 \end{align}
-간단하게 계산해보면 ${\bf x}'{\bf B}'=cbind(x_1,\dots,x_p)rbind({\bf B}'_ 1,\dots, {\bf B}'_ p)=\sum_{i=1}^{p} x_i {\bf B}_ i $가 성립하고 따라서 
+간단하게 계산해보면 ${\bf x}'{\bf B}'=cbind(x_1,\dots,x_p)rbind(B_1',\dots,B_p')=\sum_{i=1}^{p} x_i B_i' $가 성립하고 따라서 
 \begin{align}
-\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind({\bf B}_ 1, \dots, {\bf B}_ p)= (cbind({\bf B}_ 1,\dots, {\bf B}_ p ))'={\bf B}'
+\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind(B_1',\dots,B_p')= (cbind(B_1,\dots, B_p))'={\bf B}'
 \end{align}
-이다.<br/>
+이다. <br/>
 **(4)** 스칼라를 매트릭스로 미분하는 경우를 살펴보자. 임의의 스칼라를 ${\bf X}_ {n \times p}$로 미분하는것에 대한 기호를 약속하여 보자. 별로 특별할건 없다. 
 \begin{align}
-\frac{\partial a}{\partial {\bf X}}=cbind\left( \frac{\partial a}{\partial X_1},\frac{\partial a}{\partial X_p} \right)
+\frac{\partial a}{\partial {\bf X}}=cbind\left( \frac{\partial a}{\partial X_1},\dots,\frac{\partial a}{\partial X_p} \right)
 \end{align}
 혹은 
 \begin{align}
-\frac{\partial a}{\partial {\bf X}}=rbind\left( \frac{\partial a}{\partial {\bf x}_ 1},\frac{\partial a}{\partial {\bf x}_ n} \right)
+\frac{\partial a}{\partial {\bf X}}=rbind\left( \frac{\partial a}{\partial {\bf x}_ 1},\dots,\frac{\partial a}{\partial {\bf x}_ n} \right)
 \end{align}
 와 같이 약속한다. 
 
