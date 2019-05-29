@@ -128,7 +128,8 @@ cbind(b_1,\dots,b_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n ) {\bf x}
 \end{align}
 이것을 ${\bf x}=rbind(x_1,\dots,x_p)$로 미분하면 
 \begin{align}
-rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
+rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right) = rbind({\bf b}'A_1,\dots,{\bf b}'A_p)
+={\bf b}'{\bf A}
 \end{align}
 와 같이 된다. 
 
