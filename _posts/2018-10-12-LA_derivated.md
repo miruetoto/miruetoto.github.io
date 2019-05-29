@@ -21,7 +21,6 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 --- 
 
 ### 미분에 대한 간단한 정의 
-- 기본적으로 아래들이 성립한다고 가정한다. <br/>
 **(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
 \frac{\partial {\bf x}}{\partial y}=\frac{\partial rbind(x_1,\dots,x_n)}{\partial y}= rbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
