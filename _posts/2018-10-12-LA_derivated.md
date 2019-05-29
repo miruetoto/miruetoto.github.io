@@ -42,9 +42,9 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 \begin{align}
 \left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
 \end{align}
-와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. 교재 <br/>
-Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computations, and Applications in Statistics. Springer New York.<br/>
-의 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 과 임의의 row-vector ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
+와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. **바로 이부분이 짜증나는 부분이다.** 교재 <br/><br/>
+Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computations, and Applications in Statistics. Springer New York.<br/><br/>
+의 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 와 ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
 \begin{align}
 \frac{\partial {\bf x}'}{\partial {\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
 \end{align}
@@ -52,7 +52,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf x}'}{\partial {\bf y}}=\frac{\partial {\bf x}}{\partial {\bf y}}
 \end{align}
-와 같이 쓰기도 한다고 덧붙이긴 했다. 이제 예제로 아래를 증명하여 보자. 이거는 매트릭스 쿡북에는 없는 공식이지만 너무 중요해보이는 공식이라 연습삼아서 풀어보겠다. 
+와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 예제로 아래를 증명하여 보자. 이거는 매트릭스 쿡북에는 없는 공식이지만 너무 중요해보이는 공식이라 연습삼아서 풀어보겠다. 
 \begin{align}
 \frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}={\bf B}
 \end{align}
@@ -73,8 +73,15 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind({\bf B}_ 1, \dots, {\bf B}_ p)= (cbind({\bf B}_ 1,\dots, {\bf B}_ p ))'={\bf B}'
 \end{align}
 이다.<br/>
-**(4)** 
-
+**(4)** 스칼라를 매트릭스로 미분하는 경우를 살펴보자. 임의의 스칼라를 ${\bf X}_ {n \times p}$로 미분하는것에 대한 기호를 약속하여 보자. 별로 특별할건 없다. 
+\begin{align}
+\frac{\partial a}{\partial {\bf X}}=cbind\left( \frac{\partial a}{\partial X_1},\frac{\partial a}{\partial X_p} \right)
+\end{align}
+혹은 
+\begin{align}
+\frac{\partial a}{\partial {\bf X}}=rbind\left( \frac{\partial a}{\partial {\bf x}_ 1},\frac{\partial a}{\partial {\bf x}_ n} \right)
+\end{align}
+와 같이 약속한다. 
 
 --- 
 
