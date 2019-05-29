@@ -12,15 +12,21 @@ Petersen, K. B., \& Pedersen, M. S. (2008). The matrix cookbook. Technical Unive
 
 ### 몇 가지 약속 
 
-- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 vector이다. 벡터는 col-vector 일수도 있고 row-vector 일수도 있지만 일반적으로 별말이 없으면 col-vector로 생각한다. 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 보통 매트릭스의 차원은 $n\times p$로 정의한다. 
+- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 vector이다. 이 벡터는 col-vector 일수도 있고 row-vector 일수도 있지만 **이 챕터에 한정하여 모든 벡터는 col-vector로 생각하겠다.** 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 보통 매트릭스의 차원은 $n\times p$로 정의한다. 
 
 - 이 챕터에서 ${\bf X}$는 특별한 스트럭처가 없다고 가정할 것이다. 만약에 ${\bf X}$가 스트럭쳐가 있다면 (예를들면 *symm*-매트릭스라든가, *pd*-매트릭스라든가) 미분결과가 달라지게 된다. (진짜 괴롭다.) 
 
 - 이 챕터의 대부분의 내용은 matrix cookbook의 내용을 정리한 것이다. 따라서 참고하기 편하도록 매트릭스 쿡북에 해당하는 수식 인덱스를 달았다. 
 
+- 기본적으로 아래들이 성립한다고 가정한다. 
+\begin{align}
+\frac{\partial {\bf x}}{\partial y}=\frac{\partial rbind(x_1,\dots,x_n)}{\partial y}= rbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
+\end{align}
+
 --- 
 
-### 스칼라의 미분 
+### 공식
+
 
 - 아래식이 성립한다. (매트릭스 쿡북 (69)) 
 \begin{align}
