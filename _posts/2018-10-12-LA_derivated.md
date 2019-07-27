@@ -91,6 +91,8 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 
 ### 공식
 
+- 여기에서는 외워두면 유용한 공식들을 나열한다. 
+
 - 아래식이 성립한다. (카셀라책 p.154, Table 4.1 / 매트릭스 쿡북 (69)) 
 \begin{align}
 \frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}
