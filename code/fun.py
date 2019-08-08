@@ -54,7 +54,9 @@ def rbind(A,B):
     return np.vstack([A,B])
 
 def info(A):
-    print(type(A))
+    print("type of data        :   ",type(A))
+    if type(A) is int:  print("len or shape of data: ",1)
+    else if type(A) is float:  print("len or shape of data: ",1)
     if type(A) is list: 
         print(len(A))
     else: 
