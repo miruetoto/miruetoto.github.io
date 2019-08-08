@@ -68,7 +68,7 @@ def info(A):
 ### n×1 이거나 1×n matrix를 길이가 n인 np.array로 변환 
 def m2a(A):
     if A.shape[1]==1: rtn=np.array(A)[0,:]
-    elif A.shape[0]==0: rtn=np.array(A.T)[0,:]
+    elif A.shape[0]==1: rtn=np.array(A.T)[0,:]
     else :
         print("The input matrix is neither a row-vector nor a col-vector. So we will not do any conversion.")
         rtn=A
