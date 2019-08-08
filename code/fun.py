@@ -57,7 +57,7 @@ def info(A):
     print("type of data        :   ",type(A))
     if type(A) is int or float or bool :  print("len or shape of data: ",1)
     elif type(A) is str or list or tuple or dict or set :  print("len or shape of data: ",len(A))
-    else print("len or shape of data: ",A.shape)
+    else : print("len or shape of data: ",A.shape)
 
 def colvec2array(a):
     return np.array(a.T)[0,:]
