@@ -3,32 +3,33 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import math  
 
-def ccfrq(start=0,end=1,samplingFreq=10):
-    return cbind(np.arange(start,end,1/samplingFreq),end).T
+def cc(start=0,end=1,samplingFreq=1):
+    return c2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
 
-def cofrq(start=0,end=1,samplingFreq=10):
-    return np.asmatrix(np.arange(start,end,1/samplingFreq)).T
+def co(start=0,end=1,samplingFreq=1):
+    return c2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T)
 
-def ocfrq(start=0,end=1,samplingFreq=10):
-    return np.asmatrix(np.arange(start,end,1/samplingFreq)).T+1/samplingFreq
+def oc(start=0,end=1,samplingFreq=1):
+    return c2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T+1/samplingFreq)
 
-def oofrq(start=0,end=1,samplingFreq=10):
+def oo(start=0,end=1,samplingFreq=1):
     rtn=np.asmatrix(np.arange(start,end,1/samplingFreq)).T
-    return rtn[1:len(rtn)]
+    return c2a(rtn[1:len(rtn)])
 
-def ccprd(start=0,end=1,samplingPeriod=1):
-    return cbind(np.arange(start,end,samplingPeriod),end).T
+def cc(start=0,end=1,samplingPeriod=1):
+    return c2a(cbind(np.arange(start,end,samplingPeriod),end).T)
 
-def coprd(start=0,end=1,samplingPeriod=1):
-    return np.asmatrix(np.arange(start,end,samplingPeriod)).T
+def co(start=0,end=1,samplingPeriod=1):
+    return c2a(np.asmatrix(np.arange(start,end,samplingPeriod)).T)
 
-def ocprd(start=0,end=1,samplingPeriod=1):
-    return np.asmatrix(np.arange(start,end,samplingPeriod)).T+samplingPeriod
+def oc(start=0,end=1,samplingPeriod=1):
+    return c2a(np.asmatrix(np.arange(start,end,samplingPeriod)).T+samplingPeriod)
 
-def ooprd(start=0,end=1,samplingPeriod=1):
+def oo(start=0,end=1,samplingPeriod=1):
     rtn=np.asmatrix(np.arange(start,end,samplingPeriod)).T
-    return rtn[1:len(rtn)]
+    return c2a(rtn[1:len(rtn)])
 
+### 입력은 n×p np.matrix 이고 출력도 n×p np.matrix 임. 이때 첫번째 row가 0임. 
 def lagg(inputMatrix,lag):
     inputdf=pd.DataFrame(inputMatrix)
     shifted=np.asmatrix(inputdf.shift(lag))
