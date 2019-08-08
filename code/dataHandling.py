@@ -73,3 +73,14 @@ def c2a(a):
 def r2a(a):
     return np.array(a)[0,:]
 
+### 초기화 (1) 0 (2) 유니폼 (3) 정규분포
+def init(typ,dim):
+    if dim*0==0: 
+        if typ=="0": rtn=np.zeros(dim)
+        elif typ=="u": rtn=np.random.random(dim)
+        elif typ=="n": rtn=np.random.normal(0,1,dim)
+    else:
+        if typ=="0": rtn=np.asmatrix(np.zeros(dim))
+        elif typ=="u": rtn=np.asmatrix(np.random.random(dim))
+        elif typ=="n": rtn=np.asmatrix(np.random.normal(0,1,dim))
+    return rtn
