@@ -62,7 +62,8 @@ def info(A):
     elif type(A) is list    :  print("len or shape of data :   ",len(A))
     elif type(A) is tuple   :  print("len or shape of data :   ",len(A))
     elif type(A) is dict    :  print("len or shape of data :   ",len(A))
-    elif type(A) is set     :  print("len or shape of data :   ",len(A))        
+    elif type(A) is set     :  print("len or shape of data :   ",len(A))       
+    elif type(A) is range   :  print("len or shape of data :   ",len(A))
     else                    :  print("len or shape of data :   ",A.shape)
     
 
