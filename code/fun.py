@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-from matplotlib import pyplot as plt
-import math  
 
 def cc(start=0,end=1,samplingFreq=1):
     return c2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
@@ -75,16 +73,3 @@ def c2a(a):
 def r2a(a):
     return np.array(a)[0,:]
 
-def grd(f,x):
-    h=1e-4
-    grad=np.zeros_like(x)
-    
-    for idx in range(x.size):
-        tmp_val = x[idx]
-        x[idx]=tmp_val +h 
-        fxh1=f(x)
-        x[idx]=tmp_val -h
-        fxh2=f(x)
-        grad[idx]=(fxh1-fxh2)/(2*h)
-        x[idx]=tmp_val 
-    return grad   
