@@ -65,7 +65,7 @@ def info(A,show=F):
     elif type(A) is set     :  print("len or shape of data :   ",len(A))        
     else                    :  print("len or shape of data :   ",A.shape)
     
-    if show=T: pd.DataFrame(A)
+    if show==T: pd.DataFrame(A)
 
 def colvec2array(a):
     return np.array(a.T)[0,:]
