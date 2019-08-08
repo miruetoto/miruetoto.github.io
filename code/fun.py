@@ -66,11 +66,12 @@ def info(A):
     elif type(A) is range   :  print("len or shape of data :   ",len(A))
     else                    :  print("len or shape of data :   ",A.shape)
     
-
-def colvec2array(a):
+### n×1 matrix를 길이가 n인 np.array로 변환 
+def c2a(a):
     return np.array(a.T)[0,:]
-    
-def rowvec2array(a):
+
+### 1×p matrix를 길이가 p인 np.array로 변환 
+def r2a(a):
     return np.array(a)[0,:]
 
 def grd(f,x):
