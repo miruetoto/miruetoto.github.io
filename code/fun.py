@@ -53,9 +53,9 @@ def rbind(A,B):
         B=np.full((1,A.shape[1]),B[0,0])
     return np.vstack([A,B])
 
-def info(A,show=False):
+def info(A):
     print("type of data         :   ",type(A))
-    if type(A) is int       :  print("len or shape of data :   ",1); B=pd.DataFrame(eval("[A]"))
+    if type(A) is int       :  print("len or shape of data :   ",1); 
     elif type(A) is float   :  print("len or shape of data :   ",1)
     elif type(A) is bool    :  print("len or shape of data :   ",1)    
     elif type(A) is str     :  print("len or shape of data :   ",len(A))
@@ -64,8 +64,6 @@ def info(A,show=False):
     elif type(A) is dict    :  print("len or shape of data :   ",len(A))
     elif type(A) is set     :  print("len or shape of data :   ",len(A))        
     else                    :  print("len or shape of data :   ",A.shape)
-    
-    if show==True: return B
     
 
 def colvec2array(a):
