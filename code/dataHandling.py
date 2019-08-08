@@ -65,13 +65,14 @@ def info(A):
     elif type(A) is range   :  print("len or shape of data :   ",len(A))
     else                    :  print("len or shape of data :   ",A.shape)
     
-### n×1 matrix를 길이가 n인 np.array로 변환 
-def c2a(a):
-    return np.array(a.T)[0,:]
-
-### 1×p matrix를 길이가 p인 np.array로 변환 
-def r2a(a):
-    return np.array(a)[0,:]
+### n×1 이거나 1×n matrix를 길이가 n인 np.array로 변환 
+def m2a(A):
+    if A.shape[1]==1: rtn=np.array(A)[0,:]
+    elif A.shape[0]==0: rtn=np.array(A.T)[0,:]
+    else :
+        print("The input matrix is neither a row-vector nor a col-vector. So we will not do any conversion.")
+        rtn=A
+    return rtn
 
 ### 초기화 (1) 0 (2) 유니폼 (3) 정규분포
 def init(typ,dim):
