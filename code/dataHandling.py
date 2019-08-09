@@ -2,30 +2,30 @@ import numpy as np
 import pandas as pd
 
 def cc(start=0,end=1,samplingFreq=1):
-    return c2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
+    return m2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
 
 def co(start=0,end=1,samplingFreq=1):
-    return c2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T)
+    return m2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T)
 
 def oc(start=0,end=1,samplingFreq=1):
-    return c2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T+1/samplingFreq)
+    return m2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T+1/samplingFreq)
 
 def oo(start=0,end=1,samplingFreq=1):
     rtn=np.asmatrix(np.arange(start,end,1/samplingFreq)).T
-    return c2a(rtn[1:len(rtn)])
+    return m2a(rtn[1:len(rtn)])
 
 def cc(start=0,end=1,samplingPeriod=1):
-    return c2a(cbind(np.arange(start,end,samplingPeriod),end).T)
+    return m2a(cbind(np.arange(start,end,samplingPeriod),end).T)
 
 def co(start=0,end=1,samplingPeriod=1):
-    return c2a(np.asmatrix(np.arange(start,end,samplingPeriod)).T)
+    return m2a(np.asmatrix(np.arange(start,end,samplingPeriod)).T)
 
 def oc(start=0,end=1,samplingPeriod=1):
-    return c2a(np.asmatrix(np.arange(start,end,samplingPeriod)).T+samplingPeriod)
+    return m2a(np.asmatrix(np.arange(start,end,samplingPeriod)).T+samplingPeriod)
 
 def oo(start=0,end=1,samplingPeriod=1):
     rtn=np.asmatrix(np.arange(start,end,samplingPeriod)).T
-    return c2a(rtn[1:len(rtn)])
+    return m2a(rtn[1:len(rtn)])
 
 ### 입력은 n×p np.matrix 이고 출력도 n×p np.matrix 임. 이때 첫번째 row가 0임. 
 def lagg(inputMatrix,lag):
