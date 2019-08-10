@@ -63,10 +63,10 @@ def cbind(A,B):
 def rbind(A,B):
     A=np.asmatrix(A)
     B=np.asmatrix(B)
-    if np.asmatrix(A).shape==(1,1):
-        A=np.full((1,B.shape[1]),A[0,0])
-    if np.asmatrix(B).shape==(1,1):
-        B=np.full((1,A.shape[1]),B[0,0])
+    if A.shape[1]==1 A=A.T
+    if B.shape[1]==1 B=B.T
+    if np.asmatrix(A).shape==(1,1): A=np.full((1,B.shape[1]),A[0,0])
+    if np.asmatrix(B).shape==(1,1): B=np.full((1,A.shape[1]),B[0,0])
     return np.vstack([A,B])
 
 def info(A):
