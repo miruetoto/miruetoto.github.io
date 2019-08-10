@@ -14,7 +14,7 @@ def oo(start=0,end=1,samplingFreq=1):
     rtn=np.asmatrix(np.arange(start,end,1/samplingFreq)).T
     return m2a(rtn[1:len(rtn)])
 
-### 입력은 n×p np.matrix 이고 출력도 n×p np.matrix 임. 이때 첫번째 row가 0임. 
+### 입력은 n×p matrix , 혹은 n×p DataFrame 으로 바꿀 수 있는 어떤자료 / 출력 n×p np.matrix 임. 이때 첫번째 row가 0임. 
 def lagg(inputMatrix,lag):
     inputdf=pd.DataFrame(inputMatrix)
     shifted=np.asmatrix(inputdf.shift(lag))
