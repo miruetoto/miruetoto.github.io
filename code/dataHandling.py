@@ -97,7 +97,7 @@ def rbind(A,B):
     if typ==['matrix','scala']:  B=np.full((1,A.shape[1]),B[0,0])
     #if typ==['matrix','rowvec']: 
     if typ==['matrix','colvec']: B=B.T
-    if typ==['matrix','matrix']:
+    #if typ==['matrix','matrix']:
     
     return np.vstack([A,B])
 
