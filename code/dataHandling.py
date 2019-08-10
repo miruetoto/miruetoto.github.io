@@ -30,7 +30,7 @@ def cbind(A,B):
     try: A.shape[1]
     except IndexError: typ[0]='rowvec'
     
-    if A.shape[0]==1: typ[0]='rowvec'
+    if np.asmatrix(A).shape[0]==1: typ[0]='rowvec'
     
     
     try: B.shape 
@@ -39,7 +39,7 @@ def cbind(A,B):
     try: B.shape[1]
     except IndexError: typ[1]='rowvec'
     
-    if B.shape[0]==1: typ[1]='rowvec'
+    if np.asmatrix(B).shape[0]==1: typ[1]='rowvec'
         
 
     if typ==['rowvec','rowvec']:
