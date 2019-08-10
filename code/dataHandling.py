@@ -22,7 +22,7 @@ def lagg(inputMatrix,lag):
     return shifted
 
 def cbind(A,B):
-    typ=('matrix or colvec','matrix or colvec')
+    typ=['matrix or colvec','matrix or colvec']
 
     try: A.shape 
     except AttributeError: typ[0]='rowvec'
@@ -42,13 +42,13 @@ def cbind(A,B):
     if B.shape[0]==1: typ[1]='rowvec'
         
 
-    if typ==('rowvec','rowvec'):
+    if typ==['rowvec','rowvec']:
         A=np.asmatrix(A).T
         B=np.asmatrix(B).T
-    elif typ==('rowvec','matrix or colvec'): 
+    elif typ==['rowvec','matrix or colvec']: 
         A=np.asmatrix(A).T
         B=np.asmatrix(B)
-    elif typ==('matrix or colvec','rowvec'): 
+    elif typ==['matrix or colvec','rowvec']: 
         A=np.asmatrix(A)
         B=np.asmatrix(B).T
     else: 
