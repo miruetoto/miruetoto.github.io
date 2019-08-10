@@ -35,7 +35,7 @@ def cbind(A,B):
             B=np.asmatrix(B).T
             if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
             if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
-         else: 
+         else:
             A=np.asmatrix(A)
             B=np.asmatrix(B)
             if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
