@@ -22,42 +22,83 @@ def lagg(inputMatrix,lag):
     return shifted
 
 def cbind(A,B):
-    typ=['matrix or colvec','matrix or colvec']
+    typ=['matrix','matrix']
+    
     A=np.asmatrix(A)
     B=np.asmatrix(B)
-    
-    # 스칼라에 대한 처리 
-    ## A가 스칼라인 경우 
-    if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
-    ## B가 스칼라인 경우 
-    if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
-    
+
     # row-vector에 대한 처리 
     if A.shape[0]==1: typ[0]='rowvec'
     if B.shape[0]==1: typ[1]='rowvec'
+
+    # col-vector에 대한 처리 
+    if A.shape[1]==1: typ[0]='colvec'
+    if B.shape[1]==1: typ[1]='colvec'    
+    
+    # 스칼라에 대한 처리 
+    if A.shape==(1,1): typ[0]='scala'
+    if B.shape==(1,1): typ[1]='scala'
         
-    if typ==['rowvec','rowvec']:
-        A=np.asmatrix(A).T
-        B=np.asmatrix(B).T
-    elif typ==['rowvec','matrix or colvec']: 
-        A=np.asmatrix(A).T
-        B=np.asmatrix(B)
-    elif typ==['matrix or colvec','rowvec']: 
-        A=np.asmatrix(A)
-        B=np.asmatrix(B).T
-    else: 
-        A=np.asmatrix(A)
-        B=np.asmatrix(B)
+    if typ==['scala','scala']:  A=np.array(A); B=np.array(B)
+    if typ==['scala','rowvec']: A=np.array(A); 
+    if typ==['scala','colvec']: A=np.full(B.shape,A[0,0]); 
+    if typ==['scala','matrix']: A=np.full((B.shape[0],1),A[0,0]); 
+    	
+    if typ==['rowvec','scala']: B=np.array(B)
+    #if typ==['rowvec','rowvec']:
+    if typ==['rowvec','colvec']: A=A.T
+    if typ==['rowvec','matrix']: A=A.T
         
+    if typ==['colvec','scala']:  B=np.full(A.shape,B[0,0])
+    if typ==['colvec','rowvec']: B=B.T
+    #if typ==['colvec','colvec']: 
+    #if typ==['colvec','matrix']: 
+    
+    if typ==['matrix','scala']:  B=np.full((A.shape[0],1),B[0,0])
+    if typ==['matrix','rowvec']: B=B.T
+    #if typ==['matrix','colvec']: 
+    #if typ==['matrix','matrix']:
+    
     return np.hstack([A,B])
     
 def rbind(A,B):
+    typ=['matrix','matrix']
+    
     A=np.asmatrix(A)
     B=np.asmatrix(B)
-    if A.shape[1]==1: A=A.T
-    if B.shape[1]==1: B=B.T
-    if np.asmatrix(A).shape==(1,1): A=np.full((1,B.shape[1]),A[0,0])
-    if np.asmatrix(B).shape==(1,1): B=np.full((1,A.shape[1]),B[0,0])
+
+    # row-vector에 대한 처리 
+    if A.shape[0]==1: typ[0]='rowvec'
+    if B.shape[0]==1: typ[1]='rowvec'
+
+    # col-vector에 대한 처리 
+    if A.shape[1]==1: typ[0]='colvec'
+    if B.shape[1]==1: typ[1]='colvec'    
+    
+    # 스칼라에 대한 처리 
+    if A.shape==(1,1): typ[0]='scala'
+    if B.shape==(1,1): typ[1]='scala'
+        
+    if typ==['scala','scala']:  A=np.array(A); B=np.array(B)
+    if typ==['scala','rowvec']: A=np.full(B.shape,A[0,0]); 
+    if typ==['scala','colvec']: A=np.array(A);
+    if typ==['scala','matrix']: A=np.full((1,B.shape[1]),A[0,0]); 
+    	
+    if typ==['rowvec','scala']: B=np.full((1,A.shape[1]),B[0,0]); 
+    #if typ==['rowvec','rowvec']:
+    if typ==['rowvec','colvec']: B=B.T
+    #if typ==['rowvec','matrix']: 
+        
+    #if typ==['colvec','scala']:  
+    if typ==['colvec','rowvec']: A=A.T
+    #if typ==['colvec','colvec']: 
+    if typ==['colvec','matrix']: A=A.T
+    
+    if typ==['matrix','scala']:  B=np.full((1,A.shape[1]),B[0,0])
+    #if typ==['matrix','rowvec']: 
+    if typ==['matrix','colvec']: B=B.T
+    if typ==['matrix','matrix']:
+    
     return np.vstack([A,B])
 
 def info(A):
