@@ -22,12 +22,24 @@ def lagg(inputMatrix,lag):
     return shifted
 
 def cbind(A,B):
-    A=np.asmatrix(A)
-    B=np.asmatrix(B)
-    if np.asmatrix(A).shape==(1,1):
-        A=np.full((B.shape[0],1),A[0,0])
-    if np.asmatrix(B).shape==(1,1):
-        B=np.full((A.shape[0],1),B[0,0])
+    try: A.shape 
+    except AttributeError: 
+        A=np.asmatrix(A).T
+        B=np.asmatrix(B)
+        if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
+        if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
+    else:
+        try: B.shape 
+        except AttributeError: 
+            A=np.asmatrix(A)
+            B=np.asmatrix(B).T
+            if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
+            if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
+         else: 
+            A=np.asmatrix(A)
+            B=np.asmatrix(B)
+            if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
+            if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
     return np.hstack([A,B])
     
 def rbind(A,B):
