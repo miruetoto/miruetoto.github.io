@@ -22,31 +22,42 @@ def lagg(inputMatrix,lag):
     return shifted
 
 def cbind(A,B):
+    typ=('matrix or colvec','matrix or colvec')
+
     try: A.shape 
-    except AttributeError: 
-        try: B.shape 
-        except AttributeError: 
-            A=np.asmatrix(A).T
-            B=np.asmatrix(B).T
-            if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
-            if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
-        else:
-            A=np.asmatrix(A).T
-            B=np.asmatrix(B)
-            if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
-            if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
-    else:
-        try: B.shape 
-        except AttributeError: 
-            A=np.asmatrix(A)
-            B=np.asmatrix(B).T
-            if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
-            if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
-        else:
-            A=np.asmatrix(A)
-            B=np.asmatrix(B)
-            if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
-            if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
+    except AttributeError: typ[0]='rowvec'
+    
+    try: A.shape[1]
+    except IndexError: typ[0]='rowvec'
+    
+    if A.shape[0]==1: typ[0]='rowvec'
+    
+    
+    try: B.shape 
+    except AttributeError: typ[1]='rowvec'
+    
+    try: B.shape[1]
+    except IndexError: typ[1]='rowvec'
+    
+    if B.shape[0]==1: typ[1]='rowvec'
+        
+
+    if typ==('rowvec','rowvec'):
+        A=np.asmatrix(A).T
+        B=np.asmatrix(B).T
+    elif typ==('rowvec','matrix or colvec'): 
+        A=np.asmatrix(A).T
+        B=np.asmatrix(B)
+    elif typ==('matrix or colvec','rowvec'): 
+        A=np.asmatrix(A)
+        B=np.asmatrix(B).T
+    else: 
+        A=np.asmatrix(A)
+        B=np.asmatrix(B)
+
+    if np.asmatrix(A).shape==(1,1): A=np.full((B.shape[0],1),A[0,0])
+    if np.asmatrix(B).shape==(1,1): B=np.full((A.shape[0],1),B[0,0])
+        
     return np.hstack([A,B])
     
 def rbind(A,B):
