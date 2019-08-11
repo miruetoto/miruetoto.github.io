@@ -248,7 +248,9 @@ def apply(X,axis,fun):
         rtn=X     
 
     if type(display) is str : print(display)
-    else: print(display)
+    else: 
+        from IPython.display import display 
+        display(display)
     
     return rtn
     
