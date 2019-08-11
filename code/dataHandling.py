@@ -157,100 +157,100 @@ def apply(X,axis,fun):
     
     if axis==0 and Xtype=='scala' and funtype=='array2scala': 
         rtn=eval(fun+'(Xmat[0,0])')
-        display=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
+        disp=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
     elif axis==0 and Xtype=='scala' and funtype=='array2array':
         rtn=eval(fun+'(Xmat[0,0])')
-        display=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
+        disp=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
     elif axis==0 and Xtype=='scala' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
         
     elif axis==0 and Xtype=='colvec' and funtype=='array2scala':
-        display=pd.DataFrame(Xmat)
-        rtn=eval('display.apply('+fun+')')
-        display=display.T
-        display['result']=rtn
+        disp=pd.DataFrame(Xmat)
+        rtn=eval('disp.apply('+fun+')')
+        disp=disp.T
+        disp['result']=rtn
         rtn=(np.asmatrix(rtn))[0,0]
-        display=display.T        
+        disp=disp.T        
     elif axis==0 and Xtype=='colvec' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='colvec' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
         
     elif axis==0 and Xtype=='rowvec' and funtype=='array2scala':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='rowvec' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='rowvec' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
        
     elif axis==0 and Xtype=='matrix' and funtype=='array2scala':
-        display=pd.DataFrame(Xmat)
-        rtn=eval('display.apply('+fun+')')
-        display=display.T
-        display['result']=rtn
+        disp=pd.DataFrame(Xmat)
+        rtn=eval('disp.apply('+fun+')')
+        disp=disp.T
+        disp['result']=rtn
         rtn=np.asmatrix(rtn)
-        display=display.T
+        disp=disp.T
     elif axis==0 and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='matrix' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
         
     # axis=1: row-wise
     
     elif axis==1 and Xtype=='scala' and funtype=='array2scala':
         rtn=eval(fun+'(Xmat[0,0])')
-        display=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
+        disp=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
     elif axis==1 and Xtype=='scala' and funtype=='array2array':
         rtn=eval(fun+'(Xmat[0,0])')
-        display=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
+        disp=pd.DataFrame(np.asmatrix([Xmat[0,0],rtn]),columns=['input','result'])
     elif axis==1 and Xtype=='scala' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
         
     elif axis==1 and Xtype=='colvec' and funtype=='array2scala':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
     elif axis==1 and Xtype=='colvec' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
     elif axis==1 and Xtype=='colvec' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
         
     elif axis==1 and Xtype=='rowvec' and funtype=='array2scala':
-        display=pd.DataFrame(Xmat)
-        display['result']=eval('display.apply('+fun+',axis=1)')
-        rtn=(np.asmatrix(display['result']).T)[0,0]
+        disp=pd.DataFrame(Xmat)
+        disp['result']=eval('disp.apply('+fun+',axis=1)')
+        rtn=(np.asmatrix(disp['result']).T)[0,0]
     elif axis==1 and Xtype=='rowvec' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==1 and Xtype=='rowvec' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
 
     elif axis==1 and Xtype=='matrix' and funtype=='array2scala':
-        display=pd.DataFrame(Xmat)
-        display['result']=eval('display.apply('+fun+',axis=1)')
-        rtn=np.asmatrix(display['result']).T
+        disp=pd.DataFrame(Xmat)
+        disp['result']=eval('disp.apply('+fun+',axis=1)')
+        rtn=np.asmatrix(disp['result']).T
     elif axis==1 and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
-        display=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==1 and Xtype=='matrix' and funtype=='array2matrix':
-        display='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
+        disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X     
 
-    if type(display) is str : print(display)
+    if type(disp) is str : print(disp)
     else: 
         from IPython.display import display 
-        display(display)
+        display(disp)
     
     return rtn
     
