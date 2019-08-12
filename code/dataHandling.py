@@ -321,7 +321,3 @@ def sprod(*index):
             rtn[i]=rtn[i]+str(mindextable.iloc[i,j])
         
     return rtn
-
-
-def matpd(typ,n,p):
-    init(typ,(n,p))
