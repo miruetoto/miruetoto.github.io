@@ -285,7 +285,7 @@ def initpd(index,p=1):
             rtn.columns=vname
         else:
             mindex=pd.MultiIndex.from_product(index)
-            iname=sprod([['Index'],list(np.array(range(0,len(index)))+1)])
+            iname=sprod([['index'],list(np.array(range(0,len(index)))+1)])
             vname=sprod([['X'],list(np.array(range(0,p))+1)])
             n=mindex.shape[0]
             val=init('0',(n,p))
