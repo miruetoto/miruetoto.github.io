@@ -262,3 +262,45 @@ def apply(X,axis,fun):
     
     return rtn
 
+def sprod(*index): 
+    nofMindex=len(index)
+    indexListtype=list(range(0,nofMindex))
+    for i in range(0,nofMindex):
+        if type(index[i]) is str: indexListtype[i]=[index[i]]
+        elif np.asmatrix(index[i]).shape==(1,1): indexListtype[i]=[str(np.asmatrix(index[i])[0,0])]
+        else: indexListtype[i]=index[i]
+        
+    mindex=pd.MultiIndex.from_product(indexListtype)
+    val=init("0",mindex.shape[0])
+    data=pd.DataFrame(val,index=mindex).reset_index()
+    mindextable=data.iloc[:,0:data.shape[1]-1]
+    rtn=['']*mindextable.shape[0]
+    for i in range(0,mindextable.shape[0]):
+        for j in range(0,mindextable.shape[1]):
+            rtn[i]=rtn[i]+str(mindextable.iloc[i,j])
+        
+    return rtn
+
+def mpd(*index,p=1): # mpd is short for multi-indexed pandas dataframe. 
+    nofMindex=len(index)
+    indexListtype=list(range(0,nofMindex))
+    for i in range(0,nofMindex):
+        if type(index[i]) is str: indexListtype[i]=[index[i]]
+        elif np.asmatrix(index[i]).shape==(1,1): indexListtype[i]=[str(np.asmatrix(index[i])[0,0])]
+        else: indexListtype[i]=index[i]
+
+    mindex=pd.MultiIndex.from_product(indexListtype)
+    iname=sprod('index',cc(1,len(indexListtype)))
+    vname=sprod('X',cc(1,p))
+    n=mindex.shape[0]
+    val=init('0',(n,p))
+    rtn=pd.DataFrame(val,index=mindex).reset_index()
+    rtn.columns=iname+vname
+    return rtn    
+
+def matpd(typ,n,p=1): 
+    vname=sprod('X',cc(1,p))
+    val=init(typ,(n,p))
+    rtn=pd.DataFrame(val)
+    rtn.columns=vname
+    return rtn   
