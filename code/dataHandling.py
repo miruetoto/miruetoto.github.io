@@ -263,22 +263,24 @@ def apply(X,axis,fun):
     return rtn
 
 
-# initpd 
+# mpd
 ## possible form of index: 
 ### (1) [['X'],cc(1,5)]
 ### (2) [['X','Y','X'],['(i)','(ii)']] 
 ### (3) [cc(1,5),cc(2,3)]
-### (4) cc(1,5)
+### (4) cc(1,5) # but this is single-indexed, so not recommended. 
 ... 
-def initpd(index,p=1):
+def mpd(index,p=1): # mpd is short for multi-indexed pandas dataframe. 
     try: len(index[0])
     except TypeError: 
+        print('Input is not multiindex type. In this case, it is better to use \'matpd\'.')
         val=init('0',(len(index),p))
         rtn=pd.DataFrame(val,index=index)
         vname=sprod([['X'],list(np.array(range(0,p))+1)])
         rtn.columns=vname
     else: 
         if len(index[0])==1: 
+            print('Input is not multiindex type. In this case, it is better to use \'matpd\'.')
             val=init('0',(len(index),p))
             rtn=pd.DataFrame(val,index=index)
             vname=sprod([['X'],list(np.array(range(0,p))+1)])
@@ -293,7 +295,6 @@ def initpd(index,p=1):
             rtn.columns=iname+vname
     return rtn    
 
-
 # string prod (slow code)
 ## possible form of index: 
 ### (1) [['X'],cc(1,5)]
@@ -303,7 +304,7 @@ def initpd(index,p=1):
 
 def sprod(index,sep=''): 
     try: len(index[0])
-    except TypeError: print('Input is not multiindex'); rtn=index
+    except TypeError: print('Input is not multiindex type.'); rtn=index
     else: 
         mindex=pd.MultiIndex.from_product(index)
         val=init("0",mindex.shape[0])
@@ -315,3 +316,5 @@ def sprod(index,sep=''):
                 rtn[i]=rtn[i]+str(mindextable.iloc[i,j])
     return rtn 
 
+def matpd(typ,n,p):
+    init(typ,(n,p))
