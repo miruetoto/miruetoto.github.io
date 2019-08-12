@@ -270,25 +270,29 @@ def apply(X,axis,fun):
 ### (3) [cc(1,5),cc(2,3)]
 ### (4) cc(1,5) # but this is single-indexed, so not recommended. 
 ... 
-def mpd(index,p=1): # mpd is short for multi-indexed pandas dataframe. 
-    try: len(index[0])
+def mpd(*index,p=1): # mpd is short for multi-indexed pandas dataframe. 
+    nofMindex=len(index)
+    indexListtype=[list(index[0])]
+    for i in range(1,nofMindex): indexListtype=indexListtype+[index[i]]
+    
+    try: len(indexListtype[0])
     except TypeError: 
         print('Input is not multiindex type. In this case, it is better to use \'matpd\'.')
-        val=init('0',(len(index),p))
-        rtn=pd.DataFrame(val,index=index)
-        vname=sprod([['X'],list(np.array(range(0,p))+1)])
+        val=init('0',(len(indexListtype),p))
+        rtn=pd.DataFrame(val,index=indexListtype)
+        vname=sprod('X',cc(1,p))
         rtn.columns=vname
     else: 
-        if len(index[0])==1: 
+        if len(indexListtype[0])==1: 
             print('Input is not multiindex type. In this case, it is better to use \'matpd\'.')
-            val=init('0',(len(index),p))
-            rtn=pd.DataFrame(val,index=index)
-            vname=sprod([['X'],list(np.array(range(0,p))+1)])
+            val=init('0',(len(indexListtype),p))
+            rtn=pd.DataFrame(val,index=indexListtype)
+            vname=sprod('X',cc(1,p))
             rtn.columns=vname
         else:
-            mindex=pd.MultiIndex.from_product(index)
-            iname=sprod([['index'],list(np.array(range(0,len(index)))+1)])
-            vname=sprod([['X'],list(np.array(range(0,p))+1)])
+            mindex=pd.MultiIndex.from_product(indexListtype)
+            iname=sprod('index',cc(1,len(indexListtype))
+            vname=sprod('X',cc(1,p))
             n=mindex.shape[0]
             val=init('0',(n,p))
             rtn=pd.DataFrame(val,index=mindex).reset_index()
