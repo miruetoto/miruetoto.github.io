@@ -3,23 +3,23 @@ import pandas as pd
 
 def cc(start=0,end=1,samplingFreq=1):
     rtn=m2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
-    if start==int(start) and end=int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
+    if start==int(start) and end==int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
     return rtn
 
 def co(start=0,end=1,samplingFreq=1):
     rtn=m2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T)
-    if start==int(start) and end=int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
+    if start==int(start) and end==int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
     return rtn
 
 def oc(start=0,end=1,samplingFreq=1):
     rtn=m2a(np.asmatrix(np.arange(start,end,1/samplingFreq)).T+1/samplingFreq)
-    if start==int(start) and end=int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
+    if start==int(start) and end==int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
     return rtn 
 
 def oo(start=0,end=1,samplingFreq=1):
     rtn=np.asmatrix(np.arange(start,end,1/samplingFreq)).T
     rtn=m2a(rtn[1:len(rtn)])
-    if start==int(start) and end=int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
+    if start==int(start) and end==int(end) and samplingFreq==int(samplingFreq): rtn=np.array(list(map(int,rtn)))
     return rtn 
 
 ### 입력은 n×p matrix , 혹은 n×p DataFrame 으로 바꿀 수 있는 어떤자료 / 출력 n×p np.matrix 임. 이때 첫번째 row가 0임. 
