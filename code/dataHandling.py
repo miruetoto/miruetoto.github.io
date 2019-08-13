@@ -298,7 +298,7 @@ def mpd(*index,p=1,iname=None,vname=None): # mpd is short for multi-indexed pand
     rtn.columns=iname+vname
     return rtn    
 
-def matpd(typ,n,p=1,vname==None): 
+def matpd(typ,n,p=1,vname=None): 
     if vname==None: vname=sprod('X',cc(1,p))
     val=init(typ,(n,p))
     rtn=pd.DataFrame(val)
