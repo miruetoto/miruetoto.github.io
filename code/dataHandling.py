@@ -281,7 +281,7 @@ def sprod(*index):
         
     return rtn
 
-def mpd(*index,p=1): # mpd is short for multi-indexed pandas dataframe. 
+def mpd(*index,p=1,iname=None,vname=None): # mpd is short for multi-indexed pandas dataframe. 
     nofMindex=len(index)
     indexListtype=list(range(0,nofMindex))
     for i in range(0,nofMindex):
@@ -290,16 +290,16 @@ def mpd(*index,p=1): # mpd is short for multi-indexed pandas dataframe.
         else: indexListtype[i]=index[i]
 
     mindex=pd.MultiIndex.from_product(indexListtype)
-    iname=sprod('index',cc(1,len(indexListtype)))
-    vname=sprod('X',cc(1,p))
+    if iname==None: iname=sprod('index',cc(1,len(indexListtype)))
+    if vname==None: vname=sprod('X',cc(1,p))
     n=mindex.shape[0]
     val=init('0',(n,p))
     rtn=pd.DataFrame(val,index=mindex).reset_index()
     rtn.columns=iname+vname
     return rtn    
 
-def matpd(typ,n,p=1): 
-    vname=sprod('X',cc(1,p))
+def matpd(typ,n,p=1,vname==None): 
+    if vname==None: vname=sprod('X',cc(1,p))
     val=init(typ,(n,p))
     rtn=pd.DataFrame(val)
     rtn.columns=vname
