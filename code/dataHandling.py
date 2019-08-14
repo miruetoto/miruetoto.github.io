@@ -118,7 +118,7 @@ def info(A):
     try: A.shape
     except AttributeError as e : print("shape of data : ",e)
     else: print("shape of data : ",A.shape)
-                     :  print("len or shape of data :   ",A.shape)
+
     
 ### n×1 이거나 1×n matrix를 길이가 n인 np.array로 변환 
 def m2a(A):
