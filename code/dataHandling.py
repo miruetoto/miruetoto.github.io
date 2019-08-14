@@ -281,7 +281,7 @@ def sprod(*index):
         
     return rtn
 
-def mpd(*index,p=1,iname=None,vname=None): # mpd is short for multi-indexed pandas dataframe. 
+def initmpd(*index,p=1,iname=None,vname=None): # mpd is short for multi-indexed pandas dataframe. 
     nofMindex=len(index)
     indexListtype=list(range(0,nofMindex))
     for i in range(0,nofMindex):
