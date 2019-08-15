@@ -142,7 +142,7 @@ def init(typ,dim):
     return rtn
 
 ### 행별 or 열별 연산 
-def apply(X,axis,fun): 
+def apply(X,axis,fun,plt=False): 
     Xmat=np.asmatrix(X)
     # identifying dim of input X
     if Xmat.shape[0]==1 and Xmat.shape[1]==1: Xtype='scala'
@@ -252,11 +252,11 @@ def apply(X,axis,fun):
     elif axis==1 and Xtype=='matrix' and funtype=='array2matrix':
         disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X     
-
-    if type(disp) is str : print(disp)
-    else: 
-        from IPython.display import display 
-        display(disp)
+    if plt==True:
+        if type(disp) is str : print(disp)
+        else:
+            from IPython.display import display 
+            display(disp)
     
     return rtn
 
