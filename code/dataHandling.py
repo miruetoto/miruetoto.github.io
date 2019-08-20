@@ -129,18 +129,6 @@ def m2a(A):
         rtn=A
     return rtn
 
-### 길이가 n인 array를 n×1 column vector 로 변환 
-def a2c(A):
-    A=np.array(A)
-    rtn=np.asmatrix(A).T
-    return rtn
-
-### 길이가 n인 array를 1×n row vector 로 변환 
-def a2r(A):
-    A=np.array(A)
-    rtn=np.asmatrix(A)
-    return rtn
-
 ### 초기화 (1) 0 (2) 유니폼 (3) 정규분포
 def init(typ,dim):
     if dim*0==0: 
