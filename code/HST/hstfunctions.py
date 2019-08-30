@@ -1,10 +1,4 @@
-import requests
-exec(requests.get('http://miruetoto.github.io/code/dataHandling.py').text)
-
-import matplotlib as mpl 
-import matplotlib.pyplot as plt 
-
-## HST 
+### 1. hst: calculation 
 def Smat(f,ϵ,Edg,W=None):
     n=len(f)
     nbhood1=init("0",(n,n)) # i 보다 높은 지형
@@ -81,7 +75,7 @@ def snowdist2(hstresult):
     #print('\n'+'end')
     return rtn
 
-### vis
+### 2. hst: visualization 
 
 def pcavis(hstresult,figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
     sdist=snowdist(hstresult) # get snow dist 
