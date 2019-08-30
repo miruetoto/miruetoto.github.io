@@ -1,6 +1,9 @@
 ### 1. hst: calculation 
 def Smat(f,ϵ,Edg,W=None):
     n=len(f)
+    Edgold=Edg[:,:]
+    Edg=init("0",(n,n))
+    Edg[Edgold>0]=1
     nbhood1=init("0",(n,n)) # i 보다 높은 지형
     nbhood2=init("0",(n,n)) # i 보다 낮은 지형
     for i in co(0,n):
