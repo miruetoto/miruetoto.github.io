@@ -1,9 +1,6 @@
 ### 1. hst: calculation 
 def Smat(f,ϵ,Edg,W=None):
     n=len(f)
-    Edgold=Edg[:,:]
-    Edg=init("0",(n,n))
-    Edg[Edgold>0]=1
     nbhood1=init("0",(n,n)) # i 보다 높은 지형
     nbhood2=init("0",(n,n)) # i 보다 낮은 지형
     for i in co(0,n):
@@ -30,7 +27,7 @@ def hst(f,Edg,τ,γ,rvsnow=False):
         else: ϵ=init("u",(n,1))*γ 
         S=Smat(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg)
         rtn['ϵ fall'+str(ℓ-1)]=ϵ
-        rtn['ϵ stack'+str(ℓ-1)]=np.multiply(S,Edg)*ϵ
+        rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
         rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ
         print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
     print('\n'+'hst end')
