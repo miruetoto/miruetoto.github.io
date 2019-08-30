@@ -19,14 +19,15 @@ def Smat(f,ϵ,Edg,W=None):
             else: S[i,j]=nbhood[i,j]/rowsumE[i]
     return S-np.diag(np.diag(S)*0.3)
 
-def hst(f,Edg,τ,γ):
+def hst(f,Edg,τ,γ,rvsnow=False):
     n=len(f)
     rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
     rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
     rtn['h0']=f
     print('hst start')
     for ℓ in cc(1,τ): 
-        ϵ=(init("0",(n,1))+1)*γ
+        if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
+        else: ϵ=init("u",(n,1))*γ 
         S=Smat(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg)
         rtn['ϵ fall'+str(ℓ-1)]=ϵ
         rtn['ϵ stack'+str(ℓ-1)]=np.multiply(S,Edg)*ϵ
