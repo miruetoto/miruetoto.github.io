@@ -1,20 +1,32 @@
 ### 1. hst: calculation 
 def Smat(f,ϵ,Edg,W=None):
     n=len(f)
-    nbhood1=init("0",(n,n)) # i 보다 높은 지형
-    nbhood2=init("0",(n,n)) # i 보다 낮은 지형
+    calU=init("0",(n,n)) # i 보다 높은 지형
+    calL=init("0",(n,n)) # i 보다 낮은 지형
     for i in co(0,n):
-        nbhood1[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
-        nbhood2[i,:]=(f<f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
-    nbhood=nbhood1 #nbhood=nbhood1-nbhood2
+        calU[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
+        calL[i,:]=(f<f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
+    Stemp=calU-calL
     S=init("0",(n,n))
     rowsumE=m2a(apply(Edg,1,'np.sum'))
-    rowsumN=m2a(apply(nbhood,1,'np.sum'))
+    rowsumN=m2a(apply(Stemp,1,'np.sum'))
     for i in co(0,n):
         for j in co(0,n):
             if i==j: S[i,j]=1-rowsumN[i]/rowsumE[i]
-            else: S[i,j]=nbhood[i,j]/rowsumE[i]
+            else: S[i,j]=Stemp[i,j]/rowsumE[i]
     return S-np.diag(np.diag(S)*1)
+
+def Smat2(f,ϵ,Edg,W=None):
+    n=len(f)
+    calU=init("0",(n,n)) # i 보다 높은 지형
+    for i in co(0,n):
+        calU[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
+    S=init("0",(n,n))
+    for i in co(0,n):
+        for j in co(0,n):
+            if i==j: S[i,j]=0
+            else: S[i,j]=calU[i,j]
+    return S
 
 def hst(f,Edg,τ,γ,rvsnow=False):
     n=len(f)
@@ -26,6 +38,23 @@ def hst(f,Edg,τ,γ,rvsnow=False):
         if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
         else: ϵ=init("u",(n,1))*γ 
         S=Smat(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg)
+        rtn['ϵ fall'+str(ℓ-1)]=ϵ
+        rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
+        rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ
+        print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
+    print('\n'+'hst end')
+    return rtn
+
+def hst2(f,Edg,τ,γ,rvsnow=False):
+    n=len(f)
+    rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
+    rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
+    rtn['h0']=f
+    print('hst start')
+    for ℓ in cc(1,τ): 
+        if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
+        else: ϵ=init("u",(n,1))*γ 
+        S=Smat2(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg) ## hst1과 hst2는 이부분만 다르다 
         rtn['ϵ fall'+str(ℓ-1)]=ϵ
         rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
         rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ
