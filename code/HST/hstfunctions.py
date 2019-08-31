@@ -6,7 +6,7 @@ def Smat(f,ϵ,Edg,W=None):
     for i in co(0,n):
         nbhood1[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
         nbhood2[i,:]=(f<f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
-    nbhood=nbhood1-nbhood2
+    nbhood=nbhood1 #nbhood=nbhood1-nbhood2
     S=init("0",(n,n))
     rowsumE=m2a(apply(Edg,1,'np.sum'))
     rowsumN=m2a(apply(nbhood,1,'np.sum'))
