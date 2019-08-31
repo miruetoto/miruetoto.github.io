@@ -5,7 +5,7 @@ def Smat(f,ϵ,Edg,W=None):
     nbhood2=init("0",(n,n)) # i 보다 낮은 지형
     for i in co(0,n):
         nbhood1[i,:]=(f>f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
-        nbhood2[i,:]=(f<f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
+        nbhood2[i,:]=(f<=f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
     nbhood=nbhood1-nbhood2
     S=init("0",(n,n))
     rowsumE=m2a(apply(Edg,1,'np.sum'))
