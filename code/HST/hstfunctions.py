@@ -20,7 +20,7 @@ def Smat2(f,ϵ,Edg,W=None):
     n=len(f)
     calU=init("0",(n,n)) # i 보다 높은 지형
     for i in co(0,n):
-        calU[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
+        calU[i,:]=(f>f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
     S=init("0",(n,n))
     for i in co(0,n):
         for j in co(0,n):
