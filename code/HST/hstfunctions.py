@@ -14,7 +14,7 @@ def Smat(f,ϵ,Edg,W=None):
         for j in co(0,n):
             if i==j: S[i,j]=1-rowsumN[i]/rowsumE[i]
             else: S[i,j]=nbhood[i,j]/rowsumE[i]
-    return S-np.diag(np.diag(S)*1)
+    return S#-np.diag(np.diag(S)*1)
 
 def hst(f,Edg,τ,γ,rvsnow=False):
     n=len(f)
