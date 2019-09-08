@@ -55,7 +55,6 @@ def rbind(*Mat):
             rtn=rbindtemp(rtn,Mat[i])
     return rtn 
 
-
 def cbindtemp(A,B):
     typ=['matrix','matrix']
     
@@ -156,7 +155,7 @@ def m2a(A):
         rtn=A
     return rtn
 
-### 초기화 (1) 0 (2) 유니폼 (3) 정규분포
+### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
 def init(typ,dim):
     if dim*0==0: 
         if typ=="0": rtn=np.zeros(dim)
@@ -168,8 +167,29 @@ def init(typ,dim):
         elif typ=="n": rtn=np.asmatrix(np.random.normal(0,1,dim))
     return rtn
 
+### elementwise 연산 
+# 입력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스
+# 출력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스 
+# 연산종류: scala2scala
+def transform(X,fun,plt=False):
+    Xmat=np.asmatrix(X)
+    rtn=eval('np.asmatrix(pd.DataFrame(Xmat).transform('+fun+'))')
+    if plt==True:
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        from IPython.display import display 
+        display(disp)
+    if Xmat.shape[0]==1 and Xmat.shape[1]==1: rtn=rtn[0,0] #Xtype='scala'
+    if Xmat.shape[0]==1 and Xmat.shape[1]>1: rtn=rtn #Xtype='colvec'
+    if Xmat.shape[0]>1 and Xmat.shape[1]==1: rtn=rtn #Xtype='rowvec'
+    if Xmat.shape[0]>1 and Xmat.shape[1]>1: rtn=rtn #Xtype='matrix'
+    return rtn 
+    
 ### 행별 or 열별 연산 
-def apply(X,axis,fun,plt=False): 
+# 입력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스
+# 출력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스 
+# 연산종류: array2array, array2scala. 여기에서 array는 colvec, rowvec 모두 포함함. 
+# axis종류: column wise, rowwise 
+def apply(X,axis=0,fun,plt=False):     # axis=0: column-wise / axis=1: row-wise. 
     Xmat=np.asmatrix(X)
     # identifying dim of input X
     if Xmat.shape[0]==1 and Xmat.shape[1]==1: Xtype='scala'
@@ -321,7 +341,8 @@ def initmpd(*index,p=1,iname=None,vname=None): # mpd is short for multi-indexed 
     val=init('0',(n,p))
     rtn=pd.DataFrame(val,index=mindex).reset_index()
     rtn.columns=iname+vname
-    return rtn    
+    return rtn
+# example: initmpd(['a','b','c'],['(i)','(ii)'],p=4)
 
 def initpd(typ,n,p=1,vname=None): 
     if vname==None: vname=sprod('X',cc(1,p))
