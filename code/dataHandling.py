@@ -29,7 +29,34 @@ def lagg(inputMatrix,lag):
     shifted[range(lag),:]=0
     return shifted
 
-def cbind(A,B):
+def cbind(*Mat):
+    lenofMat=len(Mat)
+    if lenofMat==1: 
+        print("You must enter two or more input objects.")
+        rtn=Mat[0]
+    elif lenofMat==2: 
+        rtn=cbindtemp(Mat[0],Mat[1])
+    else: 
+        rtn=cbindtemp(Mat[0],Mat[1])
+        for i in co(2,lenofMat):
+            rtn=cbindtemp(rtn,Mat[i])
+    return rtn 
+
+def rbind(*Mat):
+    lenofMat=len(Mat)
+    if lenofMat==1: 
+        print("You must enter two or more input objects.")
+        rtn=Mat[0]
+    elif lenofMat==2: 
+        rtn=rbindtemp(Mat[0],Mat[1])
+    else: 
+        rtn=rbindtemp(Mat[0],Mat[1])
+        for i in co(2,lenofMat):
+            rtn=rbindtemp(rtn,Mat[i])
+    return rtn 
+
+
+def cbindtemp(A,B):
     typ=['matrix','matrix']
     
     A=np.asmatrix(A)
@@ -69,7 +96,7 @@ def cbind(A,B):
     
     return np.hstack([A,B])
     
-def rbind(A,B):
+def rbindtemp(A,B):
     typ=['matrix','matrix']
     
     A=np.asmatrix(A)
