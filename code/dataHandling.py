@@ -179,6 +179,10 @@ def init(typ,dim):
 # 입력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스
 # 출력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스 
 # 연산종류: scala2scala
+# ** 판다스형태의 입력은 받지 않도록 한다. 이 경우는 판다스에 내장된 .transform 메소드를 사용하는것이 더 나음. 
+# ** 왜냐하면 데이터프레임->매트릭스로의 변환이 자유롭지 않기 떄문 
+
+
 def transform(X,fun,plt=False):
     Xmat=np.asmatrix(X)
     if Xmat.shape[0]==1 and Xmat.shape[1]==1: #Xtype='scala'
@@ -201,6 +205,9 @@ def transform(X,fun,plt=False):
 # 출력: 스칼라, 컬럼벡터, 로우벡터, 매트릭스 
 # 연산종류: array2array, array2scala. 여기에서 array는 colvec, rowvec 모두 포함함. 
 # axis종류: column wise, rowwise 
+# ** 판다스형태의 입력은 받지 않도록 한다. 이 경우는 판다스에 내장된 .apply 메소드를 사용하는것이 더 나음. 
+# ** 왜냐하면 데이터프레임->매트릭스로의 변환이 자유롭지 않기 때문임
+
 def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise. 
     Xmat=np.asmatrix(X)
     # identifying dim of input X
@@ -249,7 +256,7 @@ def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise.
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='colvec' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
     elif axis==0 and Xtype=='colvec' and funtype=='array2matrix':
         disp='The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.'
         rtn=X
