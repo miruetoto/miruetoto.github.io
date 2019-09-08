@@ -173,15 +173,20 @@ def init(typ,dim):
 # 연산종류: scala2scala
 def transform(X,fun,plt=False):
     Xmat=np.asmatrix(X)
-    rtn=eval('np.asmatrix(pd.DataFrame(X).transform('+fun+'))')
+    rtn=eval('np.asmatrix(pd.DataFrame(Xmat).transform('+fun+'))')
     if plt==True:
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
         from IPython.display import display 
         display(disp)
-    if Xmat.shape[0]==1 and Xmat.shape[1]==1: rtn=rtn[0,0] #Xtype='scala'
-    if Xmat.shape[0]==1 and Xmat.shape[1]>1: rtn=rtn #Xtype='colvec'
-    if Xmat.shape[0]>1 and Xmat.shape[1]==1: rtn=rtn #Xtype='rowvec'
-    if Xmat.shape[0]>1 and Xmat.shape[1]>1: rtn=rtn #Xtype='matrix'
+    if Xmat.shape[0]==1 and Xmat.shape[1]==1: #Xtype='scala'
+        rtn=eval('np.asmatrix(pd.DataFrame(Xmat).iloc[0,0].transform('+fun+'))')
+    if Xmat.shape[0]==1 and Xmat.shape[1]>1: #Xtype='colvec'
+        rtn=eval('np.asmatrix(pd.DataFrame(Xmat).iloc[:,0].transform('+fun+'))')
+    if Xmat.shape[0]>1 and Xmat.shape[1]==1: #Xtype='rowvec'
+        rtn=eval('np.asmatrix(pd.DataFrame(Xmat.T).iloc[0,:].transform('+fun+'))').T
+    if Xmat.shape[0]>1 and Xmat.shape[1]>1: #Xtype='matrix'
+        rtn=eval('np.asmatrix(pd.DataFrame(Xmat).iloc[:,:].transform('+fun+'))')
+
     return rtn 
     
 ### 행별 or 열별 연산 
