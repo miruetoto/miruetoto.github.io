@@ -157,13 +157,21 @@ def m2a(A):
 
 ### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
 def init(typ,dim):
-    if dim*0==0: 
+    if dim*0==0: # dim 이 1차원일 경우 
         if typ=="0": rtn=np.zeros(dim)
         elif typ=="u": rtn=np.random.random(dim)
+        elif typ=="I": 
+            print("In the case of vectors, you cannot define a identity matrix.")
+            rtn=np.ones(dim)             
         elif typ=="n": rtn=np.random.normal(0,1,dim)
-    else:
+        
+    else: # dim 이 2차원일 경우 
         if typ=="0": rtn=np.asmatrix(np.zeros(dim))
         elif typ=="u": rtn=np.asmatrix(np.random.random(dim))
+        elif typ=="I": 
+            if dim[0]==dim[1]: rtn=np.eye(dim[0])
+            elif dim[0]>dim[1]: rtn=rbind(np.eye(dim[1]),np.zeros((dim[0]-dim[1],dim[1])))
+            elif dim[0]<dim[1]: rtn=cbind(np.eye(dim[0]),np.zeros((dim[0],dim[1]-dim[0])))
         elif typ=="n": rtn=np.asmatrix(np.random.normal(0,1,dim))
     return rtn
 
