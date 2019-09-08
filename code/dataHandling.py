@@ -173,7 +173,7 @@ def init(typ,dim):
 # 연산종류: scala2scala
 def transform(X,fun,plt=False):
     Xmat=np.asmatrix(X)
-    rtn=eval('np.asmatrix(pd.DataFrame(Xmat).transform('+fun+'))')
+    rtn=eval('np.asmatrix(pd.DataFrame(X).transform('+fun+'))')
     if plt==True:
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
         from IPython.display import display 
