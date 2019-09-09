@@ -87,10 +87,9 @@ def snowdist(hstresult):
     n=len(hh)
     rtn=init("0",(n,n))
     for i in co(0,n):
-        #print(i,'/',n,sep='',end=' ')
+        print('\r'+str(i),'/'+str(n),sep='',end='')
         for j in co(0,n):
             rtn[i,j]=np.sqrt((hh[i,:]-hh[j,:])*(hh[i,:]-hh[j,:]).T)[0,0]
-    #print('\n'+'end')
     return rtn
 
 def snowdist2(hstresult): 
@@ -98,33 +97,31 @@ def snowdist2(hstresult):
     n=len(hhdot)
     rtn=init("0",(n,n))
     for i in co(0,n):
-        #print(i,'/',n,sep='',end=' ')
+        print('\r'+str(i),'/'+str(n),sep='',end='')
         for j in co(0,n):
             rtn[i,j]=cor(hh[i,:],hh[j,:])
-            
-    #print('\n'+'end')
     return rtn
 
 ### 2. hst: visualization 
 def pcavis(hstresult,figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
-    print("Calculating snowdist")
+    print("calculating snowdist")
     sdist=snowdist(hstresult) # get snow dist 
-    print("End")
+    print("end")
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
     print("PCA start")
     pca=PCA(n_components=3) # PCA start 
     pca.fit(sdist) 
     pcarslt=pca.transform(sdist) # PCA end 
-    print("End")
-    print("Drawing figure")
+    print("end")
+    print("drawing figure")
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=size[0],alpha=fade) # drawing each obs by scatter in 3d axes
-    print("End")
-    print("Labeling")
+    print("end")
+    print("labeling")
     for i in cc(1,n): 
         print('\r'+str(i),'/'+str(n),sep='',end='')
         ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=size[1], zorder=1,color='k') # numbering index of nodes 
-    print("End")
+    print("end")
     rtn=Fig 
