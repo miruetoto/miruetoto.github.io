@@ -223,7 +223,6 @@ def transform(X,fun,plt=False):
 # - 데이터프레임형태의 입력은 받지 않도록 한다. 이 경우는 판다스에 내장된 .apply 메소드를 사용하는것이 더 나음. 
 # - 특히 데이터프레임->매트릭스로의 변환이 자유롭지 않아 여기에서 에러가 발생할 수 있다. 
 # - 입력의 형태는 매트릭스로 고정한다. 벡터나 스칼라 입력은 받지않는다. 이 경우 apply 를 쓸 이유 자체가 없음. 
-
 def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise. 
     Xmat=np.asmatrix(X)
     # identifying dim of input X
@@ -243,19 +242,19 @@ def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise.
     
     # axis=0: column-wise
     if axis==0 and Xtype=='matrix' and funtype=='array2scala':
-        if plt==True: disp=pd.DataFrame(Xmat)
+        disp=pd.DataFrame(Xmat)
         rtn=eval('disp.apply('+fun+')')
-        if plt==True: disp=disp.T
-        if plt==True: disp['result']=rtn
+        disp=disp.T
+        disp['result']=rtn
         rtn=np.asmatrix(rtn)
-        if plt==True: disp=disp.T
+        disp=disp.T
     elif axis==0 and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='matrix' and funtype=='array2matrix':
         print('The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.')
         rtn=Xmat
-        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
         
     # axis=1: row-wise
     elif axis==1 and Xtype=='matrix' and funtype=='array2scala':
@@ -264,19 +263,18 @@ def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise.
         rtn=np.asmatrix(disp['result']).T
     elif axis==1 and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
-        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==1 and Xtype=='matrix' and funtype=='array2matrix':
         print('The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.')
         rtn=Xmat
-        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif Xtype=='scala' or Xtype=='rowvec' or Xtype=='colvec':
         print('Input of this function should be a matrix. Thus no operation is performed, therefore the output value is the same as the input value.')
         rtn=Xmat
-        if plt==True:
-            if Xtype=='colvec': 
-                disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
-            else:
-                disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=0)
+        if Xtype=='colvec': 
+            disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
+        else:
+            disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=0)
         if Xtype=='scala': rtn=Xmat[0,0]
     
     if plt==True:
