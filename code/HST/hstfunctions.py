@@ -86,42 +86,42 @@ def snowdist(hstresult):
     hh=hmat(hstresult)
     n=len(hh)
     rtn=init("0",(n,n))
+    print('snowdist')
     for i in co(0,n):
         print('\r'+str(i),'/'+str(n),sep='',end='')
         for j in co(0,n):
             rtn[i,j]=np.sqrt((hh[i,:]-hh[j,:])*(hh[i,:]-hh[j,:]).T)[0,0]
+    print('\n'+'end')
     return rtn
 
 def snowdist2(hstresult): 
     hhdot=ϵstackmat(hstresult)
     n=len(hhdot)
     rtn=init("0",(n,n))
+    print('snowdist')
     for i in co(0,n):
         print('\r'+str(i),'/'+str(n),sep='',end='')
         for j in co(0,n):
             rtn[i,j]=cor(hh[i,:],hh[j,:])
+    print('\n'+'end')
     return rtn
 
 ### 2. hst: visualization 
 def pcavis(hstresult,figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
-    print("calculating snowdist")
     sdist=snowdist(hstresult) # get snow dist 
-    print("end")
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
-    print("PCA start")
+    print('PCA start')
     pca=PCA(n_components=3) # PCA start 
     pca.fit(sdist) 
     pcarslt=pca.transform(sdist) # PCA end 
-    print("end")
-    print("drawing figure")
+    print('end')
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=size[0],alpha=fade) # drawing each obs by scatter in 3d axes
-    print("end")
-    print("labeling")
+    print('labeling')
     for i in cc(1,n): 
         print('\r'+str(i),'/'+str(n),sep='',end='')
         ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=size[1], zorder=1,color='k') # numbering index of nodes 
-    print("end")
+    print('\n'+'end')
     rtn=Fig 
