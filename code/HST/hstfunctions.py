@@ -89,7 +89,7 @@ def snowdist(hstresult):
     for i in co(0,n):
         #print(i,'/',n,sep='',end=' ')
         for j in co(0,n):
-            rtn[i,j]=cor(hh[i,:],hh[j,:])
+            rtn[i,j]=np.sqrt((hh[i,:]-hh[j,:])*(hh[i,:]-hh[j,:]).T)[0,0]
     #print('\n'+'end')
     return rtn
 
