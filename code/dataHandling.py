@@ -184,22 +184,29 @@ def init(typ,dim):
 # - 왜냐하면 데이터프레임->매트릭스로의 변환이 자유롭지 않기 떄문에 이로 인한 오류가 발생할 수 있음. 
 
 def transform(X,fun,plt=False):
-    Xpd=pd.DataFrame(X)
-    if Xpd.shape[0]==1 and Xpd.shape[1]==1: #Xtype='scala'
-        rtn=eval('Xpd.iloc[0,0].transform('+fun+')')
-        disp=pd.concat([Xpd,rtn],keys=['input','result'])
-        rtn=np.asmatrix(rtn)[0,0]
-    if Xpd.shape[0]==1 and Xpd.shape[1]>1: #Xtype='rowvec'
+    Xmat=np.asmatrix(X)
+    # identifying dim of input X
+    if Xmat.shape[0]==1 and Xmat.shape[1]==1: Xtype='scala'
+    if Xmat.shape[0]==1 and Xmat.shape[1]>1: Xtype='rowvec'
+    if Xmat.shape[0]>1 and Xmat.shape[1]==1: Xtype='colvec'
+    if Xmat.shape[0]>1 and Xmat.shape[1]>1: Xtype='matrix'
+    
+    Xpd=pd.DataFrame(Xmat)
+    if Xtype=='scala':
+        print('Scala is not appropriate as an input of this function. Thus no operation is performed, therefore the output value is the same as the input value. ')
+        rtn=X
+        if plt==True: disp=pd.concat([Xpd,Xpd],keys=['input','result'])
+    if Xtype=='rowvec':
         rtn=eval('Xpd.iloc[0,:].transform('+fun+')')
-        disp=pd.concat([Xpd,rtn],keys=['input','result'],axis=0)
+        if plt==True: disp=pd.concat([Xpd,pd.DataFrame(rtn).T],keys=['input','result'],axis=0)
         rtn=np.asmatrix(rtn)
-    if Xpd.shape[0]>1 and Xpd.shape[1]==1: #Xtype='colvec'
+    if Xtype=='colvec':
         rtn=eval('Xpd.iloc[:,0].transform('+fun+')')
-        disp=pd.concat([Xpd,rtn],keys=['input','result'],axis=1)
-        rtn=np.asmatrix(rtn)
-    if Xpd.shape[0]>1 and Xpd.shape[1]>1: #Xtype='matrix'
+        if plt==True: disp=pd.concat([Xpd,rtn],keys=['input','result'],axis=1)
+        rtn=np.asmatrix(rtn).T
+    if Xtype=='matrix':
         rtn=eval('Xpd.iloc[:,:].transform('+fun+')')
-        disp=pd.concat([Xpd,rtn],keys=['input','result'],axis=0)
+        if plt==True: disp=pd.concat([Xpd,rtn],keys=['input','result'],axis=0)
         rtn=np.asmatrix(rtn)
     if plt==True:
         from IPython.display import display 
@@ -236,19 +243,19 @@ def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise.
     
     # axis=0: column-wise
     if axis==0 and Xtype=='matrix' and funtype=='array2scala':
-        disp=pd.DataFrame(Xmat)
+        if plt==True: disp=pd.DataFrame(Xmat)
         rtn=eval('disp.apply('+fun+')')
-        disp=disp.T
-        disp['result']=rtn
+        if plt==True: disp=disp.T
+        if plt==True: disp['result']=rtn
         rtn=np.asmatrix(rtn)
-        disp=disp.T
+        if plt==True: disp=disp.T
     elif axis==0 and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
-        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==0 and Xtype=='matrix' and funtype=='array2matrix':
         print('The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.')
         rtn=Xmat
-        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
         
     # axis=1: row-wise
     elif axis==1 and Xtype=='matrix' and funtype=='array2scala':
@@ -257,19 +264,19 @@ def apply(X,fun,axis=0,plt=False):     # axis=0: column-wise / axis=1: row-wise.
         rtn=np.asmatrix(disp['result']).T
     elif axis==1 and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
-        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif axis==1 and Xtype=='matrix' and funtype=='array2matrix':
         print('The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.')
         rtn=Xmat
-        disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
+        if plt==True: disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
     elif Xtype=='scala' or Xtype=='rowvec' or Xtype=='colvec':
         print('Input of this function should be a matrix. Thus no operation is performed, therefore the output value is the same as the input value.')
         rtn=Xmat
-        if Xtype=='colvec': 
-            disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
-        else:
-            disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=0)
-        
+        if plt==True:
+            if Xtype=='colvec': 
+                disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=1)
+            else:
+                disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'],axis=0)
         if Xtype=='scala': rtn=Xmat[0,0]
     
     if plt==True:
