@@ -88,7 +88,7 @@ def snowdist(hstresult):
     rtn=init("0",(n,n))
     print('snowdist')
     for i in co(0,n):
-        print('\r'+str(i),'/'+str(n),sep='',end='')
+        print('\r'+str(i+1),'/'+str(n),sep='',end='')
         for j in co(0,n):
             rtn[i,j]=np.sqrt((hh[i,:]-hh[j,:])*(hh[i,:]-hh[j,:]).T)[0,0]
     print('\n'+'end')
@@ -100,7 +100,7 @@ def snowdist2(hstresult):
     rtn=init("0",(n,n))
     print('snowdist')
     for i in co(0,n):
-        print('\r'+str(i),'/'+str(n),sep='',end='')
+        print('\r'+str(i+1),'/'+str(n),sep='',end='')
         for j in co(0,n):
             rtn[i,j]=cor(hh[i,:],hh[j,:])
     print('\n'+'end')
