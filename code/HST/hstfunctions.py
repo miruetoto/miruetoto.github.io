@@ -111,11 +111,17 @@ def pcavis(hstresult,figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(s
     sdist=snowdist(hstresult) # get snow dist 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
+    print("PCA start")
     pca=PCA(n_components=3) # PCA start 
     pca.fit(sdist) 
     pcarslt=pca.transform(sdist) # PCA end 
+    print("PCA end")
+    print("Drawing figure")
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=size[0],alpha=fade) # drawing each obs by scatter in 3d axes
+    print("End")
+    print("Labeling")
     for i in cc(1,n): ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=size[1], zorder=1,color='k') # numbering index of nodes 
+    print("End")
     rtn=Fig 
