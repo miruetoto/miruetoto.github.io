@@ -77,11 +77,6 @@ def ϵstackmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('ϵ stack',cc(0,τ-1))])
     return rtn 
 
-def cor(a,b):
-    a=np.asmatrix(np.array(a)).T;b=np.asmatrix(np.array(b)).T; 
-    rtn=a.T*b/np.sqrt(a.T*a)/np.sqrt(b.T*b)
-    return rtn[0,0]
-
 def snowdist(hstresult): 
     hh=hmat(hstresult)
     n=len(hh)
@@ -93,6 +88,11 @@ def snowdist(hstresult):
             rtn[i,j]=np.sqrt((hh[i,:]-hh[j,:])*(hh[i,:]-hh[j,:]).T)[0,0]
     print('\n'+'end')
     return rtn
+
+def cor(a,b):
+    a=np.asmatrix(np.array(a)).T;b=np.asmatrix(np.array(b)).T; 
+    rtn=a.T*b/np.sqrt(a.T*a)/np.sqrt(b.T*b)
+    return rtn[0,0]
 
 def snowdist2(hstresult): 
     hhdot=ϵstackmat(hstresult)
