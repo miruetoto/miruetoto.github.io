@@ -1,51 +1,36 @@
 ### 1. hst: calculation 
-def Smat(f,ϵ,Edg,W=None):
-    n=len(f)
-    calU=init("0",(n,n)) # i 보다 높은 지형
-    calL=init("0",(n,n)) # i 보다 낮은 지형
-    for i in co(0,n):
-        calU[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
-        calL[i,:]=(f<f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
-    Stemp=calU-calL
-    S=init("0",(n,n))
-    rowsumE=m2a(apply(Edg,1,'np.sum'))
-    rowsumN=m2a(apply(Stemp,1,'np.sum'))
-    for i in co(0,n):
-        for j in co(0,n):
-            if i==j: S[i,j]=1-rowsumN[i]/rowsumE[i]
-            else: S[i,j]=Stemp[i,j]/rowsumE[i]
-    return S-np.diag(np.diag(S)*1)
 
-def Smat2(f,ϵ,Edg,W=None):
+def hst1(f,Edg,γ):
+# 1. choose u from {1,2,...,n}
+# 2. generate ϵ form U(0,1)
+# 3. f(u) <- f(u)+ϵ
+# 4. choose v \in N_i such that f(v) \leq f(u)
+# 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
+    # 1. choose u from {1,2,...,n}
     n=len(f)
-    calU=init("0",(n,n)) # i 보다 높은 지형
-    for i in co(0,n):
-        calU[i,:]=(f>f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
-    S=init("0",(n,n))
-    for i in co(0,n):
-        for j in co(0,n):
-            if i==j: S[i,j]=0
-            else: S[i,j]=calU[i,j]
-    return S
-
-def hst(f,Edg,τ,γ,rvsnow=False):
-    n=len(f)
-    rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
-    rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
-    rtn['h0']=f
-    print('hst start')
-    for ℓ in cc(1,τ): 
-        if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
-        else: ϵ=init("u",(n,1))*γ 
-        S=Smat(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg)
-        rtn['ϵ fall'+str(ℓ-1)]=ϵ
-        rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
-        rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ
-        print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
-    print('\n'+'hst end')
+    from random import sample 
+    u=sample(list(co(0,n)),1)[0]
+    # 2. generate ϵ form U(0,1)
+    ϵ=init('u',1)[0]*γ
+    rtn=f.copy()
+    ##i=1
+    while True:
+        ##print(i)
+        # 3. f(u) <- f(u)+ϵ*0.9
+        rtn[u]=rtn[u]+ϵ*0.9 
+        # 4. choose v \in N_u such that f(v) \leq f(u)
+        N_u=list(np.where(Edg[u,:]==1)[1])
+        stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
+        if stop_criterion==0: break;
+        else: 
+            v=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
+            rtn[v]=rtn[v]+ϵ*Edg[u,v]
+        u=v
+        ##i=i+1
+    # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
 
-def hst2(f,Edg,τ,γ,rvsnow=False):
+def hst(f,Edg,τ,γ):
     n=len(f)
     rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
     rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
@@ -53,12 +38,7 @@ def hst2(f,Edg,τ,γ,rvsnow=False):
     print('hst start')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
-        if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
-        else: ϵ=init("u",(n,1))*γ 
-        S=Smat2(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg) ## hst1과 hst2는 이부분만 다르다 
-        rtn['ϵ fall'+str(ℓ-1)]=ϵ
-        rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
-        rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ        
+        rtn['h'+str(ℓ)]=hst1(rtn['h'+str(ℓ-1)],Edg,γ=0.1)
     print('\n'+'hst end')
     return rtn
 
@@ -125,3 +105,69 @@ def pcavis(hstresult,figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(s
         ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=size[1], zorder=1,color='k') # numbering index of nodes 
     print('\n'+'end')
     rtn=Fig 
+
+### 3. old functions
+
+def Smat_old(f,ϵ,Edg,W=None):
+    n=len(f)
+    calU=init("0",(n,n)) # i 보다 높은 지형
+    calL=init("0",(n,n)) # i 보다 낮은 지형
+    for i in co(0,n):
+        calU[i,:]=(f>=f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
+        calL[i,:]=(f<f[i,:]).T&(Edg[i,:]>0) #nbhood2[i,:]=(f+ϵ[i]<f[i,:]).T&(Edg[i,:]>0)
+    Stemp=calU-calL
+    S=init("0",(n,n))
+    rowsumE=m2a(apply(Edg,1,'np.sum'))
+    rowsumN=m2a(apply(Stemp,1,'np.sum'))
+    for i in co(0,n):
+        for j in co(0,n):
+            if i==j: S[i,j]=1-rowsumN[i]/rowsumE[i]
+            else: S[i,j]=Stemp[i,j]/rowsumE[i]
+    return S-np.diag(np.diag(S)*1)
+
+def Smat2_old(f,ϵ,Edg,W=None):
+    n=len(f)
+    calU=init("0",(n,n)) # i 보다 높은 지형
+    for i in co(0,n):
+        calU[i,:]=(f>f[i,:]).T&(Edg[i,:]>0) #nbhood1[i,:]=(f>f[i,:]+ϵ[i]).T&(Edg[i,:]>0)
+    S=init("0",(n,n))
+    for i in co(0,n):
+        for j in co(0,n):
+            if i==j: S[i,j]=0
+            else: S[i,j]=calU[i,j]
+    return S
+
+def hst_old(f,Edg,τ,γ,rvsnow=False):
+    n=len(f)
+    rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
+    rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
+    rtn['h0']=f
+    print('hst start')
+    for ℓ in cc(1,τ): 
+        if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
+        else: ϵ=init("u",(n,1))*γ 
+        S=Smat(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg)
+        rtn['ϵ fall'+str(ℓ-1)]=ϵ
+        rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
+        rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ
+        print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
+    print('\n'+'hst end')
+    return rtn
+
+def hst2_old(f,Edg,τ,γ,rvsnow=False):
+    n=len(f)
+    rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
+    rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
+    rtn['h0']=f
+    print('hst start')
+    for ℓ in cc(1,τ): 
+        print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
+        if rvsnow==False: ϵ=(init("0",(n,1))+1)*γ 
+        else: ϵ=init("u",(n,1))*γ 
+        S=Smat2(np.asmatrix(rtn.eval('h'+str(ℓ-1))).T,ϵ,Edg) ## hst1과 hst2는 이부분만 다르다 
+        rtn['ϵ fall'+str(ℓ-1)]=ϵ
+        rtn['ϵ stack'+str(ℓ-1)]=S*ϵ
+        rtn['h'+str(ℓ)]=np.asmatrix(rtn.eval('h'+str(ℓ-1))).T+S*ϵ        
+    print('\n'+'hst end')
+    return rtn
+
