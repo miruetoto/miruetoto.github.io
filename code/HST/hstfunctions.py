@@ -43,7 +43,7 @@ def hst(f,Edg,τ,γ):
     return rtn
 
 def hmat(hstresult):
-    τ=int((hstresult.shape[1]-2)/3)
+    τ=int((hstresult.shape[1]-2))
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
     return rtn 
 
