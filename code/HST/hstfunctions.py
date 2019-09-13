@@ -58,16 +58,9 @@ def ϵstackmat(hstresult):
     return rtn 
 
 def snowdist(hstresult): 
-    hh=hmat(hstresult)
-    n=len(hh)
-    rtn=init("0",(n,n))
-    print('snowdist')
-    for i in co(0,n):
-        print('\r'+str(i+1),'/'+str(n),sep='',end='')
-        for j in co(0,n):
-            rtn[i,j]=np.sqrt((hh[i,:]-hh[j,:])*(hh[i,:]-hh[j,:]).T)[0,0]
-    print('\n'+'end')
-    return rtn
+    hh=np.array(hmat(hstresult))
+    rtn=np.sqrt(np.sum((hh[:,np.newaxis,:]-hh[np.newaxis,:,:])**2,axis=-1))
+    return np.asmatrix(rtn)
 
 def cor(a,b):
     a=np.asmatrix(np.array(a)).T;b=np.asmatrix(np.array(b)).T; 
