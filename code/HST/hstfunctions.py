@@ -107,7 +107,7 @@ def pcavis(hstresult,nodename=None,groupindex=None,
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=size[1], zorder=1,color='k') # numbering index of nodes 
         print('\n'+'end')
         rtn=Fig 
-    fig.savefig(figname+'.png')
+    rtn.savefig(figname+'.png')
 
 ### 3. old functions
 
