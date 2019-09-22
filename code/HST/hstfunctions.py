@@ -59,25 +59,23 @@ def ϵstackmat(hstresult):
 
 def snowdist(hstresult): 
     hh=np.array(hmat(hstresult))
-    rtn=np.sqrt(np.sum((hh[:,np.newaxis,:]-hh[np.newaxis,:,:])**2,axis=-1))
+    n=len(hh)
+    rtn=np.array(init('0',(n,n)))
+    try: 
+        rtn=np.sqrt(np.sum((hh[:,np.newaxis,:]-hh[np.newaxis,:,:])**2,axis=-1))
+    except MemoryError:
+        print("※ Not enough memory to parallelly calculate the snow distance.")
+        print('calculating snowdistance serially')
+        for i in co(0,n):
+            rtn[i,:]=np.sqrt(np.sum((hh[i,:]-hh[:,:])**2,axis=1))
+            print('\r'+str(i),'/'+str(n),sep='',end='')
+        print('\n'+'end')
     return np.asmatrix(rtn)
 
 def cor(a,b):
     a=np.asmatrix(np.array(a)).T;b=np.asmatrix(np.array(b)).T; 
     rtn=a.T*b/np.sqrt(a.T*a)/np.sqrt(b.T*b)
     return rtn[0,0]
-
-def snowdist2(hstresult): 
-    hhdot=ϵstackmat(hstresult)
-    n=len(hhdot)
-    rtn=init("0",(n,n))
-    print('snowdist')
-    for i in co(0,n):
-        print('\r'+str(i+1),'/'+str(n),sep='',end='')
-        for j in co(0,n):
-            rtn[i,j]=cor(hh[i,:],hh[j,:])
-    print('\n'+'end')
-    return rtn
 
 ### 2. hst: visualization 
 def pcavis(hstresult,figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
