@@ -64,8 +64,7 @@ def snowdist(hstresult):
     try: 
         rtn=np.sqrt(np.sum((hh[:,np.newaxis,:]-hh[np.newaxis,:,:])**2,axis=-1))
     except MemoryError:
-        print("※ Not enough memory to parallelly calculate the snow distance.")
-        print('calculating snowdistance serially')
+        print('calculating snowdistance serially(due to lack of memory)')
         for i in co(0,n):
             rtn[i,:]=np.sqrt(np.sum((hh[i,:]-hh[:,:])**2,axis=1))
             print('\r'+str(i),'/'+str(n),sep='',end='')
