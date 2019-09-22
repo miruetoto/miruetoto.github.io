@@ -79,7 +79,7 @@ def cor(a,b):
 
 ### 2. hst: visualization 
 def pcavis(hstresult,nodename=None,groupindex=None,
-           figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
+           figname='temp',figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
     sdist=snowdist(hstresult) # get snow dist 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
@@ -107,7 +107,7 @@ def pcavis(hstresult,nodename=None,groupindex=None,
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=size[1], zorder=1,color='k') # numbering index of nodes 
         print('\n'+'end')
         rtn=Fig 
-    return rtn
+    fig.savefig(figname+'.png')
 
 ### 3. old functions
 
