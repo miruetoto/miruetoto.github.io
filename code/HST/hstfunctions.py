@@ -1,6 +1,6 @@
 ### 1. hst: calculation 
 
-def hst1(f,Edg,γ):
+def hst1(f,Edg,b,γ):
 # 1. choose u from {1,2,...,n}
 # 2. generate ϵ form U(0,1)
 # 3. f(u) <- f(u)+ϵ
@@ -11,13 +11,13 @@ def hst1(f,Edg,γ):
     from random import sample 
     u=sample(list(co(0,n)),1)[0]
     # 2. generate ϵ form U(0,1)
-    ϵ=init('u',1)[0]*γ
+    ϵ=init('u',1)[0]*b
     rtn=f.copy()
     ##i=1
     while True:
         ##print(i)
         # 3. f(u) <- f(u)+ϵ*0.9
-        rtn[u]=rtn[u]+ϵ*0.9 
+        rtn[u]=rtn[u]+ϵ*γ
         # 4. choose v \in N_u such that f(v) \leq f(u)
         N_u=list(np.where(Edg[u,:]==1)[1])
         stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
@@ -30,7 +30,7 @@ def hst1(f,Edg,γ):
     # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
 
-def hst(f,Edg,τ,γ):
+def hst(f,Edg,τ,b,γ):
     n=len(f)
     rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
     rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
@@ -38,7 +38,8 @@ def hst(f,Edg,τ,γ):
     print('hst start')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
-        rtn['h'+str(ℓ)]=hst1(rtn['h'+str(ℓ-1)],Edg,γ=0.1)
+        Edgtemp=(init('u',(n,n))<Edg)*1
+        rtn['h'+str(ℓ)]=hst1(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,γ=γ)
     print('\n'+'hst end')
     return rtn
 
