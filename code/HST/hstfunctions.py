@@ -77,9 +77,9 @@ def cor(a,b):
     return rtn[0,0]
 
 ### 2. hst: visualization 
-def datavis1d(f,nodename=None,groupindex=None,
+def datavis4ts(f,nodename=None,groupindex=None,
            figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1):
-    n=f.shape[0]
+    n=len(f)
     
     if groupindex==None: colors=[0]*n
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
@@ -107,6 +107,38 @@ def datavis1d(f,nodename=None,groupindex=None,
         rtn=Fig 
     rtn.savefig(figname+'.png')
 
+def datavis4sct(v1,v2,nodename=None,groupindex=None,
+           figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1):
+    n=len(v1)
+    
+    if groupindex==None: colors=[0]*n
+    elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
+    else: colors=np.array(groupindex)
+    
+    v1=np.array(v1)
+    v2=np.array(v2)
+    figsize=(15*figsize[0],10*figsize[1])
+    dpi=200*dpi
+    cex=20*cex
+    text=15*text
+    fade=fade
+    
+    Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
+    ax=plt.axes()
+    plt.scatter(v1,v2,c=colors,s=cex,alpha=fade)
+    style=dict(size=text,color='k')
+    
+    if nodename==None:
+        for i in cc(1,n): 
+            ax.text(v1[i-1],v2[i-1],'%s'% str(i), **style) # numbering index of nodes 
+        rtn=Fig 
+    else: 
+        for i in cc(1,n): 
+            ax.text(v1[i-1],v2[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
+        rtn=Fig 
+    rtn.savefig(figname+'.png')
+    
+    
 def pcavis(hstresult,nodename=None,groupindex=None,
            figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
 
