@@ -77,8 +77,39 @@ def cor(a,b):
     return rtn[0,0]
 
 ### 2. hst: visualization 
+def datavis1d(f,nodename=None,groupindex=None,
+           figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1):
+    n=f.shape[0]
+    
+    if groupindex==None: colors=[0]*n
+    elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
+    else: colors=np.array(groupindex)
+    
+    f=np.array(f)
+    figsize=(15*figsize[0],10*figsize[1])
+    dpi=200*dpi
+    cex=20*cex
+    text=15*text
+    fade=fade
+    
+    Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
+    ax=plt.axes()
+    plt.scatter(cc(1,n),f,c=colors,s=cex,alpha=fade)
+    style=dict(size=text,color='k')
+    
+    if nodename==None:
+        for i in cc(1,n): 
+            ax.text(i,f[i-1],'%s'% str(i), **style) # numbering index of nodes 
+        rtn=Fig 
+    else: 
+        for i in cc(1,n): 
+            ax.text(i,f[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
+        rtn=Fig 
+    rtn.savefig(figname+'.png')
+
 def pcavis(hstresult,nodename=None,groupindex=None,
-           figname='temp',figsize=(15, 10),dpi=600,size=(200,15),fade=0.5): # size=(size of obs representation, size of text which represent obs index)
+           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
+
     sdist=snowdist(hstresult) # get snow dist 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
@@ -88,26 +119,35 @@ def pcavis(hstresult,nodename=None,groupindex=None,
     pcarslt=pca.transform(sdist) # PCA end 
     print('end')
 
+    n=len(hstresult)
+    if groupindex==None: colors=[0]*n
+    elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
+    else: colors=np.array(groupindex)
+
+    figsize=(15*figsize[0],10*figsize[1])
+    dpi=200*dpi
+    cex=200*cex
+    text=15*text
+    fade=fade
+    
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
-    ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=size[0],alpha=fade) # drawing each obs by scatter in 3d axes   
+    ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
     print('labeling (observation-wise)')
     if nodename==None:
-        n=len(hstresult)
         for i in cc(1,n): 
             print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=size[1], zorder=1,color='k') # numbering index of nodes 
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
         print('\n'+'end')
         rtn=Fig 
     else: 
-        n=len(nodename)
         for i in cc(1,n): 
             print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=size[1], zorder=1,color='k') # numbering index of nodes 
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         print('\n'+'end')
         rtn=Fig 
     rtn.savefig(figname+'.png')
-
+    
 ### 3. old functions
 
 def Smat_old(f,ϵ,Edg,W=None):
