@@ -74,8 +74,8 @@ def snowdist(hstresult):
         print('\n'+'end')
     return np.asmatrix(rtn)
 
-# Dist2W 
-def dist2W(dist,θ=1):
+# Dist2Edg
+def dist2Edg(dist,θ=1):
     n=len(dist)
     rtn=init('0',(n,n))
     for i in co(0,n):
@@ -89,6 +89,7 @@ def Glaplacian(Edg):
     D=np.asmatrix(np.diag(m2a(apply(Edg,'sum'))))
     rtn=D-Edg
     return rtn
+
 
 ### 2. hst: visualization 
 def datavis4ts(f,nodename=None,groupindex=None,
