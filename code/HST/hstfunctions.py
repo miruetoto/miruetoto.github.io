@@ -140,19 +140,18 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     rtn.savefig(figname+'.png')
     
     
-def pcavis(hstresult,nodename=None,groupindex=None,
+def pcavis(sdistresult,nodename=None,groupindex=None,
            figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
 
-    sdist=snowdist(hstresult) # get snow dist 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
     print('PCA start')
     pca=PCA(n_components=3) # PCA start 
     pca.fit(sdist) 
-    pcarslt=pca.transform(sdist) # PCA end 
+    pcarslt=pca.transform(sdistresult) # PCA end 
     print('end')
 
-    n=len(hstresult)
+    n=len(sdistresult)
     if groupindex==None: colors=[0]*n
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
