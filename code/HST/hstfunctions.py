@@ -147,7 +147,7 @@ def pcavis(sdistresult,nodename=None,groupindex=None,
     from mpl_toolkits import mplot3d
     print('PCA start')
     pca=PCA(n_components=3) # PCA start 
-    pca.fit(sdist) 
+    pca.fit(sdistresult) 
     pcarslt=pca.transform(sdistresult) # PCA end 
     print('end')
 
