@@ -38,7 +38,9 @@ def hst(f,Edg,τ,b,γ):
     print('hst start')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
-        Edgtemp=(init('u',(n,n))<Edg)*1
+        Edgtemp=init('0',(n,n))
+        while np.sum(Edgtemp)>0: 
+            Edgtemp=(init('u',(n,n))<Edg)*1
         rtn['h'+str(ℓ)]=hst1(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,γ=γ)
     print('\n'+'hst end')
     return rtn
@@ -72,10 +74,21 @@ def snowdist(hstresult):
         print('\n'+'end')
     return np.asmatrix(rtn)
 
-def cor(a,b):
-    a=np.asmatrix(np.array(a)).T;b=np.asmatrix(np.array(b)).T; 
-    rtn=a.T*b/np.sqrt(a.T*a)/np.sqrt(b.T*b)
-    return rtn[0,0]
+# Dist2W 
+def dist2W(dist,θ=1):
+    n=len(dist)
+    rtn=init('0',(n,n))
+    for i in co(0,n):
+        for j in co(0,n):
+            if i==j: rtn[i,j]=0
+            else: rtn[i,j]=np.exp(-dist[i,j]**2/θ)
+    return rtn
+
+# Lplcn
+def Glaplacian(Edg):
+    D=np.asmatrix(np.diag(m2a(apply(Edg,'sum'))))
+    rtn=D-Edg
+    return rtn
 
 ### 2. hst: visualization 
 def datavis4ts(f,nodename=None,groupindex=None,
