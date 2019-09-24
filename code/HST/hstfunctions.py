@@ -61,7 +61,26 @@ def ϵstackmat(hstresult):
     return rtn 
 
 def snowdist(hstresult): 
-    hh=np.array(hmat(hstresult))
+    hh=hmat(hstresult)
+    rtn=L2dist(hh)
+    return rtn
+
+def dist2Edg(dist,θ=1):
+    n=len(dist)
+    rtn=init('0',(n,n))
+    for i in co(0,n):
+        for j in co(0,n):
+            if i==j: rtn[i,j]=0
+            else: rtn[i,j]=np.exp(-dist[i,j]**2/θ)
+    return rtn
+
+def Glaplacian(Edg):
+    D=np.asmatrix(np.diag(m2a(apply(Edg,'sum'))))
+    rtn=D-Edg
+    return rtn
+
+def L2dist(hh): #hh:=n*p 
+    hh=np.array(hh)
     n=len(hh)
     rtn=np.array(init('0',(n,n)))
     try: 
@@ -73,22 +92,6 @@ def snowdist(hstresult):
             print('\r'+str(i),'/'+str(n),sep='',end='')
         print('\n'+'end')
     return np.asmatrix(rtn)
-
-# Dist2Edg
-def dist2Edg(dist,θ=1):
-    n=len(dist)
-    rtn=init('0',(n,n))
-    for i in co(0,n):
-        for j in co(0,n):
-            if i==j: rtn[i,j]=0
-            else: rtn[i,j]=np.exp(-dist[i,j]**2/θ)
-    return rtn
-
-# Lplcn
-def Glaplacian(Edg):
-    D=np.asmatrix(np.diag(m2a(apply(Edg,'sum'))))
-    rtn=D-Edg
-    return rtn
 
 
 ### 2. hst: visualization 
