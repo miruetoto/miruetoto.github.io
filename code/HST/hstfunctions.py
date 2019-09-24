@@ -39,7 +39,7 @@ def hst(f,Edg,τ,b,γ):
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
         Edgtemp=init('0',(n,n))
-        while np.sum(Edgtemp)>0: 
+        while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
         rtn['h'+str(ℓ)]=hst1(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,γ=γ)
     print('\n'+'hst end')
