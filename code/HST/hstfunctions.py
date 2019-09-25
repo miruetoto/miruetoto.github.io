@@ -60,9 +60,10 @@ def ϵstackmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('ϵ stack',cc(0,τ-1))])
     return rtn 
 
-def snowdist(hstresult): 
+def snowdist(hstresult,τmax=None): 
     hh=hmat(hstresult)
-    rtn=L2dist(hh)
+    if τmax==None: rtn=L2dist(hh)
+    else: rtn=L2dist(hh[:,0:(τmax+1)])
     return rtn
 
 def dist2Edg(dist,θ=1):
@@ -157,7 +158,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     rtn.savefig(figname+'.png')
     
     
-def pcavis(sdistresult,nodename=None,groupindex=None,
+def pca4vis(sdistresult,nodename=None,groupindex=None,
            figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -196,6 +197,14 @@ def pcavis(sdistresult,nodename=None,groupindex=None,
         print('\n'+'end')
         rtn=Fig 
     rtn.savefig(figname+'.png')
+
+def pca4msvis(hstresult,τlist,
+              nodename=None,groupindex=None,
+              figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
+    M=len(τlist)
+    for m in co(0,M):
+        sdistrslt=snowdist(hstresult,τmax=τlist[m])
+        pca4vis(sdistrslt,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
     
 ### 3. old functions
 
