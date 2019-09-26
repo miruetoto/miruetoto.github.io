@@ -60,8 +60,8 @@ def ϵstackmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('ϵ stack',cc(0,τ-1))])
     return rtn 
 
-def snowdist(hstresult,τmax=None): 
-    hh=hmat(hstresult)
+def snowdist(hh,τmax=None): 
+    #hh=hmat(hstresult)
     if τmax==None: rtn=L2dist(hh)
     else: rtn=L2dist(hh[:,0:(τmax+1)])
     return rtn
@@ -80,16 +80,16 @@ def Glaplacian(Edg):
     rtn=D-Edg
     return rtn
 
-def L2dist(hh): #hh:=n*p 
-    hh=np.array(hh)
-    n=len(hh)
+def L2dist(hhlike): #hh:=n*p 
+    hhlike=np.array(hhlike)
+    n=len(hhlike)
     rtn=np.array(init('0',(n,n)))
     try: 
-        rtn=np.sqrt(np.sum((hh[:,np.newaxis,:]-hh[np.newaxis,:,:])**2,axis=-1))
+        rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]-hhlike[np.newaxis,:,:])**2,axis=-1))
     except MemoryError:
         print('calculating snowdistance serially(due to lack of memory)')
         for i in co(0,n):
-            rtn[i,:]=np.sqrt(np.sum((hh[i,:]-hh[:,:])**2,axis=1))
+            rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]-hhlike[:,:])**2,axis=1))
             print('\r'+str(i),'/'+str(n),sep='',end='')
         print('\n'+'end')
     return np.asmatrix(rtn)
