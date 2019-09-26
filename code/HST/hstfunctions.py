@@ -14,7 +14,9 @@ def hst1(f,Edg,b,γ):
     ϵ=init('u',1)[0]*b
     rtn=f.copy()
     ##i=1
+    iter=0
     while True:
+        iter=iter+1
         ##print(i)
         # 3. f(u) <- f(u)+ϵ*0.9
         rtn[u]=rtn[u]+ϵ*γ
@@ -22,6 +24,7 @@ def hst1(f,Edg,b,γ):
         N_u=list(np.where(Edg[u,:]==1)[1])
         stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
         if stop_criterion==0: break;
+        if iter>50: break;
         else: 
             v=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
             rtn[v]=rtn[v]+ϵ*Edg[u,v]
