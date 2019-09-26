@@ -202,8 +202,9 @@ def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
               figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
     M=len(τlist)
+    hh=hmat(hstresult)
     for m in co(0,M):
-        sdistrslt=snowdist(hstresult,τmax=τlist[m])
+        sdistrslt=snowdist(hh,τmax=τlist[m])
         pca4vis(sdistrslt,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
     
 ### 3. old functions
