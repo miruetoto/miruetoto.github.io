@@ -1,3 +1,7 @@
+import requests
+exec(requests.get('http://miruetoto.github.io/code/dataHandling.py').text)
+exec(requests.get('http://miruetoto.github.io/code/HST/hstfunctions.py').text)
+
 ## load data
 url='https://raw.githubusercontent.com/miruetoto/miruetoto.github.io/master/data/CollegeMsg.csv'
 #data=pd.read_csv("CollegeMsg.csv")
