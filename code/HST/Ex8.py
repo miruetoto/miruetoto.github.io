@@ -67,5 +67,5 @@ R10=cbind(Zeros,Zeros,Zeros,Zeros,Zeros,Iden,Edg10)
 
 Edgtemp=rbind(R4,R5,R6,R7,R8,R9,R10)
 Edg=Edgtemp/np.max(Edgtemp)
-f=init('0',len(nodename))
+f=init('0',len(vname))
 hstrslt=hst(f,Edg,τ=20000,γ=0.5,b=0.1)
