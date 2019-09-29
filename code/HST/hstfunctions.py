@@ -167,11 +167,11 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
-    if prnt=True: print('PCA start')
+    if prnt==True: print('PCA start')
     pca=PCA(n_components=3) # PCA start 
     pca.fit(sdistresult) 
     pcarslt=pca.transform(sdistresult) # PCA end 
-    if prnt=True: print('end')
+    if prnt==True: print('end')
 
     n=len(sdistresult)
     if groupindex==None: colors=[0]*n
