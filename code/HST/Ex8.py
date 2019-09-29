@@ -56,6 +56,8 @@ for i in co(0,len(data10)):
     Edg10[data10.iloc[i,0]-1,data10.iloc[i,1]-1] =Edg10[data10.iloc[i,0]-1,data10.iloc[i,1]-1] + 1 
     Edg10[data10.iloc[i,1]-1,data10.iloc[i,0]-1] =Edg10[data10.iloc[i,1]-1,data10.iloc[i,0]-1] + 1 
 
+maxcount=np.max([np.max(Edg4),np.max(Edg5),np.max(Edg6),np.max(Edg7),np.max(Edg8),np.max(Edg9),np.max(Edg10)])
+
 Iden=1*init('I',(n,n));Zeros=init('0',(n,n)) # n=1899 
 R4=cbind(Edg4,Iden,Zeros,Zeros,Zeros,Zeros,Zeros)
 R5=cbind(Iden,Edg5,Iden,Zeros,Zeros,Zeros,Zeros)
@@ -66,6 +68,8 @@ R9=cbind(Zeros,Zeros,Zeros,Zeros,Iden,Edg9,Iden)
 R10=cbind(Zeros,Zeros,Zeros,Zeros,Zeros,Iden,Edg10)
 
 Edgtemp=rbind(R4,R5,R6,R7,R8,R9,R10)
-Edg=Edgtemp/np.max(Edgtemp)
+
+Edg=Edgtemp-np.mean(Edgtemp[np.where(Edgtemp>0)])
+Edg=transform(Edg,'lambda inpt: np.exp(inpt)/(1+np.exp(inpt))')
+
 f=init('0',len(vname))
-hstrslt=hst(f,Edg,τ=20000,γ=0.5,b=0.1)
