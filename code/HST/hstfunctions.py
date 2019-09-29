@@ -201,6 +201,7 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
         if prnt==True: print('\n'+'end')
         rtn=Fig 
     rtn.savefig(figname+'.png')
+    plt.close(all)
 
 def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
