@@ -63,10 +63,10 @@ def ϵstackmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('ϵ stack',cc(0,τ-1))])
     return rtn 
 
-def snowdist(hh,τmax=None): 
+def snowdist(hh,τmax=None,prnt=False): 
     #hh=hmat(hstresult)
-    if τmax==None: rtn=L2dist(hh)
-    else: rtn=L2dist(hh[:,0:(τmax+1)])
+    if τmax==None: rtn=L2dist(hh,prnt=prnt)
+    else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
     return rtn
 
 def dist2Edg(dist,θ=1):
@@ -83,18 +83,18 @@ def Glaplacian(Edg):
     rtn=D-Edg
     return rtn
 
-def L2dist(hhlike): #hh:=n*p 
+def L2dist(hhlike,prnt=False): #hh:=n*p 
     hhlike=np.array(hhlike)
     n=len(hhlike)
     rtn=np.array(init('0',(n,n)))
     try: 
         rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]-hhlike[np.newaxis,:,:])**2,axis=-1))
     except MemoryError:
-        print('calculating snowdistance serially(due to lack of memory)')
+        if prnt==True: print('calculating snowdistance serially(due to lack of memory)')
         for i in co(0,n):
             rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]-hhlike[:,:])**2,axis=1))
-            print('\r'+str(i),'/'+str(n),sep='',end='')
-        print('\n'+'end')
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+        if prnt==True: print('\n'+'end')
     return np.asmatrix(rtn)
 
 
@@ -162,15 +162,16 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     
     
 def pca4vis(sdistresult,nodename=None,groupindex=None,
-           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
+           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1
+           ,prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
-    print('PCA start')
+    if prnt=True: print('PCA start')
     pca=PCA(n_components=3) # PCA start 
     pca.fit(sdistresult) 
     pcarslt=pca.transform(sdistresult) # PCA end 
-    print('end')
+    if prnt=True: print('end')
 
     n=len(sdistresult)
     if groupindex==None: colors=[0]*n
@@ -186,29 +187,39 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
-    print('labeling (observation-wise)')
+    if prnt=True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
-            print('\r'+str(i),'/'+str(n),sep='',end='')
+            if prnt=True: print('\r'+str(i),'/'+str(n),sep='',end='')
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
-        print('\n'+'end')
+        if prnt=True: print('\n'+'end')
         rtn=Fig 
     else: 
         for i in cc(1,n): 
-            print('\r'+str(i),'/'+str(n),sep='',end='')
+            if prnt=True: print('\r'+str(i),'/'+str(n),sep='',end='')
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
-        print('\n'+'end')
+        if prnt=True: print('\n'+'end')
         rtn=Fig 
     rtn.savefig(figname+'.png')
 
 def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
-              figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1): # size=(size of obs representation, size of text which represent obs index)
+              figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
+              prnt=prnt): # size=(size of obs representation, size of text which represent obs index)
+    dhhlist=τlist.copy()
+    sdistrslt=τlist.copy()
     M=len(τlist)
-    hh=hmat(hstresult)
-    for m in co(0,M):
-        sdistrslt=snowdist(hh,τmax=τlist[m])
-        pca4vis(sdistrslt,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+    dhh0=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
+    sdistrslt0=snowdist(dhh0)
+    if prnt=True: print('obtain snowdist')
+    for m in cc(1,M):
+        print('\r'+str(m),'/'+str(M),sep='',end='')
+        pca4vis(sdistrslt0,nodename=vname,groupindex=gindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        dhh1=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
+        sdistrslt1=np.asmatrix(np.sqrt(np.array(snowdist(dhh0))**2+np.array(snowdist(dhh1))**2))
+        dhh0=dhh1.copy()
+        sdistrslt0=sdistrslt1.copy()
+    if prnt=True: print('\n'+'end')    
     
 ### 3. old functions
 
