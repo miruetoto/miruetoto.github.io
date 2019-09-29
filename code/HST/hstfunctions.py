@@ -187,31 +187,31 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
-    if prnt=True: print('labeling (observation-wise)')
+    if prnt==True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
-            if prnt=True: print('\r'+str(i),'/'+str(n),sep='',end='')
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
-        if prnt=True: print('\n'+'end')
+        if prnt==True: print('\n'+'end')
         rtn=Fig 
     else: 
         for i in cc(1,n): 
-            if prnt=True: print('\r'+str(i),'/'+str(n),sep='',end='')
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
-        if prnt=True: print('\n'+'end')
+        if prnt==True: print('\n'+'end')
         rtn=Fig 
     rtn.savefig(figname+'.png')
 
 def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
               figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
-              prnt=prnt): # size=(size of obs representation, size of text which represent obs index)
+              prnt=False): # size=(size of obs representation, size of text which represent obs index)
     dhhlist=τlist.copy()
     sdistrslt=τlist.copy()
     M=len(τlist)
     dhh0=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
     sdistrslt0=snowdist(dhh0)
-    if prnt=True: print('obtain snowdist')
+    if prnt==True: print('obtain snowdist')
     for m in cc(1,M):
         print('\r'+str(m),'/'+str(M),sep='',end='')
         pca4vis(sdistrslt0,nodename=vname,groupindex=gindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
@@ -219,7 +219,7 @@ def pca4msvis(hstresult,τlist,
         sdistrslt1=np.asmatrix(np.sqrt(np.array(snowdist(dhh0))**2+np.array(snowdist(dhh1))**2))
         dhh0=dhh1.copy()
         sdistrslt0=sdistrslt1.copy()
-    if prnt=True: print('\n'+'end')    
+    if prnt==True: print('\n'+'end')    
     
 ### 3. old functions
 
