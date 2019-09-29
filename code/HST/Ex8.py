@@ -73,3 +73,5 @@ Edg=Edgtemp-np.mean(Edgtemp[np.where(Edgtemp>0)])
 Edg=transform(Edg,'lambda inpt: np.exp(inpt)/(1+np.exp(inpt))')
 
 f=init('0',len(vname))
+
+hstrslt=hst(f,Edg,τ=20000,b=0.1,γ=0.9)
