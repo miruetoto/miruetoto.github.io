@@ -38,7 +38,7 @@ def hst(f,Edg,τ,b,γ):
     rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
     rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
     rtn['h0']=f
-    print('hst start')
+    print('hst start (' +'τ='+str(τ)+', b='+str(b)+' ,γ='+str(γ)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ),'/'+str(τ),sep='',end='')
         Edgtemp=init('0',(n,n))
