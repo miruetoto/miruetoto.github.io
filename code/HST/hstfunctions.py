@@ -162,8 +162,8 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     
     
 def pca4vis(sdistresult,nodename=None,groupindex=None,
-           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1
-           ,prnt=False): # size=(size of obs representation, size of text which represent obs index)
+           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
+           prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
@@ -221,6 +221,75 @@ def pca4msvis(hstresult,τlist,
         sdistrslt0=sdistrslt1.copy()
     if prnt==True: print('\n'+'end')    
 
+        
+def pca4vis4msg(sdistresult,nodename=None,groupindex=None,
+           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
+           prnt=False): # size=(size of obs representation, size of text which represent obs index)
+
+    from sklearn.decomposition import PCA 
+    from mpl_toolkits import mplot3d
+    if prnt==True: print('PCA start')
+    pca=PCA(n_components=3) # PCA start 
+    pca.fit(sdistresult) 
+    pcarslt=pca.transform(sdistresult) # PCA end 
+    if prnt==True: print('end')
+
+    n=len(sdistresult)
+    if groupindex==None: colors=[0]*n
+    elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
+    else: colors=np.array(groupindex)
+
+    figsize=(15*figsize[0],10*figsize[1])
+    dpi=200*dpi
+    cex=200*cex
+    text=15*text
+    fade=fade
+    
+    Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
+    ax=plt.axes(projection='3d') # define type of axes: 3d plot 
+    ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
+    if prnt==True: print('labeling (observation-wise)')
+    if nodename==None:
+        for i in cc(1,n): 
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
+        if prnt==True: print('\n'+'end')
+    else: 
+        for i in cc(1,n): 
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
+        if prnt==True: print('\n'+'end')
+            
+    #####################################################
+    lgndname=['Apr','Mar','Jun','Jul','Aug','Sep','Nov']
+    lgndcol=['greenyellow','lime','green','darkgreen','darkolivegreen','olive','goldenrod']
+    
+    for g in co(0,len(lgndname)):
+        ax.scatter3D([],[],c=lgndcol[g],s=150,alpha=fade,label=lgndname[g])
+    ax.legend(loc="upper right", title="Month")
+    Fig.savefig(figname+'.png')
+    plt.close(Fig)
+
+def pca4msvis4msg(hstresult,τlist,
+              nodename=None,groupindex=None,
+              figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
+              prnt=False): # size=(size of obs representation, size of text which represent obs index)
+    dhhlist=τlist.copy()
+    sdistrslt=τlist.copy()
+    M=len(τlist)
+    dhh0=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
+    sdistrslt0=snowdist(dhh0)
+    pca4vis(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+    if prnt==True: print('obtain snowdist')
+    for m in co(1,M):
+        if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
+        dhh1=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
+        sdistrslt1=np.asmatrix(np.sqrt(np.array(snowdist(dhh0))**2+np.array(snowdist(dhh1))**2))
+        pca4vis4msg(sdistrslt1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        dhh0=dhh1.copy()
+        sdistrslt0=sdistrslt1.copy()
+    if prnt==True: print('\n'+'end')        
+ 
 ### 3. old functions
 
 def Smat_old(f,ϵ,Edg,W=None):
