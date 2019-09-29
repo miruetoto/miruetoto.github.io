@@ -213,7 +213,7 @@ def pca4msvis(hstresult,τlist,
     sdistrslt0=snowdist(dhh0)
     if prnt==True: print('obtain snowdist')
     for m in cc(1,M):
-        print('\r'+str(m),'/'+str(M),sep='',end='')
+        prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
         pca4vis(sdistrslt0,nodename=vname,groupindex=gindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
         dhh1=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
         sdistrslt1=np.asmatrix(np.sqrt(np.array(snowdist(dhh0))**2+np.array(snowdist(dhh1))**2))
