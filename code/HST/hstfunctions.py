@@ -11,7 +11,6 @@ def hst1(f,Edg,b,γ):
     from random import sample 
     u=sample(list(co(0,n)),1)[0]
     # 2. generate ϵ form U(0,1)
-    ϵ=init('u',1)[0]*b
     rtn=f.copy()
     ##i=1
     iter=0
@@ -19,6 +18,7 @@ def hst1(f,Edg,b,γ):
         iter=iter+1
         ##print(i)
         # 3. f(u) <- f(u)+ϵ*0.9
+        ϵ=init('u',1)[0]*b
         rtn[u]=rtn[u]+ϵ*(γ**iter)
         # 4. choose v \in N_u such that f(v) \leq f(u)
         N_u=list(np.where(Edg[u,:]==1)[1])
