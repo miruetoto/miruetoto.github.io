@@ -16,10 +16,9 @@ def hst1(f,Edg,b,γ):
     iter=0
     ϵ=init('u',1)[0]*b
     while True:
-        iter=iter+1
         ##print(i)
         # 3. f(u) <- f(u)+ϵ*0.9
-        rtn[u]=rtn[u]+ϵ*(γ**(iter-1))
+        rtn[u]=rtn[u]+ϵ*γ**iter
         # 4. choose v \in N_u such that f(v) \leq f(u)
         N_u=list(np.where(Edg[u,:]==1)[1])
         stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
@@ -27,8 +26,9 @@ def hst1(f,Edg,b,γ):
         if iter>500: break;
         else: 
             v=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
-            rtn[v]=rtn[v]+ϵ*γ**(iter-1)
+            rtn[v]=rtn[v]+ϵ*γ**iter
         u=v
+        iter=iter+1
         ##i=i+1
     # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
