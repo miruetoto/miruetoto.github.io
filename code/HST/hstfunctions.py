@@ -19,7 +19,7 @@ def hst1(f,Edg,b,γ):
         iter=iter+1
         ##print(i)
         # 3. f(u) <- f(u)+ϵ*0.9
-        rtn[u]=rtn[u]+ϵ*γ
+        rtn[u]=rtn[u]+ϵ*(γ**iter)
         # 4. choose v \in N_u such that f(v) \leq f(u)
         N_u=list(np.where(Edg[u,:]==1)[1])
         stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
@@ -30,6 +30,7 @@ def hst1(f,Edg,b,γ):
             rtn[v]=rtn[v]+ϵ*Edg[u,v]
         u=v
         ##i=i+1
+        iter=iter+1
     # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
 
