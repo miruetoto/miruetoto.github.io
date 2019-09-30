@@ -174,7 +174,7 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     if prnt==True: print('end')
 
     n=len(sdistresult)
-    if groupindex==None: colors=[0]*n
+    if groupindex==None: colors=['gray']*n
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
 
@@ -186,25 +186,22 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
-    if logscale[0]==True: pc1=np.log(1+pcarslt[:,0]) 
-    else: pc1=pcarslt[:,0]
-    if logscale[1]==True: pc2=np.log(1+pcarslt[:,1]) 
-    else: pc2=pcarslt[:,1]
-    if logscale[2]==True: pc3=np.log(1+pcarslt[:,2]) 
-    else: pc3=pcarslt[:,2]
     
-    
-    ax.scatter3D(pc1,pc2,pc3,s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
+    ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
+    if logscale[0]==True: ax.set_xscale('log')
+    if logscale[1]==True: ax.set_yscale('log')
+    if logscale[2]==True: ax.set_zscale('log')
+        
     if prnt==True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pc1[i-1],pc2[i-1],pc3[i-1],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     else: 
         for i in cc(1,n): 
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pc1[i-1],pc2[i-1],pc3[i-1],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.png')
 
