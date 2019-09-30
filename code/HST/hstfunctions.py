@@ -163,7 +163,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     
 def pca4vis(sdistresult,nodename=None,groupindex=None,
            figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
-           prnt=False): # size=(size of obs representation, size of text which represent obs index)
+           prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
@@ -186,7 +186,15 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
-    ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
+    if logscale[0]==True: pc1=np.log(1+pcarslt[:,0]) 
+    else: pc1=pcarslt[:,0]
+    if logscale[1]==True: pc1=np.log(1+pcarslt[:,1]) 
+    else: pc2=pcarslt[:,1]
+    if logscale[2]==True: pc1=np.log(1+pcarslt[:,2]) 
+    else: pc3=pcarslt[:,2]
+    
+    
+    ax.scatter3D(pc1,pc2,pc3,s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
     if prnt==True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
