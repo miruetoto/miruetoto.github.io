@@ -188,9 +188,9 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     if logscale[0]==True: pc1=np.log(1+pcarslt[:,0]) 
     else: pc1=pcarslt[:,0]
-    if logscale[1]==True: pc1=np.log(1+pcarslt[:,1]) 
+    if logscale[1]==True: pc2=np.log(1+pcarslt[:,1]) 
     else: pc2=pcarslt[:,1]
-    if logscale[2]==True: pc1=np.log(1+pcarslt[:,2]) 
+    if logscale[2]==True: pc3=np.log(1+pcarslt[:,2]) 
     else: pc3=pcarslt[:,2]
     
     
