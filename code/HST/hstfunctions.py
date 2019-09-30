@@ -23,12 +23,14 @@ def hst1(f,Edg,b,γ):
         N_u=list(np.where(Edg[u,:]==1)[1])
         stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
         if stop_criterion==0: break;
+            
+        iter=iter+1
         if iter>500: break;
         else: 
             v=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
             rtn[v]=rtn[v]+ϵ*γ**iter
         u=v
-        iter=iter+1
+
         ##i=i+1
     # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
