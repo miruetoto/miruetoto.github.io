@@ -199,7 +199,6 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.png')
-    plt.close(Fig)
 
 def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
