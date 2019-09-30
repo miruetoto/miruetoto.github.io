@@ -30,7 +30,6 @@ def hst1(f,Edg,b,γ):
             rtn[v]=rtn[v]+ϵ*Edg[u,v]
         u=v
         ##i=i+1
-        iter=iter+1
     # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
 
