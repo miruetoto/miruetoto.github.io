@@ -158,7 +158,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     
 def pca4vis(sdistresult,nodename=None,groupindex=None,
            figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
-           prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
+           prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
@@ -183,10 +183,7 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
-    if logscale[0]==True: ax.set_xscale('log')
-    if logscale[1]==True: ax.set_yscale('log')
-    if logscale[2]==True: ax.set_zscale('log')
-        
+
     if prnt==True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
@@ -215,7 +212,7 @@ def pca4msvis(hstresult,τlist,
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
         dhh1=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
         sdistrslt1=np.asmatrix(np.sqrt(np.array(snowdist(dhh0))**2+np.array(snowdist(dhh1))**2))
-        pca4vis(sdistrslt1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade,logscale=logscale)
+        pca4vis(sdistrslt1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
         dhh0=dhh1.copy()
         sdistrslt0=sdistrslt1.copy()
     if prnt==True: print('\n'+'end')    
