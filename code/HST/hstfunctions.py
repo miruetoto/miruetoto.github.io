@@ -196,7 +196,8 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.png')
-
+    
+    
 def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
               figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
@@ -204,16 +205,15 @@ def pca4msvis(hstresult,τlist,
     dhhlist=τlist.copy()
     sdistrslt=τlist.copy()
     M=len(τlist)
-    dhh0=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
-    sdistrslt0=snowdist(dhh0)
+    dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
+    sdistrslt0=snowdist(dhh)
     pca4vis(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
     if prnt==True: print('obtain snowdist')
     for m in co(1,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
-        dhh1=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
-        sdistrslt1=np.asmatrix(np.sqrt(np.array(snowdist(dhh0))**2+np.array(snowdist(dhh1))**2))
+        dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
+        sdistrslt1=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
         pca4vis(sdistrslt1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
-        dhh0=dhh1.copy()
         sdistrslt0=sdistrslt1.copy()
     if prnt==True: print('\n'+'end')    
 
