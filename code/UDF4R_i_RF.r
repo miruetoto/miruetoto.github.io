@@ -1,3 +1,3 @@
-sq3<-function(a){
+sq4<-function(a){
     a^2+1
 }
