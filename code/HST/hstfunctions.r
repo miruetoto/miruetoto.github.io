@@ -1,3 +1,4 @@
+## load pckg
 library(kohonen)
 library(dplyr)
 library(ggplot2)
