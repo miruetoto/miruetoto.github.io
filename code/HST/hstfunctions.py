@@ -1,6 +1,6 @@
 ### 1. hst: calculation 
 
-def hst1(f,Edg,b,γ):
+def hst1(f,Edg,b,γ): #supporting hst
 # 1. choose u from {1,2,...,n}
 # 2. generate ϵ form U(0,1)
 # 3. f(u) <- f(u)+ϵ
@@ -28,7 +28,9 @@ def hst1(f,Edg,b,γ):
     # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
 
-def hst(f,Edg,τ,b,γ):
+def hst(gdata,τ,b,γ):
+    f=gdata[1]
+    Edg=gdata[2]
     n=len(f)
     rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
     rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
@@ -48,12 +50,12 @@ def hmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
     return rtn 
 
-def ϵfallmat(hstresult):
+def ϵfallmat(hstresult): 
     τ=int((hstresult.shape[1]-2)/3)
     rtn=np.asmatrix(hstresult[sprod('ϵ fall',cc(0,τ-1))])
     return rtn 
     
-def ϵstackmat(hstresult):
+def ϵstackmat(hstresult): 
     τ=int((hstresult.shape[1]-2)/3)
     rtn=np.asmatrix(hstresult[sprod('ϵ stack',cc(0,τ-1))])
     return rtn 
@@ -64,7 +66,7 @@ def snowdist(hh,τmax=None,prnt=False):
     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
     return rtn
 
-def dist2Edg(dist,θ=1):
+def dist2Edg(dist,θ=1): 
     n=len(dist)
     rtn=init('0',(n,n))
     for i in co(0,n):
@@ -78,7 +80,7 @@ def Glaplacian(Edg):
     rtn=D-Edg
     return rtn
 
-def L2dist(hhlike,prnt=False): #hh:=n*p 
+def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
     hhlike=np.array(hhlike)
     n=len(hhlike)
     rtn=np.array(init('0',(n,n)))
