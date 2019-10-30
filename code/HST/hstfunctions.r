@@ -6,7 +6,7 @@ library(ggforce) # for geom_circle function
 library(ggrepel) # for geom_text_repel
 
 
-somplot<-function(hh,gridxdim,gridydim,vname,somsd=0.1,label=1:dim(hh)[1]){
+somplot<-function(hh,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
 set.seed(777)
 #library(kohonen)
 somrslt <- som(hh, somgrid(gridxdim,gridydim,"hexagonal"))
