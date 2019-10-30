@@ -29,11 +29,12 @@ def hst1(f,Edg,b,γ): #supporting hst
     return rtn
 
 def hst(gdata,τ,b,γ):
+    vname=gdata[0]
     f=gdata[1]
-    Edg=gdata[2]
+    Edg=gdata[2]    
     n=len(f)
     rtn=initpd("0",n=n,p=2,vname=['Node(=v)','h0'])
-    rtn['Node(=v)']=cc(1,n); rtn['Node(=v)'].astype(int)
+    rtn['Node(=v)']=vname; rtn['Node(=v)'].astype(int)
     rtn['h0']=f
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+' ,γ='+str(γ)+')')
     for ℓ in cc(1,τ): 
