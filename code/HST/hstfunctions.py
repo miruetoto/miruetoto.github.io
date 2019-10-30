@@ -33,9 +33,9 @@ def hst(gdata,τ,b,γ):
     f=gdata[1]
     Edg=gdata[2]    
     n=len(f)
-    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0(=f(v))'])
+    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     rtn['Nodename(=v)']=vname
-    rtn['h0(=f(v))']=f
+    rtn['h0']=f
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+' ,γ='+str(γ)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
