@@ -122,13 +122,15 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \end{align}
 아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$ 라고 하자. 아래가 성립한다. 
 \begin{align}
-{\bf Y}'{\bf X}{\boldsymbol\beta}=\sum_{i=1}^{n}\sum_{k=1}^{p}{\bf y}_ i'x_{ik}{\boldsymbol\beta}_ k.
-\end{align}
-여기에서 ${\bf y}_ i =cbind(y_{i1},y_{i2})$ 이고 ${\boldsymbol\beta}_ k=cbind(\beta_{k1},{\beta_{k2})$ 이다. 
-그런데
-\begin{align}
-\frac{\partial }{\partial\boldsymbol\beta} {\bf Y'X}{\boldsymbol\beta} := rbind(\frac{\partial}{\partial{\boldsymbol\beta}_ 1 },\dots,\frac{\partial}{\partial{\boldsymbol\beta}_ p}) {\bf Y'X}{\boldsymbol\beta}
-\end{align}
+{\bf Y}'{\bf X}{\boldsymbol\beta}=\bigl(\begin{smallmatrix}	{\bf Y}'{\bf X}{\boldsymbol\beta}=\begin{pmatrix}
+{\bf y}_ 1 \\ 	{\bf y}_ 1' \\\\ \\  
+{\bf y}_ 2	{\bf y}_ 2'
+\end{smallmatrix}\bigr){\bf X}(\beta_1,\beta_2)	\end{pmatrix}{\bf X}(\beta_1,\beta_2)
+=\bigl(\begin{smallmatrix}	=\begin{pmatrix}
+{\bf y}_ 1{\bf X}\beta_1 \\ {\bf y}_ 1{\bf X}\beta_2	{\bf y}_ 1'{\bf X}\beta_1 & {\bf y}_ 1{\bf X}\beta_2 \\\\ \\
+{\bf y}_ 2{\bf X}\beta_1 \\ {\bf y}_ 2{\bf X}\beta_2	{\bf y}_ 2'{\bf X}\beta_1 & {\bf y}_ 2{\bf X}\beta_2 
+\end{smallmatrix}\bigr)	\end{pmatrix}
+\end{align} 
 
 
 
