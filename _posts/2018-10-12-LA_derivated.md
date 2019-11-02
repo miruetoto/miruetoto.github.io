@@ -136,9 +136,9 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 cbind({\bf y}_ 1',\dots, {\bf y}_ n')rbind({\bf x}_ 1 ,\dots,{\bf x}_ n) {\boldsymbol\beta} 
 = \sum_{i=1}^{n} {\bf y}_ i' {\bf x}_ i {\boldsymbol\beta}
-= \sum_{i=1}^{n}\sum_{k=1}^{p} {\bf y}_ i' x_{ik} {\beta_{k1},\beta_{k2} )
+= \sum_{i=1}^{n}\sum_{k=1}^{p} {\bf y}_ i' x_{ik} [ \beta_{k1},\beta_{k2} ] 
 \end{align}
-이것을 ${\boldsymbol}=rbind(\beta_1,\dots,\beta_p)$로 미분하면 
+이것을 $\boldsymbol\beta$로 미분하면 
 \begin{align}
 rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
 =rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)
