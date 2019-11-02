@@ -130,11 +130,11 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial {\bf Y}'{\bf X}{\boldsymbol\beta} } {\partial{\boldsymbol\beta} } ={\bf X}'{\bf Y} 
 \end{align}
 \begin{align}
-\frac{\partial {\boldsymbol\beta}'{\bf X}'{\bf y} }{\partial{\boldsymbol\beta} }={\bf X}'{\bf y} 
+\frac{\partial {\boldsymbol\beta}'{\bf X}'{\bf Y} }{\partial{\boldsymbol\beta} }={\bf X}'{\bf Y} 
 \end{align}
-증명은 다음과 같이 한다. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$라고 하자. 피미분함수를 풀어보면 아래와 같이 된다. 
+아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$라고 하자. 피미분함수를 풀어보면 아래와 같이 된다. 
 \begin{align}
-cbind(b_1,\dots,b_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n ) {\bf x} 
+cbind({\bf y_1},\dots, {\bf y_n})rbind({\bf x_1},\dots,{\bf x_n}) {\boldsymbol\beta} 
 = \sum_{i=1}^{n} b_i {\bf a}_ i {\bf x}
 = \sum_{i=1}^{n}\sum_{j=1}^{p} b_i a_{ij} x_j
 \end{align}
