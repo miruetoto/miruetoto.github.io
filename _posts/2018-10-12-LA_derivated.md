@@ -90,23 +90,6 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial \beta'{\bf X}' }{\partial \beta} =\frac{\partial \beta' }{\partial \beta} {\bf X}' = {\bf X}'
 \end{align}
 
-
-- **(4)** 스칼라를 매트릭스로 미분하는 경우를 살펴보자. 임의의 스칼라를 ${\bf X}_ {n \times p}$로 미분하는것에 대한 기호를 약속하여 보자. 별로 특별할건 없다. 
-\begin{align}
-\frac{\partial a}{\partial {\bf X}}=cbind\left( \frac{\partial a}{\partial X_1},\dots,\frac{\partial a}{\partial X_p} \right)
-\end{align}
-혹은 
-\begin{align}
-\frac{\partial a}{\partial {\bf X}}=rbind\left( \frac{\partial a}{\partial {\bf x}_ 1},\dots,\frac{\partial a}{\partial {\bf x}_ n} \right)
-\end{align}
-와 같이 약속한다. 
-
-- **(5)** 매트릭스를 매트릭스로 미분하는 경우를 살펴보자. 아래와 같은 경우를 생각해보자. 
-\begin{align}
-\end{align}
-
-
-
 --- 
 
 ### 공식
