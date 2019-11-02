@@ -122,20 +122,9 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \end{align}
 아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$ 라고 하자. 아래가 성립한다. 
 \begin{align}
-{\bf Y}'{\bf X}{\boldsymbol\beta}=\begin{pmatrix}
-{\bf y}_ 1' \\\\ \\
-{\bf y}_ 2'
-\end{pmatrix}{\bf X}(\beta_1,\beta_2)
-=\begin{pmatrix}
-{\bf y}_ 1'{\bf X}\beta_1 & {\bf y}_ 1'{\bf X}\beta_2 \\\\ \\
-{\bf y}_ 2'{\bf X}\beta_1 & {\bf y}_ 2'{\bf X}\beta_2 
-\end{pmatrix}
-=\begin{pmatrix}
-\beta_ 1'{\bf X}{\bf y}_ 1 & \beta_2' {\bf X}{\bf y}_ 1\\\\ \\
-\beta_ 1'{\bf X}{\bf y}_ 2 & \beta_2' {\bf X}{\bf y}_ 2
-\end{pmatrix}
+{\bf Y}'{\bf X}{\boldsymbol\beta}=\sum_{i=1}^{n}\sum_{k=1}^{p}{\bf y}_ i'x_{ik}{\boldsymbol\beta}_ k.
 \end{align}
-이므로 
+여기에서 ${\bf y}_ i =cbind(y_{i1},y_{i2})$ 이고 $\{\boldsymbol\beta}_ k=cbind(\beta_{k1},{\beta_{k2})$ 
 
 
 - 아래식이 성립한다.
