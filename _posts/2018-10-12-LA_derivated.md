@@ -124,7 +124,12 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 {\bf Y}'{\bf X}{\boldsymbol\beta}=\sum_{i=1}^{n}\sum_{k=1}^{p}{\bf y}_ i'x_{ik}{\boldsymbol\beta}_ k.
 \end{align}
-여기에서 ${\bf y}_ i =cbind(y_{i1},y_{i2})$ 이고 $\{\boldsymbol\beta}_ k=cbind(\beta_{k1},{\beta_{k2})$ 
+여기에서 ${\bf y}_ i =cbind(y_{i1},y_{i2})$ 이고 ${\boldsymbol\beta}_ k=cbind(\beta_{k1},{\beta_{k2})$ 이다. 
+그런데
+\begin{align}
+\frac{\partial }{\partial\boldsymbol\beta} {\bf Y'X}{\boldsymbol\beta} := rbind(\frac{\partial}{\partial{\boldsymbol\beta}_ 1 },\dots,\frac{\partial}{\partial{\boldsymbol\beta}_ p}) {\bf Y'X}{\boldsymbol\beta}
+\end{align}
+
 
 
 - 아래식이 성립한다.
