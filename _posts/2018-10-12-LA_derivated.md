@@ -125,7 +125,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 {\bf Y}'{\bf X}{\boldsymbol\beta}=\begin{pmatrix}
 Y_1' \\\\ \\
 Y_2'
-\end{pmatrix}{\bf X}(\beta_1,\beta_2)
+\end{pmatrix}{\bf X}\begin{pmatrix} \beta_1 & \beta_2 \end{pmatrix}
 =\begin{pmatrix}
 Y_1'{\bf X}\beta_1 & Y_1'{\bf X}\beta_2 \\\\ \\
 Y_2'{\bf X}\beta_1 & Y_2' {\bf X}\beta_2 
@@ -137,20 +137,27 @@ Y_2'{\bf X}\beta_1 & Y_2' {\bf X}\beta_2
 \end{align} 
 그리고 $\frac{\partial }{\partial{\boldsymbol\beta} }$는 아래와 같이 쓸 수 있다. 
 \begin{align}
-\frac{\partial }{\partial{\boldsymbol\beta} } = cbind(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} )=\bigg( \frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2}  \bigg) 
+\frac{\partial }{\partial{\boldsymbol\beta} } = cbind(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} )=
+\begin{pmatrix} \frac{\partial}{\partial\beta_1} & \frac{\partial }{\partial\beta_2}  \end{pmatrix}
 \end{align}
 따라서 아래가 성립한다. 
 \begin{align}
 \frac{\partial }{\partial{\boldsymbol\beta} } & {\bf Y}'{\bf X}{\boldsymbol\beta} 
-:= \bigg(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \bigg)
+:= 
+\begin{pmatrix}
+\frac{\partial}{\partial\beta_1} & \frac{\partial }{\partial\beta_2} 
+\end{pmatrix}
 \begin{pmatrix}
 \beta_1'{\bf X}'Y_1 & \beta_2'{\bf X}'Y_1 \\\\ \\
 \beta_1'{\bf X}'Y_2 & \beta_2'{\bf X}'Y_2
 \end{pmatrix} \\\\ \\
-& =  asdf 
+& = \begin{pmatrix}
+{\bf X}'Y_1+{\bf 0} & {\bf 0}+ {\bf X}'Y_2
+\end{pmatrix}
+={\bf X}'\begin{pmatrix}
+Y_1 & Y_2 
+\end{pmatrix}={\bf X}'{\bf Y}
 \end{align}
-따라서 아래가 성립한다. 
-
 
 - 아래식이 성립한다.
 \begin{align}
