@@ -123,16 +123,15 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial \beta'{\bf X}'{\bf y} }{\partial\beta}={\bf X}'{\bf y} 
 \end{align}
+아래식이 성립함은 당연하고 위의 식은 $\frac{\partial {\bf y}'{\bf X}\beta}{\partial\beta}=\frac{\partial \beta'{\bf X}'{\bf y} }{\partial\beta}$임을 이용하면 식이 성립함을 쉽게 이해할 수 있다. 
 
 - 위의 식은 ${\bf Y}$가 multivariate 일 경우도 성립한다. 즉 아래식이 성립한다. 
 \begin{align}
 \frac{\partial {\bf Y}'{\bf X}{\boldsymbol\beta} } {\partial{\boldsymbol\beta} } ={\bf X}'{\bf Y} 
 \end{align}
 \begin{align}
-\frac{\partial {\boldsymbol\beta} '{\bf X}'{\bf y} }{\partial{\boldsymbol\beta} }={\bf X}'{\bf y} 
+\frac{\partial {\boldsymbol\beta}'{\bf X}'{\bf y} }{\partial{\boldsymbol\beta} }={\bf X}'{\bf y} 
 \end{align}
-
-
 증명은 다음과 같이 한다. 편의상 ${\bf b}_ {n \times 1}$, ${\bf A}_ {n\times p}$, ${\bf x}_ {p \times 1}$이라고 하자. 피미분함수를 풀어보면 아래와 같이 된다. 
 \begin{align}
 cbind(b_1,\dots,b_n)rbind({\bf a}_ 1, \dots, {\bf a}_ n ) {\bf x} 
@@ -145,6 +144,9 @@ rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
 =rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)
 \end{align}
 이 된다. 이제 $rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)=rbind(A_1',\dots,A_p'){\bf b}$ 임을 이용하면 증명이 끝난다. 
+
+
+---
 
 - 아래식이 성립한다. (카셀라책 p.154, table 4.1) 
 \begin{align}
