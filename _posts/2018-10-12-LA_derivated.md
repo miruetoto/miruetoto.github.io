@@ -134,11 +134,11 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \end{align}
 아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$라고 하자. 피미분함수를 풀어보면 아래와 같이 된다. 
 \begin{align}
-cbind({\bf y_1}',\dots,{\bf y_i}',\dots, {\bf y_n}')rbind({\bf x_1},\dots, {\bf x_i}',\dots,{\bf x_n}) {\boldsymbol\beta} 
-= \sum_{i=1}^{n} b_i {\bf a}_ i {\bf x}
-= \sum_{i=1}^{n}\sum_{j=1}^{p} b_i a_{ij} x_j
+cbind({\bf y}_ 1',\dots, {\bf y}_ n')rbind({\bf x}_ 1 ,\dots,{\bf x}_ n) {\boldsymbol\beta} 
+= \sum_{i=1}^{n} {\bf y}_ i' {\bf x}_ i {\boldsymbol\beta}
+= \sum_{i=1}^{n}\sum_{k=1}^{p} {\bf y}_ i' x_{ik} {\beta_{k1},\beta_{k2} )
 \end{align}
-이것을 ${\bf x}=rbind(x_1,\dots,x_p)$로 미분하면 
+이것을 ${\boldsymbol}=rbind(\beta_1,\dots,\beta_p)$로 미분하면 
 \begin{align}
 rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
 =rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)
