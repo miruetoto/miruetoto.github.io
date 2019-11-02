@@ -137,7 +137,7 @@ Y_2'{\bf X}\beta_1 & Y_2' {\bf X}\beta_2
 \end{align} 
 그리고 $\frac{\partial }{\partial{\boldsymbol\beta} }$는 아래와 같이 쓸 수 있다. 
 \begin{align}
-\frac{\partial }{\partial{\boldsymbol\beta} } = cbind(\big(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \big)
+\frac{\partial }{\partial{\boldsymbol\beta} } = cbind\big(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \big)=\bigg( \frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2}  \bigg) 
 \end{align}
 따라서 아래가 성립한다. 
 \begin{align}
