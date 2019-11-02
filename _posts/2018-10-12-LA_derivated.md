@@ -23,7 +23,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 --- 
 
 ### 미분에 대한 간단한 정의 
-- **(\ast)** 가장 중요한것은 차원이다. 미분의 결과는 항상 $\mbox{분모차원} \times \mbox{분자차원}$ 이 결과로 나온다. 
+- **($\star$)** 가장 중요한것은 차원이다. 미분의 결과는 항상 $\mbox{분모차원} \times \mbox{분자차원}$ 이 결과로 나온다. 
 
 - **(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
