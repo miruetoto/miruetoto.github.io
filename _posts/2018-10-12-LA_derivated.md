@@ -58,9 +58,11 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf z}'}{\partial {\bf y}}=\frac{\partial {\bf z}}{\partial {\bf y}}
 \end{align}
-와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 연습삼아 아래를 증명하여 보자. 
+와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 
+
+- 연습삼아 아래를 증명하여 보자. 
 \begin{align}
-\frac{\partial {\bf X}{\beta}}{\partial \beta'}={\bf X}
+\frac{\partial {\bf X}\beta}{\partial \beta'}={\bf X}
 \end{align}
 여기에서 ${\bf X}_ {n \times p}$ 이고 ${\beta}_ {p \times 1}$ 이다. 
 \begin{align}
@@ -74,11 +76,20 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial \beta'{\bf X}' }{\partial \beta} = {\bf X}'
 \end{align}
-간단하게 계산해보면 ${\bf x}'{\bf B}'=cbind(x_1,\dots,x_p)rbind(B_1',\dots,B_p')=\sum_{i=1}^{p} x_i B_i' $가 성립하고 따라서 
+간단하게 계산해보면 $\beta'{\bf X}'=cbind(\beta_1,\dots,\beta_p)rbind(X_1',\dots,X_p')=\sum_{k=1}^{k} \beta_k X_k' $가 성립하고 따라서 
 \begin{align}
-\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = rbind(B_1',\dots,B_p')= (cbind(B_1,\dots, B_p))'={\bf B}'
+\frac{\partial \beta'{\bf X}' }{\partial \beta} = rbind(X_1',\dots,X_p')= (cbind(X_1,\dots, X_p))'={\bf X}'
 \end{align}
 이다. <br/>
+
+- 물론 아래와 같이 계산하는 것이 더 쉽다. 
+\begin{align}
+\frac{\partial {\bf X}\beta}{\partial \beta'}= {\bf X} \frac{\partial{\beta}}{\partial \beta'}={\bf X}
+\end{align}
+\begin{align}
+\frac{\partial \beta'{\bf X}' }{\partial \beta} ={\bf X}' \frac{\partial \beta' }{\partial \beta}= {\bf X}'
+\end{align}
+
 
 - **(4)** 스칼라를 매트릭스로 미분하는 경우를 살펴보자. 임의의 스칼라를 ${\bf X}_ {n \times p}$로 미분하는것에 대한 기호를 약속하여 보자. 별로 특별할건 없다. 
 \begin{align}
