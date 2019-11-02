@@ -104,18 +104,6 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial \beta'{\bf X}' }{\partial \beta} = {\bf X}'
 \end{align}
 
-- 아래식이 성립한다.
-\begin{align}
-\frac{\partial \beta'\beta}{\partial\beta}=2\beta
-\end{align}
-증명은 다음과 같이 한다. 
-\begin{align}
-\frac{\partial \beta'\beta}{\partial\beta}
-=\frac{\partial \sum_{k=1}^{p}\beta_k^2}{\partial rbind(\beta_1,\dots,\beta_p)}
-=rbind\left(2\beta_1,\dots,2\beta_p\right)
-=2\beta
-\end{align}
-
 - 아래식이 성립한다. 
 \begin{align}
 \frac{\partial {\bf y}'{\bf X}\beta}{\partial\beta}={\bf X}'{\bf y} 
@@ -132,18 +120,28 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\boldsymbol\beta}'{\bf X}'{\bf Y} }{\partial{\boldsymbol\beta} }={\bf X}'{\bf Y} 
 \end{align}
-아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$라고 하자. 피미분함수를 풀어보면 아래와 같이 된다. 
+아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$라고 하자. 
 \begin{align}
-cbind({\bf y}_ 1',\dots, {\bf y}_ n')rbind({\bf x}_ 1 ,\dots,{\bf x}_ n) {\boldsymbol\beta} 
-= \sum_{i=1}^{n} {\bf y}_ i' {\bf x}_ i {\boldsymbol\beta}
-= \sum_{i=1}^{n}\sum_{k=1}^{p} {\bf y}_ i' x_{ik} [ \beta_{k1},\beta_{k2} ] 
+{\bf Y}'{\bf X}{\boldsymbol\beta}={\bf Y}'{\bf X}(\beta_1,\beta_2)
 \end{align}
-이것을 $\boldsymbol\beta$로 미분하면 
+이므로 
 \begin{align}
-rbind\left(\sum_{i=1}^{n} b_i a_{i1},\dots, \sum_{i=1}^{n} b_i a_{ip} \right)
-=rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)
+\frac{\partial {\bf Y}'{\bf X}{\boldsymbol\beta} } {\partial{\boldsymbol\beta} } 
+=\Big(\ \frac{\partial {\bf Y}'{\bf X}\beta_1 } {\partial{\boldsymbol\beta} } ,\frac{\partial {\bf Y}'{\bf X}\beta_2 } {\partial{\boldsymbol\beta} } \Big) 
 \end{align}
-이 된다. 이제 $rbind\left(A_1'{\bf b},\dots, A_p'{\bf b} \right)=rbind(A_1',\dots,A_p'){\bf b}$ 임을 이용하면 증명이 끝난다. 
+
+- 아래식이 성립한다.
+\begin{align}
+\frac{\partial \beta'\beta}{\partial\beta}=2\beta
+\end{align}
+증명은 다음과 같이 한다. 
+\begin{align}
+\frac{\partial \beta'\beta}{\partial\beta}
+=\frac{\partial \sum_{k=1}^{p}\beta_k^2}{\partial rbind(\beta_1,\dots,\beta_p)}
+=rbind\left(2\beta_1,\dots,2\beta_p\right)
+=2\beta
+\end{align}
+
 
 
 ---
