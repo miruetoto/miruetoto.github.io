@@ -131,8 +131,8 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 {\bf y}_ 2'{\bf X}\beta_1 & {\bf y}_ 2'{\bf X}\beta_2 
 \end{pmatrix}
 =\begin{pmatrix}
-\beta_ 1'{\bf X}{\bf y}_ 1' & \beta_2' {\bf X}\beta_2 {\bf y}_ 1'\\\\ \\
-\beta_ 1'{\bf X}{\bf y}_ 2 & \beta_2 '{\bf X}{\bf y}_ 2
+\beta_ 1'{\bf X}{\bf y}_ 1 & \beta_2' {\bf X}{\bf y}_ 1\\\\ \\
+\beta_ 1'{\bf X}{\bf y}_ 2 & \beta_2' {\bf X}{\bf y}_ 2
 \end{pmatrix}
 \end{align}
 이므로 
