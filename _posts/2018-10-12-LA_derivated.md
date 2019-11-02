@@ -64,15 +64,15 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \end{align}
 여기에서 ${\bf X}_ {n \times p}$ 이고 ${\beta}_ {p \times 1}$ 이다. 
 \begin{align}
-\frac{\partial {\bf X}\beta}{\partial {\beta}'}=\frac{\partial {\bf X}\beta }{\partial cbind(\beta_1,\dots,\beta_p)}=cbind\left( \frac{\partial {\bf X}\beta}{\partial \beta_1}, \dots, \frac{\partial {\bf X}\beta}{\beta x_p} \right) 
+\frac{\partial {\bf X}\beta}{\partial {\beta}'}=\frac{\partial {\bf X}\beta }{\partial cbind(\beta_1,\dots,\beta_p)}=cbind\left( \frac{\partial {\bf X}\beta}{\partial \beta_1}, \dots, \frac{\partial {\bf X}\beta}{\partial \beta_p} \right) 
 \end{align}
-여기에서 ${\bf B}{\bf x}= cbind(B_1,\dots,B_p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} B_i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
+여기에서 ${\bf X}\beta= cbind(X_1,\dots,X_p) rbind(\beta_1,\dots,\beta_p)=\sum_{k=1}^{p} X_k\beta_k$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=cbind(B_1,\dots,B_p)={\bf B}
+\frac{\partial {\bf X}\beta}{\partial \beta'}=cbind(X_1,\dots,X_p)={\bf X}
 \end{align}
 또한 비슷한 논리로 아래가 성립함을 쉽게 보일 수 있다. 
 \begin{align}
-\frac{\partial {\bf x}'{\bf B}' }{\partial {\bf x}} = {\bf B}'
+\frac{\partial \beta'{\bf X}' }{\partial \beta} = {\bf X}'
 \end{align}
 간단하게 계산해보면 ${\bf x}'{\bf B}'=cbind(x_1,\dots,x_p)rbind(B_1',\dots,B_p')=\sum_{i=1}^{p} x_i B_i' $가 성립하고 따라서 
 \begin{align}
