@@ -87,7 +87,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial {\bf X}\beta}{\partial \beta'}= {\bf X} \frac{\partial{\beta}}{\partial \beta'}={\bf X}
 \end{align}
 \begin{align}
-\frac{\partial \beta'{\bf X}' }{\partial \beta} ={\bf X}' \frac{\partial \beta' }{\partial \beta}= {\bf X}'
+\frac{\partial \beta'{\bf X}' }{\partial \beta} =\frac{\partial \beta' }{\partial \beta} {\bf X}' = {\bf X}'
 \end{align}
 
 
