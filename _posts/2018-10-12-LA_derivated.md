@@ -58,13 +58,13 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf z}'}{\partial {\bf y}}=\frac{\partial {\bf z}}{\partial {\bf y}}
 \end{align}
-와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 예제로 아래를 증명하여 보자. 
+와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 연습삼아 아래를 증명하여 보자. 
 \begin{align}
-\frac{\partial {\bf X}{\boldsymbol \beta}}{\partial \beta'}={\bf X}
+\frac{\partial {\bf X}{\beta}}{\partial \beta'}={\bf X}
 \end{align}
-편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 
+여기에서 ${\bf X}_ {n \times p}$ 이고 ${\beta}_ {p \times 1}$ 이다. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}=\frac{\partial {\bf B}{\bf x}}{\partial cbind(x_1,\dots,x_p)}=cbind\left( \frac{\partial {\bf B}{\bf x}}{\partial x_1}, \dots, \frac{\partial {\bf B}{\bf x}}{\partial x_n} \right) 
+\frac{\partial {\bf X}\beta}{\partial {\beta}'}=\frac{\partial {\bf X}\beta }{\partial cbind(\beta_1,\dots,\beta_p)}=cbind\left( \frac{\partial {\bf X}\beta}{\partial \beta_1}, \dots, \frac{\partial {\bf X}\beta}{\beta x_p} \right) 
 \end{align}
 여기에서 ${\bf B}{\bf x}= cbind(B_1,\dots,B_p) rbind(x_1,\dots,x_p)=\sum_{i=1}^{p} B_i x_i$가 성립하므로, 위의 식은 아래와 같이 계산할 수 있다. 
 \begin{align}
