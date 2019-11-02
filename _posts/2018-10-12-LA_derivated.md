@@ -16,16 +16,16 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 
 ### 몇 가지 약속 
 
-- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 vector이다. 이 벡터는 col-vector 일수도 있고 row-vector 일수도 있지만 **이 챕터에 한정하여 모든 벡터는 col-vector로 생각하겠다.** 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 보통 매트릭스의 차원은 $n\times p$로 정의한다. 
+- 여기에서 ${\bf a}, {\bf b}, {\bf x}$와 같이 소문자로 표시된 기호들은 모두 vector이다. 이 벡터는 col-vector 일수도 있고 row-vector 일수도 있지만 **이 챕터에 한정하여 모든 벡터는 col-vector로 생각하겠다.** 그리고 ${\bf A}, {\bf B}, {\bf X}$와 같이 대문자로 표시된 기호는 모두 매트릭스이다. 
 
-- 이 챕터에서 ${\bf X}$는 특별한 스트럭처가 없다고 가정할 것이다. 만약에 ${\bf X}$가 스트럭쳐가 있다면 (예를들면 *symm*-매트릭스라든가, *pd*-매트릭스라든가) 미분결과가 달라지게 된다. (진짜 괴롭다.) 
+- 특별한 언급이 없다면 여기에서 나오는 모든 매트릭스는 스트럭처가 없다고 가정할 것이다. 여기에서 스트럭처가 있다는말은 *symm*-매트릭스라든가, *pd*-매트릭스라든가 하는 매트릭스 라는 것이다. 이렇게 스터럭처가 있는 매트릭스**를** 미분하거나 스트럭처가 있는 매트릭스**로** 미분하경우는 공식이 달라지게 된다. (진짜 괴롭다.) 
 
 --- 
 
 ### 미분에 대한 간단한 정의 
 - **(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
-\frac{\partial {\bf x}}{\partial y}=\frac{\partial rbind(x_1,\dots,x_n)}{\partial y}= rbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
+\frac{\partial {\bf a}}{\partial b}=\frac{\partial rbind(a_1,\dots,a_n)}{\partial b}= rbind\left(\frac{\partial a_1}{\partial b},\dots,\frac{\partial a_n}{\partial b}\right). 
 \end{align}
 이와 유사하게 row-vector을 스칼라로 미분하는 경우도 아래와 같다. 
 \begin{align}
