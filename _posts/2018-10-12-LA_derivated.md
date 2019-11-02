@@ -96,29 +96,24 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 
 - 여기에서는 외워두면 유용한 공식들을 나열한다. 
 
-- 아래식이 성립한다. (카셀라책 p.154, Table 4.1 / 매트릭스 쿡북 (69)) 
+- 아래식이 성립한다. 
 \begin{align}
-\frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}=\frac{\partial {\bf a}'{\bf x}}{\partial{\bf x}}={\bf a}
+\frac{\partial {\bf X}\beta}{\partial \beta'}={\bf X}
 \end{align}
-증명은 다음과 같이 한다. 
 \begin{align}
-\frac{\partial {\bf x}'{\bf a}}{\partial{\bf x}}
-=\frac{\partial \sum_{i=1}^{n}x_i a_i}{\partial rbind(x_1,\dots,x_n)}
-=rbind\left(a_1,\dots,a_n\right)
-={\bf a}
+\frac{\partial \beta'{\bf X}' }{\partial \beta} = {\bf X}'
 \end{align}
-반대측도 비슷한논리로 증명하면 된다.
 
-- 아래식이 성립한다. (카셀라책 p.154, table 4.1) 
+- 아래식이 성립한다.
 \begin{align}
-\frac{\partial {\bf x}'{\bf x}}{\partial{\bf x}}=2{\bf x}
+\frac{\partial \beta'\beta}{\partial\beta}=2\beta
 \end{align}
 증명은 다음과 같이 한다. 
 \begin{align}
-\frac{\partial {\bf x}'{\bf x}}{\partial{\bf x}}
-=\frac{\partial \sum_{i=1}^{n}x_i^2}{\partial rbind(x_1,\dots,x_n)}
-=rbind\left(2x_1,\dots,2x_n\right)
-=2{\bf x}
+\frac{\partial \beta'\beta}{\partial\beta}
+=\frac{\partial \sum_{k=1}^{p}\beta_k^2}{\partial rbind(\beta_1,\dots,\beta_p)}
+=rbind\left(2\beta_1,\dots,2\beta_p\right)
+=2\beta
 \end{align}
 
 - 아래식이 성립한다. (카셀라책 p.154, table 4.1) 
