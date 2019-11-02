@@ -41,7 +41,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial z}{\partial {\bf y}}=\frac{\partial z}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial z}{\partial y_1},\dots,\frac{\partial z}{\partial y_n}\right). 
 \end{align}
 
-- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것을 유의하자. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial^2}{\partial {\boldsymbol \beta} \partial {\boldsymbol \beta}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 **이런건 무시하는것이 정신건강에 좋다.** 사실 매트릭스 쿡북에도 (32) 공식 밑에 
+- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것을 유의하자. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial^2}{\partial \beta \partial \beta'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 **이런건 무시하는것이 정신건강에 좋다.** 사실 매트릭스 쿡북에도 (32) 공식 밑에 
 \begin{align}
 \left[ \frac{\partial {\bf z}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial z_i}{\partial y_j}
 \end{align}
@@ -55,9 +55,9 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf z}'}{\partial {\bf y}}=\frac{\partial {\bf z}}{\partial {\bf y}}
 \end{align}
-와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 예제로 아래를 증명하여 보자. 이거는 매트릭스 쿡북에는 없는 공식이지만 너무 중요해보이는 공식이라 연습삼아서 풀어보겠다. 
+와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 예제로 아래를 증명하여 보자. 
 \begin{align}
-\frac{\partial {\bf X}{\boldsymbol \beta}}{\partial {\boldsymbol \beta}'}={\bf B}
+\frac{\partial {\bf X}{\boldsymbol \beta}}{\partial \beta'}={\bf X}
 \end{align}
 편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 
 \begin{align}
