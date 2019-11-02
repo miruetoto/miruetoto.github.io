@@ -120,15 +120,19 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\boldsymbol\beta}'{\bf X}'{\bf Y} }{\partial{\boldsymbol\beta} }={\bf X}'{\bf Y} 
 \end{align}
-아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$라고 하자. 
+아래식이 성립함은 당연하다. 위의식이 성립함을 증명하여보자. 편의상 ${\bf Y}_ {n \times 2}$, ${\bf X}_ {n\times p}$, ${\boldsymbol\beta}_ {p \times 2}$ 라고 하자. 
 \begin{align}
-{\bf Y}'{\bf X}{\boldsymbol\beta}=rbind({\bf y}_ 1, {\bf y}_ 2){\bf X}cbind(\beta_1,\beta_2)
+{\bf Y}'{\bf X}{\boldsymbol\beta}=\bigl(\begin{smallmatrix}
+{\bf y}_ 1 \\ 
+{\bf y}_ 2
+\end{smallmatrix}\bigr){\bf X}(\beta_1,\beta_2)
+=\bigl(\begin{smallmatrix}
+{\bf y}_ 1{\bf X}\beta_1 \\ {\bf y}_ 1{\bf X}\beta_2
+{\bf y}_ 2{\bf X}\beta_1 \\ {\bf y}_ 2{\bf X}\beta_2
+\end{smallmatrix}\bigr)
 \end{align}
 이므로 
-\begin{align}
-\frac{\partial {\bf Y}'{\bf X}{\boldsymbol\beta} } {\partial{\boldsymbol\beta} } 
-=\Big(\ \frac{\partial {\bf Y}'{\bf X}\beta_1 } {\partial{\boldsymbol\beta} } ,\frac{\partial {\bf Y}'{\bf X}\beta_2 } {\partial{\boldsymbol\beta} } \Big) 
-\end{align}
+
 
 - 아래식이 성립한다.
 \begin{align}
