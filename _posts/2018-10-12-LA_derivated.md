@@ -139,9 +139,11 @@ Y_2'{\bf X}\beta_1 & Y_2' {\bf X}\beta_2
 \begin{align}
 \frac{\partial }{\partial{\boldsymbol\beta} } = \big(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \big)
 \end{align}
-
 또한 아래가 성립한다. 
 \begin{align}
+\big(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \big)\beta_1'=
+\big(\frac{\partial\beta_1'}{\partial\beta_1} ,\frac{\partial \beta_1'}{\partial\beta_2} \big)
+=\big({\bf I}_p,{\bf 0}_p\big) 
 \end{align}
 
 - 아래식이 성립한다.
