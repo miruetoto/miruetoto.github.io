@@ -128,15 +128,21 @@ Y_2'
 \end{pmatrix}{\bf X}(\beta_1,\beta_2)
 =\begin{pmatrix}
 Y_1'{\bf X}\beta_1 & Y_1'{\bf X}\beta_2 \\\\ \\
-Y_2'{\bf X}\beta_1 & Y_2 {\bf X}\beta_2 
+Y_2'{\bf X}\beta_1 & Y_2' {\bf X}\beta_2 
 \end{pmatrix}
 =\begin{pmatrix}
-\beta_1'{\bf X}Y_1 & \beta_2'{\bf X}Y_1 \\\\ \\
-\beta_1'{\bf X}Y_2 & \beta_2'{\bf X}Y_2
+\beta_1'{\bf X}'Y_1 & \beta_2'{\bf X}'Y_1 \\\\ \\
+\beta_1'{\bf X}'Y_2 & \beta_2'{\bf X}'Y_2
 \end{pmatrix}
 \end{align} 
+그리고 $\frac{\partial }{\partial{\boldsymbol\beta} }$는 아래와 같이 쓸 수 있다. 
+\begin{align}
+\frac{\partial }{\partial{\boldsymbol\beta} } = \big(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \big)
+\end{align}
 
-
+또한 아래가 성립한다. 
+\begin{align}
+\end{align}
 
 - 아래식이 성립한다.
 \begin{align}
