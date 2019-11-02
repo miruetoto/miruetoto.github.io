@@ -142,14 +142,14 @@ Y_2'{\bf X}\beta_1 & Y_2' {\bf X}\beta_2
 따라서 아래가 성립한다. 
 \begin{align}
 \frac{\partial }{\partial{\boldsymbol\beta} } & {\bf Y}'{\bf X}{\boldsymbol\beta} 
-:= \bigg(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \bigg)begin{pmatrix}
+:= \bigg(\frac{\partial}{\partial\beta_1} ,\frac{\partial }{\partial\beta_2} \bigg)
+\begin{pmatrix}
 \beta_1'{\bf X}'Y_1 & \beta_2'{\bf X}'Y_1 \\\\ \\
 \beta_1'{\bf X}'Y_2 & \beta_2'{\bf X}'Y_2
 \end{pmatrix} \\\\ \\
 & =  asdf 
 \end{align}
 따라서 아래가 성립한다. 
-
 
 
 - 아래식이 성립한다.
