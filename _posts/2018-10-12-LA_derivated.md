@@ -25,39 +25,39 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 ### 미분에 대한 간단한 정의 
 - **(1)** col-vector을 스칼라로 미분하는 경우는 아래와 같다. 
 \begin{align}
-\frac{\partial {\bf a}}{\partial b}=\frac{\partial rbind(a_1,\dots,a_n)}{\partial b}= rbind\left(\frac{\partial a_1}{\partial b},\dots,\frac{\partial a_n}{\partial b}\right). 
+\frac{\partial {\bf z}}{\partial y}=\frac{\partial rbind(z_1,\dots,z_n)}{\partial y}= rbind\left(\frac{\partial z_1}{\partial y},\dots,\frac{\partial z_n}{\partial y}\right). 
 \end{align}
 이와 유사하게 row-vector을 스칼라로 미분하는 경우도 아래와 같다. 
 \begin{align}
-\frac{\partial {\bf x}'}{\partial y}=\frac{\partial cbind(x_1,\dots,x_n)}{\partial y}= cbind\left(\frac{\partial x_1}{\partial y},\dots,\frac{\partial x_n}{\partial y}\right). 
+\frac{\partial {\bf z}'}{\partial y}=\frac{\partial cbind(z_1,\dots,z_n)}{\partial y}= cbind\left(\frac{\partial z_1}{\partial y},\dots,\frac{\partial z_n}{\partial y}\right). 
 \end{align}
 
 - **(2)** 스칼라를 col-vector으로 미분하는 경우는 아래와 같다. 
 \begin{align}
-\frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial rbind(y_1,\dots,y_n)}= rbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
+\frac{\partial z}{\partial {\bf y}}=\frac{\partial z}{\partial rbind(y_1,\dots,y_n)}= rbind\left(\frac{\partial z}{\partial y_1},\dots,\frac{\partial z}{\partial y_n}\right). 
 \end{align}
 이와 유사하게 스칼라를 row-vector으로 미분하는 경우도 아래와 같다. 
 \begin{align}
-\frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
+\frac{\partial z}{\partial {\bf y}}=\frac{\partial z}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial z}{\partial y_1},\dots,\frac{\partial z}{\partial y_n}\right). 
 \end{align}
 
-- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것을 유의하자. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial^2}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 **이런건 무시하는것이 정신건강에 좋다.** 사실 매트릭스 쿡북에도 (32) 공식 밑에 
+- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것을 유의하자. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial^2}{\partial {\boldsymbol \beta} \partial {\boldsymbol \beta}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 **이런건 무시하는것이 정신건강에 좋다.** 사실 매트릭스 쿡북에도 (32) 공식 밑에 
 \begin{align}
-\left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
+\left[ \frac{\partial {\bf z}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial z_i}{\partial y_j}
 \end{align}
 와 같이 표현되어 있는데 이것은 엄밀하게 말하면 잘못된 표현이다. **바로 이부분이 짜증나는 부분이다.** 교재 <br/><br/>
 Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computations, and Applications in Statistics. Springer New York.<br/><br/>
-의 (4.11)을 참고하면 임의의 col-vector ${\bf x}_ {m \times 1}$ 와 ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
+의 (4.11)을 참고하면 임의의 col-vector ${\bf z}_ {m \times 1}$ 와 ${\bf y}_ {n \times 1}$ 에 대하여 아래가 성립한다고 약속하였다. 
 \begin{align}
-\frac{\partial {\bf x}'}{\partial {\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
+\frac{\partial {\bf z}'}{\partial {\bf y}}=cbind\left(\frac{\partial z_1}{\partial {\bf y}}, \dots, \frac{\partial z_m}{\partial {\bf y}} \right)
 \end{align}
 즉 카셀라 교재에서는 엄밀하게 col-vector, row-vector 를 구분하면서 미분하고 있다. 다만 편의상 
 \begin{align}
-\frac{\partial {\bf x}'}{\partial {\bf y}}=\frac{\partial {\bf x}}{\partial {\bf y}}
+\frac{\partial {\bf z}'}{\partial {\bf y}}=\frac{\partial {\bf z}}{\partial {\bf y}}
 \end{align}
 와 같이 쓰기도 한다고 덧붙이긴 했다. **그렇지만 나는 이런 헷갈리는 표현을 쓰지 않겠다.** 이제 예제로 아래를 증명하여 보자. 이거는 매트릭스 쿡북에는 없는 공식이지만 너무 중요해보이는 공식이라 연습삼아서 풀어보겠다. 
 \begin{align}
-\frac{\partial {\bf B}{\bf x}}{\partial {\bf x}'}={\bf B}
+\frac{\partial {\bf X}{\boldsymbol \beta}}{\partial {\boldsymbol \beta}'}={\bf B}
 \end{align}
 편의상 ${\bf B}_ {n \times p}, ~~ {\bf x}_ {p \times 1}$라고 가정하겠다. 
 \begin{align}
