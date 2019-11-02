@@ -41,7 +41,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial x}{\partial {\bf y}}=\frac{\partial x}{\partial cbind(y_1,\dots,y_n)}= cbind\left(\frac{\partial x}{\partial y_1},\dots,\frac{\partial x}{\partial y_n}\right). 
 \end{align}
 
-- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것이다. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 이런건 무시하는것이 정신건강에 좋다. 사실 매트릭스 쿡북에도 (32) 공식 밑에 
+- **(3)** 벡터를 벡터로 미분하는 경우는 1) row-vector를 col-vector로 미분하거나 2) col-vector를 row-vector로 미분할 경우에만 벡터간의 미분이 정의된다는 것을 유의하자. 이와 같은 이유로 헤시안(Hessian)을 $\frac{\partial^2}{\partial {\bf x} \partial {\bf x}'}$로 정의한다. 가끔 가다가 col-vector를 col-vector로 미분한 것처럼 정의하는 notation이 있는데 **이런건 무시하는것이 정신건강에 좋다.** 사실 매트릭스 쿡북에도 (32) 공식 밑에 
 \begin{align}
 \left[ \frac{\partial {\bf x}}{\partial {\bf y}} \right]_ {ij}=\frac{\partial x_i}{\partial y_j}
 \end{align}
@@ -51,7 +51,7 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \begin{align}
 \frac{\partial {\bf x}'}{\partial {\bf y}}=cbind\left(\frac{\partial x_1}{\partial {\bf y}}, \dots, \frac{\partial x_m}{\partial {\bf y}} \right)
 \end{align}
-다만 편의상 
+즉 카셀라 교재에서는 엄밀하게 col-vector, row-vector 를 구분하면서 미분하고 있다. 다만 편의상 
 \begin{align}
 \frac{\partial {\bf x}'}{\partial {\bf y}}=\frac{\partial {\bf x}}{\partial {\bf y}}
 \end{align}
@@ -86,6 +86,12 @@ Casella, G., Fienberg, S., & Olkin, I. (2007). Matrix Algebra: Theory, Computati
 \frac{\partial a}{\partial {\bf X}}=rbind\left( \frac{\partial a}{\partial {\bf x}_ 1},\dots,\frac{\partial a}{\partial {\bf x}_ n} \right)
 \end{align}
 와 같이 약속한다. 
+
+- **(5)** 매트릭스를 매트릭스로 미분하는 경우를 살펴보자. 아래와 같은 경우를 생각해보자. 
+\begin{align}
+\end{align}
+
+
 
 --- 
 
