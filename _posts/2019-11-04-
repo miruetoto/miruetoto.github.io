@@ -1,0 +1,29 @@
+---
+title: (리뷰) TTF for LBMM  
+layout: post 
+---
+
+### About this doc
+
+- 아래의 논문을 리뷰해보자. 
+Belkin, M., & Niyogi, P. (2008). Towards a theoretical foundation for Laplacian-based manifold methods. Journal of Computer and System Sciences, 74(8), 1289-1308.
+
+### Basic objects
+
+- ${\cal M}$을 compact smooth manifold 라고 가정하자. 그리고 ${\cal M}$은 어떤 $\mathbb{R}^{N}$공간에 isometrically embedded 되어 있다고 가정한다. 즉 ${\cal M} \subset \mathbb{R}^N$ 이다.  만약에 3차원 공간에 표현된 구의 표면을 표현하고 싶다면 아래과 같이 설정할 수 있다. 
+\begin{align}
+\mathbb{R}^3 : \mbox{3차원공간} 
+\end{align}
+\begin{align}
+{\cal M} : \mbox{구의 표면을 나타내는 매니폴드}
+\end{align}
+그리고 ${\cal M}$ 과 같이 유클리드 공간에  isometrically embedded 된 매니폴드를 리만매니폴드라고 한다(아마도).  
+
+- 라플라스 연산자는 아래와 같이 정의한다. 
+\begin{align}
+\triangle f =\triangledown^2 f
+\end{align}
+라플라스 벨트라미 오퍼레이터를 아래와 같이 정의하자. 
+\begin{align}
+\Delta {\cal M}
+\end{align}
