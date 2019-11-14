@@ -1,34 +1,29 @@
 ### 1. hst: calculation 
 
-def hst1(f,Edg,b,γ): #supporting hst
-# 1. choose u from {1,2,...,n}
-# 2. generate ϵ form U(0,1)
-# 3. f(u) <- f(u)+ϵ
-# 4. choose v \in N_i such that f(v) \leq f(u)
-# 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
-    # 1. choose u from {1,2,...,n}
+def hst1(f,Edg,b,u): #supporting hst
+# 1. f(u) <- f(u)+b
+# 2. choose v \in N_u
+# 3. do 
+    # case1 f(u)<f(v) : f(u)<- f(u)+b 
+    # case2 f(u)>= f(v) : f(v) <- f(v)+b 
+# 4. u <- v and 
     n=len(f)
+    rtn1=f.copy()
+    rtn2=u
+    # 1. f(u) <- f(u)+b
+    rtn1[u]=rtn1[u]+b
+    # 2. choose v \in N_u // choose v \in N_u such that f(v) \leq f(u)
+    N_u=list(np.where(Edg[u,:]==1)[1])
     from random import sample 
-    u=sample(list(co(0,n)),1)[0]
-    # 2. generate ϵ form U(0,1)
-    rtn=f.copy()
-    ##i=1
-    ϵ=init('u',1)[0]*b
-    iter=1
-    while True:
-        # 3. f(u) <- f(u)+ϵ
-        rtn[u]=rtn[u]+ϵ*(γ**iter)
-        # 4. choose v \in N_u such that f(v) \leq f(u)
-        N_u=list(np.where(Edg[u,:]==1)[1])
-        stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
-        if stop_criterion==0: break;
-        if iter>500: break;
-        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
-        iter=iter+1
-    # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
-    return rtn
+    v=N_u[sample(list(co(0,len(N_u)),1)[0]]
+    # 3. do 
+        # case1 f(u)<f(v) : f(u)<- f(u)+b 
+        # case2 f(u)>= f(v) : f(v) <- f(v)+b 
+    if rtn1[u]<rtn1[v]: rtn2=u 
+    else rtn2=v
+    return [rtn1,rtn2]
 
-def hst(gdata,τ,b,γ):
+def hst(gdata,τ,b):
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
@@ -36,13 +31,17 @@ def hst(gdata,τ,b,γ):
     rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     rtn['Nodename(=v)']=vname
     rtn['h0']=f
-    print('hst start (' +'τ='+str(τ)+', b='+str(b)+' ,γ='+str(γ)+')')
+    from random import sample 
+    u=sample(list(co(0,n)),1)[0]
+    print('hst start (' +'τ='+str(τ)+', b='+str(b)')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
         Edgtemp=init('0',(n,n))
         while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
-        rtn['h'+str(ℓ)]=hst1(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,γ=γ)
+        hst1rslt=hst1(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
+        rtn['h'+str(ℓ)]=hst1rslt[0]
+        u=hst1rslt[1]
     print('\n'+'hst end')
     return rtn
 
@@ -290,4 +289,33 @@ def pca4msvis4msg(hstresult,τlist,
     if prnt==True: print('\n'+'end')        
  
 ### 3. old functions
+
+
+def hst1old(f,Edg,b,γ): #supporting hst
+# 1. choose u from {1,2,...,n}
+# 2. generate ϵ form U(0,1)
+# 3. f(u) <- f(u)+ϵ
+# 4. choose v \in N_i such that f(v) \leq f(u)
+# 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
+    # 1. choose u from {1,2,...,n}
+    n=len(f)
+    from random import sample 
+    u=sample(list(co(0,n)),1)[0]
+    # 2. generate ϵ form U(0,1)
+    rtn=f.copy()
+    ##i=1
+    ϵ=init('u',1)[0]*b
+    iter=1
+    while True:
+        # 3. f(u) <- f(u)+ϵ
+        rtn[u]=rtn[u]+ϵ*(γ**iter)
+        # 4. choose v \in N_u such that f(v) \leq f(u)
+        N_u=list(np.where(Edg[u,:]==1)[1])
+        stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
+        if stop_criterion==0: break;
+        if iter>500: break;
+        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
+        iter=iter+1
+    # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
+    return rtn
 
