@@ -1,5 +1,4 @@
 ### 1. hst: calculation 
-
 def hst1(f,Edg,b,u): #supporting hst
 # 1. f(u) <- f(u)+b
 # 2. choose v \in N_u
@@ -15,12 +14,12 @@ def hst1(f,Edg,b,u): #supporting hst
     # 2. choose v \in N_u // choose v \in N_u such that f(v) \leq f(u)
     N_u=list(np.where(Edg[u,:]==1)[1])
     from random import sample 
-    v=N_u[sample(list(co(0,len(N_u)),1)[0]]
+    v=N_u[sample(list(co(0,len(N_u))),1)[0]]
     # 3. do 
         # case1 f(u)<f(v) : f(u)<- f(u)+b 
         # case2 f(u)>= f(v) : f(v) <- f(v)+b 
     if rtn1[u]<rtn1[v]: rtn2=u 
-    else rtn2=v
+    else: rtn2=v
     return [rtn1,rtn2]
 
 def hst(gdata,τ,b):
@@ -33,7 +32,7 @@ def hst(gdata,τ,b):
     rtn['h0']=f
     from random import sample 
     u=sample(list(co(0,n)),1)[0]
-    print('hst start (' +'τ='+str(τ)+', b='+str(b)')')
+    print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
         Edgtemp=init('0',(n,n))
