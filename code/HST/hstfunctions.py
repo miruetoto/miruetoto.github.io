@@ -1,5 +1,5 @@
 ### 1. hst: calculation 
-def hst1(f,Edg,b,u): #supporting hst
+def hst1walk(f,Edg,b,u): #supporting hst
 # 1. f(u) <- f(u)+b
 # 2. choose v \in N_u
 # 3. do 
@@ -7,10 +7,10 @@ def hst1(f,Edg,b,u): #supporting hst
     # case2 f(u)>= f(v) : f(v) <- f(v)+b 
 # 4. u <- v and 
     n=len(f)
-    rtn1=f.copy()
-    rtn2=u
+    nextf=f.copy()
+    nextu=u
     # 1. f(u) <- f(u)+b
-    rtn1[u]=rtn1[u]+b
+    nextf[u]=nextf[u]+b
     # 2. choose v \in N_u // choose v \in N_u such that f(v) \leq f(u)
     N_u=list(np.where(Edg[u,:]==1)[1])
     from random import sample 
@@ -18,11 +18,13 @@ def hst1(f,Edg,b,u): #supporting hst
     # 3. do 
         # case1 f(u)<f(v) : f(u)<- f(u)+b 
         # case2 f(u)>= f(v) : f(v) <- f(v)+b 
-    if rtn1[u]<rtn1[v]: rtn2=u 
-    else: rtn2=v
-    return [rtn1,rtn2]
+    if nextf[u]<nextf[v]: 
+        nextf[u]=nextf[u]+b 
+        nextu=sample(list(co(0,n)),1)[0]
+    else: nextu=v
+    return [nextf,nextu]
 
-def hst(gdata,τ,b):
+def hst1realization(gdata,τ,b):
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
@@ -38,9 +40,9 @@ def hst(gdata,τ,b):
         Edgtemp=init('0',(n,n))
         while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
-        hst1rslt=hst1(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
-        rtn['h'+str(ℓ)]=hst1rslt[0]
-        u=hst1rslt[1]
+        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
+        rtn['h'+str(ℓ)]=hst1walkrslt[0]
+        u=hst1walkrslt[1]
     print('\n'+'hst end')
     return rtn
 
