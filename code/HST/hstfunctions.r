@@ -1,10 +1,10 @@
 ## load pckg
-library(kohonen)
-library(dplyr)
-library(ggplot2)
-library(ggforce) # for geom_circle function
-library(ggrepel) # for geom_text_repel
-
+listofpackages <- c("kohonen","dplyr","ggplot2","ggforce","ggrepel")
+# ggforce : 4 geom_circle function
+# ggrepel : 4 geom_text_repel
+newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
+if(length(newpackages)) install.packages(newpackages)
+library(listofpackages)
 
 somplot<-function(hh,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
 set.seed(777)
