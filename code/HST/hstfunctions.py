@@ -46,7 +46,7 @@ def hst1realization(gdata,τ,b):
     print('\n'+'hst end')
     return rtn
 
-def hmat(hstresult):
+def hhmat(hstresult):
     τ=int((hstresult.shape[1]-2))
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
     return rtn 
@@ -62,7 +62,7 @@ def ϵstackmat(hstresult):
     return rtn 
 
 def snowdist(hh,τmax=None,prnt=False): 
-    #hh=hmat(hstresult)
+    #hh=hhmat(hstresult)
     if τmax==None: rtn=L2dist(hh,prnt=prnt)
     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
     return rtn
