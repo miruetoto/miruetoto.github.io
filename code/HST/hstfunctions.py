@@ -11,28 +11,22 @@ def hst(gdata,τ,b,ensemble=30):
     return rtn
 
 def hst1walk(f,Edg,b,u): #supporting hst
-# 1. f(u) <- f(u)+b
-# 2. choose v \in N_u
-# 3. do 
-    # case1 f(u)<f(v) : f(u)<- f(u)+b 
-    # case2 f(u)>= f(v) : f(v) <- f(v)+b 
-# 4. u <- v and 
     n=len(f)
     nextf=f.copy()
     nextu=u
-    # 1. f(u) <- f(u)+b
     nextf[u]=nextf[u]+b
-    # 2. choose v \in N_u // choose v \in N_u such that f(v) \leq f(u)
     N_u=list(np.where(Edg[u,:]==1)[1])
-    from random import sample 
-    v=N_u[sample(list(co(0,len(N_u))),1)[0]]
-    # 3. do 
-        # case1 f(u)<f(v) : f(u)<- f(u)+b 
-        # case2 f(u)>= f(v) : f(v) <- f(v)+b 
-    if nextf[u]<nextf[v]: 
+    from random import sample
+    if len(N_u)==0: 
         nextf[u]=nextf[u]+b 
         nextu=sample(list(co(0,n)),1)[0]
-    else: nextu=v
+    else: 
+        v=N_u[sample(list(co(0,len(N_u))),1)[0]]
+        if nextf[u]<nextf[v]: 
+            nextf[u]=nextf[u]+b 
+            nextu=sample(list(co(0,n)),1)[0]
+        else: 
+            nextu=v
     return [nextf,nextu]
 
 def hst1realization(gdata,τ,b):
