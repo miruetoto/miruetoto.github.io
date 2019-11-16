@@ -1,12 +1,12 @@
 ### 1. hst: calculation 
-def Ehst(gdata,τ,b,ensemble=30):
-    print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
+def Ehst(gdata,τ,b,esb=5):
+    print('Ehst start (' +'τ='+str(τ)+', b='+str(b)+')')
     rtn=hst1realization(gdata,τ=τ,b=b)
     hstrslt4hh=np.apply_along_axis(
         lambda inpt: np.array(hhmat(hst1realization(gdata,τ=τ,b=b))),
-        -1,np.asmatrix(cc(2,ensemble)).T)
+        -1,np.asmatrix(cc(2,esb)).T)
     hstTemp=np.apply_along_axis(np.sum,0,hstrslt4hh)
-    print('\n'+'hst end')
+    print('\n'+'Ehst end')
     rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/ensemble
     return rtn
 
