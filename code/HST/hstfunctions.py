@@ -49,7 +49,7 @@ def hst1realization(gdata,τ,b):
     print("■",sep='',end='')
     return rtn
 
-def hst(gdata,τ,b):
+def hst(gdata,τ,b): #samefunction with hst1realization except print
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
