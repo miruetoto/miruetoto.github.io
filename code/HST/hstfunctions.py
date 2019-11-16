@@ -1,5 +1,5 @@
 ### 1. hst: calculation 
-def hst(gdata,τ,b,ensemble=30):
+def Ehst(gdata,τ,b,ensemble=30):
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     rtn=hst1realization(gdata,τ=τ,b=b)
     hstrslt4hh=np.apply_along_axis(
@@ -47,6 +47,28 @@ def hst1realization(gdata,τ,b):
         rtn['h'+str(ℓ)]=hst1walkrslt[0]
         u=hst1walkrslt[1]
     print("■",sep='',end='')
+    return rtn
+
+def hst(gdata,τ,b):
+    vname=gdata[0]
+    f=gdata[1]
+    Edg=gdata[2]    
+    n=len(f)
+    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
+    rtn['Nodename(=v)']=vname
+    rtn['h0']=f
+    from random import sample 
+    u=sample(list(co(0,n)),1)[0]
+    print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
+    for ℓ in cc(1,τ): 
+        print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
+        Edgtemp=init('0',(n,n))
+        while np.sum(Edgtemp)==0: 
+            Edgtemp=(init('u',(n,n))<Edg)*1
+        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
+        rtn['h'+str(ℓ)]=hst1walkrslt[0]
+        u=hst1walkrslt[1]
+    print('\n'+'hst end')
     return rtn
 
 def hhmat(hstresult):
