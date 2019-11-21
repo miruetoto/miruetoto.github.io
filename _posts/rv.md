@@ -7,7 +7,7 @@ histogram splitting과 같은 방법은 이미 BBHE등에서 사용된적 있기
 따라서 저자들은 kumaraswamy distribution을 선택한 이유와 kumaraswamy distribution을 선택하였을때의 장점을 명확하게 설명해야 한다. 
 **The most distinguishing feature of the authors' methods from other methods is that they used kumaraswamy distribution.
 (Histogram splitting is not an author's own creative method, because it has already been used in other papers, such as BBHE and BEASF).
-Therefore, the authors should clearly explain why they chose the kumaraswamy distribution and the advantages of choosing the kumaraswamy distribution. But the authors did not make this effort.**
+Therefore, the authors should clearly explain why they chose the Kumaraswamy distribution and the advantages of choosing the Kumaraswamy distribution. But the authors did not make this effort.**
 
 
 3. 몇몇 실험결과들을 신뢰할 수 없다. **Some experimental results are unreliable.**
