@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-def myadd(a,b):
-    return a+b 
 
 def cc(start=0,end=1,samplingFreq=1):
     rtn=m2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
