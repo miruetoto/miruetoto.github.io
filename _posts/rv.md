@@ -24,4 +24,4 @@ Therefore, the authors should clearly explain why they chose the kumaraswamy dis
 **The subject of the paper, image enhencement, is not an area of interest in statistics.
 Therefore, in order for a paper related to image enhencement to be published in our journal, I believe that the distinctive elements that authors implement image enhencement should be closely related to statistics. In other words, the role of statistics in the methods proposed by the authors should be very critical. However, the only words associated with statistics in the author's paper are 'histogram' and 'kumaraswamy distribution'.
 Of these, 'histogram' is not a factor that makes the proposed method distinct from other methods.
-Then, the only thing left is the 'kumaraswamy distribution'. However, I don't thick that the use of this distribution does not indicate that the author's method is closely related to statistics.
+Then, the only thing left is the 'kumaraswamy distribution'. However, I don't thick that the use of this distribution does not indicate that the author's method is closely related to statistics.**
