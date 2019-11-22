@@ -22,7 +22,7 @@ def hst1walk(f,Edg,b,u): #supporting hst
         v=N_u[sample(list(co(0,len(N_u))),1)[0]]
         if nextf[u]<nextf[v]: 
             nextf[u]=nextf[u]+b 
-            nextu=v #sample(list(co(0,n)),1)[0]
+            nextu=u #sample(list(co(0,n)),1)[0]
         else: 
             nextf[v]=nextf[v]+b 
             nextu=v
