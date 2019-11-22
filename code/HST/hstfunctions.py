@@ -7,7 +7,7 @@ def Ehst(gdata,τ,b,esb=5):
         -1,np.asmatrix(cc(2,esb)).T)
     hstTemp=np.apply_along_axis(np.sum,0,hstrslt4hh)
     print('\n'+'Ehst end')
-    rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/ensemble
+    rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/esb
     return rtn
 
 def hst1walk(f,Edg,b,u): #supporting hst
