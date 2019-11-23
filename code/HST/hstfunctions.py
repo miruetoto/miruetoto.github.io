@@ -14,6 +14,7 @@ def hst1walk(f,Edg,b,u): #supporting hst
     n=len(f)
     nextf=f.copy()
     nextu=u
+    nextf[u]=nextf[u]+b
     N_u=list(np.where(Edg[u,:]==1)[1])
     from random import sample
     if len(N_u)==0: 
@@ -21,7 +22,7 @@ def hst1walk(f,Edg,b,u): #supporting hst
     else: 
         v=N_u[sample(list(co(0,len(N_u))),1)[0]]
         if nextf[u]<nextf[v]: 
-            nextf[u]=nextf[u]+2*b 
+            nextf[u]=nextf[u]+b
             nextu=u #sample(list(co(0,n)),1)[0]
         else: 
             nextf[v]=nextf[v]+b 
