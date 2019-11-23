@@ -21,14 +21,14 @@ def hst1walk(f,Edg,b,u): #supporting hst
     else: 
         v=N_u[sample(list(co(0,len(N_u))),1)[0]]
         if nextf[u]<nextf[v]: 
-            nextf[u]=nextf[u]+b 
+            nextf[u]=nextf[u]+2*b 
             nextu=u #sample(list(co(0,n)),1)[0]
         else: 
             nextf[v]=nextf[v]+b 
             nextu=v
     return [nextf,nextu]
 
-def hst1realization(gdata,τ,b):
+def hst1realization(gdata,τ,b): 
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
