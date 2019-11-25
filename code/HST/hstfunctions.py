@@ -35,17 +35,13 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     rtn['Nodename(=v)']=vname
     rtn['h0']=f
-    from random import sample 
-    u=sample(list(co(0,n)),1)[0]
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
         Edgtemp=init('0',(n,n))
         while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
-        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u,γ=γ)
         rtn['h'+str(ℓ)]=hst1walkrslt[0]
-        u=hst1walkrslt[1]
     print('\n'+'hst end')
     return rtn
 
