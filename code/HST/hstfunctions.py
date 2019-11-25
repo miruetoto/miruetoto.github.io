@@ -41,7 +41,7 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
         Edgtemp=init('0',(n,n))
         while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
-        rtn['h'+str(ℓ)]=hst1walkrslt[0]
+        rtn['h'+str(ℓ)]=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,γ=γ)
     print('\n'+'hst end')
     return rtn
 
