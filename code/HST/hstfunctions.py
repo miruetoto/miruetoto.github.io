@@ -45,6 +45,7 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     print('\n'+'hst end')
     return rtn
 
+
 def hhmat(hstresult):
     τ=int((hstresult.shape[1]-2))
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
