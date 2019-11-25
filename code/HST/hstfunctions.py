@@ -1,56 +1,33 @@
 ### 1. hst: calculation 
-def Ehst(gdata,τ,b,esb=5):
-    print('Ehst start (' +'τ='+str(τ)+', b='+str(b)+')')
-    rtn=hst1realization(gdata,τ=τ,b=b)
-    hstrslt4hh=np.apply_along_axis(
-        lambda inpt: np.array(hhmat(hst1realization(gdata,τ=τ,b=b))),
-        -1,np.asmatrix(cc(2,esb)).T)
-    hstTemp=np.apply_along_axis(np.sum,0,hstrslt4hh)
-    print('\n'+'Ehst end')
-    rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/esb
-    return rtn
-
-def hst1walk(f,Edg,b,u): #supporting hst
+def hst1walk(f,Edg,b,γ): #supporting hst
+# 1. choose u from {1,2,...,n}
+# 2. generate ϵ form U(0,1)
+# 3. f(u) <- f(u)+ϵ
+# 4. choose v \in N_i such that f(v) \leq f(u)
+# 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
+    # 1. choose u from {1,2,...,n}
     n=len(f)
-    nextf=f.copy()
-    nextu=u
-    nextf[u]=nextf[u]+b
-    N_u=list(np.where(Edg[u,:]==1)[1])
-    from random import sample
-    if len(N_u)==0: 
-        nextu=sample(list(co(0,n)),1)[0]
-    else: 
-        v=N_u[sample(list(co(0,len(N_u))),1)[0]]
-        if nextf[u]<nextf[v]: 
-            nextf[u]=nextf[u]+b
-            nextu=u #sample(list(co(0,n)),1)[0]
-        else: 
-            nextf[v]=nextf[v]+b 
-            nextu=v
-    return [nextf,nextu]
-
-def hst1realization(gdata,τ,b): 
-    vname=gdata[0]
-    f=gdata[1]
-    Edg=gdata[2]    
-    n=len(f)
-    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
-    rtn['Nodename(=v)']=vname
-    rtn['h0']=f
     from random import sample 
     u=sample(list(co(0,n)),1)[0]
-    for ℓ in cc(1,τ): 
-        #print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        Edgtemp=init('0',(n,n))
-        while np.sum(Edgtemp)==0: 
-            Edgtemp=(init('u',(n,n))<Edg)*1
-        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
-        rtn['h'+str(ℓ)]=hst1walkrslt[0]
-        u=hst1walkrslt[1]
-    print("■",sep='',end='')
+    # 2. generate ϵ form U(0,1)
+    rtn=f.copy()
+    ##i=1
+    ϵ=init('u',1)[0]*b
+    iter=1
+    while True:
+        # 3. f(u) <- f(u)+ϵ
+        rtn[u]=rtn[u]+ϵ*(γ**iter)
+        # 4. choose v \in N_u such that f(v) \leq f(u)
+        N_u=list(np.where(Edg[u,:]==1)[1])
+        stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
+        if stop_criterion==0: break;
+        if iter>500: break;
+        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
+        iter=iter+1
+    # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
     return rtn
 
-def hst(gdata,τ,b): #samefunction with hst1realization except print
+def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
@@ -66,7 +43,7 @@ def hst(gdata,τ,b): #samefunction with hst1realization except print
         Edgtemp=init('0',(n,n))
         while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
-        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
+        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u,γ=γ)
         rtn['h'+str(ℓ)]=hst1walkrslt[0]
         u=hst1walkrslt[1]
     print('\n'+'hst end')
@@ -317,32 +294,53 @@ def pca4msvis4msg(hstresult,τlist,
  
 ### 3. old functions
 
-
-def hst1old(f,Edg,b,γ): #supporting hst
-# 1. choose u from {1,2,...,n}
-# 2. generate ϵ form U(0,1)
-# 3. f(u) <- f(u)+ϵ
-# 4. choose v \in N_i such that f(v) \leq f(u)
-# 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
-    # 1. choose u from {1,2,...,n}
-    n=len(f)
-    from random import sample 
-    u=sample(list(co(0,n)),1)[0]
-    # 2. generate ϵ form U(0,1)
-    rtn=f.copy()
-    ##i=1
-    ϵ=init('u',1)[0]*b
-    iter=1
-    while True:
-        # 3. f(u) <- f(u)+ϵ
-        rtn[u]=rtn[u]+ϵ*(γ**iter)
-        # 4. choose v \in N_u such that f(v) \leq f(u)
-        N_u=list(np.where(Edg[u,:]==1)[1])
-        stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
-        if stop_criterion==0: break;
-        if iter>500: break;
-        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
-        iter=iter+1
-    # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
+def Ehst(gdata,τ,b,esb=5):
+    print('Ehst start (' +'τ='+str(τ)+', b='+str(b)+')')
+    rtn=hst1realization(gdata,τ=τ,b=b)
+    hstrslt4hh=np.apply_along_axis(
+        lambda inpt: np.array(hhmat(hst1realization(gdata,τ=τ,b=b))),
+        -1,np.asmatrix(cc(2,esb)).T)
+    hstTemp=np.apply_along_axis(np.sum,0,hstrslt4hh)
+    print('\n'+'Ehst end')
+    rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/esb
     return rtn
 
+def hst1walk(f,Edg,b,u): #supporting hst
+    n=len(f)
+    nextf=f.copy()
+    nextu=u
+    nextf[u]=nextf[u]+b
+    N_u=list(np.where(Edg[u,:]==1)[1])
+    from random import sample
+    if len(N_u)==0: 
+        nextu=sample(list(co(0,n)),1)[0]
+    else: 
+        v=N_u[sample(list(co(0,len(N_u))),1)[0]]
+        if nextf[u]<nextf[v]: 
+            nextf[u]=nextf[u]+b
+            nextu=u #sample(list(co(0,n)),1)[0]
+        else: 
+            nextf[v]=nextf[v]+b 
+            nextu=v
+    return [nextf,nextu]
+
+def hst1realization(gdata,τ,b): 
+    vname=gdata[0]
+    f=gdata[1]
+    Edg=gdata[2]    
+    n=len(f)
+    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
+    rtn['Nodename(=v)']=vname
+    rtn['h0']=f
+    from random import sample 
+    u=sample(list(co(0,n)),1)[0]
+    for ℓ in cc(1,τ): 
+        #print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
+        Edgtemp=init('0',(n,n))
+        while np.sum(Edgtemp)==0: 
+            Edgtemp=(init('u',(n,n))<Edg)*1
+        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
+        rtn['h'+str(ℓ)]=hst1walkrslt[0]
+        u=hst1walkrslt[1]
+    print("■",sep='',end='')
+    return rtn
