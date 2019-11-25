@@ -291,7 +291,7 @@ def pca4msvis4msg(hstresult,τlist,
  
 ### 3. old functions
 
-def Ehst(gdata,τ,b,esb=5):
+def OLD_Ehst(gdata,τ,b,esb=5):
     print('Ehst start (' +'τ='+str(τ)+', b='+str(b)+')')
     rtn=hst1realization(gdata,τ=τ,b=b)
     hstrslt4hh=np.apply_along_axis(
@@ -302,7 +302,7 @@ def Ehst(gdata,τ,b,esb=5):
     rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/esb
     return rtn
 
-def hst1walk(f,Edg,b,u): #supporting hst
+def OLD_hst1walk(f,Edg,b,u): #supporting hst
     n=len(f)
     nextf=f.copy()
     nextu=u
@@ -321,7 +321,7 @@ def hst1walk(f,Edg,b,u): #supporting hst
             nextu=v
     return [nextf,nextu]
 
-def hst1realization(gdata,τ,b): 
+def OLD_hst1realization(gdata,τ,b): 
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
