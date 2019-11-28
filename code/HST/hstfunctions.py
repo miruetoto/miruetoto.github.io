@@ -12,7 +12,7 @@ def hst1walk(f,Edg,b,γ): #supporting hst
     # 2. generate ϵ form U(0,1)
     rtn=f.copy()
     ##i=1
-    ϵ=init('u',1)[0]*b
+    ϵ=b#init('u',1)[0]*b
     iter=1
     while True:
         # 3. f(u) <- f(u)+ϵ
