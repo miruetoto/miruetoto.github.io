@@ -25,9 +25,9 @@ def hst1walk(f,Edg,b,γ): #supporting hst
         if iter>500: break;                     # if iter>500: break; to prevent infinitely flows. 
             
         # 6. if snow can flow, choose next node v. 
-        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]] # u'= sample from U_u:= N_u \cap {v:f(v) <= f(u)}. 
+        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]] # u'= sample from L_u:= N_u \cap {v:f(v) <= f(u)}. 
         
-        # 7. repeat 3-4 until U_u:={v: v \in N_u & f(v) <= f(u)}=\emptyset 
+        # 7. repeat 3-4 until L_u:={v: v \in N_u & f(v) <= f(u)}=\emptyset 
         iter=iter+1
     
     return rtn
