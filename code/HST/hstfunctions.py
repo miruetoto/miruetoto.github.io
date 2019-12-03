@@ -1,30 +1,35 @@
 ### 1. hst: calculation 
 def hst1walk(f,Edg,b,γ): #supporting hst
-# 1. choose u from {1,2,...,n}
-# 2. generate ϵ form U(0,1)
-# 3. f(u) <- f(u)+ϵ
-# 4. choose v \in N_i such that f(v) \leq f(u)
-# 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
-    # 1. choose u from {1,2,...,n}
+    # 1. choose u from {1,2,...,n}. u is current node where snows stays. 
     n=len(f)
     from random import sample 
     u=sample(list(co(0,n)),1)[0]
-    # 2. generate ϵ form U(0,1)
+    
+    # 2. generate ϵ form U(0,b) or set ϵ:=b
     rtn=f.copy()
     ##i=1
     ϵ=b#init('u',1)[0]*b
+    
+    # 3. set iter =1 
     iter=1
-    while True:
-        # 3. f(u) <- f(u)+ϵ
+    while True:     # iterate following: 
+        # 4. f(u) <- f(u)+ϵ*γ : update current node 
         rtn[u]=rtn[u]+ϵ*(γ**iter)
-        # 4. choose v \in N_u such that f(v) \leq f(u)
-        N_u=list(np.where(Edg[u,:]==1)[1])
-        stop_criterion=sum(rtn[N_u]<=rtn[u]) # if stop_criterion=0, then we should stop. 
-        if stop_criterion==0: break;
-        if iter>500: break;
-        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]]
+       
+        # 5. check that: are there any nodes to which snow can flow from u. 
+        N_u=list(np.where(Edg[u,:]==1)[1])      # define N_u where N_u is neighborhood of u. 
+        stop_criterion=sum(rtn[N_u]<=rtn[u])    # define stop_criterion := \sum_{v \in N_u} I(f(v) <= f(u)) , 
+                                                # where stop_criterion is number of node v which satisfying (1) f(v)<= f(u) (2) v \in N_u 
+                                                # Thus, stop_criterion = # of nodes to which snow can flow from u. 
+        if stop_criterion==0: break;            # stop_criterion=0 means "snow can't flow from u". 
+        if iter>500: break;                     # if iter>500: break; to prevent infinitely flows. 
+            
+        # 6. if snow can flow, choose next node v. 
+        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]] # u'= sample from U_u:= N_u \cap {v:f(v) <= f(u)}. 
+        
+        # 7. repeat 3-4 until U_u:={v: v \in N_u & f(v) <= f(u)}=\emptyset 
         iter=iter+1
-    # 5. u <- v and repeat 3-4 until {v: v \in N_i & f(v) \leq f(u)}=\emptyset 
+    
     return rtn
 
 def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
