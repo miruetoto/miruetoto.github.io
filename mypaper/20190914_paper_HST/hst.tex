@@ -216,13 +216,30 @@ and call the matrix ${\cal H}{\boldsymbol f}$ as \emph{heavy-snow} of ${\boldsym
 \begin{dfn}
 Let ${\boldsymbol f}$ be the graph signal on weighted graph $(V,E,W)$. Let ${\cal H}{\boldsymbol f}$ be heavysnow for ${\boldsymbol f}$ with some $\tau$, $\gamma$ and $b$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
 \[
-sdist(v_i , v_j) := E\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
+sdist(v_i , v_j) :=d_{ij}= \|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
 \]
 where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$ is $i$-th row of ${\cal H}{\boldsymbol f}$.
 \end{dfn}
 
+\begin{thm} 
+$d_{ij} =$ 
+\end{thm}
+
+\begin{thm}
+continous
+\end{thm}
+
+
+***claim 3.*** 모든 $\tau$에 대하여 아래를 만족하는 거리 (혹은 유사거리) $d^* $ 가 존재한다. 
+\begin{align}
+d_1 \big(\boldsymbol{h}(v_i),\boldsymbol{h}(v_j)\big) = d^* \big(F^* (f(v_i)),F^* (f(v_j))\big)
+\end{align}
+여기에서 $F^* (x) :=\mu_1(-\infty,x]\times \mu_1(-\infty,\infty] \dots \times \mu_{\tau+1}(-\infty,\infty]$ 이고 $\mu:=P \circ {\boldsymbol h}^{-1}$ 이다. 
+
+
+\subsubsection{regular graph}
 \begin{rmk}
-Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}\boldsymbol{f}$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove}) such that 
+Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}\boldsymbol{f}$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove, using `regular graph'}) such that 
 \[
 {\boldsymbol h}_1,\dots,{\boldsymbol h}_n \sim F.
 \] 
@@ -247,7 +264,7 @@ where $V(T,F)=\int IF(\boldsymbol{h},T,F)^2 dF$.
 \end{rmk}
 
 \begin{rmk}
-Let $d_{ij}=\|{\boldsymbol h}_i-{\boldsymbol h}_j\|_2$
+Let $d_{ij}=\|{\boldsymbol h}_i-{\boldsymbol h}_j\|_2$. Using above remark, we get $d_{ij} \sim N(T(F),V(T,F)/n)$ where $T(F):=\int d_{ij}dF$. Note that $T(F) \to 0 $ as $\tau \to \infty$. Further, we can conclude that $V(T,F)/n \to 0$ as $\tau \to \infty$. Thus ${\bf D} \to {\bf 0}$. 
 \end{rmk}
 
 \begin{rmk}
@@ -257,103 +274,6 @@ SC_{n}({\boldsymbol h};\tau)= \frac{T\big((1-1/n)F_{n-1}(\boldsymbol{h}) + 1/n ~
 \]
 This is sample version of $IF({\boldsymbol h},T,F)$.
 \end{rmk}
-
-\shrp HST에서 ${\boldsymbol h}$는 우리가 데이터로 부터 얻어낼 수 있는 모든 정보를 포함하고 있다고 볼 수 있다. 따라서 스무딩이나 클러스터링등은 모두 ${\boldsymbol h}$에서 얻어지는 통계량 $T(F;\tau)$로 정의가능하다. 여기에서 $T(F;\tau)$ 아래와 같은 functional $T:{\cal A} \to \mathbb{R}$ 이다. 
-\[
-T(F;\tau):=\int g({\boldsymbol h}) dF({\boldsymbol h})
-\]
-, where $F({\boldsymbol h})=\mu_1(-\infty,h_1]\times \dots \times \mu_{\tau+1}(-\infty,h_{\tau+1}]$ , $\mu:=P \circ {\boldsymbol h}^{-1}$ 이고 ${\cal A}$ 는 $(\Omega,{\cal F})$ 에서 정의가능한 모든 finited-signed measure 들의 집합 혹은 그것의 convex subset 이다. 
-
-- 이때 $T$ 에 대한 ***($\tau+1$)-dimensional influence function*** 은 아래와 같이 정의한다. 
-\begin{align}
-IF({\boldsymbol h}; T,F,\tau)= \lim_{t\downarrow 0}\frac{T\Big((1-t)F(\boldsymbol{h}) + t \delta(\boldsymbol{h}) \Big)-T(F(\boldsymbol{h}))}{t}
-\end{align}
-우리는 아래와 같이 $IF({\boldsymbol h}; T,F,\tau)$의 ***sample version*** 을 생각해 볼 수 있다. 
-\begin{align}
-SC_{n}({\boldsymbol h};\tau)= \frac{T\Big((1-1/n)F_{n-1}(\boldsymbol{h}) + 1/n ~ \delta(\boldsymbol{h}) \Big)-T(F_{n-1}(\boldsymbol{h}))}{1/n}
-\end{align}
-보는것처럼 $SC_{n}$은 $IF({\boldsymbol h}; T,F,\tau)$ 의 정의에서 $t$ 대신에 $1/n$을, $F$ 대신에 $F_{n-1}$을 대입하여 얻을 수 있다. 보통 $SC_{n}$ 를 ***sensitivity curve*** 라고 부른다. 
-
-- ***claim 1.*** **(1)** 각각의 노드 $v_i$에서 정의된 확률변수 $f(v_i)$가 서로 독립이고 같은분포를 가진다고 하자. 그리고 **(2)** 각 노드에 연결된 edge의 수가 동일하다고 하자(이런 그래프를 ***regular graph*** 라고 함). 그러면 $\boldsymbol{h}(v_i)$ 역시 서로 독립이고 같은 분포를 가질것이다. $F_n$을 $\boldsymbol{h}(v_1),\dots,\boldsymbol{\dot h}(v_n)$에 대응하는 empirical-cdf 라고 하자. 글리벤코-칸텔리정리는 $F_n \to F$ 임을 보여준다. 따라서 적당히 큰 $n$에 대하여 $F_n$은 $F$의 neighborhood에 속한다고 볼 수 있다. 따라서 
-\begin{align}
-T(F_n) & \approx  T(F)+\int IF(\boldsymbol{h},T,F)d(F_n-F)(\boldsymbol{h}) \\
-& = T(F)+\int IF(\boldsymbol{h},T,F) dF_n(\boldsymbol{h}) 
-\end{align}
-이다. 여기에서 $\int IF(\boldsymbol{h},T,F)dF(\boldsymbol{h})=0$ 임이 사용되었다. 따라서 
-\begin{align}
-\sqrt{n}\Big(T(F_n)-T(F) \Big) \to N(0,V(T,F))
-\end{align}
-이다. 여기에서 $V(T,F)=\int IF(\boldsymbol{h},T,F)^2 dF(\boldsymbol{h})$ 이다. 
-
-- ***claim 2.*** claim 1에서 $V(T,F)$ 는 $\tau \to \infty$ 일 경우 $0$ 으로 수렴한다. 왜냐하면 $\tau$ 가 커질수록 
-\begin{align}
-\boldsymbol{h}(v_1)\approx \boldsymbol{h}(v_2) \approx \dots \approx \boldsymbol{h}(v_n)
-\end{align}
-와 같이 되기 때문이다. 
-
-- claim 1에서 **(2)** 의 조건은 생략불가능하다. 즉 $f(v_i)$가 서로 독립이고 같은 분포를 가진다는 것이 반드시 $\boldsymbol{h}(v_i)$ 들이 서로 독립이고 같은분포를 따른다는 것을 임플라이 하지는 않는다. 
-
-- 노드간의 snow-dist 역시 $\boldsymbol{h}(v_i)$ 의 함수이므로 $T$로 표현가능하다. 따라서 (1),(2) 를 가정하면 노드간의 snow-dist 역시 $N(0,V(T,F))$ 를 따른다. 즉 (1),(2) 아래에서 노드간의 snow-distance 를 히스토그램으로 그려보면 정규분포와 비슷한 모양이 된다. 이때 snow-dist들의 평균거리가 0으로 수렴한다는 조건이 추가적으로 있으면 claim2 에 의해서 모든 노드들이 한점으로 뭉쳐버리게 된다. 
-
-- 거리들의 히스토그램이 정규분포처럼 보이지 않는 경우는 (1) 이 성립하지 않거나 (2) 가 성립하지 않기 때문이다. 그렇다면 각각의 거리가 정규분포처럼 보이는 그룹이 2개가 있다면 이것은 (1) 혹은 (2) 가 성립하는 그룹이 2개 있다고 해석해도 될까? 아래가 성립하면 이렇게 주장할 수 있을것이다. 
-
-- ***claim 3.*** 모든 $\tau$에 대하여 아래를 만족하는 거리 (혹은 유사거리) $d^* $ 가 존재한다. 
-\begin{align}
-d_1 \big(\boldsymbol{h}(v_i),\boldsymbol{h}(v_j)\big) = d^* \big(F^* (f(v_i)),F^* (f(v_j))\big)
-\end{align}
-여기에서 $F^* (x) :=\mu_1(-\infty,x]\times \mu_1(-\infty,\infty] \dots \times \mu_{\tau+1}(-\infty,\infty]$ 이고 $\mu:=P \circ {\boldsymbol h}^{-1}$ 이다. 
-
-\subsection{discussions}
-
-\shrp ${\cal M}$을 compact smooth manifold 라고 가정하자.  그리고 ${\cal M}$은 어떤 $\mathbb{R}^{N}$공간에 isometrically embedded 되어 있다고 가정한다. 즉 ${\cal M} \subset \mathbb{R}^N$ 이다.  만약에 3차원 공간에 표현된 구의 표면을 표현하고 싶다면 아래과 같이 설정할 수 있다. 
-\[
-\mathbb{R}^3 : \mbox{3차원공간} 
-\]
-\[
-{\cal M} : \mbox{구의 표면을 나타내는 매니폴드}
-\]
-그리고 ${\cal M}$ 과 같이 유클리드 공간에  isometrically embedded 된 매니폴드를 리만매니폴드라고 한다(아마도).  
-
-\shrp 라플라스 연산자는 아래와 같이 정의한다. 
-\[
-\triangle f =\triangledown^2 f
-\]
-라플라스 벨트라미 오퍼레이터를 아래와 같이 정의하자. 
-\[
-\Delta {\cal M}
-\]
-
-\shrp 그래프 $(V,W)$는 어떠한 매니폴드의 $({\cal M},{\cal W})$ 의 sample version이라고 하자.  아래의 성질을 만족하는(이것이 맞는 표기법인지 모르겠다. 이런식으로 가정하는 논문을 찾아봐야 할것 같음) 상황에서만 이론을 전개할 것이다. 
-\begin{align}
-{\cal G} \to {\cal M} \quad as~ n\to \infty 
-\end{align}
-신호처리식 언어로 표현하면 샘플링 주기가 $0$에 가까워지면 distrcret signal 이 continuous signal 로 수렴한다는 의미이다. 이때 샘플링은 일정한 간격으로 할 수도 있지만 어떤 특정확률에 따라서 랜덤하게 샘플링할 수도 있다. 따라서 기븐 그래프 ${\cal G}=(V,E)$ 가 어떠한 매니폴드의 sample version 이라고 볼 수 도 있지만 어떠한 랜덤엘리먼트의 ***realization*** 이라고 볼 수 도 있다. 
-
-우리의 정의에서 $b$는 밴드윗의 역할을 한다. ***asymptotic property*** 를 증명하기 위해서는 밴드윗이 0으로 간다는 조건이 필수적인데 HST의 아이디어로 비춰볼때 이 조건은 
-\begin{align}
-\|{\cal N}_ i\|\to \infty \quad \mbox{ for all } v_i \in V
-\end{align}
-와 비슷하다. 
-
-벨킨의 논문에서 ${\cal M}$ 은 유클리드 스페이스 $\mathbb{R}^{N}$에 ***isometric*** 하게 임베딩된 ***compact and smooth*** 매니폴드라고 가정한다(벨킨, 2008, p.1290). 이러한 가정은 매니폴드에서 샘플된 자료들에 대한 엣지를 고려하지 않고 단순히 거리만으로 유사성을 따지기 위함이다. 심지어 유클리디안거리를 그대로 쓰기 위하여 아이소메트릭 가정을 하였다. (컴팩트 and 스무스 가정은 왜 했는지 잘 모르겠음 아마 벨트라미-라플라시안을 잘 정의하기 위함일것으로 추측됨) 아무튼 이러한 셋팅하에서 ${\cal G} \to {\cal M}$ 를 모순없이 가정할수 있는것 같다. 우리는 위의 가정들을 쓰지 않는 대신에 ${\cal M}$ 위에서 적당하게 샘플을 잘하면 그래프가 매니폴드를 근사한다고 직접 가정한다. 구체적으로는 아래와 같은 가정이 될것 같다. 
-\begin{align}
-\frac{\|{\cal N}_ i \|}{n} \overset{\operatorname{pr} }{\to} \int_{v \in {\cal N}(v_i)}dP_{\cal M}(v)
-\end{align} 
-여기에서 $P_{\cal M}$ 는 매니폴드 ${\cal M}$ 위에서 정의된 메져이다. 
-
-- ***claim*** 여기서는 given ${\cal M}$ 에 대하여 특정한 확률로 ${\cal G}$ 가 뽑힌 경우를 고려한다. $f:{\cal M} \to \mathbb{R}$ 이라고 하자. $P_{\cal M}$ 를 ${\cal M}$ 에서 정의된 ***probability measure*** 라고 하고 $p_{\cal M}$ 을 $P_{\cal M}$ 에 대응하는 ***probability density function*** 이라고 하자. 이제 $v_1,\dots,v_n$을 $P_{\cal M}$에 따라 ${\cal M}$ 에서 추출된 어떠한 sample 이라고 하자. $f(v_i)$를  랜덤이 아니라고 하자. 
-\begin{align}
-{\bf Lf}(v_i):=\frac{1}{\|{\cal N}_ i\|}\sum_{j \in {\cal N}_ i} e^{ -\frac{d_1^2(v_i,v_j)}{2b^2} } \big(f(v_i)-f(v_j)\big)
-\end{align}
-이때 $v_i \in {\cal M}$ 주변의 점들을 ${\cal N}(v_i)$ 라고 하자(이것은 ${\cal N}_ i$의 continuous 버전이라고 볼 수 있음). 만약에 $\int_{v \in {\cal N}(v_i)} dP(v)>0$ 이면 $n \to \infty$ 일때 $\|{\cal N}_ i \| \to \infty$ 가 성립할것 같다.
-그리고 이러한 조건 하에서 아래가 성립할것 같다. 
-\begin{align}
-{\bf Lf}(v_i) \overset{\operatorname{pr}}{\rightarrow}\frac{1}{\mbox{something} }\int_{ {\cal N}(v_i)} e^{ -\frac{d_1^2(v_i,v)}{2b^2} } \big(f(v_i)-f(v)\big)dP_{\cal M}(v)
-\end{align}
-여기에서 someting은 bandwidth $b$와 관련있는 어떠한 상수일것같다. 만약에 ${\cal M}$이 유클리드공간에 임베딩된 매니폴드라면 우변이 ${\cal L}_ {\cal M}f(v_i)$ 와 관련이 있을 것이다. 여기에서 ${\cal L}_ {\cal M}$은 라플라스-벨트라미 연산자이다. 일단은 아래가 성립한다고 생각하자. 
-\begin{align}
-{\bf Lf}(v_i) \overset{\operatorname{pr}}{\rightarrow} {\cal L}_ {\cal M}f(v_i)
-\end{align}
 
 \iffalse
 \subsection{Statistical Measure of Heavy-Snow Transform}
