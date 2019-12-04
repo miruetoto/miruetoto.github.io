@@ -183,7 +183,7 @@ For your easy understanding let's assume some specific situation as follows:
 
 The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$ and $f(v_i)$ be function valued mapped to $v_i$ and $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of randomly select from $V$ with probability $\frac{1}{n}$ and $v^{(\tau)}$ is defined
+Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$ and $f(v_i)$ be function valued mapped to $v_i$ and $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of random selection from $V$ with probability $\frac{1}{n}$ and $v^{(\tau)}$ is defined
 \[
 v^{(\tau)}=\begin{cases}
 \mbox{ sample from } {\cal U}_{v^{(\tau-1)}} \mbox{ with probability } \frac{w(v^{(\tau-1)},v^{(\tau)})}{\sum_{j \in {\cal N}_{v^{(\tau-1)}}}w(v^{(\tau-1)},v^{(\tau)})}  & {\cal U}_{v_{(\tau-1)}}\neq \emptyset \\ 
@@ -210,7 +210,7 @@ h^{(0)}(v_2) & h^{(1)}(v_2) & \dots & h^{(\tau)}(v_1) \\
 h^{(0)}(v_n) & h^{(1)}(v_n) & \dots & h^{(\tau)}(v_n) \end{bmatrix}
 \]
 and call the matrix ${\cal H}{\boldsymbol f}$ as \emph{heavy-snow} of ${\boldsymbol f}$. 
-
+\end{dfn}
 
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
@@ -221,14 +221,43 @@ sdist(v_i , v_j) := E\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
 where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$ is $i$-th row of ${\cal H}{\boldsymbol f}$.
 \end{dfn}
 
-Suppose following model:
+\begin{rmk}
+Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}\boldsymbol{f}$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove}) such that 
 \[
-f(v_i)=g(v_i)+\epsilon_i, ~ i=1,2,\dots,n. 
-\]
-Let ${\cal H}\boldsymbol{f}$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is random variable ${\boldsymbol h}_i$ can be thought as random vector (\textcolor{red}{need to prove}) such that 
-\[
-{\boldsymbol h}_1,\dots,{\boldsymbol h}_n \sim F_{\boldsymbol h}.
+{\boldsymbol h}_1,\dots,{\boldsymbol h}_n \sim F.
 \] 
+Define functional $T(F)$
+\[
+T(F):=\int g({\boldsymbol h}) dF.
+\]
+Let $F_n$ empirical distribution function of ${\boldsymbol h}_1,\dots,{\boldsymbol h}_n$, i.e., 
+\[
+F_n({\boldsymbol h}\leq t ) :=\frac{1}{n}\sum_{i=1}^{n}1({\boldsymbol h}_i\leq t).
+\]
+From Glivenko-Cantelli lemma we have $F_n \to F$. Thus for sufficiently large $n$, we can say that $F_n$ is neighborhood of $F$. Thus 
+\begin{align*}
+T(F_n) & \approx  T(F)+\int IF(\boldsymbol{h},T,F)d(F_n-F) \\
+& = T(F)+\int IF(\boldsymbol{h},T,F) dF_n
+\end{align*}
+where $IF({\boldsymbol h}; T,F,\tau)= \lim_{t\downarrow 0}\frac{T\big((1-t)F(\boldsymbol{h}) + t \delta(\boldsymbol{h}) \big)-T(F(\boldsymbol{h}))}{t}$ is influence function of $T$. In here $\int IF(\boldsymbol{h},T,F)dF=0$ is used. Thus 
+\[
+\sqrt{n}\Big(T(F_n)-T(F) \Big) \to N(0,V(T,F))
+\]
+where $V(T,F)=\int IF(\boldsymbol{h},T,F)^2 dF$.
+\end{rmk}
+
+\begin{rmk}
+Let $d_{ij}=\|{\boldsymbol h}_i-{\boldsymbol h}_j\|_2$
+\end{rmk}
+
+\begin{rmk}
+Define snesitivity curve as 
+\[
+SC_{n}({\boldsymbol h};\tau)= \frac{T\big((1-1/n)F_{n-1}(\boldsymbol{h}) + 1/n ~ \delta(\boldsymbol{h}) \big)-T(F_{n-1}(\boldsymbol{h}))}{1/n}.
+\]
+This is sample version of $IF({\boldsymbol h},T,F)$.
+\end{rmk}
+
 \shrp HST에서 ${\boldsymbol h}$는 우리가 데이터로 부터 얻어낼 수 있는 모든 정보를 포함하고 있다고 볼 수 있다. 따라서 스무딩이나 클러스터링등은 모두 ${\boldsymbol h}$에서 얻어지는 통계량 $T(F;\tau)$로 정의가능하다. 여기에서 $T(F;\tau)$ 아래와 같은 functional $T:{\cal A} \to \mathbb{R}$ 이다. 
 \[
 T(F;\tau):=\int g({\boldsymbol h}) dF({\boldsymbol h})

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1575377504 "hst.tex" "/home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.pdf" "hst" 1575440540
+["pdflatex"] 1575457619 "hst.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.pdf" "hst" 1575457619
   "/etc/texmf/web2c/texmf.cnf" 1557923194 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.aux" 1575377504 4416 52ba393a8c835ce39612ba3badbbc8bd ""
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux" 1575457619 4416 0edbf55349218060d2e7b91b8a0b67db ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1480098698 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1480098698 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -214,11 +214,11 @@
   "Fig/snow_ex1_fig1.pdf" 1522688086 120730 9f49ac9de5a26f7e5878e7e8196b1daf ""
   "Fig/snow_ex2_fig1.pdf" 1532330096 401360 8b0bef28707002112f558baafeee8ef0 ""
   "Fig/snow_ex2_fig2.pdf" 1532330114 271558 c66311d3bec0674d13d65717d518436a ""
-  "hst.aux" 1575377504 4416 52ba393a8c835ce39612ba3badbbc8bd ""
-  "hst.tex" 1575377504 63099 b4ea51f5a7b8860fb3c65f07a0e665a9 ""
+  "hst.aux" 1575457619 4416 0edbf55349218060d2e7b91b8a0b67db ""
+  "hst.tex" 1575457619 64342 7bbec9bcd9dc0b740864e154fa8c5646 ""
   (generated)
   "hst.aux"
-  "hst.pdf"
-  "/home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.log"
-  "/home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.pdf"
   "hst.log"
+  "hst.pdf"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.pdf"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.log"

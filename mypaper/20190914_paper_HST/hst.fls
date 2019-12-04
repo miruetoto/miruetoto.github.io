@@ -1,10 +1,10 @@
-PWD /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST
+PWD /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.tex
-OUTPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.log
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.tex
+OUTPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -94,9 +94,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.aux
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.aux
-OUTPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.aux
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux
+OUTPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -143,7 +143,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-OUTPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.pdf
+OUTPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
@@ -166,12 +166,12 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/Fig1.png
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/Fig1.png
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/Fig1.png
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/Fig2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/Fig2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/Fig2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/Fig1.png
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/Fig1.png
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/Fig1.png
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/Fig2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/Fig2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/Fig2.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -229,40 +229,40 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex1_fig1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex1_fig1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex1_fig1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex2_fig1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex2_fig1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex2_fig1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex2_fig2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex2_fig2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/snow_ex2_fig2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_data.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_data.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_data.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/data_str.png
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/data_str.png
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/data_str.png
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_1.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_2.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_3.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_3.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_3.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_4.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_4.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_4.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_5.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_5.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_5.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_6.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_6.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/Fig/In_scale_6.pdf
-INPUT /home/cgb/Desktop/Dropbox/0. Statistics/1. My PAPER/HST/20190914_paper_HST/hst.aux
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex1_fig1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex1_fig1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex1_fig1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex2_fig1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex2_fig1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex2_fig1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex2_fig2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex2_fig2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/snow_ex2_fig2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_data.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_data.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_data.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/data_str.png
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/data_str.png
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/data_str.png
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_1.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_2.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_3.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_3.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_3.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_4.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_4.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_4.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_5.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_5.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_5.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_6.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_6.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/Fig/In_scale_6.pdf
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
