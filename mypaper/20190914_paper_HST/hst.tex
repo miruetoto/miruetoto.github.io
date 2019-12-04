@@ -150,9 +150,9 @@ If the viscosity is too high, the shape of the snow accumulations will always li
 The remaining of this paper is organized as follows. Section 2 defines heavy-snow transformation and proposes some statistics based on heavysnow transformation. 
 Section 3 introduces some visualization techniques that can effectively show the results of heavysnow transform. Section 4 presents possible applications of heavysnow with various numerical experiments and real data analysis. Finally, concluding remarks are given in Section 5 where a possible use for smoothing is briefly discussed as a future research topic. 
 
-\section{Heavy-Snow Transformation}
-\subsection{Definition of Heavy-Snow Transformation}
-Before defining heavy-snow transformation, we would like to explain data structure to which the transformation is applicable. 
+\section{Heavy-Snow Transform}
+\subsection{Definition of Heavy-Snow Transform}
+Before defining heavy-snow transform, we would like to explain data structure to which the transformation is applicable. 
 Let ${\cal V}$ be set of nodes (or vertices) and ${\cal E}$ be set of links (or edges). In the context of heavy-snow transformation, the link means a way that snow can move in. Basically, you can consider ${\cal V}=\{\nu_1,\dots,\nu_n\}$ as given index set such as ${\cal V}=\{1,2,\dots,n\}$. However, it is often reasonable to view node as realization of some random variable $X$. This can be illustrated by setting node as $v=X(\nu)$. 
 
 Let $X:{\cal V} \to {\cal M}$ be a random variable where ${\cal M}$ is isometrically embedded manifold in $\mathbb{R}^{N}$. Supposed that we observed $v_1,v_2,\dots,v_n ~\sim~ i.i.d. ~ F_X$ where $F_X$ is cumulative distribution functions of $X$. The graph signal $f$ is real valued function such that 
@@ -198,7 +198,7 @@ where ${\boldsymbol h}^{(0)}={\boldsymbol f}$ and ${\boldsymbol \xi}^{(\tau)}=\{
 \[
 \xi^{(\tau)}(v_i)=	\begin{cases}
 \gamma \xi^{(\tau)}(v_{(\tau-1)})  & {\cal U}_{v_{(\tau-1)}}\neq \emptyset \\ 
-b &  {\cal U}_{v_{(\tau-1)}} = \emptyset. \\ 
+b &  {\cal U}_{v_{(\tau-1)}} = \empxtyset. \\ 
 \end{cases}
 \]
 Define operator ${\cal H}$ called \emph{heavy-snow transform} such that
