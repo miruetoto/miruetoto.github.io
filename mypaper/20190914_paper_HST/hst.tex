@@ -226,16 +226,16 @@ Let $X:{\cal V} \to \mathbb {R}$ as measurable mapping connecting vertex $\nu$ t
 \end{thm}
 
 \begin{thm}
-Let ${\cal H}({\boldsymbol f},\tau)$ be the heavy-snow transform of ${\boldsymbol f}$ and $b_{\tau}$ be the amount of falling snow. Assume $b_{\tau} \to 0$ and $\tau b_\tau \to \infty$ as $\tau \to 0$. Define $H:V \times [0,1] \to \mathbb{R}$ such that
-\[
-H(v,\ell/\tau):=h^{(\ell)}(v)
-\]
-and $H^*:V \times [0,1] \to \mathbb{R}$ such that
-\[
-\lim_{\tau \to \infty} H(v,\cdot):=H^*(v,\cdot).
-\]
+Let ${\cal H}({\boldsymbol f},\tau)$ be the heavy-snow transform of ${\boldsymbol f}$ and $b_{\tau}$ be the amount of falling snow. Assume followings:
+\begin{itemize}
+	\item ${\boldsymbol f}$ is continuous on $V$. 
+	\item $b_{\tau} \to 0$ and $\tau b_\tau \to \infty$ as $\tau \to 0$.
+\end{itemize}
+Then there is homotopy function between $\rho^{(0)}$ and $\rho^{(\infty)}$. 
 \end{thm}
-
+\begin{proof}
+Define $H:V \times [0,1] \to \mathbb{R}$ such that $H(v,\ell/\tau):=h^{(\ell)}(v)$ and $H^*:V \times [0,1] \to \mathbb{R}$ such that $H^*(v,\cdot):=\lim_{\tau \to \infty} H(v,\cdot)$. $H^*$ is continuous function. 
+\end{proof}
 \subsubsection{Regular graph}
 \begin{rmk}
 Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}(\boldsymbol{f};\tau)$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove, using `regular graph'}) such that 

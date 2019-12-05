@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1575523964 "hst.tex" "/home/lgcgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.pdf" "hst" 1575523964
+["pdflatex"] 1575524915 "hst.tex" "/home/lgcgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.pdf" "hst" 1575524916
   "/etc/texmf/web2c/texmf.cnf" 1574202576 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lgcgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux" 1575523964 3519 903eb9701d67d24764fa82eae8a7d9b6 ""
+  "/home/lgcgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.aux" 1575524915 3519 903eb9701d67d24764fa82eae8a7d9b6 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1480098698 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1480098698 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -156,11 +156,11 @@
   "Fig/In_scale_5.pdf" 1575496884 16204 b7d7b1ea2bc7f1f295413c2a64bd901e ""
   "Fig/In_scale_6.pdf" 1575496884 16220 7be6fb95b81050af62b8f5575d8d814e ""
   "Fig/data_str.png" 1575496884 242616 6f117c4bd8bf0c1aac9cd233e1c3e5d1 ""
-  "hst.aux" 1575523964 3519 903eb9701d67d24764fa82eae8a7d9b6 ""
-  "hst.tex" 1575523964 54414 02601a896892e8c4f9cd54c95b0f1d9d ""
+  "hst.aux" 1575524915 3519 903eb9701d67d24764fa82eae8a7d9b6 ""
+  "hst.tex" 1575524915 54636 03f42d3c604fc3a85ee822f0eb941959 ""
   (generated)
-  "hst.aux"
   "/home/lgcgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.log"
+  "hst.aux"
   "hst.pdf"
   "/home/lgcgb/Documents/GitHub/miruetoto.github.io/mypaper/20190914_paper_HST/hst.pdf"
   "hst.log"
