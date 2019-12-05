@@ -164,8 +164,6 @@ f : {\cal M} \to \mathbb{R}.
 Furthermore, we define a set of linked vertices with a particular vertex $v_i$ as ${\cal N}_{v_i}=\{v_j: (\nu_i,\nu_j) \in {\cal E} \}$ where $\nu_i:X^{-1}(v_i)$.
 Note that $\forall M \in {\cal M} : ~ V^{-1}(M) \in \sigma(X)$ where $\sigma(X)$ is smallest $\sigma$-field which makes $X$ as random variable. Thus $X^{-1}(v_i)$ is always well defined. 
 
-%Basically, the information of the set of linked vertices determines the data structure. For example, in one-dimensional data or time series, we can define the set of linked values as ${\cal N}_{v_i}=\{v_{i-1},v_{i+1}\}$.  
-
 From now on, we explain how to implement the phenomenon of snow accumulation. Let's come back to Figure 2 for easy understanding. Figure 2 (a), (b) and (c) show different viscous materials stacked on the same ground. For the case of Figure 2 (a), material flows to local minimum, which might be similar to the accumulation of rainwater. On the other hand, the material in Figure 2 (c) does not flow and just stacks up above ground. The most important property of the material in (a) is `continue to flow until blocked'. Note that small viscous materials do not accumulate. Those small viscous materials such as water accumulate only when they reach the local minimum. On the other hand, the most important property of highly viscous materials such as (c) is `stacking.' They only accumulate and never flow. 
 
 The snow can be interpreted as having a medium viscosity between two materials of Figure 2 (a) and (c), as metioned in Section 1. In order to express the viscosity of the snow, we assume that snow has both feature of (a) and (c). In other words, snow continues to accumulate AND flow until blocked. 
@@ -218,20 +216,20 @@ and call it \emph{snow matrix} of ${\boldsymbol f}$.
 \begin{dfn}
 Let ${\boldsymbol f}$ be the graph signal on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
 \[
-\rho(v_i , v_j) := \|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
+\rho^{\tau}(v_i , v_j) := \|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
 \]
 where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$.
 \end{dfn}
 
 \begin{thm} 
-Let $({\cal S},\rho)$ be the metric space. Let $({\cal V},\psi)$.  
+Let $X:{\cal V} \to \mathbb {R}$ as measurable mapping connecting vertex $\nu$ to $v$. Define graph signal $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let $({\cal S}^{(\tau)},\rho^{(\tau)})$ be the another metric space defined in snowyground where ${\cal S}^{(\tau)}:=\{{\boldsymbol h}^{(\tau)}(v): v\in {\cal M}\}$. Cleary, $\rho^{(0)}$ is metric in ${\cal M}$. Further $\rho^{(\infty)}$ is metric in ${\cal V}$. 
 \end{thm}
 
 \begin{thm}
 continous
 \end{thm}
 
-\subsubsection{regular graph}
+\subsubsection{Regular graph}
 \begin{rmk}
 Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}(\boldsymbol{f};\tau)$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove, using `regular graph'}) such that 
 \[
@@ -269,136 +267,14 @@ SC_{n}({\boldsymbol h};\tau)= \frac{T\big((1-1/n)F_{n-1}(\boldsymbol{h}) + 1/n ~
 This is sample version of $IF({\boldsymbol h},T,F)$.
 \end{rmk}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{Fig/Ex2.png}
-	\caption{$X_i$ in Example 4.1.} 
-\end{figure}
+\subsubsection{Spectral decomposition}
+
+\subsubsection{Smoothing tools}
 
 
-\iffalse
-\subsection{Statistical Measure of Heavy-Snow Transform}
-
-A bottom curve in Figure \ref{snow:motivatingex} represents $X_i$ and other curves represent the snowy ground, $Y_{i,\tau}$ with various $\tau$. The interesting thing is that if $X_i$ and $X_j$ have a different local structure, then $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ and $\{Y_{j,\tau}\}_{\tau=0}^{\cal T}$ also have a different sequence. Therefore, we can express a dissimilarity of $X_i$ and $X_j$ as distance between $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ and $\{Y_{j,\tau}\}_{\tau=0}^{\cal T}$.
-
-\begin{dfn}
-	Let $\{X_i\}$ be the given data and ${\cal N}_{i}$ be a set of linked values with $X_i$. Let  $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ be the heavy-snow transform on $(\{X_i\},\{{\cal N}_i\})$. A dissimilarity between $X_i$ and $X_j$ is defined as
-	\[
-	d_{\cal T}(X_i,X_j)=E\left[\rho\left(\{Y_{i,\tau}\}_{\tau=0}^{\cal T},\{Y_{j,\tau}\}_{\tau=0}^{\cal T}\right)\right], 
-	\]
-	where $\rho\left(\{Y_{i,\tau}\}_{\tau=0}^{\cal T},\{Y_{j,\tau}\}_{\tau=0}^{\cal T}\right)=\|(Y_{i,0},\dots,Y_{i,{\cal T}})-(Y_{j,0},\dots,Y_{j,{\cal T}}) \|_2^2.$
-\end{dfn}
-
-Based on the definition of dissimilarity, we define an importance of each observation.
-
-\begin{dfn}
-	Let $\{X_i\}$ be the given data and ${\cal N}_{i}$ be a set of linked values with $X_i$. Let $d_{\cal T}(X_i,X_j)$ be the dissimilarity between $X_i$ and $X_j$. For fixed $\delta>0$, an importance of specific observation $X_{k}$ is defined as 
-	\[
-	imp(X_{k},{\cal T})=\frac{\left|\{X_{j}:d_{\cal T}(X_{k},X_{j})>\delta\}\right|}{\left|\{X_i\}\right|}, 
-	\]
-	where $|A|$ is the cardinality of set $A$. 
-\end{dfn}
-
-Note that if $X_i=c(\in \mathbb{R})$ for all $i$, then $d_{\cal T}(X_i,X_j)=0$ for all $i,j$, which implies that all data points have the same importance. If $\delta \to \infty$, then $imp(X_i,{\cal T}) \to 0$ for all $i$; thus, the entire data points are not important. If $\delta \to 0$, then $imp(X_i,{\cal T}) \to 1$ for all $i$, so it means that all of data points are important. Hence, it is necessary to choose an  appropriate $\delta$ to measure the importance of the data. 
-\fi 
 \section{Visulization}
 
 \section{Numerical Experiments}
-\iffalse
-\subsection{Simulated Examples}
-In this section, we present some examples of heavy-snow transforms with one-dimensional data. For all examples, we set  ${\cal N}_i=\{X_{i-1},X_i,X_{i+1}\}$, $b=0.02\times \sqrt{V(\{X_i\})}$ and $p_{ij}=\frac{1}{3}$. 
-\vskip 3mm
-\noindent\textbf{Example 4.1}:
-Consider following Gaussian process $\{X_i\}$ generated by $N(\mu_i,0.5)$, where 
-\[
-\footnotesize{\mu_i=\left\{
-	\begin{array}{ll}
-	0, &~1\le i \le 200\\
-	1, &~201\le i \le 300\\
-	0,&~301\le i \le 700\\
-	5, &~701\le i \le 800\\
-	0, &~801\le i \le 1000.\\
-	\end{array}
-	\right.}
-\]
-\begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{Fig/snow_ex1_fig1.pdf}
-	\caption{$X_i$ in Example 4.1.} 
-	\label{snow:ex1_1}
-\end{figure}
-Figure \ref{snow:ex1_1} shows a realization of $X_i$, where observations with $\mu=1$ are marked as green and observations with $\mu=5$ are marked as blue.
-
-\iffalse
-\begin{sidewaysfigure}
-	\centering
-	\includegraphics[width=0.75\textwidth]{Fig/snow_ex1_fig2.png}
-	\caption{\textbf{Top:} Plot of heavy-snow transform: $(i,\tau,Y_{i,\tau})$ with ${\cal T}=10$ (left), ${\cal T}=200$ (middle), and ${\cal T}=600$ (right). 
-		\newline
-		\textbf{Middle:} Principal component plot of $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ with ${\cal T}=10$ (left), ${\cal T}=200$ (middle), and ${\cal T}=600$ (right).
-		\newline
-		\textbf{Bottom:} Plot of $(i,X_{i})$ with $imp(X_i,{\cal T})$. In here $imp(X_i,{\cal T})$ are represented in color and size with ${\cal T}=10$ (left), ${\cal T}=200$ (middle),  and ${\cal T}=600$ (right).}
-	\label{snow:ex1_2}
-\end{sidewaysfigure}
-\fi
-
-The first row in Figure \ref{snow:ex1_2} is the result of the heavy-snow transform with ${\cal T}=10,~200$ and $600$, where the x-axis represents the index of the data, the y-axis represents $\tau$, and the color represents the value of $Y_{i,\tau}$. As one can see, $\{Y_{i,\tau}\}_{i=1}^{1000}$ with small $\tau$ represents $\{X_i\}$ with high-resolution and $\{Y_{i,\tau}\}_{i=1}^{1000}$ with large $\tau$ represents $\{X_i\}$ with low-resolution. Thus, this map is clearly a multiscale representation. 
-
-The second row in Figure \ref{snow:ex1_2} shows principal component plot of $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ with different $\cal T$. Note that blue and red/green ones are well separated in x-axis. Thus, it can be interpreted that the first principal component is thought of as an overall average of data. The interpretation of the second principal component could be more difficult than first one. It is related to the structure of linked data, that is, the land-shape. To understand the meaning of second principal component, suppose that snow falls as much as $\tau=1$. Then value of $E(Y_{i,1}-X_i)$ is perfectly determined by considering structure between $X_{i-1},X_{i}$ and $X_{i+1}$. So, the values of $E(Y_{i,1}-X_i)$ are divided by the following types of land-shapes:
-\begin{enumerate}[(i)]
-	\item local minimum: $X_i=\min(X_{i-1},X_i,X_{i+1})$
-	\item local maximum: $X_i=\max(X_{i-1},X_i,X_{i+1})$
-	\item flat: $X_{i-1}=X_i=X_{i+1}$ 
-	\item uphill: $X_{i-1}<X_i<X_{i+1}$
-	\item downhill: $X_{i-1}>X_i>X_{i+1}$
-	\item flat-uphill: $X_{i-1}=X_i<X_{i+1}$ or $X_{i-1}>X_i=X_{i+1}$
-	\item flat-downhill: $X_{i-1}=X_i>X_{i+1}$ or $X_{i-1}<X_i=X_{i+1}$
-\end{enumerate}
-Note that for all $i$, $P(X_{i-1}=X_i)=0$ in this example. Thus, we could not consider (iii), (vi) and (vii). Note also that values of $E(Y_{i,1}-X_i)$ are the same in the cases (iv) and (v). Thus, the values of $E(Y_{i,1}-X_i)$, amount of snow accumulation, can be roughly divided into three groups according to the land-shapes and these are represented in three straight lines in the left panel of the second row. 
-
-The second row in Figure \ref{snow:ex1_2} also contains a multiscale concept. In ${\cal T}=10$, data can be roughly divided into two groups, blue one and red/green ones. And each group can also be divided into three groups according to land-shape. If one increases the scale up to ${\cal T}=200$, in other words, if you more widely consider the linked data, then groups of blue, green, and red dots are clearly distinguished, compared to ${\cal T}=10$. Instead, three straight lines disappear, so we no longer know whether each observation is local maximum or minimum. In other words, we lose some local-scale information. Now, let's move the principal component plot with ${\cal T}=600$, which shows the most global-scale analysis. We easily check that there are some points at which the value of the second principal component is very high. These points are located in the neighborhood of $i=700$ or $i=800$, which are the points where sudden mean changes occur. Note that detecting these points need more wide consideration about linked data. So these points are not separated from the main group in the local-scale analysis. 
-
-For a fixed $\delta$, an importance of specific point $X_{k}$ can be calculated by counting how many points are in $\{X_j:,d_{\cal T}(X_{k},X_{j})>\delta\}$. In this example, we choose $\delta$ as the median of $\{d_{\cal T}(X_{i},X_{j}): i,j \in \{1,\dots,1000\} \}$. Results for calculation importance of data are shown in the third row. Importance is marked by various colors and sizes. Bigger ones are more important than small ones and purple ones are more important than red ones. The interesting thing is that importance of data changes over scales. In the local-scale analysis, observations which are located in $i \in (700,800)$ are considered to be important. However, in the global-scale analysis, observations where sudden mean change occurs (such as $i=700$ or $i=800$) are considered to be more important. 
-\vskip 3mm
-\noindent\textbf{Example 4.2}:
-Consider a Gaussian process $\{X_i\}$ generated by $N(\mu_i,0.5)$, where 
-$${\mu_i=\left\{
-	\begin{array}{ll}
-	0, &~1\le i \le 512\\
-	5, &~513\le i \le 1024.\\
-	\end{array}
-	\right.}$$
-Figure \ref{snow:ex2_1}(a) shows a realization of $X_i$, where red, green, blue, light blue and purple colors represent $\{X_i\}_{i=1}^{472}$,  $\{X_i\}_{i=473}^{502}$, $\{X_i\}_{i=503}^{522}$, $\{X_i\}_{i=523}^{552}$ and $\{X_i\}_{i=553}^{1024}$, respectively. As one  can see, the data have a single change point in $i=513$ and blue ones contain this sudden mean changes. Green and light blue ones are the neighborhood of the change point. Figure \ref{snow:ex2_1}(b) shows principle component plot of $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$, where ${\cal T}=120$. The red ones and purple ones are separated from each other. Thus, data with $\mu_i=0$ and $\mu_i=5$ are well separated in ${\cal T}=120$. We would like to emphasize that the green, blue and light blue ones are also separated from their main groups because they are located around the change point. So which points are important in Figure \ref{snow:ex2_1}(b)? One can easily check that red and purple area are denser than the areas where green, light blue and purple are located. So the importance of $\{X_i\}$ will be high in the neighborhood of the change point. Figure \ref{snow:ex2_1}(c) shows $(i,imp(X_i,120)) $, the importance plot. Here, we choose $\delta$ as the median of $\{d_{{\cal T}=120}(X_{i},X_{j}): i,j \in \{1,\dots,1000\} \}$ as in Example 4.1. As expected, $imp(X_i,120)$ has a peak in $i=512$, where the sudden mean change occurs. Figure \ref{snow:ex2_1}(d) shows another importance plot as in the third row of Figure \ref{snow:ex2_1}. 
-\begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{Fig/snow_ex2_fig1.pdf}
-	\caption{(a) $X_i$; (b) Principal component plot of $\{Y_{i,\tau}\}_{\tau=0}^{120}$; (c) Plot of $(i,imp(X_i,120))$; (d) Plot of $(i,X_i)$ where $imp(X_i,120)$ are marked color and size.}
-	\label{snow:ex2_1}
-\end{figure}
-
-Furthermore, the importance of $X_i$ can be applicable to a smoothing problem that estimate $\mu_i$ from $X_i$. The following is the proposed smoothing procedure. 
-\begin{itemize}
-	\item[1. ] Calculate the importance of $X_i$, i.e., get the $imp(X_i,{\cal T})$. 
-	\item[2. ] For $b=1,\dots,B$, get $X_i^{(b)}$ such that 
-	\[
-	X_i^{(b)}=\begin{cases} X_i, & i \in M \\ 
-	\tilde{X}_i, & i \in M^c,
-	\end{cases}
-	\]
-	where $M$ is length-$N_0(<N)$ samples without replacement from a population of $\{1,2,\dots,N\}$ with weight $$\mathbf{w}=\left(imp(X_i,{\cal T}),\dots,imp(X_N,{\cal T})\right)$$ and $\tilde{X}_i$ is linearly interpolated value from $\{X_i\}_{i\in M}$. 
-	\item[3. ] Get $\hat{\mu}_i=\frac{1}{B}\sum_{b=1}^{B}X_i^{(b)}$ 
-\end{itemize}
-The key of the above procedure is that we do not use random sampling. Instead, we consider the importance of data as sampling weight. Thus, the important data is more likely to be sampled than other. 
-
-Figure \ref{snow:ex2_2} shows the smoothing results. Left-top panel shows the original data. The red line in the left-bottom denotes a  wavelet fit by EbayesThresh (Johnstone and Silverman 2005). The green line in right-bottom represents a wavelet fit by SURE threshold (Donoho and Johnstone 1994). The result by our proposed method is shown as the yellow line in the right-top panel. In this example, we choose $\cal T$ as $120$ and $N_0=50$. As one can see, the performance of the proposed method is comparable to  the wavelet fits and we want to emphasize that our method is not limited to the data structure. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{Fig/snow_ex2_fig2.pdf}
-	\caption{Smoothing results} 
-	\label{snow:ex2_2}
-\end{figure}
-\fi 
 
 \subsection{Real Data Analysis}
 \subsubsection{Avenger's}
@@ -482,7 +358,102 @@ When growing scale up to ${\cal T}=300$, the importance of Euljiro 1-ga station 
 \section{Concluding Remarks}
 Heavy-snow transform is a new multiscale visualization technique which is motivated by observing how snowfall accumulates. The concept of heavy-snow transform is shared with that of scale-space theory in computer vision. Heavy-snow transform is useful for evaluating some probabilistic structures of linked data whether a particular set of observations is similar to nearby other or not. We define the dissimilarity of the data and define the importance of the data based on it. We also introduced useful applications such as change-point detection and smoothing.
 
-\iffalse
+\newpage
+\begin{thebibliography}{}
+
+%\bibitem{Aldroubi1992} Aldroubi, A., Unser, M., \& Eden, M. (1992). Cardinal spline filters: Stability and convergence to the ideal sinc interpolator. {\it Signal processing}, {\bf 28}, 127-138.
+
+%\bibitem{Arino2004} Arino, M. A., Morettin, P. A., \& Vidakovic, B. (2004). Wavelet scalograms and their applications in economic time series. {\it Brazilian Journal of Probability and Statistics}, 37-51.
+
+%\bibitem{Bertsekas1976} Bertsekas, D. P. (1976). Multiplier methods: A survey. {\it Automatica}, {\bf 12}, 133--145.
+\bibitem{Klein}Klein, D. J., and Randić, M. (1993). Resistance distance. Journal of mathematical chemistry, 12(1), 81-95.
+
+\bibitem{Shuman} Shuman, D. I., Narang, S. K., Frossard, P., Ortega, A., and Vandergheynst, P. (2012). The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. arXiv preprint arXiv:1211.0053.
+
+\bibitem{Breunig} Breunig, M. M., Kriegel, H. P., Ng, R. T., and Sander, J. (2000, May). LOF: identifying density-based local outliers. In ACM sigmod record (Vol. 29, No. 2, pp. 93-104). ACM.
+\bibitem{He} He, X., and Niyogi, P. (2004). Locality preserving projections. In Advances in neural information processing systems (pp. 153-160).
+
+\bibitem{Belkin} Belkin, M., and Niyogi, P. (2003). Laplacian eigenmaps for dimensionality reduction and data representation. Neural computation, 15(6), 1373-1396.
+
+\bibitem{Ng} Ng, A. Y., Jordan, M. I., and Weiss, Y. (2002). On spectral clustering: Analysis and an algorithm. In Advances in neural information processing systems (pp. 849-856).
+
+\bibitem{Tsang} Tsang, I. W., and Kwok, J. T. (2007). Large-scale sparsified manifold regularization. In Advances in Neural Information Processing Systems (pp. 1401-1408).
+
+
+\bibitem{Lafon} Lafon, S., and Lee, A. B. (2006). Diffusion maps and coarse-graining: A unified framework for dimensionality reduction, graph partitioning, and data set parameterization. IEEE transactions on pattern analysis and machine intelligence, 28(9), 1393-1403.
+
+\bibitem{Leskovec} Leskovec, J., Lang, K. J., Dasgupta, A., and Mahoney, M. W. (2009). Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters. Internet Mathematics, 6(1), 29-123.
+
+\end{thebibliography}
+
+\newpage
+\section*{Appendix A: Figures}
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_1.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=10$.}
+	\label{snow:subway_in_01}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_2.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=100$.}
+	\label{snow:subway_in_1}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_3.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=200$.}
+	\label{snow:subway_in_2}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_4.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=300$.}
+	\label{snow:subway_in_3}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_5.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=400$.}
+	\label{snow:subway_in_4}
+\end{sidewaysfigure}	
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_6.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=500$.}
+	\label{snow:subway_in_5}
+\end{sidewaysfigure}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse %%% some useful comments in concluding remarks. 
 Another interesting key point is that the heavysnow transform have a \emph{multiscale} attribute. In (b), the case of least snow falling ($\tau=20$) relatively identifies the detailed features of underlying function, while the case of most snow falling ($\tau=160$) captures the global trends of it. In other words, the snowy grounds constructed by different $\tau$'s hold multiscale concept that can be interpreted as ``zoom-in" and ``zoom-out" of the signal. As one can see, the amount of snow accumulation is closely related to the resolution of data visibility, so $\tau$ can be considered as a multiscale parameter in scale-space analysis.
 
 This multiscale attribute of heavysnow transform allows us to accept various points of view that define the dissimilarity between data. To better understand, consider the example in Figure 3. This example will be analyzed later in section xx, so we will omit details here. Groups A, B, and C, shown in the upper left of Figure 3, were generated from normal distributions with mean $0$, $1$, and $5$, respectively. Our question is:  
@@ -517,38 +488,34 @@ In literature, there exist numerous multiscale methods that may share a multisca
 
 The remaining of this paper is organized as follows. Section 4.2 defines heavy-snow transformation and proposes some statistics based on heavy-snow transformation, dissimilarity and importance of data for statistical data analysis. In Section 4.3, numerical experiments including real data analysis are presented. As for a challengeable aspect, Seoul Metro passenger data that are a kind of cylinder data structure are used. Finally, concluding remarks are given in Section 4.4 where a possible use for smoothing is briefly discussed as a future research topic. 
 \fi 
-\newpage
-\begin{thebibliography}{}
 
-%\bibitem{Aldroubi1992} Aldroubi, A., Unser, M., \& Eden, M. (1992). Cardinal spline filters: Stability and convergence to the ideal sinc interpolator. {\it Signal processing}, {\bf 28}, 127-138.
+\iffalse %%% definition of importance 
+\subsection{Statistical Measure of Heavy-Snow Transform}
 
-%\bibitem{Arino2004} Arino, M. A., Morettin, P. A., \& Vidakovic, B. (2004). Wavelet scalograms and their applications in economic time series. {\it Brazilian Journal of Probability and Statistics}, 37-51.
+A bottom curve in Figure \ref{snow:motivatingex} represents $X_i$ and other curves represent the snowy ground, $Y_{i,\tau}$ with various $\tau$. The interesting thing is that if $X_i$ and $X_j$ have a different local structure, then $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ and $\{Y_{j,\tau}\}_{\tau=0}^{\cal T}$ also have a different sequence. Therefore, we can express a dissimilarity of $X_i$ and $X_j$ as distance between $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ and $\{Y_{j,\tau}\}_{\tau=0}^{\cal T}$.
 
-%\bibitem{Bertsekas1976} Bertsekas, D. P. (1976). Multiplier methods: A survey. {\it Automatica}, {\bf 12}, 133--145.
-\bibitem{Klein}Klein, D. J., and Randić, M. (1993). Resistance distance. Journal of mathematical chemistry, 12(1), 81-95.
+\begin{dfn}
+	Let $\{X_i\}$ be the given data and ${\cal N}_{i}$ be a set of linked values with $X_i$. Let  $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ be the heavy-snow transform on $(\{X_i\},\{{\cal N}_i\})$. A dissimilarity between $X_i$ and $X_j$ is defined as
+	\[
+	d_{\cal T}(X_i,X_j)=E\left[\rho\left(\{Y_{i,\tau}\}_{\tau=0}^{\cal T},\{Y_{j,\tau}\}_{\tau=0}^{\cal T}\right)\right], 
+	\]
+	where $\rho\left(\{Y_{i,\tau}\}_{\tau=0}^{\cal T},\{Y_{j,\tau}\}_{\tau=0}^{\cal T}\right)=\|(Y_{i,0},\dots,Y_{i,{\cal T}})-(Y_{j,0},\dots,Y_{j,{\cal T}}) \|_2^2.$
+\end{dfn}
 
-\bibitem{Shuman} Shuman, D. I., Narang, S. K., Frossard, P., Ortega, A., and Vandergheynst, P. (2012). The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. arXiv preprint arXiv:1211.0053.
+Based on the definition of dissimilarity, we define an importance of each observation.
 
-\bibitem{Breunig} Breunig, M. M., Kriegel, H. P., Ng, R. T., and Sander, J. (2000, May). LOF: identifying density-based local outliers. In ACM sigmod record (Vol. 29, No. 2, pp. 93-104). ACM.
-\bibitem{He} He, X., and Niyogi, P. (2004). Locality preserving projections. In Advances in neural information processing systems (pp. 153-160).
+\begin{dfn}
+	Let $\{X_i\}$ be the given data and ${\cal N}_{i}$ be a set of linked values with $X_i$. Let $d_{\cal T}(X_i,X_j)$ be the dissimilarity between $X_i$ and $X_j$. For fixed $\delta>0$, an importance of specific observation $X_{k}$ is defined as 
+	\[
+	imp(X_{k},{\cal T})=\frac{\left|\{X_{j}:d_{\cal T}(X_{k},X_{j})>\delta\}\right|}{\left|\{X_i\}\right|}, 
+	\]
+	where $|A|$ is the cardinality of set $A$. 
+\end{dfn}
 
-\bibitem{Belkin} Belkin, M., and Niyogi, P. (2003). Laplacian eigenmaps for dimensionality reduction and data representation. Neural computation, 15(6), 1373-1396.
+Note that if $X_i=c(\in \mathbb{R})$ for all $i$, then $d_{\cal T}(X_i,X_j)=0$ for all $i,j$, which implies that all data points have the same importance. If $\delta \to \infty$, then $imp(X_i,{\cal T}) \to 0$ for all $i$; thus, the entire data points are not important. If $\delta \to 0$, then $imp(X_i,{\cal T}) \to 1$ for all $i$, so it means that all of data points are important. Hence, it is necessary to choose an  appropriate $\delta$ to measure the importance of the data. 
+\fi 
 
-\bibitem{Ng} Ng, A. Y., Jordan, M. I., and Weiss, Y. (2002). On spectral clustering: Analysis and an algorithm. In Advances in neural information processing systems (pp. 849-856).
-
-\bibitem{Tsang} Tsang, I. W., and Kwok, J. T. (2007). Large-scale sparsified manifold regularization. In Advances in Neural Information Processing Systems (pp. 1401-1408).
-
-
-\bibitem{Lafon} Lafon, S., and Lee, A. B. (2006). Diffusion maps and coarse-graining: A unified framework for dimensionality reduction, graph partitioning, and data set parameterization. IEEE transactions on pattern analysis and machine intelligence, 28(9), 1393-1403.
-
-\bibitem{Leskovec} Leskovec, J., Lang, K. J., Dasgupta, A., and Mahoney, M. W. (2009). Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters. Internet Mathematics, 6(1), 29-123.
-
-\end{thebibliography}
-
-
-\newpage
-\section*{Appendix A: Smoothing}
-\iffalse
+\iffalse %%% smoothing. 
 - 여기에서는 헴펠교재 P.316 의 내용을 참고하였다. 선형모델에서 모수 $\boldsymbol{\beta}$의 추정량 $\boldsymbol{\beta}_ n$ 을 구하는 것은 아래를 푸는 것이고 
 \begin{align}
 \min_{\boldsymbol{\beta}_ n}\sum_{i=1}^{n}\rho(y_i-{\bf x}_ i \boldsymbol{\beta}_ n)
@@ -606,55 +573,101 @@ y_i={\bf x}_ i \boldsymbol{\beta}  +\epsilon_i
 
 - $\tau$ 의 선택??
 \fi
-\newpage
-\section*{Appendix B: Figures}
+
+\iffalse %%% nemerical experiments
+\subsection{Simulated Examples}
+In this section, we present some examples of heavy-snow transforms with one-dimensional data. For all examples, we set  ${\cal N}_i=\{X_{i-1},X_i,X_{i+1}\}$, $b=0.02\times \sqrt{V(\{X_i\})}$ and $p_{ij}=\frac{1}{3}$. 
+\vskip 3mm
+\noindent\textbf{Example 4.1}:
+Consider following Gaussian process $\{X_i\}$ generated by $N(\mu_i,0.5)$, where 
+\[
+\footnotesize{\mu_i=\left\{
+	\begin{array}{ll}
+	0, &~1\le i \le 200\\
+	1, &~201\le i \le 300\\
+	0,&~301\le i \le 700\\
+	5, &~701\le i \le 800\\
+	0, &~801\le i \le 1000.\\
+	\end{array}
+	\right.}
+\]
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{Fig/snow_ex1_fig1.pdf}
+	\caption{$X_i$ in Example 4.1.} 
+	\label{snow:ex1_1}
+\end{figure}
+Figure \ref{snow:ex1_1} shows a realization of $X_i$, where observations with $\mu=1$ are marked as green and observations with $\mu=5$ are marked as blue.
+
 \begin{sidewaysfigure}
 	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_1.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=10$.}
-	\label{snow:subway_in_01}
+	\includegraphics[width=0.75\textwidth]{Fig/snow_ex1_fig2.png}
+	\caption{\textbf{Top:} Plot of heavy-snow transform: $(i,\tau,Y_{i,\tau})$ with ${\cal T}=10$ (left), ${\cal T}=200$ (middle), and ${\cal T}=600$ (right). 
+		\newline
+		\textbf{Middle:} Principal component plot of $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ with ${\cal T}=10$ (left), ${\cal T}=200$ (middle), and ${\cal T}=600$ (right).
+		\newline
+		\textbf{Bottom:} Plot of $(i,X_{i})$ with $imp(X_i,{\cal T})$. In here $imp(X_i,{\cal T})$ are represented in color and size with ${\cal T}=10$ (left), ${\cal T}=200$ (middle),  and ${\cal T}=600$ (right).}
+	\label{snow:ex1_2}
 \end{sidewaysfigure}
 
-\begin{sidewaysfigure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_2.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=100$.}
-	\label{snow:subway_in_1}
-\end{sidewaysfigure}
 
-\begin{sidewaysfigure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_3.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=200$.}
-	\label{snow:subway_in_2}
-\end{sidewaysfigure}
+The first row in Figure \ref{snow:ex1_2} is the result of the heavy-snow transform with ${\cal T}=10,~200$ and $600$, where the x-axis represents the index of the data, the y-axis represents $\tau$, and the color represents the value of $Y_{i,\tau}$. As one can see, $\{Y_{i,\tau}\}_{i=1}^{1000}$ with small $\tau$ represents $\{X_i\}$ with high-resolution and $\{Y_{i,\tau}\}_{i=1}^{1000}$ with large $\tau$ represents $\{X_i\}$ with low-resolution. Thus, this map is clearly a multiscale representation. 
 
-\begin{sidewaysfigure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_4.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=300$.}
-	\label{snow:subway_in_3}
-\end{sidewaysfigure}
+The second row in Figure \ref{snow:ex1_2} shows principal component plot of $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$ with different $\cal T$. Note that blue and red/green ones are well separated in x-axis. Thus, it can be interpreted that the first principal component is thought of as an overall average of data. The interpretation of the second principal component could be more difficult than first one. It is related to the structure of linked data, that is, the land-shape. To understand the meaning of second principal component, suppose that snow falls as much as $\tau=1$. Then value of $E(Y_{i,1}-X_i)$ is perfectly determined by considering structure between $X_{i-1},X_{i}$ and $X_{i+1}$. So, the values of $E(Y_{i,1}-X_i)$ are divided by the following types of land-shapes:
+\begin{enumerate}[(i)]
+	\item local minimum: $X_i=\min(X_{i-1},X_i,X_{i+1})$
+	\item local maximum: $X_i=\max(X_{i-1},X_i,X_{i+1})$
+	\item flat: $X_{i-1}=X_i=X_{i+1}$ 
+	\item uphill: $X_{i-1}<X_i<X_{i+1}$
+	\item downhill: $X_{i-1}>X_i>X_{i+1}$
+	\item flat-uphill: $X_{i-1}=X_i<X_{i+1}$ or $X_{i-1}>X_i=X_{i+1}$
+	\item flat-downhill: $X_{i-1}=X_i>X_{i+1}$ or $X_{i-1}<X_i=X_{i+1}$
+\end{enumerate}
+Note that for all $i$, $P(X_{i-1}=X_i)=0$ in this example. Thus, we could not consider (iii), (vi) and (vii). Note also that values of $E(Y_{i,1}-X_i)$ are the same in the cases (iv) and (v). Thus, the values of $E(Y_{i,1}-X_i)$, amount of snow accumulation, can be roughly divided into three groups according to the land-shapes and these are represented in three straight lines in the left panel of the second row. 
 
-\begin{sidewaysfigure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_5.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=400$.}
-	\label{snow:subway_in_4}
-\end{sidewaysfigure}	
+The second row in Figure \ref{snow:ex1_2} also contains a multiscale concept. In ${\cal T}=10$, data can be roughly divided into two groups, blue one and red/green ones. And each group can also be divided into three groups according to land-shape. If one increases the scale up to ${\cal T}=200$, in other words, if you more widely consider the linked data, then groups of blue, green, and red dots are clearly distinguished, compared to ${\cal T}=10$. Instead, three straight lines disappear, so we no longer know whether each observation is local maximum or minimum. In other words, we lose some local-scale information. Now, let's move the principal component plot with ${\cal T}=600$, which shows the most global-scale analysis. We easily check that there are some points at which the value of the second principal component is very high. These points are located in the neighborhood of $i=700$ or $i=800$, which are the points where sudden mean changes occur. Note that detecting these points need more wide consideration about linked data. So these points are not separated from the main group in the local-scale analysis. 
 
-\begin{sidewaysfigure}
+For a fixed $\delta$, an importance of specific point $X_{k}$ can be calculated by counting how many points are in $\{X_j:,d_{\cal T}(X_{k},X_{j})>\delta\}$. In this example, we choose $\delta$ as the median of $\{d_{\cal T}(X_{i},X_{j}): i,j \in \{1,\dots,1000\} \}$. Results for calculation importance of data are shown in the third row. Importance is marked by various colors and sizes. Bigger ones are more important than small ones and purple ones are more important than red ones. The interesting thing is that importance of data changes over scales. In the local-scale analysis, observations which are located in $i \in (700,800)$ are considered to be important. However, in the global-scale analysis, observations where sudden mean change occurs (such as $i=700$ or $i=800$) are considered to be more important. 
+\vskip 3mm
+\noindent\textbf{Example 4.2}:
+Consider a Gaussian process $\{X_i\}$ generated by $N(\mu_i,0.5)$, where 
+$${\mu_i=\left\{
+	\begin{array}{ll}
+	0, &~1\le i \le 512\\
+	5, &~513\le i \le 1024.\\
+	\end{array}
+	\right.}$$
+Figure \ref{snow:ex2_1}(a) shows a realization of $X_i$, where red, green, blue, light blue and purple colors represent $\{X_i\}_{i=1}^{472}$,  $\{X_i\}_{i=473}^{502}$, $\{X_i\}_{i=503}^{522}$, $\{X_i\}_{i=523}^{552}$ and $\{X_i\}_{i=553}^{1024}$, respectively. As one  can see, the data have a single change point in $i=513$ and blue ones contain this sudden mean changes. Green and light blue ones are the neighborhood of the change point. Figure \ref{snow:ex2_1}(b) shows principle component plot of $\{Y_{i,\tau}\}_{\tau=0}^{\cal T}$, where ${\cal T}=120$. The red ones and purple ones are separated from each other. Thus, data with $\mu_i=0$ and $\mu_i=5$ are well separated in ${\cal T}=120$. We would like to emphasize that the green, blue and light blue ones are also separated from their main groups because they are located around the change point. So which points are important in Figure \ref{snow:ex2_1}(b)? One can easily check that red and purple area are denser than the areas where green, light blue and purple are located. So the importance of $\{X_i\}$ will be high in the neighborhood of the change point. Figure \ref{snow:ex2_1}(c) shows $(i,imp(X_i,120)) $, the importance plot. Here, we choose $\delta$ as the median of $\{d_{{\cal T}=120}(X_{i},X_{j}): i,j \in \{1,\dots,1000\} \}$ as in Example 4.1. As expected, $imp(X_i,120)$ has a peak in $i=512$, where the sudden mean change occurs. Figure \ref{snow:ex2_1}(d) shows another importance plot as in the third row of Figure \ref{snow:ex2_1}. 
+\begin{figure}
 	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_6.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=500$.}
-	\label{snow:subway_in_5}
-\end{sidewaysfigure}	
+	\includegraphics[width=1\textwidth]{Fig/snow_ex2_fig1.pdf}
+	\caption{(a) $X_i$; (b) Principal component plot of $\{Y_{i,\tau}\}_{\tau=0}^{120}$; (c) Plot of $(i,imp(X_i,120))$; (d) Plot of $(i,X_i)$ where $imp(X_i,120)$ are marked color and size.}
+	\label{snow:ex2_1}
+\end{figure}
+
+Furthermore, the importance of $X_i$ can be applicable to a smoothing problem that estimate $\mu_i$ from $X_i$. The following is the proposed smoothing procedure. 
+\begin{itemize}
+	\item[1. ] Calculate the importance of $X_i$, i.e., get the $imp(X_i,{\cal T})$. 
+	\item[2. ] For $b=1,\dots,B$, get $X_i^{(b)}$ such that 
+	\[
+	X_i^{(b)}=\begin{cases} X_i, & i \in M \\ 
+	\tilde{X}_i, & i \in M^c,
+	\end{cases}
+	\]
+	where $M$ is length-$N_0(<N)$ samples without replacement from a population of $\{1,2,\dots,N\}$ with weight $$\mathbf{w}=\left(imp(X_i,{\cal T}),\dots,imp(X_N,{\cal T})\right)$$ and $\tilde{X}_i$ is linearly interpolated value from $\{X_i\}_{i\in M}$. 
+	\item[3. ] Get $\hat{\mu}_i=\frac{1}{B}\sum_{b=1}^{B}X_i^{(b)}$ 
+\end{itemize}
+The key of the above procedure is that we do not use random sampling. Instead, we consider the importance of data as sampling weight. Thus, the important data is more likely to be sampled than other. 
+
+Figure \ref{snow:ex2_2} shows the smoothing results. Left-top panel shows the original data. The red line in the left-bottom denotes a  wavelet fit by EbayesThresh (Johnstone and Silverman 2005). The green line in right-bottom represents a wavelet fit by SURE threshold (Donoho and Johnstone 1994). The result by our proposed method is shown as the yellow line in the right-top panel. In this example, we choose $\cal T$ as $120$ and $N_0=50$. As one can see, the performance of the proposed method is comparable to  the wavelet fits and we want to emphasize that our method is not limited to the data structure. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{Fig/snow_ex2_fig2.pdf}
+	\caption{Smoothing results} 
+	\label{snow:ex2_2}
+\end{figure}
+\fi 
 
 
 \end{document}
