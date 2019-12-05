@@ -29,15 +29,17 @@
 \usepackage{amsfonts} % \mathbb{R}를 사용할수 있게 함. 
 
 %%%%% itemize관련 환경을 제공함. 
-\usepackage{enumerate} %\begin{enumerate}[(i)]를 사용할수                                                                                                                                                                             있게 함. 
+\usepackage{enumerate} %\begin{enumerate}[(i)]를 사용할수 있게 함. 
 
 %%%%% 인용 
 \usepackage{cite}
 
 %%%%% 그림삽입
 \usepackage{graphics} 
-\usepackage{graphicx,lscape} %그림을 회전시켜삽입.
+%\usepackage{graphicx,lscape} %그림을 회전시켜삽입.
+\usepackage{graphicx,rotating,pdflscape}
 \graphicspath{{figure/}}%%%%% 그림들을 figure 에 정리할수 있게 함. graphicx 뒤에 선언해야함. 
+
 \usepackage{subfig}
 %\usepackage{subcaption} % 이것이 있어야지 subfigure를 사용할 수 있음. 
 %%%%%% 모든문단에 들여쓰기를 하고 싶을 경우
@@ -295,6 +297,7 @@ Note that if $X_i=c(\in \mathbb{R})$ for all $i$, then $d_{\cal T}(X_i,X_j)=0$ f
 \section{Visulization}
 
 \section{Numerical Experiments}
+\iffalse
 \subsection{Simulated Examples}
 In this section, we present some examples of heavy-snow transforms with one-dimensional data. For all examples, we set  ${\cal N}_i=\{X_{i-1},X_i,X_{i+1}\}$, $b=0.02\times \sqrt{V(\{X_i\})}$ and $p_{ij}=\frac{1}{3}$. 
 \vskip 3mm
@@ -388,7 +391,7 @@ Figure \ref{snow:ex2_2} shows the smoothing results. Left-top panel shows the or
 	\caption{Smoothing results} 
 	\label{snow:ex2_2}
 \end{figure}
-
+\fi 
 
 \subsection{Real Data Analysis}
 \subsubsection{Avenger's}
@@ -400,22 +403,6 @@ Leskovec (2009) : 연구그룹들을 네트워크화해서 중심연구그룹(?)
 
 \noindent\textbf{\underline{Decomposition}}
 
-\subsubsection{Les Misérables}
-\noindent\textbf{\underline{Data dercription}}
-
-\noindent\textbf{\underline{Who is important in Les Misérables?}}
-
-\subsubsection{Earthquake}
-\noindent\textbf{\underline{Data dercription}}
-
-\noindent\textbf{\underline{Smoothing}}
-
-\subsubsection{Distribution of Species of Animals} 
-\noindent\textbf{\underline{Data dercription}}
-
-\noindent\textbf{\underline{Smoothing}}
-
-\noindent\textbf{\underline{Where do the habitats overlap?}}
 
 \subsubsection{Seoul Metro data}
 \noindent\textbf{\underline{Data dercription}}
@@ -454,6 +441,24 @@ When growing scale up to ${\cal T}=300$, the importance of Euljiro 1-ga station 
 
 \noindent\textbf{\underline{What is the most important day of the week in each region??}}
 
+\subsubsection{Les Misérables}
+\noindent\textbf{\underline{Data dercription}}
+
+\noindent\textbf{\underline{Who is important in Les Misérables?}}
+
+\subsubsection{Distribution of Species of Animals} 
+\noindent\textbf{\underline{Data dercription}}
+
+\noindent\textbf{\underline{Smoothing}}
+
+\noindent\textbf{\underline{Where do the habitats overlap?}}
+
+\iffalse
+\subsubsection{Earthquake}
+\noindent\textbf{\underline{Data dercription}}
+
+\noindent\textbf{\underline{Smoothing}}
+
 \subsubsection{Messenger data} 
 
 \noindent\textbf{\underline{Data dercription.}}
@@ -465,8 +470,7 @@ When growing scale up to ${\cal T}=300$, the importance of Euljiro 1-ga station 
 \noindent\textbf{\underline{Change of relationship.}}
 
 \noindent\textbf{\underline{Recommendation.}}
-
-
+\fi
 
 \section{Concluding Remarks}
 Heavy-snow transform is a new multiscale visualization technique which is motivated by observing how snowfall accumulates. The concept of heavy-snow transform is shared with that of scale-space theory in computer vision. Heavy-snow transform is useful for evaluating some probabilistic structures of linked data whether a particular set of observations is similar to nearby other or not. We define the dissimilarity of the data and define the importance of the data based on it. We also introduced useful applications such as change-point detection and smoothing.
@@ -506,75 +510,38 @@ In literature, there exist numerous multiscale methods that may share a multisca
 
 The remaining of this paper is organized as follows. Section 4.2 defines heavy-snow transformation and proposes some statistics based on heavy-snow transformation, dissimilarity and importance of data for statistical data analysis. In Section 4.3, numerical experiments including real data analysis are presented. As for a challengeable aspect, Seoul Metro passenger data that are a kind of cylinder data structure are used. Finally, concluding remarks are given in Section 4.4 where a possible use for smoothing is briefly discussed as a future research topic. 
 \fi 
+\newpage
+\begin{thebibliography}{}
+
+%\bibitem{Aldroubi1992} Aldroubi, A., Unser, M., \& Eden, M. (1992). Cardinal spline filters: Stability and convergence to the ideal sinc interpolator. {\it Signal processing}, {\bf 28}, 127-138.
+
+%\bibitem{Arino2004} Arino, M. A., Morettin, P. A., \& Vidakovic, B. (2004). Wavelet scalograms and their applications in economic time series. {\it Brazilian Journal of Probability and Statistics}, 37-51.
+
+%\bibitem{Bertsekas1976} Bertsekas, D. P. (1976). Multiplier methods: A survey. {\it Automatica}, {\bf 12}, 133--145.
+\bibitem{Klein}Klein, D. J., and Randić, M. (1993). Resistance distance. Journal of mathematical chemistry, 12(1), 81-95.
+
+\bibitem{Shuman} Shuman, D. I., Narang, S. K., Frossard, P., Ortega, A., and Vandergheynst, P. (2012). The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. arXiv preprint arXiv:1211.0053.
+
+\bibitem{Breunig} Breunig, M. M., Kriegel, H. P., Ng, R. T., and Sander, J. (2000, May). LOF: identifying density-based local outliers. In ACM sigmod record (Vol. 29, No. 2, pp. 93-104). ACM.
+\bibitem{He} He, X., and Niyogi, P. (2004). Locality preserving projections. In Advances in neural information processing systems (pp. 153-160).
+
+\bibitem{Belkin} Belkin, M., and Niyogi, P. (2003). Laplacian eigenmaps for dimensionality reduction and data representation. Neural computation, 15(6), 1373-1396.
+
+\bibitem{Ng} Ng, A. Y., Jordan, M. I., and Weiss, Y. (2002). On spectral clustering: Analysis and an algorithm. In Advances in neural information processing systems (pp. 849-856).
+
+\bibitem{Tsang} Tsang, I. W., and Kwok, J. T. (2007). Large-scale sparsified manifold regularization. In Advances in Neural Information Processing Systems (pp. 1401-1408).
 
 
-\section*{Appendix}
-\subsubsection*{Figures}
+\bibitem{Lafon} Lafon, S., and Lee, A. B. (2006). Diffusion maps and coarse-graining: A unified framework for dimensionality reduction, graph partitioning, and data set parameterization. IEEE transactions on pattern analysis and machine intelligence, 28(9), 1393-1403.
 
-%\begin{sidewaysfigure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_1.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=10$.}
-	\label{snow:subway_in_01}
-\end{figure}
-%\end{sidewaysfigure}
+\bibitem{Leskovec} Leskovec, J., Lang, K. J., Dasgupta, A., and Mahoney, M. W. (2009). Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters. Internet Mathematics, 6(1), 29-123.
 
-%\begin{sidewaysfigure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_2.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=100$.}
-	\label{snow:subway_in_1}
-\end{figure}
-%\end{sidewaysfigure}
-
-%\begin{sidewaysfigure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_3.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=200$.}
-	\label{snow:subway_in_2}
-\end{figure}
-%\end{sidewaysfigure}
-
-%\begin{sidewaysfigure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_4.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=300$.}
-	\label{snow:subway_in_3}
-\end{figure}
-%\end{sidewaysfigure}
-
-%\begin{sidewaysfigure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_5.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=400$.}
-	\label{snow:subway_in_4}
-\end{figure}	
-%\end{sidewaysfigure}
-
-%\begin{sidewaysfigure}
-\begin{figure}
-	\centering
-	\includegraphics[width=1.05\textwidth]{Fig/In_scale_6.pdf}
-	\vspace{-13mm}
-	\caption{Importance plot of subway passenger data with ${\cal T}=500$.}
-	\label{snow:subway_in_5}
-\end{figure}	
-%\end{sidewaysfigure}	
+\end{thebibliography}
 
 
-\section*{Appendix}
-
-\subsubsection*{Smoothing}
+\newpage
+\section*{Appendix A: Smoothing}
+\ifflase
 - 여기에서는 헴펠교재 P.316 의 내용을 참고하였다. 선형모델에서 모수 $\boldsymbol{\beta}$의 추정량 $\boldsymbol{\beta}_ n$ 을 구하는 것은 아래를 푸는 것이고 
 \begin{align}
 \min_{\boldsymbol{\beta}_ n}\sum_{i=1}^{n}\rho(y_i-{\bf x}_ i \boldsymbol{\beta}_ n)
@@ -631,33 +598,56 @@ y_i={\bf x}_ i \boldsymbol{\beta}  +\epsilon_i
 - 적용자료: 지진자료 혹은 기상자료의 smoothing 을 수행하면 의미가 있어보인다. (시공간이 동시에 변화하는 자료들) 
 
 - $\tau$ 의 선택??
+\fi
+\newpage
+\section*{Appendix B: Figures}
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_1.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=10$.}
+	\label{snow:subway_in_01}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_2.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=100$.}
+	\label{snow:subway_in_1}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_3.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=200$.}
+	\label{snow:subway_in_2}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_4.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=300$.}
+	\label{snow:subway_in_3}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_5.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=400$.}
+	\label{snow:subway_in_4}
+\end{sidewaysfigure}	
+
+\begin{sidewaysfigure}
+	\centering
+	\includegraphics[width=1.05\textwidth]{Fig/In_scale_6.pdf}
+	\vspace{-13mm}
+	\caption{Importance plot of subway passenger data with ${\cal T}=500$.}
+	\label{snow:subway_in_5}
+\end{sidewaysfigure}	
 
 
-
-\begin{thebibliography}{}
-
-%\bibitem{Aldroubi1992} Aldroubi, A., Unser, M., \& Eden, M. (1992). Cardinal spline filters: Stability and convergence to the ideal sinc interpolator. {\it Signal processing}, {\bf 28}, 127-138.
-
-%\bibitem{Arino2004} Arino, M. A., Morettin, P. A., \& Vidakovic, B. (2004). Wavelet scalograms and their applications in economic time series. {\it Brazilian Journal of Probability and Statistics}, 37-51.
-
-%\bibitem{Bertsekas1976} Bertsekas, D. P. (1976). Multiplier methods: A survey. {\it Automatica}, {\bf 12}, 133--145.
-\bibitem{Klein}Klein, D. J., and Randić, M. (1993). Resistance distance. Journal of mathematical chemistry, 12(1), 81-95.
-
-\bibitem{Shuman} Shuman, D. I., Narang, S. K., Frossard, P., Ortega, A., and Vandergheynst, P. (2012). The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. arXiv preprint arXiv:1211.0053.
-
-\bibitem{Breunig} Breunig, M. M., Kriegel, H. P., Ng, R. T., and Sander, J. (2000, May). LOF: identifying density-based local outliers. In ACM sigmod record (Vol. 29, No. 2, pp. 93-104). ACM.
-\bibitem{He} He, X., and Niyogi, P. (2004). Locality preserving projections. In Advances in neural information processing systems (pp. 153-160).
-
-\bibitem{Belkin} Belkin, M., and Niyogi, P. (2003). Laplacian eigenmaps for dimensionality reduction and data representation. Neural computation, 15(6), 1373-1396.
-
-\bibitem{Ng} Ng, A. Y., Jordan, M. I., and Weiss, Y. (2002). On spectral clustering: Analysis and an algorithm. In Advances in neural information processing systems (pp. 849-856).
-
-\bibitem{Tsang} Tsang, I. W., and Kwok, J. T. (2007). Large-scale sparsified manifold regularization. In Advances in Neural Information Processing Systems (pp. 1401-1408).
-
-
-\bibitem{Lafon} Lafon, S., and Lee, A. B. (2006). Diffusion maps and coarse-graining: A unified framework for dimensionality reduction, graph partitioning, and data set parameterization. IEEE transactions on pattern analysis and machine intelligence, 28(9), 1393-1403.
-
-\bibitem{Leskovec} Leskovec, J., Lang, K. J., Dasgupta, A., and Mahoney, M. W. (2009). Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters. Internet Mathematics, 6(1), 29-123.
-
-\end{thebibliography}
 \end{document}
