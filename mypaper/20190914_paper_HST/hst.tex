@@ -183,22 +183,22 @@ For your easy understanding let's assume some specific situation as follows:
 
 The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$ and $f(v_i)$ be function valued mapped to $v_i$ and $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of random selection from $V$ with probability $\frac{1}{n}$ and $v^{(\tau)}$ is defined
+Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$ and $f(v_i)$ be function valued mapped to $v_i$ and $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$. Let $b$ be the amount of falling snow and $\ell$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of random selection from $V$ with probability $\frac{1}{n}$ and $v^{(\ell)}$ is defined
 \[
-v^{(\tau)}=\begin{cases}
-\mbox{ sample from } {\cal U}_{v^{(\tau-1)}} \mbox{ with probability } \frac{w(v^{(\tau-1)},v^{(\tau)})}{\sum_{j \in {\cal N}_{v^{(\tau-1)}}}w(v^{(\tau-1)},v^{(\tau)})}  & {\cal U}_{v_{(\tau-1)}}\neq \emptyset \\ 
-\mbox{ sample from } V \mbox{ with probability  } \frac{1}{n}  & {\cal U}_{v_{(\tau-1)}}= \emptyset 
+v^{(\ell)}=\begin{cases}
+\mbox{ sample from } {\cal U}_{v^{(\ell-1)}} \mbox{ with probability } \frac{d(v^{(\ell-1)},v^{(\ell)})}{\sum_{j \in {\cal N}_{v^{(\ell-1)}}}w(v^{(\ell-1)},v^{(\ell)})}  & {\cal U}_{v^{(\ell-1)}}\neq \emptyset \\ 
+\mbox{ sample from } V \mbox{ with probability  } \frac{1}{n}  & {\cal U}_{v^{(\ell-1)}}= \emptyset 
 \end{cases}
 \]
-For any $\tau \in \{1,\dots,n\}$, the $\tau$-th \emph{snowyground} of ${\boldsymbol f}$ is defined by 
+For any $\ell \in \{1,\dots,\tau\}$, the $\ell$-th \emph{snowyground} of ${\boldsymbol f}$ is defined by 
 \[
-{\boldsymbol h}^{(\tau)} := {\boldsymbol h}^{(\tau-1)}+{\boldsymbol \xi}^{(\tau)}
+{\boldsymbol h}^{(\ell)} := {\boldsymbol h}^{(\ell-1)}+{\boldsymbol \xi}^{(\ell)}
 \]
-where ${\boldsymbol h}^{(0)}={\boldsymbol f}$ and ${\boldsymbol \xi}^{(\tau)}=\{\xi^{(\tau)}(v_i): i=1,\dots,n\}$ is amount of stacked snow at $\tau$ whose elements are defined by 
+where ${\boldsymbol h}^{(0)}={\boldsymbol f}$ and ${\boldsymbol \xi}^{(\ell)}=\{\xi^{(\ell}(v_i): i=1,\dots,n\}$ is amount of stacked snow at $\ell$ whose elements are defined by 
 \[
-\xi^{(\tau)}(v_i)=	\begin{cases}
-\gamma \xi^{(\tau)}(v_{(\tau-1)})  & {\cal U}_{v_{(\tau-1)}}\neq \emptyset \\ 
-b &  {\cal U}_{v_{(\tau-1)}} = \emptyset. \\ 
+\xi^{(\ell)}(v_i)=	\begin{cases}
+\gamma \xi^{(\ell)}(v^{(\ell-1)})  & {\cal U}_{v^{(\ell-1)}}\neq \emptyset \\ 
+b &  {\cal U}_{v^{(\ell-1)}} = \emptyset. \\ 
 \end{cases}
 \]
 Define ${\cal H}({\boldsymbol f};\tau):=\{{\boldsymbol h}^{(0)},\dots,{\boldsymbol h}^{(\tau)}\}$ as \emph{heavy-snow transform} of ${\boldsymbol f}$. 
@@ -222,11 +222,18 @@ where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$.
 \end{dfn}
 
 \begin{thm} 
-Let $X:{\cal V} \to \mathbb {R}$ as measurable mapping connecting vertex $\nu$ to $v$. Define graph signal $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let $({\cal S}^{(\tau)},\rho^{(\tau)})$ be the another metric space defined in snowyground where ${\cal S}^{(\tau)}:=\{{\boldsymbol h}^{(\tau)}(v): v\in {\cal M}\}$. Cleary, $\rho^{(0)}$ is metric in ${\cal M}$. Further $\rho^{(\infty)}$ is metric in ${\cal V}$. 
+Let $X:{\cal V} \to \mathbb {R}$ as measurable mapping connecting vertex $\nu$ to $v$. Define graph signal $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let $({\cal S}^{(\ell)},\rho^{(\ell)})$ be the another metric space defined in snowyground where ${\cal S}^{(\ell)}:=\{{\boldsymbol h}^{(\ell)}(v): v\in {\cal M}\}$. Cleary, $\rho^{(0)}$ is metric in ${\cal M}$. Further $\rho^{(\infty)}$ is metric in ${\cal V}$. 
 \end{thm}
 
 \begin{thm}
-continous
+Let ${\cal H}({\boldsymbol f},\tau)$ be the heavy-snow transform of ${\boldsymbol f}$ and $b_{\tau}$ be the amount of falling snow. Assume $b_{\tau} \to 0$ and $\tau b_\tau \to \infty$ as $\tau \to 0$. Define $H:V \times [0,1] \to \mathbb{R}$ such that
+\[
+H(v,\ell/\tau):=h^{(\ell)}(v)
+\]
+and $H^*:V \times [0,1] \to \mathbb{R}$ such that
+\[
+\lim_{\tau \to \infty} H(v,\cdot):=H^*(v,\cdot).
+\]
 \end{thm}
 
 \subsubsection{Regular graph}
