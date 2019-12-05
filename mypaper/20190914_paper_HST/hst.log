@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.4)  4 DEC 2019 22:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.12.4)  4 DEC 2019 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,8 +464,8 @@ Overfull \hbox (21.80104pt too wide) detected at line 192
 \OML/cmm/m/it/12 v[] \OT1/cmr/m/n/12 = []
  []
 
-[9] [10] [11]
-Overfull \hbox (20.94614pt too wide) in paragraph at lines 309--311
+[9] [10]
+Overfull \hbox (20.94614pt too wide) in paragraph at lines 301--303
 \OT1/cmr/bx/n/12 Example 4.1\OT1/cmr/m/n/12 : Con-sider fol-low-ing Gaus-sian p
 ro-cess $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 X[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n
 /12 gen-er-ated by $\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]; 
@@ -473,116 +473,118 @@ ro-cess $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 X[]\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n
  []
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 31
-2.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 30
+4.
 
-<Fig/snow_ex1_fig1.pdf, id=85, 693.59125pt x 441.65pt>
+[11]
+<Fig/snow_ex1_fig1.pdf, id=70, 693.59125pt x 441.65pt>
 File: Fig/snow_ex1_fig1.pdf Graphic file (type pdf)
 <use Fig/snow_ex1_fig1.pdf>
-Package pdftex.def Info: Fig/snow_ex1_fig1.pdf  used on input line 324.
+Package pdftex.def Info: Fig/snow_ex1_fig1.pdf  used on input line 316.
 (pdftex.def)             Requested size: 390.0pt x 248.3399pt.
 
-LaTeX Warning: Reference `snow:ex1_2' on page 12 undefined on input line 343.
+
+LaTeX Warning: Reference `snow:ex1_2' on page 12 undefined on input line 335.
+
+[12 <./Fig/snow_ex1_fig1.pdf>]
+
+LaTeX Warning: Reference `snow:ex1_2' on page 13 undefined on input line 337.
 
 
-LaTeX Warning: Reference `snow:ex1_2' on page 12 undefined on input line 345.
+LaTeX Warning: Reference `snow:ex1_2' on page 13 undefined on input line 349.
 
-[12] [13 <./Fig/snow_ex1_fig1.pdf>]
-
-LaTeX Warning: Reference `snow:ex1_2' on page 14 undefined on input line 357.
-
-[14]
-<Fig/snow_ex2_fig1.pdf, id=103, 708.6475pt x 367.3725pt>
+[13] [14]
+<Fig/snow_ex2_fig1.pdf, id=88, 708.6475pt x 367.3725pt>
 File: Fig/snow_ex2_fig1.pdf Graphic file (type pdf)
 <use Fig/snow_ex2_fig1.pdf>
-Package pdftex.def Info: Fig/snow_ex2_fig1.pdf  used on input line 372.
+Package pdftex.def Info: Fig/snow_ex2_fig1.pdf  used on input line 364.
 (pdftex.def)             Requested size: 390.0pt x 202.18442pt.
  [15] [16 <./Fig/snow_ex2_fig1.pdf>]
-<Fig/snow_ex2_fig2.pdf, id=116, 708.6475pt x 367.3725pt>
+<Fig/snow_ex2_fig2.pdf, id=101, 708.6475pt x 367.3725pt>
 File: Fig/snow_ex2_fig2.pdf Graphic file (type pdf)
 <use Fig/snow_ex2_fig2.pdf>
-Package pdftex.def Info: Fig/snow_ex2_fig2.pdf  used on input line 395.
+Package pdftex.def Info: Fig/snow_ex2_fig2.pdf  used on input line 387.
 (pdftex.def)             Requested size: 390.0pt x 202.18442pt.
- [17] [18 <./Fig/snow_ex2_fig2.pdf>]
-<Fig/In_data.pdf, id=139, 867.24pt x 542.025pt>
+ [17 <./Fig/snow_ex2_fig2.pdf>]
+<Fig/In_data.pdf, id=126, 867.24pt x 542.025pt>
 File: Fig/In_data.pdf Graphic file (type pdf)
 <use Fig/In_data.pdf>
-Package pdftex.def Info: Fig/In_data.pdf  used on input line 436.
+Package pdftex.def Info: Fig/In_data.pdf  used on input line 428.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 436--438
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 428--430
  [][] 
  []
 
-[19 <./Fig/In_data.pdf>]
-<Fig/data_str.png, id=148, 1036.87375pt x 575.14874pt>
+<Fig/data_str.png, id=127, 1036.87375pt x 575.14874pt>
 File: Fig/data_str.png Graphic file (type png)
 <use Fig/data_str.png>
-Package pdftex.def Info: Fig/data_str.png  used on input line 447.
+Package pdftex.def Info: Fig/data_str.png  used on input line 439.
 (pdftex.def)             Requested size: 390.0pt x 216.32967pt.
- [20 <./Fig/data_str.png (PNG copy)>] [21]
-<Fig/In_scale_1.pdf, id=155, 867.24pt x 542.025pt>
+[18] [19 <./Fig/In_data.pdf> <./Fig/data_str.png (PNG copy)>] [20]
+<Fig/In_scale_1.pdf, id=143, 867.24pt x 542.025pt>
 File: Fig/In_scale_1.pdf Graphic file (type pdf)
 <use Fig/In_scale_1.pdf>
-Package pdftex.def Info: Fig/In_scale_1.pdf  used on input line 525.
+Package pdftex.def Info: Fig/In_scale_1.pdf  used on input line 517.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 525--527
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 517--519
  [][] 
  []
 
-<Fig/In_scale_2.pdf, id=156, 867.24pt x 542.025pt>
+<Fig/In_scale_2.pdf, id=144, 867.24pt x 542.025pt>
 File: Fig/In_scale_2.pdf Graphic file (type pdf)
 <use Fig/In_scale_2.pdf>
-Package pdftex.def Info: Fig/In_scale_2.pdf  used on input line 535.
+Package pdftex.def Info: Fig/In_scale_2.pdf  used on input line 527.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 535--537
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 527--529
  [][] 
  []
 
-<Fig/In_scale_3.pdf, id=157, 867.24pt x 542.025pt>
+<Fig/In_scale_3.pdf, id=145, 867.24pt x 542.025pt>
 File: Fig/In_scale_3.pdf Graphic file (type pdf)
 <use Fig/In_scale_3.pdf>
-Package pdftex.def Info: Fig/In_scale_3.pdf  used on input line 545.
+Package pdftex.def Info: Fig/In_scale_3.pdf  used on input line 537.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 545--547
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 537--539
  [][] 
  []
 
-<Fig/In_scale_4.pdf, id=158, 867.24pt x 542.025pt>
+<Fig/In_scale_4.pdf, id=146, 867.24pt x 542.025pt>
 File: Fig/In_scale_4.pdf Graphic file (type pdf)
 <use Fig/In_scale_4.pdf>
-Package pdftex.def Info: Fig/In_scale_4.pdf  used on input line 555.
+Package pdftex.def Info: Fig/In_scale_4.pdf  used on input line 547.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 555--557
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 547--549
  [][] 
  []
 
-<Fig/In_scale_5.pdf, id=159, 867.24pt x 542.025pt>
+<Fig/In_scale_5.pdf, id=147, 867.24pt x 542.025pt>
 File: Fig/In_scale_5.pdf Graphic file (type pdf)
 <use Fig/In_scale_5.pdf>
-Package pdftex.def Info: Fig/In_scale_5.pdf  used on input line 565.
+Package pdftex.def Info: Fig/In_scale_5.pdf  used on input line 557.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 565--567
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 557--559
  [][] 
  []
 
-<Fig/In_scale_6.pdf, id=160, 867.24pt x 542.025pt>
+<Fig/In_scale_6.pdf, id=148, 867.24pt x 542.025pt>
 File: Fig/In_scale_6.pdf Graphic file (type pdf)
 <use Fig/In_scale_6.pdf>
-Package pdftex.def Info: Fig/In_scale_6.pdf  used on input line 575.
+Package pdftex.def Info: Fig/In_scale_6.pdf  used on input line 567.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 575--577
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 567--569
  [][] 
  []
 
-
-Overfull \hbox (11.0916pt too wide) in paragraph at lines 593--595
+[21] [22 <./Fig/In_scale_1.pdf> <./Fig/In_scale_2.pdf>] [23 <./Fig/In_scale_3.p
+df> <./Fig/In_scale_4.pdf>] [24 <./Fig/In_scale_5.pdf> <./Fig/In_scale_6.pdf>]
+Overfull \hbox (11.0916pt too wide) in paragraph at lines 585--587
 \LUC/nanummj/m/n/12/c7 t\LUC/nanummj/m/n/12/b7 ð \LUC/nanummj/m/n/12/cd ”\LUC/n
 anummj/m/n/12/c8 ^^U\LUC/nanummj/m/n/12/b7 É $[][]$\LUC/nanummj/m/n/12/c7 D $\O
 ML/cmm/m/it/12 M$\OT1/cmr/m/n/12 -estimator\LUC/nanummj/m/n/12/b7 |\LUC/nanummj
@@ -595,21 +597,19 @@ m/n/12/d6 ^^U\LUC/nanummj/m/n/12/c5 Ð\LUC/nanummj/m/n/12/c1 ^^\\LUC/nanummj/m/n
 ) =
  []
 
-[22] [23 <./Fig/In_scale_1.pdf> <./Fig/In_scale_2.pdf>] [24 <./Fig/In_scale_3.p
-df> <./Fig/In_scale_4.pdf>] [25 <./Fig/In_scale_5.pdf> <./Fig/In_scale_6.pdf>]
-[26] [27] [28] [29] (./hst.aux)
+[25] [26] [27] [28] (./hst.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5788 strings out of 492616
- 83662 string characters out of 6129481
+ 5780 strings out of 492616
+ 83538 string characters out of 6129481
  163037 words of memory out of 5000000
- 9527 multiletter control sequences out of 15000+600000
- 28168 words of font info for 102 fonts, out of 8000000 for 9000
+ 9523 multiletter control sequences out of 15000+600000
+ 26997 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,18n,42p,1539b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,13n,42p,1539b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
@@ -646,31 +646,27 @@ nanummjmba.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/nanumtype
 1/nanummjmbb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/nanumty
 pe1/nanummjmbc.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/nanum
 type1/nanummjmbd.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/nan
-umtype1/nanummjmbe.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/n
-anumtype1/nanummjmc0.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
-/nanumtype1/nanummjmc1.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
-ic/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanummjmc4.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
-public/nanumtype1/nanummjmc5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
-1/public/nanumtype1/nanummjmc6.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/public/nanumtype1/nanummjmc7.pfb></usr/local/texlive/2019/texmf-dist/fonts/
-type1/public/nanumtype1/nanummjmc8.pfb></usr/local/texlive/2019/texmf-dist/font
-s/type1/public/nanumtype1/nanummjmc9.pfb></usr/local/texlive/2019/texmf-dist/fo
-nts/type1/public/nanumtype1/nanummjmcc.pfb></usr/local/texlive/2019/texmf-dist/
-fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/local/texlive/2019/texmf-d
-ist/fonts/type1/public/nanumtype1/nanummjmcf.pfb></usr/local/texlive/2019/texmf
--dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2019/tex
-mf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/local/texlive/2019
-/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
-Output written on hst.pdf (30 pages, 3208484 bytes).
+umtype1/nanummjmc0.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/n
+anumtype1/nanummjmc1.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjmc4.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
+blic/nanumtype1/nanummjmc5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/nanumtype1/nanummjmc6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjmc7.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/nanumtype1/nanummjmc8.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/nanumtype1/nanummjmc9.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/nanumtype1/nanummjmcc.pfb></usr/local/texlive/2019/texmf-dist/fo
+nts/type1/public/nanumtype1/nanummjmcd.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2019/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/local/texlive/2019/texmf-d
+ist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2019/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
+Output written on hst.pdf (29 pages, 3073317 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
+ 383 PDF objects out of 1000 (max. 8388607)
+ 272 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -201,45 +201,37 @@ where ${\boldsymbol h}^{(0)}={\boldsymbol f}$ and ${\boldsymbol \xi}^{(\tau)}=\{
 b &  {\cal U}_{v_{(\tau-1)}} = \emptyset. \\ 
 \end{cases}
 \]
-Define operator ${\cal H}$ called \emph{heavy-snow transform} such that
+Define ${\cal H}({\boldsymbol f};\tau):=\{{\boldsymbol h}^{(0)},\dots,{\boldsymbol h}^{(\tau)}\}$ as \emph{heavy-snow transform} of ${\boldsymbol f}$. 
+\end{dfn}
+Let ${\bf S}$ be 
 \[
-{\cal H}{\boldsymbol f}:=\begin{bmatrix} 
+{\bf S}:=\begin{bmatrix} 
 h^{(0)}(v_1) & h^{(1)}(v_1) & \dots & h^{(\tau)}(v_1) \\ 
 h^{(0)}(v_2) & h^{(1)}(v_2) & \dots & h^{(\tau)}(v_1) \\ 
 \dots  & \dots & \dots & \dots \\ 
 h^{(0)}(v_n) & h^{(1)}(v_n) & \dots & h^{(\tau)}(v_n) \end{bmatrix}
 \]
-and call the matrix ${\cal H}{\boldsymbol f}$ as \emph{heavy-snow} of ${\boldsymbol f}$. 
-\end{dfn}
-
+and call it \emph{snow matrix} of ${\boldsymbol f}$. 
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
-Let ${\boldsymbol f}$ be the graph signal on weighted graph $(V,E,W)$. Let ${\cal H}{\boldsymbol f}$ be heavysnow for ${\boldsymbol f}$ with some $\tau$, $\gamma$ and $b$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
+Let ${\boldsymbol f}$ be the graph signal on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
 \[
-sdist(v_i , v_j) :=d_{ij}= \|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
+\rho(v_i , v_j) := \|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
 \]
-where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$ is $i$-th row of ${\cal H}{\boldsymbol f}$.
+where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$.
 \end{dfn}
 
 \begin{thm} 
-$d_{ij} =$ 
+Let $({\cal S},\rho)$ be the metric space. Let $({\cal V},\psi)$.  
 \end{thm}
 
 \begin{thm}
 continous
 \end{thm}
 
-
-***claim 3.*** 모든 $\tau$에 대하여 아래를 만족하는 거리 (혹은 유사거리) $d^* $ 가 존재한다. 
-\begin{align}
-d_1 \big(\boldsymbol{h}(v_i),\boldsymbol{h}(v_j)\big) = d^* \big(F^* (f(v_i)),F^* (f(v_j))\big)
-\end{align}
-여기에서 $F^* (x) :=\mu_1(-\infty,x]\times \mu_1(-\infty,\infty] \dots \times \mu_{\tau+1}(-\infty,\infty]$ 이고 $\mu:=P \circ {\boldsymbol h}^{-1}$ 이다. 
-
-
 \subsubsection{regular graph}
 \begin{rmk}
-Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}\boldsymbol{f}$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove, using `regular graph'}) such that 
+Suppose $f(v_1),\dots,f(v_n)$ is $i.i.d$ random sample and $(V,E,W)$ be the regular graph. Let ${\cal H}(\boldsymbol{f};\tau)$ be a heavysnow transform of ${\boldsymbol f}$. Since $f(v_i)$ is $i.i.d.$ random variable ${\boldsymbol h}_i$ can be thought as $i.i.d.$ random vector (\textcolor{red}{need to prove, using `regular graph'}) such that 
 \[
 {\boldsymbol h}_1,\dots,{\boldsymbol h}_n \sim F.
 \] 
@@ -581,8 +573,8 @@ The remaining of this paper is organized as follows. Section 4.2 defines heavy-s
 
 
 \section*{Appendix}
-\subsubsection*{Smoothing}
 
+\subsubsection*{Smoothing}
 - 여기에서는 헴펠교재 P.316 의 내용을 참고하였다. 선형모델에서 모수 $\boldsymbol{\beta}$의 추정량 $\boldsymbol{\beta}_ n$ 을 구하는 것은 아래를 푸는 것이고 
 \begin{align}
 \min_{\boldsymbol{\beta}_ n}\sum_{i=1}^{n}\rho(y_i-{\bf x}_ i \boldsymbol{\beta}_ n)
@@ -639,39 +631,6 @@ y_i={\bf x}_ i \boldsymbol{\beta}  +\epsilon_i
 - 적용자료: 지진자료 혹은 기상자료의 smoothing 을 수행하면 의미가 있어보인다. (시공간이 동시에 변화하는 자료들) 
 
 - $\tau$ 의 선택??
-
-\subsubsection*{Clustering}
-
-- Spectral clustering 혹은 TDA식 클러스터링을 활용하거나 cut을 사용할 수 있다. 자료는 고민중.. 
-
-- HST에 의한 라플라시안은 아래와 같이 정의할 수 있다. 
-\begin{align}
-{\bf L}_ {ij}^{(\tau)}=
-\begin{cases} 
--w_{ij} & i\neq j \\\\ \\
-\sum_k w_{ik} & i=j. 
-\end{cases} 
-\end{align} 
-이때 
-\begin{align}
-w_{ij}=\begin{cases}
-\exp \Big(-\frac{d_1^2(v_i,v_j)}{2b^2}\Big) & (i,j) \in E \\\\ \\
-0 & o.w.
-\end{cases}
-\end{align}
-이다. 여기에서 $b$는 bandwidth 를 의미한다. 눈이 올수록 점점 값이 커지니까 $b$를 $\tau$에 비례하여 증가시켜야 할것 같다. 
-
-- 이제 $f(v_1),\dots,f(v_2)$ 에 대응하는 ***graph Laplacian quadratic form*** 은 아래와 같다. 
-\begin{align}
-s_2(f;\tau):=\sum_{(i,j)\in E} w_{ij} \big(f(v_i)-f(v_j)\big)^2={\bf f}^T {\bf L}^{(\tau)}{\bf f}
-\end{align}
-여기에서 ${\bf f}=(f(v_1),\dots,f(v_n))'$ 이다. 
-
-- 만약에 $f(v_i)$가 랜덤이면 $W_{ij}$도 랜덤이 된다. 그리고 $S_2(f;\tau)$도 랜덤이 된다. 그리고 $f$ 와 $W$ 모두 ${\boldsymbol h}$ 가 정의되는 확률공간$(\Omega,{\cal F},P)$ 에서 정의할 수 있다. 참고로 ${\boldsymbol h}$ 에서 $f$, $W$, $S_2(f;\tau)$를 만드는 함수가 각각 연속함수가 되어 각각을 정의하는데 무리가 없다. 
-
-\subsubsection*{Spectral Decomposition}
-asdf
-
 
 
 
