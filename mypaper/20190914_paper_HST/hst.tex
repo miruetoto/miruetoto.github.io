@@ -214,15 +214,15 @@ h^{(0)}(v_n) & h^{(1)}(v_n) & \dots & h^{(\tau)}(v_n) \end{bmatrix}
 and call it \emph{snow matrix} of ${\boldsymbol f}$. 
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
-Let ${\boldsymbol f}$ be the graph signal on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
+Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Let ${\boldsymbol f}$ be the graph signal on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. For each $\ell =1,2,\dots,\tau$ the $\ell$-th \emph{snow distance} between $v_i$ and $v_j$ is defined by 
 \[
-\rho^{\tau}(v_i , v_j) := \|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2.
+\rho^{(\ell)}(v_i , v_j) := \|{\boldsymbol h}^{(\ell)}_i- {\boldsymbol h}^{(\ell)}_j\|_2.
 \]
-where ${\boldsymbol h}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$.
+where ${\boldsymbol h}^{(\ell)}_i=\big(h^{(0)}(v_i),\dots,h^{(\ell)}(v_i)\big)$. 
 \end{dfn}
 
 \begin{thm} 
-Let $X:{\cal V} \to \mathbb {R}$ as measurable mapping connecting vertex $\nu$ to $v$. Define graph signal $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let $({\cal S}^{(\ell)},\rho^{(\ell)})$ be the another metric space defined in snowyground where ${\cal S}^{(\ell)}:=\{{\boldsymbol h}^{(\ell)}(v): v\in {\cal M}\}$. Cleary, $\rho^{(0)}$ is metric in ${\cal M}$. Further $\rho^{(\infty)}$ is metric in ${\cal V}$. 
+Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Define graph signal $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let $({\cal S}^{(\ell)},\rho^{(\ell)})$ be the another metric space defined in snowyground where ${\cal S}^{(\ell)}:=\{{\boldsymbol h}^{(\ell)}(v): v\in V\}$. Cleary, $\rho^{(0)}$ is metric in ${\cal M}$. Further $\rho^{(\infty)}$ is metric in ${\cal V}$. 
 \end{thm}
 
 \begin{thm}
@@ -267,7 +267,7 @@ Let $d_{ij}=\|{\boldsymbol h}_i-{\boldsymbol h}_j\|_2$. Using above remark, we g
 \end{rmk}
 
 \begin{rmk}
-Define snesitivity curve as 
+Define sensitivity curve as 
 \[
 SC_{n}({\boldsymbol h};\tau)= \frac{T\big((1-1/n)F_{n-1}(\boldsymbol{h}) + 1/n ~ \delta(\boldsymbol{h}) \big)-T(F_{n-1}(\boldsymbol{h}))}{1/n}.
 \]
