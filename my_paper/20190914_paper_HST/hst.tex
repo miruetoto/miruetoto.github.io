@@ -157,12 +157,12 @@ Section 3 introduces some visualization techniques that can effectively show the
 Before defining heavy-snow transform, we would like to explain data structure to which the transformation is applicable. 
 Let ${\cal V}$ be set of nodes (or vertices) and ${\cal E}$ be set of links (or edges). In the context of heavy-snow transformation, the link means a way that snow can move in. Basically, you can consider ${\cal V}=\{\nu_1,\dots,\nu_n\}$ as given index set such as ${\cal V}=\{1,2,\dots,n\}$. However, it is often reasonable to view node as realization of some random variable $X$. This can be illustrated by setting node as $v=X(\nu)$. 
 
-Let $X:{\cal V} \to {\cal M}$ be a random variable where ${\cal M}$ is isometrically embedded manifold in $\mathbb{R}^{N}$. Supposed that we observed $v_1,v_2,\dots,v_n ~\sim~ i.i.d. ~ F_X$ where $F_X$ is cumulative distribution functions of $X$. The graph signal $f$ is real valued function such that 
+Let $X:{\cal V} \to V$ be a random variable and $v_1,v_2,\dots,v_n$ be the $i.i.d.$ realization of $X$. Note that $\forall v \in V : ~ X^{-1}(v) \in \sigma(X)$ where $\sigma(X)$ is smallest $\sigma$-field which makes $X$ as random variable. Thus $X^{-1}(v_i)$ is always well defined. Let $V:=\{v_i:i=1,2,\dots,n\}$ and ${\bf E}$ be the $n \times n$ matrix whose $(i,j)$-th element is defined by 
+$$E_{ij}=\begin{cases} 1 & (\nu_i,\nu_j)\in {\cal E} \\ 0 & (\nu_i,\nu_j) \notin {\cal E}.\end{cases}$$ Furthermore, let's define another $n\times n$ matrix ${\bf W}$, where each element $W_{ij}$ represents the similarity between two node $\nu_i$ and $\nu_j$ (or $v_i$ and $v_j$). Define $(V,{\bf E},{\bf W})$ triple as weighted graph ${\cal G}$. The graph function $f$ is real valued function such that 
 \[
-f : {\cal M} \to \mathbb{R}.
+f : V \to \mathbb{R}.
 \]
-Furthermore, we define a set of linked vertices with a particular vertex $v_i$ as ${\cal N}_{v_i}=\{v_j: (\nu_i,\nu_j) \in {\cal E} \}$ where $\nu_i:X^{-1}(v_i)$.
-Note that $\forall M \in {\cal M} : ~ V^{-1}(M) \in \sigma(X)$ where $\sigma(X)$ is smallest $\sigma$-field which makes $X$ as random variable. Thus $X^{-1}(v_i)$ is always well defined. 
+Furthermore, we define a set of linked vertices with a particular vertex $v_i$ as ${\cal N}_{v_i}=\{v_j: (\nu_i,\nu_j) \in {\cal E} \}=\{v_j:E_{ij}=1\}$.
 
 From now on, we explain how to implement the phenomenon of snow accumulation. Let's come back to Figure 2 for easy understanding. Figure 2 (a), (b) and (c) show different viscous materials stacked on the same ground. For the case of Figure 2 (a), material flows to local minimum, which might be similar to the accumulation of rainwater. On the other hand, the material in Figure 2 (c) does not flow and just stacks up above ground. The most important property of the material in (a) is `continue to flow until blocked'. Note that small viscous materials do not accumulate. Those small viscous materials such as water accumulate only when they reach the local minimum. On the other hand, the most important property of highly viscous materials such as (c) is `stacking.' They only accumulate and never flow. 
 
@@ -183,13 +183,13 @@ For your easy understanding let's assume some specific situation as follows:
 
 The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$ and $f(v_i)$ be function valued mapped to $v_i$ and $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$. Let $b$ be the amount of falling snow and $\ell$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of random selection from $V$ with probability $\frac{1}{n}$ and $v^{(\ell)}$ is defined
+Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of random selection from $V$ with probability $\frac{1}{n}$ and $v^{(\ell)}$ is defined
 \[
 v^{(\ell)}=\begin{cases}
 \mbox{ sample from } {\cal U}_{v^{(\ell-1)}} \mbox{ with probability } \frac{d(v^{(\ell-1)},v^{(\ell)})}{\sum_{j \in {\cal N}_{v^{(\ell-1)}}}w(v^{(\ell-1)},v^{(\ell)})}  & {\cal U}_{v^{(\ell-1)}}\neq \emptyset \\ 
 \mbox{ sample from } V \mbox{ with probability  } \frac{1}{n}  & {\cal U}_{v^{(\ell-1)}}= \emptyset 
 \end{cases}
-\]
+\] Let $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$.
 For any $\ell \in \{1,\dots,\tau\}$, the $\ell$-th \emph{snowyground} of ${\boldsymbol f}$ is defined by 
 \[
 {\boldsymbol h}^{(\ell)} := {\boldsymbol h}^{(\ell-1)}+{\boldsymbol \xi}^{(\ell)}
