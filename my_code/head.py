@@ -3,13 +3,13 @@
 
 ## 2. load useful functions
 import requests
-exec(requests.get('http://miruetoto.github.io/code/dataHandling.py').text)
+exec(requests.get('http://miruetoto.github.io/my_code/dataHandling.py').text)
 #exec(requests.get('http://miruetoto.github.io/code/HST/hstfunctions.py').text)
 
 ## 3. for R user
 %load_ext rpy2.ipython
 %R library(devtools)
-#%R source_url('http://miruetoto.github.io/code/HST/hstfunctions.r')
+#%R source_url('http://miruetoto.github.io/my_code/HST/hstfunctions.r')
 
 ## 4. plt
 import matplotlib as mpl 
