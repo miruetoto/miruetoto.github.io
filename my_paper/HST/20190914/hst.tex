@@ -157,8 +157,8 @@ Section 3 introduces some visualization techniques that can effectively show the
 Before defining heavy-snow transform, we would like to explain data structure to which the transformation is applicable. 
 Let ${\cal V}$ be set of nodes (or vertices) and ${\cal E}$ be set of links (or edges). In the context of heavy-snow transformation, the link means a way that snow can move in. Basically, you can consider ${\cal V}=\{\nu_1,\dots,\nu_n\}$ as given index set such as ${\cal V}=\{1,2,\dots,n\}$. However, it is often reasonable to view node as realization of some random variable $X$. This can be illustrated by setting node as $v=X(\nu)$. 
 
-Let $X:{\cal V} \to V$ be a random variable and $v_1,v_2,\dots,v_n$ be the $i.i.d.$ realization of $X$. Note that $\forall v \in V : ~ X^{-1}(v) \in \sigma(X)$ where $\sigma(X)$ is smallest $\sigma$-field which makes $X$ as random variable. Thus $X^{-1}(v_i)$ is always well defined. Let $V:=\{v_i:i=1,2,\dots,n\}$ and ${\bf E}$ be the $n \times n$ matrix whose $(i,j)$-th element is defined by 
-$$E_{ij}=\begin{cases} 1 & (\nu_i,\nu_j)\in {\cal E} \\ 0 & (\nu_i,\nu_j) \notin {\cal E}.\end{cases}$$ Furthermore, let's define another $n\times n$ matrix ${\bf W}$, where each element $W_{ij}$ represents the similarity between two node $\nu_i$ and $\nu_j$ (or $v_i$ and $v_j$). Define $(V,{\bf E},{\bf W})$ triple as weighted graph ${\cal G}$. The graph function $f$ is real valued function such that 
+Let $X:{\cal V} \to \mathbb{R}^M$ be a random vector and $V=\{v_1,v_2,\dots,v_n\}$ where $v_1,v_2,\dots,v_n$ is $i.i.d.$ realization of $X$. Note that $\forall v \in V : ~ X^{-1}(v) \in \sigma(X)$ where $\sigma(X)$ is smallest $\sigma$-field which makes $X$ as random variable. Thus $X^{-1}(v_i)$ is always well defined. Let ${\bf E}$ be the $n \times n$ matrix whose $(i,j)$-th element is defined by 
+$$E_{ij}=\begin{cases} 1 & (\nu_i,\nu_j)\in {\cal E} \\ 0 & (\nu_i,\nu_j) \notin {\cal E}.\end{cases}$$ Furthermore, let's define another $n\times n$ matrix ${\bf W}$, where each element $W_{ij}$ represents the similarity between two node $\nu_i$ and $\nu_j$ (or $v_i$ and $v_j$). Define $(V,{\bf E},{\bf W})$ triple as weighted graph ${\cal G}$. The \emph{graph function} $f$ is real valued function such that 
 \[
 f : V \to \mathbb{R}.
 \]
@@ -170,9 +170,9 @@ The snow can be interpreted as having a medium viscosity between two materials o
 For your easy understanding let's assume some specific situation as follows: 
 
 \begin{enumerate}[1.]
-\item (snow falls) Draw $v_i$ from $V$ with probability $\frac{1}{n}$. Suppose that snow falls at $v_i$ as much as $b$. 
-\item (accumulation) Like (c) snow stacks on $v_i$. Thus, in this case, value of $v_i$, i.e., $f(v_i)$ will be updated by $f(v_i)+b$. 
-\item (flows/blocked) After that snow can move to one of ${\cal N}_{v_i}$ which is neighborhood of $v_i$. Of course, if ${\cal N}_{v_i}=\emptyset$, the snow will no longer flow. However, ${\cal N}_{v_i}\neq \emptyset$ does not necessarily mean that snow can flow (since snow cannot flow high). Thus, we should compare value of $f(v_i)+b$ and $f(v_j)$ to check flowbility of snow. In otherwords, we should check ${\cal U}_{v_i}:={\cal N}_{v_i} \cap \{v_j: f(v_j) \leq f(v_i)+b\}$ is emptyset or not. 
+\item (snow falls) Draw $u$ from $V$ with probability $\frac{1}{n}$. Suppose that snow falls at $u$ as much as $b$. 
+\item (accumulation) Like (c) snow stacks on $u$. Thus, in this case, value on $u$, i.e., $f(u)$ will be updated by $f(u)+b$. 
+\item (flows or blocked) After accumulation, snow can move to one of ${\cal N}_{u}$ which is neighborhood of $u$. Of course, if ${\cal N}_{u}=\emptyset$, the snow will no longer flow. Then snow can always flow from $u$ to $v \in {\cal N}_{u}$ in the case of ${\cal N}_{u}\neq \emptyset$? The answer is NO since snow cannot flow high. In otherwords, ${\cal N}_{v}\neq \emptyset$ does not necessarily mean that snow can flow. Thus, we should compare value of $f(v)+b$ and $f(u)$ to check flowbility of snow, i.e., we should check ${\cal U}_{v_i}:={\cal N}_{v_i} \cap \{v_j: f(v_j) \leq f(v_i)+b\}$ is emptyset or not. 
 \begin{itemize}
 \item (flow) In the case of ${\cal U}_{v_i}\neq\emptyset$, which is an unblocked situation, snow (which stays in $v_i$) can flow to $v_j$ that is randomly sampled element from ${\cal U}_{v_i}$ with probability $\frac{w_{ij}}{\sum_{j \in {\cal U}_{v_i} }w_{ij} }$. 
 \item (blocked) If ${\cal U}_{v_i}=\emptyset$, which is a blocked situation, snow can't flow anymore. In this cases, the next node is randomly selected from $V=\{v_1,\dots,v_n\}$ with probability $\frac{1}{n}$. 
@@ -183,7 +183,7 @@ For your easy understanding let's assume some specific situation as follows:
 
 The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
-Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Let $\{v^{(0)},v^{(1)},\dots,v^{(\tau)}\}$ as \emph{trace of snow} where $v^{(0)}$ is result of random selection from $V$ with probability $\frac{1}{n}$ and $v^{(\ell)}$ is defined
+Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. For fixed $i$, let ${\cal N}_{v_i}$ be set of linked values with $v_i$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Let $\{\ell_0,\ell_1,\dots ,\ell_{\tau}\}$ as \emph{trace of snow} where $\ell_0 \sim \mbox{Multinomial}($ is result of random selection from $V$ with probability $\frac{1}{n}$ and $\ell^{(\tau)}$ is defined
 \[
 v^{(\ell)}=\begin{cases}
 \mbox{ sample from } {\cal U}_{v^{(\ell-1)}} \mbox{ with probability } \frac{d(v^{(\ell-1)},v^{(\ell)})}{\sum_{j \in {\cal N}_{v^{(\ell-1)}}}w(v^{(\ell-1)},v^{(\ell)})}  & {\cal U}_{v^{(\ell-1)}}\neq \emptyset \\ 
