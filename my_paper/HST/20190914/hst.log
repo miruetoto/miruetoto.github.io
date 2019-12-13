@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  13 DEC 2019 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  13 DEC 2019 12:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,12 +798,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
-
-Overfull \hbox (15.4861pt too wide) detected at line 193
-\OML/cmm/m/it/12 v[] \OT1/cmr/m/n/12 = []
- []
-
-[9] [10] [11] [12]
+ [9] [10] [11] [12]
 <Fig/In_data.pdf, id=89, 867.24pt x 542.025pt>
 File: Fig/In_data.pdf Graphic file (type pdf)
 <use Fig/In_data.pdf>
@@ -895,7 +890,7 @@ r/HST/20190914/Fig/In_scale_6.pdf>]
 Here is how much of TeX's memory you used:
  6076 strings out of 492982
  85577 string characters out of 6134896
- 159110 words of memory out of 5000000
+ 160110 words of memory out of 5000000
  9468 multiletter control sequences out of 15000+600000
  20185 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -932,7 +927,7 @@ lic/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 numtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
 type1/nanummjmd6.pfb>
 Output written on /home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST
-/20190914/hst.pdf (26 pages, 1307043 bytes).
+/20190914/hst.pdf (26 pages, 1307299 bytes).
 PDF statistics:
  273 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams

@@ -186,9 +186,9 @@ The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
 Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let ${\cal N}_{v}$ be set of linked vertex with $v$ and $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Define $\{\zeta^{(0)},\zeta^{(1)},\dots ,\zeta^{(\tau)}\}$ as \emph{trace of snow} where $\zeta_0 \sim \mbox{Multinomial}(1/n\dots,1/n)$ and $\ell^{(\tau)}$ is defined
 \[
-v^{(\ell)}=\begin{cases}
-\mbox{ sample from } {\cal U}_{v^{(\ell-1)}} \mbox{ with probability } \frac{w(v^{(\ell-1)},v^{(\ell)})}{\sum_{j \in {\cal N}_{v^{(\ell-1)}}}w(v^{(\ell-1)},v^{(\ell)})}  & {\cal U}_{v^{(\ell-1)}}\neq \emptyset \\ 
-\mbox{ sample from } V \mbox{ with probability  } \frac{1}{n}  & {\cal U}_{v^{(\ell-1)}}= \emptyset 
+v^*_{\ell+1}=\begin{cases}
+\mbox{ sample from } {\cal U}_{v^*_{\ell}} \mbox{ with probability } \frac{w(v^*_{\ell},v^*_{\ell+1})}{\sum_{v^*_{\ell+1} \in V} w(v^*_{\ell},v^*_{\ell+1})}  & {\cal U}_{v^*_{\ell-1}}\neq \emptyset \\ 
+\mbox{ sample from } V \mbox{ with probability  } \frac{1}{n}  & {\cal U}_{v^*_{\ell-1}}= \emptyset 
 \end{cases}
 \] Let $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$.
 For any $\ell \in \{1,\dots,\tau\}$, the $\ell$-th \emph{snowyground} of ${\boldsymbol f}$ is defined by 
