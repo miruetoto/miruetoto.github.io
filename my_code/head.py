@@ -24,5 +24,5 @@ import torch
 print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
 
 ## 6. Project Setting
-#exec(requests.get('http://miruetoto.github.io/code/HST/hstfunctions.py').text)
+#exec(requests.get('http://miruetoto.github.io/my_code/HST/hstfunctions.py').text)
 #%R source_url('http://miruetoto.github.io/my_code/HST/hstfunctions.r')
