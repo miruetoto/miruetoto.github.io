@@ -173,64 +173,65 @@ For your easy understanding let's assume some specific situation as follows:
 \begin{enumerate}[1.]
 \item (snow falls) Draw $u$ from $V$ with probability $\frac{1}{n}$. Suppose that snow falls at $u$ as much as $b$. 
 \item (accumulation) Like (c) snow stacks on $u$. Thus, in this case, value on $u$, i.e., $f(u)$ will be updated by $f(u)+b$. 
-\item (flows or blocked) After accumulation, snow can move to one of ${\cal N}_{u}$ which is neighborhood of $u$. Of course, if ${\cal N}_{u}=\emptyset$, the snow will no longer flow. Then snow can always flow from $u$ to $v \in {\cal N}_{u}$ in the case of ${\cal N}_{u}\neq \emptyset$? The answer is NO since snow cannot flow high. In otherwords, ${\cal N}_{v}\neq \emptyset$ does not necessarily mean that snow can flow. Thus, we should compare value of $f(u)+b$ and $f(v)$ to check flowbility of snow, i.e., we should check ${\cal U}_{u}:={\cal N}_{u} \cap \{v: f(v) \leq f(u)+b\}$ is emptyset or not.. 
+\item (flows or blocked) After accumulation, snow can move to one of ${\cal N}_{u}$ which is neighborhood of $u$. Of course, if ${\cal N}_{u}=\emptyset$, the snow will no longer flow. Then snow can always flow from $u$ to $v \in {\cal N}_{u}$ in the case of ${\cal N}_{u}\neq \emptyset$? The answer is NO since snow cannot flow high. In otherwords, ${\cal N}_{u}\neq \emptyset$ does not necessarily mean that snow can flow. Thus, we should compare value of $f(u)+b$ and $f(v)$ to check flowbility of snow, i.e., we should check ${\cal U}^{\textbf{next}}:={\cal N}_{u} \cap \{v: f(v) \leq f(u)+b\}$ is emptyset or not.
 \begin{itemize}
-\item (flow) In the case of ${\cal U}_{u}\neq\emptyset$, which is an unblocked situation, snow (which stays in $u$) can flow to $v$ that is randomly sampled element from ${\cal U}_{u}$ with probability $\frac{w(u,v)}{\sum_{v \in {\cal U}_{u} }w(u,v) }$. 
-\item (blocked) If ${\cal U}_{u}=\emptyset$, which is a blocked situation, snow can't flow anymore. In this cases, the next node is randomly selected from $V$ with probability $\frac{1}{n}$. 
+\item (flow) In the case of ${\cal U}^{\textbf{next}}\neq\emptyset$, which is an unblocked situation, snow (which stays in $v$) can flow to $u$ that is randomly sampled element from ${\cal U}^{\textbf{next}}$ with probability $\frac{w(u,v)}{\sum_{v \in {\cal U}^{\textbf{next}}}w(u,v) }$. 
+\item (blocked) If ${\cal U}^{\textbf{next}}=\emptyset$, which is a blocked situation, snow can't flow anymore. In this cases, the next node is randomly selected from $V$ with probability $\frac{1}{n}$. 
 \end{itemize}
-\item (next iteration) In the cases of `flows', go back to step 1 and repeat above procedure with assuming that snow falls at $v$ (which is element of ${\cal U}_{u}$) as much as $\gamma b$. In here $\gamma \in (0,1)$ is parameter adjusting viscosity of snow. (If you choose very small $\gamma$, shape of snow accumulation will be (c) in Figure 2.) For `blocked' situation, go back to step 1 with assuming that snow falls at $u^*$ (which is randomly selected node in $V$ with probability $\frac{1}{n}$) as much as $b$.
+\item (next iteration) In the cases of `flows', go back to step 1 and repeat above procedure with assuming that snow falls at $v$ (which is element of ${\cal U}^{\textbf{next}}$) as much as $\gamma b$. In here $\gamma \in (0,1)$ is parameter adjusting viscosity of snow. (If you choose very small $\gamma$, shape of snow accumulation will be (c) in Figure 2.) For `blocked' situation, go back to step 1 with assuming that snow falls at $v^*$ (which is randomly selected node in $V$ with probability $\frac{1}{n}$) as much as $b$.
   
 \end{enumerate}
 
 The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
-Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let ${\cal N}_{v}$ be set of linked vertex with $v$ and $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Define $\{v^*_0,v^*_1,\dots ,v^*_{\tau}\}$ as \emph{trace of snow} where $v^*_0$ is sample from $V$ with probability $\frac{1}{n}$ and $v^*_{\ell}$ is defined
+Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Define $\boldsymbol{\tilde v}=\{\tilde v^0,\tilde v^1,\dots ,\tilde v^{\tau}\}$ as \emph{traces of snow} which is determinded by the transition probabilities 
 \[
-v^*_{\ell+1}=\begin{cases}
-\mbox{ sample from } {\cal U}_{v^*_{\ell}} \mbox{ with probability } \frac{w(v^*_{\ell},v^*_{\ell+1})}{\sum_{v\in {\cal U}_{v^*_{\ell}}} w(v^*_{\ell},v)}  & {\cal U}_{v^*_{\ell-1}}\neq \emptyset \\ 
-\mbox{ sample from } V \mbox{ with probability  } \frac{1}{n}  & {\cal U}_{v^*_{\ell-1}}= \emptyset 
-\end{cases}
-\] Let $\boldsymbol f$ be ${\boldsymbol f}=\{f(v_i): i=1,\dots,n \}$.
-For any $\ell \in \{1,\dots,\tau\}$, the $\ell$-th \emph{snowyground} of ${\boldsymbol f}$ is defined by 
-\[
-{\boldsymbol h}^{(\ell)} := {\boldsymbol h}^{(\ell-1)}+{\boldsymbol \xi}^{(\ell)}
-\]
-where ${\boldsymbol h}^{(0)}={\boldsymbol f}$ and ${\boldsymbol \xi}^{(\ell)}=\{\xi^{(\ell}(v_i): i=1,\dots,n\}$ is amount of stacked snow at $\ell$ whose elements are defined by 
-\[
-\xi^{(\ell)}(v_i)=	\begin{cases}
-\gamma \xi^{(\ell)}(v^{(\ell-1)})  & {\cal U}_{v^{(\ell-1)}}\neq \emptyset \\ 
-b &  {\cal U}_{v^{(\ell-1)}} = \emptyset. \\ 
+P^{\ell}(u,v)=
+\mbox{Prob}(\tilde v^{\ell}=v|\tilde v^{\ell-1}=u)
+=\begin{cases}
+\frac{1}{n}  & {\cal U}^{\ell-1}= \emptyset \\ 
+\frac{w(u,v)}{\sum_{v\in {\cal U}^{\ell-1}} w(u,v)} & {\cal U}^{\ell-1}\neq \emptyset 
+\mbox{ and } v \in {\cal U}^{\ell-1}\\ 
+0 & {\cal U}^{\ell-1}\neq \emptyset \mbox{ and } v \notin {\cal U}^{\ell-1}
 \end{cases}
 \]
-Define ${\cal H}({\boldsymbol f};\tau):=\{{\boldsymbol h}^{(0)},\dots,{\boldsymbol h}^{(\tau)}\}$ as \emph{heavy-snow transform} of ${\boldsymbol f}$. 
+where ${\cal U}^0=V$ and 
+\[
+{\cal U}^{\ell}=\big\{v: h^{\ell}(v)\leq h^{\ell}(\tilde v^{\ell})+\xi^{\ell}(\tilde v^{\ell}), v\in {\cal N}_{\tilde v^{\ell}}\big\}
+\]
+is a set of vertices where snow can flow in step $\ell$. In here, $h^{\ell}(v)$ is the $\ell$-th \emph{snowyground} and $\xi^{\ell}(v)$ is the $\ell$-th \emph{snow} such that 
+\[
+h^{\ell}(v)=h^{\ell-1}(v)+\xi^{\ell}(v)
+\]
+where $h^{0}=f$ and 
+\[
+\xi^{\ell}(v)=	\begin{cases}
+0 & v \neq  \tilde v^{\ell} \\
+\gamma \xi^{\ell}(\tilde v^{\ell-1})  & v =  \tilde v^{\ell} \mbox{ and } {\cal U}^{\ell-1}\neq \emptyset \\
+b &  v = \tilde v^{\ell} \mbox{ and } {\cal U}^{\ell-1} = \emptyset
+\end{cases}
+\]
+with fixed $\gamma\in(0,1)$. 
+Define ${\cal H}(f,{\cal G};\tau):=\big\{h^{\ell}(v)\big\}_{v \in V,~\ell \leq\tau }$ as \emph{heavy-snow transform} of ${\boldsymbol f}$. 
 \end{dfn}
-Let ${\bf S}$ be 
-\[
-{\bf S}:=\begin{bmatrix} 
-h^{(0)}(v_1) & h^{(1)}(v_1) & \dots & h^{(\tau)}(v_1) \\ 
-h^{(0)}(v_2) & h^{(1)}(v_2) & \dots & h^{(\tau)}(v_1) \\ 
-\dots  & \dots & \dots & \dots \\ 
-h^{(0)}(v_n) & h^{(1)}(v_n) & \dots & h^{(\tau)}(v_n) \end{bmatrix}
-\]
-and call it \emph{snow matrix} of ${\boldsymbol f}$. 
+
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Let ${\boldsymbol f}$ be the graph function on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
+Let ${\cal G}=(V,{\bf E},{\bf W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let ${\cal H}({\boldsymbol f},{\cal G};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. Define the \emph{snow distance matrix} as ${\widetilde{\bf W}}^{\tau}$ whose $(i,j)$-th element is 
 \[
-\rho^{(\tau)}(v_i , v_j) := \|{\boldsymbol h}^{(\tau)}_i- {\boldsymbol h}^{(\tau)}_j\|_2.
+\tilde w^{\tau}_{ij}=\tilde \rho^{\tau}(v_i , v_j) := \frac{\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2 }{\sqrt{d_id_j}}
 \]
-where ${\boldsymbol h}^{(\tau)}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$. 
+where ${\boldsymbol h}_i=\{h^{0}(v_i),\dots,h^{\tau}(v_i)\}$ and $d_i=\sum_{j=1}^{n}\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2$. 
 \end{dfn}
 
 \begin{thm} 
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Define graph function $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let ${\cal S}^{(\tau)}:=\{{\boldsymbol h}^{(\tau)}(v): v\in V\}$. 
-\begin{itemize}
-	\item $\rho^{(0)}$ is metric in ${\cal M}$ as $n\to \infty$. 
-	\item Further $\rho^{(\infty)}$ is metric in ${\cal V}$ as $n\to \infty$.
-\end{itemize}
+Let $\rho^{\star}(\nu_i,\nu_j)=\tilde \rho^{\infty}(X(\nu_i),X(\nu_j)).$ 
 \end{thm}
 \begin{proof}
-\textbf{Claim 1.} 
+We want to show that 
+\[
+\rho^{\star}(\nu_i,\nu_j)\leq \rho^{\star}(\nu_i,\nu_k)+\rho^{\star}(\nu_k,\nu_j).
+\]
 \end{proof}
 
 \begin{thm}
