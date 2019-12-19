@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  16 DEC 2019 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  19 DEC 2019 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **hst.tex
-
-(/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.tex
+(/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -664,9 +663,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 LaTeX Warning: Unused global option(s):
     [preprint,review].
 
-
-(/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.aux
-)
+(/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.aux)
 \openout1 = `hst.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
@@ -684,7 +681,8 @@ LaTeX Font Info:    ... okay on input line 89.
 LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 89.
 LaTeX Font Info:    Try loading font information for LUC+nanummj on input line 
 89.
- (/usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
 LaTeX Font Info:    ... okay on input line 89.
@@ -781,15 +779,15 @@ File: Fig/Fig1.png Graphic file (type png)
 <use Fig/Fig1.png>
 Package pdftex.def Info: Fig/Fig1.png  used on input line 119.
 (pdftex.def)             Requested size: 390.0pt x 215.59985pt.
- [3 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig
-/Fig1.png>] [4]
+ [3 </home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig/F
+ig1.png>] [4]
 <Fig/Fig2.pdf, id=31, 542.025pt x 650.43pt>
 File: Fig/Fig2.pdf Graphic file (type pdf)
 <use Fig/Fig2.pdf>
 Package pdftex.def Info: Fig/Fig2.pdf  used on input line 148.
 (pdftex.def)             Requested size: 390.0pt x 468.01149pt.
- [5] [6 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914
-/Fig/Fig2.pdf>] [7] [8]
+ [5] [6 </home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/F
+ig/Fig2.pdf>] [7] [8]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 178.
 
 
@@ -814,9 +812,9 @@ File: Fig/data_str.png Graphic file (type png)
 <use Fig/data_str.png>
 Package pdftex.def Info: Fig/data_str.png  used on input line 324.
 (pdftex.def)             Requested size: 390.0pt x 216.32967pt.
-[13 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig
-/In_data.pdf>] [14 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/H
-ST/20190914/Fig/data_str.png (PNG copy)>] [15] [16] [17] [18]
+[13 </home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig/I
+n_data.pdf>] [14 </home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/2
+0190914/Fig/data_str.png (PNG copy)>] [15] [16] [17] [18]
 <Fig/In_scale_1.pdf, id=115, 867.24pt x 542.025pt>
 File: Fig/In_scale_1.pdf Graphic file (type pdf)
 <use Fig/In_scale_1.pdf>
@@ -877,57 +875,57 @@ Overfull \hbox (27.42667pt too wide) in paragraph at lines 448--450
  [][] 
  []
 
-[19] [20 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/2019091
-4/Fig/In_scale_1.pdf>] [21 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my
-_paper/HST/20190914/Fig/In_scale_2.pdf>] [22 </home/lgcgb/Documents/GitHub/miru
-etoto.github.io/my_paper/HST/20190914/Fig/In_scale_3.pdf>] [23 </home/lgcgb/Doc
-uments/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig/In_scale_4.pdf>]
-[24 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig
-/In_scale_5.pdf>] [25 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_pape
-r/HST/20190914/Fig/In_scale_6.pdf>]
-(/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.aux
-) ) 
+[19] [20 </home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/
+Fig/In_scale_1.pdf>] [21 </home/cgb/Documents/GitHub/miruetoto.github.io/my_pap
+er/HST/20190914/Fig/In_scale_2.pdf>] [22 </home/cgb/Documents/GitHub/miruetoto.
+github.io/my_paper/HST/20190914/Fig/In_scale_3.pdf>] [23 </home/cgb/Documents/G
+itHub/miruetoto.github.io/my_paper/HST/20190914/Fig/In_scale_4.pdf>] [24 </home
+/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fig/In_scale_5.
+pdf>] [25 </home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914
+/Fig/In_scale_6.pdf>]
+(/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.aux) 
+) 
 Here is how much of TeX's memory you used:
  6076 strings out of 492982
- 85577 string characters out of 6134896
- 160110 words of memory out of 5000000
+ 85559 string characters out of 6134896
+ 159110 words of memory out of 5000000
  9468 multiletter control sequences out of 15000+600000
  20185 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,13n,42p,1538b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
-type1/nanummjmd6.pfb>
-Output written on /home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST
-/20190914/hst.pdf (26 pages, 1306741 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/nanumtype1/nanummjmc7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/n
+anumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanu
+mtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumty
+pe1/nanummjmd6.pfb>
+Output written on /home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/2
+0190914/hst.pdf (26 pages, 1306732 bytes).
 PDF statistics:
  273 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams

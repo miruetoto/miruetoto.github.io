@@ -99,20 +99,20 @@ Seoul 08826, Korea \\
 \noindent 
 This paper presents a new multiscale transforms, termed 'heavy-snow transform', which is motivated by observing snow accumulation. Heavy-snow transform provides multiscale visualization which can capture the shape of land (or data structure) with different resolution. Some measures based on heavy-snow transform are newly defined to describe dissimilarity between data and the importance of data. Furthermore, some statistical applications are studied. 
 \vskip 5mm
-\noindent {\it Keywords}: Graph signal; Similarity; Distance; Multiscale method. 
+\noindent {\it Keywords}: Graph function; Similarity; Distance; Multiscale method. 
 \pagenumbering{arabic}
 \newpage
 
 
 \section{Introduction}
-In this study we will propose a new method which can measure the distance between nodes in \emph{graph signal}. In here, graph signal $f$ is real valued function such that $f:{\cal V} \to \mathbb{R}$ where ${\cal V}$ is set of nodes (or vertices). We are interested in the distance or similarity(which is usually defined as the inverse of distance) in graph signal. 
+In this study we will propose a new method which can measure the distance between nodes in \emph{graph function}. In here, graph function $f$ is real valued function such that $f:{\cal V} \to \mathbb{R}$ where ${\cal V}$ is set of nodes (or vertices). We are interested in the distance or similarity(which is usually defined as the inverse of distance) in graph function. 
 
 Let $\nu_i$ and $\nu_j$ be a specific nodes in ${\cal V}$ and $f(\nu_1)$ and $f(\nu_2)$ be a value at $\nu_i$ and $\nu_j$. How to measure the similarity or disimilarity between $f(\nu_i)$ and $f(\nu_j)$? In other words, how can we define distance between $f(\nu_i)$ and $f(\nu_j)$?. The naive approach for measuring the distance between $f(\nu_i)$ and $f(\nu_j)$ is to use the Euclidean distance like: 
 $
 \|f(\nu_i)-f(\nu_j)\|_2:=\sqrt{(f(\nu_i)-f(\nu_j))^2}.
-$ Of course, someone can use other measures such as Gaussian kernel weighting function. Those measures do not have a problem when they measure the distance of points which resides Euclidean space. However, it is reasonable to think that the graph signal resides in not only Euclidean space but also graph space. (Note that $f(\nu)\in \mathbb{R}$ but $\nu \in {\cal V}$.) The problem is here. Distance between $f(\nu_i)$ and $f(\nu_j)$ depends on disimilarity in Euclidean domains but distance between $\nu_i$ and $\nu_j$ depends on disimilarity in graph domains, which is determined by \emph{links} (or \emph{edges}), i.e., ${\cal E}$. However the methods presented above have limitations in that they do not consider the ${\cal E}$ when measuring the distance between observations. In here, considering \emph{links} between observation means that consider the structure of indices, i.e., ${\cal E}$. Let's move to Figure 1 to understand why you should consider the structure of index set in the graph signal. 
+$ Of course, someone can use other measures such as Gaussian kernel weighting function. Those measures do not have a problem when they measure the distance of points which resides Euclidean space. However, it is reasonable to think that the graph function resides in not only Euclidean space but also graph space. (Note that $f(\nu)\in \mathbb{R}$ but $\nu \in {\cal V}$.) The problem is here. Distance between $f(\nu_i)$ and $f(\nu_j)$ depends on disimilarity in Euclidean domains but distance between $\nu_i$ and $\nu_j$ depends on disimilarity in graph domains, which is determined by \emph{links} (or \emph{edges}), i.e., ${\cal E}$. However the methods presented above have limitations in that they do not consider the ${\cal E}$ when measuring the distance between observations. In here, considering \emph{links} between observation means that consider the structure of indices, i.e., ${\cal E}$. Let's move to Figure 1 to understand why you should consider the structure of index set in the graph function. 
 
-Figure 1 is made from example introduced in Shuman (2012). There are three graph signal in Figure 1. The interesting fact is that those three graph have exactly same $f(\nu_i)$ for each $\nu_i \in {\cal V}$. The only difference between them is ${\cal E}$ which are represented in dotted lines. Due to ${\cal E}$ all connected nodes in (a) seems to have a similar values but (c) is not. In other words, (a) looks like a low-frequency signal, while (c) looks like a high-frequency signal. (b) feels halfway between (a) and (c). You can easily check this is true by comparing the spectral density of (a)-(c) represented in second row of Figure 1. 
+Figure 1 is made from example introduced in Shuman (2012). There are three graph function in Figure 1. The interesting fact is that those three graph have exactly same $f(\nu_i)$ for each $\nu_i \in {\cal V}$. The only difference between them is ${\cal E}$ which are represented in dotted lines. Due to ${\cal E}$ all connected nodes in (a) seems to have a similar values but (c) is not. In other words, (a) looks like a low-frequency signal, while (c) looks like a high-frequency signal. (b) feels halfway between (a) and (c). You can easily check this is true by comparing the spectral density of (a)-(c) represented in second row of Figure 1. 
 
 \begin{figure}[htbp]
 \centering
@@ -120,13 +120,13 @@ Figure 1 is made from example introduced in Shuman (2012). There are three graph
 \caption{Example 1 in Shuman (2012)}
 \end{figure}
 
-The underlying structure of graph signal ${\cal E}$ affects distance between $\nu_i$ and $\nu_j$, and it affects the similarity (or disimilarity) between $f(\nu_i)$ and $f(\nu_j)$ as discussed in Figure 1. Therefore, when analyzing graph signal, measuring the distance between $\nu_i$ and $\nu_j$ is no less important than measuring the distance between $f(\nu_i)$ and $f(\nu_j)$. In other words, the distance in the graph domain is just as important as the distance in the Euclidean domain.
+The underlying structure of graph function ${\cal E}$ affects distance between $\nu_i$ and $\nu_j$, and it affects the similarity (or disimilarity) between $f(\nu_i)$ and $f(\nu_j)$ as discussed in Figure 1. Therefore, when analyzing graph function, measuring the distance between $\nu_i$ and $\nu_j$ is no less important than measuring the distance between $f(\nu_i)$ and $f(\nu_j)$. In other words, the distance in the graph domain is just as important as the distance in the Euclidean domain.
 
-Various methods have been developed to measure the differences between nodes. The most common method is the shortest path, which measures the shortest distance between two nodes. Klein and Randić (1993) suggest the resistance distance which can measure the distance between nodes in undirected graph. Lafon and Lee (2006) suggest the diffusion distance. However, those methods have limitations such that they are only interested in distance between $\nu_i$ and $\nu_j$. That is, those methods could be suitable for graph $({\cal V},{\cal E})$ but not suitable for graph signal $f:{\cal V} \to \mathbb{R}$. 
+Various methods have been developed to measure the differences between nodes. The most common method is the shortest path, which measures the shortest distance between two nodes. Klein and Randić (1993) suggest the resistance distance which can measure the distance between nodes in undirected graph. Lafon and Lee (2006) suggest the diffusion distance. However, those methods have limitations such that they are only interested in distance between $\nu_i$ and $\nu_j$. That is, those methods could be suitable for graph $({\cal V},{\cal E})$ but not suitable for graph funtion $f:{\cal V} \to \mathbb{R}$. 
 
 Thus, our goal is that: Develope new distance considering the distance in vertex domain and the distance in the Euclidean domain simultaneously. To do this, we propose a new distance that takes into account the distance between the vertex domain and the distance from the Euclidean domain at the same time through an elegant technique called \emph{heavysnow transform}. We will formally define heavysnow transform in Section 2, instead, in this section, we will just breifly introduce the main idea and motivation of heavy transform. After that we will explain why our proposed distance is a reasonable measure which can properly mix the information of the graph and Euclidean domains. 
 
-The heavysnow transform is invented by observing snow accumulation over the land or ground. In this study, you can consider the ground as graph signal $f$ and snow as some positive constant $b$ we will stack on $f$. Let $\tau$ be the number of falling snow. Our propose distance, named \emph{snow distance}, is defined 
+The heavysnow transform is invented by observing snow accumulation over the land or ground. In this study, you can consider the ground as graph function $f$ and snow as some positive constant $b$ we will stack on $f$. Let $\tau$ be the number of falling snow. Our propose distance, named \emph{snow distance}, is defined 
 \[
 sdist(\nu_i,\nu_j; \tau):=\mathbb{E}\| h(\nu_i; \tau )- h(\nu_j;\tau)\|_2.
 \]
@@ -134,7 +134,7 @@ In here, $h(\nu_i;\tau)$ will be defined more strictly at Section 2. In this sec
 
 As you can see, when $\tau = 0$, the snowdist between two nodes $\nu_i$ and $\nu_j$ becomes $\|f(\nu_i)-f(\nu_j)\|_2$, which is exactly same as Euclidean distance. However, as $\tau$ increases, the snow distance starts to mix the distance in the Euclidean domain and the distance in the graph domain. That is, as $\tau$ increases, the structure of ${\cal E}$ is additionally reflected in dissimilarity between $f(\nu_i)$ and $f(\nu_j)$. This is the key to considering both graph and Euclidean domains simultaneously. 
 
-How is this possible? This is due to the very unique feature of snow accumulation. For your easy and intuitive understanding, let's see Figure 2. In Figure 2-(a), (b), and (c), the curved lines which are located in the bottom of each figure represents ground or graph signal $f$. If you put a less viscous material like rain on $f$, it would look like (a). If we add a highly viscous material to $f$, it would look like (c). If material has medium viscosity like snow, it would look like (b). In other words, to have a shape like (b), the snow stacked on $v_i$ with following characteristics: 
+How is this possible? This is due to the very unique feature of snow accumulation. For your easy and intuitive understanding, let's see Figure 2. In Figure 2-(a), (b), and (c), the curved lines which are located in the bottom of each figure represents ground or graph function $f$. If you put a less viscous material like rain on $f$, it would look like (a). If we add a highly viscous material to $f$, it would look like (c). If material has medium viscosity like snow, it would look like (b). In other words, to have a shape like (b), the snow stacked on $v_i$ with following characteristics: 
 \begin{enumerate}[(i)]
 \item Snow can flow to adjacent areas.
 \item Snow cannot flow to higher ground. 
@@ -215,7 +215,7 @@ h^{(0)}(v_n) & h^{(1)}(v_n) & \dots & h^{(\tau)}(v_n) \end{bmatrix}
 and call it \emph{snow matrix} of ${\boldsymbol f}$. 
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Let ${\boldsymbol f}$ be the graph signal on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
+Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Let ${\boldsymbol f}$ be the graph function on $(V,E)$. Let ${\cal H}({\boldsymbol f};\tau)$ be heavy-snow transform for ${\boldsymbol f}$. The \emph{snow distance} between $v_i$ and $v_j$ is defined by 
 \[
 \rho^{(\tau)}(v_i , v_j) := \|{\boldsymbol h}^{(\tau)}_i- {\boldsymbol h}^{(\tau)}_j\|_2.
 \]
@@ -223,7 +223,7 @@ where ${\boldsymbol h}^{(\tau)}_i=\big(h^{(0)}(v_i),\dots,h^{(\tau)}(v_i)\big)$.
 \end{dfn}
 
 \begin{thm} 
-Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Define graph signal $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let ${\cal S}^{(\tau)}:=\{{\boldsymbol h}^{(\tau)}(v): v\in V\}$. 
+Let $V:=\{v_i:i=1,2,\dots,n\}$ be the given index set or realization of $X$. Define graph function $f(v) \in {\cal M}$ and its heavy-snow transform ${\cal H}({\boldsymbol f};\tau)$. Let ${\cal S}^{(\tau)}:=\{{\boldsymbol h}^{(\tau)}(v): v\in V\}$. 
 \begin{itemize}
 	\item $\rho^{(0)}$ is metric in ${\cal M}$ as $n\to \infty$. 
 	\item Further $\rho^{(\infty)}$ is metric in ${\cal V}$ as $n\to \infty$.
