@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  19 DEC 2019 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  20 DEC 2019 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,7 +927,7 @@ mmjmd2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummj
 md5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6
 .pfb>
 Output written on /home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/2
-0190914/hst.pdf (26 pages, 1321842 bytes).
+0190914/hst.pdf (26 pages, 1322305 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  198 compressed objects within 2 object streams
