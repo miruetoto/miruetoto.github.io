@@ -162,7 +162,7 @@ $$E_{ij}=\begin{cases} 1 & (\nu_i,\nu_j)\in {\cal E} \\ 0 & (\nu_i,\nu_j) \notin
 \[
 f : V \to \mathbb{R}.
 \]
-Thanks to the well defined $X$, for all $f$ there exists $f^{\star}: {\cal V} \to \mathbb{R}$ such that $f^{\star}:f\circ X^{-1}$.
+Thanks to the well defined $X$, for all $f$ there exists $f^{\ast}: {\cal V} \to \mathbb{R}$ such that $f^{\ast}:f\circ X^{-1}$.
 Furthermore, we define a set of linked vertices with a particular vertex $v_i$ as ${\cal N}_{v_i}=\{v_j: (\nu_i,\nu_j) \in {\cal E} \}=\{v_j:E_{ij}=1\}$.
 
 From now on, we explain how to implement the phenomenon of snow accumulation. Let's come back to Figure 2 for easy understanding. Figure 2 (a), (b) and (c) show different viscous materials stacked on the same ground. For the case of Figure 2 (a), material flows to local minimum, which might be similar to the accumulation of rainwater. On the other hand, the material in Figure 2 (c) does not flow and just stacks up above ground. The most important property of the material in (a) is `continue to flow until blocked'. Note that small viscous materials do not accumulate. Those small viscous materials such as water accumulate only when they reach the local minimum. On the other hand, the most important property of highly viscous materials such as (c) is `stacking.' They only accumulate and never flow. 
@@ -173,12 +173,12 @@ For your easy understanding let's assume some specific situation as follows:
 \begin{enumerate}[1.]
 \item (snow falls) Draw $u$ from $V$ with probability $\frac{1}{n}$. Suppose that snow falls at $u$ as much as $b$. 
 \item (accumulation) Like (c) snow stacks on $u$. Thus, in this case, value on $u$, i.e., $f(u)$ will be updated by $f(u)+b$. 
-\item (flows or blocked) After accumulation, snow can move to one of ${\cal N}_{u}$ which is neighborhood of $u$. Of course, if ${\cal N}_{u}=\emptyset$, the snow will no longer flow. Then snow can always flow from $u$ to $v \in {\cal N}_{u}$ in the case of ${\cal N}_{u}\neq \emptyset$? The answer is NO since snow cannot flow high. In otherwords, ${\cal N}_{u}\neq \emptyset$ does not necessarily mean that snow can flow. Thus, we should compare value of $f(u)+b$ and $f(v)$ to check flowbility of snow, i.e., we should check ${\cal U}^{\textbf{next}}:={\cal N}_{u} \cap \{v: f(v) \leq f(u)+b\}$ is emptyset or not.
+\item (flows or blocked) After accumulation, snow can move to one of ${\cal N}_{u}$ which is neighborhood of $u$. Of course, if ${\cal N}_{u}=\emptyset$, the snow will no longer flow. Then snow can always flow from $u$ to $v \in {\cal N}_{u}$ in the case of ${\cal N}_{u}\neq \emptyset$? The answer is NO since snow cannot flow high. In otherwords, ${\cal N}_{u}\neq \emptyset$ does not necessarily mean that snow can flow. Thus, we should compare value of $f(u)+b$ and $f(v)$ to check flowbility of snow, i.e., we should check ${\cal U}:={\cal N}_{u} \cap \{v: f(v) \leq f(u)+b\}$ is emptyset or not.
 \begin{itemize}
-\item (flow) In the case of ${\cal U}^{\textbf{next}}\neq\emptyset$, which is an unblocked situation, snow (which stays in $v$) can flow to $u$ that is randomly sampled element from ${\cal U}^{\textbf{next}}$ with probability $\frac{w(u,v)}{\sum_{v \in {\cal U}^{\textbf{next}}}w(u,v) }$. 
-\item (blocked) If ${\cal U}^{\textbf{next}}=\emptyset$, which is a blocked situation, snow can't flow anymore. In this cases, the next node is randomly selected from $V$ with probability $\frac{1}{n}$. 
+\item (flow) In the case of ${\cal U}\neq\emptyset$, which is an unblocked situation, snow (which stays in $v$) can flow to $u$ that is randomly sampled element from ${\cal U}$ with probability $\frac{w(u,v)}{\sum_{v \in {\cal U}}w(u,v) }$. 
+\item (blocked) If ${\cal U}=\emptyset$, which is a blocked situation, snow can't flow anymore. In this cases, the next node is randomly selected from $V$ with probability $\frac{1}{n}$. 
 \end{itemize}
-\item (next iteration) In the cases of `flows', go back to step 1 and repeat above procedure with assuming that snow falls at $v$ (which is element of ${\cal U}^{\textbf{next}}$) as much as $\gamma b$. In here $\gamma \in (0,1)$ is parameter adjusting viscosity of snow. (If you choose very small $\gamma$, shape of snow accumulation will be (c) in Figure 2.) For `blocked' situation, go back to step 1 with assuming that snow falls at $v^*$ (which is randomly selected node in $V$ with probability $\frac{1}{n}$) as much as $b$.
+\item (next iteration) In the cases of `flows', go back to step 1 and repeat above procedure with assuming that snow falls at $v$ (which is element of ${\cal U}$) as much as $\gamma b$. In here $\gamma \in (0,1)$ is parameter adjusting viscosity of snow. (If you choose very small $\gamma$, shape of snow accumulation will be (c) in Figure 2.) For `blocked' situation, go back to step 1 with assuming that snow falls at $v^*$ (which is randomly selected node in $V$ with probability $\frac{1}{n}$) as much as $b$.
   
 \end{enumerate}
 
@@ -186,7 +186,7 @@ The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
 Let ${\cal G}=(V,{\boldsymbol E},{\boldsymbol W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Define $\{\tilde v^0,\tilde v^1,\dots ,\tilde v^{\tau}\}$ as \emph{traces of snow} which is determinded by the transition probabilities 
 \[
-P^{\ell}(u,v)=
+p^{\ell}(u,v)=
 \mbox{Prob}(\tilde v^{\ell}=v|\tilde v^{\ell-1}=u)
 =\begin{cases}
 \frac{1}{n}  & {\cal U}^{\ell-1}= \emptyset \\ 
@@ -214,6 +214,13 @@ b &  v = \tilde v^{\ell} \mbox{ and } {\cal U}^{\ell-1} = \emptyset
 with fixed $\gamma\in(0,1)$. 
 Define ${\cal H}(f,{\cal G};\tau):=\big\{h^{\ell}(v)\big\}_{v \in V,~\ell \leq\tau }$ as \emph{heavy-snow transform} of $f$. 
 \end{dfn}
+The Heavy-snow transform is very similiar with random walk in graph function. The traces of snow can be considered as walks. The difference is transition probability $p^{\ell}(u,v)$ depends on 
+\begin{thm}
+The heavy-snow transform is \emph{ergodic}, i.e., there exists unique stationary distribution $\pi^{\star}(v)$ such that 
+\[
+\pi^{0}(v)\prod_{\tau=1}^{\infty}{\boldsymbol P}^{\tau}=\pi^{\star}(v)
+\]
+\end{thm}
 
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
