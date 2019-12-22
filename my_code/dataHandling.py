@@ -156,7 +156,7 @@ def m2a(A):
     return rtn
 
 ### list, np.array 와 같은 자료형을 n×1 matrix, 즉 n×1 col-vector 로 변환 
-def a2cv(a):
+def a2c(a):
     rtn=np.matrix(a).T
     return rtn
 
