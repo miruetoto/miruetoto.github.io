@@ -155,6 +155,11 @@ def m2a(A):
         rtn=A
     return rtn
 
+### list, np.array 와 같은 자료형을 n×1 matrix, 즉 n×1 col-vector 로 변환 
+def a2cv(a):
+    rtn=np.matrix(a).T
+    return rtn
+
 ### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
 def init(typ,dim):
     if dim*0==0: # dim 이 1차원일 경우 
