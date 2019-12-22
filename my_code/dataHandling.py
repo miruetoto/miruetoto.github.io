@@ -58,6 +58,10 @@ def rbind(*Mat):
 def cbindtemp(A,B):
     typ=['matrix','matrix']
     
+    if isinstance(A, pd.core.series.Series): 
+        A=a2c(A)
+    if isinstance(B, pd.core.series.Series): 
+        B=a2c(B)
     A=np.asmatrix(A)
     B=np.asmatrix(B)
 
@@ -153,6 +157,11 @@ def m2a(A):
     else :
         print("The input matrix is neither a row-vector nor a col-vector. So we will not do any conversion.")
         rtn=A
+    return rtn
+
+### list, np.array 와 같은 자료형을 n×1 matrix, 즉 n×1 col-vector 로 변환 
+def a2c(a):
+    rtn=np.matrix(a).T
     return rtn
 
 ### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
