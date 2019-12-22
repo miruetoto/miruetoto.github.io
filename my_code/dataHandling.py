@@ -58,8 +58,15 @@ def rbind(*Mat):
 def cbindtemp(A,B):
     typ=['matrix','matrix']
     
-    A=np.asmatrix(A)
-    B=np.asmatrix(B)
+    if isinstance(A, pd.core.series.Series): 
+        A=a2c(A)
+        B=np.asmatrix(B)
+    elif isinstance(B, pd.core.series.Series): 
+        A=np.asmatrix(A)
+        B=a2c(B)
+    else:
+        A=np.asmatrix(A)
+        B=np.asmatrix(B)
 
     # row-vector에 대한 처리 
     if A.shape[0]==1: typ[0]='rowvec'
