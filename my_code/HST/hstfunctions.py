@@ -17,6 +17,7 @@ def hst1walk(f,Edg,u,b,binit,γ): #supporting hst
     return [rtn,b,v]
 
 def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
+    from random import sample     
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
