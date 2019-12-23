@@ -30,9 +30,9 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        Edgtemp=init('0',(n,n))
-        while np.sum(Edgtemp)==0: 
-            Edgtemp=(init('u',(n,n))<Edg)*1
+        #Edgtemp=init('0',(n,n))
+        #while np.sum(Edgtemp)==0: 
+        Edgtemp=(init('u',(n,n))<Edg)*1
         hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],Edg=Edgtemp,u=u,b=b,binit=binit,γ=γ)
         rtn['h'+str(ℓ)]=hstwalkrslt[0]
         b=hstwalkrslt[1]
