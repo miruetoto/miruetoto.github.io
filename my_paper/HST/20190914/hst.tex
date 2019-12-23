@@ -214,7 +214,7 @@ b &  v = \tilde v^{\ell} \mbox{ and } {\cal U}^{\ell-1} = \emptyset
 with fixed $\gamma\in(0,1)$. 
 Define ${\cal H}(f,{\cal G};\tau):=\big\{h^{\ell}(v)\big\}_{v \in V,~\ell \leq\tau }$ as \emph{heavy-snow transform} of $f$. 
 \end{dfn}
-The Heavy-snow transform is very similiar with random walk in graph function. The traces of snow can be considered as walks. The difference is transition probability $p^{\ell}(u,v)$ depends on 
+The Heavy-snow transform is very similiar with random walk in graph function. The traces of snow can be considered as walks. The difference is transition probability $p^{\ell}(u,v)$ depends on $\ell$ in our method. 
 \begin{thm}
 The heavy-snow transform is \emph{ergodic}, i.e., there exists unique stationary distribution $\pi^{\star}(v)$ such that 
 \[
@@ -228,15 +228,21 @@ The heavy-snow transform is \emph{reversible}, i.e., it verifies the following:
 \]
 \end{thm}
 
-
 \subsection{Snowdistance and some properties} 
 \begin{dfn}
-Let ${\cal G}=(V,{\boldsymbol E},{\boldsymbol W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let ${\cal H}(f,{\cal G};\tau)$ be heavy-snow transform for $f$. Define the \emph{snow distance matrix} as ${\widetilde{\boldsymbol W}}^{\tau}$ its $(i,j)$-th element is 
+Let ${\cal G}=(V,{\boldsymbol E},{\boldsymbol W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let ${\cal H}(f,{\cal G};\tau)$ be heavy-snow transform for $f$. Define the \emph{heavy-snow distance matrix} as ${\boldsymbol H}$ its $(i,j)$-th element is 
 \[
-\tilde w^{\tau}_{ij}=\tilde \rho^{\tau}(v_i , v_j) := \frac{\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2 }{\sqrt{d_id_j}}
+h_{ij}= \frac{\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2^2 }{d_id_j}=\widetilde{\boldsymbol W}(\widetilde{\boldsymbol W}'\widetilde{\boldsymbol W})^{-1}\widetilde{\boldsymbol W}'
 \]
 where ${\boldsymbol h}_i=(h^{0}(v_i),\dots,h^{\tau}(v_i))'$ and $d_i=\sum_{j=1}^{n}\|{\boldsymbol h}_i- {\boldsymbol h}_j\|_2$. 
 \end{dfn}
+
+\begin{rmk} If weighted graph $(V,{\boldsymbol E},{\boldsymbol W})$ satisfing 
+$\sum_{u \in V}w_{vu}>0 $
+for all $v \in V$, then $(\widetilde{\boldsymbol W}'\widetilde{\boldsymbol W})^{-1}$ exists. 
+
+\end{rmk}
+
 
 \begin{thm} 
 Let $\rho^{\star}(\nu_i,\nu_j)=\tilde \rho^{\infty}(X(\nu_i),X(\nu_j)).$ 
@@ -301,10 +307,9 @@ This is sample version of $IF({\boldsymbol h},T,F)$.
 
 \subsubsection{Smoothing tools}
 
-
-\section{Visulization}
-
 \section{Numerical Experiments}
+\subsection{Simulated Data}
+\noindent\textbf{\underline{Data dercription}}
 
 \subsection{Real Data Analysis}
 \subsubsection{Avenger's}
