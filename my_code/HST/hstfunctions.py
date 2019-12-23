@@ -22,7 +22,7 @@ def hst1walk(f,Edg,b,γ): #supporting hst
                                                 # where stop_criterion is number of node v which satisfying (1) f(v)<= f(u) (2) v \in N_u 
                                                 # Thus, stop_criterion = # of nodes to which snow can flow from u. 
         if stop_criterion==0: break;            # stop_criterion=0 means "snow can't flow from u". 
-        if iter>500: break;                     # if iter>500: break; to prevent infinitely flows. 
+        if iter>50: break;                     # if iter>500: break; to prevent infinitely flows. 
             
         # 6. if snow can flow, choose next node v. 
         else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]] # u'= sample from U_u:= N_u \cap {v:f(v) <= f(u)}. 
