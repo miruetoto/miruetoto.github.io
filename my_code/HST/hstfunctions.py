@@ -1,42 +1,28 @@
 ### 1. hst: calculation 
-def hst1walk(f,Edg,b,γ): #supporting hst
-    # 1. choose u from {1,2,...,n}. u is current node where snows stays. 
-    n=len(f)
+def hst1walk(f,Edg,u,b,binit,γ): #supporting hst
     from random import sample 
-    u=sample(list(co(0,n)),1)[0]
-    
-    # 2. generate ϵ form U(0,b) or set ϵ:=b
     rtn=f.copy()
-    ##i=1
-    ϵ=b#init('u',1)[0]*b
-    
-    # 3. set iter =1 
-    iter=1
-    while True:     # iterate following: 
-        # 4. f(u) <- f(u)+ϵ*γ : update current node 
-        rtn[u]=rtn[u]+ϵ*(γ**iter)
-       
-        # 5. check that: are there any nodes to which snow can flow from u. 
-        N_u=list(np.where(Edg[u,:]==1)[1])      # define N_u where N_u is neighborhood of u. 
-        stop_criterion=sum(rtn[N_u]<=rtn[u])    # define stop_criterion := \sum_{v \in N_u} I(f(v) <= f(u)) , 
-                                                # where stop_criterion is number of node v which satisfying (1) f(v)<= f(u) (2) v \in N_u 
-                                                # Thus, stop_criterion = # of nodes to which snow can flow from u. 
-        if stop_criterion==0: break;            # stop_criterion=0 means "snow can't flow from u". 
-        if iter>50: break;                     # if iter>500: break; to prevent infinitely flows. 
-            
-        # 6. if snow can flow, choose next node v. 
-        else: u=N_u[sample(list(np.where(rtn[N_u]<=rtn[u])[0]),1)[0]] # u'= sample from U_u:= N_u \cap {v:f(v) <= f(u)}. 
-        
-        # 7. repeat 3-4 until U_u:={v: v \in N_u & f(v) <= f(u)}=\emptyset 
-        iter=iter+1
-    
-    return rtn
+    n=len(rtn)
+    # 1. f(u) <- f(u)+b : update current node 
+    rtn[u]=rtn[u]+b
+    # 2. check that: are there any nodes to which snow can flow from u. 
+    Nu=np.where(Edg[u,:]==1)[1] ## Nu is np.array
+    if len(Nu)==0: Uu=np.array([])
+    else: Uu=Nu[list(np.where(rtn[Nu]<=rtn[u])[0])]
+    # 3. check Uu=emptyset 
+    if len(Uu)==0: Uu=co(0,n); b=binit
+    v=sample(list(Uu),1)[0]
+    b=b*γ
+    #rtn=a2c(rtn)
+    return [rtn,b,v]
 
 def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     vname=gdata[0]
     f=gdata[1]
     Edg=gdata[2]    
     n=len(f)
+    binit=b
+    u=sample(list(co(0,n)),1)[0]
     rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     rtn['Nodename(=v)']=vname
     rtn['h0']=f
@@ -46,7 +32,10 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
         Edgtemp=init('0',(n,n))
         while np.sum(Edgtemp)==0: 
             Edgtemp=(init('u',(n,n))<Edg)*1
-        rtn['h'+str(ℓ)]=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,γ=γ)
+        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],Edg=Edgtemp,u=u,b=b,binit=binit,γ=γ)
+        rtn['h'+str(ℓ)]=hstwalkrslt[0]
+        b=hstwalkrslt[1]
+        u=hstwalkrslt[2]
     print('\n'+'hst end')
     return rtn
 
