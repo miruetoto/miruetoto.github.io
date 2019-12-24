@@ -1,12 +1,12 @@
 ### 1. hst: calculation 
-def hst1walk(f,Edg,u,b,binit,γ): #supporting hst
+def hst1walk(f,W,u,b,binit,γ): #supporting hst
     from random import sample 
     rtn=f.copy()
     n=len(rtn)
     # 1. f(u) <- f(u)+b : update current node 
     rtn[u]=rtn[u]+b
     # 2. check that: are there any nodes to which snow can flow from u. 
-    Nu=np.where(Edg[u,:]==1)[1] ## Nu is np.array
+    Nu=np.where(W[u,:]==1)[1] ## Nu is np.array
     if len(Nu)==0: Uu=np.array([])
     else: Uu=Nu[list(np.where(rtn[Nu]<=rtn[u])[0])]
     # 3. check Uu=emptyset 
@@ -20,7 +20,7 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     from random import sample     
     vname=gdata[0]
     f=gdata[1]
-    Edg=gdata[2]    
+    W=gdata[2]    
     n=len(f)
     binit=b
     u=sample(list(co(0,n)),1)[0]
@@ -30,10 +30,10 @@ def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        #Edgtemp=init('0',(n,n))
-        #while np.sum(Edgtemp)==0: 
-        Edgtemp=(init('u',(n,n))<Edg)*1
-        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],Edg=Edgtemp,u=u,b=b,binit=binit,γ=γ)
+        #Wtemp=init('0',(n,n))
+        #while np.sum(Wtemp)==0: 
+        Wtemp=(init('u',(n,n))<W)*1
+        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],W=Wtemp,u=u,b=b,binit=binit,γ=γ)
         rtn['h'+str(ℓ)]=hstwalkrslt[0]
         b=hstwalkrslt[1]
         u=hstwalkrslt[2]
@@ -62,7 +62,7 @@ def snowdist(hh,τmax=None,prnt=False):
     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
     return rtn
 
-def dist2Edg(dist,θ=1): 
+def dist2W(dist,θ=1): 
     n=len(dist)
     rtn=init('0',(n,n))
     for i in co(0,n):
@@ -71,9 +71,9 @@ def dist2Edg(dist,θ=1):
             else: rtn[i,j]=np.exp(-dist[i,j]**2/θ)
     return rtn
 
-def Glaplacian(Edg):
-    D=np.asmatrix(np.diag(m2a(apply(Edg,'sum'))))
-    rtn=D-Edg
+def Glaplacian(W):
+    D=np.asmatrix(np.diag(m2a(apply(W,'sum'))))
+    rtn=D-W
     return rtn
 
 def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
@@ -284,55 +284,3 @@ def pca4msvis4msg(hstresult,τlist,
         sdistrslt0=sdistrslt1.copy()
     if prnt==True: print('\n'+'end')        
  
-### 3. old functions
-
-def OLD_Ehst(gdata,τ,b,esb=5):
-    print('Ehst start (' +'τ='+str(τ)+', b='+str(b)+')')
-    rtn=hst1realization(gdata,τ=τ,b=b)
-    hstrslt4hh=np.apply_along_axis(
-        lambda inpt: np.array(hhmat(hst1realization(gdata,τ=τ,b=b))),
-        -1,np.asmatrix(cc(2,esb)).T)
-    hstTemp=np.apply_along_axis(np.sum,0,hstrslt4hh)
-    print('\n'+'Ehst end')
-    rtn.iloc[:,1:(τ+2)]=(hstTemp+rtn.iloc[:,1:(τ+2)])/esb
-    return rtn
-
-def OLD_hst1walk(f,Edg,b,u): #supporting hst
-    n=len(f)
-    nextf=f.copy()
-    nextu=u
-    nextf[u]=nextf[u]+b
-    N_u=list(np.where(Edg[u,:]==1)[1])
-    from random import sample
-    if len(N_u)==0: 
-        nextu=sample(list(co(0,n)),1)[0]
-    else: 
-        v=N_u[sample(list(co(0,len(N_u))),1)[0]]
-        if nextf[u]<nextf[v]: 
-            nextf[u]=nextf[u]+b
-            nextu=u #sample(list(co(0,n)),1)[0]
-        else: 
-            nextf[v]=nextf[v]+b 
-            nextu=v
-    return [nextf,nextu]
-
-def OLD_hst1realization(gdata,τ,b): 
-    vname=gdata[0]
-    f=gdata[1]
-    Edg=gdata[2]    
-    n=len(f)
-    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
-    rtn['Nodename(=v)']=vname
-    rtn['h0']=f
-    from random import sample 
-    u=sample(list(co(0,n)),1)[0]
-    for ℓ in cc(1,τ): 
-        #print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        Edgtemp=init('0',(n,n))
-        while np.sum(Edgtemp)==0: 
-            Edgtemp=(init('u',(n,n))<Edg)*1
-        hst1walkrslt=hst1walk(rtn['h'+str(ℓ-1)],Edg=Edgtemp,b=b,u=u)
-        rtn['h'+str(ℓ)]=hst1walkrslt[0]
-        u=hst1walkrslt[1]
-    print("■",sep='',end='')
-    return rtn
