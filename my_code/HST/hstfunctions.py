@@ -155,10 +155,49 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
             ax.text(v1[i-1],v2[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
         rtn=Fig 
     rtn.savefig(figname+'.png')
+
+def pca4vis2d(sdistresult,nodename=None,groupindex=None,
+           figname='temp',dpi=1,cex=1,text=1,fade=1,
+           prnt=False): # size=(size of obs representation, size of text which represent obs index)
+
+    from sklearn.decomposition import PCA 
+    from mpl_toolkits import mplot3d
+    if prnt==True: print('PCA start')
+    pca=PCA(n_components=2) # PCA start 
+    pca.fit(sdistresult) 
+    pcarslt=pca.transform(sdistresult) # PCA end 
+    if prnt==True: print('end')
+
+    n=len(sdistresult)
+    if groupindex==None: colors=['gray']*n
+    elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
+    else: colors=np.array(groupindex)
+
+    dpi=150*dpi
+    cex=50*cex
+    text=10*text
+    fade=fade
     
+    Fig=plt.figure(dpi=dpi) # Make figure object 
+    ax=plt.axes() # define type of axes: 3d plot 
     
-def pca4vis(sdistresult,nodename=None,groupindex=None,
-           figname='temp',figsize=(1, 1),dpi=1,cex=1,text=1,fade=1,
+    ax.scatter(pcarslt[:,0],pcarslt[:,1],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
+
+    if prnt==True: print('labeling (observation-wise)')
+    if nodename==None:
+        for i in cc(1,n): 
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
+        if prnt==True: print('\n'+'end')
+    else: 
+        for i in cc(1,n): 
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
+        if prnt==True: print('\n'+'end')
+    Fig.savefig(figname+'.pdf')
+    
+def pca4vis3d(sdistresult,nodename=None,groupindex=None,
+           figname='temp',dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -174,13 +213,12 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
 
-    figsize=(15*figsize[0],10*figsize[1])
     dpi=200*dpi
-    cex=200*cex
-    text=15*text
+    cex=50*cex
+    text=10*text
     fade=fade
     
-    Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
+    Fig=plt.figure(dpi=dpi) # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
@@ -196,8 +234,7 @@ def pca4vis(sdistresult,nodename=None,groupindex=None,
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
             ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
-    Fig.savefig(figname+'.png')
-    
+    Fig.savefig(figname+'.pdf')
     
 def pca4msvis(hstresult,τlist,
               nodename=None,groupindex=None,
