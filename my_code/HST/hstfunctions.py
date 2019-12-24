@@ -11,10 +11,13 @@ def hst1walk(f,W,u,b,binit,γ): #supporting hst
     if len(Nu)==0: Uu=np.array([])
     else: Uu=Nu[list(a2s(np.where(rtn[Nu]<=rtn[u])))]
     # 3. check Uu=emptyset 
-    if len(Uu)==0: Uu=co(0,n); b=binit
-    p_uv=p0[Uu]/sum(p0[Uu])
-    v=a2s(np.random.choice(list(Uu),1,p=p_uv))
-    b=b*γ
+    if len(Uu)==0: 
+        v=a2s(np.random.choice(n, 1, p=p0))
+        b=binit
+    else:
+        p_uv=p0[Uu]/sum(p0[Uu])
+        v=a2s(np.random.choice(list(Uu),1,p=p_uv))
+        b=b*γ
     return [rtn,b,v]
 
 def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
@@ -40,7 +43,6 @@ def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
         u=hstwalkrslt[2]
     print('\n'+'hst end')
     return rtn
-
 
 def hhmat(hstresult):
     τ=int((hstresult.shape[1]-2))
