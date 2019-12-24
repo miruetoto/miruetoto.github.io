@@ -164,6 +164,10 @@ def a2c(a):
     rtn=np.matrix(a).T
     return rtn
 
+### 차원이 1인 array를 스칼라로 바꿈. 
+def a2s(a):
+    return a[0]
+
 ### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
 def init(typ,dim):
     if dim*0==0: # dim 이 1차원일 경우 
@@ -226,7 +230,7 @@ def transform(X,fun,plt=False):
 ### 행별 or 열별 연산 
 # 입력: 매트릭스
 # 출력: 컬럼벡터, 로우벡터, 매트릭스 
-# 연산종류: array2array, array2scala. 여기에서 array는 colvec, rowvec 모두 포함함. 
+# 연산종류: array2array, array2scala. 
 # axis종류: column wise, row wise 
 # ** 주의사항 
 # - 데이터프레임형태의 입력은 받지 않도록 한다. 이 경우는 판다스에 내장된 .apply 메소드를 사용하는것이 더 나음. 
