@@ -1,39 +1,40 @@
 ### 1. hst: calculation 
 def hst1walk(f,W,u,b,binit,γ): #supporting hst
-    from random import sample 
+    d=m2a(apply(W,'np.sum'))
+    p0=d/sum(d)
     rtn=f.copy()
     n=len(rtn)
     # 1. f(u) <- f(u)+b : update current node 
     rtn[u]=rtn[u]+b
     # 2. check that: are there any nodes to which snow can flow from u. 
-    Nu=np.where(W[u,:]==1)[1] ## Nu is np.array
+    Nu=np.where(W[u,:]>0)[1] ## Nu is np.array
     if len(Nu)==0: Uu=np.array([])
-    else: Uu=Nu[list(np.where(rtn[Nu]<=rtn[u])[0])]
+    else: Uu=Nu[list(a2s(np.where(rtn[Nu]<=rtn[u])))]
     # 3. check Uu=emptyset 
     if len(Uu)==0: Uu=co(0,n); b=binit
-    v=sample(list(Uu),1)[0]
+    p_uv=p0[Uu]/sum(p0[Uu])
+    v=a2s(np.random.choice(list(Uu),1,p=p_uv))
     b=b*γ
-    #rtn=a2c(rtn)
     return [rtn,b,v]
 
-def hst(gdata,τ,b,γ): #samefunction with hst1realization except print
+def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
     from random import sample     
     vname=gdata[0]
-    f=gdata[1]
+    E=gdata[1]
     W=gdata[2]    
+    f=gdata[3]
     n=len(f)
     binit=b
-    u=sample(list(co(0,n)),1)[0]
+    d=m2a(apply(W,'np.sum'))
+    p0=d/sum(d)
+    u=a2s(np.random.choice(n, 1, p=p0))
     rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     rtn['Nodename(=v)']=vname
     rtn['h0']=f
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        #Wtemp=init('0',(n,n))
-        #while np.sum(Wtemp)==0: 
-        Wtemp=(init('u',(n,n))<W)*1
-        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],W=Wtemp,u=u,b=b,binit=binit,γ=γ)
+        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],W=W,u=u,b=b,binit=binit,γ=γ)
         rtn['h'+str(ℓ)]=hstwalkrslt[0]
         b=hstwalkrslt[1]
         u=hstwalkrslt[2]
