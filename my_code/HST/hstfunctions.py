@@ -9,14 +9,14 @@ def hst1walk(f,W,u,b,binit,γ): #supporting hst
     # 2. check that: are there any nodes to which snow can flow from u. 
     Nu=np.where(W[u,:]>0)[1] ## Nu is np.array
     if len(Nu)==0: Uu=np.array([])
-    else: Uu=Nu[list(a2s(np.where(rtn[Nu]<=rtn[u])))]
+    else: Uu=Nu[list(a0(np.where(rtn[Nu]<=rtn[u])))]
     # 3. check Uu=emptyset 
     if len(Uu)==0: 
-        v=a2s(np.random.choice(n, 1, p=p0))
+        v=a0(np.random.choice(n, 1, p=p0))
         b=binit
     else:
         p_uv=p0[Uu]/sum(p0[Uu])
-        v=a2s(np.random.choice(list(Uu),1,p=p_uv))
+        v=a0(np.random.choice(list(Uu),1,p=p_uv))
         b=b*γ
     return [rtn,b,v]
 
@@ -30,7 +30,7 @@ def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
     binit=b
     d=m2a(apply(W,'np.sum'))
     p0=d/sum(d)
-    u=a2s(np.random.choice(n, 1, p=p0))
+    u=a0(np.random.choice(n, 1, p=p0))
     rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     rtn['Nodename(=v)']=vname
     rtn['h0']=f
