@@ -165,7 +165,7 @@ def a2c(a):
     return rtn
 
 ### 차원이 1인 array를 스칼라로 바꿈. 
-def a2s(a):
+def a0(a):
     return a[0]
 
 ### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
@@ -341,3 +341,4 @@ def initpd(typ,n,p=1,vname=None):
     rtn=pd.DataFrame(val)
     rtn.columns=vname
     return rtn   
+
