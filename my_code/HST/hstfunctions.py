@@ -1,5 +1,5 @@
 ### 1. hst: calculation 
-def hst1walk(f,W,u,b,binit,γ,p0=p0): #supporting hst
+def hst1walk(f,W,u,b,binit,γ,p0): #supporting hst
     d=m2a(apply(W,'np.sum'))
     rtn=f.copy()
     n=len(rtn)
