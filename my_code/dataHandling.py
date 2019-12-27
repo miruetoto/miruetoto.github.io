@@ -342,3 +342,81 @@ def initpd(typ,n,p=1,vname=None):
     rtn.columns=vname
     return rtn   
 
+
+## Interaction between R and python 
+def p2r(A):
+    from rpy2.robjects.vectors import FloatVector 
+    from rpy2.robjects.vectors import StrVector as s2r_temp
+
+    def a2r_temp(a):
+        if type(a) in {float,int,bool}: a=[a]
+        a=list(a)
+        rtn=FloatVector(a)
+        return rtn
+
+    def m2r_temp(A):
+        Acopy=A.copy()
+        nrow=Acopy.shape[0]
+        Acopy.shape=(np.prod(Acopy.shape),1)
+        rtn=r.matrix(a2r_temp(m2a(Acopy)),nrow=nrow)
+        del(Acopy)
+        ro.globalenv['A']=rtn
+        return rtn
+
+
+    from rpy2.robjects import pandas2ri
+    from rpy2.robjects.conversion import localconverter
+
+    def pd2r_temp(A):
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            rtn = ro.conversion.py2rpy(A)
+        return rtn
+
+    ########################################################
+    
+    if type(A)==type(initpd('0',n=2,p=2)):
+        rtn=pd2r_temp(A) 
+    elif type(A)==type(init('0',(2,2))):
+        rtn=m2r_temp(A)
+    elif type(A)==str: #  elif type(pd.DataFrame(np.matrix(A)).iloc[0,0])==str: 와 순서바꾸면 안됨
+        rtn=s2r_temp(A)        
+    elif type(pd.DataFrame(np.matrix(A)).iloc[0,0])==str:
+        rtn=s2r_temp(pd.DataFrame(np.matrix(A)).T.iloc[:,0])
+    else:
+        rtn=a2r_temp(A)
+    return rtn 
+
+def push(py,r):
+    ro.globalenv[r]=py
+
+
+def r2p(A):
+    from rpy2.robjects import pandas2ri
+    from rpy2.robjects.conversion import localconverter
+
+    def r2a_temp(a):
+        return list(a)
+    
+    def r2m_temp(A):
+        return np.matrix(A)
+    
+    def r2pd_temp(A):
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            rtn = ro.conversion.rpy2py(A)
+        return rtn        
+    
+    push(A,'temp')
+    if r('is.null(dim(temp))')[0]==False: ## in the cases of matrix or dataframe
+        if r('is.data.frame(temp)')[0]: 
+            rtn=r2pd_temp(A)
+        elif r('is.matrix(temp)')[0]:
+            rtn=r2m_temp(A)
+        else:
+            print('I don\`t know which type of this data in R.')
+    else:
+        rtn=r2a_temp(A)
+    r('rm("temp")')
+    return rtn
+
+def pull(r):
+    return ro.globalenv[r]
