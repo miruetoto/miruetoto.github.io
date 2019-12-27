@@ -387,7 +387,7 @@ def p2r(A):
     return rtn 
 
 def push(py,r):
-    ro.globalenv[r]=py
+    ro.globalenv[r]=p2r(py)
 
 
 def r2p(A):
@@ -419,4 +419,8 @@ def r2p(A):
     return rtn
 
 def pull(r):
-    return ro.globalenv[r]
+    return r2p(ro.globalenv[r])
+
+def rhelp(name):
+    print(utils.help(name))
+    
