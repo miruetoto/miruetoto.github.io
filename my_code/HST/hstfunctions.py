@@ -1,7 +1,6 @@
 ### 1. hst: calculation 
-def hst1walk(f,W,u,b,binit,γ): #supporting hst
+def hst1walk(f,W,u,b,binit,γ,p0=p0): #supporting hst
     d=m2a(apply(W,'np.sum'))
-    p0=d/sum(d)
     rtn=f.copy()
     n=len(rtn)
     # 1. f(u) <- f(u)+b : update current node 
@@ -15,8 +14,7 @@ def hst1walk(f,W,u,b,binit,γ): #supporting hst
         v=a0(np.random.choice(n, 1, p=p0))
         b=binit
     else:
-        p_uv=p0[Uu]/sum(p0[Uu])
-        v=a0(np.random.choice(list(Uu),1,p=p_uv))
+        v=a0(np.random.choice(list(Uu),1))
         b=b*γ
     return [rtn,b,v]
 
@@ -37,7 +35,8 @@ def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],W=W,u=u,b=b,binit=binit,γ=γ)
+        Wtemp=W>init('u',(n,n))
+        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],W=Wtemp,u=u,b=b,binit=binit,γ=γ,p0=p0)
         rtn['h'+str(ℓ)]=hstwalkrslt[0]
         b=hstwalkrslt[1]
         u=hstwalkrslt[2]
