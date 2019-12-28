@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1577091537 "hst.tex" "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.pdf" "hst" 1577151628
+["pdflatex"] 1577091537 "hst.tex" "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.pdf" "hst" 1577497504
   "/etc/texmf/web2c/texmf.cnf" 1574202576 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.aux" 1577091538 3526 04e86b9806a2a80caeb1b489df32d7a1 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -159,12 +159,12 @@
   "hst.aux" 1577091538 3526 04e86b9806a2a80caeb1b489df32d7a1 ""
   "hst.tex" 1577091537 55736 0996689b42a43785bb3010cc5a66655a ""
   (generated)
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/20190914_paper_HST/hst.pdf"
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.pdf"
-  "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.pdf"
-  "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.log"
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/20190914_paper_HST/hst.log"
   "hst.log"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.pdf"
+  "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.log"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.log"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/20190914_paper_HST/hst.pdf"
   "hst.aux"
   "hst.pdf"
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.log"
+  "/home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/hst.pdf"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/my_paper/20190914_paper_HST/hst.log"
