@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  23 DEC 2019 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  28 DEC 2019 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,82 +799,81 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
  [9] [10] [11] [12]
-<Fig/In_data.pdf, id=74, 867.24pt x 542.025pt>
+<Fig/In_data.pdf, id=73, 867.24pt x 542.025pt>
 File: Fig/In_data.pdf Graphic file (type pdf)
 <use Fig/In_data.pdf>
-Package pdftex.def Info: Fig/In_data.pdf  used on input line 333.
+Package pdftex.def Info: Fig/In_data.pdf  used on input line 341.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 333--335
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 341--343
  [][] 
  []
 
-[13]
-<Fig/data_str.png, id=93, 1036.87375pt x 575.14874pt>
+<Fig/data_str.png, id=74, 1036.87375pt x 575.14874pt>
 File: Fig/data_str.png Graphic file (type png)
 <use Fig/data_str.png>
-Package pdftex.def Info: Fig/data_str.png  used on input line 344.
+Package pdftex.def Info: Fig/data_str.png  used on input line 352.
 (pdftex.def)             Requested size: 390.0pt x 216.32967pt.
- [14 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fi
-g/In_data.pdf>] [15 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/
-HST/20190914/Fig/data_str.png (PNG copy)>] [16] [17] [18]
-<Fig/In_scale_1.pdf, id=115, 867.24pt x 542.025pt>
+[13] [14 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/2019091
+4/Fig/In_data.pdf> </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/H
+ST/20190914/Fig/data_str.png (PNG copy)>] [15] [16] [17] [18]
+<Fig/In_scale_1.pdf, id=114, 867.24pt x 542.025pt>
 File: Fig/In_scale_1.pdf Graphic file (type pdf)
 <use Fig/In_scale_1.pdf>
-Package pdftex.def Info: Fig/In_scale_1.pdf  used on input line 428.
-(pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
-
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 428--430
- [][] 
- []
-
-<Fig/In_scale_2.pdf, id=116, 867.24pt x 542.025pt>
-File: Fig/In_scale_2.pdf Graphic file (type pdf)
-<use Fig/In_scale_2.pdf>
-Package pdftex.def Info: Fig/In_scale_2.pdf  used on input line 436.
+Package pdftex.def Info: Fig/In_scale_1.pdf  used on input line 436.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
 Overfull \hbox (27.42667pt too wide) in paragraph at lines 436--438
  [][] 
  []
 
-<Fig/In_scale_3.pdf, id=117, 867.24pt x 542.025pt>
-File: Fig/In_scale_3.pdf Graphic file (type pdf)
-<use Fig/In_scale_3.pdf>
-Package pdftex.def Info: Fig/In_scale_3.pdf  used on input line 444.
+<Fig/In_scale_2.pdf, id=115, 867.24pt x 542.025pt>
+File: Fig/In_scale_2.pdf Graphic file (type pdf)
+<use Fig/In_scale_2.pdf>
+Package pdftex.def Info: Fig/In_scale_2.pdf  used on input line 444.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
 Overfull \hbox (27.42667pt too wide) in paragraph at lines 444--446
  [][] 
  []
 
-<Fig/In_scale_4.pdf, id=118, 867.24pt x 542.025pt>
-File: Fig/In_scale_4.pdf Graphic file (type pdf)
-<use Fig/In_scale_4.pdf>
-Package pdftex.def Info: Fig/In_scale_4.pdf  used on input line 452.
+<Fig/In_scale_3.pdf, id=116, 867.24pt x 542.025pt>
+File: Fig/In_scale_3.pdf Graphic file (type pdf)
+<use Fig/In_scale_3.pdf>
+Package pdftex.def Info: Fig/In_scale_3.pdf  used on input line 452.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
 Overfull \hbox (27.42667pt too wide) in paragraph at lines 452--454
  [][] 
  []
 
-<Fig/In_scale_5.pdf, id=119, 867.24pt x 542.025pt>
-File: Fig/In_scale_5.pdf Graphic file (type pdf)
-<use Fig/In_scale_5.pdf>
-Package pdftex.def Info: Fig/In_scale_5.pdf  used on input line 460.
+<Fig/In_scale_4.pdf, id=117, 867.24pt x 542.025pt>
+File: Fig/In_scale_4.pdf Graphic file (type pdf)
+<use Fig/In_scale_4.pdf>
+Package pdftex.def Info: Fig/In_scale_4.pdf  used on input line 460.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
 Overfull \hbox (27.42667pt too wide) in paragraph at lines 460--462
  [][] 
  []
 
-<Fig/In_scale_6.pdf, id=120, 867.24pt x 542.025pt>
-File: Fig/In_scale_6.pdf Graphic file (type pdf)
-<use Fig/In_scale_6.pdf>
-Package pdftex.def Info: Fig/In_scale_6.pdf  used on input line 468.
+<Fig/In_scale_5.pdf, id=118, 867.24pt x 542.025pt>
+File: Fig/In_scale_5.pdf Graphic file (type pdf)
+<use Fig/In_scale_5.pdf>
+Package pdftex.def Info: Fig/In_scale_5.pdf  used on input line 468.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
 Overfull \hbox (27.42667pt too wide) in paragraph at lines 468--470
+ [][] 
+ []
+
+<Fig/In_scale_6.pdf, id=119, 867.24pt x 542.025pt>
+File: Fig/In_scale_6.pdf Graphic file (type pdf)
+<use Fig/In_scale_6.pdf>
+Package pdftex.def Info: Fig/In_scale_6.pdf  used on input line 476.
+(pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
+
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 476--478
  [][] 
  []
 
@@ -906,32 +905,31 @@ t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
-type1/nanummjmd6.pfb>
+/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjmd6.pfb>
 Output written on /home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST
-/20190914/hst.pdf (26 pages, 1308685 bytes).
+/20190914/hst.pdf (26 pages, 1301380 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
+ 269 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

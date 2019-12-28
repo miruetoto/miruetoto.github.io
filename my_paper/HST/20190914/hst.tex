@@ -186,24 +186,14 @@ The following is the formal definition of heavy-snow transform.
 \begin{dfn}\label{snow:df_hst}
 Let ${\cal G}=(V,{\boldsymbol E},{\boldsymbol W})$ be the weighted graph with $|V|=n$ and $f$ be the graph function defined on ${\cal G}$. Let $b$ be the amount of falling snow and $\tau$ be the number of falling snows. Define $\{\tilde v^0,\tilde v^1,\dots ,\tilde v^{\tau}\}$ as \emph{traces of snow} which is determinded by the transition probabilities 
 \[
-p^{\ell}(u,v)=
-\mbox{Prob}(\tilde v^{\ell}=v|\tilde v^{\ell-1}=u)
-=\begin{cases}
-\frac{1}{n}  & {\cal U}^{\ell-1}= \emptyset \\ 
-\frac{w(u,v)}{\sum_{v\in {\cal U}^{\ell-1}} w(u,v)} & {\cal U}^{\ell-1}\neq \emptyset 
-\mbox{ and } v \in {\cal U}^{\ell-1}\\ 
-0 & {\cal U}^{\ell-1}\neq \emptyset \mbox{ and } v \notin {\cal U}^{\ell-1}
-\end{cases}
+p(u,v)=
+\mbox{Prob}(\tilde v^{\ell}=v|\tilde v^{\ell-1}=u)=w(\tilde v^{\ell},\tilde v^{\ell-1}), ~ \ell=1,2,\dots,\tau
 \]
-where ${\cal U}^0=V$ and 
+with arbitary vertex $\tilde{v}^0$. Define $h^{\ell}(v)$, $\xi^{\ell}(v)$, and ${\cal U}^{\ell}$ as $\ell$-th \emph{snowyground}, $\ell$-th \emph{snow}, and $\ell$-th {downstream area}, respectively, i.e., 
 \[
-{\cal U}^{\ell}=\big\{v: h^{\ell}(v)\leq h^{\ell}(\tilde v^{\ell})+\xi^{\ell}(\tilde v^{\ell}), v\in {\cal N}_{\tilde v^{\ell}}\big\}
+h^{\ell}(v)=h^{\ell-1}(v)+\xi^{\ell}(v), ~\ell=1,2,\dots,\tau
 \]
-is a set of vertices where snow can flow in step $\ell$. In here, $h^{\ell}(v)$ is the $\ell$-th \emph{snowyground} and $\xi^{\ell}(v)$ is the $\ell$-th \emph{snow} such that 
-\[
-h^{\ell}(v)=h^{\ell-1}(v)+\xi^{\ell}(v)
-\]
-where $h^{0}=f$ and 
+with $h^{0}=f$ and 
 \[
 \xi^{\ell}(v)=	\begin{cases}
 0 & v \neq  \tilde v^{\ell} \\
@@ -211,9 +201,27 @@ where $h^{0}=f$ and
 b &  v = \tilde v^{\ell} \mbox{ and } {\cal U}^{\ell-1} = \emptyset
 \end{cases}
 \]
-with fixed $\gamma\in(0,1)$. 
+with fixed $\gamma\in(0,1)$ and 
+\[
+{\cal U}^{\ell}=\big\{v: h^{\ell}(v)\leq h^{\ell}(\tilde v^{\ell})+\xi^{\ell}(\tilde v^{\ell}), v\in {\cal N}_{\tilde v^{\ell}}\big\}
+\]
+with ${\cal U}^0=V$. 
 Define ${\cal H}(f,{\cal G};\tau):=\big\{h^{\ell}(v)\big\}_{v \in V,~\ell \leq\tau }$ as \emph{heavy-snow transform} of $f$. 
+\iffalse
+\[
+p^{\ell}(u,v)=
+\mbox{Prob}(\tilde v^{\ell}=v|\tilde v^{\ell-1}=u)
+=\begin{cases}
+\frac{\sum_{u\in V}w(u,v)}{\sum_{v\in V}\sum_{u\in V}w(u,v)}  & {\cal U}^{\ell-1}= \emptyset \\ 
+\frac{w(u,v)}{\sum_{v\in {\cal U}^{\ell-1}} w(u,v)} & {\cal U}^{\ell-1}\neq \emptyset 
+\mbox{ and } v \in {\cal U}^{\ell-1}\\ 
+0 & {\cal U}^{\ell-1}\neq \emptyset \mbox{ and } v \notin {\cal U}^{\ell-1}
+\end{cases}
+\]
+\fi
 \end{dfn}
+
+
 The Heavy-snow transform is very similiar with random walk in graph function. The traces of snow can be considered as walks. The difference is transition probability $p^{\ell}(u,v)$ depends on $\ell$ in our method. 
 \begin{thm}
 The heavy-snow transform is \emph{ergodic}, i.e., there exists unique stationary distribution $\pi^{\star}(v)$ such that 
