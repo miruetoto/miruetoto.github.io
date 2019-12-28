@@ -6,7 +6,7 @@ def hst1walk(f,W,u,b,binit,γ,p0): #supporting hst
     # 1. f(u) <- f(u)+b : update current node 
     rtn[u]=rtn[u]+b
     # 2. check that: are there any nodes to which snow can flow from u. 
-    Nu=np.where(W[u,:]>0)[1] ## Nu is np.array
+    Nu=np.where(W[:,u]>0)[1] ## Nu is np.array
     if len(Nu)==0: Uu=np.array([])
     else: Uu=Nu[list(a0(np.where(rtn[Nu]<=rtn[u])))]
     # 3. check Uu=emptyset 
@@ -341,3 +341,5 @@ def pca4msvis4msg(hstresult,τlist,
         sdistrslt0=sdistrslt1.copy()
     if prnt==True: print('\n'+'end')        
  
+
+
