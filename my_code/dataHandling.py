@@ -377,8 +377,6 @@ def p2r(A):
         with localconverter(ro.default_converter + pandas2ri.converter):
             rtn = ro.conversion.py2rpy(A)
         return rtn
-
-    ########################################################
     
     if type(A)==type(initpd('0',n=2,p=2)):
         rtn=pd2r_temp(A) 
