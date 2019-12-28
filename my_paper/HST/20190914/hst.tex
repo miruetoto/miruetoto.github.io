@@ -189,12 +189,15 @@ Let ${\cal G}=(V,{\boldsymbol E},{\boldsymbol W})$ be the weighted graph with $|
 p^{\ell}(u,v)=
 \mbox{Prob}(\tilde v^{\ell}=v|\tilde v^{\ell-1}=u)
 =\begin{cases}
-\frac{w(v,u)}{\sum_{v\in {\cal U}_u}w(v,u)}  & v \in {\cal U}_u\\ 
-\frac{d(v)}{\sum_{i=1}^{n} d(v_i)} & v \notin {\cal U}_u
+\frac{w(v,u)}{\sum_{v\in {\cal U}^{\ell}}w(v,u)}  & v \in {\cal U}^{\ell}\\ 
+\frac{d(v)}{\sum_{i=1}^{n} d(v_i)} & v \notin {\cal U}^{\ell}.
 \end{cases}
 \]
-where 
-Define $h^{\ell}(v)$, $\xi^{\ell}(v)$, and ${\cal U}^{\ell}$ as $\ell$-th \emph{snowyground}, $\ell$-th \emph{snow}, and $\ell$-th {downstream area}, respectively, i.e., 
+In here ${\cal U}^{\ell}$, the $\ell$-th \emph{downstream area}, is defined following: 
+\[
+{\cal U}^{\ell}=\big\{v: h^{\ell}(v)\leq h^{\ell}(\tilde v^{\ell})+\xi^{\ell}(\tilde v^{\ell}), v\in {\cal N}_{\tilde v^{\ell}}\big\}, ~{\cal U}^0=V
+\]
+where $h^{\ell}(v)$ and $\xi^{\ell}(v)$ (which can be considered as $\ell$-th \emph{snowyground} and \emph{snow}, respectively) are definded as 
 \[
 h^{\ell}(v)=h^{\ell-1}(v)+\xi^{\ell}(v), ~\ell=1,2,\dots,\tau
 \]
@@ -206,11 +209,7 @@ with $h^{0}=f$ and
 b &  v = \tilde v^{\ell} \mbox{ and } {\cal U}^{\ell-1} = \emptyset
 \end{cases}
 \]
-with fixed $\gamma\in(0,1)$ and 
-\[
-{\cal U}^{\ell}=\big\{v: h^{\ell}(v)\leq h^{\ell}(\tilde v^{\ell})+\xi^{\ell}(\tilde v^{\ell}), v\in {\cal N}_{\tilde v^{\ell}}\big\}
-\]
-with ${\cal U}^0=V$. 
+with fixed $\gamma\in(0,1)$, respectively. 
 Define ${\cal H}(f,{\cal G};\tau):=\big\{h^{\ell}(v)\big\}_{v \in V,~\ell \leq\tau }$ as \emph{heavy-snow transform} of $f$. 
 \end{dfn}
 

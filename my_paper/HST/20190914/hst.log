@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  28 DEC 2019 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.5)  28 DEC 2019 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,78 +802,79 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 <Fig/In_data.pdf, id=74, 867.24pt x 542.025pt>
 File: Fig/In_data.pdf Graphic file (type pdf)
 <use Fig/In_data.pdf>
-Package pdftex.def Info: Fig/In_data.pdf  used on input line 334.
+Package pdftex.def Info: Fig/In_data.pdf  used on input line 333.
 (pdftex.def)             Requested size: 409.50119pt x 255.94275pt.
 
-Overfull \hbox (19.50119pt too wide) in paragraph at lines 334--336
+Overfull \hbox (19.50119pt too wide) in paragraph at lines 333--335
  [][] 
  []
 
-<Fig/data_str.png, id=75, 1036.87375pt x 575.14874pt>
+[13]
+<Fig/data_str.png, id=93, 1036.87375pt x 575.14874pt>
 File: Fig/data_str.png Graphic file (type png)
 <use Fig/data_str.png>
-Package pdftex.def Info: Fig/data_str.png  used on input line 345.
+Package pdftex.def Info: Fig/data_str.png  used on input line 344.
 (pdftex.def)             Requested size: 390.0pt x 216.32967pt.
-[13] [14 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/2019091
-4/Fig/In_data.pdf> </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/H
-ST/20190914/Fig/data_str.png (PNG copy)>] [15] [16] [17] [18]
+ [14 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST/20190914/Fi
+g/In_data.pdf>] [15 </home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/
+HST/20190914/Fig/data_str.png (PNG copy)>] [16] [17] [18]
 <Fig/In_scale_1.pdf, id=115, 867.24pt x 542.025pt>
 File: Fig/In_scale_1.pdf Graphic file (type pdf)
 <use Fig/In_scale_1.pdf>
-Package pdftex.def Info: Fig/In_scale_1.pdf  used on input line 429.
+Package pdftex.def Info: Fig/In_scale_1.pdf  used on input line 428.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 429--431
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 428--430
  [][] 
  []
 
 <Fig/In_scale_2.pdf, id=116, 867.24pt x 542.025pt>
 File: Fig/In_scale_2.pdf Graphic file (type pdf)
 <use Fig/In_scale_2.pdf>
-Package pdftex.def Info: Fig/In_scale_2.pdf  used on input line 437.
+Package pdftex.def Info: Fig/In_scale_2.pdf  used on input line 436.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 437--439
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 436--438
  [][] 
  []
 
 <Fig/In_scale_3.pdf, id=117, 867.24pt x 542.025pt>
 File: Fig/In_scale_3.pdf Graphic file (type pdf)
 <use Fig/In_scale_3.pdf>
-Package pdftex.def Info: Fig/In_scale_3.pdf  used on input line 445.
+Package pdftex.def Info: Fig/In_scale_3.pdf  used on input line 444.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 445--447
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 444--446
  [][] 
  []
 
 <Fig/In_scale_4.pdf, id=118, 867.24pt x 542.025pt>
 File: Fig/In_scale_4.pdf Graphic file (type pdf)
 <use Fig/In_scale_4.pdf>
-Package pdftex.def Info: Fig/In_scale_4.pdf  used on input line 453.
+Package pdftex.def Info: Fig/In_scale_4.pdf  used on input line 452.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 453--455
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 452--454
  [][] 
  []
 
 <Fig/In_scale_5.pdf, id=119, 867.24pt x 542.025pt>
 File: Fig/In_scale_5.pdf Graphic file (type pdf)
 <use Fig/In_scale_5.pdf>
-Package pdftex.def Info: Fig/In_scale_5.pdf  used on input line 461.
+Package pdftex.def Info: Fig/In_scale_5.pdf  used on input line 460.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 461--463
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 460--462
  [][] 
  []
 
 <Fig/In_scale_6.pdf, id=120, 867.24pt x 542.025pt>
 File: Fig/In_scale_6.pdf Graphic file (type pdf)
 <use Fig/In_scale_6.pdf>
-Package pdftex.def Info: Fig/In_scale_6.pdf  used on input line 469.
+Package pdftex.def Info: Fig/In_scale_6.pdf  used on input line 468.
 (pdftex.def)             Requested size: 575.92667pt x 359.97067pt.
 
-Overfull \hbox (27.42667pt too wide) in paragraph at lines 469--471
+Overfull \hbox (27.42667pt too wide) in paragraph at lines 468--470
  [][] 
  []
 
@@ -927,7 +928,7 @@ lic/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 numtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
 type1/nanummjmd6.pfb>
 Output written on /home/lgcgb/Documents/GitHub/miruetoto.github.io/my_paper/HST
-/20190914/hst.pdf (26 pages, 1309648 bytes).
+/20190914/hst.pdf (26 pages, 1309399 bytes).
 PDF statistics:
  273 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
