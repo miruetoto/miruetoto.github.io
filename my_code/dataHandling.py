@@ -344,6 +344,12 @@ def initpd(typ,n,p=1,vname=None):
 
 
 ## Interaction between R and python 
+import rpy2
+import rpy2.robjects as ro
+import rpy2.robjects.packages as rpkg
+from rpy2.robjects.packages import importr as library
+r=ro.r
+
 def p2r(A):
     from rpy2.robjects.vectors import FloatVector 
     from rpy2.robjects.vectors import StrVector as s2r_temp
@@ -371,8 +377,6 @@ def p2r(A):
         with localconverter(ro.default_converter + pandas2ri.converter):
             rtn = ro.conversion.py2rpy(A)
         return rtn
-
-    ########################################################
     
     if type(A)==type(initpd('0',n=2,p=2)):
         rtn=pd2r_temp(A) 
@@ -405,7 +409,7 @@ def r2p(A):
             rtn = ro.conversion.rpy2py(A)
         return rtn        
     
-    push(A,'temp')
+    ro.globalenv['temp']=A
     if r('is.null(dim(temp))')[0]==False: ## in the cases of matrix or dataframe
         if r('is.data.frame(temp)')[0]: 
             rtn=r2pd_temp(A)
