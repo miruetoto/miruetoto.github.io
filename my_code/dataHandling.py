@@ -405,7 +405,7 @@ def r2p(A):
             rtn = ro.conversion.rpy2py(A)
         return rtn        
     
-    push(A,'temp')
+    ro.globalenv['temp']=A
     if r('is.null(dim(temp))')[0]==False: ## in the cases of matrix or dataframe
         if r('is.data.frame(temp)')[0]: 
             rtn=r2pd_temp(A)
