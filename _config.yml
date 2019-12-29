@@ -30,8 +30,7 @@ description: 신록예찬's 블로그
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-#avatar: "/img/avatar-icon.png"
-avatar: "/my_img/lt7.png"
+avatar: "/img/avatar-icon.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -240,7 +239,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
-favicon: "/my_img/lt5.png"
+favicon: "/img/lt5.png"
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
