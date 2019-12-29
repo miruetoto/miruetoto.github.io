@@ -43,15 +43,6 @@ def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
     print('\n'+'hst end')
     return rtn
 
-def hhmat(hstresult):
-    τ=int((hstresult.shape[1]-2))
-    rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
-    return rtn 
-
-def norm_hh(hh):
-    rtn=np.matrix(pd.DataFrame(hh.T).apply(lambda inpt: inpt/np.sqrt(np.sum(inpt**2)))).T
-    return rtn
-
 def ϵfallmat(hstresult): 
     τ=int((hstresult.shape[1]-2)/3)
     rtn=np.asmatrix(hstresult[sprod('ϵ fall',cc(0,τ-1))])
@@ -61,6 +52,43 @@ def ϵstackmat(hstresult):
     τ=int((hstresult.shape[1]-2)/3)
     rtn=np.asmatrix(hstresult[sprod('ϵ stack',cc(0,τ-1))])
     return rtn 
+
+def hhmat(hstresult):
+    τ=int((hstresult.shape[1]-2))
+    rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
+    return rtn 
+
+def norm_hh(hh):
+    rtn=np.matrix(pd.DataFrame(hh.T).apply(lambda inpt: inpt/np.sqrt(np.sum(inpt**2)))).T
+    return rtn
+
+def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
+    hhlike=np.array(hhlike)
+    n=len(hhlike)
+    rtn=np.array(init('0',(n,n)))
+    try: 
+        rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]-hhlike[np.newaxis,:,:])**2,axis=-1))
+    except MemoryError:
+        if prnt==True: print('calculating snowdistance serially(due to lack of memory)')
+        for i in co(0,n):
+            rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]-hhlike[:,:])**2,axis=1))
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+        if prnt==True: print('\n'+'end')
+    return np.asmatrix(rtn)
+
+def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
+    hhlike=np.array(hhlike)
+    n=len(hhlike)
+    rtn=np.array(init('0',(n,n)))
+    try: 
+        rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]-hhlike[np.newaxis,:,:])**2,axis=-1))
+    except MemoryError:
+        if prnt==True: print('calculating snowdistance serially(due to lack of memory)')
+        for i in co(0,n):
+            rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]-hhlike[:,:])**2,axis=1))
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+        if prnt==True: print('\n'+'end')
+    return np.asmatrix(rtn)    
 
 def snowdist(hh,τmax=None,prnt=False): 
     #hh=hhmat(hstresult)
@@ -81,20 +109,6 @@ def Glaplacian(W):
     D=np.asmatrix(np.diag(m2a(apply(W,'sum'))))
     rtn=D-W
     return rtn
-
-def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
-    hhlike=np.array(hhlike)
-    n=len(hhlike)
-    rtn=np.array(init('0',(n,n)))
-    try: 
-        rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]-hhlike[np.newaxis,:,:])**2,axis=-1))
-    except MemoryError:
-        if prnt==True: print('calculating snowdistance serially(due to lack of memory)')
-        for i in co(0,n):
-            rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]-hhlike[:,:])**2,axis=1))
-            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-        if prnt==True: print('\n'+'end')
-    return np.asmatrix(rtn)
 
 
 ### 2. hst: visualization 
