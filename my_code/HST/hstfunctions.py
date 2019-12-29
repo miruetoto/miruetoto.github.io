@@ -48,6 +48,10 @@ def hhmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
     return rtn 
 
+def norm_hh(hh):
+    rtn=np.matrix(pd.DataFrame(hh.T).apply(lambda inpt: inpt/np.sqrt(np.sum(inpt**2)))).T
+    return rtn
+
 def ϵfallmat(hstresult): 
     τ=int((hstresult.shape[1]-2)/3)
     rtn=np.asmatrix(hstresult[sprod('ϵ fall',cc(0,τ-1))])
