@@ -70,8 +70,8 @@ author:
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
-#  email: "gbchoi0814@gmail.com"
+#  rss: true
+   email: "gbchoi0814@gmail.com"
 #  facebook: daattali
 #  github: daattali
 #  twitter: daattali
