@@ -364,7 +364,7 @@ def p2r(A):
         Acopy=A.copy()
         nrow=Acopy.shape[0]
         Acopy.shape=(np.prod(Acopy.shape),1)
-        rtn=r.matrix(a2r_temp(m2a(Acopy)),nrow=nrow)
+        rtn=ro.r.matrix(a2r_temp(m2a(Acopy)),nrow=nrow)
         del(Acopy)
         ro.globalenv['A']=rtn
         return rtn
