@@ -85,7 +85,7 @@ def cossim(hhlike,prnt=False): #supporting snowdist, #hh:=n*p
     except MemoryError:
         if prnt==True: print('calculating cosine similarity serially(due to lack of memory)')
         for i in co(0,n):
-            rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]*hhlike[:,:]),axis=1))
+            rtn[i,:]=abs(np.sum((hhlike[i,:]*hhlike[:,:]),axis=1))
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
         if prnt==True: print('\n'+'end')
     return np.asmatrix(rtn)    
