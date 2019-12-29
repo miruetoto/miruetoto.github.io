@@ -96,6 +96,12 @@ def snowdist(hh,τmax=None,prnt=False):
     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
     return rtn
 
+def snowsim(hh,τmax=None,prnt=False): 
+    #hh=hhmat(hstresult)
+    if τmax==None: rtn=cossim(hh,prnt=prnt)
+    else: rtn=cossim(hh[:,0:(τmax+1)],prnt=prnt)
+    return rtn
+
 def dist2W(dist,θ=1): 
     n=len(dist)
     rtn=init('0',(n,n))
