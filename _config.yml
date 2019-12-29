@@ -70,7 +70,7 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "gbchoi0814@gmail.com"
+#  email: "gbchoi0814@gmail.com"
 #  facebook: daattali
 #  github: daattali
 #  twitter: daattali
@@ -239,6 +239,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
-favicon: my_img/lt5.png
+favicon: "/my_img/lt5.png"
+
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
