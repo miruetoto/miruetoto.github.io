@@ -243,7 +243,7 @@ def pca4msvis3d(hstresult,τlist,
     sdistrslt=τlist.copy()
     M=len(τlist)
     dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
-    sdistrslt0=snowdist(dhh)
+    sdistrslt0=norm_hh(snowdist(dhh))
     pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)
     if prnt==True: print('obtain snowdist')
     for m in co(1,M):
@@ -262,7 +262,7 @@ def pca4msvis2d(hstresult,τlist,
     sdistrslt=τlist.copy()
     M=len(τlist)
     dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
-    sdistrslt0=snowdist(dhh)
+    sdistrslt0=norm_hh(snowdist(dhh))
     pca4vis2d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)
     if prnt==True: print('obtain snowdist')
     for m in co(1,M):
