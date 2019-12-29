@@ -273,7 +273,7 @@ def pca4msvis3d(hstresult,τlist,
     for m in co(1,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
         dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
-        sdistrslt1=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
+        sdistrslt1=np.asmatrix(np.array(sdistrslt0)+np.array(snowsim(dhh)))
         pca4vis3d(sdistrslt1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),dpi=dpi,cex=cex,text=text,fade=fade)
         sdistrslt0=sdistrslt1.copy()
     if prnt==True: print('\n'+'end')    
