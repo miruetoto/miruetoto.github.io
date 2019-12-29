@@ -81,11 +81,11 @@ def cossim(hhlike,prnt=False): #supporting snowdist, #hh:=n*p
     n=len(hhlike)
     rtn=np.array(init('0',(n,n)))
     try: 
-        rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]*hhlike[np.newaxis,:,:]),axis=-1))
+        rtn=np.sum((hhlike[:,np.newaxis,:]*hhlike[np.newaxis,:,:]),axis=-1)
     except MemoryError:
         if prnt==True: print('calculating cosine similarity serially(due to lack of memory)')
         for i in co(0,n):
-            rtn[i,:]=abs(np.sum((hhlike[i,:]*hhlike[:,:]),axis=1))
+            rtn[i,:]=np.sum((hhlike[i,:]*hhlike[:,:]),axis=1)
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
         if prnt==True: print('\n'+'end')
     return np.asmatrix(rtn)    
