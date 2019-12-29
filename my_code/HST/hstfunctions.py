@@ -76,6 +76,20 @@ def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p
         if prnt==True: print('\n'+'end')
     return np.asmatrix(rtn)
 
+def cossim(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
+    hhlike=np.array(hhlike)
+    n=len(hhlike)
+    rtn=np.array(init('0',(n,n)))
+    try: 
+        rtn=np.sqrt(np.sum((hhlike[:,np.newaxis,:]*hhlike[np.newaxis,:,:]),axis=-1))
+    except MemoryError:
+        if prnt==True: print('calculating cosine similarity serially(due to lack of memory)')
+        for i in co(0,n):
+            rtn[i,:]=np.sqrt(np.sum((hhlike[i,:]*hhlike[:,:]),axis=1))
+            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+        if prnt==True: print('\n'+'end')
+    return np.asmatrix(rtn)    
+
 def snowdist(hh,τmax=None,prnt=False): 
     #hh=hhmat(hstresult)
     if τmax==None: rtn=L2dist(hh,prnt=prnt)
