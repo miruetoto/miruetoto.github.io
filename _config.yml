@@ -239,5 +239,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
+favicon: my_img/lt5.png
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
