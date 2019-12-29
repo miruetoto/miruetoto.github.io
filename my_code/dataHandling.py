@@ -409,16 +409,16 @@ def r2p(A):
         return rtn        
     
     ro.globalenv['temp']=A
-    if r('is.null(dim(temp))')[0]==False: ## in the cases of matrix or dataframe
-        if r('is.data.frame(temp)')[0]: 
+    if ro.r('is.null(dim(temp))')[0]==False: ## in the cases of matrix or dataframe
+        if ro.r('is.data.frame(temp)')[0]: 
             rtn=r2pd_temp(A)
-        elif r('is.matrix(temp)')[0]:
+        elif ro.r('is.matrix(temp)')[0]:
             rtn=r2m_temp(A)
         else:
             print('I don\`t know which type of this data in R.')
     else:
         rtn=r2a_temp(A)
-    r('rm("temp")')
+    ro.r('rm("temp")')
     return rtn
 
 def pull(r):
