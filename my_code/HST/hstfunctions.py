@@ -203,7 +203,7 @@ def pca4vis2d(ssimresult,nodename=None,groupindex=None,
     text=10*text
     fade=fade
     
-    Fig=plt.figure(dpi=dpi) # Make figure object 
+    Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
     ax=plt.axes() # define type of axes: 3d plot 
     
     ax.scatter(pcarslt[:,0],pcarslt[:,1],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
@@ -244,7 +244,7 @@ def pca4vis3d(ssimresult,nodename=None,groupindex=None,
     text=10*text
     fade=fade
     
-    Fig=plt.figure(dpi=dpi) # Make figure object 
+    Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
