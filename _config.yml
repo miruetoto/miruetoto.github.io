@@ -92,7 +92,7 @@ social-network-links:
 share-links-active:
   twitter: false
   facebook: false
-  google: True
+  google: false
   linkedin: false
 
 # How to display the link to the website in the footer
@@ -241,7 +241,3 @@ plugins:
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-
-favicon:
-  source: lt5.png
-  path: https://github.com/miruetoto/miruetoto.github.io/tree/master/my_img
