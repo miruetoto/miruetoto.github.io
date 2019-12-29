@@ -127,7 +127,7 @@ def datavis4ts(f,nodename=None,groupindex=None,
     else: colors=np.array(groupindex)
     
     f=np.array(f)
-    figsize=(15*figsize[0],10*figsize[1])
+    figsize=(10*figsize[0],6*figsize[1])
     dpi=200*dpi
     cex=20*cex
     text=15*text
@@ -158,7 +158,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     
     v1=np.array(v1)
     v2=np.array(v2)
-    figsize=(15*figsize[0],10*figsize[1])
+    figsize=(10*figsize[0],6*figsize[1])
     dpi=200*dpi
     cex=20*cex
     text=15*text
@@ -180,7 +180,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     rtn.savefig(figname+'.png')
 
 def pca4vis2d(ssimresult,nodename=None,groupindex=None,
-           figname='temp',dpi=1,cex=1,text=1,fade=1,
+            figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -196,6 +196,8 @@ def pca4vis2d(ssimresult,nodename=None,groupindex=None,
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
 
+    figsize=(10*figsize[0],6*figsize[1])
+    Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     dpi=150*dpi
     cex=50*cex
     text=10*text
@@ -220,7 +222,7 @@ def pca4vis2d(ssimresult,nodename=None,groupindex=None,
     Fig.savefig(figname+'.pdf')
     
 def pca4vis3d(ssimresult,nodename=None,groupindex=None,
-           figname='temp',dpi=1,cex=1,text=1,fade=1,
+           figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -235,7 +237,8 @@ def pca4vis3d(ssimresult,nodename=None,groupindex=None,
     if groupindex==None: colors=['gray']*n
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
-
+    
+    figsize=(10*figsize[0],6*figsize[1])
     dpi=200*dpi
     cex=50*cex
     text=10*text
@@ -261,7 +264,7 @@ def pca4vis3d(ssimresult,nodename=None,groupindex=None,
     
 def pca4msvis3d(hstresult,τlist,
               nodename=None,groupindex=None,
-              figname='temp',dpi=1,cex=1,text=1,fade=1,
+              figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
     dhhlist=τlist.copy()
     ssimresult=τlist.copy()
@@ -271,7 +274,7 @@ def pca4msvis3d(hstresult,τlist,
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
         dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[m]))])
         ssimresult0=snowsim(norm_hh(dhh))
-        pca4vis3d(ssimresult0,nodename=nodename,groupindex=groupindex,figname=figname+str(m),dpi=dpi,cex=cex,text=text,fade=fade)
+        pca4vis3d(ssimresult0,nodename=nodename,groupindex=groupindex,figname=figname+str(m),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
     if prnt==True: print('\n'+'end')    
 
 # def pca4msvis2d(hstresult,τlist,
