@@ -128,9 +128,9 @@ def datavis4ts(f,nodename=None,groupindex=None,
     
     f=np.array(f)
     figsize=(10*figsize[0],6*figsize[1])
-    dpi=200*dpi
-    cex=20*cex
-    text=15*text
+    dpi=150*dpi
+    cex=50*cex
+    text=10*text
     fade=fade
     
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
@@ -146,7 +146,7 @@ def datavis4ts(f,nodename=None,groupindex=None,
         for i in cc(1,n): 
             ax.text(i,f[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
         rtn=Fig 
-    rtn.savefig(figname+'.png')
+    rtn.savefig(figname+'.pdf')
 
 def datavis4sct(v1,v2,nodename=None,groupindex=None,
            figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1):
@@ -159,9 +159,9 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     v1=np.array(v1)
     v2=np.array(v2)
     figsize=(10*figsize[0],6*figsize[1])
-    dpi=200*dpi
-    cex=20*cex
-    text=15*text
+    dpi=150*dpi
+    cex=50*cex
+    text=10*text
     fade=fade
     
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
@@ -177,7 +177,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
         for i in cc(1,n): 
             ax.text(v1[i-1],v2[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
         rtn=Fig 
-    rtn.savefig(figname+'.png')
+    rtn.savefig(figname+'.pdf')
 
 def pca4vis2d(ssimresult,nodename=None,groupindex=None,
             figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
