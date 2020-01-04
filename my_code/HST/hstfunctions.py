@@ -90,11 +90,11 @@ def cossim(hhlike,prnt=False): #supporting snowdist, #hh:=n*p
         if prnt==True: print('\n'+'end')
     return np.asmatrix(rtn)    
 
-# def snowdist(hh,τmax=None,prnt=False): 
-#     #hh=hhmat(hstresult)
-#     if τmax==None: rtn=L2dist(hh,prnt=prnt)
-#     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
-#     return rtn
+def snowdist(hh,τmax=None,prnt=False): 
+    #hh=hhmat(hstresult)
+    if τmax==None: rtn=L2dist(hh,prnt=prnt)
+    else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
+    return rtn
 
 def snowsim(hh,τmax=None,prnt=False): 
     #hh=hhmat(hstresult)
