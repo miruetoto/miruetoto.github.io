@@ -227,16 +227,16 @@ for(j in 1:length(txindex)){
 }
 }
 
-plot_rxi<-function(rx,time=c(0,1),rxindex=NULL){
-i0<-which(names(rx)=='datetime')
-rx[[i0]]<-as.POSIXct(rx[[i0]])
-rxN<-dim(rx)[1] # rxN is # of obs in rx
+plotj<-function(data,j,time=c(0,1)){
+j0<-which(names(data)=='datetime')
+data[[j0]]<-as.POSIXct(data[[j0]])
+N<-dim(data)[1] # N is # of obs in data
 t1<-time[1]
 t2<-time[2]
-rx<-rx[(floor(rxN*t1)+1):floor(rxN*t2),]
+data<-data[(floor(N*t1)+1):floor(N*t2),]
 
-gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
-       ggtitle(paste("rx_",i,":",names(rx)[i]))+
+gplt<-ggplot(data=data,mapping=aes(x=datetime,y=data[[j]]))+
+       ggtitle(paste("data_",j,":",names(data)[j]))+
        theme(
          axis.title.x=element_blank(),
          axis.title.y=element_blank(),
@@ -244,8 +244,8 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          axis.text.x=element_text(family="Times",face="bold.italic",colour="gray50"),
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
-if(class(rx[[i]])=='factor'){
-        gplt<-gplt+geom_point(mapping=aes(col=rx[[i]]),size=0.2)+theme(legend.position="none")
+if(class(data[[j]])=='factor'){
+        gplt<-gplt+geom_point(mapping=aes(col=data[[j]]),size=0.2)+theme(legend.position="none")
   }else{
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
   }
