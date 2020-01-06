@@ -389,8 +389,8 @@ def p2r(A):
         rtn=a2r_temp(A)
     return rtn 
 
-def push(py,r):
-    ro.globalenv[r]=p2r(py)
+def push(py,rname):
+    ro.globalenv[rname]=p2r(py)
 
 
 def r2p(A):
