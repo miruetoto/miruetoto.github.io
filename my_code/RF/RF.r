@@ -236,7 +236,7 @@ t2<-time[2]
 data<-data[(floor(N*t1)+1):floor(N*t2),]
 
 gplt<-ggplot(data=data,mapping=aes(x=datetime,y=data[[j]]))+
-       ggtitle(paste("data_",j,":",names(data)[j]))+
+       ggtitle(paste("var_",j,":",names(data)[j]))+
        theme(
          axis.title.x=element_blank(),
          axis.title.y=element_blank(),
