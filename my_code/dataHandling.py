@@ -360,14 +360,13 @@ def p2r(A):
         return rtn
 
     def m2r_temp(A):
-        Acopy=A.copy()
+        Acopy=A.T.copy()
         nrow=Acopy.shape[0]
         Acopy.shape=(np.prod(Acopy.shape),1)
-        rtn=ro.r.matrix(a2r_temp(m2a(Acopy)),nrow=nrow)
+        rtn=ro.r.matrix(a2r_temp(m2a(Acopy)),ncol=nrow)
         del(Acopy)
         ro.globalenv['A']=rtn
         return rtn
-
 
     from rpy2.robjects import pandas2ri
     from rpy2.robjects.conversion import localconverter
@@ -389,9 +388,15 @@ def p2r(A):
         rtn=a2r_temp(A)
     return rtn 
 
-def push(py,rname):
+def push(py,rname=None):
+    import inspect
+    def retrieve_name(var):
+        for fi in reversed(inspect.stack()):
+            names = [var_name for var_name, var_val in fi.frame.f_locals.items() if var_val is var]
+            if len(names) > 0:
+                return names[0]
+    if rname==None: rname = retrieve_name(py)
     ro.globalenv[rname]=p2r(py)
-
 
 def r2p(A):
     from rpy2.robjects import pandas2ri
