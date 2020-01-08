@@ -58,10 +58,6 @@ def hhmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
     return rtn 
 
-# def norm_hh(hh):
-#     rtn=np.matrix(pd.DataFrame(hh.T).apply(lambda inpt: inpt/np.sqrt(np.sum(inpt**2)))).T
-#     return rtn
-
 def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
     hhlike=np.array(hhlike)
     n=len(hhlike)
@@ -76,30 +72,26 @@ def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p
         if prnt==True: print('\n'+'end')
     return np.asmatrix(rtn)
 
-# def cossim(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
-#     hhlike=np.array(hhlike)
-#     n=len(hhlike)
-#     rtn=np.array(init('0',(n,n)))
-#     try: 
-#         rtn=np.sum((hhlike[:,np.newaxis,:]*hhlike[np.newaxis,:,:]),axis=-1)
-#     except MemoryError:
-#         if prnt==True: print('calculating cosine similarity serially(due to lack of memory)')
-#         for i in co(0,n):
-#             rtn[i,:]=np.sum((hhlike[i,:]*hhlike[:,:]),axis=1)
-#             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-#         if prnt==True: print('\n'+'end')
-#     return np.asmatrix(rtn)    
-
 # def snowdist(hh,τmax=None,prnt=False): 
 #     #hh=hhmat(hstresult)
 #     if τmax==None: rtn=L2dist(hh,prnt=prnt)
 #     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
 #     return rtn
 
-# def snowsim(hh,τmax=None,prnt=False): 
-#     #hh=hhmat(hstresult)
-#     if τmax==None: rtn=cossim(hh,prnt=prnt)
-#     else: rtn=cossim(hh[:,0:(τmax+1)],prnt=prnt)
+def Sigma(hh,τmax=None,prnt=False): 
+    #hh=hhmat(hstresult)
+    if τmax==None: rtn=L2dist(hh,prnt=prnt)
+    else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
+    return rtn
+
+# def Sigma(hstrslt,τmax=None):
+#     hh=hhmat(hstrslt)
+#     if τmax==None: 
+#         Σtemp=hh*hh.T
+#         rtn=Σtemp
+#     else: 
+#         Σtemp=hh[:,0:(τmax+1)]*hh[:,0:(τmax+1)].T
+#         rtn=Σtemp
 #     return rtn
 
 def dist2W(dist,θ=1): 
@@ -119,16 +111,6 @@ def total_degree(W):
 
 def degree_rootinv(W):
     return np.matrix(np.diag(np.sqrt(1/m2a(apply(W,'np.sum')))))
-
-def Sigma(hstrslt,τmax=None):
-    hh=hhmat(hstrslt)
-    if τmax==None: 
-        Σtemp=hh*hh.T
-        rtn=Σtemp
-    else: 
-        Σtemp=hh[:,0:(τmax+1)]*hh[:,0:(τmax+1)].T
-        rtn=Σtemp
-    return rtn
 
 def Wtau(Σ,θ): 
     a=(θ**2)*2
@@ -398,3 +380,4 @@ def pca4msvis3d(hstresult,τlist,
 #         sdistrslt0=sdistrslt1.copy()
 #     if prnt==True: print('\n'+'end')        
  
+
