@@ -195,19 +195,26 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
         rtn=Fig 
     rtn.savefig(figname+'.pdf')
 
-def pca4vis2d(ssimresult,nodename=None,groupindex=None,
+def pca4vis2d(Wtau,nodename=None,groupindex=None,
             figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
     from mpl_toolkits import mplot3d
     if prnt==True: print('PCA start')
-    pca=PCA(n_components=2) # PCA start 
-    pca.fit(ssimresult) 
-    pcarslt=pca.transform(ssimresult) # PCA end 
+    pca=PCA(n_components=2) # PCA start
+    # start Get Lτ_tilde
+    n=Wτ.shape[0]
+    Dτ=degree(Wτ)
+    Dτ_rootinv=degree_rootinv(Wτ)
+    Lτ=Dτ-Wτ
+    I=np.matrix(np.diag([1]*n))
+    Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
+    # end
+    pca.fit(Lτ_tilde) 
+    pcarslt=pca.transform(Lτ_tilde) # PCA end 
     if prnt==True: print('end')
 
-    n=len(ssimresult)
     if groupindex==None: colors=['gray']*n
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
@@ -237,7 +244,7 @@ def pca4vis2d(ssimresult,nodename=None,groupindex=None,
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.pdf')
     
-def pca4vis3d(ssimresult,nodename=None,groupindex=None,
+def pca4vis3d(Wtau,nodename=None,groupindex=None,
            figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
@@ -245,11 +252,18 @@ def pca4vis3d(ssimresult,nodename=None,groupindex=None,
     from mpl_toolkits import mplot3d
     if prnt==True: print('PCA start')
     pca=PCA(n_components=3) # PCA start 
-    pca.fit(ssimresult) 
-    pcarslt=pca.transform(ssimresult) # PCA end 
+    # start Get Lτ_tilde
+    n=Wτ.shape[0]
+    Dτ=degree(Wτ)
+    Dτ_rootinv=degree_rootinv(Wτ)
+    Lτ=Dτ-Wτ
+    I=np.matrix(np.diag([1]*n))
+    Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
+    # end
+    pca.fit(Lτ_tilde) 
+    pcarslt=pca.transform(Lτ_tilde) # PCA end 
     if prnt==True: print('end')
 
-    n=len(ssimresult)
     if groupindex==None: colors=['gray']*n
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
@@ -283,7 +297,7 @@ def pca4msvis3d(hstresult,τlist,
               figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
     dhhlist=τlist.copy()
-    ssimresult=τlist.copy()
+    Wtauresult=τlist.copy()
     M=len(τlist)
     if prnt==True: print('obtain snowdist')
     for m in co(0,M):
