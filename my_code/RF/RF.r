@@ -71,7 +71,7 @@ if(is.null(tx)-1){
 }
 
 plot_pretty<-function(rx,tx=NULL,time=c(0,1),rxindex=NULL,txindex=NULL){
-if(is.null(tx)-1) tx=rx
+if(is.null(tx)) tx=rx
 i0<-which(names(rx)=='datetime')
 j0<-which(names(tx)=='datetime')
 rx[[i0]]<-as.POSIXct(rx[[i0]])
