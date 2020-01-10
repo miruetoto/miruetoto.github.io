@@ -251,3 +251,4 @@ if(class(data[[j]])=='factor'){
   }
 gplt  
 }
+
