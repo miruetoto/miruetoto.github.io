@@ -124,7 +124,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             labs(fill="2 eva state")         
 show(gplt)
 
-i=54 ## compressor.power
+i=54 ## compressor.cooling.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
