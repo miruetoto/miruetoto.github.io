@@ -68,5 +68,8 @@ def pid_init(tidy,tintrvl=100):
     Rcomp_Kp_inv=np.sum(β2[0])
 
     print("Fcomp_Kp:",-1/Fcomp_Kp_inv)
+    print("Ffan_Kp:",-1/Fcomp_Kp_inv*2.73296)
     print("Rcomp_Kp:",-1/Rcomp_Kp_inv)
-    return (-1/Fcomp_Kp_inv,-1/Rcomp_Kp_inv)    
+    print("Rfan_Kp:",-1/Rcomp_Kp_inv*4.060935)
+    return (-1/Fcomp_Kp_inv,-1/Fcomp_Kp_inv*2.73296,-1/Rcomp_Kp_inv,-1/Rcomp_Kp_inv*4.060935)    
+    
