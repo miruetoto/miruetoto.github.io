@@ -196,7 +196,8 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     rtn.savefig(figname+'.pdf')
 
 def pca4vis2d(Σ,nodename=None,groupindex=None,
-            figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
+            figname='temp',figsize=(1,1),dpi=1,cex=1,
+            text=None,fade=0.5,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -223,7 +224,7 @@ def pca4vis2d(Σ,nodename=None,groupindex=None,
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
     dpi=150*dpi
     cex=50*cex
-    text=10*text
+    if text!=None: text=10*text
     fade=fade
     
     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
@@ -240,12 +241,13 @@ def pca4vis2d(Σ,nodename=None,groupindex=None,
     else: 
         for i in cc(1,n): 
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
+            if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.pdf')
     
 def pca4vis3d(Σ,nodename=None,groupindex=None,
-           figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
+           figname='temp',figsize=(1,1),dpi=1,cex=1,
+           text=None,fade=0.5,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -264,7 +266,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     figsize=(10*figsize[0],6*figsize[1])
     dpi=200*dpi
     cex=50*cex
-    text=10*text
+    if text!=None: text=10*text
     fade=fade
     
     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
@@ -281,7 +283,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     else: 
         for i in cc(1,n): 
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
+            if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.pdf')
     
