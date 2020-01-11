@@ -236,7 +236,7 @@ def pca4vis2d(Σ,nodename=None,groupindex=None,
     if nodename==None:
         for i in cc(1,n): 
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
+            if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     else: 
         for i in cc(1,n): 
@@ -278,7 +278,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     if nodename==None:
         for i in cc(1,n): 
             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
+            if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     else: 
         for i in cc(1,n): 
@@ -294,7 +294,7 @@ def pca4msvis3d(hstresult,τlist,
     dhhlist=τlist.copy()
     Σresult=τlist.copy()
     dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
-    sdistrslt0=Sigma(dhh)
+    sdistrslt0=L2dist(dhh)
     pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)    
     M=len(τlist)
     if prnt==True: print('obtain snowdist')
