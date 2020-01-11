@@ -195,7 +195,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
         rtn=Fig 
     rtn.savefig(figname+'.pdf')
 
-def pca4vis2d(Wtau,nodename=None,groupindex=None,
+def pca4vis2d(Σ,nodename=None,groupindex=None,
             figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
@@ -203,16 +203,16 @@ def pca4vis2d(Wtau,nodename=None,groupindex=None,
     from mpl_toolkits import mplot3d
     if prnt==True: print('PCA start')
     pca=PCA(n_components=2) # PCA start
-    # start Get Lτ_tilde
-    n=Wτ.shape[0]
-    Dτ=degree(Wτ)
-    Dτ_rootinv=degree_rootinv(Wτ)
-    Lτ=Dτ-Wτ
-    I=np.matrix(np.diag([1]*n))
-    Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
-    # end
-    pca.fit(Lτ_tilde) 
-    pcarslt=pca.transform(Lτ_tilde) # PCA end 
+    # # start Get Lτ_tilde
+    # n=Wτ.shape[0]
+    # Dτ=degree(Wτ)
+    # Dτ_rootinv=degree_rootinv(Wτ)
+    # Lτ=Dτ-Wτ
+    # I=np.matrix(np.diag([1]*n))
+    # Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
+    # # end
+    pca.fit(Σ) 
+    pcarslt=pca.transform(Σ) # PCA end 
     if prnt==True: print('end')
 
     if groupindex==None: colors=['gray']*n
@@ -244,7 +244,7 @@ def pca4vis2d(Wtau,nodename=None,groupindex=None,
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.pdf')
     
-def pca4vis3d(Wtau,nodename=None,groupindex=None,
+def pca4vis3d(Σ,nodename=None,groupindex=None,
            figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
@@ -252,16 +252,9 @@ def pca4vis3d(Wtau,nodename=None,groupindex=None,
     from mpl_toolkits import mplot3d
     if prnt==True: print('PCA start')
     pca=PCA(n_components=3) # PCA start 
-    # start Get Lτ_tilde
-    n=Wτ.shape[0]
-    Dτ=degree(Wτ)
-    Dτ_rootinv=degree_rootinv(Wτ)
-    Lτ=Dτ-Wτ
-    I=np.matrix(np.diag([1]*n))
-    Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
-    # end
-    pca.fit(Lτ_tilde) 
-    pcarslt=pca.transform(Lτ_tilde) # PCA end 
+    n=Σ.shape[0]
+    pca.fit(Σ) 
+    pcarslt=pca.transform(Σ) # PCA end 
     if prnt==True: print('end')
 
     if groupindex==None: colors=['gray']*n
@@ -297,14 +290,18 @@ def pca4msvis3d(hstresult,τlist,
               figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
     dhhlist=τlist.copy()
-    Wtauresult=τlist.copy()
+    Σresult=τlist.copy()
+    dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
+    sdistrslt0=Sigma(dhh)
+    pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)    
     M=len(τlist)
     if prnt==True: print('obtain snowdist')
-    for m in co(0,M):
+    for m in co(1,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
-        dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[m]))])
-        ssimresult0=snowsim(norm_hh(dhh))
-        pca4vis3d(ssimresult0,nodename=nodename,groupindex=groupindex,figname=figname+str(m),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
+        ssimresult1=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
+        pca4vis3d(ssimresult1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        sdistrslt0=sdistrslt1.copy()        
     if prnt==True: print('\n'+'end')    
 
 # def pca4msvis2d(hstresult,τlist,
