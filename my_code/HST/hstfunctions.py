@@ -135,7 +135,8 @@ def decomp(gdataτ):
 
 ### 2. hst: visualization 
 def datavis4ts(f,nodename=None,groupindex=None,
-           figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1):
+           figname='temp',figsize=(1,1),dpi=1,cex=1,
+           text=None,fade=0.5):
     n=len(f)
     
     if groupindex==None: colors=[0]*n
@@ -146,7 +147,7 @@ def datavis4ts(f,nodename=None,groupindex=None,
     figsize=(10*figsize[0],6*figsize[1])
     dpi=150*dpi
     cex=50*cex
-    text=10*text
+    if text!=None: text=10*text
     fade=fade
     
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
@@ -156,16 +157,17 @@ def datavis4ts(f,nodename=None,groupindex=None,
     
     if nodename==None:
         for i in cc(1,n): 
-            ax.text(i,f[i-1],'%s'% str(i), **style) # numbering index of nodes 
+            if text!=None: ax.text(i,f[i-1],'%s'% str(i), **style) # numbering index of nodes 
         rtn=Fig 
     else: 
         for i in cc(1,n): 
-            ax.text(i,f[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
+            if text!=None: ax.text(i,f[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
         rtn=Fig 
     rtn.savefig(figname+'.pdf')
 
 def datavis4sct(v1,v2,nodename=None,groupindex=None,
-           figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1):
+           figname='temp',figsize=(1,1),dpi=1,cex=1,
+           text=None,fade=0.5):
     n=len(v1)
     
     if groupindex==None: colors=[0]*n
@@ -177,7 +179,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     figsize=(10*figsize[0],6*figsize[1])
     dpi=150*dpi
     cex=50*cex
-    text=10*text
+    if text!=None: text=10*text
     fade=fade
     
     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
@@ -187,11 +189,11 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     
     if nodename==None:
         for i in cc(1,n): 
-            ax.text(v1[i-1],v2[i-1],'%s'% str(i), **style) # numbering index of nodes 
+            if text!=None: ax.text(v1[i-1],v2[i-1],'%s'% str(i), **style) # numbering index of nodes 
         rtn=Fig 
     else: 
         for i in cc(1,n): 
-            ax.text(v1[i-1],v2[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
+            if text!=None: ax.text(v1[i-1],v2[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
         rtn=Fig 
     rtn.savefig(figname+'.pdf')
 
