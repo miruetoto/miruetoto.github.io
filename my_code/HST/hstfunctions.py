@@ -197,58 +197,9 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
         rtn=Fig 
     rtn.savefig(figname+'.pdf')
 
-def pca4vis2d(Σ,nodename=None,groupindex=None,
-            figname='temp',figsize=(1,1),dpi=1,cex=1,
-            text=None,fade=0.5,
-           prnt=False): # size=(size of obs representation, size of text which represent obs index)
-
-    from sklearn.decomposition import PCA 
-    from mpl_toolkits import mplot3d
-    if prnt==True: print('PCA start')
-    pca=PCA(n_components=2) # PCA start
-    # # start Get Lτ_tilde
-    # n=Wτ.shape[0]
-    # Dτ=degree(Wτ)
-    # Dτ_rootinv=degree_rootinv(Wτ)
-    # Lτ=Dτ-Wτ
-    # I=np.matrix(np.diag([1]*n))
-    # Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
-    # # end
-    pca.fit(Σ) 
-    pcarslt=pca.transform(Σ) # PCA end 
-    if prnt==True: print('end')
-
-    if groupindex==None: colors=['gray']*n
-    elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
-    else: colors=np.array(groupindex)
-
-    figsize=(10*figsize[0],6*figsize[1])
-    Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
-    dpi=150*dpi
-    cex=50*cex
-    if text!=None: text=10*text
-    fade=fade
-    
-    Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
-    ax=plt.axes() # define type of axes: 3d plot 
-    
-    ax.scatter(pcarslt[:,0],pcarslt[:,1],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
-
-    if prnt==True: print('labeling (observation-wise)')
-    if nodename==None:
-        for i in cc(1,n): 
-            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
-        if prnt==True: print('\n'+'end')
-    else: 
-        for i in cc(1,n): 
-            if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
-            if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
-        if prnt==True: print('\n'+'end')
-    Fig.savefig(figname+'.pdf')
     
 def pca4vis3d(Σ,nodename=None,groupindex=None,
-           figname='temp',figsize=(1,1),dpi=1,cex=1,
+           figname='temp',title=None,figsize=(1,1),dpi=1,cex=1,
            text=None,fade=0.5,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
@@ -273,7 +224,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     
     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
-    
+    if title!=None: ax.set_title(title)
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
 
     if prnt==True: print('labeling (observation-wise)')
@@ -310,6 +261,56 @@ def pca4msvis3d(hstresult,τlist,
         # pca4vis3d(ssimresult1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
         # sdistrslt0=sdistrslt1.copy()        
     if prnt==True: print('\n'+'end')    
+
+# def pca4vis2d(Σ,nodename=None,groupindex=None,
+#             figname='temp',figsize=(1,1),dpi=1,cex=1,
+#             text=None,fade=0.5,
+#            prnt=False): # size=(size of obs representation, size of text which represent obs index)
+
+#     from sklearn.decomposition import PCA 
+#     from mpl_toolkits import mplot3d
+#     if prnt==True: print('PCA start')
+#     pca=PCA(n_components=2) # PCA start
+#     # # start Get Lτ_tilde
+#     # n=Wτ.shape[0]
+#     # Dτ=degree(Wτ)
+#     # Dτ_rootinv=degree_rootinv(Wτ)
+#     # Lτ=Dτ-Wτ
+#     # I=np.matrix(np.diag([1]*n))
+#     # Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
+#     # # end
+#     pca.fit(Σ) 
+#     pcarslt=pca.transform(Σ) # PCA end 
+#     if prnt==True: print('end')
+
+#     if groupindex==None: colors=['gray']*n
+#     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
+#     else: colors=np.array(groupindex)
+
+#     figsize=(10*figsize[0],6*figsize[1])
+#     Fig=plt.figure(figsize=figsize, dpi=dpi) # Make figure object 
+#     dpi=150*dpi
+#     cex=50*cex
+#     if text!=None: text=10*text
+#     fade=fade
+    
+#     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
+#     ax=plt.axes() # define type of axes: 3d plot 
+    
+#     ax.scatter(pcarslt[:,0],pcarslt[:,1],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
+
+#     if prnt==True: print('labeling (observation-wise)')
+#     if nodename==None:
+#         for i in cc(1,n): 
+#             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+#             if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (str(i)), size=text, zorder=1,color='k') # numbering index of nodes 
+#         if prnt==True: print('\n'+'end')
+#     else: 
+#         for i in cc(1,n): 
+#             if prnt==True: print('\r'+str(i),'/'+str(n),sep='',end='')
+#             if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
+#         if prnt==True: print('\n'+'end')
+#     Fig.savefig(figname+'.pdf')
 
 # def pca4msvis2d(hstresult,τlist,
 #               nodename=None,groupindex=None,
