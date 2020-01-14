@@ -293,19 +293,22 @@ def pca4msvis3d(hstresult,τlist,
               nodename=None,groupindex=None,
               figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
-    dhhlist=τlist.copy()
+    #dhhlist=τlist.copy()
     Σresult=τlist.copy()
-    dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
-    sdistrslt0=L2dist(dhh)
-    pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)    
+    hh=hhmat(hstrslt)
+    # dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
+    # sdistrslt0=L2dist(dhh)
+    # pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)    
     M=len(τlist)
     if prnt==True: print('obtain snowdist')
-    for m in co(1,M):
+    for m in co(0,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
-        dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
-        sdistrslt0=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
-        pca4vis3d(ssimresult1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
-        sdistrslt0=sdistrslt1.copy()        
+        Σresult[m]=Sigma(hh,τmax=τlist[m])
+        pca4vis3d(Σresult[m],nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        # dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
+        # sdistrslt0=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
+        # pca4vis3d(ssimresult1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        # sdistrslt0=sdistrslt1.copy()        
     if prnt==True: print('\n'+'end')    
 
 # def pca4msvis2d(hstresult,τlist,
