@@ -198,9 +198,10 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
     rtn.savefig(figname+'.pdf')
 
     
+  
 def pca4vis3d(Σ,nodename=None,groupindex=None,
            figname='temp',title=None,figsize=(1,1),dpi=1,cex=1,
-           text=None,fade=0.5,
+           xlim=None,ylim=None,zlim=None,text=None,fade=0.5,
            prnt=False): # size=(size of obs representation, size of text which represent obs index)
 
     from sklearn.decomposition import PCA 
@@ -225,6 +226,9 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
     if title!=None: ax.set_title(title)
+    if xlim!=None: ax.set_xlim(xlim[0],xlim[1])
+    if ylim!=None: ax.set_ylim(ylim[0],ylim[1])
+    if zlim!=None: ax.set_zlim(zlim[0],zlim[1])
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
 
     if prnt==True: print('labeling (observation-wise)')
@@ -251,11 +255,18 @@ def pca4msvis3d(hstresult,τlist,
     # sdistrslt0=L2dist(dhh)
     # pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)    
     M=len(τlist)
+    from sklearn.decomposition import PCA 
+    pca=PCA(n_components=3) # PCA start 
+    pca.fit(Sigma(hh)) 
+    pcarslt=pca.transform(Sigma(hh))
+    x0=min(pcarslt[:,0]);x1=max(pcarslt[:,0])
+    y0=min(pcarslt[:,1]);y1=max(pcarslt[:,1])
+    z0=min(pcarslt[:,2]);z1=max(pcarslt[:,2])
     if prnt==True: print('obtain snowdist')
     for m in co(0,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
         Σresult[m]=Sigma(hh,τmax=τlist[m])
-        pca4vis3d(Σresult[m],nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
+        pca4vis3d(Σresult[m],nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),title='τ='+str(τlist[m]),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade,xlim=(x0,x1),ylim=(y0,y1),zlim=(z0,z1))
         # dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
         # sdistrslt0=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
         # pca4vis3d(ssimresult1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
