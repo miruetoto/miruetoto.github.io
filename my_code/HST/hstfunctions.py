@@ -228,7 +228,10 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     if ylim!=None: ax.set_ylim(ylim[0],ylim[1])
     if zlim!=None: ax.set_zlim(zlim[0],zlim[1])
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
-
+    ax.ticklabel_format(style='sci', axis='x',scilimits=(0,0))
+    ax.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    ax.ticklabel_format(style='sci', axis='z',scilimits=(0,0))
+    
     if prnt==True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
