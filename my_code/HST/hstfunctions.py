@@ -246,7 +246,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     
 def pca4msvis3d(hstresult,τlist,
               nodename=None,groupindex=None,
-              figname='temp',figsize=(1,1),dpi=1,cex=1,text=1,fade=1,
+              figname='temp',figsize=(1,1),dpi=1,cex=1,text=None,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
     #dhhlist=τlist.copy()
     Σresult=τlist.copy()
