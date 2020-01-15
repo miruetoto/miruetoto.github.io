@@ -256,10 +256,6 @@ def pca4msvis3d(hstresult,τlist,
     x0=min(pcarslt[:,0]);x1=max(pcarslt[:,0])
     y0=min(pcarslt[:,1]);y1=max(pcarslt[:,1])
     z0=min(pcarslt[:,2]);z1=max(pcarslt[:,2])
-    import matplotlib 
-    matplotlib.rc('xtick', labelsize=20) 
-    matplotlib.rc('ytick', labelsize=20) 
-    matplotlib.rc('ztick', labelsize=20)     
     if prnt==True: print('obtain snowdist')
     for m in co(0,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
