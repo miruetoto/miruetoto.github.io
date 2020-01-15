@@ -223,10 +223,6 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     
     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
-    if title!=None: ax.set_title(title)
-    if xlim!=None: ax.set_xlim(xlim[0],xlim[1])
-    if ylim!=None: ax.set_ylim(ylim[0],ylim[1])
-    if zlim!=None: ax.set_zlim(zlim[0],zlim[1])
     ax.scatter3D(pcarslt[:,0],pcarslt[:,1],pcarslt[:,2],s=cex,c=colors,alpha=fade) # drawing each obs by scatter in 3d axes   
 
     if prnt==True: print('labeling (observation-wise)')
