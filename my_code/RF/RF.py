@@ -1,14 +1,45 @@
-def ginverseDiag(d,threshold=0.0005):
-    d[d<threshold]=0
-    d[d>0]=1/d[d>0]
-    return np.asmatrix(np.diag(d))
+# def ginverseDiag(d,threshold=0.0005):
+#     d[d<threshold]=0
+#     d[d>0]=1/d[d>0]
+#     return np.asmatrix(np.diag(d))
 
-def getbeta(Y,X):
-    XX=X.T*X
-    d,P=np.linalg.eig(XX)
-    DI=ginverseDiag(d,threshold=0.05)
-    betahat=(P*DI*P.I)*X.T*Y
-    return betahat
+# def getbeta(Y,X):
+#     XX=X.T*X
+#     d,P=np.linalg.eig(XX)
+#     DI=ginverseDiag(d,threshold=0.05)
+#     betahat=(P*DI*P.I)*X.T*Y
+#     return betahat
+# site: 1=Gasan, 2=Yangjae 
+# type: 1=rx, 2=tx, 3=all 
+# mmddhhmm: "01-02,14:24"
+
+def pull_rfdata(site=None,typ=None,time=None): 
+    if site==None:
+        print("\n #. Choose the site in which data collected: 1.Gasan, 2.Yangjae. \n") 
+        site=input()
+    if typ==None:
+        print("\n #. Choose type of data: 1.rx, 2.tx. \n") 
+        typ=input()
+    if time==None:
+        print("\n #. Specify the time zone like \"12-24,23:59\". \n") 
+        time=str(input())
+    
+    if site==1: 
+        site='gasan'
+    elif site==2: 
+        site='yangjae'
+        
+    if typ==1: 
+        typ='rx'
+    elif typ==2: 
+        typ='tx'
+    
+    time=time[0:2]+time[3:5]+time[6:8]+time[9:11]
+
+    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/'+site+'/logs/log_'+typ+'Data_2020'+time+'.csv'
+    r = requests.get(u, verify=False)
+    rtn=pd.read_csv(StringIO(r.text))
+    return rtn
 
 def tidyrx(rx):
     push(rx)
