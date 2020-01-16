@@ -249,6 +249,7 @@ if(class(data[[j]])=='factor'){
   }else{
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
   }
-show(gplt); suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gplt))
+suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gplt))
+gplt
 }
 
