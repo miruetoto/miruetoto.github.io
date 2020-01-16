@@ -249,6 +249,6 @@ if(class(data[[j]])=='factor'){
   }else{
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
   }
-gplt; ggsave("plotj.png",gplt)
+gplt; ggsave("Figtemp/plotj.png",gplt)
 }
 
