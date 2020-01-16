@@ -30,7 +30,7 @@ if(is.null(tx)-1){
     }else{
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
     }
-    show(gplt); ggsave(paste("plotall_rx",i,"_",names(rx)[i],".png",sep=""),gplt)
+    show(gplt); ggsave(paste("Figtemp/plotall/plotall_rx",i,"_",names(rx)[i],".png",sep=""),gplt)
   }
 
   for(j in 1:J0){
@@ -44,7 +44,7 @@ if(is.null(tx)-1){
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
     gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
-    show(gplt); ggsave(paste("plotall_tx",j,"_",names(tx)[j],".png",sep=""),gplt)
+    show(gplt); ggsave(paste("Figtemp/plotall/plotall_tx",j,"_",names(tx)[j],".png",sep=""),gplt)
   }
 }else{
   i0<-which(names(rx)=='datetime')
@@ -65,7 +65,7 @@ if(is.null(tx)-1){
     }else{
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
     }
-    show(gplt); ggsave(paste("plotall_rx",i,"_",names(rx)[i],".png",sep=""),gplt)
+    show(gplt); ggsave(paste("Figtemp/plotall/plotall_rx",i,"_",names(rx)[i],".png",sep=""),gplt)
   }
 }
 }
@@ -102,7 +102,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
-show(gplt); ggsave("plotpretty_var7.png",gplt)
+show(gplt); ggsave("Figtemp/plotpretty/plotpretty_var7.png",gplt)
 
 i=23 ## F.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
@@ -122,7 +122,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
-show(gplt); ggsave("plotpretty_var23.png",gplt)
+show(gplt); ggsave("Figtemp/plotpretty/plotpretty_var23.png",gplt)
 
 i=54 ## compressor.cooling.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
@@ -142,7 +142,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")          
-show(gplt); ggsave("plotpretty_var54.png",gplt)
+show(gplt); ggsave("Figtemp/plotpretty/plotpretty_var54.png",gplt)
 
 
 i=8 ## R.temp
@@ -164,7 +164,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
-show(gplt); ggsave("plotpretty_var8.png",gplt)
+show(gplt); ggsave("Figtemp/plotpretty/plotpretty_var8.png",gplt)
 
 i=24 ## R.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
@@ -184,7 +184,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
-show(gplt); ggsave("plotpretty_var24.png",gplt)
+show(gplt); ggsave("Figtemp/plotpretty/plotpretty_var24.png",gplt)
 
 if(is.null(rxindex)-1){
 for(i in 1:length(rxindex)){
@@ -249,6 +249,6 @@ if(class(data[[j]])=='factor'){
   }else{
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
   }
-gplt; ggsave("Figtemp/plotj.png",gplt)
+gplt; ggsave("Figtemp/plotj/plotj.png",gplt)
 }
 
