@@ -35,7 +35,7 @@ def pull_rfdata(site=None,typ=None,time=None):
         typ='tx'
     
     time=time[0:2]+time[3:5]+time[6:8]+time[9:11]
-
+    from io import StringIO
     u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/'+site+'/logs/log_'+typ+'Data_2020'+time+'.csv'
     r = requests.get(u, verify=False)
     rtn=pd.read_csv(StringIO(r.text))
