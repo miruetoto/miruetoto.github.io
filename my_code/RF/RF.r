@@ -102,7 +102,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
-show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_var7.png",gplt))
+show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_F.temp.png",gplt))
 
 i=23 ## F.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
@@ -122,7 +122,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
-show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_var23.png",gplt))
+show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_F.fan.rpm.png",gplt))
 
 i=54 ## compressor.cooling.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
@@ -142,7 +142,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")          
-show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_var54.png",gplt))
+show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.cooling.power.png",gplt))
 
 
 i=8 ## R.temp
@@ -164,7 +164,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
-show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_var8.png",gplt))
+show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_R.temp.png",gplt))
 
 i=24 ## R.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
@@ -184,7 +184,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
-show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_var24.png",gplt))
+show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_R.fan.rpm.png",gplt))
 
 if(is.null(rxindex)-1){
 for(i in 1:length(rxindex)){
