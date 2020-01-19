@@ -6,9 +6,10 @@ newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Packa
 if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
 for(i in 1:length(listofpackages)) library(listofpackages[i],character.only=T)
 
-somplot<-function(V,hh,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
+somplot<-function(V,hh,maxtau=dim(hh)[2]-1,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
 set.seed(777)
 #library(kohonen)
+hh<-hh[,1:(maxtau+1)]
 somrslt <- som(hh, somgrid(gridxdim,gridydim,"hexagonal"))
 #library(dplyr)
 somgrd <- somrslt[[4]]$pts %>%
@@ -40,4 +41,49 @@ p <- somgrd %>%
            geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=3)+
            geom_text_repel(data=sompts,aes(x,y,label=V),cex=3)
 p
+}
+
+friendship<-function(W){
+    frnd_ship<-c()
+    for(i in 1:n){
+        for(j in 1:n){
+            frnd_ship[(i-1)*n+j]<-W[i,j]
+        }
+    }
+    frnd_ship
+}
+
+vis4graph<-function(V,W){
+    library(igraph)
+    
+    ## 1. define friendship 
+    frnd_ship<-friendship(W)
+    
+    ## 2. define relations
+    relations<-expand.grid(from=V, to=V)
+    relations<-cbind(relations,frnd_ship)
+    
+    ## 3. make gdf and weight
+    gdf<-graph_from_data_frame(relations[frnd_ship>0,],directed=TRUE,vertices=V)
+    wght<-frnd_ship[frnd_ship>0]
+    
+    ## 4. set param 4 gdf visualization 
+    #V(gdf)$label.cex<-log(f/2000+1)*0.5+0.5
+    V(gdf)$label.cex<-0.7
+    V(gdf)$label.color<-"gray40"
+    E(gdf)$arrow.size<-wght*0.5
+    V(gdf)$label.font=3
+    E(gdf)$width=wght*6
+    set.seed(787)
+    wc<-walktrap.community(gdf,weights=wght,step=5)
+    rs<-300
+    wdth <- 2000
+    hght <- 2000
+    
+    ## 5. plot result 
+    #png(paste("ntwksinit.png",sep=""),res=rs, width=wdth, height=hght)
+    #plot(wc,gdf,edge.color="gray80",edge.lty=1,vertex.color=log(f),vertex.shape="none",edge.curved=0.1,edge.alpha=0.2)
+    plot(wc,gdf,edge.color="gray80",edge.lty=1,vertex.size=f/100, edge.curved=0.1,edge.alpha=0.2
+     ,vertex.shape="circle",vertex.frame.color="NA",vertex.alpha=0.5,vertex.label.degree=-pi/2)
+    #dev.off()
 }
