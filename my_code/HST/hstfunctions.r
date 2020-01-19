@@ -41,4 +41,3 @@ p <- somgrd %>%
            geom_text_repel(data=sompts,aes(x,y,label=V),cex=3)
 p
 }
-
