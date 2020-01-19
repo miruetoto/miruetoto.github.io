@@ -187,8 +187,8 @@ def a2c(a):
     if dim(a)==1: 
         rtn=np.matrix(a).T
     else : 
-        print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
-        rtn=A
+        print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
+        rtn=a
     return rtn
 
 ## (확장) a2c와 똑같은 함수: 1차원배열 -> n×1 col-vector 
@@ -196,7 +196,7 @@ def a2m(a):
     if dim(a)==1: 
         rtn=np.matrix(a).T
     else : 
-        print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
         rtn=A
     return rtn
 
@@ -205,10 +205,10 @@ def a2s(a):
     if dim(a)==1: 
         if len(a)==1: rtn=a[0]
         else: 
-            print("We can't convert this type of data since the lenth of input is \""+str(len(A))+"\". So we will not do any conversion.")
+            print("We can't convert this type of data since the lenth of input is \""+str(len(a))+"\". So we will not do any conversion.")
             rtn=a
     else : 
-        print("The dimension of input should be 1. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        print("The dimension of input should be 1. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
         rtn=a
     return rtn
 
@@ -238,7 +238,7 @@ def s2m(a): # a2c와 똑같은 함수임.
     if dim(a)==0: 
         rtn=np.matrix(a)
     else : 
-        print("The dimension of input matrix should be 0. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        print("The dimension of input matrix should be 0. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
         rtn=a
     return rtn    
 
