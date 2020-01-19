@@ -8,7 +8,7 @@ def hst1walk(f,W,u,b,binit,γ,p0): #supporting hst
     # 2. check that: are there any nodes to which snow can flow from u. 
     Nu=np.where(W[u,:]>0)[1] ## Nu is np.array
     if len(Nu)==0: Uu=np.array([])
-    else: Uu=Nu[list(a2s(np.where(rtn[Nu]<=rtn[u])))]
+    else: Uu=Nu[list((np.where(rtn[Nu]<=rtn[u]))[0])]
     # 3. check Uu=emptyset 
     if len(Uu)==0: 
         v=a2s(np.random.choice(n, 1, p=p0))
