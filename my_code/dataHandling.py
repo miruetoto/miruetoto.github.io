@@ -149,24 +149,98 @@ def info(A):
     except AttributeError as e : print("shape of data : ",e)
     else: print("shape of data : ",A.shape)
 
-    
-### n×1 이거나 1×n matrix를 길이가 n인 np.array로 변환 
+
+### 배열의 차원을 출력해주는 함수 
+def dim(A):
+    try: A.shape
+    except AttributeError: 
+        try: len(A)
+        except TypeError: rtn=0
+        else: rtn=1
+    else: rtn=len(list(A.shape))
+    return rtn
+
+def dim(A):
+    try: A.shape
+    except AttributeError: 
+        try: len(A)
+        except TypeError: rtn=0
+        else: rtn=1
+    else: rtn=len(list(A.shape))
+    return rtn
+
+### (축소) n×1 이거나 1×n matrix 혹은 pd를 길이가 n인 np.array로 변환 
 def m2a(A):
-    if A.shape[0]==1: rtn=np.array(A)[0,:]
-    elif A.shape[1]==1: rtn=np.array(A.T)[0,:]
+    if dim(A)==2: 
+        if A.shape[0]==1: rtn=np.array(A)[0,:]
+        elif A.shape[1]==1: rtn=np.array(A.T)[0,:]
+        else: 
+            print("We can't convert this type of data since the shape of input is \""+str(A.shape)+"\". So we will not do any conversion.")
+            rtn=A
     else :
-        print("The input matrix is neither a row-vector nor a col-vector. So we will not do any conversion.")
+        print("The dimension of input matrix should be 2. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
         rtn=A
     return rtn
 
-### list, np.array 와 같은 자료형을 n×1 matrix, 즉 n×1 col-vector 로 변환 
+## (확장) list, np.array, pd.series와 같은 1차원배열을 n×1 matrix, 즉 n×1 col-vector 로 변환 
 def a2c(a):
-    rtn=np.matrix(a).T
+    if dim(a)==1: 
+        rtn=np.matrix(a).T
+    else : 
+        print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        rtn=A
     return rtn
 
-### 차원이 1인 array를 스칼라로 바꿈. 
-def a0(a):
-    return a[0]
+## (확장) a2c와 똑같은 함수: 1차원배열 -> n×1 col-vector 
+def a2m(a):
+    if dim(a)==1: 
+        rtn=np.matrix(a).T
+    else : 
+        print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        rtn=A
+    return rtn
+
+## (축소) 1차원배열 -> 0차원배열 
+def a2s(a): 
+    if dim(a)==1: 
+        if len(a)==1: rtn=a[0]
+        else: 
+            print("We can't convert this type of data since the lenth of input is \""+str(len(A))+"\". So we will not do any conversion.")
+            rtn=a
+    else : 
+        print("The dimension of input should be 1. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        rtn=a
+    return rtn
+
+## (확장) 0차원배열 -> 1차원배열 
+def s2a(a): 
+    if dim(a)==0: 
+        rtn=np.array([a])
+    else : 
+        print("The dimension of input matrix should be 0. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
+        rtn=a
+    return rtn
+
+## (축소) 2차원배열 -> 0차원배열 
+def m2s(A): 
+    if dim(A)==2: 
+        if (A.shape[0]==1 & A.shape[1]==1): rtn=np.matrix(A)[0,0]
+        else: 
+            print("We can't convert this type of data since the shape of input is \""+str(A.shape)+"\". So we will not do any conversion.")
+            rtn=A
+    else :
+        print("The dimension of input matrix should be 2. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        rtn=A
+    return rtn
+
+## (확장) 0차원배열 -> 2차원배열 
+def s2m(a): # a2c와 똑같은 함수임. 
+    if dim(a)==0: 
+        rtn=np.matrix(a)
+    else : 
+        print("The dimension of input matrix should be 0. But the dimension of your input is \""+str(dim(A))+"\". So we will not do any conversion.")
+        rtn=a
+    return rtn    
 
 ### 초기화 (1) 0 (2) 유니폼 (3) 단위행렬 (4) 정규분포
 def init(typ,dim):
@@ -194,7 +268,7 @@ def init(typ,dim):
 # 연산종류: scala2scala
 # ** 주의사항 **
 # - 데이터프레임형태의 입력은 받지 않도록 한다. 데이터프레임형태의 입려은 판다스에 내장된 .transform 메소드를 사용하는것이 더 나음. 
-# - 왜냐하면 데이터프레임->매트릭스로의 변환이 자유롭지 않기 떄문에 이로 인한 오류가 발생할 수 있음. 
+# - 왜냐하면 데이터프레임->매트릭스로의 변환이 자유롭지 않기 때문에 이로 인한 오류가 발생할 수 있음. 
 
 def transform(X,fun,plt=False):
     Xmat=np.asmatrix(X)
@@ -346,7 +420,7 @@ def initpd(typ,n,p=1,vname=None):
 ## Interaction between R and python 
 import rpy2
 import rpy2.robjects as ro
-import rpy2.robjects.packages as rpkg
+#import rpy2.robjects.packages as rpkg
 from rpy2.robjects.packages import importr as library
 
 def p2r(A):

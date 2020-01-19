@@ -6,7 +6,7 @@ newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Packa
 if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
 for(i in 1:length(listofpackages)) library(listofpackages[i],character.only=T)
 
-somplot<-function(hh,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
+somplot<-function(V,hh,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
 set.seed(777)
 #library(kohonen)
 somrslt <- som(hh, somgrid(gridxdim,gridydim,"hexagonal"))
@@ -38,6 +38,7 @@ p <- somgrd %>%
            axis.title = element_blank(),
            legend.position = "right")+
            geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=3)+
-           geom_text_repel(data=sompts,aes(x,y,label=vname),cex=3)
+           geom_text_repel(data=sompts,aes(x,y,label=V),cex=3)
 p
 }
+
