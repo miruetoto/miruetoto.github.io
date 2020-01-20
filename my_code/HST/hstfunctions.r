@@ -87,7 +87,7 @@ vis4igraph<-function(V,W,
 }
 
 vis4wc<-function(V,W,step=30,
-                 Vsize=1,Vcol="#FFB3FFFF",Vfontsize=1,Vfontcol="gray40",Vfontype=4,
+                 Vfontsize=1,Vfontcol="gray40",Vfontype=4,
                  Elwd=1,Elty=1,Ecol="gray80",Ecurved=0.3,Earrowsize=1){
     library(igraph)
     
@@ -114,8 +114,8 @@ vis4wc<-function(V,W,step=30,
     #png(paste("ntwksinit.png",sep=""),res=rs, width=wdth, height=hght)
     #plot(wc,gdf,edge.color="gray80",edge.lty=1,vertex.color=log(f),vertex.shape="none",edge.curved=0.1,edge.alpha=0.2)
     plot(wc,gdf,
-         vertex.size=Vsize*10, vertex.frame.color="NA",vertex.color=Vcol,
-         vertex.shape="circle",vertex.label.degree=-pi/2,
+         vertex.frame.color="NA",
+         vertex.shape="none",vertex.label.degree=-pi/2,
          edge.color=Ecol,edge.lty=Elty,edge.curved=Ecurved)
     #dev.off()
 }
