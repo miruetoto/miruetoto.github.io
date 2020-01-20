@@ -68,11 +68,10 @@ vis4graph<-function(V,W){
     wght<-frnd_ship[frnd_ship>0]
     
     ## 4. set param 4 gdf visualization 
-    #V(gdf)$label.cex<-log(f/2000+1)*0.5+0.5
     V(gdf)$label.cex<-0.7
+    V(gdf)$label.font=3
     V(gdf)$label.color<-"gray40"
     E(gdf)$arrow.size<-wght*0.5
-    V(gdf)$label.font=3
     E(gdf)$width=wght*6
     set.seed(787)
     wc<-walktrap.community(gdf,weights=wght,step=5)
