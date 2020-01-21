@@ -1,10 +1,17 @@
 ## load pckg
-listofpackages <- c("kohonen","dplyr","ggplot2","ggforce","ggrepel")
-# ggforce : 4 geom_circle function
-# ggrepel : 4 geom_text_repel
-newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
-if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
-for(i in 1:length(listofpackages)) library(listofpackages[i],character.only=T)
+# listofpackages <- c("kohonen","dplyr","ggplot2","ggforce","ggrepel")
+# # ggforce : 4 geom_circle function
+# # ggrepel : 4 geom_text_repel
+# newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
+# if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
+# for(i in 1:length(listofpackages)) library(listofpackages[i],character.only=T)
+
+
+library(kohonen)
+library(dplyr)
+library(ggplot2)
+library(ggforce)
+library(ggrepel)
 
 somplot<-function(V,hh,maxtau=dim(hh)[2]-1,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
 set.seed(777)
