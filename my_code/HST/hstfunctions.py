@@ -123,7 +123,6 @@ def decomp(gdataτ):
     Dτ=degree(Wτ)
     Dτ_rootinv=degree_rootinv(Wτ)
     Lτ=Dτ-Wτ
-    I=np.matrix(np.diag([1]*n))
     Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
     
     (λ,Ψ)=np.linalg.eig(Lτ_tilde)
