@@ -281,3 +281,44 @@ if(class(data[[j]])=='factor'){
 suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gplt))
 gplt
 }
+
+degree<-function(W){
+    diag(apply(W,1,sum))
+}
+
+degree_rootinv<-function(W){
+    d<-apply(W,1,sum)
+    drootinv<-d
+    drootinv[d>0.01]<-sqrt(1/d[d>0.01])
+    diag(drootinv)
+}
+gfft<-function(f,W){
+    n<-length(f)
+    D<-degree(W)
+    D_rootinv<-degree_rootinv(W)
+    L<-D-W
+    L_tilde<-D_rootinv%*%L%*%D_rootinv
+    svdrslt<-svd(L_tilde)
+    lamb<-svdrslt$d
+    Lamb<-diag(lamb)
+    U<-svdrslt$u; 
+    V<-svdrslt$v; 
+    Psi<-V
+    ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
+    fhat<-as.vector(Psi%*%f) ## fhat is Fourier Transform of f. 
+    list(lamb=lamb,fhat=fhat)
+}
+specplot<-function(gfftresult,main="temp.png"){
+    lamb=gfftresult[[1]]
+    fhatabs=abs(gfftresult[[2]])
+    specdf <- data.frame(y=fhatabs,x=lamb)
+    library(ggplot2)
+    specplot <- ggplot(aes(x,y), data=specdf) + 
+            geom_hline(aes(yintercept=0)) +
+            geom_segment(aes(x,y,xend=x,yend=y-y)) + 
+            geom_point(aes(x,y),size=3) +xlim(0,2)+ylim(0,4000)
+    png(main,res=300, width=2000, height=500)
+    plot(specplot)
+    dev.off() 
+    show(specplot)
+}
