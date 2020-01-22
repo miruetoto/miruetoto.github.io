@@ -146,6 +146,27 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.cooling.power.png",gplt))
 
 
+i=59 ## compressor.power
+gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
+       ggtitle(paste("rx_",i,":",names(rx)[i]))+
+       theme(
+         axis.title.x=element_blank(),
+         axis.title.y=element_blank(),
+         axis.text.y=element_text(family="Times",face="bold.italic",colour="blue"),
+         axis.text.x=element_text(family="Times",face="bold.italic",colour="gray50"),
+         plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
+        )
+gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
+            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_rect(mapping=aes(x=NULL,y=NULL,
+                                  xmin=datetime[1],xmax=datetime[length(datetime)],
+                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+            theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
+                  legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
+            labs(fill="2 eva state")          
+show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.power.png",gplt))
+
+
 i=8 ## R.temp
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
