@@ -182,7 +182,8 @@ gfft<-function(f,W){
     fhat<-as.vector(Psi%*%f) ## fhat is Fourier Transform of f. 
     list(lamb=lamb,fhat=fhat)
 }
-specplot<-function(gfftresult,main="temp.png"){
+
+specplot<-function(gfftresult,filename="temp.pdf"){
     lamb=gfftresult[[1]]
     fhatabs=abs(gfftresult[[2]])
     specdf <- data.frame(y=fhatabs,x=lamb)
@@ -191,8 +192,6 @@ specplot<-function(gfftresult,main="temp.png"){
             geom_hline(aes(yintercept=0)) +
             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
             geom_point(aes(x,y),size=3) +xlim(0,2)+ylim(0,4000)
-    png(main,res=300, width=2000, height=500)
-    plot(specplot)
-    dev.off() 
-    show(specplot,width=2000,height=500,res=300)
+    ggsave(filename,plot=specplot,dpi=300, width=5, height=2.5)
+    show(specplot)
 }
