@@ -251,5 +251,5 @@ if(class(data[[j]])=='factor'){
         gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
   }
 suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gplt))
-ggplotly(gplt)
+gplt
 }
