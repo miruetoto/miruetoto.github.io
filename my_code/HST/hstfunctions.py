@@ -103,33 +103,33 @@ def dist2W(dist,θ=1):
             else: rtn[i,j]=np.exp(-dist[i,j]**2/θ)
     return rtn
 
-def degree(W):
-    return np.matrix(np.diag(m2a(apply(W,'np.sum'))))
+# def degree(W):
+#     return np.matrix(np.diag(m2a(apply(W,'np.sum'))))
 
-def total_degree(W):
-    return np.sum(m2a(apply(W,'np.sum')))
+# def total_degree(W):
+#     return np.sum(m2a(apply(W,'np.sum')))
 
-def degree_rootinv(W):
-    return np.matrix(np.diag(np.sqrt(1/m2a(apply(W,'np.sum')))))
+# def degree_rootinv(W):
+#     return np.matrix(np.diag(np.sqrt(1/m2a(apply(W,'np.sum')))))
 
-def Wtau(Σ,θ): 
-    a=(θ**2)*2
-    return transform(Σ,'dist2W')
+# # def Wtau(Σ,θ): 
+# #     a=(θ**2)*2
+# #     return transform(Σ,'dist2W')
 
-def decomp(gdataτ):
-    Wτ=gdataτ[2]
-    f=gdataτ[3]
-    n=Wτ.shape[0]
-    Dτ=degree(Wτ)
-    Dτ_rootinv=degree_rootinv(Wτ)
-    Lτ=Dτ-Wτ
-    Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
+# def decomp(gdataτ):
+#     Wτ=gdataτ[2]
+#     f=gdataτ[3]
+#     n=Wτ.shape[0]
+#     Dτ=degree(Wτ)
+#     Dτ_rootinv=degree_rootinv(Wτ)
+#     Lτ=Dτ-Wτ
+#     Lτ_tilde=Dτ_rootinv*Lτ*Dτ_rootinv
     
-    (λ,Ψ)=np.linalg.eig(Lτ_tilde)
-    fdecomprlst=init('0',(n,n))
-    for i in co(0,n):
-        fdecomprlst[:,i]=Ψ[:,i]*Ψ[:,i].T*f
-    return [λ,fdecomprlst]
+#     (λ,Ψ)=np.linalg.eig(Lτ_tilde)
+#     fdecomprlst=init('0',(n,n))
+#     for i in co(0,n):
+#         fdecomprlst[:,i]=Ψ[:,i]*Ψ[:,i].T*f
+#     return [λ,fdecomprlst]
 
 
 ### 2. hst: visualization 
