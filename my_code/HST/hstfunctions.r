@@ -117,3 +117,40 @@ vis4wc<-function(V,W,step=30,
          edge.color=Ecol,edge.lty=Elty,edge.curved=Ecurved)
     #dev.off()
 }
+
+vis4graph3d<-function(V,W,f,hh,maxtau){
+    library(fields)
+    library(fields)
+    sdist<-rdist(hh[,1:(maxtau+1)])
+    ## pca
+    pcarslt<-princomp(sdist)
+    gx<-pcarslt$scores[,1]
+    gy<-pcarslt$scores[,2]
+    gz<-f
+    ## load graph lib
+    library(plot3D)
+    library(MBA)
+    #png("verytemp.png",res=300, width=2000, height=2000)
+    par(mar=c(1,1,1,1))
+    ## scatter3d 
+    scatter3D(gx,gy,gz,colvar=gz/max(gz),
+              type='h',pch=19,bty='g',ticktype="detailed",
+              xlab="",ylab="",zlab="",
+              xlim=c(min(gx)*1.5,max(gx)*1.5),ylim=c(min(gy)*1.5,max(gy)*1.5),zlim=c(0,3000),
+              theta=15,phi=30,adj=0.1,d=3,
+              lwd=2,lty=3,cex=1,
+              colkey=FALSE,grid=TRUE)
+    ## draw Edg 
+    expgx<-expand.grid(gx,gx)
+    expgy<-expand.grid(gy,gy)
+    expgz<-expgx[,1]*0
+    Wvec<-as.vector(W)
+    arrowcol<-gray(Wvec*0.01)
+    arrowindex<-which(Wvec>0)
+    lines3D(expgx[,1][arrowindex],expgy[,1][arrowindex],expgz[arrowindex]
+         ,expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],add=TRUE,
+         col="gray60",lwd=exp(1+Wvec[arrowindex])*3,lty=1,alpha=0.1)
+    ## labeling
+    text3D(gx,gy,gz+100,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6)
+    #dev.off()   
+}
