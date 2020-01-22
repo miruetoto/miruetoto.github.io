@@ -1,12 +1,3 @@
-## load pckg
-# listofpackages <- c("kohonen","dplyr","ggplot2","ggforce","ggrepel")
-# # ggforce : 4 geom_circle function
-# # ggrepel : 4 geom_text_repel
-# newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
-# if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
-# for(i in 1:length(listofpackages)) library(listofpackages[i],character.only=T)
-
-
 library(kohonen)
 library(dplyr)
 library(ggplot2)
