@@ -222,7 +222,14 @@ for(i in 1:length(rxindex)){
     if(class(rx[[rxindex[i]]])=='factor'){
         gplt<-gplt+geom_point(mapping=aes(col=rx[[rxindex[i]]]),size=0.2)+theme(legend.position="none")
     }else{
-        gplt<-gplt+geom_line(col="gray60",lwd=0.5)+geom_point(size=0.2)
+        gplt<-gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
+            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_rect(mapping=aes(x=NULL,y=NULL,
+                                  xmin=datetime[1],xmax=datetime[length(datetime)],
+                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+            theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
+                  legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
+            labs(fill="2 eva state")  
     }
     show(gplt)
 }    
