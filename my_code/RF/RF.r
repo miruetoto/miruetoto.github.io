@@ -3,7 +3,7 @@
 # newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
 # if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
 # library(listofpackages)
-library(ADMM)
+#library(ADMM)
 library(ggplot2)
 library(tidyverse)
 library(plotly)
@@ -281,3 +281,4 @@ if(class(data[[j]])=='factor'){
 suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gplt))
 gplt
 }
+
