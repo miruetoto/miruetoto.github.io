@@ -1,12 +1,8 @@
 ## load pckg
-# listofpackages <- c("ADMM")
-# newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
-# if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
-# library(listofpackages)
-#library(ADMM)
-library(ggplot2)
-library(tidyverse)
-library(plotly)
+listofpackages <- c("ADMM,ggplot2,tidyverse")
+newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
+if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
+library(listofpackages)
 
 plot_all<-function(rx,tx=NULL){
 if(is.null(tx)-1){
