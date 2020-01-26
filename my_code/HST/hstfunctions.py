@@ -100,14 +100,14 @@ def dist2W(dist,θ=1):
     for i in co(0,n):
         for j in co(0,n):
             if i==j: rtn[i,j]=0
-            else: rtn[i,j]=np.exp(-dist[i,j]**2/θ)
+            else: rtn[i,j]=np.exp(-dist[i,j]**2/(2*θ**2))
     return rtn
 
 # def degree(W):
 #     return np.matrix(np.diag(m2a(apply(W,'np.sum'))))
 
-# def total_degree(W):
-#     return np.sum(m2a(apply(W,'np.sum')))
+def total_degree(W):
+    return np.sum(m2a(apply(W,'np.sum')))
 
 # def degree_rootinv(W):
 #     return np.matrix(np.diag(np.sqrt(1/m2a(apply(W,'np.sum')))))

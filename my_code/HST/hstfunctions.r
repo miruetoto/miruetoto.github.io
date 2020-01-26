@@ -191,7 +191,26 @@ specplot<-function(gfftresult,filename="temp.pdf"){
     specplot <- ggplot(aes(x,y), data=specdf) + 
             geom_hline(aes(yintercept=0)) +
             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
-            geom_point(aes(x,y),size=3) +xlim(0,2)+ylim(0,4000)
+            geom_point(aes(x,y),size=3) +xlim(0,2)+ylim(0,4000)+labs(x=expression(\lambda),y=expression(\hat{h}(\lambda)))
     ggsave(filename,plot=specplot,dpi=300, width=5, height=2.5)
     show(specplot)
+}
+
+
+decomp<-function(f,W){
+    n<-length(f)
+    D<-degree(W)
+    D_rootinv<-degree_rootinv(W)
+    L<-D-W
+    L_tilde<-D_rootinv%*%L%*%D_rootinv
+    svdrslt<-svd(L_tilde)
+    lamb<-svdrslt$d
+    
+    U<-svdrslt$u; 
+    V<-svdrslt$v; 
+    Psi<-V
+    ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
+    dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
+    for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
+    list(lamb=lamb,decomp=decomp)
 }
