@@ -183,15 +183,36 @@ gfft<-function(f,W){
     list(lamb=lamb,fhat=fhat)
 }
 
-specplot<-function(gfftresult,filename="temp.pdf"){
-    lamb=gfftresult[[1]]
-    fhatabs=abs(gfftresult[[2]])
-    specdf <- data.frame(y=fhatabs,x=lamb)
-    library(ggplot2)
-    specplot <- ggplot(aes(x,y), data=specdf) + 
-            geom_hline(aes(yintercept=0)) +
-            geom_segment(aes(x,y,xend=x,yend=y-y)) + 
-            geom_point(aes(x,y),size=3) +xlim(0,2)+ylim(0,4000)
-    ggsave(filename,plot=specplot,dpi=300, width=5, height=2.5)
-    show(specplot)
+# specplot<-function(gfftresult,filename="temp.pdf"){
+#     library(latex2exp)
+#     lamb=gfftresult[[1]]
+#     fhatabs=abs(gfftresult[[2]])
+#     specdf <- data.frame(y=fhatabs,x=lamb)
+#     library(ggplot2)
+#     specplot <- ggplot(aes(x,y), data=specdf) + 
+#             geom_hline(aes(yintercept=0)) +
+#             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
+#             geom_point(aes(x,y),size=1.5) +xlim(0,2)+ylim(0,4000)+
+#             xlab(TeX("$\\lambda$"))+ylab(TeX("$\\hat{f}(\\lambda)$"))+ggtitle(TeX("$\\tau=$"))
+#     ggsave(filename,plot=specplot,dpi=300, width=5, height=2.5)
+#     show(specplot)
+# }
+
+
+decomp<-function(f,W){
+    n<-length(f)
+    D<-degree(W)
+    D_rootinv<-degree_rootinv(W)
+    L<-D-W
+    L_tilde<-D_rootinv%*%L%*%D_rootinv
+    svdrslt<-svd(L_tilde)
+    lamb<-svdrslt$d
+    
+    U<-svdrslt$u; 
+    V<-svdrslt$v; 
+    Psi<-V
+    ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
+    dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
+    for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
+    list(lamb=lamb,decomp=decomp)
 }

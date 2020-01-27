@@ -13,30 +13,16 @@
 # type: 1=rx, 2=tx, 3=all 
 # mmddhhmm: "01-02,14:24"
 
-def pull_rfdata(site=None,typ=None,time=None): 
-    if site==None:
-        print("\n #. Choose the site in which data collected: 1.Gasan, 2.Yangjae. \n") 
-        site=input()
-    if typ==None:
-        print("\n #. Choose type of data: 1.rx, 2.tx. \n") 
-        typ=input()
-    if time==None:
-        print("\n #. Specify the time zone like \"12-24,23:59\". \n") 
-        time=str(input())
-    
-    if site==1: 
-        site='gasan'
-    elif site==2: 
-        site='yangjae'
-        
-    if typ==1: 
-        typ='rx'
-    elif typ==2: 
-        typ='tx'
-    
-    time=time[0:2]+time[3:5]+time[6:8]+time[9:11]
+def pull_gasan(filename): 
     from io import StringIO
-    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/'+site+'/logs/log_'+typ+'Data_2020'+time+'.csv'
+    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/gasan/logs/'+filename
+    r = requests.get(u, verify=False)
+    rtn=pd.read_csv(StringIO(r.text))
+    return rtn
+
+def pull_yangjae(filename): 
+    from io import StringIO
+    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/yangjae/logs/'+filename
     r = requests.get(u, verify=False)
     rtn=pd.read_csv(StringIO(r.text))
     return rtn

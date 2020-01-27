@@ -1,12 +1,11 @@
 ## load pckg
-# listofpackages <- c("ADMM")
+# listofpackages <- c("ADMM,ggplot2,tidyverse")
 # newpackages <- listofpackages[!(listofpackages %in% installed.packages()[,"Package"])]
 # if(length(newpackages)) install.packages(newpackages,repos='http://cran.us.r-project.org')
 # library(listofpackages)
 library(ADMM)
 library(ggplot2)
 library(tidyverse)
-library(plotly)
 
 plot_all<-function(rx,tx=NULL){
 if(is.null(tx)-1){
@@ -281,3 +280,4 @@ if(class(data[[j]])=='factor'){
 suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gplt))
 gplt
 }
+
