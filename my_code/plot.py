@@ -14,7 +14,7 @@ pp=plt
 ro.r('library(ggplot2)')
 import rpy2.robjects.lib.ggplot2 as gg
 from rpy2.robjects.lib import grdevices
-# from IPython.display import Image,display
+from IPython.display import Image#,display
 def ggshow(gg, w=1,h=1,r=1):
     with grdevices.render_to_bytesio(grdevices.png,
                                      type="cairo-png",
