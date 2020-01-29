@@ -1,12 +1,14 @@
 ## python 
 import matplotlib as mpl 
-import matplotlib.pyplot as pp 
+import matplotlib.pyplot as plt 
 from matplotlib import cycler
 # Ipython_default=plt.rcParams.copy() # save initial value 
 # plt.rcParams.update(Ipython_default) # load initial value 
+
 def pp_dpi(dpi=72):
     pp.rc('figure',dpi=dpi) 
 
+pp=plt
 
 ## ggplot
 ro.r('library(ggplot2)')
