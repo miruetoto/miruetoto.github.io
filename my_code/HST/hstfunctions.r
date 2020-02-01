@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(ggforce)
 library(ggrepel)
-%%R 
+
 somplot<-function(V,hh,maxtau=dim(hh)[2]-1,gridxdim,gridydim,
   somsd=0.1,label=1:dim(hh)[1],col=1,legendposition="right"){
 set.seed(777)
