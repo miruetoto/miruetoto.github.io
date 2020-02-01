@@ -9,6 +9,7 @@ def pp_dpi(dpi=72):
     pp.rc('figure',dpi=dpi) 
 
 pp=plt
+pp.dpi=pp_dpi
 
 ## ggplot
 ro.r('library(ggplot2)')
@@ -37,4 +38,3 @@ gg.plot=ggplot
 gg.show=ggshow
 
 ## rrplot
-

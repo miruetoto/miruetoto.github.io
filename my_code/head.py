@@ -4,25 +4,18 @@
 ## 2. load useful functions
 import requests
 exec(requests.get('http://miruetoto.github.io/my_code/dataHandling.py').text)
+exec(requests.get('http://miruetoto.github.io/my_code/plot.py').text)
+exec(requests.get('http://miruetoto.github.io/my_code/system.py').text)
 
-## 3. for R user
+## 3. Project Setting
+exec(requests.get('http://miruetoto.github.io/my_code/HST/hstfunctions.py').text)
+ro.r('source_url("http://miruetoto.github.io/my_code/HST/hstfunctions.r")')
+
+## 4. for R user
 %load_ext rpy2.ipython
-%R library(devtools)
 
-## 4. plt
-import matplotlib as mpl 
-import matplotlib.pyplot as plt 
-Ipython_default=plt.rcParams.copy() # save initial value 
-from matplotlib import cycler
-plt.rc('figure',dpi=150) # default value 4 figure.dpi is 72.0 
-# plt.rcParams.update(Ipython_default) # load initial value 
+## 5. plt setting 
+pp.dpi(150)
 
-## 5. Check GPU
-from keras import backend as K
-print('GPU check 4 Keras: '+ str(K.tensorflow_backend._get_available_gpus()))
-import torch
-print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
-
-## 6. Project Setting
-#exec(requests.get('http://miruetoto.github.io/my_code/HST/hstfunctions.py').text)
-#%R source_url('http://miruetoto.github.io/my_code/HST/hstfunctions.r')
+## 6. check gpu
+checkgpu()
