@@ -3,8 +3,9 @@ library(dplyr)
 library(ggplot2)
 library(ggforce)
 library(ggrepel)
-
-somplot<-function(V,hh,maxtau=dim(hh)[2]-1,gridxdim,gridydim,somsd=0.1,label=1:dim(hh)[1]){
+%%R 
+somplot<-function(V,hh,maxtau=dim(hh)[2]-1,gridxdim,gridydim,
+  somsd=0.1,label=1:dim(hh)[1],col=1,legendposition="right"){
 set.seed(777)
 #library(kohonen)
 hh<-hh[,1:(maxtau+1)]
@@ -35,8 +36,8 @@ p <- somgrd %>%
            panel.grid = element_blank(),
            axis.text = element_blank(),
            axis.title = element_blank(),
-           legend.position = "right")+
-           geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=3)+
+           legend.position = legendposition)+
+           geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=3,col=col)+
            geom_text_repel(data=sompts,aes(x,y,label=V),cex=3)
 p
 }
