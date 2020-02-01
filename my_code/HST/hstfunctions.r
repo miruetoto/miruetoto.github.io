@@ -152,7 +152,7 @@ vis4graph3d<-function(V,W,f,hh,maxtau){
          ,expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],add=TRUE,
          col="gray60",lwd=exp(1+Wvec[arrowindex])*3,lty=1,alpha=0.1)
     ## labeling
-    text3D(gx,gy,gz+max(gz)/100,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6)
+    text3D(gx,gy,gz,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6)
     #dev.off()   
 }
 
