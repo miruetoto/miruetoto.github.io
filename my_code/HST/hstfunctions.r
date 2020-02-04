@@ -5,7 +5,8 @@ library(ggforce)
 library(ggrepel)
 
 somplot<-function(V,hh,maxtau=dim(hh)[2]-1,gridxdim,gridydim,
-  somsd=0.1,label=1:dim(hh)[1],col=1,legendposition="right"){
+  somsd=0.1,label=1:dim(hh)[1],col=1,
+  legendposition="right",textsize=3){
 set.seed(777)
 #library(kohonen)
 hh<-hh[,1:(maxtau+1)]
@@ -38,7 +39,7 @@ p <- somgrd %>%
            axis.title = element_blank(),
            legend.position = legendposition)+
            geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=3,col=col)+
-           geom_text_repel(data=sompts,aes(x,y,label=V),cex=3)
+           geom_text_repel(data=sompts,aes(x,y,label=V),cex=textsize)
 p
 }
 
@@ -184,18 +185,17 @@ gfft<-function(f,W){
     list(lamb=lamb,fhat=fhat)
 }
 
-specplot<-function(gfftresult,filename="temp.pdf",title=title){
+specplot<-function(gfftresult,title=""){
     library(latex2exp)
-    lamb=gfftresult[[1]]
-    fhatabs=abs(gfftresult[[2]])
+    lamb<-gfftresult[[1]]
+    fhatabs<-abs(gfftresult[[2]])
     specdf <- data.frame(y=fhatabs,x=lamb)
     library(ggplot2)
-    specplot <- ggplot(aes(x,y), data=specdf) + 
-            geom_hline(aes(yintercept=0)) +
-            geom_segment(aes(x,y,xend=x,yend=y-y)) + 
+    spcplt <- ggplot(aes(x,y), data=specdf) + 
+            geom_segment(aes(x,y,xend=x,yend=y-y),lty=2) + 
             geom_point(aes(x,y),size=1) + xlim(0,2)+
             xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\hat{f}(\\lambda)|$"))+ggtitle(TeX(title))
-    specplot
+    spcplt
 }
 
 decompose<-function(f,W){
@@ -236,4 +236,15 @@ Sf<-function(f,W,η=0.01){
     Jproj<-c(J0,J1)
     Sf<-apply(dcmp[,Jproj],1,sum)
     list(Sf,Jproj,lamb)
+}
+
+eigenplot<-function(gfftresult,title=""){
+    library(latex2exp)
+    lamb<-gfftresult[[1]]
+    egndf <- data.frame(y=lamb,x=1:length(lamb))
+    library(ggplot2)
+    egnplt <- ggplot(aes(x,y), data=egndf) + 
+            geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
+            xlab("")+ylab(TeX("$\\lambda$"))+ggtitle(TeX(title))
+    egnplt
 }
