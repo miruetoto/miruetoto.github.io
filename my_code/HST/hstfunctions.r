@@ -119,7 +119,7 @@ vis4wc<-function(V,W,step=30,
     #dev.off()
 }
 
-vis4graph3d<-function(V,W,f,hh,maxtau){
+vis4mcu3d<-function(V,W,f,hh,maxtau){
     library(fields)
     library(fields)
     sdist<-rdist(hh[,1:(maxtau+1)])
@@ -152,7 +152,7 @@ vis4graph3d<-function(V,W,f,hh,maxtau){
          ,expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],add=TRUE,
          col="gray60",lwd=exp(1+Wvec[arrowindex])*3,lty=1,alpha=0.1)
     ## labeling
-    text3D(gx,gy,gz+max(gz)/100,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6)
+    text3D(gx,gy,gz+100,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6)
     #dev.off()   
 }
 
@@ -184,7 +184,7 @@ gfft<-function(f,W){
     list(lamb=lamb,fhat=fhat)
 }
 
-specplot<-function(gfftresult,filename="temp.pdf",title=""){
+specplot<-function(gfftresult,filename="temp.pdf",title=title){
     library(latex2exp)
     lamb=gfftresult[[1]]
     fhatabs=abs(gfftresult[[2]])
@@ -193,14 +193,10 @@ specplot<-function(gfftresult,filename="temp.pdf",title=""){
     specplot <- ggplot(aes(x,y), data=specdf) + 
             geom_hline(aes(yintercept=0)) +
             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
-            geom_point(aes(x,y),size=1.5) + xlim(0,2)+
-            xlab(TeX("$\\lambda$"))+ylab(TeX("$\\hat{f}(\\lambda)$"))+ggtitle(title)
-    ggsave(filename,plot=specplot,dpi=300, width=5, height=2.5)
-    show(specplot)
+            geom_point(aes(x,y),size=1) + xlim(0,2)+
+            xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\hat{f}(\\lambda)|$"))+ggtitle(TeX(title))
     specplot
 }
-
-
 
 decompose<-function(f,W){
     n<-length(f)
@@ -218,4 +214,26 @@ decompose<-function(f,W){
     dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
     for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
     list(lamb=lamb,decomp=dcmp)
+}
+
+Sf<-function(f,W,η=0.01){
+    n<-length(f)
+    D<-degree(W)
+    D_rootinv<-degree_rootinv(W)
+    L<-D-W
+    L_tilde<-D_rootinv%*%L%*%D_rootinv
+    svdrslt<-svd(L_tilde)
+    lamb<-svdrslt$d
+    
+    U<-svdrslt$u; 
+    V<-svdrslt$v; 
+    Psi<-V
+    ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
+    dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
+    for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
+    J0<-which(lamb<η)
+    J1<-which(abs(lamb-1)<η)
+    Jproj<-c(J0,J1)
+    Sf<-apply(dcmp[,Jproj],1,sum)
+    list(Sf,Jproj,lamb)
 }
