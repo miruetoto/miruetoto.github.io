@@ -83,7 +83,7 @@ t2<-time[2]
 rx<-rx[(floor(rxN*t1)+1):floor(rxN*t2),]
 tx<-tx[(floor(txN*t1)+1):floor(txN*t2),]
 
-i=7 ## F.temp
+i=8 ## F.temp
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -104,7 +104,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             labs(fill="2 eva state")       
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_F.temp.png",gplt))
 
-i=23 ## F.fan.rpm
+i=24 ## F.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -124,7 +124,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             labs(fill="2 eva state")         
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_F.fan.rpm.png",gplt))
 
-i=54 ## compressor.cooling.power
+i=55 ## compressor.cooling.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -145,7 +145,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.cooling.power.png",gplt))
 
 
-i=59 ## compressor.power
+i=60 ## compressor.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -166,7 +166,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.power.png",gplt))
 
 
-i=8 ## R.temp
+i=9 ## R.temp
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -187,7 +187,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             labs(fill="2 eva state")       
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_R.temp.png",gplt))
 
-i=24 ## R.fan.rpm
+i=25 ## R.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
