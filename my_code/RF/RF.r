@@ -94,11 +94,11 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=rx[[3]],ymax=rx[[3]],fill=rx[[26]]),alpha=1)+   
-            geom_line(mapping=aes(x=datetime,y=rx[[3]]),col='gray60',lty=2)+
+                                  ymin=rx[[4]],ymax=rx[[4]],fill=rx[[27]]),alpha=1)+   
+            geom_line(mapping=aes(x=datetime,y=rx[[4]]),col='gray60',lty=2)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
@@ -115,10 +115,10 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
@@ -135,10 +135,10 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")          
@@ -156,10 +156,10 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")          
@@ -177,11 +177,11 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=rx[[4]],ymax=rx[[4]],fill=rx[[26]]),alpha=1)+   
-            geom_line(mapping=aes(x=datetime,y=rx[[4]]),col='gray60',lty=2)+
+                                  ymin=rx[[6]],ymax=rx[[6]],fill=rx[[27]]),alpha=1)+   
+            geom_line(mapping=aes(x=datetime,y=rx[[5]]),col='gray60',lty=2)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
@@ -198,10 +198,10 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
@@ -222,10 +222,10 @@ for(i in 1:length(rxindex)){
         gplt<-gplt+geom_point(mapping=aes(col=rx[[rxindex[i]]]),size=0.2)+theme(legend.position="none")
     }else{
         gplt<-gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[26]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[26]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")  
