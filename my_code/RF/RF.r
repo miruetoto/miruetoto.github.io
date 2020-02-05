@@ -83,7 +83,10 @@ t2<-time[2]
 rx<-rx[(floor(rxN*t1)+1):floor(rxN*t2),]
 tx<-tx[(floor(txN*t1)+1):floor(txN*t2),]
 
-i=8 ## F.temp
+k=which(names(rx)=='X2eva.ctrl..state..4')
+i=which(names(rx)=='F.temp.') ## F.temp
+j=which(names(rx)=='F.ctrl..temp.')
+
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -94,17 +97,17 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=rx[[4]],ymax=rx[[4]],fill=rx[[27]]),alpha=1)+   
-            geom_line(mapping=aes(x=datetime,y=rx[[4]]),col='gray60',lty=2)+
+                                  ymin=rx[[j]],ymax=rx[[j]],fill=rx[[k]]),alpha=1)+   
+            geom_line(mapping=aes(x=datetime,y=rx[[j]]),col='gray60',lty=2)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_F.temp.png",gplt))
 
-i=24 ## F.fan.rpm
+i=which(names(rx)=='F.FAN.RPM') ## F.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -115,16 +118,16 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[k]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_F.fan.rpm.png",gplt))
 
-i=55 ## compressor.cooling.power
+i=which(names(rx)=='compressor.cooling.power')  ## compressor.cooling.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -135,17 +138,17 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[k]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")          
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.cooling.power.png",gplt))
 
 
-i=60 ## compressor.power
+i=which(names(rx)=='compressor.power') ## compressor.power
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -156,17 +159,19 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[k]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")          
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_compressor.power.png",gplt))
 
 
-i=9 ## R.temp
+i=which(names(rx)=='R.temp.') ## R.temp
+j=which(names(rx)=='R.ctrl..temp.') 
+                                                                    
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -177,17 +182,17 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=rx[[6]],ymax=rx[[6]],fill=rx[[27]]),alpha=1)+   
-            geom_line(mapping=aes(x=datetime,y=rx[[5]]),col='gray60',lty=2)+
+                                  ymin=rx[[j]],ymax=rx[[j]],fill=rx[[k]]),alpha=1)+   
+            geom_line(mapping=aes(x=datetime,y=rx[[j]]),col='gray60',lty=2)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")       
 show(gplt); suppressMessages(ggsave("Figtemp/plotpretty/plotpretty_R.temp.png",gplt))
 
-i=25 ## R.fan.rpm
+i=which(names(rx)=='R.FAN.RPM')  ## R.fan.rpm
 gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
        ggtitle(paste("rx_",i,":",names(rx)[i]))+
        theme(
@@ -198,10 +203,10 @@ gplt<-ggplot(data=rx,mapping=aes(x=datetime,y=rx[[i]]))+
          plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
         )
 gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[k]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")         
@@ -222,10 +227,10 @@ for(i in 1:length(rxindex)){
         gplt<-gplt+geom_point(mapping=aes(col=rx[[rxindex[i]]]),size=0.2)+theme(legend.position="none")
     }else{
         gplt<-gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
-            geom_point(mapping=aes(col=rx[[27]]),size=0.2)+guides(col=FALSE)+
+            geom_point(mapping=aes(col=rx[[k]]),size=0.2)+guides(col=FALSE)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
-                                  ymin=0,ymax=0,fill=rx[[27]]),alpha=1)+   
+                                  ymin=0,ymax=0,fill=rx[[k]]),alpha=1)+   
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="2 eva state")  
@@ -254,6 +259,7 @@ for(j in 1:length(txindex)){
 }    
 }
 }
+
 
 plotj<-function(data,j,time=c(0,1)){
 j0<-which(names(data)=='datetime')
