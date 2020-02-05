@@ -7,12 +7,19 @@ library(ADMM)
 library(ggplot2)
 library(tidyverse)
 
-plot_all<-function(rx,tx=NULL){
+plot_all<-function(rx,tx=NULL,time=c(0,1)){
 if(is.null(tx)-1){
   i0<-which(names(rx)=='datetime')
   j0<-which(names(tx)=='datetime')
   rx[[i0]]<-as.POSIXct(rx[[i0]])
   tx[[j0]]<-as.POSIXct(tx[[j0]])
+  
+  rxN<-dim(rx)[1] # rxN is # of obs in rx
+  txN<-dim(tx)[1] # txN is # of obs in tx
+  t1<-time[1]
+  t2<-time[2]
+  rx<-rx[(floor(rxN*t1)+1):floor(rxN*t2),]
+  tx<-tx[(floor(txN*t1)+1):floor(txN*t2),]
   I0<-length(rx)
   J0<-length(tx)
   for(i in 1:I0){
