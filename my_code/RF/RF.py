@@ -109,7 +109,7 @@ def pid_init(tidy,tintrvl=100):
     ## next2eva 
     rtn[3:5]=next2eva(previous[3],previous[4])
     return rtn
-    
+
 def next2eva(eva,walksum): 
     ## 0: 'sim'
     ## 1: 'R'
