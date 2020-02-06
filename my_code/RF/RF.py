@@ -3,29 +3,31 @@ def ginverseDiag(d,threshold=0.0005):
     d[d>0]=1/d[d>0]
     return np.asmatrix(np.diag(d))
 
-# def getbeta(Y,X):
-#     XX=X.T*X
-#     d,P=np.linalg.eig(XX)
-#     DI=ginverseDiag(d,threshold=0.05)
-#     betahat=(P*DI*P.I)*X.T*Y
-#     return betahat
+def getbeta(Y,X):
+    XX=X.T*X
+    d,P=np.linalg.eig(XX)
+    DI=ginverseDiag(d,threshold=0.05)
+    betahat=(P*DI*P.I)*X.T*Y
+    return betahat
+
+
 # site: 1=Gasan, 2=Yangjae 
 # type: 1=rx, 2=tx, 3=all 
 # mmddhhmm: "01-02,14:24"
 
-def pull_gasan(filename): 
-    from io import StringIO
-    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/gasan/logs/'+filename
-    r = requests.get(u, verify=False)
-    rtn=pd.read_csv(StringIO(r.text))
-    return rtn
+# def pull_gasan(filename): 
+#     from io import StringIO
+#     u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/gasan/logs/'+filename
+#     r = requests.get(u, verify=False)
+#     rtn=pd.read_csv(StringIO(r.text))
+#     return rtn
 
-def pull_yangjae(filename): 
-    from io import StringIO
-    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/yangjae/logs/'+filename
-    r = requests.get(u, verify=False)
-    rtn=pd.read_csv(StringIO(r.text))
-    return rtn
+# def pull_yangjae(filename): 
+#     from io import StringIO
+#     u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/yangjae/logs/'+filename
+#     r = requests.get(u, verify=False)
+#     rtn=pd.read_csv(StringIO(r.text))
+#     return rtn
 
 def tidyrx(rx):
     push(rx)
