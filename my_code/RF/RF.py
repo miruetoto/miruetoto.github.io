@@ -90,7 +90,7 @@ def pid_init(tidy,tintrvl=100):
     print("Rfan_Kp:",-1/Rcomp_Kp_inv*4.060935)
     return (-1/Fcomp_Kp_inv,-1/Fcomp_Kp_inv*2.73296,-1/Rcomp_Kp_inv,-1/Rcomp_Kp_inv*4.060935)    
  
- def nextaction(previous):
+def nextaction(previous):
     daction=init('u',3)*10
     rtn=previous.copy()
     rtn[0:3]=previous[0:3]+daction
