@@ -90,3 +90,45 @@ def pid_init(tidy,tintrvl=100):
     print("Rfan_Kp:",-1/Rcomp_Kp_inv*4.060935)
     return (-1/Fcomp_Kp_inv,-1/Fcomp_Kp_inv*2.73296,-1/Rcomp_Kp_inv,-1/Rcomp_Kp_inv*4.060935)    
  
+ def nextaction(previous):
+    daction=init('u',3)*10
+    rtn=previous.copy()
+    rtn[0:3]=previous[0:3]+daction
+    ## adjusting comp power 
+    if rtn[0]<15: rtn[0]=15
+    elif rtn[0]>90: rtn[0]=90
+    else: rtn=rtn 
+    ## adjusting r-fan 
+    if rtn[1]<0: rtn[1]=0
+    elif rtn[1]>178: rtn[1]=178
+    else: rtn=rtn 
+    ## adjusting f-fan 
+    if rtn[2]<0: rtn[2]=0
+    elif rtn[2]>178: rtn[2]=178
+    else: rtn=rtn 
+    ## next2eva 
+    rtn[3:5]=next2eva(previous[3],previous[4])
+    return rtn
+    
+def next2eva(eva,walksum): 
+    ## 0: 'sim'
+    ## 1: 'R'
+    ## 2: 'F'
+    ## 3: 'OFF'
+    ## 4: 'pd'
+    ## 5: 'fixtemp'
+    nexteva=eva
+    if eva=='pd':
+        walk=300
+    else:
+        walk=a2s(init('u',1)*5.5-2.5)
+    walksum=walk+walksum
+    if walksum>3000: 
+        walksum=0
+        if eva=='F':
+            nexteva='pd'
+        else:
+            from random import sample 
+            nexteva=a2s(sample(['F','R','OFF'],1))
+    rtn=[nexteva,walksum]
+    return rtn
