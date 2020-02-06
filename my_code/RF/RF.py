@@ -108,6 +108,8 @@ def nextaction(previous):
     else: rtn=rtn 
     ## next2eva 
     rtn[3:5]=next2eva(previous[3],previous[4])
+    if rtn[3]=='pd': rtn[0:3]=0
+    if rtn[3]=='OFF': rtn[0:3]=0
     return rtn
 
 def next2eva(eva,walksum): 
