@@ -119,7 +119,7 @@ def next2eva(eva,walksum):
     ## 5: 'fixtemp'
     nexteva=eva
     if eva=='pd':
-        walk=300
+        walk=150
     else:
         walk=a2s(init('u',1)*5.5-2.5)
     walksum=walk+walksum
