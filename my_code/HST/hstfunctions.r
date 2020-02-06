@@ -79,6 +79,7 @@ vis4igraph<-function(V,W,
     ## 5. plot result 
     #png(paste("ntwksinit.png",sep=""),res=rs, width=wdth, height=hght)
     #plot(wc,gdf,edge.color="gray80",edge.lty=1,vertex.color=log(f),vertex.shape="none",edge.curved=0.1,edge.alpha=0.2)
+    par(mar=c(0.1,0.1,0.1,0.1))
     plot(gdf,
          vertex.size=Vsize*10, vertex.frame.color="NA",vertex.color=Vcol,
          vertex.shape="circle",vertex.label.degree=-pi/2,
@@ -113,6 +114,7 @@ vis4wc<-function(V,W,step=30,
     ## 5. plot result 
     #png(paste("ntwksinit.png",sep=""),res=rs, width=wdth, height=hght)
     #plot(wc,gdf,edge.color="gray80",edge.lty=1,vertex.color=log(f),vertex.shape="none",edge.curved=0.1,edge.alpha=0.2)
+    par(mar=c(0.1,0.1,0.1,0.1))
     plot(wc,gdf,
          vertex.frame.color="NA",
          vertex.shape="none",vertex.label.degree=-pi/2,
@@ -133,7 +135,7 @@ vis4mcu3d<-function(V,W,f,hh,maxtau){
     library(plot3D)
     library(MBA)
     #png("verytemp.png",res=300, width=2000, height=2000)
-    par(mar=c(1,1,1,1))
+    par(mar=c(0.1,0.1,0.1,0.1))
     ## scatter3d 
     scatter3D(gx,gy,gz,colvar=gz/max(gz),
               type='h',pch=19,bty='g',ticktype="detailed",
@@ -241,7 +243,7 @@ Sf<-function(f,W,η=0.01){
 eigenplot<-function(gfftresult,title=""){
     library(latex2exp)
     lamb<-gfftresult[[1]]
-    egndf <- data.frame(y=lamb,x=1:length(lamb))
+    egndf <- data.frame(y=lamb,x=0:(length(lamb)-1))
     library(ggplot2)
     egnplt <- ggplot(aes(x,y), data=egndf) + 
             geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
