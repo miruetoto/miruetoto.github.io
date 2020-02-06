@@ -126,7 +126,7 @@ def next2eva(eva,walksum):
     if eva=='pd':
         walk=150
     else:
-        walk=a2s(init('u',1)*5.5-2.5)
+        walk=a2s(init('u',1)*5.5-1)
     walksum=walk+walksum
     if walksum>3000: 
         walksum=0
