@@ -30,7 +30,8 @@ def pull_yangjae(filename):
 def tidyrx(rx):
     push(rx)
     ro.r('names(rx)<-str_replace_all(names(rx),"[.]","_")')
-    ro.r('data_rx<-rx[,c(7,8,11,16,17,20,21,26,28,29,54)]')
+    ro.r('lovevname<-c("F_temp_", "R_temp_", "RT_temp_", "f_fan_power_on","r_fan_power_on", "F_FAN_DUTY", "R_FAN_DUTY","X2eva_ctrl__state__4", "R_DOOR", "F_DOOR","compressor_cooling_power")')
+    ro.r('data_rx<-select(rx,lovevname)')  
     ro.r('data_rx<-mutate(data_rx,mtt_f_fan_duty_plus=F_FAN_DUTY*(X2eva_ctrl__state__4=="F"),mtt_r_fan_duty_plus=R_FAN_DUTY*(X2eva_ctrl__state__4=="R"),mtt_f_fan_duty_minus=F_FAN_DUTY-F_FAN_DUTY*(X2eva_ctrl__state__4=="F"),mtt_r_fan_duty_minus=R_FAN_DUTY-R_FAN_DUTY*(X2eva_ctrl__state__4=="R"),mtt_f_comp=compressor_cooling_power*(X2eva_ctrl__state__4=="F"),mtt_r_comp=compressor_cooling_power*(X2eva_ctrl__state__4=="R"),mtt_rt_fopen=RT_temp_*(F_DOOR=="open"),mtt_rt_ropen=RT_temp_*(R_DOOR=="open"))')
     ro.r('tidy<-select(data_rx,F_temp_,R_temp_,RT_temp_,starts_with("mtt_"))')
     return pull("tidy")
