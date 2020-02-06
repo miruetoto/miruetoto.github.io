@@ -91,7 +91,7 @@ def pid_init(tidy,tintrvl=100):
     return (-1/Fcomp_Kp_inv,-1/Fcomp_Kp_inv*2.73296,-1/Rcomp_Kp_inv,-1/Rcomp_Kp_inv*4.060935)    
  
 def nextaction(previous):
-    daction=init('u',3)*10
+    daction=init('u',3)*10-5
     rtn=previous.copy()
     rtn[0:3]=previous[0:3]+daction
     ## adjusting comp power 
