@@ -3,7 +3,7 @@ def ginverseDiag(d,threshold=0.0005):
     d[d>0]=1/d[d>0]
     return np.asmatrix(np.diag(d))
 
-def getbeta(Y,X):
+def getbeta(X,Y):
     XX=X.T*X
     d,P=np.linalg.eig(XX)
     DI=ginverseDiag(d,threshold=0.05)
@@ -137,3 +137,12 @@ def next2eva(eva,walksum):
             nexteva=a2s(sample(['F','R','OFF'],1))
     rtn=[nexteva,walksum]
     return rtn
+
+
+def lagging(npmat,lag=1):
+    npmat_ori=npmat.copy()
+    rtn=npmat.copy()
+    for l in cc(1,lag):
+        rtn=cbind(rtn,lagg(npmat_ori,l))
+    return rtn
+    
