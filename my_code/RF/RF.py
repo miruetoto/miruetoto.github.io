@@ -158,3 +158,8 @@ def seperate_trtst(npmat,ratio=0.7):
     trindex=list(range(0,round(npmat.shape[0]*ratio)))
     testindex=list(range(round(npmat.shape[0]*ratio),npmat.shape[0]))
     return (npmat[trindex,:],npmat[testindex,:])
+
+def smooth_spline(npmat):
+    push(npmat,"npmat")
+    ro.r('sy<-npmat*0; for(j in 1:dim(npmat)[2]) sy[,j]<-smooth.spline(npmat[,j])$y')
+    return pull("sy")
