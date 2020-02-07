@@ -93,6 +93,7 @@ def pid_init(tidy,tintrvl=100):
     print("Rfan_Kp:",-1/Rcomp_Kp_inv*4.060935)
     return (-1/Fcomp_Kp_inv,-1/Fcomp_Kp_inv*2.73296,-1/Rcomp_Kp_inv,-1/Rcomp_Kp_inv*4.060935)    
  
+ 
 def nextaction(previous):
     daction=init('u',3)*10-5
     rtn=previous.copy()
@@ -111,8 +112,8 @@ def nextaction(previous):
     else: rtn=rtn 
     ## next2eva 
     rtn[3:5]=next2eva(previous[3],previous[4])
-    if rtn[3]=='pd': rtn[0:3]=0
-    if rtn[3]=='OFF': rtn[0:3]=0
+    if rtn[3]=='pd': rtn[0:3]=[0,0,0]
+    if rtn[3]=='OFF': rtn[0:3]=[0,0,0]
     return rtn
 
 def next2eva(eva,walksum): 
@@ -137,6 +138,8 @@ def next2eva(eva,walksum):
             nexteva=a2s(sample(['F','R','OFF'],1))
     rtn=[nexteva,walksum]
     return rtn
+
+
 
 
 def lagging(npmat,lag=1):
