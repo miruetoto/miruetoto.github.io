@@ -8,7 +8,7 @@ def getbeta(X,Y):
     d,P=np.linalg.eig(XX)
     DI=ginverseDiag(d,threshold=0.05)
     betahat=(P*DI*P.I)*X.T*Y
-    return betahat
+    return betahat.real
 
 
 # site: 1=Gasan, 2=Yangjae 
@@ -140,19 +140,21 @@ def next2eva(eva,walksum):
     return rtn
 
 
-
-
-def lagging(npmat,lag=1):
+def slagging(npmat,lag=2,jump=60):
     npmat_ori=npmat.copy()
-    rtn=npmat.copy()
-    for l in cc(1,lag):
+    rtn=lagg(npmat_ori,1*jump)
+    for l in cc(2,lag):
+        rtn=cbind(rtn,lagg(npmat_ori,l*jump))
+    return rtn
+
+def lagging(npmat,lag=2):
+    npmat_ori=npmat.copy()
+    rtn=lagg(npmat_ori,1)
+    for l in cc(2,lag):
         rtn=cbind(rtn,lagg(npmat_ori,l))
     return rtn
-    
-def smooth_spline(npmat):
-    J=npmat.shape[1]
-    push(npmat,"npmat")
-    push(J,"J")
-    ro.r('sy<-npmat*0; for(j in 1:J) sy[,j]<-smooth.spline(npmat[,j])$y')
-    rtn=pull("sy")
-    return rtn
+
+def seperate_trtst(npmat,ratio=0.7):
+    trindex=list(range(0,round(npmat.shape[0]*ratio)))
+    testindex=list(range(round(npmat.shape[0]*ratio),npmat.shape[0]))
+    return (npmat[trindex,:],npmat[testindex,:])
