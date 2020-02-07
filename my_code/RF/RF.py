@@ -149,3 +149,10 @@ def lagging(npmat,lag=1):
         rtn=cbind(rtn,lagg(npmat_ori,l))
     return rtn
     
+def smooth_spline(npmat):
+    J=npmat.shape[1]
+    push(npmat,"npmat")
+    push(J,"J")
+    ro.r('sy<-npmat*0; for(j in 1:J) sy[,j]<-smooth.spline(npmat[,j])$y')
+    rtn=pull("sy")
+    return rtn
