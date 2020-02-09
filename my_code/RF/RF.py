@@ -3,29 +3,31 @@ def ginverseDiag(d,threshold=0.0005):
     d[d>0]=1/d[d>0]
     return np.asmatrix(np.diag(d))
 
-# def getbeta(Y,X):
-#     XX=X.T*X
-#     d,P=np.linalg.eig(XX)
-#     DI=ginverseDiag(d,threshold=0.05)
-#     betahat=(P*DI*P.I)*X.T*Y
-#     return betahat
+def getbeta(X,Y):
+    XX=X.T*X
+    d,P=np.linalg.eig(XX)
+    DI=ginverseDiag(d,threshold=0.05)
+    betahat=(P*DI*P.I)*X.T*Y
+    return betahat.real
+
+
 # site: 1=Gasan, 2=Yangjae 
 # type: 1=rx, 2=tx, 3=all 
 # mmddhhmm: "01-02,14:24"
 
-def pull_gasan(filename): 
-    from io import StringIO
-    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/gasan/logs/'+filename
-    r = requests.get(u, verify=False)
-    rtn=pd.read_csv(StringIO(r.text))
-    return rtn
+# def pull_gasan(filename): 
+#     from io import StringIO
+#     u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/gasan/logs/'+filename
+#     r = requests.get(u, verify=False)
+#     rtn=pd.read_csv(StringIO(r.text))
+#     return rtn
 
-def pull_yangjae(filename): 
-    from io import StringIO
-    u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/yangjae/logs/'+filename
-    r = requests.get(u, verify=False)
-    rtn=pd.read_csv(StringIO(r.text))
-    return rtn
+# def pull_yangjae(filename): 
+#     from io import StringIO
+#     u='http://guebin:123qwe@10.178.134.156:/20-Project-Fridge/yangjae/logs/'+filename
+#     r = requests.get(u, verify=False)
+#     rtn=pd.read_csv(StringIO(r.text))
+#     return rtn
 
 def tidyrx(rx):
     push(rx)
@@ -91,6 +93,7 @@ def pid_init(tidy,tintrvl=100):
     print("Rfan_Kp:",-1/Rcomp_Kp_inv*4.060935)
     return (-1/Fcomp_Kp_inv,-1/Fcomp_Kp_inv*2.73296,-1/Rcomp_Kp_inv,-1/Rcomp_Kp_inv*4.060935)    
  
+ 
 def nextaction(previous):
     daction=init('u',3)*10-5
     rtn=previous.copy()
@@ -109,8 +112,8 @@ def nextaction(previous):
     else: rtn=rtn 
     ## next2eva 
     rtn[3:5]=next2eva(previous[3],previous[4])
-    if rtn[3]=='pd': rtn[0:3]=0
-    if rtn[3]=='OFF': rtn[0:3]=0
+    if rtn[3]=='pd': rtn[0:3]=[0,0,0]
+    if rtn[3]=='OFF': rtn[0:3]=[0,0,0]
     return rtn
 
 def next2eva(eva,walksum): 
@@ -124,7 +127,7 @@ def next2eva(eva,walksum):
     if eva=='pd':
         walk=150
     else:
-        walk=a2s(init('u',1)*5.5-2.5)
+        walk=a2s(init('u',1)*5.5)
     walksum=walk+walksum
     if walksum>3000: 
         walksum=0
@@ -135,3 +138,28 @@ def next2eva(eva,walksum):
             nexteva=a2s(sample(['F','R','OFF'],1))
     rtn=[nexteva,walksum]
     return rtn
+
+
+def slagging(npmat,lag=2,jump=60):
+    npmat_ori=npmat.copy()
+    rtn=lagg(npmat_ori,1*jump)
+    for l in cc(2,lag):
+        rtn=cbind(rtn,lagg(npmat_ori,l*jump))
+    return rtn
+
+def lagging(npmat,lag=2):
+    npmat_ori=npmat.copy()
+    rtn=lagg(npmat_ori,1)
+    for l in cc(2,lag):
+        rtn=cbind(rtn,lagg(npmat_ori,l))
+    return rtn
+
+def seperate_trtst(npmat,ratio=0.7):
+    trindex=list(range(0,round(npmat.shape[0]*ratio)))
+    testindex=list(range(round(npmat.shape[0]*ratio),npmat.shape[0]))
+    return (npmat[trindex,:],npmat[testindex,:])
+
+def smooth_spline(npmat):
+    push(npmat,"npmat")
+    ro.r('sy<-npmat*0; for(j in 1:dim(npmat)[2]) sy[,j]<-smooth.spline(npmat[,j])$y')
+    return pull("sy")

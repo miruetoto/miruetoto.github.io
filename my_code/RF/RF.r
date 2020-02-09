@@ -267,7 +267,6 @@ for(j in 1:length(txindex)){
 }
 }
 
-
 plotj<-function(data,j,time=c(0,1)){
 j0<-which(names(data)=='datetime')
 data[[j0]]<-as.POSIXct(data[[j0]])
@@ -294,3 +293,60 @@ suppressMessages(ggsave(paste("Figtemp/plotj/",names(data)[j],".png",sep=""),gpl
 gplt
 }
 
+plot_reg<-function(trtest,time=c(0,1)){
+i0<-which(names(trtest)=='datetime')
+trtest[[i0]]<-as.POSIXct(trtest[[i0]])
+trtestN<-dim(trtest)[1] 
+t1<-time[1]
+t2<-time[2]
+trtest<-trtest[(floor(trtestN*t1)+1):floor(trtestN*t2),]
+
+k=which(names(trtest)=='trtst')
+i=which(names(trtest)=='Ftemp') ## R.temp
+j=which(names(trtest)=='Ftemphat') 
+
+gplt<-ggplot(data=trtest,mapping=aes(x=datetime,y=trtest[[i]]))+
+       ggtitle(names(trtest)[i])+
+       theme(
+         axis.title.x=element_blank(),
+         axis.title.y=element_blank(),
+         axis.text.y=element_text(family="Times",face="bold.italic",colour="blue"),
+         axis.text.x=element_text(family="Times",face="bold.italic",colour="gray50"),
+         plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
+        )
+gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
+            geom_point(mapping=aes(col=trtest[[k]]),size=0.2)+guides(col=FALSE)+
+            geom_rect(mapping=aes(x=NULL,y=NULL,
+                                  xmin=datetime[1],xmax=datetime[length(datetime)],
+                                  ymin=trtest[[j]],ymax=trtest[[j]],fill=trtest[[k]]),alpha=1)+   
+            geom_line(mapping=aes(x=datetime,y=trtest[[j]]),col='gray60',lty=2)+
+            theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
+                  legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
+            labs(fill="Train / Test")       
+show(gplt)
+
+
+k=which(names(trtest)=='trtst')
+i=which(names(trtest)=='Rtemp') ## R.temp
+j=which(names(trtest)=='Rtemphat') 
+
+gplt<-ggplot(data=trtest,mapping=aes(x=datetime,y=trtest[[i]]))+
+       ggtitle(names(trtest)[i])+
+       theme(
+         axis.title.x=element_blank(),
+         axis.title.y=element_blank(),
+         axis.text.y=element_text(family="Times",face="bold.italic",colour="blue"),
+         axis.text.x=element_text(family="Times",face="bold.italic",colour="gray50"),
+         plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red")
+        )
+gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
+            geom_point(mapping=aes(col=trtest[[k]]),size=0.2)+guides(col=FALSE)+
+            geom_rect(mapping=aes(x=NULL,y=NULL,
+                                  xmin=datetime[1],xmax=datetime[length(datetime)],
+                                  ymin=trtest[[j]],ymax=trtest[[j]],fill=trtest[[k]]),alpha=1)+   
+            geom_line(mapping=aes(x=datetime,y=trtest[[j]]),col='gray60',lty=2)+
+            theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
+                  legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
+            labs(fill="Train / Test")       
+show(gplt)
+}
