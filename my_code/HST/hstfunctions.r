@@ -39,7 +39,7 @@ p <- somgrd %>%
            axis.title = element_blank(),
            legend.position = legendposition)+
            geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=5,col=col)+
-           geom_text_repel(data=sompts,aes(x,y,label=V),cex=textsize,fontface=4,col="gray20")
+           geom_text_repel(data=sompts,aes(x,y,label=V),cex=textsize,fontface=4)
 p
 }
 
