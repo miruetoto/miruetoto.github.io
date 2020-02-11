@@ -194,7 +194,7 @@ specplot<-function(gfftresult,title=""){
     specdf <- data.frame(y=fhatabs,x=lamb)
     library(ggplot2)
     spcplt <- ggplot(aes(x,y), data=specdf) + 
-            geom_segment(aes(x,y,xend=x,yend=y-y),lty=2) + 
+            geom_segment(aes(x,y,xend=x,yend=y-y)) + 
             geom_point(aes(x,y),size=1) + xlim(0,2)+
             xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\hat{f}(\\lambda)|$"))+ggtitle(TeX(title))
     spcplt
