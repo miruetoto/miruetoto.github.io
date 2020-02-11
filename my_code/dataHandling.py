@@ -421,7 +421,7 @@ def initpd(typ,n,p=1,vname=None):
 import rpy2
 import rpy2.robjects as ro
 #import rpy2.robjects.packages as rpkg
-from rpy2.robjects.packages import importr as library
+#from rpy2.robjects.packages import importr as library
 ro.r('library(devtools)')
 
 def p2r(A):
@@ -503,8 +503,5 @@ def r2p(A):
 
 def pull(r):
     return r2p(ro.globalenv[r])
-
-def rhelp(name):
-    print(utils.help(name))
 
 
