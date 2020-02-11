@@ -38,8 +38,8 @@ p <- somgrd %>%
            axis.text = element_blank(),
            axis.title = element_blank(),
            legend.position = legendposition)+
-           geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=3,col=col)+
-           geom_text_repel(data=sompts,aes(x,y,label=V),cex=textsize)
+           geom_point(data = sompts,aes(x,y),alpha = 0.8,cex=5,col=col)+
+           geom_text_repel(data=sompts,aes(x,y,label=V),cex=textsize,fontface=4,col="gray20")
 p
 }
 
@@ -155,7 +155,7 @@ vis4mcu3d<-function(V,W,f,hh,maxtau){
          ,expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],add=TRUE,
          col="gray60",lwd=exp(1+Wvec[arrowindex])*3,lty=1,alpha=0.1)
     ## labeling
-    text3D(gx,gy,gz+100,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6)
+    text3D(gx,gy,gz+100,label=V,add=TRUE,cex=0.8,font=3,adj=0.5,alpha=0.6,phi=40,theta=40)
     #dev.off()   
 }
 
