@@ -250,3 +250,46 @@ eigenplot<-function(gfftresult,title=""){
             xlab("")+ylab(TeX("$\\lambda$"))+ggtitle(TeX(title))
     egnplt
 }
+
+vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
+    library(fields)
+    sdist<-rdist(hh[,1:(maxtau+1)])
+    ## pca
+    pcarslt<-princomp(sdist)
+    gx<- pcarslt$scores[,1]
+    gy<- pcarslt$scores[,2]
+    gz<-f     
+    tempdf<-data.frame("x"=gx,"y"=gy,"z"=fsmooth)
+    library(MBA)
+    srfc<-mba.surf(tempdf,200,200,extend=FALSE,sp=TRUE)$xyz.est
+    library(plot3D)
+    fnorm<-(f-min(f))/(max(f)-min(f))
+    min_temp<-min(min(f),min(srfc$z[is.na(srfc$z)==FALSE]))
+    max_temp<-max(max(f),max(srfc$z[is.na(srfc$z)==FALSE]))
+    ftemp<-fnorm*(max_temp-min_temp)+min_temp
+    par(mar=c(2,2,2,2))    
+    scatter3D(gx,gy,gz,colvar=ftemp,
+              type='h',pch=19,bty='g',ticktype="detailed",
+              xlab="",ylab="",zlab="",
+              xlim=c(min(gx)*1.5,max(gx)*1.5),ylim=c(min(gy)*1.5,max(gy)*1.5),zlim=c(0,max(gz)),
+              theta=10,phi=20,adj=0.1,d=3,
+              lwd=2,lty=3,cex=1,
+              colkey=FALSE,grid=TRUE,
+              surf=list(x=matrix(srfc$x),y=matrix(srfc$y),z=matrix(srfc$z),alpha=0.5,facets=NA,lwd=0.3))
+    # draw Edg 
+    expgx<-expand.grid(gx,gx)
+    expgy<-expand.grid(gy,gy)
+    expgz<-expgx[,1]*0
+    Wvec<-as.vector(W)
+    arrowcol<-gray(exp(Wvec+1)/(1+exp(Wvec+1)))
+    arrowindex<-which(Wvec>0)
+    arrows3D(expgx[,1][arrowindex],expgy[,1][arrowindex],expgz[arrowindex],
+             expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],
+             add=TRUE,
+             col=arrowcol,lwd=0.6,lty=3,code=1,angle=30,alpha=0.5)
+    textcol<- ((gz-fsmooth)>0)+((gz-fsmooth)<0)*2
+    redindex<-(gz-fsmooth)<0
+    textsize<- log(abs(gz-fsmooth)^3)/16
+    text3D(gx,gy,gz+50,label=V,add=TRUE,cex=textsize,font=4,adj=0.5,col=textcol,alpha=0.8)
+}
+
