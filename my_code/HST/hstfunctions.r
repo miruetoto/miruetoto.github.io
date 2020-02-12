@@ -272,10 +272,10 @@ vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
               type='h',pch=19,bty='g',ticktype="detailed",
               xlab="",ylab="",zlab="",
               xlim=c(min(gx)*1.5,max(gx)*1.5),ylim=c(min(gy)*1.5,max(gy)*1.5),zlim=c(0,max(gz)),
-              theta=10,phi=20,adj=0.1,d=3,
+              theta=10,phi=15,adj=0.1,d=3,
               lwd=2,lty=3,cex=1,
               colkey=FALSE,grid=TRUE,
-              surf=list(x=matrix(srfc$x),y=matrix(srfc$y),z=matrix(srfc$z),alpha=0.5,facets=NA,lwd=0.3))
+              surf=list(x=matrix(srfc$x),y=matrix(srfc$y),z=matrix(srfc$z),alpha=0.1,facets=NA,lwd=0.3))
     # draw Edg 
     expgx<-expand.grid(gx,gx)
     expgy<-expand.grid(gy,gy)
@@ -289,7 +289,8 @@ vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
              col=arrowcol,lwd=0.6,lty=3,code=1,angle=30,alpha=0.5)
     textcol<- ((gz-fsmooth)>0)+((gz-fsmooth)<0)*2
     redindex<-(gz-fsmooth)<0
-    textsize<- log(abs(gz-fsmooth)^3)/16
-    text3D(gx,gy,gz+50,label=V,add=TRUE,cex=textsize,font=4,adj=0.5,col=textcol,alpha=0.8)
+    textsize<- log(abs(gz-fsmooth)^3)/20
+    text3D(gx,gy,gz+50,label=V,add=TRUE,cex=textsize,font=4,adj=0.5,col=textcol,alpha=0.6)
 }
+
 

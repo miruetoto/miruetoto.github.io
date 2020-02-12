@@ -422,7 +422,7 @@ import rpy2
 import rpy2.robjects as ro
 #import rpy2.robjects.packages as rpkg
 #from rpy2.robjects.packages import importr as library
-ro.r('library(devtools)')
+#ro.r('library(devtools)')
 
 def p2r(A):
     from rpy2.robjects.vectors import FloatVector 
