@@ -275,7 +275,7 @@ vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
               theta=10,phi=15,adj=0.1,d=3,
               lwd=2,lty=3,cex=1,
               colkey=FALSE,grid=TRUE,
-              surf=list(x=matrix(srfc$x),y=matrix(srfc$y),z=matrix(srfc$z),alpha=0.1,facets=NA,lwd=0.3))
+              surf=list(x=srfc$x,y=srfc$y,z=srfc$z,alpha=0.1,facets=NA,lwd=0.3))
     # draw Edg 
     expgx<-expand.grid(gx,gx)
     expgy<-expand.grid(gy,gy)
