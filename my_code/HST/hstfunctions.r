@@ -178,26 +178,26 @@ gfft<-function(f,W){
     L<-D-W
     L_tilde<-D_rootinv%*%L%*%D_rootinv
     svdrslt<-svd(L_tilde)
-    lamb<-svdrslt$d
-    Lamb<-diag(lamb)
+    λ<-(svdrslt$d)^2
+    Λ<-diag(λ)
     U<-svdrslt$u; 
     V<-svdrslt$v; 
-    Psi<-V
+    Ψ<-V
     ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
-    fhat<-as.vector(Psi%*%f) ## fhat is Fourier Transform of f. 
-    list(lamb=lamb,fhat=fhat)
+    fhat<-as.vector(Ψ%*%f) ## fhat is Fourier Transform of f. 
+    list(λ=λ,fhat=fhat)
 }
 
 specplot<-function(gfftresult,title=""){
     library(latex2exp)
-    lamb<-gfftresult[[1]]
+    λ<-gfftresult[[1]]
     fhatabs<-abs(gfftresult[[2]])
-    specdf <- data.frame(y=fhatabs,x=lamb)
+    specdf <- data.frame(y=fhatabs,x=λ)
     library(ggplot2)
     spcplt <- ggplot(aes(x,y), data=specdf) + 
             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
             geom_point(aes(x,y),size=1) + xlim(0,2)+
-            xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\hat{f}(\\lambda)|$"))+ggtitle(TeX(title))
+            xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\bar{f}(\\lambda)|$"))+ggtitle(TeX(title))
     spcplt
 }
 
