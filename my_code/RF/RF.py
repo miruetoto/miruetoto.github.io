@@ -30,7 +30,7 @@ def getbeta(X,Y):
 #     return rtn
 
 def tidyrx(rxdata):
-    push(rx,"rx")
+    push(rxdata,"rx")
     ro.r('names(rx)<-str_replace_all(names(rx),"[.]","_")')
     ro.r('lovevname<-c("F_temp_", "R_temp_", "RT_temp_", "f_fan_power_on","r_fan_power_on", "F_FAN_DUTY", "R_FAN_DUTY","X2eva_ctrl__state__4", "R_DOOR", "F_DOOR","compressor_cooling_power")')
     ro.r('data_rx<-select(rx,lovevname)')  
