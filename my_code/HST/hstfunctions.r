@@ -170,6 +170,7 @@ degree_rootinv<-function(W){
     drootinv[d>0.01]<-sqrt(1/d[d>0.01])
     diag(drootinv)
 }
+
 gfft<-function(f,W){
     n<-length(f)
     D<-degree(W)
@@ -234,10 +235,10 @@ Sf<-function(f,W,η=0.01){
     dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
     for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
     J0<-which(lamb<η)
-    J1<-which(abs(lamb-1)<η)
-    Jproj<-c(J0,J1)
-    Sf<-apply(dcmp[,Jproj],1,sum)
-    list(Sf,Jproj,lamb)
+    #J1<-which(abs(lamb-1)<η)
+    #Jproj<-c(J0,J1)
+    Sf<-apply(dcmp[,J0],1,sum)
+    list(Sf,J0,lamb)
 }
 
 eigenplot<-function(gfftresult,title=""){
