@@ -223,7 +223,7 @@ decompose<-function(f,W){
     for(k in 1:n){
         compoents[[k]]<-as.vector(Ψ[,k]%*%t([,k])%*%f)
     } 
-    list(lamb=lamb,decomp=dcmp)
+    list(lamb=lamb,decomp=compoents)
 }
 
 Sf<-function(f,W,η=0.01){
