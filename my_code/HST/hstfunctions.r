@@ -182,16 +182,16 @@ gfft<-function(f,W){
     Λ<-diag(λ)
     U<-svdrslt$u; 
     V<-svdrslt$v; 
-    Ψ<-V
+    Ψ<-V; # or Ψ<-U
     ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
-    fhat<-as.vector(Ψ%*%f) ## fhat is Fourier Transform of f. 
-    list(λ=λ,fhat=fhat)
+    fbar<-as.vector(Ψ%*%f) ## fhat is Fourier Transform of f. 
+    list(λ=λ,Ψ=Ψ,fbar=fbar)
 }
 
 specplot<-function(gfftresult,title=""){
     library(latex2exp)
-    λ<-gfftresult[[1]]
-    fhatabs<-abs(gfftresult[[2]])
+    λ<-gfftresult$λ
+    fhatabs<-abs(gfftresult$fbar)
     specdf <- data.frame(y=fhatabs,x=λ)
     library(ggplot2)
     spcplt <- ggplot(aes(x,y), data=specdf) + 
