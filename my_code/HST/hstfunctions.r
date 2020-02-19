@@ -188,6 +188,17 @@ gfft<-function(f,W){
     list(λ=λ,Ψ=Ψ,fbar=fbar)
 }
 
+eigenplot<-function(gfftresult,title=""){
+    library(latex2exp)
+    λ<-gfftresult$λ
+    egndf <- data.frame(y=λ,x=(length(λ)-1):0)
+    library(ggplot2)
+    egnplt <- ggplot(aes(x,y), data=egndf) + 
+            geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
+            xlab("")+ylab(TeX("$\\lambda$"))+ggtitle(TeX(title))
+    egnplt
+}
+
 specplot<-function(gfftresult,title=""){
     library(latex2exp)
     λ<-gfftresult$λ
@@ -202,20 +213,16 @@ specplot<-function(gfftresult,title=""){
 }
 
 decompose<-function(f,W){
-    n<-length(f)
-    D<-degree(W)
-    D_rootinv<-degree_rootinv(W)
-    L<-D-W
-    L_tilde<-D_rootinv%*%L%*%D_rootinv
-    svdrslt<-svd(L_tilde)
-    lamb<-svdrslt$d
-    
-    U<-svdrslt$u; 
-    V<-svdrslt$v; 
-    Psi<-V
-    ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
-    dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
-    for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
+    gfftrslt<-gfft(f,W)
+    eigenplt<-eigenplot(gfftrslt)+ylim(0,2)
+    show(engplt)
+    specplt<-specplot(gfftrslt)
+    show(specplt)
+    compoents<-list()
+    Ψ<-gfftrslt$Ψ
+    for(k in 1:n){
+        compoents[[k]]<-as.vector(Ψ[,k]%*%t([,k])%*%f)
+    } 
     list(lamb=lamb,decomp=dcmp)
 }
 
@@ -241,57 +248,46 @@ Sf<-function(f,W,η=0.01){
     list(Sf,J0,lamb)
 }
 
-eigenplot<-function(gfftresult,title=""){
-    library(latex2exp)
-    λ<-gfftresult$λ
-    egndf <- data.frame(y=λ,x=(length(λ)-1):0)
-    library(ggplot2)
-    egnplt <- ggplot(aes(x,y), data=egndf) + 
-            geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
-            xlab("")+ylab(TeX("$\\lambda$"))+ggtitle(TeX(title))
-    egnplt
-}
-
-vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
-    library(fields)
-    sdist<-rdist(hh[,1:(maxtau+1)])
-    ## pca
-    pcarslt<-princomp(sdist)
-    gx<- pcarslt$scores[,1]
-    gy<- pcarslt$scores[,2]
-    gz<-f     
-    tempdf<-data.frame("x"=gx,"y"=gy,"z"=fsmooth)
-    library(MBA)
-    srfc<-mba.surf(tempdf,200,200,extend=FALSE,sp=TRUE)$xyz.est
-    library(plot3D)
-    fnorm<-(f-min(f))/(max(f)-min(f))
-    min_temp<-min(min(f),min(srfc$z[is.na(srfc$z)==FALSE]))
-    max_temp<-max(max(f),max(srfc$z[is.na(srfc$z)==FALSE]))
-    ftemp<-fnorm*(max_temp-min_temp)+min_temp
-    par(mar=c(2,2,2,2))    
-    scatter3D(gx,gy,gz,colvar=ftemp,
-              type='h',pch=19,bty='g',ticktype="detailed",
-              xlab="",ylab="",zlab="",
-              xlim=c(min(gx)*1.5,max(gx)*1.5),ylim=c(min(gy)*1.5,max(gy)*1.5),zlim=c(0,max(gz)),
-              theta=10,phi=15,adj=0.1,d=3,
-              lwd=2,lty=3,cex=1,
-              colkey=FALSE,grid=TRUE,
-              surf=list(x=srfc$x,y=srfc$y,z=srfc$z,alpha=0.1,facets=NA,lwd=0.3))
-    # draw Edg 
-    expgx<-expand.grid(gx,gx)
-    expgy<-expand.grid(gy,gy)
-    expgz<-expgx[,1]*0
-    Wvec<-as.vector(W)
-    arrowcol<-gray(exp(Wvec+1)/(1+exp(Wvec+1)))
-    arrowindex<-which(Wvec>0)
-    arrows3D(expgx[,1][arrowindex],expgy[,1][arrowindex],expgz[arrowindex],
-             expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],
-             add=TRUE,
-             col=arrowcol,lwd=0.6,lty=3,code=1,angle=30,alpha=0.5)
-    textcol<- ((gz-fsmooth)>0)+((gz-fsmooth)<0)*2
-    redindex<-(gz-fsmooth)<0
-    textsize<- log(abs(gz-fsmooth)^3)/20
-    text3D(gx,gy,gz+50,label=V,add=TRUE,cex=textsize,font=4,adj=0.5,col=textcol,alpha=0.6)
-}
+# vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
+#     library(fields)
+#     sdist<-rdist(hh[,1:(maxtau+1)])
+#     ## pca
+#     pcarslt<-princomp(sdist)
+#     gx<- pcarslt$scores[,1]
+#     gy<- pcarslt$scores[,2]
+#     gz<-f     
+#     tempdf<-data.frame("x"=gx,"y"=gy,"z"=fsmooth)
+#     library(MBA)
+#     srfc<-mba.surf(tempdf,200,200,extend=FALSE,sp=TRUE)$xyz.est
+#     library(plot3D)
+#     fnorm<-(f-min(f))/(max(f)-min(f))
+#     min_temp<-min(min(f),min(srfc$z[is.na(srfc$z)==FALSE]))
+#     max_temp<-max(max(f),max(srfc$z[is.na(srfc$z)==FALSE]))
+#     ftemp<-fnorm*(max_temp-min_temp)+min_temp
+#     par(mar=c(2,2,2,2))    
+#     scatter3D(gx,gy,gz,colvar=ftemp,
+#               type='h',pch=19,bty='g',ticktype="detailed",
+#               xlab="",ylab="",zlab="",
+#               xlim=c(min(gx)*1.5,max(gx)*1.5),ylim=c(min(gy)*1.5,max(gy)*1.5),zlim=c(0,max(gz)),
+#               theta=10,phi=15,adj=0.1,d=3,
+#               lwd=2,lty=3,cex=1,
+#               colkey=FALSE,grid=TRUE,
+#               surf=list(x=srfc$x,y=srfc$y,z=srfc$z,alpha=0.1,facets=NA,lwd=0.3))
+#     # draw Edg 
+#     expgx<-expand.grid(gx,gx)
+#     expgy<-expand.grid(gy,gy)
+#     expgz<-expgx[,1]*0
+#     Wvec<-as.vector(W)
+#     arrowcol<-gray(exp(Wvec+1)/(1+exp(Wvec+1)))
+#     arrowindex<-which(Wvec>0)
+#     arrows3D(expgx[,1][arrowindex],expgy[,1][arrowindex],expgz[arrowindex],
+#              expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],
+#              add=TRUE,
+#              col=arrowcol,lwd=0.6,lty=3,code=1,angle=30,alpha=0.5)
+#     textcol<- ((gz-fsmooth)>0)+((gz-fsmooth)<0)*2
+#     redindex<-(gz-fsmooth)<0
+#     textsize<- log(abs(gz-fsmooth)^3)/20
+#     text3D(gx,gy,gz+50,label=V,add=TRUE,cex=textsize,font=4,adj=0.5,col=textcol,alpha=0.6)
+# }
 
 
