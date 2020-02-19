@@ -163,3 +163,25 @@ def smooth_spline(npmat):
     push(npmat,"npmat")
     ro.r('sy<-npmat*0; for(j in 1:dim(npmat)[2]) sy[,j]<-smooth.spline(npmat[,j])$y')
     return pull("sy")
+
+def parse_data(nas_id, nas_pw, date, comm, place):
+    template_column = ['datetime','rx_err','F step','R step','F ctrl. temp.','R ctrl. temp.','R-DIFF','F-DIFF','F temp.','R temp.','F dfr. temp.','R dfr. temp.',
+              'RT temp.','humidity','F_state','R_state','(guc  exterior rt zone<<4)|(guc  humdity compensation value zone)','f fan power on','r fan power on',
+              'c fan power on','hygiene fan power on','F FAN DUTY','R FAN DUTY','C FAN DUTY','F-FAN RPM','R-FAN RPM','C-FAN RPM','2eva ctrl. state<<4',
+              '3W V/V STEP','R DOOR','F DOOR','R weak r load against flag','R weak r load against time','R weak r load against reload protection','R strong r load against flag',
+              'R strong r load against time','R strong r load reload protection','F load against flag',
+              'F load against time','heater filler power on','heater home bar power on','heater utill power on','heater drain power on','heater instaview power on',
+              'heater F dfr. power on','heater R dfr. power on','F timer 1min accu.','F timer 1min changeable accu.','blackbox door r counter 5min','blackbox door r time 5min',
+              'blackbox door f counter 5min','blackbox door f time 5min','2eva ctrl. 1sec lqc operation time','blackbox 60sec titmer',
+              'compressor power on','compressor cooling power','COMP MODE','COMP FREQ','COMP SHIFT','compressor status','compressor power','compressor dc link',
+              'C O M P S T R O K E','C O M P P H A S E','C O M P C U R R E N T','C O M P K G A S','C O M P P W M','C O M P X T D C','C O M P O B J E C T I V E',
+              'blackbox f compressor continuity time min','(gun F titmer 1sec compressor force off/60)','gauc compressor tx data[0]','gauc compressor tx data[1]',
+              'gauc compressor tx data[2]','(guc  F operation mode<<4)|(guc  R operation mode)','compressor leak high err','compressor leak low err',
+              'comp_leak_low_state','comp_leak_high_state','f sensor error','r1 sensor error','rt sensor error','humidity sensor error','rpm f error','rpm r error',
+              'rpm c error','F dfr. Error','R dfr. error','F dfr. sensor error','F dfr. sensor error','defrost']
+    url = 'http://{nas_id}:{nas_pw}@10.178.134.156:/20-Project-Fridge/{place}/logs/{date}/log_{comm}Data_{date}.csv'.format(nas_id=nas_id, nas_pw=nas_pw, comm=comm, date=str(date), place=place)
+    raw_data = requests.get(url, verify=False)
+    pd_data = pd.read_csv(StringIO(raw_data.text))
+    pd_data.columns = template_column
+    push(pd_data, 'data_{}'.format(date))
+    return pd_data
