@@ -243,8 +243,8 @@ Sf<-function(f,W,η=0.01){
 
 eigenplot<-function(gfftresult,title=""){
     library(latex2exp)
-    lamb<-gfftresult[[1]]
-    egndf <- data.frame(y=lamb,x=0:(length(lamb)-1))
+    λ<-gfftresult$λ
+    egndf <- data.frame(y=λ,x=0:(length(lamb)-1))
     library(ggplot2)
     egnplt <- ggplot(aes(x,y), data=egndf) + 
             geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
