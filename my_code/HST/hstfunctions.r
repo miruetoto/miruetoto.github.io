@@ -178,7 +178,7 @@ gfft<-function(f,W){
     L<-D-W
     L_tilde<-D_rootinv%*%L%*%D_rootinv
     svdrslt<-svd(L_tilde)
-    λ<-(svdrslt$d)^2
+    λ<-svdrslt$d
     Λ<-diag(λ)
     U<-svdrslt$u; 
     V<-svdrslt$v; 
