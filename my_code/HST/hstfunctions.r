@@ -221,7 +221,7 @@ decompose<-function(f,W){
     compoents<-list()
     Ψ<-gfftrslt$Ψ
     for(k in 1:n){
-        compoents[[k]]<-as.vector(Ψ[,k]%*%t([,k])%*%f)
+        compoents[[k]]<-as.vector(Ψ[,k]%*%t(Ψ[,k])%*%f)
     } 
     list(lamb=lamb,decomp=compoents)
 }
