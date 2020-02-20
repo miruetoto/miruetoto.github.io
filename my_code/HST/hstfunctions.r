@@ -226,27 +226,27 @@ decompose<-function(f,W){
     list(lamb=lamb,decomp=compoents)
 }
 
-Sf<-function(f,W,η=0.01){
-    n<-length(f)
-    D<-degree(W)
-    D_rootinv<-degree_rootinv(W)
-    L<-D-W
-    L_tilde<-D_rootinv%*%L%*%D_rootinv
-    svdrslt<-svd(L_tilde)
-    lamb<-svdrslt$d
+# Sf<-function(f,W,η=0.01){
+#     n<-length(f)
+#     D<-degree(W)
+#     D_rootinv<-degree_rootinv(W)
+#     L<-D-W
+#     L_tilde<-D_rootinv%*%L%*%D_rootinv
+#     svdrslt<-svd(L_tilde)
+#     lamb<-svdrslt$d
     
-    U<-svdrslt$u; 
-    V<-svdrslt$v; 
-    Psi<-V
-    ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
-    dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
-    for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
-    J0<-which(lamb<η)
-    #J1<-which(abs(lamb-1)<η)
-    #Jproj<-c(J0,J1)
-    Sf<-apply(dcmp[,J0],1,sum)
-    list(Sf,J0,lamb)
-}
+#     U<-svdrslt$u; 
+#     V<-svdrslt$v; 
+#     Psi<-V
+#     ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
+#     dcmp<-rep(0,n*n);dim(dcmp)<-c(n,n)
+#     for(k in 1:n) dcmp[,k]<-as.vector(Psi[,k]%*%t(Psi[,k])%*%f)
+#     J0<-which(lamb<η)
+#     #J1<-which(abs(lamb-1)<η)
+#     #Jproj<-c(J0,J1)
+#     Sf<-apply(dcmp[,J0],1,sum)
+#     list(Sf,J0,lamb)
+# }
 
 # vis4mcusmooth<-function(V,W,f,fsmooth,hh,maxtau){
 #     library(fields)
