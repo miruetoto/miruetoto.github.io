@@ -204,8 +204,9 @@ def estimatingtemp(X):
     #βhat=np.matrix(pd.read_csv("betahat.csv"))
     Xtilde=slagging(X,50,3)
     ΔY=Xtilde*βhat
-    ΔY[:,0]=ΔY[:,0]*1.5
-    ΔY[:,1]=ΔY[:,1]*2
+    # ΔY[:,0]=ΔY[:,0]*1.5
+    # ΔY[:,1]=ΔY[:,1]*2
     ΔY=ΔY-apply(ΔY,'np.mean')
     Yhat = np.cumsum(ΔY,axis=0)[:,:]
     return Yhat    
+    
