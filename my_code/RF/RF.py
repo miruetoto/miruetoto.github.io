@@ -165,6 +165,10 @@ def smooth_spline(npmat):
     return pull("sy")
 
 def parse_data(nas_id, nas_pw, date, comm, place):
+    import os
+    from io import StringIO
+    import getpass
+    import subprocess
     template_column = ['datetime','rx_err','F step','R step','F ctrl. temp.','R ctrl. temp.','R-DIFF','F-DIFF','F temp.','R temp.','F dfr. temp.','R dfr. temp.',
               'RT temp.','humidity','F_state','R_state','(guc  exterior rt zone<<4)|(guc  humdity compensation value zone)','f fan power on','r fan power on',
               'c fan power on','hygiene fan power on','F FAN DUTY','R FAN DUTY','C FAN DUTY','F-FAN RPM','R-FAN RPM','C-FAN RPM','2eva ctrl. state<<4',
@@ -185,3 +189,20 @@ def parse_data(nas_id, nas_pw, date, comm, place):
     pd_data.columns = template_column
     push(pd_data, 'data_{}'.format(date))
     return pd_data
+
+def estimatingtemp(X):
+    import os
+    from io import StringIO
+    import getpass
+    import subprocess
+    
+    nas_id = 'guebin'
+    nas_pw = '123qwe'
+    url ='http://{}:{}@10.178.134.156:/20-Project-Fridge/GuebinCoef/betahat.csv'.format(nas_id, nas_pw)
+    raw_data = requests.get(url, verify=False)
+    βhat=np.matrix(pd.read_csv(StringIO(raw_data.text)))
+    #βhat=np.matrix(pd.read_csv("betahat.csv"))
+    Xtilde=slagging(X,50,3)
+    ΔY=Xtilde*βhat
+    Yhat = np.cumsum(ΔY,axis=0)[:,:]
+    return Yhat    
