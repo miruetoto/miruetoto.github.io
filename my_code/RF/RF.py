@@ -195,18 +195,17 @@ def estimatingtemp(X):
     from io import StringIO
     import getpass
     import subprocess
-    
     nas_id = 'guebin'
     nas_pw = '123qwe'
     url ='http://{}:{}@10.178.134.156:/20-Project-Fridge/GuebinCoef/betahat.csv'.format(nas_id, nas_pw)
     raw_data = requests.get(url, verify=False)
     βhat=np.matrix(pd.read_csv(StringIO(raw_data.text)))
     #βhat=np.matrix(pd.read_csv("betahat.csv"))
-    Xtilde=slagging(X,50,3)
+    Xtilde=slagging(X,10,1)
     ΔY=Xtilde*βhat
-    # ΔY[:,0]=ΔY[:,0]*1.5
-    # ΔY[:,1]=ΔY[:,1]*2
-    ΔY=ΔY-apply(ΔY,'np.mean')
     Yhat = np.cumsum(ΔY,axis=0)[:,:]
+    trnd=Yhat*0+1
+    trnd[:,1]=a2c(cc(1,len(Yhat)))
+    trbeta=getbeta(trnd,Yhat)
+    Yhat=Yhat-trnd*trbeta
     return Yhat    
-    
