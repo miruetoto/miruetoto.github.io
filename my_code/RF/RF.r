@@ -344,7 +344,7 @@ gplt<-gplt+ geom_line(col="gray60",lwd=0.5)+
             geom_rect(mapping=aes(x=NULL,y=NULL,
                                   xmin=datetime[1],xmax=datetime[length(datetime)],
                                   ymin=trtest[[j]],ymax=trtest[[j]],fill=trtest[[k]]),alpha=1)+   
-            geom_line(mapping=aes(x=datetime,y=trtest[[j]]),col='gray60',lty=2)+
+            geom_line(mapping=aes(x=datetime,y=trtest[[j]]),col=3,lwd=3,alpha=0.5)+
             theme(legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
                   legend.text=element_text(face="italic",family="Times",colour="blue",size=10))+
             labs(fill="Train / Test")       
