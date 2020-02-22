@@ -1,6 +1,6 @@
 library(stringr)
 formulatingprob_stackedwild_1to29<-function(data,presentindex){
-    presentstate<-data[presentindex,2:4]
+    presentstate<-data[presentindex,1:3]
     paststate<-presentstate*0
     ## case 1 
     paststate$finishedspin<-presentstate$finishedspin-1
@@ -84,7 +84,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
 
 
 formulatingprob_stackedwild30<-function(data,presentindex){
-    presentstate<-data[presentindex,2:4]
+    presentstate<-data[presentindex,1:3]
     paststate<-presentstate*0
     ## case 1 
     paststate$finishedspin<-presentstate$finishedspin-1
@@ -244,7 +244,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
 }
 
 formulatingprob<-function(data,presentindex){
-    presentstate<-data[presentindex,2:4]
+    presentstate<-data[presentindex,1:3]
     if(presentstate$stackedwild == 30){
         rtn<-formulatingprob_stackedwild30(data,presentindex)
     }else{
@@ -287,7 +287,7 @@ formulatingprob<-function(data,presentindex){
 # }
 
 # formulatingprob_stackedwild_1to29<-function(data,presentindex){
-#     presentstate<-data[presentindex,2:4]
+#     presentstate<-data[presentindex,1:3]
 #     actions<-c("DC39","DC40","DC41","DC42","DC43","DC45","DC48")
 #     for(i in 1:length(actions)){
 #         paststate<-pasting(presentstate,actions[i])
