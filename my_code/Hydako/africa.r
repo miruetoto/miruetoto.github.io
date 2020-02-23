@@ -154,7 +154,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     }
     ## case 7 
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-4
+    paststate$remainedspin<-presentstate$remainedspin-2
     paststate$stackedwild<-29
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
