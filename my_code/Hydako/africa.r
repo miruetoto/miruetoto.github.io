@@ -9,7 +9,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC39"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -20,7 +20,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC40"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -31,7 +31,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC41"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -42,7 +42,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC42"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -53,7 +53,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -64,7 +64,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC45"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -75,7 +75,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     action<-"DC48"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -93,7 +93,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC39"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -104,7 +104,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC40"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -115,7 +115,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC41"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -126,7 +126,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC42"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -137,7 +137,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC42"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -148,7 +148,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -159,7 +159,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -170,7 +170,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC45"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -181,7 +181,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC45"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -192,7 +192,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC45"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -203,7 +203,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC48"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -214,7 +214,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC48"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -225,7 +225,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC48"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -236,7 +236,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     action<-"DC48"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
     if (length(pastindex)>0){
-        if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+        if(paststate$remainedspin>0){
             data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",action)
         }
     }
@@ -293,7 +293,7 @@ formulatingprob<-function(data,presentindex){
 #         paststate<-pasting(presentstate,actions[i])
 #         pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
 #         if (length(pastindex)>0){
-#             if(paststate$remainedspin>0 & presentstate$remainedspin>0){
+#             if(paststate$remainedspin>0){
 #                 data$prob[presentindex]<-str_c(data$prob[presentindex],"+",data$stateindex[pastindex],"*",actions[i])
 #             }
 #         }
