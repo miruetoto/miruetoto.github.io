@@ -15,7 +15,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     }
     ## case 2
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-3
+    paststate$remainedspin<-presentstate$remainedspin-2
     paststate$stackedwild<-presentstate$stackedwild
     action<-"DC40"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
@@ -26,7 +26,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     }
     ## case 3
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-5
+    paststate$remainedspin<-presentstate$remainedspin-4
     paststate$stackedwild<-presentstate$stackedwild
     action<-"DC41"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
@@ -48,7 +48,7 @@ formulatingprob_stackedwild_1to29<-function(data,presentindex){
     }
     ## case 5 
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-3
+    paststate$remainedspin<-presentstate$remainedspin-2
     paststate$stackedwild<-presentstate$stackedwild-1
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
@@ -99,7 +99,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     }
     ## case 2
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-3
+    paststate$remainedspin<-presentstate$remainedspin-2
     paststate$stackedwild<-30
     action<-"DC40"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
@@ -110,7 +110,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     }
     ## case 3
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-5
+    paststate$remainedspin<-presentstate$remainedspin-4
     paststate$stackedwild<-30
     action<-"DC41"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
@@ -143,7 +143,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     }
     ## case 6
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-3
+    paststate$remainedspin<-presentstate$remainedspin-2
     paststate$stackedwild<-30
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
@@ -154,7 +154,7 @@ formulatingprob_stackedwild30<-function(data,presentindex){
     }
     ## case 7 
     paststate$finishedspin<-presentstate$finishedspin-1
-    paststate$remainedspin<-presentstate$remainedspin-3
+    paststate$remainedspin<-presentstate$remainedspin-4
     paststate$stackedwild<-29
     action<-"DC43"
     pastindex<-which(data$finishedspin==paststate$finishedspin & data$remainedspin==paststate$remainedspin & data$stackedwild==paststate$stackedwild)
