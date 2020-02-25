@@ -220,6 +220,7 @@ decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
     specplt<-specplot(gfftrslt)
     show(specplt)
     components<-rep(0,n*n);dim(components)<-c(n,n); components<-as_tibble(components)
+    λinverse<-gfftrslt$λ[n:1]
     Ψ<-gfftrslt$Ψ
     n<-length(f)
     for(k in 1:n){
@@ -246,9 +247,9 @@ decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
     }
     names(components)<-1:n
     components$V<-V
-    components<-as_tibble(components)
-    rtn<-components %>% gather(1:n,key="eigenvector",value="value")
-    rtn$eigenvector<-parse_number(rtn$eigenvector)
+    rtn<-components %>% gather(1:n,key="eigenvectorindex",value="fhat")
+    rtn$eigenvectorindex <-parse_number(rtn$eigenvectorindex)
+    rtn$eigenvalue<-λinverse[rtn$eigenvectorindex]
     rtn
 }
 
