@@ -212,10 +212,8 @@ specplot<-function(gfftresult,title=""){
     spcplt
 }
 
-decompose<-function(f,W,V=1:length(f)){
+decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
     n<-length(f)
-    library(latex2exp)
-    library(stringr)
     gfftrslt<-gfft(f,W)
     eigenplt<-eigenplot(gfftrslt)+ylim(0,2)
     show(eigenplt)
@@ -231,22 +229,27 @@ decompose<-function(f,W,V=1:length(f)){
 #     for(k in 1:n){
 #         regcoef[[n-k+1]]<-as.vector(Ψ[,k]%*%t(Ψ[,k])%*%(f*0+1))
 #     }
-    componentsplt<-list()
-    for(k in 1:n){
-        fhat<-components[[k]]
-        textalpha<-abs(fhat)/max(abs(fhat))
-        textsize<-(textalpha/sd(textalpha)>1 & abs(fhat)>30)*2.0
-        componentsplt[[k]]<-ggplot(data.frame(V=V,fhat=fhat),aes(1:n,fhat))+
+    if(showingeigenvector==T){
+        componentsplt<-list()
+        for(k in 1:n){
+            fhat<-components[[k]]
+            textalpha<-abs(fhat)/max(abs(fhat))
+            textsize<-(textalpha/sd(textalpha)>1 & abs(fhat)>30)*2.0
+            componentsplt[[k]]<-ggplot(data.frame(V=V,fhat=fhat),aes(1:n,fhat))+
                             ylab("")+xlab("")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
                             geom_line(lty=2)+geom_point()+geom_hline(aes(yintercept=0),col=2,lty=3,lwd=0.5)+
                             #geom_label_repel(aes(label=1:n),fontface=4)+
                             geom_text_repel(aes(label=V),fontface=4,size=textsize,alpha=1)+
                             theme(axis.ticks.x=element_blank(),axis.text.x=element_blank())
-        show(componentsplt[[k]])
+            show(componentsplt[[k]])
+        }
     }
-    names(components)<-str_c("eigenvector_",1:n)
-    #components$V<-V
-    components
+    names(components)<-1:n
+    components$V<-V
+    components<-as_tibble(components)
+    rtn<-components %>% gather(1:n,key="eigenvector",value="value")
+    rtn$eigenvector<-parse_number(rtn$eigenvector)
+    rtn
 }
 
 # Sf<-function(f,W,η=0.01){
