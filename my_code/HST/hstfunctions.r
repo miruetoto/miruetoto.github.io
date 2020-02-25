@@ -191,7 +191,7 @@ gfft<-function(f,W){
 eigenplot<-function(gfftresult,title=""){
     library(latex2exp)
     λ<-gfftresult$λ
-    egndf <- data.frame(y=λ,x=(length(λ)-1):0)
+    egndf <- data.frame(y=λ,x=(length(λ)):1)
     library(ggplot2)
     egnplt <- ggplot(aes(x,y), data=egndf) + 
             geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
