@@ -241,7 +241,7 @@ decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
                             geom_line(lty=2)+geom_point()+geom_hline(aes(yintercept=0),col=2,lty=3,lwd=0.5)+
                             #geom_label_repel(aes(label=1:n),fontface=4)+
                             geom_text_repel(aes(label=V),fontface=4,size=textsize,alpha=1)+
-                            theme(axis.ticks.x=element_blank(),axis.text.x=element_blank())
+                            theme(axis.ticks.x=element_blank(),axis.text.x=element_blank())+ggtitle(str_c("component ",k))
             show(componentsplt[[k]])
         }
     }
