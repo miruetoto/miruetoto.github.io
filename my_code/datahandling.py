@@ -153,12 +153,14 @@ def info(A):
 
 ### 배열의 차원을 출력해주는 함수 
 def dim(A):
-    try: A.shape
-    except AttributeError: 
-        try: len(A)
-        except TypeError: rtn=0
-        else: rtn=1
-    else: rtn=len(list(A.shape))
+    if type(A) == str: rtn=1
+    else:
+        try: A.shape
+        except AttributeError: 
+            try: len(A)
+            except TypeError: rtn=0
+            else: rtn=1
+        else: rtn=len(list(A.shape))
     return rtn
 
 ### (축소) n×1 이거나 1×n matrix 혹은 pd를 길이가 n인 np.array로 변환 
