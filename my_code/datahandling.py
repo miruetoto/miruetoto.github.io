@@ -153,7 +153,7 @@ def info(A):
 
 ### 배열의 차원을 출력해주는 함수 
 def dim(A):
-    if type(A) == str: rtn=1
+    if type(A) == str: rtn=0
     else:
         try: A.shape
         except AttributeError: 
