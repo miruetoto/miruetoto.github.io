@@ -197,7 +197,7 @@ def a2m(a):
         rtn=np.matrix(a).T
     else : 
         print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
-        rtn=A
+        rtn=a
     return rtn
 
 ## (축소) 1차원배열 -> 0차원배열 

@@ -161,15 +161,6 @@ def dim(A):
     else: rtn=len(list(A.shape))
     return rtn
 
-def dim(A):
-    try: A.shape
-    except AttributeError: 
-        try: len(A)
-        except TypeError: rtn=0
-        else: rtn=1
-    else: rtn=len(list(A.shape))
-    return rtn
-
 ### (축소) n×1 이거나 1×n matrix 혹은 pd를 길이가 n인 np.array로 변환 
 def m2a(A):
     if dim(A)==2: 
@@ -198,7 +189,7 @@ def a2m(a):
         rtn=np.matrix(a).T
     else : 
         print("The dimension of input matrix should be 1. But the dimension of your input is \""+str(dim(a))+"\". So we will not do any conversion.")
-        rtn=A
+        rtn=a
     return rtn
 
 ## (축소) 1차원배열 -> 0차원배열 
