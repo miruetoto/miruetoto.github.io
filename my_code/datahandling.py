@@ -427,55 +427,39 @@ import rpy2.robjects as ro
 ro.r('library(devtools)') ## to use source_url 
 ro.r('library(tidyverse)')
 
-def p2r(A):
-    from rpy2.robjects.vectors import FloatVector 
-    from rpy2.robjects.vectors import StrVector as s2r_temp
-
-    def a2r_temp(a):
-        if type(a) in {float,int,bool}: a=[a]
-        a=list(a)
-        rtn=FloatVector(a)
-        return rtn
-
-    def m2r_temp(A):
-        Acopy=A.T.copy()
-        nrow=Acopy.shape[0]
-        Acopy.shape=(np.prod(Acopy.shape),1)
-        rtn=ro.r.matrix(a2r_temp(m2a(Acopy)),ncol=nrow)
-        del(Acopy)
-        ro.globalenv['A']=rtn
-        return rtn
-
-    from rpy2.robjects import pandas2ri
-    from rpy2.robjects.conversion import localconverter
-
-    def pd2r_temp(A):
-        with localconverter(ro.default_converter + pandas2ri.converter):
-            rtn = ro.conversion.py2rpy(A)
-        return rtn
-    
-    if type(A)==type(initpd('0',n=2,p=2)):
-        rtn=pd2r_temp(A) 
-    elif type(A)==type(init('0',(2,2))):
-        rtn=m2r_temp(A)
-    elif type(A)==str: #  elif type(pd.DataFrame(np.matrix(A)).iloc[0,0])==str: 와 순서바꾸면 안됨
-        rtn=s2r_temp(A)        
-    elif type(pd.DataFrame(np.matrix(A)).iloc[0,0])==str:
-        rtn=s2r_temp(pd.DataFrame(np.matrix(A)).T.iloc[:,0])
-    else:
-        rtn=a2r_temp(A)
-    return rtn 
-
-def push(py,rname=None):
+def push(pydata,rname=None):
     import inspect
     def retrieve_name(var):
         for fi in reversed(inspect.stack()):
             names = [var_name for var_name, var_val in fi.frame.f_locals.items() if var_val is var]
             if len(names) > 0:
                 return names[0]
-    if rname==None: rname = retrieve_name(py)
-    ro.globalenv[rname]=p2r(py)
+    if rname==None: rname = retrieve_name(pydata)
+    pd.DataFrame([rname]).to_csv("temp.csv",index=False)
+    ro.r('rname<-read_csv("temp.csv")')
+    os.remove('temp.csv')
 
+    if dim(pydata)==0:
+        pd.DataFrame([pydata]).to_csv("rpy2temp.csv",index=False)
+        ro.r('rvalue<-read_csv("rpy2temp.csv")')
+        os.remove('rpy2temp.csv')
+        
+    elif dim(pydata)==1:
+        pd.DataFrame(list(pydata)).to_csv("rpy2temp.csv",index=False)
+        ro.r('rvalue<-read_csv("rpy2temp.csv")')
+        os.remove('rpy2temp.csv')
+
+    elif dim(pydata)==2:
+        pd.DataFrame(pydata).to_csv("rpy2temp.csv",index=False)
+        ro.r('rvalue<-read_csv("rpy2temp.csv")')
+        os.remove('rpy2temp.csv')
+        
+    else: print("The data in python is so strange. Thus I can't push it.")
+ 
+    ro.r('assign(rname[[1]],rvalue)')
+    ro.r('rm(rname)')
+    ro.r('rm(rvalue)')
+    
 def r2p(A):
     from rpy2.robjects import pandas2ri
     from rpy2.robjects.conversion import localconverter
