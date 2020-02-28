@@ -1,6 +1,15 @@
 import numpy as np
 import pandas as pd
 import os
+import warnings
+warnings.filterwarnings(action='ignore')
+
+def checkgpu():
+    ## 5. Check GPU
+    from keras import backend as K
+    print('GPU check 4 Keras: '+ str(K.tensorflow_backend._get_available_gpus()))
+    import torch
+    print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
 
 def cc(start=0,end=1,samplingFreq=1):
     rtn=m2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
