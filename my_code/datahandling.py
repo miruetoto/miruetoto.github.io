@@ -414,7 +414,9 @@ def initpd(typ,n,p=1,vname=None):
 ## Interaction between R and python 
 import rpy2
 import rpy2.robjects as ro
+## load r packages
 ro.r('library(devtools)') ## to use source_url 
+ro.r('library(tidyverse)')
 
 def p2r(A):
     from rpy2.robjects.vectors import FloatVector 
