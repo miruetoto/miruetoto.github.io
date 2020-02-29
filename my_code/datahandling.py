@@ -1,7 +1,10 @@
+############################## import useful python packages ##############################
 import numpy as np
 import pandas as pd
 import os
 import warnings
+
+############################## python system ##############################
 warnings.filterwarnings(action='ignore')
 
 def checkgpu():
@@ -11,6 +14,7 @@ def checkgpu():
     import torch
     print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
 
+############################## python functions ##############################
 def cc(start=0,end=1,samplingFreq=1):
     rtn=m2a(cbind(np.arange(start,end,1/samplingFreq),end).T)
     if start==int(start) and end==int(end) and samplingFreq==1: rtn=np.array(list(map(int,rtn)))
@@ -420,13 +424,15 @@ def initpd(typ,n,p=1,vname=None):
     return rtn   
 
 
-## Interaction between R and python 
+############################## Interaction between R and python ##############################
+
 import rpy2
 import rpy2.robjects as ro
-## load r packages
+############################## load useful r packages ##############################
 ro.r('library(devtools)') ## to use source_url 
 ro.r('library(tidyverse)')
 
+############################## rpy2 functions ##############################
 def p2r(A):
     from rpy2.robjects.vectors import FloatVector 
     from rpy2.robjects.vectors import StrVector as s2r_temp
