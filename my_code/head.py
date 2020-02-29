@@ -3,9 +3,10 @@
 
 ## 2. load useful functions
 import requests
-exec(requests.get('http://miruetoto.github.io/my_code/dataHandling.py').text)
+exec(requests.get('http://miruetoto.github.io/my_code/datahandling.py').text)
 exec(requests.get('http://miruetoto.github.io/my_code/plot.py').text)
-exec(requests.get('http://miruetoto.github.io/my_code/system.py').text)
+ro.r('source_url("http://miruetoto.github.io/my_code/datahandling.r")')
+ro.r('source_url("http://miruetoto.github.io/my_code/plot.r")')
 
 ## 3. Project Setting
 exec(requests.get('http://miruetoto.github.io/my_code/HST/hstfunctions.py').text)
