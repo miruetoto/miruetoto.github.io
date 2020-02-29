@@ -9,6 +9,6 @@ cleaningvname<-function(dfdata){
 }
 
 minmaxsacling<-function(vector,range=c(0,1)){
-	vectorshift<-vector-min(vector)+range[0]
-	vectorshift/max(vectorshift)*range[1]
+	vectorshift<-vector-min(vector)+range[1]
+	vectorshift/max(vectorshift)*range[2]
 }
