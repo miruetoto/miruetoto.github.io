@@ -203,11 +203,10 @@ specplot<-function(gfftresult,title=""){
     library(latex2exp)
     λ<-gfftresult$λ
     fhatabs<-abs(gfftresult$fbar)
-    specdf <- data.frame(y=fhatabs,x=λ)
-    library(ggplot2)
-    spcplt <- ggplot(aes(x,y), data=specdf) + 
+    spectb <- tibble(y=fhatabs,x=λ)
+    spcplt <- ggplot(aes(x,y), data=spectb) + 
             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
-            geom_point(aes(x,y),size=1) + xlim(0,2)+
+            geom_point(size=1) + xlim(0,2.1)+
             xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\bar{f}(\\lambda)|$"))+ggtitle(TeX(title))
     spcplt
 }
