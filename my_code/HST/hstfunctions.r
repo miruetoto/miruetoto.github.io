@@ -283,11 +283,12 @@ savedecomposeplots<-function(f,W,V=1:length(f)){
 
 shumanplot<-function(f,W){
     library(plot3D)
-    n=length(f)
+    n<-length(f)
+    z<-f
     xpred<-seq(min(x)-0.5,max(x)+0.5,length.out=50)
     ypred<-seq(min(y)-0.5,max(y)+0.5,length.out=50)
     xy<-expand.grid(x=xpred,y=ypred)
-    fit<-lm(z~x+y)
+    fit<-lm(~x+y)
     zpred <- matrix(predict(fit, newdata = xy),nrow = 50, ncol =50)*0
     fitpoints<-predict(fit)*0
     par(mar=c(0,0,0,0))
