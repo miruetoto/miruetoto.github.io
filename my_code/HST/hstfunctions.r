@@ -210,7 +210,6 @@ specplot<-function(gfftresult,title=""){
             xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\bar{f}(\\lambda)|$"))+ggtitle(TeX(title))
     spcplt
 }
-
 decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
     n<-length(f)
     gfftrslt<-gfft(f,W)
