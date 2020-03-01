@@ -283,6 +283,7 @@ savedecomposeplots<-function(f,W,V=1:length(f)){
 
 shumanplot<-function(f,W){
     library(plot3D)
+    n=length(f)
     xpred<-seq(min(x)-0.5,max(x)+0.5,length.out=50)
     ypred<-seq(min(y)-0.5,max(y)+0.5,length.out=50)
     xy<-expand.grid(x=xpred,y=ypred)
@@ -307,7 +308,7 @@ shumanplot<-function(f,W){
          expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],
          add=TRUE,
          lwd=1,lty=3,code=1,angle=0,alpha=0.5,col=1)
-    text3D(x,y,z+sign(z+0.00001)*0.5,label=1:9,add=TRUE,font=4,col=1)
+    text3D(x,y,z+sign(z+0.00001)*0.5,label=1:n,add=TRUE,font=4,col=1)
 }
 
 # Sf<-function(f,W,η=0.01){
