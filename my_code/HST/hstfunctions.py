@@ -230,7 +230,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     ax.ticklabel_format(style='sci', axis='x',scilimits=(0,0))
     ax.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
     ax.ticklabel_format(style='sci', axis='z',scilimits=(0,0))
-    ax.xaxis.set_major_locator(plt.MaxNLocator(8))
+    ax.xaxis.set_major_locator(plt.MaxNLocator(9))
     ax.yaxis.set_major_locator(plt.MaxNLocator(5))
     ax.zaxis.set_major_locator(plt.MaxNLocator(3))
     ax.w_xaxis.pane.fill = False
