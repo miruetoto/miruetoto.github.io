@@ -191,9 +191,9 @@ gfft<-function(f,W){
 eigenplot<-function(gfftresult,title=""){
     library(latex2exp)
     λ<-gfftresult$λ
-    egndf <- data.frame(y=λ,x=(length(λ)):1)
+    egntb <- tibble(y=λ,x=(length(λ)):1)
     library(ggplot2)
-    egnplt <- ggplot(aes(x,y), data=egndf) + theme_classic()
+    egnplt <- ggplot(aes(x,y), data=egntb) + theme_classic()+
             geom_point(aes(x,y),size=1) + geom_line(lty=3,col="gray60") +
             xlab("")+ylab(TeX("$\\lambda$"))+ggtitle(TeX(title))
     egnplt
@@ -204,7 +204,7 @@ specplot<-function(gfftresult,title=""){
     λ<-gfftresult$λ
     fhatabs<-abs(gfftresult$fbar)
     spectb <- tibble(y=fhatabs,x=λ)
-    spcplt <- ggplot(aes(x,y), data=spectb) + theme_classic()
+    spcplt <- ggplot(aes(x,y), data=spectb) + theme_classic()+
             geom_segment(aes(x,y,xend=x,yend=y-y)) + 
             geom_point(size=1) + xlim(0,2.1)+
             xlab(TeX("$\\lambda$"))+ylab(TeX("$|\\bar{f}(\\lambda)|$"))+ggtitle(TeX(title))
