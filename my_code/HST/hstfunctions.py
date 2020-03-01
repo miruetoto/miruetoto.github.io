@@ -214,7 +214,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     elif groupindex=='continuous': colors=cm.rainbow(np.linspace(1, 0, n))
     else: colors=np.array(groupindex)
     
-    figsize=(10*figsize[0],6*figsize[1])
+    figsize=(20*figsize[0],6*figsize[1])
     dpi=200*dpi
     cex=50*cex
     if text!=None: text=10*text
@@ -222,7 +222,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     
     Fig=plt.figure(figsize=figsize, dpi=dpi)  # Make figure object 
     ax=plt.axes(projection='3d') # define type of axes: 3d plot 
-    if title!=None: ax.set_title(title)
+    if title!=None: ax.text(0,0,zlim[1],title,fontsize=30)
     if xlim!=None: ax.set_xlim(xlim[0],xlim[1])
     if ylim!=None: ax.set_ylim(ylim[0],ylim[1])
     if zlim!=None: ax.set_zlim(zlim[0],zlim[1])
@@ -230,7 +230,12 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
     ax.ticklabel_format(style='sci', axis='x',scilimits=(0,0))
     ax.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
     ax.ticklabel_format(style='sci', axis='z',scilimits=(0,0))
-    
+    ax.xaxis.set_major_locator(plt.MaxNLocator(8))
+    ax.yaxis.set_major_locator(plt.MaxNLocator(5))
+    ax.zaxis.set_major_locator(plt.MaxNLocator(3))
+    ax.w_xaxis.pane.fill = False
+    ax.w_yaxis.pane.fill = False
+    ax.w_zaxis.pane.fill = False
     if prnt==True: print('labeling (observation-wise)')
     if nodename==None:
         for i in cc(1,n): 
@@ -243,17 +248,14 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
             if text!=None: ax.text(pcarslt[i-1,0],pcarslt[i-1,1],pcarslt[i-1,2],'%s'% (nodename[i-1]), size=text, zorder=1,color='k') # numbering index of nodes 
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.pdf')
+    rtn=Fig
     
 def pca4msvis3d(hstresult,τlist,
               nodename=None,groupindex=None,
               figname='temp',figsize=(1,1),dpi=1,cex=1,text=None,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
-    #dhhlist=τlist.copy()
     Σresult=τlist.copy()
-    hh=hhmat(hstrslt)
-    # dhh=np.asmatrix(hstresult[sprod('h',cc(0,τlist[0]))])
-    # sdistrslt0=L2dist(dhh)
-    # pca4vis3d(sdistrslt0,nodename=nodename,groupindex=groupindex,figname=figname+str(1),dpi=dpi,cex=cex,text=text,fade=fade)    
+    hh=hhmat(hstresult)
     M=len(τlist)
     from sklearn.decomposition import PCA 
     pca=PCA(n_components=3) # PCA start 
@@ -266,11 +268,11 @@ def pca4msvis3d(hstresult,τlist,
     for m in co(0,M):
         if prnt==True: print('\r'+str(m),'/'+str(M),sep='',end='')
         Σresult[m]=Sigma(hh,τmax=τlist[m])
-        pca4vis3d(Σresult[m],nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),title='τ='+str(τlist[m]),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade,xlim=(x0,x1),ylim=(y0,y1),zlim=(z0,z1))
-        # dhh=np.asmatrix(hstresult[sprod('h',cc(τlist[m-1]+1,τlist[m]))])
-        # sdistrslt0=np.asmatrix(np.sqrt(np.array(sdistrslt0)**2+np.array(snowdist(dhh))**2))
-        # pca4vis3d(ssimresult1,nodename=nodename,groupindex=groupindex,figname=figname+str(m+1),figsize=figsize,dpi=dpi,cex=cex,text=text,fade=fade)
-        # sdistrslt0=sdistrslt1.copy()        
+        pca4vis3d(Σresult[m],nodename=nodename,groupindex=groupindex,
+            title='τ='+str(τlist[m]),
+            figname=figname+str(m+1),figsize=figsize,dpi=dpi,
+            cex=cex,text=text,fade=fade,
+            xlim=(x0,x1),ylim=(y0,y1),zlim=(z0,z1))      
     if prnt==True: print('\n'+'end')    
 
 # def pca4vis2d(Σ,nodename=None,groupindex=None,
