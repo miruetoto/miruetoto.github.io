@@ -281,6 +281,34 @@ savedecomposeplots<-function(f,W,V=1:length(f)){
     componentsplt
 }
 
+shumanplot<-function(f,W){
+    library(plot3D)
+    xpred<-seq(min(x)-0.5,max(x)+0.5,length.out=50)
+    ypred<-seq(min(y)-0.5,max(y)+0.5,length.out=50)
+    xy<-expand.grid(x=xpred,y=ypred)
+    fit<-lm(z~x+y)
+    zpred <- matrix(predict(fit, newdata = xy),nrow = 50, ncol =50)*0
+    fitpoints<-predict(fit)*0
+    par(mar=c(0,0,0,0))
+    scatter3D(x=x,y=y,z=z,xlim=c(min(x)-0.5,max(x)+0.5),ylim=c(min(y)-0.5,max(y)+0.5),col="black",
+          pch=19,ticktype="detailed",
+          xlab="",ylab="",zlab="",
+          theta=60,phi=10,adj=0.1,d=3,
+          lwd=2,lty=1,cex=0,
+          surf = list(x = xpred, y = ypred, z = zpred,alpha=0.001,lwd=0.001,facets=NA,fit=fitpoints),
+          colkey=FALSE,grid=TRUE,axes=FALSE,box=FALSE)
+    scatter3D(x=x,y=y,z=z*0,add=TRUE,colkey=FALSE,cex=2,pch=20,col="black")
+    expgx<-expand.grid(x,x)
+    expgy<-expand.grid(y,y)
+    expgz<-expgx[,1]*0
+    Wvec<-as.vector(W)
+    arrowindex<-which(Wvec>0)
+    arrows3D(expgx[,1][arrowindex],expgy[,1][arrowindex],expgz[arrowindex],
+         expgx[,2][arrowindex],expgy[,2][arrowindex],expgz[arrowindex],
+         add=TRUE,
+         lwd=1,lty=3,code=1,angle=0,alpha=0.5,col=1)
+    text3D(x,y,z+sign(z+0.00001)*0.5,label=1:9,add=TRUE,font=4,col=1)
+}
 
 # Sf<-function(f,W,η=0.01){
 #     n<-length(f)
