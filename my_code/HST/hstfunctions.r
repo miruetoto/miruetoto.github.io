@@ -228,8 +228,8 @@ decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
 #     for(k in 1:n){
 #         regcoef[[n-k+1]]<-as.vector(Ψ[,k]%*%t(Ψ[,k])%*%(f*0+1))
 #     }
+    componentsplt<-list()
     if(showingeigenvector==T){
-        componentsplt<-list()
         for(k in 1:n){
             fhat<-components[[k]]
             textalpha<-abs(fhat)/max(abs(fhat))
