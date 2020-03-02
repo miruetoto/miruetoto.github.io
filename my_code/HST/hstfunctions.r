@@ -249,6 +249,7 @@ decompose<-function(f,W,V=1:length(f),showingeigenvector=F){
     rtn<-components %>% gather(1:n,key="eigenvectorindex",value="fhat")
     rtn$eigenvectorindex <-parse_number(rtn$eigenvectorindex)
     rtn$eigenvalue<-λinverse[rtn$eigenvectorindex]
+    rtn
 }
 
 savedecomposeplots<-function(f,W,V=1:length(f)){
