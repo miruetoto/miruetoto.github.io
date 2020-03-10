@@ -182,9 +182,9 @@ gfft<-function(f,W){
     Λ<-diag(λ)
     U<-svdrslt$u; 
     V<-svdrslt$v; 
-    Ψ<-V; # or Ψ<-U
+    Ψ<-U
     ## reconstruction: L_tilde <- U%*%Lamb*t(V) or L_tilde <- Psi%*%Lamb*t(Psi)
-    fbar<-as.vector(Ψ%*%f) ## fhat is Fourier Transform of f. 
+    fbar<-as.vector(t(Ψ)%*%f) ## fhat is Fourier Transform of f. 
     list(λ=λ,Ψ=Ψ,fbar=fbar)
 }
 
