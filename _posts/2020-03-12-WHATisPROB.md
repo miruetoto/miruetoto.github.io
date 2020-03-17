@@ -154,3 +154,8 @@ A_{t'} \subset \bigcup_{q \in Q^{\star}} V_q
 \end{align}
 가 성립한다. 
 
+- FACT 1과 별개로 아래의 사실이 성립한다. 
+\begin{align}
+\mbox{FACT 2:} (-4\pi,4\pi) \supset \bigcup_{q \in Q^{\star} } V_q.
+\end{align}
+이는 증명없이 바로 이해할 수 있다. 
