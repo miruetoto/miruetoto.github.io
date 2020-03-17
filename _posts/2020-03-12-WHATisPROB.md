@@ -130,7 +130,7 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \begin{align}
 \\{y\\} = V \cap A_{t'}
 \end{align}
-즉 $y$는 집합 $A_{t'}$에서 부터 대표로 $V$에 뽑혀 나간 어떠한 원소이다. 따라서 당연히 $y$는 $A_{t'}$에서 랜덤하게 뽑은 임의의 원소($z$라고 하자)와 동치관계에 있다. 즉 아래가 성립한다. 
+즉 $y$는 집합 $A_{t'}$에서 부터 대표로 $V$에 뽑혀 나간 어떠한 원소이다. 따라서 당연히 $y$는 $A_{t'}$에서 랜덤하게 뽑은 임의의 원소 ($z$)와 동치관계에 있다. 즉 아래가 성립한다. 
 \begin{align}
 \mbox{for all } z \in A_{t'}, y \sim z 
 \end{align}
