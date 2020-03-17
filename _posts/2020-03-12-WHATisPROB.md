@@ -118,11 +118,11 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 (2) 서로 다른 $q_1,q_2 \in Q^{\star}$에 대하여 $V_{q_1} \cap V_{q_2} = \emptyset$ 이 성립한다. <br/><br/>
 이제 이러한 집합 $V_q$를 가지고 아래의 성질이 성립함을 보이자. 
 \begin{align}
-\mbox{Fact 1: } [0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q.
+\mbox{Fact 1:}\quad [0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q.
 \end{align}
 ***(proof)*** 증명이 그렇게 어렵진 않다. $x \in [0,2\pi)$ 라고 하자. 그런데 $[0,2\pi)=\bigcup_{t \in {\cal T} }A_t$ 이므로 $x\in A_{t'}$가 성립하는 $t'$가 적어도 하나는 ${\cal T}$에 존재한다. 그런데 아래가 성립한다. 
 \begin{align}
-\mbox{claim: } A_{t'} \subset \bigcup_{q \in Q^{\star}} V_q.
+\mbox{claim:}\quad A_{t'} \subset \bigcup_{q \in Q^{\star}} V_q.
 \end{align}
 따라서 $x \in \bigcup_{q \in Q^{\star}} V_q$ 가 성립한다. 이제 마지막 식이 성립하는 이유를 좀 더 자세히 살펴보자. <br/>
 ***(proof of claim)***
@@ -156,8 +156,15 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \end{align}
 가 성립한다. 
 
-- FACT 1과 별개로 아래의 사실이 성립한다. 
+- Fact 1과 별개로 아래의 사실이 성립한다. 
 \begin{align}
-\mbox{FACT 2:} (-4\pi,4\pi) \supset \bigcup_{q \in Q^{\star} } V_q.
+\mbox{Fact 2:}\quad (-4\pi,4\pi) \supset \bigcup_{q \in Q^{\star} } V_q.
 \end{align}
-이는 증명없이 바로 이해할 수 있다. 
+이는 증명없이 바로 이해할 수 있다. Fact 1,2를 종합하면 아래와 같이 쓸 수 있다. 
+\begin{align}
+[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \supset (-4\pi,4\pi)
+\end{align}
+따라서 아래가 성립한다. 
+\begin{align}
+[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \supset (-4\pi,4\pi)
+\end{align}
