@@ -122,9 +122,11 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \end{align}
 ***(proof)*** 증명이 그렇게 어렵진 않다. $x \in [0,2\pi)$ 라고 하자. 그런데 $[0,2\pi)=\bigcup_{t \in {\cal T} }A_t$ 이므로 $x\in A_{t'}$가 성립하는 $t'$가 적어도 하나는 ${\cal T}$에 존재한다. 그런데 아래가 성립한다. 
 \begin{align}
-A_{t'} \subset \bigcup_{q \in Q^{\star}} V_q
+\mbox{claim: } A_{t'} \subset \bigcup_{q \in Q^{\star}} V_q.
 \end{align}
-따라서 $x \in \bigcup_{q \in Q^{\star}} V_q$ 가 성립한다. 이제 마지막 식이 성립하는 이유를 좀 더 자세히 살펴보자. 먼저 아래와 같이 $y$를 정의하자. 
+따라서 $x \in \bigcup_{q \in Q^{\star}} V_q$ 가 성립한다. 이제 마지막 식이 성립하는 이유를 좀 더 자세히 살펴보자. <br/>
+***(proof of claim)***
+부분집합의 정의에 의해서 모든 $z \in A_{t'}$에 대하여 $z \in \bigcup_{q\in Q^{\star}} V_q$임을 보이면 증명이 끝난다. 
 \begin{align}
 \\{y\\} = V \cap A_{t'}
 \end{align}
