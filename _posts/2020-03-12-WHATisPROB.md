@@ -162,7 +162,7 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \end{align}
 이는 증명없이 바로 이해할 수 있다. Fact 1,2를 종합하면 아래와 같이 쓸 수 있다. 
 \begin{align}
-[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \supset (-4\pi,4\pi)
+[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \subset (-4\pi,4\pi)
 \end{align}
 따라서 아래가 성립한다. 
 \begin{align}
