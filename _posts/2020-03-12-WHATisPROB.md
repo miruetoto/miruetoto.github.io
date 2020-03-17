@@ -168,3 +168,7 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \begin{align}
 m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 \end{align}
+따라서 아래가 성립해야 한다. 
+\begin{align}
+2\pi \leq \infty \times \leq 8\pi
+\end{align}
