@@ -170,6 +170,6 @@ m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 \end{align}
 따라서 아래가 성립해야 한다. 
 \begin{align}
-2\pi \leq \infty \times \leq 8\pi
+2\pi \leq \infty  \leq 8\pi
 \end{align}
 이는 모순이다. 
