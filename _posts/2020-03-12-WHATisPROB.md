@@ -118,7 +118,7 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 (2) 서로 다른 $q_1,q_2 \in Q^{\star}$에 대하여 $V_{q_1} \cap V_{q_2} = \emptyset$ 이 성립한다. <br/><br/>
 이제 이러한 집합 $V_q$를 가지고 아래의 성질이 성립함을 보이자. 
 \begin{align}
-[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q
+\mbox{**FACT 1*** } [0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q
 \end{align}
 ***(proof)*** 증명이 그렇게 어렵진 않다. $x \in [0,2\pi)$ 라고 하자. 그런데 $[0,2\pi)=\bigcup_{t \in {\cal T} }A_t$ 이므로 $x\in A_{t'}$가 성립하는 $t'$가 적어도 하나는 ${\cal T}$에 존재한다. 그런데 아래가 성립한다. 
 \begin{align}
