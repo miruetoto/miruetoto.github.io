@@ -172,3 +172,4 @@ m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 \begin{align}
 2\pi \leq \infty \times \leq 8\pi
 \end{align}
+이는 모순이다. 
