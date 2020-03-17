@@ -166,5 +166,5 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \end{align}
 따라서 아래가 성립한다. 
 \begin{align}
-[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \supset (-4\pi,4\pi)
+m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 \end{align}
