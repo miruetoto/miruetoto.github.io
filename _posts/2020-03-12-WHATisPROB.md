@@ -126,7 +126,7 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \end{align}
 따라서 $x \in \bigcup_{q \in Q^{\star}} V_q$ 가 성립한다. 이제 마지막 식이 성립하는 이유를 좀 더 자세히 살펴보자. <br/>
 ***(proof of claim)***
-부분집합의 정의에 의해서 모든 $z \in A_{t'}$에 대하여 $z \in \bigcup_{q\in Q^{\star}} V_q$임을 보이면 증명이 끝난다. 
+부분집합의 정의에 의해서 모든 $z \in A_{t'}$에 대하여 $z \in \bigcup_{q\in Q^{\star}} V_q$임을 보이면 증명이 끝난다. 우선 아래가 성립함을 관찰하자. 
 \begin{align}
 \\{y\\} = V \cap A_{t'}
 \end{align}
