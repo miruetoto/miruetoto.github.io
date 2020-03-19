@@ -94,11 +94,11 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 \begin{align}
 [x]=\\{y: x\sim y, y \in \mathbb{R}\\} \cap [0,2\pi)
 \end{align}
-이다. 여기에서 $[x]$를 equivalence class라고 한다. 그런데 아래가 항상 성립한다. 
+이다. 여기에서 $[x]$를 equivalence class라고 한다. 그런데 $[x]$는 최소한 $x$를 포함하므로 아래가 항상 성립한다. 
 \begin{align}
 [0,2\pi) \subset \bigcup_{x\in [0,2\pi)}[x]
 \end{align}
-그리고 아래가 성립한다. 
+또한 $[x]=\\{y: x\sim y, y \in \mathbb{R}\\} \cap [0,2\pi)$임을 이용하면 아래가 성립함을 알 수 있다. 
 \begin{align}
 [0,2\pi) \supset \bigcup_{x\in [0,2\pi)}[x]
 \end{align}
@@ -164,19 +164,19 @@ P(\Omega^* )=\frac{m(\Omega^* )}{m(\Omega)}=\frac{m([0,\pi))}{m([0,2\pi))}=\frac
 
 - Fact 1과 별개로 아래의 사실이 성립한다. 
 \begin{align}
-\mbox{Fact 2:}\quad \bigcup_{q \in Q^{\star} } V_q \subset (-4\pi,4\pi) 
+\mbox{Fact 2:}\quad \bigcup_{q \in Q^{\star} } V_q \subset (-2\pi,4\pi) 
 \end{align}
 이는 증명없이 바로 이해할 수 있다. Fact 1,2를 종합하면 아래와 같이 쓸 수 있다. 
 \begin{align}
-[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \subset (-4\pi,4\pi)
+[0,2\pi) \subset \bigcup_{q \in Q^{\star} } V_q \subset (-2\pi,4\pi)
 \end{align}
 따라서 아래가 성립한다. 
 \begin{align}
-m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
+m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-2\pi,4\pi))
 \end{align}
 따라서 아래가 성립해야 한다. 
 \begin{align}
-2\pi \leq \infty  \leq 8\pi
+2\pi \leq \infty  \leq 6\pi
 \end{align}
 이는 모순이다. 
 
