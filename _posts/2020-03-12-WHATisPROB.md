@@ -190,6 +190,10 @@ m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 
 ### 시그마필드 
 
+- $\sigma$-field에 대한 엄밀한 정의는 (i) 공집합과 전체집합을 포함하며 (ii) 여집합에 닫혀있고 (iii) countable union에 닫혀있는 집합족(=원소를 집합으로 가지는 집합)이다. 여기에서 (i)은 생략가능하다. 
+
+- 엄밀한 정의는 이 수업에서는 별 의미가 없다. 다만 $\sigma$-field 가 
+
 - $\sigma$-field에 대한 이해를 돕기 위해서 (예제1)을 다시 생각해보자. $\Omega=\\{H,T\\}$ 이고, 이것에 대응하는 ${\cal F}$는 아래와 같이 쓸 수 있다. 
 \begin{align}
 {\cal F}=\\{\emptyset, \\{H\\},\\{T\\},\\{H,T\\}\\}
@@ -214,10 +218,6 @@ m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 \begin{align}
 {\cal F}= \\{ \emptyset, \\{1,3,5\\}, \\{2,4,6\\},\Omega \\}
 \end{align}
-
-- 시그마필드의 엄밀한 정의는 강의내용을 벗어난다고 생각하여 생략하겠다. 
-
-
 
 ### 요약 
 
