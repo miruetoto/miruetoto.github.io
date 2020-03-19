@@ -202,6 +202,8 @@ m([0,2\pi)) \leq \sum_{q \in Q^{\star} } m(V_q) \leq m((-4\pi,4\pi))
 \begin{align}
 \Omega= \mbox{ all subset of } \Omega
 \end{align}
+이해를 위해서 주사위를 던지는 예제를 생각해보자. 우선 sample space는 $\Omega=\\{1,2,3,4,5,6\\}$ 와 같이 설정할 수 있고 각 sample space의 각 이벤트가 발생할 확률은 모두 $\frac{1}{6}$로 모순없이 정의할 수 있다. 
+
 
 ### 요약 
 
