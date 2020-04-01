@@ -21,6 +21,6 @@ len<-function(data){
 }
 
 ids<-function(data){
-	print(str_c(str_c('[[',str_c(1:length(data)),']]',names(data)),collapse=', '))
+	print(str_c(str_c('[[',str_c(1:length(data)),']] ','\'',names(data),'\''),collapse=', '))
 }
 
