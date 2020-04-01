@@ -513,7 +513,7 @@ def r2p(A):
 def pull(r):
     return r2p(ro.globalenv[r])
 
-def printv(pddata):
+def names(pddata):
     push(pddata.columns,"vname")
     print(r2p(ro.r("str_c(str_c('(',str_c(1:length(vname)-1),'):',vname),collapse=',')")))
     
