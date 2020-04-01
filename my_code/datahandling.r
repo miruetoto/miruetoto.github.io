@@ -13,7 +13,7 @@ minmaxsacling<-function(vector,range=c(0,1)){
 	vectorshift/max(vectorshift)*range[2]
 }
 
-ln<-function(data){
+len<-function(data){
 	length(data)
 }
 
