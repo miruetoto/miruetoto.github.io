@@ -515,6 +515,6 @@ def pull(r):
 
 def ids(pddata):
     push(pddata.columns,"vname")
-    print(r2p(ro.r("str_c(str_c('(',str_c(1:length(vname)-1),'):',vname),collapse=',')")))
+    print(r2p(ro.r("str_c(str_c('[[',str_c(1:length(vname)-1),']]',vname),collapse=',')")))
     
 
