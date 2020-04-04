@@ -3,12 +3,24 @@ library(lubridate)
 library(stringr)
 library(forcats)
 
-cleaningvname<-function(dfdata){
+# clv is clean variable name 
+clv<-function(dfdata){
     names(dfdata)<-str_replace_all(names(dfdata),"[.]","_")
     dfdata
 }
 
-minmaxsacling<-function(vector,range=c(0,1)){
+# mms is minmaxsacling
+mms<-function(vector,range=c(0,1)){
 	vectorshift<-vector-min(vector)+range[1]
 	vectorshift/max(vectorshift)*range[2]
 }
+
+# len is length
+len<-function(data){
+	length(data)
+}
+
+ids<-function(data){
+	cat(str_c(str_c('[[',str_c(1:length(data)),']] ','\'',names(data),'\''),collapse='\n'))
+}
+
