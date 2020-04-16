@@ -8,7 +8,7 @@ myggplot<-function(data){
          axis.title.y=element_blank(),
          axis.text.y=element_text(family="Times",face="bold.italic",colour="blue"),
          axis.text.x=element_text(family="Times",face="bold.italic",colour="gray50"),
-         plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="red"),
+         plot.title=element_text(size=rel(1.5),lineheight=0.9,family="Times",face="bold.italic",colour="black"),
          legend.title=element_text(face="italic",family="Times",colour="blue",size=14),
          legend.text=element_text(face="italic",family="Times",colour="blue",size=10)
         )
