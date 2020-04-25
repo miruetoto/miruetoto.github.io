@@ -3,6 +3,7 @@ library(lubridate)
 library(stringr)
 library(forcats)
 
+### 3 
 # clv is clean variable name 
 clv<-function(dfdata){
     names(dfdata)<-str_replace_all(names(dfdata),"[.]","_")
@@ -30,9 +31,13 @@ itb<-function(typ,n,p=1,vname=None){
 }
 
 # minmaxscaling
-minmaxscaling<-function(vector,range=c(0,1)){
+mms<-function(vector,range=c(0,1)){
 	vectorshift<-vector-min(vector)+range[1]
 	vectorshift/max(vectorshift)*range[2]
 }
 
-sprod<-
+### 5
+# make product space : sprod in python 
+sprod<-function(index){
+
+}
