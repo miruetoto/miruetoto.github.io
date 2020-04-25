@@ -1,3 +1,7 @@
+package_list<-c("tidyverse","lubridate","stringr","forcats",
+				"ggplot2","gridExtra","latex2exp")
+installed_index <- package_list %in% installed.packages()[,1]
+not_installed_index <- installed_index == 0 
 library(tidyverse)
 library(lubridate)
 library(stringr)
