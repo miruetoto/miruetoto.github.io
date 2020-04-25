@@ -2,8 +2,8 @@ library(ggplot2)
 library(gridExtra)
 library(latex2exp)
 
-myggplot<-function(data){
-  ggplot(data)+theme(
+myggplot<-function(...){
+  ggplot(...)+theme(
          axis.title.x=element_blank(),
          axis.title.y=element_blank(),
          axis.text.y=element_text(family="Times",face="bold.italic",colour="blue"),
