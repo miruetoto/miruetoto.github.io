@@ -12,8 +12,8 @@ pkgs<-c(
 	"gridExtra",
 	"latex2exp"
 	)
-installed_index <- pkgs %in% installed.packages()[,1]
-not_installed_packages <- pkgs[installed_index == 0]
+installed_index <- 
+not_installed_packages <- pkgs[ (  pkgs %in% installed.packages()[,1]  ) == 0]
 install.packages(not_installed_packages,repos="https://cran.rstudio.com/")
 for(i in pkgs) library(i,character.only = T)
 
