@@ -2,6 +2,9 @@ library(tidyverse)
 library(lubridate)
 library(stringr)
 library(forcats)
+library(ggplot2)
+library(gridExtra)
+library(latex2exp)
 
 ### 3 
 # clv is clean variable name 
@@ -51,10 +54,6 @@ mms<-function(vector,range=c(0,1)){
 
 
 ### ggplots
-library(ggplot2)
-library(gridExtra)
-library(latex2exp)
-
 myggplot<-function(...){
   ggplot(...)+theme(
          axis.title.x=element_blank(),
