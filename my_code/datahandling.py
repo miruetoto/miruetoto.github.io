@@ -517,3 +517,8 @@ def ids(pddata):
     push(pddata.columns,"vname")
     print(r2p(ro.r("str_c(str_c('(',str_c(1:length(vname)-1),') ',vname),collapse='\n')"))[0])
 
+
+### plots 
+## python 
+import matplotlib as mpl 
+import matplotlib.pyplot as plt 
