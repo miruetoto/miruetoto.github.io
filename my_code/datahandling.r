@@ -9,11 +9,6 @@ clv<-function(dfdata){
     dfdata
 }
 
-# mms is minmaxsacling
-mms<-function(vector,range=c(0,1)){
-	vectorshift<-vector-min(vector)+range[1]
-	vectorshift/max(vectorshift)*range[2]
-}
 
 # len is length
 len<-function(data){
@@ -25,4 +20,19 @@ ids<-function(data){
 	cat(str_c(str_c('[[',str_c(1:length(data)),']] ','\'',names(data),'\''),collapse='\n'))
 }
 
-# 
+# init tibble data 
+itb<-function(typ,n,p=1,vname=None){
+    if vname==None: vname=sprod('X',cc(1,p))
+    val=init(typ,(n,p))
+    rtn=pd.DataFrame(val)
+    rtn.columns=vname
+    return rtn   	
+}
+
+# minmaxscaling
+minmaxscaling<-function(vector,range=c(0,1)){
+	vectorshift<-vector-min(vector)+range[1]
+	vectorshift/max(vectorshift)*range[2]
+}
+
+sprod<-
