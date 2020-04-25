@@ -10,7 +10,6 @@ clv<-function(dfdata){
     dfdata
 }
 
-
 # len is length
 len<-function(data){
 	length(data)
@@ -22,12 +21,12 @@ ids<-function(data){
 }
 
 # init tibble data 
-itb<-function(typ,n,p=1,vname=None){
-    if vname==None: vname=sprod('X',cc(1,p))
-    val=init(typ,(n,p))
-    rtn=pd.DataFrame(val)
-    rtn.columns=vname
-    return rtn   	
+itb<-function(n,p=1,vname=str_c('X',1:p)){
+  tb<-rnorm(n*p)
+  dim(tb)<-c(n,p)
+  colnames(tb)<-vname
+  tb<-as_tibble(tb)
+  tb
 }
 
 # minmaxscaling
@@ -38,6 +37,6 @@ mms<-function(vector,range=c(0,1)){
 
 ### 5
 # make product space : sprod in python 
-sprod<-function(index){
+# sprod<-function(index){
 
-}
+# }
