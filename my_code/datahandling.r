@@ -20,7 +20,9 @@ len<-function(data){
 	length(data)
 }
 
+# print varialbe names
 ids<-function(data){
 	cat(str_c(str_c('[[',str_c(1:length(data)),']] ','\'',names(data),'\''),collapse='\n'))
 }
 
+# 
