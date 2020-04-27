@@ -33,6 +33,17 @@ clv<-function(dfdata){
   names(dfdata)<-str_replace_all(names(dfdata),"[-]","")
   names(dfdata)<-str_replace_all(names(dfdata),"[.]","")
   names(dfdata)<-str_replace_all(names(dfdata),"[ ]","")
+
+  names(dfdata)<-str_replace_all(names(dfdata),"[1]","X1")
+  names(dfdata)<-str_replace_all(names(dfdata),"[2]","X2")
+  names(dfdata)<-str_replace_all(names(dfdata),"[3]","X3")
+  names(dfdata)<-str_replace_all(names(dfdata),"[4]","X4")
+  names(dfdata)<-str_replace_all(names(dfdata),"[5]","X5")
+  names(dfdata)<-str_replace_all(names(dfdata),"[6]","X6")
+  names(dfdata)<-str_replace_all(names(dfdata),"[7]","X7")
+  names(dfdata)<-str_replace_all(names(dfdata),"[8]","X8")
+  names(dfdata)<-str_replace_all(names(dfdata),"[9]","X9")
+  names(dfdata)<-str_replace_all(names(dfdata),"[0]","X0")
   dfdata
 }
 
