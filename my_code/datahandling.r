@@ -22,6 +22,7 @@ for(i in pkgs) library(i,character.only = T)
 ### funstions such that length of funtions names = 3
 # clv is clean variable name 
 clv<-function(dfdata){
+	names(dfdata)<-str_replace_all(names(dfdata),"[-]","")
     names(dfdata)<-str_replace_all(names(dfdata),"[.]","")
     names(dfdata)<-str_replace_all(names(dfdata),"[ ]","")
     dfdata
