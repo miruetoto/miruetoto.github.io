@@ -90,3 +90,8 @@ myggplot<-function(...){
          legend.text=element_text(face="italic",family="Times",colour="blue",size=10)
         )
 }
+
+plot_cbind<-function(...){
+	p12 <- grid.arrange(p1,p2,ncol=2,widths=c(1,2))
+	p123 <- grid.arrange(p12,p3,nrow=2,heights=c(2,1))
+}
