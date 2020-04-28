@@ -34,7 +34,7 @@ clv<-function(dfdata){
   names(dfdata)<-str_replace_all(names(dfdata),"[.]","")
   names(dfdata)<-str_replace_all(names(dfdata),"[ ]","")
 
-  index_startingwithnumber<-str_c("a",names(dfdata)[names(dfdata) %>% str_sub(1,1) %in% str_c(0:9)])
+  index_startingwithnumber <- names(dfdata) %>% str_sub(1,1) %in% str_c(0:9) 
   names(dfdata)[index_startingwithnumber] <- str_c("a",names(dfdata)[index_startingwithnumber])
   dfdata
 }
