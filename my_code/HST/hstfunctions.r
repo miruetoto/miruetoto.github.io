@@ -46,6 +46,7 @@ p
 }
 
 friendship<-function(W){
+    n<-dim(W)[1]
     frnd_ship<-c()
     for(i in 1:n){
         for(j in 1:n){
