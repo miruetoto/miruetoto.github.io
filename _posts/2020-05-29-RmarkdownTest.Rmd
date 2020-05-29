@@ -1,7 +1,6 @@
 ---
 title: "Parameter Estimation"
 author: "최규빈"
-date: "5/17/2020"
 header-includes:
 - \usepackage{kotex}
 - \usepackage{caption}
@@ -25,7 +24,7 @@ header-includes:
 - \usepackage{xcolor}
 - \linespread{2}
 fontsize: 11pt
-output: pdf_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
