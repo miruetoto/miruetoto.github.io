@@ -1,6 +1,6 @@
 ---
 title: "Parameter Estimation"
-author: "최규빈"
+output: github_document
 header-includes:
 - \usepackage{kotex}
 - \usepackage{caption}
@@ -23,8 +23,6 @@ header-includes:
 - \usepackage{subcaption}
 - \usepackage{xcolor}
 - \linespread{2}
-fontsize: 11pt
-output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -32,6 +30,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## GitHub Documents
+
+\begin{itemize}
+\item asdf
+\end{itemize}
 
 \[
 x^2+2x+1=(x+1)^2

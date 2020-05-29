@@ -1,6 +1,5 @@
 Parameter Estimation
 ================
-최규빈
 
 
 
