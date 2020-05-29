@@ -1,5 +1,3 @@
-Parameter Estimation
-================
 
 
 
@@ -42,28 +40,26 @@ Parameter Estimation
 
 
 
+GitHub Documents
+----------------
 
-## GitHub Documents
+*x*<sup>2</sup> + 2*x* + 1 = (*x* + 1)<sup>2</sup>
 
-\[
-x^2+2x+1=(x+1)^2
-\]
-
-Thus \[
-{\cal D}=2x^2
-\]
+Thus
+$$
+{\\cal D}=2x^2
+$$
 
 This is an R Markdown format used for publishing markdown documents to
 GitHub. When you click the **Knit** button all R code chunks are run and
 a markdown file (.md) suitable for publishing to GitHub is generated.
 
-## Including Code
+Including Code
+--------------
 
 You can include R code in the document as follows:
 
-``` r
-summary(cars)
-```
+    summary(cars)
 
     ##      speed           dist       
     ##  Min.   : 4.0   Min.   :  2.00  
@@ -73,11 +69,12 @@ summary(cars)
     ##  3rd Qu.:19.0   3rd Qu.: 56.00  
     ##  Max.   :25.0   Max.   :120.00
 
-## Including Plots
+Including Plots
+---------------
 
 You can also embed plots, for example:
 
-![](2020-05-29-RmarkdownTest_files/figure-gfm/pressure-1.png)<!-- -->
+![](2020-05-29-RmarkdownTest_files/figure-markdown_strict/pressure-1.png)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.

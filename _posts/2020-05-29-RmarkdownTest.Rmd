@@ -1,6 +1,6 @@
 ---
 title: "Parameter Estimation"
-output: github_document
+output: md_document
 header-includes:
 - \usepackage{kotex}
 - \usepackage{caption}
@@ -30,10 +30,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## GitHub Documents
-
-\begin{itemize}
-\item asdf
-\end{itemize}
 
 \[
 x^2+2x+1=(x+1)^2
