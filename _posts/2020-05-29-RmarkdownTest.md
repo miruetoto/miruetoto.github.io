@@ -46,7 +46,13 @@ Parameter Estimation
 
 ## GitHub Documents
 
-$$x^2$$
+\[
+x^2+2x+1=(x+1)^2
+\]
+
+Thus \[
+{\cal D}=2x^2
+\]
 
 This is an R Markdown format used for publishing markdown documents to
 GitHub. When you click the **Knit** button all R code chunks are run and
