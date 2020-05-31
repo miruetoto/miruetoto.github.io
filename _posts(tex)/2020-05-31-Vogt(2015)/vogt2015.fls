@@ -1,10 +1,10 @@
-PWD /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)
+PWD /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.tex
-OUTPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.log
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.tex
+OUTPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -151,9 +151,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-INPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.aux
-INPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.aux
-OUTPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.aux
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.aux
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.aux
+OUTPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplj.fd
@@ -272,7 +272,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd4.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fourier/futrorn.tfm
-OUTPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.pdf
+OUTPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb9d.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
@@ -395,7 +395,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbb4.tfm
-INPUT /home/cgb/Dropbox/0. Statistics/0. 통계공부/Change Point - 변화점/PAPER_DETECTING GRADUAL CHANGES IN LOCALLY STATIONARY PROCESSES/STUDY_ 2(2020)/vogt2015_review2.aux
+INPUT /home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
