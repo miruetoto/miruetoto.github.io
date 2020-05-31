@@ -28,6 +28,7 @@ rmargin=1cm,
 headheight=1.5cm,
 headsep=0.8cm,
 footskip=0.5cm}
+%\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=33in]{geometry}
 
 \renewcommand{\familydefault}{pplj} 
 \usepackage[
@@ -134,11 +135,6 @@ expansion=true]{microtype}
 \titleformat*{\paragraph}{\large\bfseries}
 \titleformat*{\subparagraph}{\large\bfseries}
 
-\newenvironment{absolutelynopagebreak}
-  {\par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup}
-  {\par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd}
 
 \begin{document}
 % \TileWallPaper{300pt}{300pt}{Descargas/fondopapelviejo.jpg}
