@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1590910361 "vogt2015.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.pdf" "vogt2015" 1590910362
+["pdflatex"] 1590911866 "vogt2015.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.pdf" "vogt2015" 1590911867
   "/etc/texmf/web2c/texmf.cnf" 1590818665 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.aux" 1590910362 10531 c6c757ab51e5979b004a50a05b8f000b ""
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.aux" 1590911867 10531 c6c757ab51e5979b004a50a05b8f000b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1480098688 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -276,11 +276,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1590818698 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1590818709 4128480 04d80abc75a6288a70d3cb5e292e4781 ""
-  "vogt2015.aux" 1590910362 10531 c6c757ab51e5979b004a50a05b8f000b ""
-  "vogt2015.tex" 1590908828 27277 9fa3ad969c250adc505036323fc090d2 ""
+  "vogt2015.aux" 1590911867 10531 c6c757ab51e5979b004a50a05b8f000b ""
+  "vogt2015.tex" 1590911865 27432 a4a6d4fbe0324e3fc6afaa4dd89a6ee1 ""
   (generated)
-  "vogt2015.log"
-  "vogt2015.pdf"
   "vogt2015.aux"
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.log"
+  "vogt2015.log"
   "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.pdf"
+  "vogt2015.pdf"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts(tex)/2020-05-31-Vogt(2015)/vogt2015.log"

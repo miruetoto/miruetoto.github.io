@@ -134,6 +134,12 @@ expansion=true]{microtype}
 \titleformat*{\paragraph}{\large\bfseries}
 \titleformat*{\subparagraph}{\large\bfseries}
 
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
 \begin{document}
 % \TileWallPaper{300pt}{300pt}{Descargas/fondopapelviejo.jpg}
 
