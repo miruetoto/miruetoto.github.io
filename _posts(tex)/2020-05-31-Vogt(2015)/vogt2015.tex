@@ -134,14 +134,9 @@ expansion=true]{microtype}
 \titleformat*{\paragraph}{\large\bfseries}
 \titleformat*{\subparagraph}{\large\bfseries}
 
-\newenvironment{absolutelynopagebreak}
-  {\par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup}
-  {\par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd}
-
 \begin{document}
 % \TileWallPaper{300pt}{300pt}{Descargas/fondopapelviejo.jpg}
+
 
 \chapter{Vogt(2015)의 첫번째 리뷰}
 \section{Model setting}
@@ -540,7 +535,6 @@ $$P(\hat{u}_0(\hat{\tau}_{\alpha})>u_0+C\gamma_T)=o(1)$$
 \begin{thebibliography}{9} %% 9의 의미는 "[1] 해석학입문 (4판, William R. Wade)"가 얼마나 왼쪽으로 들여쓰기 되는지에 대한 척도. 
 \bibitem{ref} Vogt, M., \& Dette, H. (2015). Detecting gradual changes in locally stationary processes. The Annals of Statistics, 43(2), 713-740.
 \end{thebibliography}
-
 
 \end{document}
 
