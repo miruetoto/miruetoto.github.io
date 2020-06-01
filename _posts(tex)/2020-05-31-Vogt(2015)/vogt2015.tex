@@ -18,7 +18,7 @@
 \usepackage{lettrine}
 \input Acorn.fd
 \newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
- \usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=50in]{geometry}
+ \usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=165in]{geometry}
 
 \usepackage{geometry}
 \geometry{
@@ -135,10 +135,17 @@ expansion=true]{microtype}
 \titleformat*{\paragraph}{\huge\bfseries}
 \titleformat*{\subparagraph}{\huge\bfseries}
 
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+\titlespacing*{\part}{0pt}{50pt}{40pt}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
 \begin{document}
 % \TileWallPaper{300pt}{300pt}{Descargas/fondopapelviejo.jpg}
-
-
 \chapter{Vogt(2015)의 첫번째 리뷰}
 \section{Model setting}
 \dfn 
