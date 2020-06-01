@@ -17,18 +17,6 @@
 \usepackage{fancyhdr}
 \usepackage{lettrine}
 \input Acorn.fd
-\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
- \usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=165in]{geometry}
-
-\usepackage{geometry}
-\geometry{
-tmargin=5cm, 
-bmargin=3cm, 
-lmargin=1cm, 
-rmargin=1cm,
-headheight=1.5cm,
-headsep=0.8cm,
-footskip=0.5cm}
 
 \renewcommand{\familydefault}{pplj} 
 \usepackage[
@@ -144,7 +132,28 @@ expansion=true]{microtype}
   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter} {0pt}{50pt}{40pt}
 
+
+\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
+ \usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=20in]{geometry}
+
+\usepackage{geometry}
+\geometry{
+tmargin=5cm, 
+bmargin=3cm, 
+lmargin=1cm, 
+rmargin=1cm,
+headheight=1.5cm,
+headsep=0.8cm,
+footskip=0.5cm}
+
+
 \begin{document}
+
+\begin{thebibliography}{9} %% 9의 의미는 "[1] 해석학입문 (4판, William R. Wade)"가 얼마나 왼쪽으로 들여쓰기 되는지에 대한 척도. 
+\bibitem{ref} Vogt, M., \& Dette, H. (2015). Detecting gradual changes in locally stationary processes. The Annals of Statistics, 43(2), 713-740.
+\end{thebibliography}
+
+
 % \TileWallPaper{300pt}{300pt}{Descargas/fondopapelviejo.jpg}
 \chapter{Vogt(2015)의 첫번째 리뷰}
 \section{Model setting}
@@ -542,9 +551,6 @@ $$P(\hat{u}_0(\hat{\tau}_{\alpha})>u_0+C\gamma_T)=o(1)$$
 \]
 로 설정한다. 여기에서 $\gamma_{\ell}=Cov(X_t,X_{t-\ell})$을 의미함. 
 
-\begin{thebibliography}{9} %% 9의 의미는 "[1] 해석학입문 (4판, William R. Wade)"가 얼마나 왼쪽으로 들여쓰기 되는지에 대한 척도. 
-\bibitem{ref} Vogt, M., \& Dette, H. (2015). Detecting gradual changes in locally stationary processes. The Annals of Statistics, 43(2), 713-740.
-\end{thebibliography}
 
 \end{document}
 

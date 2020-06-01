@@ -17,18 +17,6 @@
 \usepackage{fancyhdr}
 \usepackage{lettrine}
 \input Acorn.fd
-\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
-\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=20in]{geometry}
-
-\usepackage{geometry}
-\geometry{
-tmargin=3cm, 
-bmargin=3cm, 
-lmargin=1cm, 
-rmargin=1cm,
-headheight=1.5cm,
-headsep=0.8cm,
-footskip=0.5cm}
 
 \renewcommand{\familydefault}{pplj} 
 \usepackage[
@@ -147,8 +135,28 @@ expansion=true]{microtype}
   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter} {0pt}{50pt}{40pt}
 
+\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=20in]{geometry}
+
+\usepackage{geometry}
+\geometry{
+tmargin=3cm, 
+bmargin=3cm, 
+lmargin=1cm, 
+rmargin=1cm,
+headheight=1.5cm,
+headsep=0.8cm,
+footskip=0.5cm}
 
 \begin{document}
+
+
+\begin{thebibliography}{9} 
+\bibitem{Van2000} Van der Vaart, A. W. (2000). Asymptotic statistics (Vol. 3). Cambridge university press.
+\bibitem{Kim2011} 김우철, 수리통계학.
+\bibitem{Kim2012} 김우철, 통계이론1 강의노트.
+\end{thebibliography}
+
 \chapter{$O_p(R_n)$, $O(r_n)$ and $o_p(R_n)$, $o(r_n)$}
 \section{Little $o$}
 
@@ -363,11 +371,4 @@ g(x) = g(a) + (x-a)\big(\dot{g}(a)+(x-a)O(1)\big) \quad as ~ x \to a
 \sqrt{n}\big({g(X_n) -g(\theta)}\big) \overset{d}{\to} \sqrt{n}(X_n-\theta)\dot{g}(\theta)
 \]
 
-
-\begin{thebibliography}{9} 
-\bibitem{Van2000} Van der Vaart, A. W. (2000). Asymptotic statistics (Vol. 3). Cambridge university press.
-\bibitem{Kim2011} 김우철, 수리통계학.
-\bibitem{Kim2012} 김우철, 통계이론1 강의노트.
-\end{thebibliography}
 \end{document}
-
