@@ -18,7 +18,7 @@
 \usepackage{lettrine}
 \input Acorn.fd
 \newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
-% \usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=110in]{geometry}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=20in]{geometry}
 
 \usepackage{geometry}
 \geometry{
@@ -93,37 +93,37 @@ expansion=true]{microtype}
 \usepackage{cite, url}
 \usepackage{amssymb}
 
-\def\ck{\paragraph{\large$\bullet$}\large}
-\def\goal{\paragraph{\large(목표)}\large}
-\def\observe{\paragraph{\large(관찰)}\large}
-\def\assume{\paragraph{\large(가정)}\large}
-\def\summary{\paragraph{\large(요약)}\large}
-\def\EX{\paragraph{\large(예제)}\large}
-\def\guess{\paragraph{\large(추측)}\large}
-\def\thus{\paragraph{\large(결론)}\large}
-\def\prob{\paragraph{\large(문제)}\large}
-\def\sol{\paragraph{\large(해결)}\large}
-\def\dfn{\paragraph{\large(정의)}\large}
-\def\thm{\paragraph{\large(정리)}\large}
-\def\lem{\paragraph{\large(레마)}\large}
-\def\promise{\paragraph{\large(약속)}\large}
-\def\property{\paragraph{\large(특징)}\large}
-\def\fl{\paragraph{\large(느낌)}\large}
-\def\memo{\paragraph{\large(암기)}\large}
-\def\note{\paragraph{\large\textit{\underline{note:}}}\large}
-\def\ex{\paragraph{\large\textit{example:}}\large}
+\def\ck{\paragraph{\Large$\bullet$}\Large}
+\def\goal{\paragraph{\Large(목표)}\Large}
+\def\observe{\paragraph{\Large(관찰)}\Large}
+\def\assume{\paragraph{\Large(가정)}\Large}
+\def\summary{\paragraph{\Large(요약)}\Large}
+\def\EX{\paragraph{\Large(예제)}\Large}
+\def\guess{\paragraph{\Large(추측)}\Large}
+\def\thus{\paragraph{\Large(결론)}\Large}
+\def\prob{\paragraph{\Large(문제)}\Large}
+\def\sol{\paragraph{\Large(해결)}\Large}
+\def\dfn{\paragraph{\Large(정의)}\Large}
+\def\thm{\paragraph{\Large(정리)}\Large}
+\def\lem{\paragraph{\Large(레마)}\Large}
+\def\promise{\paragraph{\Large(약속)}\Large}
+\def\property{\paragraph{\Large(특징)}\Large}
+\def\fl{\paragraph{\Large(느낌)}\Large}
+\def\memo{\paragraph{\Large(암기)}\Large}
+\def\note{\paragraph{\Large\textit{\underline{note:}}}\Large}
+\def\ex{\paragraph{\Large\textit{example:}}\Large}
 
 
-\def\one{\paragraph{\large(1)}\large}
-\def\two{\paragraph{\large(2)}\large}
-\def\three{\paragraph{\large(3)}\large}
-\def\four{\paragraph{\large(4)}\large}
-\def\five{\paragraph{\large(5)}\large}
-\def\six{\paragraph{\large(6)}\large}
-\def\seven{\paragraph{\large(7)}\large}
-\def\eight{\paragraph{\large(8)}\large}
-\def\nine{\paragraph{\large(9)}\large}
-\def\ten{\paragraph{\large(10)}\large}
+\def\one{\paragraph{\Large(1)}\Large}
+\def\two{\paragraph{\Large(2)}\Large}
+\def\three{\paragraph{\Large(3)}\Large}
+\def\four{\paragraph{\Large(4)}\Large}
+\def\five{\paragraph{\Large(5)}\Large}
+\def\six{\paragraph{\Large(6)}\Large}
+\def\seven{\paragraph{\Large(7)}\Large}
+\def\eight{\paragraph{\Large(8)}\Large}
+\def\nine{\paragraph{\Large(9)}\Large}
+\def\ten{\paragraph{\Large(10)}\Large}
 
 \newcommand{\bld}[1]{\mbox{\boldmath $#1$}}
 
@@ -131,11 +131,22 @@ expansion=true]{microtype}
 \DeclareMathOperator*{\argmax}{arg\,max} %\usepackage{amsmath}를 써야지 정의가능함. 
 
 \usepackage{titlesec}
-\titleformat*{\section}{\LARGE\bfseries}
-\titleformat*{\subsection}{\Large\bfseries}
-\titleformat*{\subsubsection}{\large\bfseries}
-\titleformat*{\paragraph}{\large\bfseries}
-\titleformat*{\subparagraph}{\large\bfseries}
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\huge\bfseries}
+\titleformat*{\subsubsection}{\huge\bfseries}
+\titleformat*{\paragraph}{\huge\bfseries}
+\titleformat*{\subparagraph}{\huge\bfseries}
+
+
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+\titlespacing*{\part}{0pt}{50pt}{40pt}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
 
 \begin{document}
 \chapter{$O_p(R_n)$, $O(r_n)$ and $o_p(R_n)$, $o(r_n)$}
@@ -267,7 +278,7 @@ P\{\sup_n|X_n| <  \infty\} \approx 1
 
 \note $\mu^{\star}\big([0,M)\big)=F(M)=P(X<M)$
 
-\note $\mu^{\star}\big([-M,M]^c\big)=1-\big(P(X<M)-P(X<-M)\big)=1-F(M)+F(-M)
+\note $\mu^{\star}\big([-M,M]^c\big)=1-\big(P(X<M)-P(X<-M)\big)=1-F(M)+F(-M)$
 \note 아무리 $\epsilon$을 작게 잡아도 결국 $M$을 크게 잡으면 된다. 
 
 \note 따라서 대충 $M \approx \infty$ 일때 $P(|X|>M) \approx 0$ 인 느낌이다. 
@@ -311,7 +322,7 @@ P\{\sup_n|X_n| <  \infty\} \approx 1
 \thm $\{X_n\}$ 이 확률변수열이라고 하자. 
 (1) $\sqrt{n}(X_n-\theta) \overset{d}{\to} Z$ 이고 (2) $\dot{g}(\cdot)$ 이 연속함수이라면 아래가 성립한다. 
 \[
-\sqrt{n}\big(g(X_n)-g(\theta)) \overset{d}{\to}\dot{g}{(\theta)Z
+\sqrt{n}\big(g(X_n)-g(\theta)) \overset{d}{\to}\dot{g}(\theta)Z
 \] 
 
 \note $\{X_n\}$이 \emph{iid} 일 필요는 없다. 
