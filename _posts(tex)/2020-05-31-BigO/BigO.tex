@@ -108,8 +108,11 @@ expansion=true]{microtype}
 \def\lem{\paragraph{\large(레마)}\large}
 \def\promise{\paragraph{\large(약속)}\large}
 \def\property{\paragraph{\large(특징)}\large}
+\def\fl{\paragraph{\large(느낌)}\large}
+\def\memo{\paragraph{\large(암기)}\large}
 \def\note{\paragraph{\large\textit{\underline{note:}}}\large}
 \def\ex{\paragraph{\large\textit{example:}}\large}
+
 
 \def\one{\paragraph{\large(1)}\large}
 \def\two{\paragraph{\large(2)}\large}
@@ -135,18 +138,225 @@ expansion=true]{microtype}
 \titleformat*{\subparagraph}{\large\bfseries}
 
 \begin{document}
-\chapter{Big $O_p$ and little $o_p$
+\chapter{$O_p(R_n)$, $O(r_n)$ and $o_p(R_n)$, $o(r_n)$}
+\section{Little $o$}
 
-\ck 
-
-\dfn $\{X_n\}$: array of random variable, $\{a_n\}$: array of real number. 
+\dfn $\{x_n\}$, $\{r_n\}$은 실수열이라고 하자. 
 \begin{align*}
-& X_n=O_p(a_n), \quad as ~ n\to \infty \\ 
-& \Longleftrightarrow X_n/a_n=O_p(1), \quad as ~ n\to \infty \\ 
-& \Longleftrightarrow \sup_{n}P\{|X_n/a_n|>k\} \underset{k\to\infty}{\to} 0
+& x_n=o(r_n) \quad as~  n\to \infty \\
+&\Longleftrightarrow x_n/r_n \to 0 \quad as ~ n \to \infty 
 \end{align*}
-\begin{thebibliography}{9} %% 9의 의미는 "[1] 해석학입문 (4판, William R. Wade)"가 얼마나 왼쪽으로 들여쓰기 되는지에 대한 척도. 
-\bibitem{ref} Vogt, M., \& Dette, H. (2015). Detecting gradual changes in locally stationary processes. The Annals of Statistics, 43(2), 713-740.
+
+\note $x_n=o(1)$의 의미는 $x_n\to 0$의 의미이다. 
+
+\note $x_n=o(r_n)$의 의미는 $x_n/r_n \to 0$의 의미이다. 
+
+\ex $x_n=1/n$ 이면 $x_n=o(1)$. 
+
+\ex $x_n=1/n^2$ 이면 $x_n=o(1/n)$
+
+\note $x_n=1/n^2$ 일 경우 $x_n=o(1)$, $x_n=o(1/\sqrt{n})$, $x_n=o(1/n\sqrt{n})$도 가능함. 
+
+\ex $x_n=n^2$이면 $x_n=o(n^3)$. 
+
+\fl $x_n=o(\bigstar_n)$ 의 표현은 $x_n$이 $\bigstar_n$ 보다 빠르게 $0$으로 수렴 (혹은 천천히 $\infty$ 로 발산) 하기만 하면 된다. 
+
+\rdash
+
+\dfn $f(x)$, $g(x)$는 실변수 함수 
+\begin{align*}
+& f(x)=o\big(g(x)\big) \quad as~  x\to a \\
+&\Longleftrightarrow f(x)/g(x) \to 0 \quad as ~ x \to a
+\end{align*}
+
+\fl 함수열의 경우도 동일하게 해석할 수 있다. 
+\[
+f(x)=o\big(\bigstar(x)\big) \quad ~ x \to a
+\]
+는 $x$가 점점 $a$로 가까워질때 $f(x)$가 $\bigstar(x)$보다 빠르게 $0$으로 수렴하거나 천천히 $\infty$로 발산하면 된다. 
+
+\dash
+
+\section{Big $O$}
+
+\dfn $\{x_n\}$, $\{r_n\}$은 실수열이라고 하자. 
+\begin{align*}
+& x_n=O(r_n) \quad as~  n\to \infty \\
+&\Longleftrightarrow \sup_n |x_n/r_n| < \infty 
+\end{align*}
+
+\ex $x_n=n^2+2n+100$ 이면 $x_n=O(n^2)$.
+
+\ex $x_n=n^{-2}+n^{-1}+1$ 이면 $x_n=O(1)$.
+
+\fl 따라서 
+\[
+x_n=O(\bigstar_n)
+\]
+$\{x_n\}$의 최고차항이 $\bigstar_n$의 최고차항과 같다는 의미이다. 
+
+\rdash 
+
+\dfn $f(x)$, $g(x)$는 실변수함수 라고 하자. 
+\begin{align*}
+& f(x)=O\big(g(x)\big) \quad as~  x\to a \\
+&\Longleftrightarrow f(x)/g(x) \to 0 \quad as ~ x \to a
+\end{align*}
+
+\dash
+
+\section{Little $o_p$}
+\dfn $\{X_n\}$, $\{R_n\}$은 확률변수열이라고 하자. 
+\begin{align*}
+& X_n=o_p(R_n) \quad as ~ n\to \infty \\ 
+& \Longleftrightarrow X_n/R_n \overset{p}{\to} 0 \quad as ~ n\to \infty 
+\end{align*}
+
+\note $X_n=o_p(R_n)$의 의미는 새로운 확률변수 $Y_n=X_n/R_n$의 수열이 $\{Y_n\}$이 $0$으로 확률수렴한다는 의미이다. 
+
+\note 여기에서 $\{R_n\}$ 은 확률변수열이 아니라 실수열로 생각할 수 있다. (실수는 확률변수의 한 종류이므로)
+
+\note $\{X_n\}$ 과 $\{R_n\}$ 이 모두 실수열이라면 $O_p$의 정의가 $O$의 정의와 같아진다. 
+
+\dash
+
+\section{Big $O_p$}
+\dfn $\{X_n\}$, $\{R_n\}$은 확률변수열이라고 하자. 
+\begin{align*}
+& X_n=O_p(R_n) \quad as ~ n\to \infty \\ 
+& \Longleftrightarrow \sup_{n}P\{|X_n/R_n|>M\} \underset{\to\infty}{\to} 0
+\end{align*}
+
+\ck 이게 원래 실수버전으로 생각하면 
+\[
+\sup_{n}|X_n / R_n| < \infty
+\]
+이어야 한다. 그런데 $X_n/R_n$은 확률변수이므로 위의 부등식이 성립하지 않게 된다. 결국 
+\[
+\sup_{n}|X_n / R_n| > \infty
+\]
+이 될 확률은 너무 작지않겠냐? 라는 식의 논의를 해야한다. 즉 아래의 느낌이 되어야 한다. 
+\[
+P\{\sup_{n}|X_n / R_n| > \infty\} \approx 0
+\]
+
+\ck 이런 느낌을 살린것이 바로 아래의 statement이다. 
+\[
+P\{\sup_{n}|X_n / R_n| > M\} \underset{M\to\infty}{\to} 0
+\]
+
+\fl 결국 $X_n=O_p(1)$의 의미는 
+\[
+P\{\sup_n|X_n| <  \infty\} \approx 1 
+\]
+의 의미가 된다. 즉 확률변수 $X_n$이 어딘가에 bound 되어 있다는 의미가 된다. 
+
+\thm $Y_n \overset{d}{\to} Y$ 이라면 $Y_n=O_p(1)$ 이다. 
+
+\note 이 정리는 김우철 수리통계학 \cite{Kim2011}  연습문제 5.11, 김우철 통계이론 강의노트 \cite{Kim2012} 의 Review C, 그 외 다수에 소개되어 있다. 
+
+\dfn (\emph{tightness} of $X$) 
+\begin{align*}
+& \mbox{The random variable $X$ is \emph{tight}} \\
+& \overset{def}{\Longleftrightarrow} \forall \epsilon>0 \quad \exists M \quad s.t. \quad P(|X|>M)<\epsilon \\ 
+& \overset{def}{\Longleftrightarrow} P(|X|>M) \to 0 \quad as ~ M\to \infty \\ 
+& \overset{def}{\Longleftrightarrow} \mu^{\star}\big([-M,M]^c\big) \to 0 \quad as ~ M \to \infty \\ 
+& \overset{def}{\Longleftrightarrow} \epsilon>0 \quad \exists M \quad s.t. \quad 1-F(M)+F(-M) < \epsilon \\ 
+& \overset{def}{\Longleftrightarrow} X=O_p(1)
+\end{align*}
+
+\note $\mu^{\star}\big([0,M)\big)=F(M)=P(X<M)$
+
+\note $\mu^{\star}\big([-M,M]^c\big)=1-\big(P(X<M)-P(X<-M)\big)=1-F(M)+F(-M)
+\note 아무리 $\epsilon$을 작게 잡아도 결국 $M$을 크게 잡으면 된다. 
+
+\note 따라서 대충 $M \approx \infty$ 일때 $P(|X|>M) \approx 0$ 인 느낌이다. 
+
+\dfn (\emph{uniformly tightness} of $\{X_n\}$) 
+\begin{align*}
+& \mbox{$\{X_n\}$ is \emph{uniformly tight}} \\
+& \overset{def}{\Longleftrightarrow} \forall \epsilon>0 \quad \exists M \quad s.t. \quad \sup_nP(|X_n|>M)<\epsilon \\ 
+& \overset{def}{\Longleftrightarrow} \sup_n P(|X_n|>M) \to 0 \quad as ~ M\to \infty \\ 
+& \overset{def}{\Longleftrightarrow} \sup_n\mu_n^{\star}\big([-M,M]^c\big) \to 0 \quad as ~ M \to \infty \\ 
+& \overset{def}{\Longleftrightarrow} \epsilon>0 \quad \exists M \quad s.t. \quad \limsup_{n\to\infty} \big(1-F_n(M)+F_n(-M)\big) < \epsilon \\ 
+& \overset{def}{\Longleftrightarrow} X_n=O_p(1)
+\end{align*}
+
+\ck 결국 확률변수열이 $\{X_n\}$이 $\emph{uniformly tight}$ 하다는 것은 확률적으로 유계라는 말과 같다. (\cite{Van2000} p.8.) 
+
+\note 애초에 \emph{uniformly tightness} 는 $\{X_n\}$ 이 {\it iid} 인 상황에서는 살짝 어색한 개념이다. 왜냐하면 {\it iid} 인 경우라면 하나의 분포 $X_1$만 잡아서 확률적으로 유계임을 보이면 되기 때문이다. 즉 \emph{uniformly} 라는 말을 쓸 필요가 없다. 직관적으로 \emph{uniformly}라는 말을 쓴다는 것은 sup을 취한다는 느낌을 받아야 하는데 \emph{iid} 의 경우
+\[
+\sup_nP(|X_n|>M)=P(|X_1>M)
+\]
+이 되어서 sup이 그냥 날아가버린다. 
+
+
+\section{Calculus with $O_p$ and $o_p$}
+
+\thm 아래는 증명없이 받아들이자 \cite{Van2000}. 여기에서 $\{R_n\}$은 (아무런 추가조건없는) 확률변수열이다. 
+\one $o_p(1)+o_p(1)=o_p(1)$.
+\two $o_p(1)+O_p(1)=O_p(1)$.
+\three $O_p(1)o_p(1)=o_p(1)$.
+\four $\big(1+o_p(1)\big)^{-1}=O_p(1)$.
+\five $o_p(R_n)=R_no_p(1)$.
+\six $O_p(R_n)=R_nO_p(1)$.
+\seven $o_p\big(O_p(1)\big)=o_p(1)$
+
+\note 첫번째룰 즉 $o_p(1)+o_p(1)=o_p(1)$ 가 의미하는것은 $X_n \overset{p}{\to} 0$ 이고 $Y_n \overset{p}{\to} 0$ 일때 $Z_n=X_n+Y_n \overset{p}{\to} 0$ 라는 의미이다. 이는 continuous mapping thm 즉 김우철 정리 5.2.3 \cite{Kim2011}의 한 형태가 된다. 
+
+\note 세번째공식 즉 $O_p(1)o_p(1)=o_p(1)$ 이 의미하는 것은 (1) $\{X_n\}$ 이 확률적으로 유계이고 (2) $\{Y_n\}$ 이 0으로 확률수렴한다면 ($\bigstar$) $\{X_nY_n\}$ 은 $0$ 으로 확률수렴한다는 의미이다. 여기에서 (1) 대신에 $\{X_n\}$이 어떠한 분포로 분포수렴한다는 가정이 추가적으로 있다면 이는 슬러츠키 정리의 한 형태가 된다. 
+
+\Section{Delta method}
+
+\thm $\{X_n\}$ 이 확률변수열이라고 하자. 
+(1) $\sqrt{n}(X_n-\theta) \overset{d}{\to} Z$ 이고 (2) $\dot{g}(\cdot)$ 이 연속함수이라면 아래가 성립한다. 
+\[
+\sqrt{n}\big(g(X_n)-g(\theta)) \overset{d}{\to}\dot{g}{(\theta)Z
+\] 
+
+\note $\{X_n\}$이 \emph{iid} 일 필요는 없다. 
+
+\ck 아래가 성립한다. $g(x)$를 $x=a$에서 테일러 전개하면 
+\[
+g(x) = g(a) + (x-a)\dot{g}(a)+O\big((x-a)^2\big) \quad as ~ x\to a
+\]
+그런데 $O\big((x-a)^2\big)=(x-a)^2O(1)$ 이므로 
+\[
+g(x) = g(a) + (x-a)\big(\dot{g}(a)+(x-a)O(1)\big) \quad as ~ x \to a
+\]
+양변에 $\sqrt{n}$을 곱하면 
+\[
+\sqrt{n}\big({g(x) -g(a)}\big) = \sqrt{n}(x-a)\big(\dot{g}(a)+(x-a)O(1)\big) \quad as ~ x \to a
+\]
+
+\ck $x$대신에 $X_n$을 대입하고 $a$대신에 $\theta$를 대입하면 
+\[
+\sqrt{n}\big({g(X_n) -g(\theta)}\big) = \sqrt{n}(X_n-\theta)\big(\dot{g}(\theta)+(X_n-\theta)O(1)\big) \quad as ~ X_n \to \theta
+\]
+정리하면 
+\[
+\sqrt{n}\big({g(X_n) -g(\theta)}\big) = \sqrt{n}(X_n-\theta)\dot{g}(\theta)+\sqrt{n}(X_n-\theta)^2O(1) \quad as ~ X_n \to \theta
+\]
+
+\ck 그런데 조건 (1) 에 따라서 $\sqrt{n}(X_n-\theta)=O_p(1)$이다. 따라서 $X_n-\theta = o_p(1)$이다. 따라서 $\sqrt{n}(X_n-\theta)^2=o_p(1)$이다. 따라서 
+\[
+\sqrt{n}\big({g(X_n) -g(\theta)}\big) = \sqrt{n}(X_n-\theta)\dot{g}(\theta)+o_p(1)O(1) \quad as ~ X_n \to \theta
+\]
+
+\ck $o_p(1)O(1)=o_p(1)$이므로 
+\[
+\sqrt{n}\big({g(X_n) -g(\theta)}\big) = \sqrt{n}(X_n-\theta)\dot{g}(\theta)+o_p(1) 
+\]
+따라서 
+\[
+\sqrt{n}\big({g(X_n) -g(\theta)}\big) \overset{d}{\to} \sqrt{n}(X_n-\theta)\dot{g}(\theta)
+\]
+
+
+\begin{thebibliography}{9} 
+\bibitem{Van2000} Van der Vaart, A. W. (2000). Asymptotic statistics (Vol. 3). Cambridge university press.
+\bibitem{Kim2011} 김우철, 수리통계학.
+\bibitem{Kim2012} 김우철, 통계이론1 강의노트.
 \end{thebibliography}
 \end{document}
 
