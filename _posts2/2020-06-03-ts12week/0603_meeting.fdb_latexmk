@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1591191634 "0603_meeting.tex" "0603_meeting.pdf" "0603_meeting" 1591191635
+["pdflatex"] 1591192403 "0603_meeting.tex" "0603_meeting.pdf" "0603_meeting" 1591192403
   "/etc/texmf/web2c/texmf.cnf" 1588735733 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -65,6 +65,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc8.tfm" 1364599308 1268 53810ff37e3fdeaa7e8a15f6fea6382d ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc9.tfm" 1364599308 1268 745732a834c61abd402e0c69d5595506 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmca.tfm" 1364599308 1284 8b5d42876ba8b739647a59102febdf1b ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcb.tfm" 1364599308 1268 32062d727264ef7abbb7426886a80151 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcc.tfm" 1364599308 1224 a7c7caad8c71c6e8524115fd0bac5714 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcd.tfm" 1364599308 1264 80c04b244b620e9f93a409ec8fda15b9 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmce.tfm" 1364599308 1260 379a30dae255d34e90879be3f1c14b7b ""
@@ -119,6 +120,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb" 1364599308 164035 a58c416565214558dc86cdbc85b47b06 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb" 1364599308 157640 5f0f64cca8f8bfe6dcb6cc1a7ef825ca ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb" 1364599308 155855 888a35960d8d35d552dfe1680dfba664 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcb.pfb" 1364599308 165176 ae2cee42ee6cb95599ff3ffc7bf37e9c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb" 1364599308 151674 db7a3ff04ff1c3013035cf02b94eab4f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb" 1364599308 184491 f220428912352b4a3a9c2cf02b03b6cb ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb" 1364599308 154112 a22c73030250b02bd2a0145f6051bc2e ""
@@ -237,9 +239,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1588735775 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1588735815 8256229 bc1212c8b345a0a4119dd4eacaa2ed9e ""
-  "0603_meeting.aux" 1591191635 2986 b3499deaa89f5dd9147591a8e9eb4538 "pdflatex"
-  "0603_meeting.tex" 1591191634 10213 29743921bfa8661a252d129b6cae1607 ""
+  "0603_meeting.aux" 1591192403 3609 dc20603bf841711e20b4120276b53600 "pdflatex"
+  "0603_meeting.tex" 1591192401 11476 cb5cf93d6ef549c80bac7ec06b96454f ""
+  "fig1.png" 1591191596 27256 f19d05a0e0ae261f22ccd3148daed565 ""
   (generated)
-  "0603_meeting.pdf"
   "0603_meeting.log"
   "0603_meeting.aux"
+  "0603_meeting.pdf"
