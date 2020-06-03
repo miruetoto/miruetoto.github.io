@@ -271,6 +271,9 @@ INPUT ./fig1.png
 OUTPUT 0603_meeting.pdf
 INPUT ./fig1.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcb.tfm
+INPUT fig2.png
+INPUT ./fig2.png
+INPUT ./fig2.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri9d.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb9d.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc2.tfm
