@@ -136,7 +136,7 @@ expansion=true]{microtype}
 \titlespacing*{\chapter} {0pt}{50pt}{40pt}
 
 \newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
-\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=115in]{geometry}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=32in]{geometry}
 
 \usepackage{geometry}
 \geometry{
@@ -274,18 +274,20 @@ par(mfrow=c(1,1))
 
 \two \textcolor{blue}{이제는 사야겠다. 이건 오르는 주식이야.}
 
-\ck (규빈) 랜덤워크는 사실을 알고 있는사람이라면? 역시 안산다. 랜덤워크에 대한 지식이 없는 사람이라면 이 주식을 안산사람을 세상한심하게 볼것이다. 하지만 이주식을 $t=1500$까지 관측한다면? 결과는 아래와 같다.
+\ck (규빈) 랜덤워크는 사실을 알고 있는사람이라면? 역시 안산다. 랜덤워크에 대한 지식이 없는 사람이라면 이 주식을 안산사람을 세상한심하게 볼것이다. 하지만 이주식을 $t=1500$까지 관측한다면? 결과는 아래그림중 첫번째 row 와 같다. (망함.) 이제 검은색 시계열을 관측한사람이 있다고 하자. 어떻게 숨겨진 결정적 추세를 찾았다고 하자. $t=1500$ 시점에서 두 주식은? 아래그림에서 두번째 row와 같다. 
 
 \begin{figure}[h]
 \includegraphics[width=1\textwidth]{fig2.png}
 \end{figure}
 
-\ck (규빈) 랜덤워크에 대한 올바른 지식이 있는사람이라면 재산을 지킬 수 있다. 
 
-\ck (규빈) 만약에 회귀분석과 같은 느낌을 가지는 주식을 관찰했다면? 올바르게 배운사람이라면 
+\ck (규빈) 결론: 구분할 자신이 있다면 하는게 좋다. (구분하기 애매하면 그냥 차분해도 무방함)
+\begin{itemize}
+	\item (1번) 확률적 추세와 결정적 추세의 개념이 있지만 귀찮아서 그냥 2번 차분한 사람: 빨간색시계열의 경우 재산을 지킬수 있지만 검은색시계열의 경우 이득볼 상황에서 이득보지 못함. (검은색 시계열의 경우 차분하면 화이트노이즈이므로 주식을 사지 않는 의사결정을 함.) \textcolor{blue}{그래도 치명적인 손해는 아니다.}
+	\item (2번) 확률적 추세와 결정적 추세의 개념이 있고 잘 구분하여 확률적 추세일 경우에는 차분을 결정적 추세일 경우에는 추세를 decompose한 사람: 가장 좋은 선택임.  
+	\item (3번) 확률적 추세 결정적 추세 구분 못하는 사람: 그냥 바보임. 논의하지 않겠음. 
+\end{itemize}
 
 \rdash 
-
-\ck 결론: 
 
 \end{document}
