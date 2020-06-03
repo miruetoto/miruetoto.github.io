@@ -243,30 +243,30 @@ $\{x_n\}$의 최고차항이 $\bigstar_n$의 최고차항과 같다는 의미이
 \dfn $\{X_n\}$, $\{R_n\}$은 확률변수열이라고 하자. 
 \begin{align*}
 & X_n=O_p(R_n) \quad as ~ n\to \infty \\ 
-& \Longleftrightarrow \sup_{n}P\{|X_n/R_n|>M\} \underset{\to\infty}{\to} 0
+& \Longleftrightarrow \sup_{n}P\{|X_n/R_n|>M\} \underset{M\to\infty}{\to} 0
 \end{align*}
 
-\ck 이게 원래 실수버전으로 생각하면 
+\ck 이게 원래 실수버전으로 생각하면 엄청 큰 $M$에 대해서 
 \[
-\sup_{n}|X_n / R_n| < \infty
+\sup_{n}|X_n / R_n| < M < \infty
 \]
-이어야 한다. 그런데 $X_n/R_n$은 확률변수이므로 위의 부등식이 성립하지 않게 된다. 결국 
+이어야 한다. 그런데 $X_n/R_n$은 확률변수이므로 위의 부등식이 성립하지 않게 된다. 결국 $M$을 엄청 크게 잡으면 
 \[
-\sup_{n}|X_n / R_n| > \infty
+\sup_{n}|X_n / R_n| > M 
 \]
 이 될 확률은 너무 작지않겠냐? 라는 식의 논의를 해야한다. 즉 아래의 느낌이 되어야 한다. 
 \[
-P\{\sup_{n}|X_n / R_n| > \infty\} \approx 0
+\mbox{for very large $M$}:\quad P\{\sup_{n}|X_n / R_n| > M \} \approx 0
 \]
 
 \ck 이런 느낌을 살린것이 바로 아래의 statement이다. 
 \[
-P\{\sup_{n}|X_n / R_n| > M\} \underset{M\to\infty}{\to} 0
+P\{\sup_{n}|X_n / R_n| > M \} \underset{M\to\infty}{\to} 0
 \]
 
 \fl 결국 $X_n=O_p(1)$의 의미는 
 \[
-P\{\sup_n|X_n| <  \infty\} \approx 1 
+\mbox{for very large $M$}:\quad  P\{\sup_n|X_n| < M \} \approx 1 
 \]
 의 의미가 된다. 즉 확률변수 $X_n$이 어딘가에 bound 되어 있다는 의미가 된다. 
 
@@ -280,8 +280,7 @@ P\{\sup_n|X_n| <  \infty\} \approx 1
 & \overset{def}{\Longleftrightarrow} \forall \epsilon>0 \quad \exists M \quad s.t. \quad P(|X|>M)<\epsilon \\ 
 & \overset{def}{\Longleftrightarrow} P(|X|>M) \to 0 \quad as ~ M\to \infty \\ 
 & \overset{def}{\Longleftrightarrow} \mu^{\star}\big([-M,M]^c\big) \to 0 \quad as ~ M \to \infty \\ 
-& \overset{def}{\Longleftrightarrow} \epsilon>0 \quad \exists M \quad s.t. \quad 1-F(M)+F(-M) < \epsilon \\ 
-& \overset{def}{\Longleftrightarrow} X=O_p(1)
+& \overset{def}{\Longleftrightarrow} \epsilon>0 \quad \exists M \quad s.t. \quad 1-F(M)+F(-M) < \epsilon 
 \end{align*}
 
 \note $\mu^{\star}\big([0,M)\big)=F(M)=P(X<M)$
@@ -291,6 +290,8 @@ P\{\sup_n|X_n| <  \infty\} \approx 1
 
 \note 따라서 대충 $M \approx \infty$ 일때 $P(|X|>M) \approx 0$ 인 느낌이다. 
 
+\thm 모든 확률변수 $X$는 \emph{tight} 하다.
+ 
 \dfn (\emph{uniformly tightness} of $\{X_n\}$) 
 \begin{align*}
 & \mbox{$\{X_n\}$ is \emph{uniformly tight}} \\
@@ -298,7 +299,7 @@ P\{\sup_n|X_n| <  \infty\} \approx 1
 & \overset{def}{\Longleftrightarrow} \sup_n P(|X_n|>M) \to 0 \quad as ~ M\to \infty \\ 
 & \overset{def}{\Longleftrightarrow} \sup_n\mu_n^{\star}\big([-M,M]^c\big) \to 0 \quad as ~ M \to \infty \\ 
 & \overset{def}{\Longleftrightarrow} \epsilon>0 \quad \exists M \quad s.t. \quad \limsup_{n\to\infty} \big(1-F_n(M)+F_n(-M)\big) < \epsilon \\ 
-& \overset{def}{\Longleftrightarrow} X_n=O_p(1)
+& \overset{def}{\Longleftrightarrow} X_n=O_p(1) \quad as ~ n\to\infty 
 \end{align*}
 
 \ck 결국 확률변수열이 $\{X_n\}$이 $\emph{uniformly tight}$ 하다는 것은 확률적으로 유계라는 말과 같다. (\cite{Van2000} p.8.) 
@@ -313,29 +314,48 @@ P\{\sup_n|X_n| <  \infty\} \approx 1
 \section{Calculus with $O_p$ and $o_p$}
 
 \thm 아래는 증명없이 받아들이자 \cite{Van2000}. 여기에서 $\{R_n\}$은 (아무런 추가조건없는) 확률변수열이다. 
-\one $o_p(1)+o_p(1)=o_p(1)$.
-\two $o_p(1)+O_p(1)=O_p(1)$.
-\three $O_p(1)o_p(1)=o_p(1)$.
-\four $\big(1+o_p(1)\big)^{-1}=O_p(1)$.
-\five $o_p(R_n)=R_no_p(1)$.
-\six $O_p(R_n)=R_nO_p(1)$.
-\seven $o_p\big(O_p(1)\big)=o_p(1)$
+\one $O_p(1)+O_p(1)=O_p(1)$.
+\two $o_p(1)+o_p(1)=o_p(1)$.
+\three $o_p(1)+O_p(1)=O_p(1)$.
+\four $O_p(1)O_p(1)=O_p(1)$.
+\five $o_p(1)o_p(1)=o_p(1)$.
+\six $O_p(1)o_p(1)=o_p(1)$.
+\seven $\big(1+o_p(1)\big)^{-1}=O_p(1)$.
+\eight $o_p(R_n)=R_no_p(1)$.
+\nine $O_p(R_n)=R_nO_p(1)$.
+\ten $o_p\big(O_p(1)\big)=o_p(1)$
 
-\note 첫번째룰 즉 $o_p(1)+o_p(1)=o_p(1)$ 가 의미하는것은 $X_n \overset{p}{\to} 0$ 이고 $Y_n \overset{p}{\to} 0$ 일때 $Z_n=X_n+Y_n \overset{p}{\to} 0$ 라는 의미이다. 이는 continuous mapping thm 즉 김우철 정리 5.2.3 \cite{Kim2011}의 한 형태가 된다. 
+\note (2)번 공식, 즉 $o_p(1)+o_p(1)=o_p(1)$ 가 의미하는것은 $X_n \overset{p}{\to} 0$ 이고 $Y_n \overset{p}{\to} 0$ 일때 $Z_n=X_n+Y_n \overset{p}{\to} 0$ 라는 의미이다. 이는 continuous mapping thm 즉 김우철 정리 5.2.3 \cite{Kim2011}의 한 형태가 된다. 
 
-\note 세번째공식 즉 $O_p(1)o_p(1)=o_p(1)$ 이 의미하는 것은 (1) $\{X_n\}$ 이 확률적으로 유계이고 (2) $\{Y_n\}$ 이 0으로 확률수렴한다면 ($\bigstar$) $\{X_nY_n\}$ 은 $0$ 으로 확률수렴한다는 의미이다. 여기에서 (1) 대신에 $\{X_n\}$이 어떠한 분포로 분포수렴한다는 가정이 추가적으로 있다면 이는 슬러츠키 정리의 한 형태가 된다. 
+\note (6)번 공식, 즉 $O_p(1)o_p(1)=o_p(1)$ 이 의미하는 것은 (1) $\{X_n\}$ 이 확률적으로 유계이고 (2) $\{Y_n\}$ 이 0으로 확률수렴한다면 ($\bigstar$) $\{X_nY_n\}$ 은 $0$ 으로 확률수렴한다는 의미이다. 여기에서 (1) 대신에 $\{X_n\}$이 어떠한 분포로 분포수렴한다는 가정이 추가적으로 있다면 이는 슬러츠키 정리의 한 형태가 된다. 
 
 \Section{Delta method}
 
 \thm $\{X_n\}$ 이 확률변수열이라고 하자. 
-(1) $\sqrt{n}(X_n-\theta) \overset{d}{\to} Z$ 이고 (2) $\dot{g}(\cdot)$ 이 연속함수이라면 아래가 성립한다. 
+(1) $\sqrt{n}(X_n-\theta) \overset{d}{\to} Z$ 이고 (2) $g(x)$가 $\theta$에서 미분가능하다면 아래가 성립한다. 
 \[
 \sqrt{n}\big(g(X_n)-g(\theta)) \overset{d}{\to}\dot{g}(\theta)Z
 \] 
 
 \note $\{X_n\}$이 \emph{iid} 일 필요는 없다. 
 
-\ck 아래가 성립한다. $g(x)$를 $x=a$에서 테일러 전개하면 
+\note 일반적인 함수 $g:\mathbb{R}^k \to \mathbb{R}^{m}$에 대하여 (2)의 조건은 아래와 같이 표현가능하다. \cite{Van2000}
+\one $g$ is \emph{differentialbe} at $\theta$ 
+\two there is linear map (matrix) $g_{\theta}': \mathbb{R}^k \to \mathbb{R}^{m}$ such that 
+\[
+g(\theta+h)-g(\theta)=g_{\theta}'(h)+o(\|h\|)
+\]
+여기에서 linear map $h \to g'_{\theta}(h)$을 \emph{total derivate} 라고 부른다. (이는 \emph{partial derivate}와 구분된다.) 
+
+\note $g(x):\mathbb{R}^{k}\to \mathbb{R}^{m}$이 \emph{totally differentiable} 하기 해서는 (1) $g(x)$의 모든 편미분이 존재하고 즉 모든 $i=1,2,\dots,k$ and $j=1,2,\dots, m$에 대하여 
+\[
+\frac{\partial g_j(x)}{\partial x_i}
+\]
+가 존재하고 (2) 그것이 연속이어야 한다. 단순히 편미분이 존재하기만 해서는 안된다. 
+
+\note 위의 조건을 \emph{continuously differentiable} 이라고 하기도 한다. 
+
+\ck 증명을 해보자. 아래가 성립한다. $g(x)$를 $x=a$에서 테일러 전개하면 
 \[
 g(x) = g(a) + (x-a)\dot{g}(a)+O\big((x-a)^2\big) \quad as ~ x\to a
 \]
