@@ -148,6 +148,36 @@ headheight=1.5cm,
 headsep=0.8cm,
 footskip=0.5cm}
 
+
+% Insert R code to LaTeX.
+\usepackage[svgnames]{xcolor}
+\usepackage{listings}
+
+\lstset{
+language=R,
+basicstyle=\scriptsize\ttfamily,
+commentstyle=\ttfamily\color{DarkGreen},
+numbers=left,
+numberstyle=\ttfamily\color{gray}\footnotesize,
+stepnumber=1,
+numbersep=5pt,
+backgroundcolor=\color{white},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+frame=single,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+breakatwhitespace=false,
+%title=\lstname,
+escapeinside={},
+keywordstyle=\color{blue},
+otherkeywords={!,!=,~,\&,\%/\%,\%\%,<-,<<-,/,0,1,2,3,4,5,6,7,8,9},
+deletekeywords={data,mean,sd,stem,rnorm,density,range,rgb,plot,panel,polygon,col,legend,grid,matrix,set,ncol,rbind,cbind,colnames,D_hat,max,old,sample,D,sqrt,hat,sum,_,solve,nrow,par,summary,table,options,c,frame,length,as,character},
+}
+
+
 \begin{document}
 \chapter{시계열 12주차 강의내용}
 \section{시계열의 추세}
@@ -187,6 +217,27 @@ y_i=0.001x_i+0.99y_{i-1}+\epsilon_t
 \]
 이런건 어쩔거임. 트루모델은 실제로 결정적 추세만 있는데 난 확률적 추세가 있는거 같다라고 판단하면 매우 잘못된 판단임? 
 
+\note 위의 예제를 구한한 R-code
+\begin{lstlisting}
+e<-rnorm(100)
+z<-e*0
+rw<-e*0
+set.seed(7)
+trend<-0.5*(1:10000/1000)
+for(t in 2:100){
+  z[t]=trend[t]+0.99999*z[t-1]+e[t]
+  rw[t]=rw[t-1]+e[t]
+}
+par(mfrow=c(3,1))
+plot(z,type='l');lines(rw,col=2,lty=2)
+acf(z)
+acf(rw)
+par(mfrow=c(1,1))
+\end{lstlisting}
+
+\begin{figure}[h]
+\includegraphix{fig1.png}
+\end{figure}
 \ck (답변) ... 
 
 \ck (재질문) 사실 저런 경우는 ACF 찍어도 모르는거아님? 그리고 막말로 ACF 찍어도 잘 모르는거 많자나? 이건 거의 ACF찍어서 ARMA($p$,$q$)에서 $p$, $q$를 결정할 수 있는 논리랑 동급아님? 아니 다 구분할 수 있었으면 머 분석자의 감이 필요하니.. 사전지식을 활용하라느니 그런말을 왜함? ACF로 구분하기 힘드니까 이것저것 여러개 방법 제시하는거 아님? 

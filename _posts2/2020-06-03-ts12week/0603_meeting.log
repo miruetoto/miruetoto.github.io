@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  3 JUN 2020 22:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  3 JUN 2020 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -540,50 +540,105 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen261
 \Gm@dimlist=\toks38
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count295
+\lst@gtempboxa=\box54
+\lst@token=\toks39
+\lst@length=\count296
+\lst@currlwidth=\dimen262
+\lst@column=\count297
+\lst@pos=\count298
+\lst@lostspace=\dimen263
+\lst@width=\dimen264
+\lst@newlines=\count299
+\lst@lineno=\count300
+\lst@maxwidth=\dimen265
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count301
+\lst@skipnumbers=\count302
+\lst@framebox=\box55
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2019/09/10 1.8c listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2019/09/10 1.8c listings language file
+)
 (./0603_meeting.aux)
 \openout1 = `0603_meeting.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
-LaTeX Font Info:    ... okay on input line 151.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 151.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 181.
+LaTeX Font Info:    ... okay on input line 181.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 181.
 LaTeX Font Info:    Trying to load font information for LUC+nanummj on input li
-ne 151.
+ne 181.
 
 (/usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    ... okay on input line 181.
 LaTeX Font Info:    Trying to load font information for T1+pplj on input line 1
-51.
+81.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count295
-\scratchdimen=\dimen262
-\scratchbox=\box54
-\nofMPsegments=\count296
-\nofMParguments=\count297
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count298
-\MPscratchDim=\dimen263
-\MPnumerator=\count299
-\makeMPintoPDFobject=\count300
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count303
+\scratchdimen=\dimen266
+\scratchbox=\box56
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count306
+\MPscratchDim=\dimen267
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -593,7 +648,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box55
+\AtBeginShipoutBox=\box57
 
 
 Package microtype Warning: Command \pickup@font is not defined as expected.
@@ -602,14 +657,14 @@ Package microtype Warning: Command \pickup@font is not defined as expected.
 (microtype)                applied to the document.
 (microtype)                (Hint: Turn on `verbose' mode).
 
-LaTeX Info: Redefining \microtypecontext on input line 151.
+LaTeX Info: Redefining \microtypecontext on input line 181.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 10, shrink: 10, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 151.
+LaTeX Info: Redefining \showhyphens on input line 181.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: Adjustment of interword spacing enabled.
@@ -621,6 +676,7 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 *geometry* driver: auto-detecting
@@ -657,15 +713,16 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\c@lstlisting=\count309
 Chapter 1.
 LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <24.88> not available
 (Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 1
-52.
+82.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 155
+LaTeX Font Info:    Trying to load font information for U+msa on input line 185
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -674,7 +731,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 155
+LaTeX Font Info:    Trying to load font information for U+msb on input line 185
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -683,16 +740,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+futs on input line 17
+LaTeX Font Info:    Trying to load font information for U+futs on input line 20
 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 File: ufuts.fd 2004/03/02 Fontinst v1.926 font definitions for U/futs.
 )
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+21.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+! Undefined control sequence.
+l.239 \includegraphix
+                     {fig1.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package xcolor Warning: Incompatible color definition on input line 263.
+
 LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <12> not available
 (Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 2
-12.
-
+63.
 
 Package Fancyhdr Warning: \footskip is too small (14.22636pt): 
 Make it at least 14.49998pt.
@@ -703,73 +782,75 @@ This may cause the page layout to be inconsistent, however.
 
 ] (./0603_meeting.aux) ) 
 Here is how much of TeX's memory you used:
- 10025 strings out of 481239
- 158960 string characters out of 5920378
- 546915 words of memory out of 5000000
- 25004 multiletter control sequences out of 15000+600000
- 573163 words of font info for 127 fonts, out of 8000000 for 9000
+ 12750 strings out of 481239
+ 194163 string characters out of 5920378
+ 819681 words of memory out of 5000000
+ 27689 multiletter control sequences out of 15000+600000
+ 577277 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,12n,46p,512b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.
-enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/fourier/fourier-orns.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/na
-numtype1/nanummjbac.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
-type1/nanummjbb0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtyp
-e1/nanummjbc1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/
-nanummjbc2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nan
-ummjbc5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jbc6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/nanumtype1/nanummjmba.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanummjmbc.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmbd.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/n
-anumtype1/nanummjmbe.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanu
-mtype1/nanummjmc0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumty
-pe1/nanummjmc1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1
-/nanummjmc2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/na
-nummjmc5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanum
-mjmc6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
-c7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/nanumtype1/nanummjmd7.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/up
-lr8a.pfb>
-Output written on 0603_meeting.pdf (1 page, 2071987 bytes).
+ 48i,12n,46p,512b,1836s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.
+enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/fourier/fourier-orns.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/fpl/fplbj8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmb2.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjmb3.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjmb5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nan
+umtype1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmba.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmbc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+mbd.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanummjmd3.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/nanumtype1/nanummjmd4.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/nanumtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/nanumtype1/nanummjmd6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/na
+numtype1/nanummjmd7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/palatino/uplr8a.pfb>
+Output written on 0603_meeting.pdf (1 page, 2127858 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 8705 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 10241 words of extra memory for PDF output out of 12000 (max. 10000000)
 
