@@ -266,6 +266,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt0800.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
+INPUT fig1.png
+INPUT ./fig1.png
+OUTPUT 0603_meeting.pdf
+INPUT ./fig1.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmcb.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplri9d.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb9d.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc2.tfm
@@ -277,7 +282,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbb0.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fourier/futrorn.tfm
-OUTPUT 0603_meeting.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplb9d.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
@@ -302,10 +306,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbij8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/fourier/futrorn.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fourier/fourier-orns.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fourier/fourier-alt.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/fourier/futrorn.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fourier/fourier-orns.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fourier/fourier-alt.tfm
@@ -355,6 +355,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcb.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb
