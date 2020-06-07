@@ -1,0 +1,348 @@
+\documentclass[12pt,oneside,english]{book}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\definecolor{marron}{RGB}{60,30,10}
+\definecolor{darkblue}{RGB}{0,0,80}
+\definecolor{lightblue}{RGB}{80,80,80}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{darkgray}{RGB}{0,80,0}
+\definecolor{darkred}{RGB}{80,0,0}
+\definecolor{shadecolor}{rgb}{0.97,0.97,0.97}
+\usepackage{graphicx}
+\usepackage{wallpaper}
+\usepackage{wrapfig,booktabs}
+
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\input Acorn.fd
+
+\renewcommand{\familydefault}{pplj} 
+\usepackage[
+final,
+stretch=10,
+protrusion=true,
+tracking=true,
+spacing=on,
+kerning=on,
+expansion=true]{microtype}
+
+%\setlength{\parskip}{1.5ex plus 0.2ex minus 0.2ex}
+
+
+\usepackage{fourier-orns}
+\newcommand{\dash}{\vspace{2em}\noindent \textcolor{darkgray}{\hrulefill~ \raisebox{-2.5pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone   \floweroneright \decotwo \aldineleft\decothreeright \decofourright \leafleft} ~  \hrulefill \\ \vspace{2em}}}
+\newcommand{\rdash}{\noindent \textcolor{darkgray}{ \raisebox{-1.9pt}[10pt][10pt]{\leafright} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone}}}
+\newcommand{\ldash}{\textcolor{darkgray}{\raisebox{-1.9pt}[10pt][10pt]{\decoone \floweroneright \decotwo \aldineleft \decothreeright \decofourright \leafleft} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafleft}}}
+
+\fancyhf{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\newcommand{\estcab}[1]{\itshape\textcolor{marron}{\nouppercase #1}}
+
+\fancyhead[LO]{\estcab{\rightmark}} 
+\fancyhead[RO]{\estcab{\leftmark}}
+\fancyhead[RO]{\bf\nouppercase{ \leftmark}}
+\fancyfoot[RO]{ \leafNE  ~~ \bf \thepage}
+
+\newenvironment{Section}[1]
+{\section{\vspace{0ex}#1}}
+{\vspace{12pt}\centering ------- \decofourleft\decofourright ------- \par}
+
+\usepackage{lipsum}
+\setlength{\parindent}{1em} % Sangría española
+\pagestyle{fancy}
+
+\renewcommand{\footnoterule}{\noindent\textcolor{marron}{\decosix \raisebox{2.9pt}{\line(1,0){100}} \lefthand} \vspace{.5em} }
+\usepackage[hang,splitrule]{footmisc}
+\addtolength{\footskip}{0.5cm}
+\setlength{\footnotemargin}{0.3cm}
+\setlength{\footnotesep}{0.4cm} 
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\usepackage{kotex}
+\usepackage{amsthm} 
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{enumerate} 
+\usepackage{cite}
+\usepackage{graphics} 
+\usepackage{graphicx,lscape} 
+\usepackage{subcaption}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{titlesec}
+\usepackage{cite, url}
+\usepackage{amssymb}
+
+\def\ck{\paragraph{\Large$\bullet$}\Large}
+\def\goal{\paragraph{\Large(목표)}\Large}
+\def\observe{\paragraph{\Large(관찰)}\Large}
+\def\assume{\paragraph{\Large(가정)}\Large}
+\def\summary{\paragraph{\Large(요약)}\Large}
+\def\EX{\paragraph{\Large(예제)}\Large}
+\def\guess{\paragraph{\Large(추측)}\Large}
+\def\thus{\paragraph{\Large(결론)}\Large}
+\def\prob{\paragraph{\Large(문제)}\Large}
+\def\sol{\paragraph{\Large(해결)}\Large}
+\def\dfn{\paragraph{\Large(정의)}\Large}
+\def\thm{\paragraph{\Large(정리)}\Large}
+\def\lem{\paragraph{\Large(레마)}\Large}
+\def\promise{\paragraph{\Large(약속)}\Large}
+\def\property{\paragraph{\Large(특징)}\Large}
+\def\fl{\paragraph{\Large(느낌)}\Large}
+\def\memo{\paragraph{\Large(암기)}\Large}
+\def\note{\paragraph{\Large\textit{\underline{note:}}}\Large}
+\def\ex{\paragraph{\Large\textit{example:}}\Large}
+
+
+\def\one{\paragraph{\Large(1)}\Large}
+\def\two{\paragraph{\Large(2)}\Large}
+\def\three{\paragraph{\Large(3)}\Large}
+\def\four{\paragraph{\Large(4)}\Large}
+\def\five{\paragraph{\Large(5)}\Large}
+\def\six{\paragraph{\Large(6)}\Large}
+\def\seven{\paragraph{\Large(7)}\Large}
+\def\eight{\paragraph{\Large(8)}\Large}
+\def\nine{\paragraph{\Large(9)}\Large}
+\def\ten{\paragraph{\Large(10)}\Large}
+
+\newcommand{\bld}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\bs}[1]{\mbox{\boldmath $#1$}}
+
+\newcommand{\va}{\mbox{\boldmath $a$}}
+\newcommand{\vb}{\mbox{\boldmath $b$}}
+\newcommand{\vc}{\mbox{\boldmath $c$}}
+\newcommand{\vd}{\mbox{\boldmath $d$}}
+\newcommand{\ve}{\mbox{\boldmath $e$}}
+\newcommand{\vf}{\mbox{\boldmath $f$}}
+\newcommand{\vg}{\mbox{\boldmath $g$}}
+\newcommand{\vh}{\mbox{\boldmath $h$}}
+\newcommand{\vi}{\mbox{\boldmath $i$}}
+\newcommand{\vj}{\mbox{\boldmath $j$}}
+\newcommand{\vk}{\mbox{\boldmath $k$}}
+\newcommand{\vl}{\mbox{\boldmath $l$}}
+\newcommand{\vm}{\mbox{\boldmath $m$}}
+\newcommand{\vn}{\mbox{\boldmath $n$}}
+\newcommand{\vo}{\mbox{\boldmath $o$}}
+\newcommand{\vp}{\mbox{\boldmath $p$}}
+\newcommand{\vq}{\mbox{\boldmath $q$}}
+\newcommand{\vr}{\mbox{\boldmath $r$}}
+\newcommand{\vs}{\mbox{\boldmath $s$}}
+\newcommand{\vt}{\mbox{\boldmath $t$}}
+\newcommand{\vu}{\mbox{\boldmath $u$}}
+\newcommand{\vv}{\mbox{\boldmath $v$}}
+\newcommand{\vw}{\mbox{\boldmath $w$}}
+\newcommand{\vx}{\mbox{\boldmath $x$}}
+\newcommand{\vy}{\mbox{\boldmath $y$}}
+\newcommand{\vz}{\mbox{\boldmath $z$}}
+
+\newcommand{\bfa}{\mbox{$\bf{a}$}}
+\newcommand{\bfb}{\mbox{$\bf{b}$}}
+\newcommand{\bfc}{\mbox{$\bf{c}$}}
+\newcommand{\bfd}{\mbox{$\bf{d}$}}
+\newcommand{\bfe}{\mbox{$\bf{e}$}}
+\newcommand{\bff}{\mbox{$\bf{f}$}}
+\newcommand{\bfg}{\mbox{$\bf{g}$}}
+\newcommand{\bfh}{\mbox{$\bf{h}$}}
+\newcommand{\bfi}{\mbox{$\bf{i}$}}
+\newcommand{\bfj}{\mbox{$\bf{j}$}}
+\newcommand{\bfk}{\mbox{$\bf{k}$}}
+\newcommand{\bfl}{\mbox{$\bf{l}$}}
+\newcommand{\bfm}{\mbox{$\bf{m}$}}
+\newcommand{\bfn}{\mbox{$\bf{n}$}}
+\newcommand{\bfo}{\mbox{$\bf{o}$}}
+\newcommand{\bfp}{\mbox{$\bf{p}$}}
+\newcommand{\bfq}{\mbox{$\bf{q}$}}
+\newcommand{\bfr}{\mbox{$\bf{r}$}}
+\newcommand{\bfs}{\mbox{$\bf{s}$}}
+\newcommand{\bft}{\mbox{$\bf{t}$}}
+\newcommand{\bfu}{\mbox{$\bf{u}$}}
+\newcommand{\bfv}{\mbox{$\bf{v}$}}
+\newcommand{\bfw}{\mbox{$\bf{w}$}}
+\newcommand{\bfx}{\mbox{$\bf{x}$}}
+\newcommand{\bfy}{\mbox{$\bf{y}$}}
+\newcommand{\bfz}{\mbox{$\bf{z}$}}
+
+\newcommand{\bfA}{\mbox{$\bf{A}$}}
+\newcommand{\bfB}{\mbox{$\bf{B}$}}
+\newcommand{\bfC}{\mbox{$\bf{C}$}}
+\newcommand{\bfD}{\mbox{$\bf{D}$}}
+\newcommand{\bfE}{\mbox{$\bf{E}$}}
+\newcommand{\bfF}{\mbox{$\bf{F}$}}
+\newcommand{\bfG}{\mbox{$\bf{G}$}}
+\newcommand{\bfH}{\mbox{$\bf{H}$}}
+\newcommand{\bfI}{\mbox{$\bf{I}$}}
+\newcommand{\bfJ}{\mbox{$\bf{J}$}}
+\newcommand{\bfK}{\mbox{$\bf{K}$}}
+\newcommand{\bfL}{\mbox{$\bf{L}$}}
+\newcommand{\bfM}{\mbox{$\bf{M}$}}
+\newcommand{\bfN}{\mbox{$\bf{N}$}}
+\newcommand{\bfO}{\mbox{$\bf{O}$}}
+\newcommand{\bfP}{\mbox{$\bf{P}$}}
+\newcommand{\bfQ}{\mbox{$\bf{Q}$}}
+\newcommand{\bfR}{\mbox{$\bf{R}$}}
+\newcommand{\bfS}{\mbox{$\bf{S}$}}
+\newcommand{\bfT}{\mbox{$\bf{T}$}}
+\newcommand{\bfU}{\mbox{$\bf{U}$}}
+\newcommand{\bfV}{\mbox{$\bf{V}$}}
+\newcommand{\bfW}{\mbox{$\bf{W}$}}
+\newcommand{\bfX}{\mbox{$\bf{X}$}}
+\newcommand{\bfY}{\mbox{$\bf{Y}$}}
+\newcommand{\bfZ}{\mbox{$\bf{Z}$}}
+
+\DeclareMathOperator*{\argmin}{argmin} %\usepackage{amsmath}를 써야지 정의가능함. 
+\DeclareMathOperator*{\argmax}{argmax} %\usepackage{amsmath}를 써야지 정의가능함. 
+
+\usepackage{titlesec}
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\huge\bfseries}
+\titleformat*{\subsubsection}{\huge\bfseries}
+\titleformat*{\paragraph}{\huge\bfseries}
+\titleformat*{\subparagraph}{\huge\bfseries}
+
+
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+\titlespacing*{\part}{0pt}{50pt}{40pt}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=32in]{geometry}
+
+\usepackage{geometry}
+\geometry{
+tmargin=3cm, 
+bmargin=3cm, 
+lmargin=1cm, 
+rmargin=1cm,
+headheight=1.5cm,
+headsep=0.8cm,
+footskip=0.5cm}
+
+\begin{document}
+\subsubsection{Forecasting}
+
+\ck suppose we observe $z_1,\dots,z_n$. 
+
+\goal predict the future value $z_{n+m}$, where $m=1,2,3,\dots$
+
+\assume (1) $\{Z_t\}$ is staionary and (2) the model parameters are known. 
+
+\ck (prob 3.26.) $z_1,\dots,z_n$ be a sample of size $n$ from a causal AR(1) process, $Z_t=\phi Z_{t-1}+\epsilon_t$. Let $\hat\phi$ be the Yule-Walker estimator of $\phi$. 
+\one $\hat\phi-\phi=O_p(n^{-1/2})$.
+\two $z_{n+1}^{n}-\hat{z}_{n+1}^{n}=O_p(n^{-1/2})$ where 
+\begin{enumerate}[$\bullet$]
+\item $z_{n+1}^{n}$: the one-step-ahead forecast of $z_{n+1}$ (1) given the data $z_1,\dots,z_n$ (2) based on the known parameter, $\phi$. 
+\item $z_{n+1}^{n}$: the one-step-ahead forecast of $z_{n+1}$ (1) given the data $z_1,\dots,z_n$ (2) based on the estimated parameter $\hat\phi$. 
+\end{enumerate} 
+
+\ck 결국 true-parameter를 알고 있다고 가정해도 무방하다. (모르면 예측해서 끼워넣으면 된다. 그렇게 끼워넣어도 $O_p(n^{-1/2})$ 만큼만 차이날테니까) 
+
+\ck $z_{n+m}$을 $\hat{z}_{n+m}$으로 예측한다고 하자. 어쨋든 우리는 $z_1,\dots,z_n$ 과 known-paramer를 기반으로 $z_{n+m}$을 예측할 것이므로 (어차피 알 수 있는 정보가 이게 다잖음?) $\hat{z}_{n+m}$을 아래와 같이 표현할 수 있다. 
+\[
+\hat{z}_{n+m}=g(z_1,z_2,\dots,z_n; \phi_1,\dots,\phi_p;\theta_1,\dots,\theta_q)
+\]
+편의상 아래와 같이 쓰자. 
+\[
+\hat{z}_{n+m}=g(\vz,\bs{\phi},\bs{\theta})
+\]
+교재에 따라서 간단하게 아래와 같이 쓰기도 한다. 
+\[
+\hat{z}_{n+m}=g(\vz)
+\]
+혹은 $n$개의 자료를 관측했다는 점을 강조하기 위하여 아래와 같이 쓰기도 한다. 
+\[
+\hat{z}^{n}_{n+m}=g(\vz)
+\]
+
+\ck 어떻게 예측해야 잘했다고 할까? 즉 $\hat{z}_{n+1}$을 어떻게 구하면 잘했다고 할까? $g(\vz)$가 아래를 최소화 하도록 하면 되지 않을까? 
+\[
+E\big(x_{n+m}-g(\vz)\big)^2
+\]
+참고로 위의식을 $\emph{mean square error}$라고 한다. 
+
+\ck 이러한 $g(\vz)$는 아래와 같이 구할 수 있음이 알려져있다. 
+\[
+\hat{z}_{n+m}=g(\vz)=E(z_{n+m}|\vz)
+\]
+결국 이는 $z_{n+m}$을 $E(z_{n+m}|\vz)$와 같이 예측한다는 의미이다. 이때 $E(z_{n+m}|\vz)$를 $\emph{minimum mean square error predictor}$ 라고 한다. 
+
+\ck $g(\vz)$의 형태를 아래와 같이 제한하자. 
+\[
+g(\vz)=\alpha_0+\sum_{k=1}^{n}\alpha_kz_k
+\]
+즉 $g(\vz)$를 관측치들의 선형결합정도로만 표현하자. ARMA($p$,$q$)모델 같은 경우는 이정도 예측자(\emph{predictor})로도 충분하다. 이러한 예측자를 선형예측자(\emph{linear predictor})라고 한다. 많은 선형예측자중에서 아래식을 가장 작게 만드는  예측자를 최적선형예측자(\emph{best linear predictor})라고 부르고 줄여서 BLP라고 한다. 
+\[
+E\big(x_{n+m}-g(\vz)\big)^2
+\]
+
+\thm 자료를 $z_1,\dots,z_n$을 관찰한 상황을 가정하자. $m$시점뒤의 값 $z_{n+m}$에 대한 최적선형예측자를 구하기 위해서는 아래식을 연립하여 풀면 된다. 
+\begin{align*}
+E\big((z_{n+m}-\hat{z}_{n+m})z_1\big)&=0 \\
+E\big((z_{n+m}-\hat{z}_{n+m})z_2\big)&=0 \\
+\dots& \\ 
+E\big((z_{n+m}-\hat{z}_{n+m})z_n\big)&=0 
+\end{align*}
+
+\note 여기에서 $m$시점뒤의 값 $z_{n+m}$의 최적선형예측자는 선형예측자중에서 $z_{n+m}$의 값을 가장 \textcolor{red}{잘} 맞추는 예측자라는 뜻이다. (이때 \textcolor{red}{잘} 맞추는다는 것은 mean square error를 최소화 한다는 의미임) 
+
+\note $m$시점뒤의 값 $z_{n+m}$의 최적선형예측자는 아래와 같은 모양을 가져야만 한다. (왜냐하면 이것도 결국 선형이기 때문)
+\[
+\hat{z}_{n+m}=\alpha_0+\sum_{k=1}^{n}\alpha_kz_k
+\]
+
+\note 위에서 $\hat{z}_{n+m}$은 다양하게 표현할 수 있다. 최적선형예측자라는 의미를 강조하기 위해서 아래와 같이 표현하기도 하고
+\[
+\hat{z}_{n+m}=\hat{z}_{n+m}^{BLP}
+\]
+이것도 결국 $z_1,\dots,z_n$의 함수라는 점을 강조하기 위하여 아래와 같이 표현하기도 한다. 
+\[
+\hat{z}_{n+m}=g(z_1,\dots,g_n)=g(\vz)
+\]
+또한 $z_1,\dots,z_n$의 선형결합이라는 점을 강조하기 위하여 아래와 같이 표현하기도 한다. 
+\[
+\hat{z}_{n+m}=\alpha_0+\sum_{k=1}^{n}\alpha_kz_k
+\]
+
+\ck 위의 연립방정식을 \emph{prediction equation} 이라고 부른다. 그리고 이 연립방정식으로 통하여 $\alpha_0,\alpha_1,\dots,\alpha_n$을 구할 수 있다. 
+
+\ck 참고로 
+\[
+\hat{z}_{n+m}=\alpha_0+\sum_{k=1}^{n}\alpha_kz_k
+\]
+은 아래와 같이 표현할 수 있다. 
+\[
+(\hat{z}_{n+m}-\mu)=\sum_{k=1}^{n}\alpha_k(z_k-\mu)
+\]
+
+\note 이게 성립하는 이유는 
+\[
+\hat{z}_{n+m}=\alpha_0+\sum_{k=1}^{n}\alpha_kz_k
+\]
+의 양변에 평균을 취함으로써 쉽게 알 수 있다. 
+
+\note 위에서 $\mu$라고 당당하게 쓸 수 있는 이유는 true-model을 알고 있기 때문이다. 
+
+\ck 1시점뒤를 예측하여보자. 1시점뒤의 최적선형예측자 $\hat{z}_{n+1}$은 아래와 같이 쓸 수 있다. 
+\[
+\hat{z}_{n+1}=\alpha_{n}z_n+\dots\alpha_{1}z_1
+\]
+$\alpha_1=\phi_{n1},\dots,\alpha_{n}=\phi_{nn}$이라고 두면 
+\[
+\hat{z}_{n+1}=\phi_{n1}z_n+\dots\phi_{nn}z_1
+\]
+와 같이 쓸 수 있다. 
+
+
+\end{document}

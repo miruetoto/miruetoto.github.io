@@ -157,8 +157,7 @@ footskip=0.5cm}
 \bibitem{Kim2012} 김우철, 통계이론1 강의노트.
 \end{thebibliography}
 
-\chapter{$O_p(R_n)$, $O(r_n)$ and $o_p(R_n)$, $o(r_n)$}
-\section{Little $o$}
+\subsubsection{Little $o$}
 
 \dfn $\{x_n\}$, $\{r_n\}$은 실수열이라고 하자. 
 \begin{align*}
@@ -196,7 +195,7 @@ f(x)=o\big(\bigstar(x)\big) \quad ~ x \to a
 
 \dash
 
-\section{Big $O$}
+\subsubsection{Big $O$}
 
 \dfn $\{x_n\}$, $\{r_n\}$은 실수열이라고 하자. 
 \begin{align*}
@@ -224,7 +223,7 @@ $\{x_n\}$의 최고차항이 $\bigstar_n$의 최고차항과 같다는 의미이
 
 \dash
 
-\section{Little $o_p$}
+\subsubsection{Little $o_p$}
 \dfn $\{X_n\}$, $\{R_n\}$은 확률변수열이라고 하자. 
 \begin{align*}
 & X_n=o_p(R_n) \quad as ~ n\to \infty \\ 
@@ -239,7 +238,7 @@ $\{x_n\}$의 최고차항이 $\bigstar_n$의 최고차항과 같다는 의미이
 
 \dash
 
-\section{Big $O_p$}
+\subsubsection{Big $O_p$}
 \dfn $\{X_n\}$, $\{R_n\}$은 확률변수열이라고 하자. 
 \begin{align*}
 & X_n=O_p(R_n) \quad as ~ n\to \infty \\ 
@@ -311,7 +310,7 @@ P\{\sup_{n}|X_n / R_n| > M \} \underset{M\to\infty}{\to} 0
 이 되어서 sup이 그냥 날아가버린다. 
 
 
-\section{Calculus with $O_p$ and $o_p$}
+\subsubsection{Calculus with $O_p$ and $o_p$}
 
 \thm 아래는 증명없이 받아들이자 \cite{Van2000}. 여기에서 $\{R_n\}$은 (아무런 추가조건없는) 확률변수열이다. 
 \one $O_p(1)+O_p(1)=O_p(1)$.
@@ -329,7 +328,7 @@ P\{\sup_{n}|X_n / R_n| > M \} \underset{M\to\infty}{\to} 0
 
 \note (6)번 공식, 즉 $O_p(1)o_p(1)=o_p(1)$ 이 의미하는 것은 (1) $\{X_n\}$ 이 확률적으로 유계이고 (2) $\{Y_n\}$ 이 0으로 확률수렴한다면 ($\bigstar$) $\{X_nY_n\}$ 은 $0$ 으로 확률수렴한다는 의미이다. 여기에서 (1) 대신에 $\{X_n\}$이 어떠한 분포로 분포수렴한다는 가정이 추가적으로 있다면 이는 슬러츠키 정리의 한 형태가 된다. 
 
-\Section{Delta method}
+\subsubsection{Delta method}
 
 \thm $\{X_n\}$ 이 확률변수열이라고 하자. 
 (1) $\sqrt{n}(X_n-\theta) \overset{d}{\to} Z$ 이고 (2) $g(x)$가 $\theta$에서 미분가능하다면 아래가 성립한다. 
