@@ -628,4 +628,63 @@ X_{(r)}\overset{d}{=}h\left(\frac{1}{n}Z_1+\dots+\frac{1}{n-r+1}Z_r\right)
 \]
 가 성립한다. 
 
+\subsubsection{연습문제 5.16.}
+
+\ck $r_n \sim \alpha n \Longleftrightarrow r_n/n \to \alpha$. 
+\ck $s_n \sim \beta n \Longleftrightarrow r_n/n \to \beta$. 
+\note 위의정의는 예제 5.2.7 에 나와있다. 
+\ck 그리고 $0<\alpha<\beta<1$. 
+\ck 편의상 아래를 가정하자. 
+\one $r_n$을 그냥 $r$로 쓰자. 여기에서 $r$은 $n$개의 sample 중 하위25\%에 번째에 해당하는 수 이다. 즉 $r/n \approx 1/4$. 동일한 논리로 $s_n$도 그냥 $s$라고 쓰자. 
+\two $r/n \to \frac{1}{4}$ and $s/n \to \frac{3}{4}$. 
+
+\ck $X_{(r)}$과 $X_{(s)}$의 join pdf를 구하라. 
+
+\sol 
+\ck 아래와 같은 벡터를 가정하자. 
+\[
+\bs{\tilde{Y}}=\begin{pmatrix} \frac{1}{n}Z_1+\dots+\frac{1}{n-r+1}Z_r \\  \frac{1}{n}Z_1+\dots+\frac{1}{n-s+1}Z_s \end{pmatrix}
+\]
+
+\ck 아래가 성립한다. (예제 5.2.7)
+\begin{align*}
+& E\left(\frac{1}{n}Z_1+\dots+\frac{1}{n-r+1}Z_r\right)=
+\frac{1}{n}+\dots+\frac{1}{n-r+1} \\ 
+& =\frac{1}{n} \sum_{k=1}^{r-1}\frac{1}{1-k/n} \approx \int_0^{\alpha}\frac{1}{1-x}dx=-\log(1-\alpha)
+\end{align*}
+
+\ck 아래도 성립한다. (예제 5.2.7)
+\begin{align*}
+& V\left(\frac{1}{n}Z_1+\dots+\frac{1}{n-r+1}Z_r\right)=
+\frac{1}{n^2}+\dots+\frac{1}{(n-r+1)^2} \\ 
+& =\frac{1}{n^2} \sum_{k=1}^{r-1}\frac{1}{(1-k/n)^2} \approx \int_0^{\alpha}\frac{1}{(1-x)^2}dx=\frac{1}{n}\frac{\alpha}{1-\alpha}
+\end{align*}
+
+\ck 따라서 
+\[
+\sqrt{n}\big(\bs{\tilde Y}-\bs{\mu_y})\overset{d}{\to} N({\bs 0},{\bs \Sigma})
+\]
+단 여기에서 $\bs{\mu_y}=\begin{pmatrix} -\log(1-\alpha) \\ -\log(1-\beta) \end{pmatrix}$ 이고 ${\bs \Sigma}=\begin{pmatrix}\frac{\alpha}{1-\alpha} & \frac{\alpha}{1-\alpha} \\ \frac{\alpha}{1-\alpha} & \frac{\beta}{1-\beta} \end{pmatrix}$. 
+
+\ck 그런데 
+\[
+\bs{\tilde{X}}=\begin{pmatrix} X_{(r)}\\ X_{(s)} \end{pmatrix}=\begin{pmatrix} h(\frac{1}{n}Z_1+\dots+\frac{1}{n-r+1}Z_r) \\  h(\frac{1}{n}Z_1+\dots+\frac{1}{n-s+1}Z_s) \end{pmatrix}={\bs h}(\bs{\tilde Y})
+\]
+
+\ck 따라서 
+\[
+\sqrt{n}\big(\bs{\tilde X}-\bs{\mu_x})\overset{d}{\to} \big({\dot{\bs h}}({\bs\mu_x})\big)^T N({\bs 0},{\bs \Sigma})
+\]
+단 여기에서 $\bs{\mu_x}=\begin{pmatrix} F^{-1}(\alpha)\\ F^{-1}(\beta) \end{pmatrix}$ 이다. (예제 5.2.7.)
+
+\ck 분산텀을 계산하여 보자. $h(\tau)=F^{-1}(1-e^{-\tau})$ 이므로 
+\[
+\dot{h}= \begin{pmatrix}\frac{\partial h}{\partial\tau_1} & \frac{\partial}{\partial} \\ \frac{\partial}{\partial} & \frac{\partial}{\partial} \end{pmatrix}
+\]
+
+
+\[
+\begin{pmatrix} asdf & asdf \end{pmatrix}\begin{pmatrix}\frac{\alpha}{1-\alpha} & \frac{\alpha}{1-\alpha} \\ \frac{\alpha}{1-\alpha} & \frac{\beta}{1-\beta} \end{pmatrix}\begin{pmatrix} asdf \\ asdf \end{pmatrix}
+\]
+
 \end{document}
