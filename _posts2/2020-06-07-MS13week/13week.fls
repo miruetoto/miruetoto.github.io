@@ -280,6 +280,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbj8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbi9d.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplbi9d.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplbi8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmbi.tfm
@@ -312,6 +313,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.30)  7 JUN 2020 19:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.30)  7 JUN 2020 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,26 +831,26 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 eek.aux)
 \openout1 = `13week.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 247.
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 247.
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 247.
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 247.
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 247.
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 247.
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 247.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 248.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 248.
 LaTeX Font Info:    Try loading font information for LUC+nanummj on input line 
-247.
+248.
  (/usr/share/texlive/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 247.
-LaTeX Font Info:    Try loading font information for T1+pplj on input line 247.
+LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 248.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplj.fd
@@ -924,7 +924,7 @@ Package microtype Warning: Command \pickup@font is not defined as expected.
 (microtype)                applied to the document.
 (microtype)                (Hint: Turn on `verbose' mode).
 
-LaTeX Info: Redefining \microtypecontext on input line 247.
+LaTeX Info: Redefining \microtypecontext on input line 248.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -979,14 +979,14 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 248.
-LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/pplj/b/n' tried instead on input line 249.
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 250.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 249.
+LaTeX Font Info:    Try loading font information for U+msa on input line 250.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -994,7 +994,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 249.
+LaTeX Font Info:    Try loading font information for U+msb on input line 250.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1002,27 +1002,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+futs on input line 252.
+LaTeX Font Info:    Try loading font information for U+futs on input line 253.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 File: ufuts.fd 2004/03/26 Fontinst v1.926 font definitions for U/futs.
 )
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 382.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 383.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <17.28> not available
-(Font)              Font shape `T1/pplj/b/it' tried instead on input line 418.
- [2] [3]
+(Font)              Font shape `T1/pplj/b/it' tried instead on input line 421.
+ [2]
+Overfull \hbox (4.97174pt too wide) detected at line 556
+[]\OT1/cmr/m/n/17.28 ([] \OMS/cmsy/m/n/17.28 ^^@ \OML/cmm/m/it/17.28 ^^Z\OT1/cm
+r/m/n/17.28 ) = [] \OMS/cmsy/m/n/17.28 ^^B [] \OT1/cmr/m/n/17.28 = [] = [][] + 
+\OML/cmm/m/it/17.28 o[]\OT1/cmr/m/n/17.28 (1)
+ []
+
+[3]
 (/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13w
 eek.aux) ) 
 Here is how much of TeX's memory you used:
- 9395 strings out of 492982
- 140214 string characters out of 6134896
- 361975 words of memory out of 5000000
- 12657 multiletter control sequences out of 15000+600000
- 40359 words of font info for 103 fonts, out of 8000000 for 9000
+ 9399 strings out of 492982
+ 140283 string characters out of 6134896
+ 359986 words of memory out of 5000000
+ 12660 multiletter control sequences out of 15000+600000
+ 40652 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,44p,399b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/shar
@@ -1051,38 +1058,39 @@ e1/public/nanumtype1/nanummjmb2.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/nanumtype1/nanummjmb3.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /nanumtype1/nanummjmb5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
-type1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtyp
-e1/nanummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/
-nanummjmba.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nan
-ummjmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jmbc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb
-d.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/nanumtype1/nanummjmd3.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmd4.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmd6.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pala
-tino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+numtype1/nanummjmb6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
+type1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtyp
+e1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/
+nanummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nan
+ummjmba.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanumm
+jmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb
+c.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/nanumtype1/nanummjmd0.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/nanumtype1/nanummjmd3.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/nanumtype1/nanummjmd4.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/nanumtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/n
+anumtype1/nanummjmd6.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
+o/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 Output written on /home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-0
-6-07-MS13week/13week.pdf (3 pages, 1979205 bytes).
+6-07-MS13week/13week.pdf (3 pages, 2040652 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
+ 240 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  8705 words of extra memory for PDF output out of 10000 (max. 10000000)
 

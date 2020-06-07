@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1591526566 "13week.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.pdf" "13week" 1591526567
+["pdflatex"] 1591534999 "13week.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.pdf" "13week" 1591535000
   "/etc/texmf/web2c/texmf.cnf" 1590818665 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.aux" 1591526567 4845 ccd525d3145dfa05677b539e19c187c5 ""
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.aux" 1591534999 6839 fd9b4e18d89a01d401e857ae3871c387 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1480098688 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -43,6 +43,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb3.tfm" 1480098715 1248 b07ea61edaa8a606d8cd3044839ef2af ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb4.tfm" 1480098715 1260 f53b2060218d176a6b130cc3fdb517c2 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb5.tfm" 1480098715 1228 befe9472a0d53b01eebbabb284813578 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.tfm" 1480098715 1260 2ff2be7726211da9650ef0adc11b791e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb7.tfm" 1480098715 1252 82a6c5728c5aba93c89dd0be3ea53856 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb8.tfm" 1480098715 1252 0d0b4627ffd2c469a43b404689acc717 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb9.tfm" 1480098715 1248 b9f46237d6f319836405380183ea36bf ""
@@ -95,6 +96,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb" 1480098743 170691 013dc71d90a82cc733a716d5bf4a047c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb" 1480098743 188588 c1d9b1b9e6070e4c9d19b06e49f9a272 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb" 1480098743 167498 a69333c80795137552dafe66a4c52f4b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb" 1480098743 203181 26db14e3153425167769b69ece6311e1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb" 1480098743 201248 11c0c90e0b54b841ff7d1aa7332ecda5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb" 1480098743 217356 1b063b72b3f5ee6a5359e8285c430dad ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb" 1480098743 207887 cda0824548e157c113b2043aab16b11c ""
@@ -224,11 +226,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1590818698 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1590818709 4128480 04d80abc75a6288a70d3cb5e292e4781 ""
-  "13week.aux" 1591526567 4845 ccd525d3145dfa05677b539e19c187c5 ""
-  "13week.tex" 1591526566 16372 91015e18b4aeabd96fe88ff0435f8df6 ""
+  "13week.aux" 1591534999 6839 fd9b4e18d89a01d401e857ae3871c387 ""
+  "13week.tex" 1591534999 18655 010bc2e862aea652b59115ccb749924d ""
   (generated)
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.log"
   "13week.log"
   "13week.aux"
   "13week.pdf"
   "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.pdf"
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-07-MS13week/13week.log"

@@ -92,6 +92,7 @@ expansion=true]{microtype}
 
 \def\prob{\paragraph{\Large(문제)}\Large}
 \def\sol{\paragraph{\Large(sol)}\Large}
+\def\pf{\paragraph{\Large(pf)}\Large}
 
 \def\dfn{\paragraph{\Large(정의)}\Large}
 \def\thm{\paragraph{\Large(정리)}\Large}
@@ -393,6 +394,8 @@ $Y_n$이 정규분포는 아니지만 점근적으로 정규분포를 따른다�
 \Bigg(\Big(\frac{-1.96}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2,\Big(\frac{1.96}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2 \Bigg)
 \]
 
+\dash
+
 \subsubsection{연습문제 5.14.}
 \ck $\begin{pmatrix}X_1 \\ Y_1 \end{pmatrix},\dots,\begin{pmatrix}X_n \\ Y_n \end{pmatrix} \overset{idd}{\sim} F$ with
 \one $EX_1=EY_1=0$,
@@ -417,6 +420,8 @@ $Y_n$이 정규분포는 아니지만 점근적으로 정규분포를 따른다�
 
 \note 추가적으로 $\bar{XY}-\bar{X}\bar{Y}=\bar{XY}+o_p(\frac{1}{\sqrt{n}})$ 임도 알 수 있다. 
 
+\rdash 
+
 \ckb 아래가 성립함을 보여라. 
 \[
 \sqrt{m_2-m_1^2} - \sqrt{m_2}=\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}
@@ -425,28 +430,26 @@ $Y_n$이 정규분포는 아니지만 점근적으로 정규분포를 따른다�
 
 \sol (자명하다)
 
+\rdash 
+
 \note 추가적으로 아래를 확인가능하다. 
 \[
 \sqrt{m_2-m_1^2} =\sqrt{m_2}+\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
 \]
-
+\pf 
 \ck $\sqrt{n}m_1^2=\sqrt{n}m_1 m_1 = O_p(1)o_p(1)=o_p(1)$ $\quad \therefore m_1^2=o_p(\frac{1}{\sqrt{n}})$.
 
-\ck $m_2=o_p(1)$ 이고 $m_1^2=o_p(\frac{1}{\sqrt{n}})$ 이다. $o_p(1)+o_p(\frac{1}{\sqrt{n}})=o_p(1)$ 임을 이용하면 
-\[
-\sqrt{m_2-m_1^2}+\sqrt{m_2}=o_p(1)
-\]
-이다. 
-
-\ck $\frac{o_p(\frac{1}{\sqrt{n}})}{o_p(1)}=o_p(\frac{1}{\sqrt{n}})$ 가 성립하므로 
+\ck $m_2=1+o_p(1)$ 이다. 즉 $m_2 \overset{p}{\to} 1$이다. 또한 $m_1^2=o_p(\frac{1}{\sqrt{n}})$ 이다. 따라서 
 \[
 \frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=o_p\left(\frac{1}{\sqrt{n}}\right)
 \]
-이다. 
+이다. 왜냐하면 분모는 1로 확률수렴하고 (continuous mappting thm) 분자는 $o_p(\frac{1}{\sqrt{n}})$이기 때문. 
+
+\rdash 
 
 \ckc 아래가 성립함을 보여라. 
 \[
-\sqrt{m_2}-1=\frac{1}{2}(m_2-1)+o_p\left(\frac{1}{\sqrt{n}}\right)
+\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
 \]
 \sol 
 
@@ -479,13 +482,78 @@ m_2 \overset{p}{\to} 1 \quad \Longrightarrow
 
 \ck 따라서 증명이 끝난다. 
 
+\rdash 
+
 \ckd 아래를 보여라. 
 \[
-c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}
+c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}= c_1-\rho\frac{m_2+s_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
 \]
+이때 $c_1=\bar{XY}$, $s_1=\bar{Y}$, $s_2=\bar{Y^2}$이다. 
+
 \sol 
 
+\ck (b)의 결과로부터 아래가 성립한다. 
+\[
+\sqrt{m_2-m_1^2}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
 
+\ck (c)의 결과로부터 아래가 성립한다. 
+\[
+\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
 
+\ck 둘을 종합하면 
+\[
+\sqrt{m_2-m_1^2}=1+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
 
+\ck 따라서 
+\[
+\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}
+\]
+는 아래식들의 합이다. 
+\one $1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})$
+\two $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})+o_p(\frac{1}{\sqrt{n}})$
+\note $O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})=\frac{1}{\sqrt{n}}\frac{1}{\sqrt{n}}O_p(1)=\frac{1}{\sqrt{n}}o_p(1)=o_p(\frac{1}{\sqrt{n}})$
+\two 따라서 결국 $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+o_p(\frac{1}{\sqrt{n}}).$
+\three $o_p(1/\sqrt{n})\left(1+\frac{s_2-1}{2}+o_p(1/\sqrt{n})\right)=o_p(\frac{1}{\sqrt{n}})$
+
+\ck 따라서 
+\[
+\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=1+\frac{s_2-1}{2}+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+정리하면 
+\[
+\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=\frac{s_2+m_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+\ck 한편 (a) 로부터 
+\[
+m_1s_1=\bar{X}\bar{Y}=o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+
+\ck 따라서 증명이 끝난다. 
+
+\rdash 
+
+\cke $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\bar{W}+o_p(1)$ 임을 보여라. 단 
+\[
+W=XY-\frac{\rho(X^2+Y^2)}{2}.
+\]
+
+\sol 
+
+\ck ${\bar W}=\bar{XY}-\frac{\rho({\bar X}^2+{\bar Y}^2)}{2}=c_1-\frac{\rho(m_2+s_2)}{2}$.
+
+\ck $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}{\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}$ 
+
+\ck (d)에 의해서 $\mbox{"분자"}=c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})$
+`
+'\ck 분모는 1로 확률수렴한다. 
+
+\ck 따라서 
+\[
+\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})}{1+o_p(1)}= \frac{\sqrt{n}\bar{W}+o_p(1)}{1+o_p(1)}=\sqrt{n}\bar{W}+o_p(1)
+\]
+
+\subsubsection{5.16.}
 \end{document}
