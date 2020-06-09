@@ -712,11 +712,11 @@ Y_1,\dots,Y_n \overset{iid}{\sim} Exp(1).
 \]
 
 \ck 따라서 
-\[
-\sqrt{n}\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) 
-=\sqrt{n}\big(\bs{h(\tilde Y)}-\bs{h(\mu_y)}) 
-\overset{d}{\to} \bfH^T N({\bs 0},{\bs \Sigma})
-\]
+\begin{align*}
+& \sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) 
+=\sqrt{n}\times\left(g\left(\begin{bmatrix}Y_{(r)} \\ Y_{(s)}\end{bmatrix}\right)-g\left(\begin{bmatrix} -\log(1-\alpha_r) \\ -\log(1-\alpha_s) \end{bmatrix}\right)\right) \\
+& \overset{d}{\longrightarrow} \bfH^T N({\bs 0},{\bs \Sigma})
+\end{align*}
 
 \rdash
 
