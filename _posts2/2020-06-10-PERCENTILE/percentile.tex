@@ -273,315 +273,13 @@ headsep=0.8cm,
 footskip=0.5cm}
 
 \begin{document}
-\subsubsection{연습문제 5.12.}
-\ck $X_1\dots X_n \sim Poi(\lambda)$. 
-\ck $\sqrt{n}\big(g(\bar{X})-g(\lambda)\big) \overset{d}{\to}Z, \quad Z \sim N(0,1)$ 을 만족하는 변환 $g$를 구하라. 
 
-\rdash
+\subsubsection{백분위수}
 
-\ck CLT를 쓰면 
-\[
-\sqrt{n}(\bar{X}_n-\lambda) \overset{d}{\to}N(0,\lambda)
-\]
-
-\ck $g(\cdot)$이 미분가능한 함수라고 하자. 
-
-\ck $g(\cdot)$는 미분가능한 어떠한 형태도 가능하다. 예를들어 아래와 같은 형태들이 가능하다고 하자. 
-\[
-g(x)=x^2
-\]
-혹은
-\[
-g(x)=2\sqrt{x}
-\]
-
-\ck 예를들어서 $g(x)=2\sqrt{x}$와 같은 형태라고 하자. 그렇다면 $x=a$에서 $g(x)$를 테일러 전개하면 아래와 같이 표현가능하다. 
-\[
-g(x)=g(a)+(x-a)g'(a)+(x-a)^2O(1)
-\]
-
-\ck $x$대신에 $\bar{X}_n$ $a$대신에 $\lambda$를 대입하면 
-\[
-g(\bar{X}_n) = g(\lambda)+(\bar{X}_n-\lambda)g'(\lambda)+(\bar{X}_n-\lambda)^2O(1).
-\]
-양변에 $\sqrt{n}$을 곱하고 정리하면 
-\[
-\sqrt{n}\big(g(\bar{X}_n) - g(\lambda)\big) =\sqrt{n}(\bar{X}_n-\lambda)g'(\lambda)+\sqrt{n}(\bar{X}_n-\lambda)^2O(1).
-\]
-그런데 $\sqrt{n}(\bar{X}_n-\lambda)^2O(1)=O_p(1)o_p(1)O(1)=o_p(1)$ 이므로 
-\[
-\sqrt{n}\big(g(\bar{X}_n) - g(\lambda)\big) =\sqrt{n}(\bar{X}_n-\lambda)g'(\lambda)+o_p(1)
-\]
-그런데 $g(x)=2\sqrt{x}$이므로 $g'(x)=1/\sqrt{x}$이다. 따라서 $g'(\lambda)=1/\sqrt{\lambda}$. 
-
-\ck 정리하면 
-\[
-\sqrt{n}\big(g(\bar{X}_n) - g(\lambda)\big) = \sqrt{n}(\bar{X}-\lambda)1/\sqrt{\lambda}+o_p(1)
-\]
-CLT의 결과를 쓰면 
-\[
-\sqrt{n}\big(g(\bar{X}_n) - g(\lambda)\big) \overset{d}{\to} N(0,\lambda)1/\sqrt{\lambda}
-\]
-따라서 
-\[
-\sqrt{n}\big(g(\bar{X}_n) - g(\lambda)\big) \overset{d}{\to} N(0,1)
-\]
-
-\thus 만약에 $g(x)=2\sqrt{x}$로 설정한다면 
-\[
-\sqrt{n}\big(g(\bar{X}) - g(\lambda)\big)
-\]
-의 극한이 표준정규분포로 수렴하므로 문제에서 원하는 답을 구할 수 있다.
-
-\ck 이는 바꾸어 말하면 포아송분포에 한정하여 (1) 관측한 확률변수에서 제곱근을 취한뒤 2배를 하고 (2) 그상태에서 CLT를 쓴다면 표준정규분포로 수렴한다는 것이다. 
-
-\ck 이 경우 그냥 포아송분포자체에서 CLT를 쓰는것보다 이득되는 경우가 있다. (일단 이렇게만 알아둘것)
-
-\rdash 
-
-\ck 그렇다면 어떻게 $g(x)=2\sqrt{x}$임을 알 수 있을까? 
-
-\ck $g$가 미분가능하다면 
-\[
-g(x)\approx g(a)+(x-a)g'(a)
-\]
-이고 다시 정리하면 
-\[
-\sqrt{n}\big(g(\bar{X}_n)-g(\lambda)\big) \approx \sqrt{n}(\bar{X}_n-\lambda)g'(\lambda)
-\]
-따라서 
-\[
-\sqrt{n}\big(g(\bar{X}_n)-g(\lambda)\big) \overset{d}{\to} N(0,\lambda) g'(\lambda)
-\]
-이고 정규분포의 특성에 따라서 
-\[
-\sqrt{n}\big(g(\bar{X}_n)-g(\lambda)\big) \overset{d}{\to} N\big(0,\lambda (g'(\lambda))^2\big)
-\]
-이다. 따라서 
-\[
-\lambda (g'(\lambda))^2 =1 
-\]
-이어야 할 조건은 
-\[
-g'(\lambda)=\frac{1}{\sqrt\lambda}
-\]
-일 조건이다. 즉 $g(x)$의 형태는 모르겠지만 $g'(x)$는 아래와 같아야 함을 알 수 있다. 
-\[
-g'(x)=\frac{1}{\sqrt x}
-\]
-이러부터 $g(x)$를 유추하면
-\[
-g(x)=\int\frac{1}{\sqrt x} dx = 2\sqrt{x}.
-\]
-
-\rdash 
-
-\ck 이제 $\lambda$의 점근적인 신뢰구간을 구해보자. 아래의 식을 관찰하자. 
-\[
-2\sqrt{n}\big(\sqrt{\bar{X}_n}-\sqrt{\lambda}\big) \overset{d}{\to} N(0,1)
-\]
-이때 $2\sqrt{n}\big(\sqrt{\bar{X}_n}-\sqrt{\lambda}\big)$자체를 하나의 통계량 $Y_n$으로 본다면 
-\[
-Y_n \overset{d}{\to} N(0,1)
-\]
-$Y_n$이 정규분포를 따른다면 아래가 성립한다. 
-\[
-P\big(-Z_{\alpha/2}<Y_n<Z_{\alpha/2}\big)=1-\alpha
-\]
-$Y_n$이 정규분포는 아니지만 점근적으로 정규분포를 따른다면 아래가 성립한다. 
-\[
-\lim_{n\to\infty}P\big(-Z_{\alpha/2}<Y_n<Z_{\alpha/2}\big)=1-\alpha
-\]
-따라서 
-\[
-\lim_{n\to\infty}P\left(-Z_{\alpha/2}<2\sqrt{n}(\sqrt{\bar{X}_n}-\sqrt{\lambda})<Z_{\alpha/2}\right)=1-\alpha
-\]
-이는 
-\[
-\lim_{n\to\infty}P\left(-Z_{\alpha/2}<2\sqrt{n}(\sqrt{\lambda}-\sqrt{\bar{X}_n})<Z_{\alpha/2}\right)=1-\alpha
-\]
-정리하면 
-\[
-\lim_{n\to\infty}P\left(\frac{-Z_{\alpha/2}}{2\sqrt{n}}+\sqrt{\bar{X}_n}<\sqrt{\lambda}<\frac{Z_{\alpha/2}}{2\sqrt{n}}+\sqrt{\bar{X}_n}\right)=1-\alpha
-\]
-따라서 
-\[
-\lim_{n\to\infty}P\left(\Big(\frac{-Z_{\alpha/2}}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2<\lambda<\Big(\frac{Z_{\alpha/2}}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2\right)=1-\alpha
-\]
-이 성립한다.
-
-\ck 위의 식이 의미하는것은 $\lambda$가 구간 
-\[
-\Bigg(\Big(\frac{-Z_{\alpha/2}}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2,\Big(\frac{Z_{\alpha/2}}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2 \Bigg)
-\]
-에 포함될 확률이 점근적으로 $1-\alpha$에 수렴한다는 뜻이다. 이는 바꾸어 말하면 매우 큰 $n$에 대하여 $1-\alpha$의 확률로 모수가 위의 구간에 있음을 확신할 수 있다는 의미이다. 이를 $1-\alpha$의 점근적 신뢰구간이라고 부른다. 
-
-\ck 예를들어 $\lambda$의 점근적인 95퍼센트 신뢰구간은 아래와 같이 구할 수 있다. 
-\[
-\Bigg(\Big(\frac{-1.96}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2,\Big(\frac{1.96}{2\sqrt{n}}+\sqrt{\bar{X}_n}\Big)^2 \Bigg)
-\]
+\ck 이번에는 백분위수에 대하여 다룬다. 
+\ck 참고교재는 김우철 수리통계학책. 
 
 \dash
-
-\subsubsection{연습문제 5.14.}
-\ck $\begin{pmatrix}X_1 \\ Y_1 \end{pmatrix},\dots,\begin{pmatrix}X_n \\ Y_n \end{pmatrix} \overset{idd}{\sim} F$ with
-\one $EX_1=EY_1=0$,
-\two $EX_1^2=EY_1^2=1$,
-\three $EX_1Y_1=\rho$,
-\four $EX_1^4<\infty$, $EY_1^4<\infty$. 
-
-\ck $\hat{\rho}_n=\frac{\sum_{i=1}^{n}(X_i-\bar{X})(Y_i-\bar{Y})}{\sqrt{\sum_{i=1}^{n}(X_i-\bar{X})^2}\sqrt{\sum_{i=1}^{n}(Y_i-\bar{Y})^2}}.$ 
-
-\ck 아래와 같은 기호를 약속하자. 
-\one $\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_i$.
-\two $\bar{X^2}=\frac{1}{n}\sum_{i=1}^{n}X_i^2$.
-\three $\overline{XY}=\frac{1}{n}\sum_{i=1}^{n}X_iY_i$.
-
-\rdash 
-
-\cka $\sqrt{n} \bar{X}\bar{Y} \overset{p}{\to} 0$ 임을 보여라.  
-
-\sol 
-
-\ck $\sqrt{n}\bar{X}=O_p(1)$, $\bar{Y}=o_p(1)$ 이므로 자명함. 여기에서 $\sqrt{n}\bar{X}=O_p(1)$ 는 CLT에 의해서 성립하고 $\bar{Y}=o_p(1)$ 는 큰수의 법칙 즉 WLLN에 의해서 성립한다. 
-
-\note 추가적으로 $\bar{XY}-\bar{X}\bar{Y}=\bar{XY}+o_p(\frac{1}{\sqrt{n}})$ 임도 알 수 있다. 
-
-\rdash 
-
-\ckb 아래가 성립함을 보여라. 
-\[
-\sqrt{m_2-m_1^2} - \sqrt{m_2}=\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}
-\]
-이때 $m_1=\bar{X}$, $m_2=\bar{X^2}$ 라고 하자. 
-
-\sol (자명하다)
-
-\rdash 
-
-\note 추가적으로 아래를 확인가능하다. 
-\[
-\sqrt{m_2-m_1^2} =\sqrt{m_2}+\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-\pf 
-\ck $\sqrt{n}m_1^2=\sqrt{n}m_1 m_1 = O_p(1)o_p(1)=o_p(1)$ $\quad \therefore m_1^2=o_p(\frac{1}{\sqrt{n}})$.
-
-\ck $m_2=1+o_p(1)$ 이다. 즉 $m_2 \overset{p}{\to} 1$이다. 또한 $m_1^2=o_p(\frac{1}{\sqrt{n}})$ 이다. 따라서 
-\[
-\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-이다. 왜냐하면 분모는 1로 확률수렴하고 (continuous mappting thm) 분자는 $o_p(\frac{1}{\sqrt{n}})$이기 때문. 
-
-\rdash 
-
-\ckc 아래가 성립함을 보여라. 
-\[
-\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-\sol 
-
-\ck 아래식을 관찰하라. 
-\[
-\sqrt{m_2}-1=\frac{m_2-1}{\sqrt{m_2}+1}=\frac{m_2-1}{2}+\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1)
-\]
-
-\ck 이제 아래를 보이면 된다. 
-\[
-\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1):=r_{3n}=o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-따라서 아래를 보이면 된다. 
-\[
-\sqrt{n}\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1)=o_p(1)
-\]
-
-\ck 그런데 CLT에 의해서 $\sqrt{n}(m_2-1)=O_p(1)$ 가 성립한다. 
-
-\ck continuous mapping thm에 의해서 아래가 성립한다. 
-\[
-m_2 \overset{p}{\to} 1 \quad \Longrightarrow 
-\quad \left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right) \overset{p}{\to} 0
-\]
-
-\ck 따라서 
-\[
-\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)=o_p(1)
-\]
-
-\ck 따라서 증명이 끝난다. 
-
-\rdash 
-
-\ckd 아래를 보여라. 
-\[
-c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}= c_1-\rho\frac{m_2+s_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-이때 $c_1=\bar{XY}$, $s_1=\bar{Y}$, $s_2=\bar{Y^2}$이다. 
-
-\sol 
-
-\ck (b)의 결과로부터 아래가 성립한다. 
-\[
-\sqrt{m_2-m_1^2}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck (c)의 결과로부터 아래가 성립한다. 
-\[
-\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck 둘을 종합하면 
-\[
-\sqrt{m_2-m_1^2}=1+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck 따라서 
-\[
-\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}
-\]
-는 아래식들의 합이다. 
-\one $1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})$
-\two $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})+o_p(\frac{1}{\sqrt{n}})$
-\note $O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})=\frac{1}{\sqrt{n}}\frac{1}{\sqrt{n}}O_p(1)=\frac{1}{\sqrt{n}}o_p(1)=o_p(\frac{1}{\sqrt{n}})$
-\two 따라서 결국 $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+o_p(\frac{1}{\sqrt{n}}).$
-\three $o_p(1/\sqrt{n})\left(1+\frac{s_2-1}{2}+o_p(1/\sqrt{n})\right)=o_p(\frac{1}{\sqrt{n}})$
-
-\ck 따라서 
-\[
-\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=1+\frac{s_2-1}{2}+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-정리하면 
-\[
-\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=\frac{s_2+m_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-\ck 한편 (a) 로부터 
-\[
-m_1s_1=\bar{X}\bar{Y}=o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck 따라서 증명이 끝난다. 
-
-\rdash 
-
-\cke $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\bar{W}+o_p(1)$ 임을 보여라. 단 
-\[
-W=XY-\frac{\rho(X^2+Y^2)}{2}.
-\]
-
-\sol 
-
-\ck ${\bar W}=\bar{XY}-\frac{\rho({\bar X}^2+{\bar Y}^2)}{2}=c_1-\frac{\rho(m_2+s_2)}{2}$.
-
-\ck $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}{\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}$ 
-
-\ck (d)에 의해서 $\mbox{"분자"}=c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})$
-
-\ck 분모는 1로 확률수렴한다. 
-
-\ck 따라서 
-\[
-\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})}{1+o_p(1)}= \frac{\sqrt{n}\bar{W}+o_p(1)}{1+o_p(1)}=\sqrt{n}\bar{W}+o_p(1)
-\]
-
 \subsubsection{정리 4.4.3} 
 \ck $X$가 연속형 확률변수라고 하자. $F(x)$를 $X$의 \emph{cdf}라고 하자. 
 
@@ -771,6 +469,11 @@ f(h(x_1))=f(h(-\log(1-\alpha_r)))=f\big(F^{-1}(1-e^{\log(1-\alpha_r)})\big)=f \c
 \begin{bmatrix}?? & ?? \\ ?? & ??\end{bmatrix}=
 \begin{bmatrix}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\end{bmatrix}
 \]
+\note $X$가 연속확률변수이므로 $F^{-1}$도 연속함수이다. 따라서 
+\[
+\begin{bmatrix}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\end{bmatrix}
+\]
+의 각 원소가 모두 연속이다. 따라서 모든 편미분이 존재하고 그것이 연속이다. 
 
 \rdash 
 
@@ -806,25 +509,15 @@ f(h(x_1))=f(h(-\log(1-\alpha_r)))=f\big(F^{-1}(1-e^{\log(1-\alpha_r)})\big)=f \c
 \end{align*}
 
 \ck 결론적으로 아래와 같이 주장할 수 있다. 
-\[
-\sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) 
-\overset{d}{\to} 
+\begin{align*}
+& \sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) \\
+& \overset{d}{\to} 
 N\left(\begin{bmatrix}0\\0\end{bmatrix},\begin{bmatrix}
 \frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
 \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
 \frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
 \end{bmatrix}\right)
-\]
-따라서 
-\[
-\sqrt{n}\times\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}
-\overset{d}{\to} 
-N\left(\begin{bmatrix}? \\ ? \end{bmatrix},\begin{bmatrix}
-\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
-\frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
-\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
-\end{bmatrix}\right)
-\]
+\end{align*}
 여기에서 
 \begin{align*}
 &\begin{bmatrix}? \\ ? \end{bmatrix}=
@@ -834,43 +527,51 @@ N\left(\begin{bmatrix}? \\ ? \end{bmatrix},\begin{bmatrix}
 = \begin{bmatrix} F^{-1}(\alpha_r) \\ F^{-1}(\alpha_s) \end{bmatrix}
 \end{align*}
 따라서 
-\[
-\sqrt{n}\times\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}
-\overset{d}{\to} 
-N\left(\begin{bmatrix} F^{-1}(\alpha_r) \\ F^{-1}(\alpha_s) \end{bmatrix},\begin{bmatrix}
+\begin{align*}
+& \sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix} F^{-1}(\alpha_r) \\ F^{-1}(\alpha_s) \end{bmatrix}\right) \\
+& \overset{d}{\to} 
+N\left(\begin{bmatrix} 0 \\ 0 \end{bmatrix},\begin{bmatrix}
 \frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
 \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
 \frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
 \end{bmatrix}\right)
-\]
+\end{align*}
 
 \ck 마지날을 구해보자. 
 \[
-\sqrt{n}X_{(r)} \overset{d}{\to} N\left(F^{-1}(\alpha_r), \frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} \right)
+\sqrt{n}\big(X_{(r)}-F^{-1}(\alpha_r)\big) \overset{d}{\to} N\left(0, \frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} \right)
 \]
 \[
-\sqrt{n}X_{(s)} \overset{d}{\to} N\left(F^{-1}(\alpha_s), \frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} \right)
+\sqrt{n}\big(X_{(s)}-F^{-1}(\alpha_s)\big) \overset{d}{\to} N\left(0, \frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} \right)
 \]
 
-\ck $X_{(s)}-X_{(r)}$의 분포를 구해보자. 정규분포의 차는 다시 정규분포를 따르므로 
+\note 참고로 $F^{-1}(\alpha_r)$는 $\alpha_r$-percentile의 정의가 된다. 그리고 $X_{(r)}$는 sample $\alpha_r$-percentile 이라 볼 수 있다. 
+
+\note 따라서 위의 식을 관찰하면 표본백분위수는 백분위수로 확률수렴함을 알 수 있다. 
+
+\note 추가적으로 표본 백분위수의 분포도 알 수 있다. 
+
+\note 또한 아래와 같이 범위(백분위수간의 차이)의 분포도 알 수 있다. 
+
+\ck $R=X_{(s)}-X_{(r)}$의 분포를 구해보자. 정규분포의 차는 다시 정규분포를 따르므로 
 \[
-\sqrt{n}(X_{(s)}-X_{(r)}) \overset{d}{\to} N(E,V)
+\sqrt{n}(R-\mu) \overset{d}{\to} N(0,\sigma^2)
 \]
 여기에서 
 \[
-E=F^{-1}(\alpha_s)-F^{-1}(\alpha_r)
+\mu=F^{-1}(\alpha_s)-F^{-1}(\alpha_r)
 \]
 \[
-V=\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2}+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2}+2 \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)}
+\sigma^2=\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2}+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2}+2 \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)}
 \]
 
 \ck 위의식에서 $\alpha_r=\frac{1}{4}$, $\alpha_s=\frac{3}{4}$를 대입하면 
 \[
-E=F^{-1}(3/4)-F^{-1}(1/4)
+\mu=F^{-1}(3/4)-F^{-1}(1/4)
 \]
 \begin{align*}
-V=\frac{(1-3/4)3/4}{(f\circ F^{-1}(3/4))^2}+\frac{(1-1/4)1/4}{(f\circ F^{-1}(1/4))^2}+2 \frac{1/4(1-3/4)}{f\circ F^{-1}(1/4) \times f\circ F^{-1}(3/4)}\\
-=\frac{1}{16}\left(\frac{3}{(f\circ F^{-1}(3/4))^2}+\frac{3}{(f\circ F^{-1}(1/4))^2}+ \frac{2}{f\circ F^{-1}(1/4) \times f\circ F^{-1}(3/4)}\right)
+&\sigma^2=\frac{(1-3/4)3/4}{(f\circ F^{-1}(3/4))^2}+\frac{(1-1/4)1/4}{(f\circ F^{-1}(1/4))^2}+2 \frac{1/4(1-3/4)}{f\circ F^{-1}(1/4) \times f\circ F^{-1}(3/4)}\\
+&=\frac{1}{16}\left(\frac{3}{(f\circ F^{-1}(3/4))^2}+\frac{3}{(f\circ F^{-1}(1/4))^2}+ \frac{2}{f\circ F^{-1}(1/4) \times f\circ F^{-1}(3/4)}\right)
 \end{align*}
 
 

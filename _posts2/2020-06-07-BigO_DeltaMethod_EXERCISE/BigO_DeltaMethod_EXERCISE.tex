@@ -1,0 +1,442 @@
+\documentclass[12pt,oneside,english]{book}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\definecolor{marron}{RGB}{60,30,10}
+\definecolor{darkblue}{RGB}{0,0,80}
+\definecolor{lightblue}{RGB}{80,80,80}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{darkgray}{RGB}{0,80,0}
+\definecolor{darkred}{RGB}{80,0,0}
+\definecolor{shadecolor}{rgb}{0.97,0.97,0.97}
+\usepackage{graphicx}
+\usepackage{wallpaper}
+\usepackage{wrapfig,booktabs}
+
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\input Acorn.fd
+
+\renewcommand{\familydefault}{pplj} 
+\usepackage[
+final,
+stretch=10,
+protrusion=true,
+tracking=true,
+spacing=on,
+kerning=on,
+expansion=true]{microtype}
+
+%\setlength{\parskip}{1.5ex plus 0.2ex minus 0.2ex}
+
+
+\usepackage{fourier-orns}
+\newcommand{\dash}{\vspace{2em}\noindent \textcolor{darkgray}{\hrulefill~ \raisebox{-2.5pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone   \floweroneright \decotwo \aldineleft\decothreeright \decofourright \leafleft} ~  \hrulefill \\ \vspace{2em}}}
+\newcommand{\rdash}{\noindent \textcolor{darkgray}{ \raisebox{-1.9pt}[10pt][10pt]{\leafright} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone}}}
+\newcommand{\ldash}{\textcolor{darkgray}{\raisebox{-1.9pt}[10pt][10pt]{\decoone \floweroneright \decotwo \aldineleft \decothreeright \decofourright \leafleft} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafleft}}}
+
+\fancyhf{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\newcommand{\estcab}[1]{\itshape\textcolor{marron}{\nouppercase #1}}
+
+\fancyhead[LO]{\estcab{\rightmark}} 
+\fancyhead[RO]{\estcab{\leftmark}}
+\fancyhead[RO]{\bf\nouppercase{ \leftmark}}
+\fancyfoot[RO]{ \leafNE  ~~ \bf \thepage}
+
+\newenvironment{Section}[1]
+{\section{\vspace{0ex}#1}}
+{\vspace{12pt}\centering ------- \decofourleft\decofourright ------- \par}
+
+\usepackage{lipsum}
+\setlength{\parindent}{1em} % Sangría española
+\pagestyle{fancy}
+
+\renewcommand{\footnoterule}{\noindent\textcolor{marron}{\decosix \raisebox{2.9pt}{\line(1,0){100}} \lefthand} \vspace{.5em} }
+\usepackage[hang,splitrule]{footmisc}
+\addtolength{\footskip}{0.5cm}
+\setlength{\footnotemargin}{0.3cm}
+\setlength{\footnotesep}{0.4cm} 
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\usepackage{kotex}
+\usepackage{amsthm} 
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{enumerate} 
+\usepackage{cite}
+\usepackage{graphics} 
+\usepackage{graphicx,lscape} 
+\usepackage{subcaption}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{titlesec}
+\usepackage{cite, url}
+\usepackage{amssymb}
+
+\def\ck{\paragraph{\Large$\bullet$}\Large}
+\def\goal{\paragraph{\Large(목표)}\Large}
+\def\observe{\paragraph{\Large(관찰)}\Large}
+\def\assume{\paragraph{\Large(가정)}\Large}
+\def\summary{\paragraph{\Large(요약)}\Large}
+\def\EX{\paragraph{\Large(예제)}\Large}
+\def\guess{\paragraph{\Large(추측)}\Large}
+\def\thus{\paragraph{\Large(결론)}\Large}
+
+\def\prob{\paragraph{\Large(문제)}\Large}
+\def\sol{\paragraph{\Large(sol)}\Large}
+\def\pf{\paragraph{\Large(pf)}\Large}
+
+\def\dfn{\paragraph{\Large(정의)}\Large}
+\def\thm{\paragraph{\Large(정리)}\Large}
+\def\lem{\paragraph{\Large(레마)}\Large}
+\def\promise{\paragraph{\Large(약속)}\Large}
+\def\property{\paragraph{\Large(특징)}\Large}
+\def\fl{\paragraph{\Large(느낌)}\Large}
+\def\memo{\paragraph{\Large(암기)}\Large}
+
+\def\note{\paragraph{\Large\textit{\underline{note:}}}\Large}
+\def\ex{\paragraph{\Large\textit{example:}}\Large}
+
+
+\def\one{\paragraph{\Large(1)}\Large}
+\def\two{\paragraph{\Large(2)}\Large}
+\def\three{\paragraph{\Large(3)}\Large}
+\def\four{\paragraph{\Large(4)}\Large}
+\def\five{\paragraph{\Large(5)}\Large}
+\def\six{\paragraph{\Large(6)}\Large}
+\def\seven{\paragraph{\Large(7)}\Large}
+\def\eight{\paragraph{\Large(8)}\Large}
+\def\nine{\paragraph{\Large(9)}\Large}
+\def\ten{\paragraph{\Large(10)}\Large}
+
+\def\cka{\paragraph{\Large(a)}\Large}
+\def\ckb{\paragraph{\Large(b)}\Large}
+\def\ckc{\paragraph{\Large(c)}\Large}
+\def\ckd{\paragraph{\Large(d)}\Large}
+\def\cke{\paragraph{\Large(e)}\Large}
+\def\ckf{\paragraph{\Large(f)}\Large}
+\def\ckg{\paragraph{\Large(g)}\Large}
+\def\ckh{\paragraph{\Large(h)}\Large}
+\def\cki{\paragraph{\Large(i)}\Large}
+\def\ckj{\paragraph{\Large(j)}\Large}
+
+\newcommand{\bld}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\bs}[1]{\mbox{\boldmath $#1$}}
+
+\newcommand{\bsa}{\mbox{\boldmath $a$}}
+\newcommand{\bsb}{\mbox{\boldmath $b$}}
+\newcommand{\bsc}{\mbox{\boldmath $c$}}
+\newcommand{\bsd}{\mbox{\boldmath $d$}}
+\newcommand{\bse}{\mbox{\boldmath $e$}}
+\newcommand{\bsf}{\mbox{\boldmath $f$}}
+\newcommand{\bsg}{\mbox{\boldmath $g$}}
+\newcommand{\bsh}{\mbox{\boldmath $h$}}
+\newcommand{\bsi}{\mbox{\boldmath $i$}}
+\newcommand{\bsj}{\mbox{\boldmath $j$}}
+\newcommand{\bsk}{\mbox{\boldmath $k$}}
+\newcommand{\bsl}{\mbox{\boldmath $l$}}
+\newcommand{\bsm}{\mbox{\boldmath $m$}}
+\newcommand{\bsn}{\mbox{\boldmath $n$}}
+\newcommand{\bso}{\mbox{\boldmath $o$}}
+\newcommand{\bsp}{\mbox{\boldmath $p$}}
+\newcommand{\bsq}{\mbox{\boldmath $q$}}
+\newcommand{\bsr}{\mbox{\boldmath $r$}}
+\newcommand{\bss}{\mbox{\boldmath $s$}}
+\newcommand{\bst}{\mbox{\boldmath $t$}}
+\newcommand{\bsu}{\mbox{\boldmath $u$}}
+\newcommand{\bsv}{\mbox{\boldmath $v$}}
+\newcommand{\bsw}{\mbox{\boldmath $w$}}
+\newcommand{\bsx}{\mbox{\boldmath $x$}}
+\newcommand{\bsy}{\mbox{\boldmath $y$}}
+\newcommand{\bsz}{\mbox{\boldmath $z$}}
+
+\newcommand{\bfa}{\mbox{$\bf{a}$}}
+\newcommand{\bfb}{\mbox{$\bf{b}$}}
+\newcommand{\bfc}{\mbox{$\bf{c}$}}
+\newcommand{\bfd}{\mbox{$\bf{d}$}}
+\newcommand{\bfe}{\mbox{$\bf{e}$}}
+\newcommand{\bff}{\mbox{$\bf{f}$}}
+\newcommand{\bfg}{\mbox{$\bf{g}$}}
+\newcommand{\bfh}{\mbox{$\bf{h}$}}
+\newcommand{\bfi}{\mbox{$\bf{i}$}}
+\newcommand{\bfj}{\mbox{$\bf{j}$}}
+\newcommand{\bfk}{\mbox{$\bf{k}$}}
+\newcommand{\bfl}{\mbox{$\bf{l}$}}
+\newcommand{\bfm}{\mbox{$\bf{m}$}}
+\newcommand{\bfn}{\mbox{$\bf{n}$}}
+\newcommand{\bfo}{\mbox{$\bf{o}$}}
+\newcommand{\bfp}{\mbox{$\bf{p}$}}
+\newcommand{\bfq}{\mbox{$\bf{q}$}}
+\newcommand{\bfr}{\mbox{$\bf{r}$}}
+\newcommand{\bfs}{\mbox{$\bf{s}$}}
+\newcommand{\bft}{\mbox{$\bf{t}$}}
+\newcommand{\bfu}{\mbox{$\bf{u}$}}
+\newcommand{\bfv}{\mbox{$\bf{v}$}}
+\newcommand{\bfw}{\mbox{$\bf{w}$}}
+\newcommand{\bfx}{\mbox{$\bf{x}$}}
+\newcommand{\bfy}{\mbox{$\bf{y}$}}
+\newcommand{\bfz}{\mbox{$\bf{z}$}}
+
+\newcommand{\bsA}{\mbox{$\boldmath{A}$}}
+\newcommand{\bsB}{\mbox{$\boldmath{B}$}}
+\newcommand{\bsC}{\mbox{$\boldmath{C}$}}
+\newcommand{\bsD}{\mbox{$\boldmath{D}$}}
+\newcommand{\bsE}{\mbox{$\boldmath{E}$}}
+\newcommand{\bsF}{\mbox{$\boldmath{F}$}}
+\newcommand{\bsG}{\mbox{$\boldmath{G}$}}
+\newcommand{\bsH}{\mbox{$\boldmath{H}$}}
+\newcommand{\bsI}{\mbox{$\boldmath{I}$}}
+\newcommand{\bsJ}{\mbox{$\boldmath{J}$}}
+\newcommand{\bsK}{\mbox{$\boldmath{K}$}}
+\newcommand{\bsL}{\mbox{$\boldmath{L}$}}
+\newcommand{\bsM}{\mbox{$\boldmath{M}$}}
+\newcommand{\bsN}{\mbox{$\boldmath{N}$}}
+\newcommand{\bsO}{\mbox{$\boldmath{O}$}}
+\newcommand{\bsP}{\mbox{$\boldmath{P}$}}
+\newcommand{\bsQ}{\mbox{$\boldmath{Q}$}}
+\newcommand{\bsR}{\mbox{$\boldmath{R}$}}
+\newcommand{\bsS}{\mbox{$\boldmath{S}$}}
+\newcommand{\bsT}{\mbox{$\boldmath{T}$}}
+\newcommand{\bsU}{\mbox{$\boldmath{U}$}}
+\newcommand{\bsV}{\mbox{$\boldmath{V}$}}
+\newcommand{\bsW}{\mbox{$\boldmath{W}$}}
+\newcommand{\bsX}{\mbox{$\boldmath{X}$}}
+\newcommand{\bsY}{\mbox{$\boldmath{Y}$}}
+\newcommand{\bsZ}{\mbox{$\boldmath{Z}$}}
+
+\newcommand{\bfA}{\mbox{$\bf{A}$}}
+\newcommand{\bfB}{\mbox{$\bf{B}$}}
+\newcommand{\bfC}{\mbox{$\bf{C}$}}
+\newcommand{\bfD}{\mbox{$\bf{D}$}}
+\newcommand{\bfE}{\mbox{$\bf{E}$}}
+\newcommand{\bfF}{\mbox{$\bf{F}$}}
+\newcommand{\bfG}{\mbox{$\bf{G}$}}
+\newcommand{\bfH}{\mbox{$\bf{H}$}}
+\newcommand{\bfI}{\mbox{$\bf{I}$}}
+\newcommand{\bfJ}{\mbox{$\bf{J}$}}
+\newcommand{\bfK}{\mbox{$\bf{K}$}}
+\newcommand{\bfL}{\mbox{$\bf{L}$}}
+\newcommand{\bfM}{\mbox{$\bf{M}$}}
+\newcommand{\bfN}{\mbox{$\bf{N}$}}
+\newcommand{\bfO}{\mbox{$\bf{O}$}}
+\newcommand{\bfP}{\mbox{$\bf{P}$}}
+\newcommand{\bfQ}{\mbox{$\bf{Q}$}}
+\newcommand{\bfR}{\mbox{$\bf{R}$}}
+\newcommand{\bfS}{\mbox{$\bf{S}$}}
+\newcommand{\bfT}{\mbox{$\bf{T}$}}
+\newcommand{\bfU}{\mbox{$\bf{U}$}}
+\newcommand{\bfV}{\mbox{$\bf{V}$}}
+\newcommand{\bfW}{\mbox{$\bf{W}$}}
+\newcommand{\bfX}{\mbox{$\bf{X}$}}
+\newcommand{\bfY}{\mbox{$\bf{Y}$}}
+\newcommand{\bfZ}{\mbox{$\bf{Z}$}}
+
+\DeclareMathOperator*{\argmin}{argmin} %\usepackage{amsmath}를 써야지 정의가능함. 
+\DeclareMathOperator*{\argmax}{argmax} %\usepackage{amsmath}를 써야지 정의가능함. 
+
+\usepackage{titlesec}
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\huge\bfseries}
+\titleformat*{\subsubsection}{\huge\bfseries}
+\titleformat*{\paragraph}{\huge\bfseries}
+\titleformat*{\subparagraph}{\huge\bfseries}
+
+
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+\titlespacing*{\part}{0pt}{50pt}{40pt}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=20in]{geometry}
+
+\usepackage{geometry}
+\geometry{
+tmargin=3cm, 
+bmargin=3cm, 
+lmargin=1cm, 
+rmargin=1cm,
+headheight=1.5cm,
+headsep=0.8cm,
+footskip=0.5cm}
+
+\begin{document}
+\subsubsection{Big-$O_p$, little-$o_p$ 와 Delta-method 활용예제.}
+\ck 이번에는 Big-$O_p$, little-$o_p$ 와 Delta-method를 활용한 예제를 살펴보겠다. 
+\ck 김우철 수리통계학 교재의 연습문제를 참고함. 
+
+\dash
+
+\subsubsection{연습문제 5.14.}
+\ck $\begin{pmatrix}X_1 \\ Y_1 \end{pmatrix},\dots,\begin{pmatrix}X_n \\ Y_n \end{pmatrix} \overset{idd}{\sim} F$ with
+\one $EX_1=EY_1=0$,
+\two $EX_1^2=EY_1^2=1$,
+\three $EX_1Y_1=\rho$,
+\four $EX_1^4<\infty$, $EY_1^4<\infty$. 
+
+\ck $\hat{\rho}_n=\frac{\sum_{i=1}^{n}(X_i-\bar{X})(Y_i-\bar{Y})}{\sqrt{\sum_{i=1}^{n}(X_i-\bar{X})^2}\sqrt{\sum_{i=1}^{n}(Y_i-\bar{Y})^2}}.$ 
+
+\ck 아래와 같은 기호를 약속하자. 
+\one $\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_i$.
+\two $\bar{X^2}=\frac{1}{n}\sum_{i=1}^{n}X_i^2$.
+\three $\overline{XY}=\frac{1}{n}\sum_{i=1}^{n}X_iY_i$.
+
+\rdash 
+
+\cka $\sqrt{n} \bar{X}\bar{Y} \overset{p}{\to} 0$ 임을 보여라.  
+
+\sol 
+
+\ck $\sqrt{n}\bar{X}=O_p(1)$, $\bar{Y}=o_p(1)$ 이므로 자명함. 여기에서 $\sqrt{n}\bar{X}=O_p(1)$ 는 CLT에 의해서 성립하고 $\bar{Y}=o_p(1)$ 는 큰수의 법칙 즉 WLLN에 의해서 성립한다. 
+
+\note 추가적으로 $\bar{XY}-\bar{X}\bar{Y}=\bar{XY}+o_p(\frac{1}{\sqrt{n}})$ 임도 알 수 있다. 
+
+\rdash 
+
+\ckb 아래가 성립함을 보여라. 
+\[
+\sqrt{m_2-m_1^2} - \sqrt{m_2}=\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}
+\]
+이때 $m_1=\bar{X}$, $m_2=\bar{X^2}$ 라고 하자. 
+
+\sol (자명하다)
+
+\rdash 
+
+\note 추가적으로 아래를 확인가능하다. 
+\[
+\sqrt{m_2-m_1^2} =\sqrt{m_2}+\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+\pf 
+\ck $\sqrt{n}m_1^2=\sqrt{n}m_1 m_1 = O_p(1)o_p(1)=o_p(1)$ $\quad \therefore m_1^2=o_p(\frac{1}{\sqrt{n}})$.
+
+\ck $m_2=1+o_p(1)$ 이다. 즉 $m_2 \overset{p}{\to} 1$이다. 또한 $m_1^2=o_p(\frac{1}{\sqrt{n}})$ 이다. 따라서 
+\[
+\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+이다. 왜냐하면 분모는 1로 확률수렴하고 (continuous mappting thm) 분자는 $o_p(\frac{1}{\sqrt{n}})$이기 때문. 
+
+\rdash 
+
+\ckc 아래가 성립함을 보여라. 
+\[
+\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+\sol 
+
+\ck 아래식을 관찰하라. 
+\[
+\sqrt{m_2}-1=\frac{m_2-1}{\sqrt{m_2}+1}=\frac{m_2-1}{2}+\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1)
+\]
+
+\ck 이제 아래를 보이면 된다. 
+\[
+\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1):=r_{3n}=o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+따라서 아래를 보이면 된다. 
+\[
+\sqrt{n}\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1)=o_p(1)
+\]
+
+\ck 그런데 CLT에 의해서 $\sqrt{n}(m_2-1)=O_p(1)$ 가 성립한다. 
+
+\ck continuous mapping thm에 의해서 아래가 성립한다. 
+\[
+m_2 \overset{p}{\to} 1 \quad \Longrightarrow 
+\quad \left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right) \overset{p}{\to} 0
+\]
+
+\ck 따라서 
+\[
+\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)=o_p(1)
+\]
+
+\ck 따라서 증명이 끝난다. 
+
+\rdash 
+
+\ckd 아래를 보여라. 
+\[
+c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}= c_1-\rho\frac{m_2+s_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+이때 $c_1=\bar{XY}$, $s_1=\bar{Y}$, $s_2=\bar{Y^2}$이다. 
+
+\sol 
+
+\ck (b)의 결과로부터 아래가 성립한다. 
+\[
+\sqrt{m_2-m_1^2}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+
+\ck (c)의 결과로부터 아래가 성립한다. 
+\[
+\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+
+\ck 둘을 종합하면 
+\[
+\sqrt{m_2-m_1^2}=1+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+
+\ck 따라서 
+\[
+\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}
+\]
+는 아래식들의 합이다. 
+\one $1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})$
+\two $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})+o_p(\frac{1}{\sqrt{n}})$
+\note $O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})=\frac{1}{\sqrt{n}}\frac{1}{\sqrt{n}}O_p(1)=\frac{1}{\sqrt{n}}o_p(1)=o_p(\frac{1}{\sqrt{n}})$
+\two 따라서 결국 $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+o_p(\frac{1}{\sqrt{n}}).$
+\three $o_p(1/\sqrt{n})\left(1+\frac{s_2-1}{2}+o_p(1/\sqrt{n})\right)=o_p(\frac{1}{\sqrt{n}})$
+
+\ck 따라서 
+\[
+\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=1+\frac{s_2-1}{2}+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+정리하면 
+\[
+\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=\frac{s_2+m_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+\ck 한편 (a) 로부터 
+\[
+m_1s_1=\bar{X}\bar{Y}=o_p\left(\frac{1}{\sqrt{n}}\right)
+\]
+
+\ck 따라서 증명이 끝난다. 
+
+\rdash 
+
+\cke $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\bar{W}+o_p(1)$ 임을 보여라. 단 
+\[
+W=XY-\frac{\rho(X^2+Y^2)}{2}.
+\]
+
+\sol 
+
+\ck ${\bar W}=\bar{XY}-\frac{\rho({\bar X}^2+{\bar Y}^2)}{2}=c_1-\frac{\rho(m_2+s_2)}{2}$.
+
+\ck $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}{\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}$ 
+
+\ck (d)에 의해서 $\mbox{"분자"}=c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})$
+
+\ck 분모는 1로 확률수렴한다. 
+
+\ck 따라서 
+\[
+\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})}{1+o_p(1)}= \frac{\sqrt{n}\bar{W}+o_p(1)}{1+o_p(1)}=\sqrt{n}\bar{W}+o_p(1)
+\]
+
+
+\end{document}
