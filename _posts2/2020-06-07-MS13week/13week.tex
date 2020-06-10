@@ -708,80 +708,170 @@ Y_1,\dots,Y_n \overset{iid}{\sim} Exp(1).
 
 \ck 그런데 
 \[
-\begin{bmatrix} X_{(r)}\\ X_{(s)} \end{bmatrix}=\begin{bmatrix} h(Y_{(r)})\\  h(Y_{(s)}) \end{bmatrix}=g\left(\begin{bmatrix}Y_{(r)} \\ Y_{(s)}\end{bmatrix}\right)
+\begin{bmatrix} X_{(r)}\\ X_{(s)} \end{bmatrix}=\begin{bmatrix} h(Y_{(r)})\\  h(Y_{(s)}) \end{bmatrix}=\bsh \left(\begin{bmatrix}Y_{(r)} \\ Y_{(s)}\end{bmatrix}\right)
 \]
 
 \ck 따라서 
 \begin{align*}
-& \sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) 
-=\sqrt{n}\times\left(g\left(\begin{bmatrix}Y_{(r)} \\ Y_{(s)}\end{bmatrix}\right)-g\left(\begin{bmatrix} -\log(1-\alpha_r) \\ -\log(1-\alpha_s) \end{bmatrix}\right)\right) \\
-& \overset{d}{\longrightarrow} \bfH^T N({\bs 0},{\bs \Sigma})
+& \sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) \\ 
+& =\sqrt{n}\times\left(\bsh\left(\begin{bmatrix}Y_{(r)} \\ Y_{(s)}\end{bmatrix}\right)-\bsh\left(\begin{bmatrix} -\log(1-\alpha_r) \\ -\log(1-\alpha_s) \end{bmatrix}\right)\right) \\
+& =\sqrt{n}\times\left(\begin{bmatrix}h(Y_{(r)}) \\ h(Y_{(s)})\end{bmatrix}-\begin{bmatrix} h(-\log(1-\alpha_r)) \\ h(-\log(1-\alpha_s)) \end{bmatrix}\right)\\ 
+& \overset{d}{\longrightarrow} 
+\begin{bmatrix}
+?? & ?? \\
+?? & ??
+\end{bmatrix}^T N\left(\begin{bmatrix}0\\0\end{bmatrix},\begin{bmatrix} \frac{\alpha_r}{1-\alpha_r} & \frac{\alpha_r}{1-\alpha_r} \\ \frac{\alpha_r}{1-\alpha_r} & \frac{\alpha_s}{1-\alpha_s} \end{bmatrix}\right)
 \end{align*}
 
-\rdash
-
-\ck (예제 5.2.7) 이때 
+\note 여기에서 $\bsh: \mathbb{R}^2 \to \mathbb{R}^2$ 이므로 $\begin{bmatrix}?? & ?? \\?? & ??\end{bmatrix}$와 같이 $2\times 2$매트릭스가 나왔다. 
+\note 만약에 $\bsh: \mathbb{R}^2 \to \mathbb{R}^3$이었다면 즉 $h(x_1,x_2)=(y_1,y_2,y_3)$ 꼴이었다면 
 \[
-\bs{\mu_x}=\bs{h}(\bs{\mu}_y)=\begin{bmatrix} F^{-1}(\alpha)\\ F^{-1}(\beta) \end{bmatrix}
+\begin{bmatrix}
+\frac{\partial }{\partial x_1} \\ \frac{\partial }{\partial x_2}\end{bmatrix} \begin{bmatrix} y_1 & y_2 & y_3\end{bmatrix}=
+\begin{bmatrix}
+\frac{\partial y_1 }{\partial y_1} & \frac{\partial y_2}{\partial x_1} & \frac{\partial y_3}{\partial x_1} \\ 
+\frac{\partial y_1}{\partial x_2} & \frac{\partial y_2}{\partial x_2} & \frac{\partial y_3}{\partial x_2} 
+\end{bmatrix}
 \]
-이다. 왜냐하면 
+일것이다. 
+
+\rdash 
+
+\ck 잠시 시간을 투자하여 $\begin{bmatrix}?? & ?? \\?? & ??\end{bmatrix}$를 계산하자. 
 \[
-h(\bigstar)=F^{-1}(1-e^{-\bigstar}) \Longrightarrow h(-\log(1-\alpha))=F^{-1}(1-e^{\log(1-\alpha)})=F^{-1}(\alpha).
+\begin{bmatrix}?? & ?? \\?? & ??\end{bmatrix}
+=
+\begin{bmatrix}\frac{\partial h(x_1)}{\partial x_1} & \frac{\partial h(x_2)}{\partial x_1} \\ \frac{\partial h(x_1)}{\partial x_2} & \frac{\partial h(x_2)}{\partial x_2} \end{bmatrix}
+\] 
+이다. 그런데 
+\[
+h(x_1)=F^{-1}(1-e^{-x_1})
+\]
+이므로 
+\[
+F\big(h(x_1)\big)=1-e^{-x_1}
+\]
+그러므로 
+\[
+\frac{\partial}{\partial x_1} F(h(x_1))=e^{-x_1}
+\]
+따라서 
+\[
+f(h(x_1))\frac{\partial h(x_1)}{\partial x_1}=e^{-x_1} \Longleftrightarrow \frac{\partial h(x_1)}{\partial x_1}=\frac{e^{-x_1}}{f(h(x_1))}
+\]
+$x_1$대신에 $-\log(1-\alpha_r)$를 대입하자. 
+\[
+e^{-x_1}=e^{\log(1-\alpha_r)}= 1-\alpha_r
+\]
+\[
+f(h(x_1))=f(h(-\log(1-\alpha_r)))=f\big(F^{-1}(1-e^{\log(1-\alpha_r)})\big)=f \circ F^{-1}(\alpha_r)
+\]
+따라서 
+\[
+\begin{bmatrix}?? & ?? \\ ?? & ??\end{bmatrix}=
+\begin{bmatrix}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\end{bmatrix}
 \]
 
 \rdash 
 
-\ck 분산텀을 계산하여 보자. 
-$
-\bsh=\begin{bmatrix}
-h(\tau_1) \\
-h(\tau_2)
-\end{bmatrix}
-$ 이므로 
+\ck 따라서 수렴하는 분포는 
 \[
-\mbox{일차미분항}= 
-\begin{bmatrix}
-\frac{\partial}{\partial \tau_1} \\
-\frac{\partial}{\partial \tau_2} 
-\end{bmatrix}\bs{h}^T=\begin{bmatrix}
-\frac{\partial}{\partial \tau_1} \\
-\frac{\partial}{\partial \tau_2} 
+\begin{bmatrix}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\end{bmatrix}^T N\left(\begin{bmatrix}0\\0\end{bmatrix},\begin{bmatrix} \frac{\alpha_r}{1-\alpha_r} & \frac{\alpha_r}{1-\alpha_r} \\ \frac{\alpha_r}{1-\alpha_r} & \frac{\alpha_s}{1-\alpha_s} \end{bmatrix}\right)
+\]
+와 같다. 따라서 수렴하는 분포의 분산은 
+\begin{align*}
+& \begin{bmatrix}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\end{bmatrix}^T 
+\begin{bmatrix} \frac{\alpha_r}{1-\alpha_r} & \frac{\alpha_r}{1-\alpha_r} \\ \frac{\alpha_r}{1-\alpha_r} & \frac{\alpha_s}{1-\alpha_s} \end{bmatrix}
+\begin{bmatrix}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\end{bmatrix} \\
+& = \begin{bmatrix}
+\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 0 \\ 0 & \frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}
 \end{bmatrix}
 \begin{bmatrix}
-h(\mu_{x1}) &
-h(\mu_{x2})
+\frac{\alpha_r}{1-\alpha_r}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & \frac{\alpha_r}{1-\alpha_r}\frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)} \\ 
+\frac{\alpha_r}{1-\alpha_r}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 
+\frac{\alpha_s}{1-\alpha_s}\frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}
+\end{bmatrix} \\ 
+& =
+\begin{bmatrix}
+\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)}\frac{\alpha_r}{1-\alpha_r}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & \frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)}\frac{\alpha_r}{1-\alpha_r}\frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)} \\ 
+\frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\frac{\alpha_r}{1-\alpha_r}\frac{1-\alpha_r}{f\circ F^{-1}(\alpha_r)} & 
+\frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}\frac{\alpha_s}{1-\alpha_s}\frac{1-\alpha_s}{f\circ F^{-1}(\alpha_s)}
+\end{bmatrix}\\
+& =
+\begin{bmatrix}
+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
+\frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
+\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
 \end{bmatrix}
-=
-\begin{bmatrix}\frac{\partial h(\tau_1)}{\partial\tau_1} & \frac{\partial h(\tau_2)}{\partial\tau_1} \\ \frac{\partial h(\tau_1)}{\partial\tau_2} & \frac{\partial h(\tau_2)}{\partial\tau_2} \end{bmatrix}
-\] 
-이다. 그런데 
+\end{align*}
+
+\ck 결론적으로 아래와 같이 주장할 수 있다. 
 \[
-h(\tau_1)=F^{-1}(1-e^{-\tau_1})
-\]
-이므로 
-\[
-F\big(h(\tau_1)\big)=1-e^{-\tau_1}
-\]
-그러므로 
-\[
-\frac{\partial}{\partial\tau_1} F(h(\tau_1))=e^{-\tau_1}
+\sqrt{n}\times\left(\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}-\begin{bmatrix}? \\ ? \end{bmatrix}\right) 
+\overset{d}{\to} 
+N\left(\begin{bmatrix}0\\0\end{bmatrix},\begin{bmatrix}
+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
+\frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
+\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
+\end{bmatrix}\right)
 \]
 따라서 
 \[
-f(h(\tau_1))\frac{\partial}{\partial \tau_1}h(\tau_1)=e^{-\tau} \Longleftrightarrow \frac{\partial}{\partial \tau_1}h(\tau_1)=\frac{e^{-\tau_1}}{f(h(\tau_1))}
+\sqrt{n}\times\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}
+\overset{d}{\to} 
+N\left(\begin{bmatrix}? \\ ? \end{bmatrix},\begin{bmatrix}
+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
+\frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
+\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
+\end{bmatrix}\right)
 \]
-$\tau_1$대신에 $-\log(1-\alpha)$를 대입하자. 
+여기에서 
+\begin{align*}
+&\begin{bmatrix}? \\ ? \end{bmatrix}=
+\begin{bmatrix}h(EY_{(r)}) \\ h(EY_{(s)}) \end{bmatrix}=\begin{bmatrix}h(-\log(1-\alpha_r)) \\ h(-\log(1-\alpha_s)) \end{bmatrix} \\
+&=\begin{bmatrix}F^{-1}\circ \big(1-e^{\log(1-\alpha_r)}
+\big) \\ F^{-1}\circ \big(1-e^{\log(1-\alpha_r)}\big)  \end{bmatrix} 
+= \begin{bmatrix} F^{-1}(\alpha_r) \\ F^{-1}(\alpha_s) \end{bmatrix}
+\end{align*}
+따라서 
 \[
-e^{-\tau_1}: 1-\alpha
-\]
-\[
-f(h(\tau_1)): F^{-1}(\alpha)
+\sqrt{n}\times\begin{bmatrix}X_{(r)} \\ X_{(s)}\end{bmatrix}
+\overset{d}{\to} 
+N\left(\begin{bmatrix} F^{-1}(\alpha_r) \\ F^{-1}(\alpha_s) \end{bmatrix},\begin{bmatrix}
+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} & \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} \\ 
+\frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)} & 
+\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} 
+\end{bmatrix}\right)
 \]
 
-
-\ck asdf 
+\ck 마지날을 구해보자. 
 \[
-\begin{pmatrix} asdf & asdf \end{pmatrix}\begin{pmatrix}\frac{\alpha}{1-\alpha} & \frac{\alpha}{1-\alpha} \\ \frac{\alpha}{1-\alpha} & \frac{\beta}{1-\beta} \end{pmatrix}\begin{pmatrix} asdf \\ asdf \end{pmatrix}
+\sqrt{n}X_{(r)} \overset{d}{\to} N\left(F^{-1}(\alpha_r), \frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2} \right)
 \]
+\[
+\sqrt{n}X_{(s)} \overset{d}{\to} N\left(F^{-1}(\alpha_s), \frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2} \right)
+\]
+
+\ck $X_{(s)}-X_{(r)}$의 분포를 구해보자. 정규분포의 차는 다시 정규분포를 따르므로 
+\[
+\sqrt{n}(X_{(s)}-X_{(r)}) \overset{d}{\to} N(E,V)
+\]
+여기에서 
+\[
+E=F^{-1}(\alpha_s)-F^{-1}(\alpha_r)
+\]
+\[
+V=\frac{(1-\alpha_s)\alpha_s}{(f\circ F^{-1}(\alpha_s))^2}+\frac{(1-\alpha_r)\alpha_r}{(f\circ F^{-1}(\alpha_r))^2}+2 \frac{\alpha_r(1-\alpha_s)}{f\circ F^{-1}(\alpha_r) \times f\circ F^{-1}(\alpha_s)}
+\]
+
+\ck 위의식에서 $\alpha_r=\frac{1}{4}$, $\alpha_s=\frac{3}{4}$를 대입하면 
+\[
+E=F^{-1}(3/4)-F^{-1}(1/4)
+\]
+\begin{align*}
+V=\frac{(1-3/4)3/4}{(f\circ F^{-1}(3/4))^2}+\frac{(1-1/4)1/4}{(f\circ F^{-1}(1/4))^2}+2 \frac{1/4(1-3/4)}{f\circ F^{-1}(1/4) \times f\circ F^{-1}(3/4)}\\
+=\frac{1}{16}\left(\frac{3}{(f\circ F^{-1}(3/4))^2}+\frac{3}{(f\circ F^{-1}(1/4))^2}+ \frac{2}{f\circ F^{-1}(1/4) \times f\circ F^{-1}(3/4)}\right)
+\end{align*}
+
 
 \end{document}
