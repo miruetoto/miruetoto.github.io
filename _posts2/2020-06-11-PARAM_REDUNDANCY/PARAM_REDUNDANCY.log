@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  11 JUN 2020 10:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  11 JUN 2020 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ts13week.tex
-(./ts13week.tex
+**PARAM_REDUNDANCY.tex
+(./PARAM_REDUNDANCY.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -539,8 +539,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen260
 \Gm@layoutvoffset=\dimen261
 \Gm@dimlist=\toks38
-) (./ts13week.aux)
-\openout1 = `ts13week.aux'.
+)
+(./PARAM_REDUNDANCY.aux)
+\openout1 = `PARAM_REDUNDANCY.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 275.
 LaTeX Font Info:    ... okay on input line 275.
@@ -659,31 +660,8 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <24.88> not available
 (Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 2
 77.
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 279
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 279
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
 LaTeX Font Info:    Trying to load font information for U+futs on input line 28
-2.
-
+0.
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 File: ufuts.fd 2004/03/02 Fontinst v1.926 font definitions for U/futs.
 )
@@ -695,83 +673,25 @@ This may cause the page layout to be inconsistent, however.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (21.39687pt too wide) detected at line 575
-[]
- []
-
-[3] (./ts13week.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./PARAM_REDUNDANCY.aux) )
+ 
 Here is how much of TeX's memory you used:
- 10136 strings out of 481239
- 158984 string characters out of 5920378
- 570907 words of memory out of 5000000
- 25111 multiletter control sequences out of 15000+600000
- 575355 words of font info for 129 fonts, out of 8000000 for 9000
+ 9782 strings out of 481239
+ 151706 string characters out of 5920378
+ 538923 words of memory out of 5000000
+ 24850 multiletter control sequences out of 15000+600000
+ 544446 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,18n,46p,402b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.en
-c}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/fourier/fourier-orns.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fp
-l/fplbj8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjmaf.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/nanumtype1/nanummjmb0.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmb1.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/nanumtype1/nanummjmb2.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/nanumtype1/nanummjmb3.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/na
-numtype1/nanummjmb5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanum
-type1/nanummjmb6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtyp
-e1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/
-nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nan
-ummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jmba.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb
-b.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/nanumtype1/nanummjmd1.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmd2.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/nanumtype1/nanummjmd3.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmd4.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanummjmd5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmd6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/n
-anumtype1/nanummjmd7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
-o/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ts13week.pdf (3 pages, 2091599 bytes).
+ 48i,11n,46p,410b,314s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/fourier/fourier-orns.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/nanumtype1/nanummjbc7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/palatino/uplb8a.pfb>
+Output written on PARAM_REDUNDANCY.pdf (1 page, 21723 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
+ 25 PDF objects out of 1000 (max. 8388607)
+ 17 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 10753 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 2561 words of extra memory for PDF output out of 10000 (max. 10000000)
 
