@@ -260,7 +260,7 @@ expansion=true]{microtype}
 \titlespacing*{\chapter} {0pt}{50pt}{40pt}
 
 \newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
-\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=32in]{geometry}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=15in]{geometry}
 
 \usepackage{geometry}
 \geometry{
@@ -274,7 +274,58 @@ footskip=0.5cm}
 
 \begin{document}
 
-\subsubsection{SARIMA의 ACF}
+\subsubsection{모수과잉}
+\ck 조신섭교수님 교재의 연습문제를 풀어보자. 
 
+\subsubsection{연습문제 8.8.}
+\ck 아래와 같은 2개의 시계열 모형을 생각하자. 
+\[
+X_t=\phi X_{t-1}+\epsilon_t, \quad \epsilon_t \sim N(0,\sigma_\epsilon^2)
+\]
+\[
+Y_t=\eta_t - \theta \eta_{t-1}, \quad \eta_t \sim N(0,\sigma_\eta^2)
+\]
 
+\ck $Z_t=X_t+Y_t$는 어떤 모형을 따르는지 밝혀라. 
+
+\note 아무래도 $\{X_t\}$가 AR(1)을 따르고 $\{Y_t\}$가 MA(1)을 따르니까 둘이 합치면 ARMA(1,1)을 따르지 않겠어? 싶지만 그렇지 않다. 
+
+\ck 우선 $X_t$는 아래와 같이 쓸 수 있다. 
+\[
+(1-\phi B)X_t=\epsilon_t 
+\]
+
+\ck 또한 $Y_t$는 아래와 같이 표현가능하다. 
+\[
+(1-\phi B)Y_t=(1-\phi_B)(1-\theta B)\eta_t
+\]
+
+\ck 따라서 
+\[
+(1-\phi B)Z_t = \epsilon_t + (1-\phi B)(1-\theta B) \eta_t 
+\]
+그런데 $\epsilon_t\overset{d}{=}\frac{\sigma_\epsilon}{\sigma_\eta}\eta_t$ 이므로 
+\[
+(1-\phi B)Z_t =\frac{\sigma_\epsilon}{\sigma_\eta}\eta_t + (1-\phi B)(1-\theta B) \eta_t 
+\]
+우변을 정리하면 
+\[
+(1-\phi B)Z_t=\left(1+\frac{\sigma_\epsilon}{\sigma_\eta}\right)\eta_t-(\phi+\theta)\eta_{t-1}+\phi\theta\eta_{t-2}
+\]
+따라서 $\left(1+\frac{\sigma_\epsilon}{\sigma_\eta}\right)\eta_t$를 새로운 $\eta_t^*$로 보면 이 모형이 ARMA(1,2)를 따름을 알 수 있다. 
+
+\subsubsection{연습문제 8.9.}
+\ck 두 시계열 $\{X_t\}$와 $\{Y_t\}$가 각각 아래와 같은 MA(1)모형을 따른다고 하자. 
+\[
+X_t=\epsilon_t-\theta_1\epsilon_{t-1}, \quad \epsilon_t \sim N(0,\sigma_\epsilon^2)
+\]
+\[
+Y_t=\eta_t+\theta_1\eta_{t-1}, \quad \eta_t \sim N(0,\sigma_\eta^2)
+\]
+
+\ck 두 시계열을 더하면 
+\[
+Z_t =(1-\theta_1B)\epsilon_t+(1+\theta_1B)\eta_t 
+\]
+여기에서 $\epsilon_t+\eta_t$를 새로운 오차항으로 해석하면 
 \end{document}
