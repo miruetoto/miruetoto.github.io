@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  11 JUN 2020 11:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  11 JUN 2020 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -658,8 +658,41 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <24.88> not available
 (Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 2
 77.
-LaTeX Font Info:    Trying to load font information for U+futs on input line 28
-0.
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 278
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 278
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+! Undefined control sequence.
+<recently read> \simga 
+                       
+l.314 ...psilon_{t})$와 같고 이 값은 $\simga
+                                                  ^2$이다.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Trying to load font information for U+futs on input line 34
+3.
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 File: ufuts.fd 2004/03/02 Fontinst v1.926 font definitions for U/futs.
 )
@@ -673,23 +706,63 @@ This may cause the page layout to be inconsistent, however.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./SARIMA_ACF.aux) ) 
 Here is how much of TeX's memory you used:
- 9782 strings out of 481239
- 151646 string characters out of 5920378
- 538911 words of memory out of 5000000
- 24850 multiletter control sequences out of 15000+600000
- 544446 words of font info for 41 fonts, out of 8000000 for 9000
+ 10079 strings out of 481239
+ 157987 string characters out of 5920378
+ 544911 words of memory out of 5000000
+ 25076 multiletter control sequences out of 15000+600000
+ 563637 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,11n,46p,404b,314s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,11n,46p,404b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/
 share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-
-dist/fonts/type1/public/fourier/fourier-orns.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/fpl/fplbj8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/nanumtype1/nanummjbc7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/palatino/uplb8a.pfb>
-Output written on SARIMA_ACF.pdf (1 page, 21723 bytes).
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fo
+urier/fourier-orns.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fp
+lbj8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjb
+bb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmba.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmbc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nan
+umtype1/nanummjmbd.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmbe.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmc0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjmc1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmc2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+mc5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/palatino/uplr8a.pfb>
+Output written on SARIMA_ACF.pdf (1 page, 1648369 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 194 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 2561 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 8193 words of extra memory for PDF output out of 10000 (max. 10000000)
 

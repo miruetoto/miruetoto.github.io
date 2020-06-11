@@ -275,6 +275,69 @@ footskip=0.5cm}
 \begin{document}
 
 \subsubsection{SARIMA의 ACF}
+\ck 시계열강의자료 
+\ck 조신섭교수님 교재의 문제풀이 
 
+\subsubsection{예제}
+
+\subsubsection{연습문제 10.3.}
+\ck 아래의 모형의 ACF를 구해보자.
+\[
+(1-\phi B)Z_t=(1-\theta B)(1-\Theta B^4)\epsilon_t
+\]
+
+\ck 이 모형은 정상이라고 가정하자. 
+
+\ck 
+$\gamma_0,\gamma_1,\gamma_2,\gamma_3,\gamma_4,\gamma_5$ 까지만 어거지로 구하고 그 이후는 아래를 반복한다. 
+\begin{align*}
+\gamma_6=&\phi \gamma_5 \\ 
+\gamma_7=&\phi \gamma_6 \\ 
+\dots&
+\end{align*}
+
+\ck 모델을 아래와 같이 표현하자.
+\[
+Z_t=\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
+\]
+
+\ck 아래의 모형으로 바꾸자. 
+\[
+Z_t-\phi Z_{t-1}=\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
+\]
+
+\ck 양변에 $Z_{t-5}$를 곱하고 평균을 취하자. 
+\[
+\gamma_5-\phi \gamma_4 = \theta \Theta \times E(Z_{t-5},\epsilon_{t-5})
+\]
+
+\ck 따라서 우선 $E(Z_{t-5},\epsilon_{t-5})$를 구하면 좋겠다. 그런데 이 값은 $E(Z_{t},\epsilon_{t})$와 같고 이 값은 $\simga^2$이다. 
+
+\ck 아래의 식을 관찰하자. 오른쪽 등호는 울드의 정리에 의해 성립한다. 
+\[
+Z_t=\frac{(1-\theta B)(1-\Theta B^4)}{1-\phi B}\epsilon_t=(\psi_0+\psi_1 B+\psi_2 B^2 +\dots )\epsilon_{t}
+\]
+편의상 위의 식을 아래와 같이 약속하자. 
+\[
+(1)=(2)=(3)
+\]
+
+\ck 식 $(1)=(3)$ 의 양변에 $Z_t$를 곱하고 평균을 취하면 아래를 얻는다. 
+\[
+\gamma_0=\psi_0 E(Z_t\epsilon_t)
+\]
+
+
+\ck 식 $(2)=(3)$ 을 관찰하면 아래의 관계가 성립한다. 
+\[
+(1-\theta B)(1-\Theta B^4)=(1-\phi B)(\psi_0+\psi_1 B+\psi_2 B^2+\dots)
+\]
+상수항을 비교하면 $\psi_0=1$ 임을 알 수 있다.  또한 $B$의 계수를 
+
+
+\ck 양변에 분산을 취한다. 
+\[
+\gamma_0+\phi^2\gamma_1 -2\phi\gamma_1 =\sigma^2(1-\theta-\Theta+\theta\Theta)
+\]
 
 \end{document}
