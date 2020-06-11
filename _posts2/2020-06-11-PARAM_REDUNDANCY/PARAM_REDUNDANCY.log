@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.30)  12 JUN 2020 01:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.5.30)  12 JUN 2020 08:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1006,24 +1006,24 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 LaTeX Font Info:    Font shape `T1/pplj/bx/it' in size <17.28> not available
 (Font)              Font shape `T1/pplj/b/it' tried instead on input line 291.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 331.
-LaTeX Font Info:    Try loading font information for U+futs on input line 331.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 332.
+LaTeX Font Info:    Try loading font information for U+futs on input line 332.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ufuts.fd
 File: ufuts.fd 2004/03/26 Fontinst v1.926 font definitions for U/futs.
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 (/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-11-PARAM_REDUND
 ANCY/PARAM_REDUNDANCY.aux) ) 
 Here is how much of TeX's memory you used:
- 9396 strings out of 492982
- 139978 string characters out of 6134896
+ 9405 strings out of 492982
+ 140179 string characters out of 6134896
  347281 words of memory out of 5000000
- 12669 multiletter control sequences out of 15000+600000
- 36842 words of font info for 91 fonts, out of 8000000 for 9000
+ 12675 multiletter control sequences out of 15000+600000
+ 37717 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,44p,409b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,44p,409b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base
 /8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
@@ -1043,38 +1043,41 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb
 usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/nanumtype1/nanummjmb9.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/nanumtype1/nanummjmba.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/nanumtype1/nanummjmbb.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/nanumtype1/nanummjmbc.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/nanumtype1/nanummjmc0.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/nanumtype1/nanummjmc1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-nanumtype1/nanummjmc2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nan
-umtype1/nanummjmc4.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumt
-ype1/nanummjmc5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype
-1/nanummjmc6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/n
-anummjmc7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanu
-mmjmc8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummj
-mc9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/palatino/uplr8a.pfb>
+/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmb7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/nanumtype1/nanummjmb8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmb9.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjmba.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjmbc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmc0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nan
+umtype1/nanummjmc1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmc2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmc4.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjmc5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmc6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+mc7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/palatino/uplr8a.pfb>
 Output written on /home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-0
-6-11-PARAM_REDUNDANCY/PARAM_REDUNDANCY.pdf (1 page, 1541639 bytes).
+6-11-PARAM_REDUNDANCY/PARAM_REDUNDANCY.pdf (2 pages, 1617937 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  8705 words of extra memory for PDF output out of 10000 (max. 10000000)
 

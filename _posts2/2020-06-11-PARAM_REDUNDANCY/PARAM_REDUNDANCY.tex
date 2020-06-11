@@ -323,9 +323,32 @@ X_t=\epsilon_t-\theta_1\epsilon_{t-1}, \quad \epsilon_t \sim N(0,\sigma_\epsilon
 Y_t=\eta_t+\theta_1\eta_{t-1}, \quad \eta_t \sim N(0,\sigma_\eta^2)
 \]
 
+\ck $\epsilon_t* \sim N(0,1)$라고 하자. 그러면 $\{X_t\}$와 $\{Y_t\}$는 각각 아래로 표현가능하다. 
+\[
+X_t=\sigma_\epsilon\epsilon_t^*-\theta_1\sigma_\epsilon \epsilon_{t-1}^*
+\]
+\[
+Y_t=\sigma_\eta\epsilon_t^*+\theta_1\sigma_\eta \epsilon_{t-1}^*
+\]
+
 \ck 두 시계열을 더하면 
 \[
-Z_t =(1-\theta_1B)\epsilon_t+(1+\theta_1B)\eta_t 
+Z_t =(\sigma_\epsilon+\sigma_\eta\ ) \epsilon_t^* + (-\theta_1\sigma_\epsilon +\theta_1\sigma_\eta)\epsilon_{t-1}^*
 \]
-여기에서 $\epsilon_t+\eta_t$를 새로운 오차항으로 해석하면 
+여기에서 $(\sigma_\epsilon+\sigma_\eta\ ) \epsilon_t^*
+$를 새로운 오차항 $\epsilon_t^{\star}$로 해석하면 
+\[
+Z_t = \epsilon_t^{\star} + \theta_1^{\star}\epsilon_{t-1}^{\star}
+\]
+처럼 볼수 있고 이때 
+\[
+\theta_1^{\star}=\frac{-\theta_1 \sigma_1+ \theta_1\sigma_\eta}{\sigma_\epsilon+\sigma_\eta}
+\]
+와 같이 된다. 
+
+\ck 따라서 $\{Z_t\}$는 기본적으로는 MA모형으로 볼 수 있으나 $\sigma_\epsilon=\sigma_\eta$인 경우에는 
+\[
+\theta_1^*{\star}=0
+\]
+이 되므로 화이트 노이즈가 된다. 
 \end{document}
