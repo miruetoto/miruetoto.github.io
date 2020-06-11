@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1591852793 "SARIMA_ACF.tex" "SARIMA_ACF.pdf" "SARIMA_ACF" 1591860539
+["pdflatex"] 1591870073 "SARIMA_ACF.tex" "SARIMA_ACF.pdf" "SARIMA_ACF" 1591870074
   "/etc/texmf/web2c/texmf.cnf" 1588735733 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -33,7 +33,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmac.tfm" 1364599308 1244 3e75f0068313f0d2b3560a3bb9eebc26 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmad.tfm" 1364599308 1256 e1106cf286f84f721ca2eae38205e2b2 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmae.tfm" 1364599308 1252 8a3ed5f3f1621f7431b8ccd200a2b40e ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmaf.tfm" 1364599308 1276 a8e772fdf4ca3f58986b6f5d8f5fa749 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb0.tfm" 1364599308 1256 6cf60c9a1a1a53611681993c467fa8d2 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb1.tfm" 1364599308 1260 ac3ec70aecb4d199467c5bf395d166f2 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb2.tfm" 1364599308 1256 7757d222cf34de9d71f72d148037b691 ""
@@ -51,6 +50,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc0.tfm" 1364599308 1252 550ca25062ebc90c66b675808adf8c6d ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm" 1364599308 1256 65e23cc1bcd2b64aca8af1f732fed042 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc2.tfm" 1364599308 1252 818c5e98aaef778763029f70d8876c68 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc4.tfm" 1364599308 1260 9b758ab7a4dde34b1a04a2b2aae66eac ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc5.tfm" 1364599308 1240 519d105c3f882d4e81d993bd5669c5c8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.tfm" 1364599308 1260 8036be1c5030d1ed0ea8755dd5820fff ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc7.tfm" 1364599308 1260 b0ea938725b0995b1f91c462ecbf4f1f ""
@@ -81,7 +81,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb" 1364599308 141266 9f37e78b9ed18fefeb805b93d962c49b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb" 1364599308 162029 6555f92ce72bc742a5ae0cc5b3daca4e ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb" 1364599308 151218 e459b242e186c87dffde79fcc66d664a ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmaf.pfb" 1364599308 186131 6767105e15919bd42e10561070e6a73c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb" 1364599308 158001 20c5f167a06cd11212d2a5ff3150731d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb" 1364599308 157088 b25d92c06972fb937873c8c9914c7a31 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb" 1364599308 160311 56d27ef39816a0f9cd1af8e6beed4ceb ""
@@ -99,6 +98,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb" 1364599308 255779 fdfc954d6fbf12a349b0f0048856b5ae ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb" 1364599308 161865 4f209de35b3f8f8bf0c6bd2626c71039 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb" 1364599308 153768 774715bfa19c744cd0c61d8837698d54 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb" 1364599308 179426 936e80fb1ebcb112ad90fb1e16e65352 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb" 1364599308 160980 bd8397c3a5098b5e923061af463cdc2f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb" 1364599308 187129 6f90122b69ea350c302ecb7ec19b0cd5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb" 1364599308 160872 59a8c8ebbe2a739f67efb454490bfe1a ""
@@ -208,9 +208,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1588735775 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1588735815 8256229 bc1212c8b345a0a4119dd4eacaa2ed9e ""
-  "SARIMA_ACF.aux" 1591852793 3055 d59f1e03b798147cd36e8ba09e771dae "pdflatex"
-  "SARIMA_ACF.tex" 1591852792 16476 5ebcd0217c6b598a11e2ab95325c1e1b ""
+  "SARIMA_ACF.aux" 1591870073 3336 88127a27ee7724ea8381c8959764d985 "pdflatex"
+  "SARIMA_ACF.tex" 1591870073 16519 39c8374bff601e613690f52e26a85ed1 ""
   (generated)
-  "SARIMA_ACF.pdf"
-  "SARIMA_ACF.aux"
   "SARIMA_ACF.log"
+  "SARIMA_ACF.aux"
+  "SARIMA_ACF.pdf"
