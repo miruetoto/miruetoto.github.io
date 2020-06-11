@@ -301,17 +301,32 @@ $\gamma_0,\gamma_1,\gamma_2,\gamma_3,\gamma_4,\gamma_5$ 까지만 어거지로 �
 Z_t=\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
 \]
 
-\ck 아래의 모형으로 바꾸자. 
+\ck 양변에 $Z_{t}$를 곱하고 평균을 취하면 
 \[
-Z_t-\phi Z_{t-1}=\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
+\gamma_0 = \phi \gamma_1 + cov(Z_t,\epsilon_{t})-\theta cov(Z_t,\epsilon_{t-1})-\Theta cov(Z_t,\epsilon_{t-4})+\theta\Theta cov(Z_t,\epsilon_{t-5})
 \]
 
-\ck 양변에 $Z_{t-5}$를 곱하고 평균을 취하자. 
-\[
-\gamma_5-\phi \gamma_4 = \theta \Theta \times E(Z_{t-5},\epsilon_{t-5})
-\]
+\ck 따라서 아래들을 구하면 좋겠다. 
+\begin{align*}
+cov(Z_t,\epsilon_{t})\\
+cov(Z_t,\epsilon_{t-1})\\
+cov(Z_t,\epsilon_{t-4})\\
+cov(Z_t,\epsilon_{t-5}) 
+\end{align*}
 
-\ck 따라서 우선 $E(Z_{t-5},\epsilon_{t-5})$를 구하면 좋겠다. 그런데 이 값은 $E(Z_{t},\epsilon_{t})$와 같고 이 값은 $\simga^2$이다. 
+\ck 먼저 $cov(Z_{t},\epsilon_{t})$를 구해보자. 
+\[
+cov(\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1}-\Theta\epsilon_{t-4}+\theta\Theta\epsilon_{t-5},\quad \epsilon_t)=\sigma^2
+\]
+이다.
+
+\ck 이제 $cov(Z_{t},\epsilon_{t-1})$을 구해보자. 
+\[
+cov(\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1}-\Theta\epsilon_{t-4}+\theta\Theta\epsilon_{t-5},\quad \epsilon_{t-1})=\phi\sigma^2-\theta\sigma^2
+\]
+이런식으로 계속 구할 수 없으니 좀 더 체계적인 방법을 알아보자. 
+
+\rdash
 
 \ck 아래의 식을 관찰하자. 오른쪽 등호는 울드의 정리에 의해 성립한다. 
 \[
@@ -322,22 +337,152 @@ Z_t=\frac{(1-\theta B)(1-\Theta B^4)}{1-\phi B}\epsilon_t=(\psi_0+\psi_1 B+\psi_
 (1)=(2)=(3)
 \]
 
-\ck 식 $(1)=(3)$ 의 양변에 $Z_t$를 곱하고 평균을 취하면 아래를 얻는다. 
-\[
-\gamma_0=\psi_0 E(Z_t\epsilon_t)
-\]
-
-
 \ck 식 $(2)=(3)$ 을 관찰하면 아래의 관계가 성립한다. 
 \[
 (1-\theta B)(1-\Theta B^4)=(1-\phi B)(\psi_0+\psi_1 B+\psi_2 B^2+\dots)
 \]
-상수항을 비교하면 $\psi_0=1$ 임을 알 수 있다.  또한 $B$의 계수를 
+상수항, $B$의 계수 $B^2$의 계수... 등을 순차적으로 비교하면 
+\begin{align*}
+1=&\psi_0 \\ 
+-\theta=&\psi_1-\phi\psi_0 \\ 
+0=&\psi_2-\phi\psi_1 \\
+0=&\psi_3-\phi\psi_2 \\
+-\Theta=&\psi_4-\phi\psi_3 \\
+\theta\Theta=&\psi_5-\phi\psi_4 
+\end{align*}
+따라서 
+\begin{align*}
+\psi_0=&1 \\
+\psi_1=&\phi-\theta \\ 
+\psi_2=&\phi(\phi-\theta) \\
+\psi_3=&\phi^2(\phi-\theta) \\
+\psi_4=&\Theta-\phi^3(\phi-\theta) \\
+\psi_5=&\theta\Theta-\phi(\Theta-\phi^3(\phi-\theta))=\theta\Theta-\phi\Theta+\phi^4(\phi-\theta)
+\end{align*}
 
+\ck 위의 결과를 활용하기 위해 $(1)=(3)$의 양변에 $\epsilon_t,\epsilon_{t-1},\epsilon_{t-2},\dots$를 순차적으로 곱하고 평균을 취하자. 그러면 아래를 얻는다. 
+\begin{align*}
+cov(Z_t,\epsilon_t)=&\psi_0 \times \sigma^2=\sigma^2 \\
+cov(Z_t,\epsilon_{t-1})=&\psi_1\times \sigma^2=(\phi-\theta)\sigma^2 \\ 
+cov(Z_t,\epsilon_{t-2})=&\psi_2\times \sigma^2=\phi(\phi-\theta) \sigma^2\\
+cov(Z_t,\epsilon_{t-3})=&\psi_3\times \sigma^2=\phi^2(\phi-\theta)\sigma^2 \\
+cov(Z_t,\epsilon_{t-4})=&\psi_4\times \sigma^2=\big(\Theta-\phi^3(\phi-\theta)\big)\sigma^2 \\
+cov(Z_t,\epsilon_{t-5})=&\psi_5\times \sigma^2=\big(\theta\Theta-\phi\Theta+\phi^4(\phi-\theta)\big)\sigma^2
+\end{align*}
+
+\rdash 
+
+\ck 이제 아래식의 양변에 각각 $Z_t,Z_{t-1},\dots,Z_{t-5}$를 곱한뒤 평균을 취하면 5개의 식이 나온다. 
+\[
+Z_t=\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
+\]
+따라서 그 식을 연립해서 풀면 된다. 
+
+\dash 
+
+\ck 살짝 다른풀이. 
+
+\ck 식 $(1)=(2)=(3)$을 다시 관찰하자. 
+\[
+Z_t=\frac{(1-\theta B)(1-\Theta B^4)}{1-\phi B}\epsilon_t=(\psi_0+\psi_1 B+\psi_2 B^2 +\dots )\epsilon_{t}
+\]
+
+\ck 아래식을 관찰하자. 
+\begin{align*}
+1=&\psi_0 \\ 
+-\theta=&\psi_1-\phi\psi_0 \\ 
+0=&\psi_2-\phi\psi_1 \\
+0=&\psi_3-\phi\psi_2 \\
+-\Theta=&\psi_4-\phi\psi_3 \\
+\theta\Theta=&\psi_5-\phi\psi_4 \\
+0 =& \psi_6-\phi \psi_5 \\
+0 =& \psi_7-\phi \psi_6 \\
+& \dots 
+\end{align*}
+
+\ck 잘 생각해보면 위의 식을 이용하여 $\psi_0,\dots,\psi_5$까지 구하는것은 일도 아닌것 같다. $\psi_6$부터는 아래를 활용하여 구하면 된다. 
+\begin{align*}
+\psi_6=&\phi\psi_5 \\
+\psi_7=&\phi\psi_6 \\ 
+\dots 
+\end{align*}
+
+\ck $cov(Z_t,Z_t)$는 아래와 같이 표현가능하다. 
+\begin{table}[h]
+\center\Large
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+      & $\epsilon_t$      & $\epsilon_{t-1}$ & $\epsilon_{t-2}$ & $\epsilon_{t-3}$ & $\dots$ \\ \hline
+$Z_t$ & $\psi_0$		  & $\psi_1$         & $\psi_2$         & $\psi_3$         & $\dots$ \\ \hline
+$Z_t$ & $\psi_0$          & $\psi_1$         & $\psi_2$         & $\psi_3$         & $\dots$ \\ \hline
+\end{tabular}
+\end{table}
+
+\ck 따라서 $\gamma_0=\sigma^2\big(\sum_{j=0}^{\infty}\psi_j^2\big).$
+
+\ck 동일한 논리로 $cov(Z_t,Z_{t-1})$는 아래와 같이 표현가능하다. 
+\begin{table}[h]
+\center\Large
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+      & $\epsilon_t$      & $\epsilon_{t-1}$ & $\epsilon_{t-2}$ & $\epsilon_{t-3}$ & $\dots$ \\ \hline
+$Z_t$ & $\psi_0$ 		  & $\psi_1$         & $\psi_2$         & $\psi_3$         & $\dots$ \\ \hline
+$Z_{t-1}$ & 			  & $\psi_0$         & $\psi_1$         & $\psi_2$         & $\dots$ \\ \hline
+\end{tabular}
+\end{table}
+
+\ck 따라서 $\gamma_1=\sigma^2\big(\sum_{j=0}^{\infty}\psi_j\psi_{j-1}\big).$
+
+\ck 결국 $\psi_0,\psi_1,\dots$을 하나의 시계열로 보고 {\tt R}에서 SACF를 구하듯이 구하면 된다. 
+
+\dash 
+
+\ck 아래의 모형으로 바꾸자. 
+\[
+Z_t-\phi Z_{t-1}=\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
+\]
 
 \ck 양변에 분산을 취한다. 
 \[
 \gamma_0+\phi^2\gamma_1 -2\phi\gamma_1 =\sigma^2(1-\theta-\Theta+\theta\Theta)
 \]
+
+
+\ck 양변에 $Z_{t-5}$를 곱하고 평균을 취하자. 
+\[
+\gamma_5-\phi \gamma_4 = \theta \Theta \times E(Z_{t-5},\epsilon_{t-5})
+\]
+
+\ck 따라서 우선 $E(Z_{t-5},\epsilon_{t-5})$를 구하면 좋겠다. 그런데 이 값은 $E(Z_{t},\epsilon_{t})$와 같고 
+\[
+E(Z_t,\epsilon_t)=cov(\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1}-\Theta\epsilon_{t-4}+\theta\Theta\epsilon_{t-5},\epsilon_t)=\sigma^2
+\]
+이다. 따라서 
+\[
+\gamma_5-\phi \gamma_4 = \theta \Theta \times \sigma^2
+\]
+
+\rdash 
+
+\ck 아래의 모형으로 바꾸자. 
+\[
+Z_t-\phi Z_{t-1}=\epsilon_t-\theta \epsilon_{t-1} -\Theta \epsilon_{t-4} +\theta\Theta\epsilon_{t-5}
+\]
+
+\ck 양변에 $Z_{t-4}$를 곱하고 평균을 취하자. 
+\[
+\gamma_4-\phi \gamma_3 = \theta \Theta \times E(Z_{t-5},\epsilon_{t-5})
+\]
+
+\ck 따라서 우선 $E(Z_{t-5},\epsilon_{t-5})$를 구하면 좋겠다. 그런데 이 값은 $E(Z_{t},\epsilon_{t})$와 같고 
+\[
+E(Z_t,\epsilon_t)=cov(\phi Z_{t-1}+\epsilon_t-\theta \epsilon_{t-1}-\Theta\epsilon_{t-4}+\theta\Theta\epsilon_{t-5},\epsilon_t)=\sigma^2
+\]
+이다. 따라서 
+\[
+\gamma_5-\phi \gamma_4 = \theta \Theta \times \sigma^2
+\]
+
+
 
 \end{document}
