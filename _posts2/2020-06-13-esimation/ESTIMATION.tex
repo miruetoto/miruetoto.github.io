@@ -1,0 +1,453 @@
+\documentclass[12pt,oneside,english]{book}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\definecolor{marron}{RGB}{60,30,10}
+\definecolor{darkblue}{RGB}{0,0,80}
+\definecolor{lightblue}{RGB}{80,80,80}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{darkgray}{RGB}{0,80,0}
+\definecolor{darkred}{RGB}{80,0,0}
+\definecolor{shadecolor}{rgb}{0.97,0.97,0.97}
+\usepackage{graphicx}
+\usepackage{wallpaper}
+\usepackage{wrapfig,booktabs}
+
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\input Acorn.fd
+
+\renewcommand{\familydefault}{pplj} 
+\usepackage[
+final,
+stretch=10,
+protrusion=true,
+tracking=true,
+spacing=on,
+kerning=on,
+expansion=true]{microtype}
+
+%\setlength{\parskip}{1.5ex plus 0.2ex minus 0.2ex}
+
+
+\usepackage{fourier-orns}
+\newcommand{\dash}{\vspace{2em}\noindent \textcolor{darkgray}{\hrulefill~ \raisebox{-2.5pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone   \floweroneright \decotwo \aldineleft\decothreeright \decofourright \leafleft} ~  \hrulefill \\ \vspace{2em}}}
+\newcommand{\rdash}{\noindent \textcolor{darkgray}{ \raisebox{-1.9pt}[10pt][10pt]{\leafright} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone}}}
+\newcommand{\ldash}{\textcolor{darkgray}{\raisebox{-1.9pt}[10pt][10pt]{\decoone \floweroneright \decotwo \aldineleft \decothreeright \decofourright \leafleft} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafleft}}}
+
+\fancyhf{}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\newcommand{\estcab}[1]{\itshape\textcolor{marron}{\nouppercase #1}}
+
+\fancyhead[LO]{\estcab{\rightmark}} 
+\fancyhead[RO]{\estcab{\leftmark}}
+\fancyhead[RO]{\bf\nouppercase{ \leftmark}}
+\fancyfoot[RO]{ \leafNE  ~~ \bf \thepage}
+
+\newenvironment{Section}[1]
+{\section{\vspace{0ex}#1}}
+{\vspace{12pt}\centering ------- \decofourleft\decofourright ------- \par}
+
+\usepackage{lipsum}
+\setlength{\parindent}{1em} % Sangría española
+\pagestyle{fancy}
+
+\renewcommand{\footnoterule}{\noindent\textcolor{marron}{\decosix \raisebox{2.9pt}{\line(1,0){100}} \lefthand} \vspace{.5em} }
+\usepackage[hang,splitrule]{footmisc}
+\addtolength{\footskip}{0.5cm}
+\setlength{\footnotemargin}{0.3cm}
+\setlength{\footnotesep}{0.4cm} 
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\usepackage{kotex}
+\usepackage{amsthm} 
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{enumerate} 
+\usepackage{cite}
+\usepackage{graphics} 
+\usepackage{graphicx,lscape} 
+\usepackage{subcaption}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{titlesec}
+\usepackage{cite, url}
+\usepackage{amssymb}
+
+\def\ck{\paragraph{\Large$\bullet$}\Large}
+\def\goal{\paragraph{\Large(목표)}\Large}
+\def\observe{\paragraph{\Large(관찰)}\Large}
+\def\assume{\paragraph{\Large(가정)}\Large}
+\def\summary{\paragraph{\Large(요약)}\Large}
+\def\EX{\paragraph{\Large(예제)}\Large}
+\def\guess{\paragraph{\Large(추측)}\Large}
+\def\thus{\paragraph{\Large(결론)}\Large}
+
+\def\prob{\paragraph{\Large(문제)}\Large}
+\def\sol{\paragraph{\Large(sol)}\Large}
+\def\pf{\paragraph{\Large(pf)}\Large}
+
+\def\dfn{\paragraph{\Large(정의)}\Large}
+\def\thm{\paragraph{\Large(정리)}\Large}
+\def\lem{\paragraph{\Large(레마)}\Large}
+\def\promise{\paragraph{\Large(약속)}\Large}
+\def\property{\paragraph{\Large(특징)}\Large}
+\def\fl{\paragraph{\Large(느낌)}\Large}
+\def\memo{\paragraph{\Large(암기)}\Large}
+
+\def\note{\paragraph{\Large\textit{\underline{note:}}}\Large}
+\def\ex{\paragraph{\Large\textit{example:}}\Large}
+
+
+\def\one{\paragraph{\Large(1)}\Large}
+\def\two{\paragraph{\Large(2)}\Large}
+\def\three{\paragraph{\Large(3)}\Large}
+\def\four{\paragraph{\Large(4)}\Large}
+\def\five{\paragraph{\Large(5)}\Large}
+\def\six{\paragraph{\Large(6)}\Large}
+\def\seven{\paragraph{\Large(7)}\Large}
+\def\eight{\paragraph{\Large(8)}\Large}
+\def\nine{\paragraph{\Large(9)}\Large}
+\def\ten{\paragraph{\Large(10)}\Large}
+
+\def\cka{\paragraph{\Large(a)}\Large}
+\def\ckb{\paragraph{\Large(b)}\Large}
+\def\ckc{\paragraph{\Large(c)}\Large}
+\def\ckd{\paragraph{\Large(d)}\Large}
+\def\cke{\paragraph{\Large(e)}\Large}
+\def\ckf{\paragraph{\Large(f)}\Large}
+\def\ckg{\paragraph{\Large(g)}\Large}
+\def\ckh{\paragraph{\Large(h)}\Large}
+\def\cki{\paragraph{\Large(i)}\Large}
+\def\ckj{\paragraph{\Large(j)}\Large}
+
+\newcommand{\bld}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\bs}[1]{\mbox{\boldmath $#1$}}
+
+\newcommand{\bsa}{\mbox{\boldmath $a$}}
+\newcommand{\bsb}{\mbox{\boldmath $b$}}
+\newcommand{\bsc}{\mbox{\boldmath $c$}}
+\newcommand{\bsd}{\mbox{\boldmath $d$}}
+\newcommand{\bse}{\mbox{\boldmath $e$}}
+\newcommand{\bsf}{\mbox{\boldmath $f$}}
+\newcommand{\bsg}{\mbox{\boldmath $g$}}
+\newcommand{\bsh}{\mbox{\boldmath $h$}}
+\newcommand{\bsi}{\mbox{\boldmath $i$}}
+\newcommand{\bsj}{\mbox{\boldmath $j$}}
+\newcommand{\bsk}{\mbox{\boldmath $k$}}
+\newcommand{\bsl}{\mbox{\boldmath $l$}}
+\newcommand{\bsm}{\mbox{\boldmath $m$}}
+\newcommand{\bsn}{\mbox{\boldmath $n$}}
+\newcommand{\bso}{\mbox{\boldmath $o$}}
+\newcommand{\bsp}{\mbox{\boldmath $p$}}
+\newcommand{\bsq}{\mbox{\boldmath $q$}}
+\newcommand{\bsr}{\mbox{\boldmath $r$}}
+\newcommand{\bss}{\mbox{\boldmath $s$}}
+\newcommand{\bst}{\mbox{\boldmath $t$}}
+\newcommand{\bsu}{\mbox{\boldmath $u$}}
+\newcommand{\bsv}{\mbox{\boldmath $v$}}
+\newcommand{\bsw}{\mbox{\boldmath $w$}}
+\newcommand{\bsx}{\mbox{\boldmath $x$}}
+\newcommand{\bsy}{\mbox{\boldmath $y$}}
+\newcommand{\bsz}{\mbox{\boldmath $z$}}
+
+\newcommand{\bfa}{\mbox{$\bf{a}$}}
+\newcommand{\bfb}{\mbox{$\bf{b}$}}
+\newcommand{\bfc}{\mbox{$\bf{c}$}}
+\newcommand{\bfd}{\mbox{$\bf{d}$}}
+\newcommand{\bfe}{\mbox{$\bf{e}$}}
+\newcommand{\bff}{\mbox{$\bf{f}$}}
+\newcommand{\bfg}{\mbox{$\bf{g}$}}
+\newcommand{\bfh}{\mbox{$\bf{h}$}}
+\newcommand{\bfi}{\mbox{$\bf{i}$}}
+\newcommand{\bfj}{\mbox{$\bf{j}$}}
+\newcommand{\bfk}{\mbox{$\bf{k}$}}
+\newcommand{\bfl}{\mbox{$\bf{l}$}}
+\newcommand{\bfm}{\mbox{$\bf{m}$}}
+\newcommand{\bfn}{\mbox{$\bf{n}$}}
+\newcommand{\bfo}{\mbox{$\bf{o}$}}
+\newcommand{\bfp}{\mbox{$\bf{p}$}}
+\newcommand{\bfq}{\mbox{$\bf{q}$}}
+\newcommand{\bfr}{\mbox{$\bf{r}$}}
+\newcommand{\bfs}{\mbox{$\bf{s}$}}
+\newcommand{\bft}{\mbox{$\bf{t}$}}
+\newcommand{\bfu}{\mbox{$\bf{u}$}}
+\newcommand{\bfv}{\mbox{$\bf{v}$}}
+\newcommand{\bfw}{\mbox{$\bf{w}$}}
+\newcommand{\bfx}{\mbox{$\bf{x}$}}
+\newcommand{\bfy}{\mbox{$\bf{y}$}}
+\newcommand{\bfz}{\mbox{$\bf{z}$}}
+
+\newcommand{\bsA}{\mbox{$\boldmath{A}$}}
+\newcommand{\bsB}{\mbox{$\boldmath{B}$}}
+\newcommand{\bsC}{\mbox{$\boldmath{C}$}}
+\newcommand{\bsD}{\mbox{$\boldmath{D}$}}
+\newcommand{\bsE}{\mbox{$\boldmath{E}$}}
+\newcommand{\bsF}{\mbox{$\boldmath{F}$}}
+\newcommand{\bsG}{\mbox{$\boldmath{G}$}}
+\newcommand{\bsH}{\mbox{$\boldmath{H}$}}
+\newcommand{\bsI}{\mbox{$\boldmath{I}$}}
+\newcommand{\bsJ}{\mbox{$\boldmath{J}$}}
+\newcommand{\bsK}{\mbox{$\boldmath{K}$}}
+\newcommand{\bsL}{\mbox{$\boldmath{L}$}}
+\newcommand{\bsM}{\mbox{$\boldmath{M}$}}
+\newcommand{\bsN}{\mbox{$\boldmath{N}$}}
+\newcommand{\bsO}{\mbox{$\boldmath{O}$}}
+\newcommand{\bsP}{\mbox{$\boldmath{P}$}}
+\newcommand{\bsQ}{\mbox{$\boldmath{Q}$}}
+\newcommand{\bsR}{\mbox{$\boldmath{R}$}}
+\newcommand{\bsS}{\mbox{$\boldmath{S}$}}
+\newcommand{\bsT}{\mbox{$\boldmath{T}$}}
+\newcommand{\bsU}{\mbox{$\boldmath{U}$}}
+\newcommand{\bsV}{\mbox{$\boldmath{V}$}}
+\newcommand{\bsW}{\mbox{$\boldmath{W}$}}
+\newcommand{\bsX}{\mbox{$\boldmath{X}$}}
+\newcommand{\bsY}{\mbox{$\boldmath{Y}$}}
+\newcommand{\bsZ}{\mbox{$\boldmath{Z}$}}
+
+\newcommand{\bfA}{\mbox{$\bf{A}$}}
+\newcommand{\bfB}{\mbox{$\bf{B}$}}
+\newcommand{\bfC}{\mbox{$\bf{C}$}}
+\newcommand{\bfD}{\mbox{$\bf{D}$}}
+\newcommand{\bfE}{\mbox{$\bf{E}$}}
+\newcommand{\bfF}{\mbox{$\bf{F}$}}
+\newcommand{\bfG}{\mbox{$\bf{G}$}}
+\newcommand{\bfH}{\mbox{$\bf{H}$}}
+\newcommand{\bfI}{\mbox{$\bf{I}$}}
+\newcommand{\bfJ}{\mbox{$\bf{J}$}}
+\newcommand{\bfK}{\mbox{$\bf{K}$}}
+\newcommand{\bfL}{\mbox{$\bf{L}$}}
+\newcommand{\bfM}{\mbox{$\bf{M}$}}
+\newcommand{\bfN}{\mbox{$\bf{N}$}}
+\newcommand{\bfO}{\mbox{$\bf{O}$}}
+\newcommand{\bfP}{\mbox{$\bf{P}$}}
+\newcommand{\bfQ}{\mbox{$\bf{Q}$}}
+\newcommand{\bfR}{\mbox{$\bf{R}$}}
+\newcommand{\bfS}{\mbox{$\bf{S}$}}
+\newcommand{\bfT}{\mbox{$\bf{T}$}}
+\newcommand{\bfU}{\mbox{$\bf{U}$}}
+\newcommand{\bfV}{\mbox{$\bf{V}$}}
+\newcommand{\bfW}{\mbox{$\bf{W}$}}
+\newcommand{\bfX}{\mbox{$\bf{X}$}}
+\newcommand{\bfY}{\mbox{$\bf{Y}$}}
+\newcommand{\bfZ}{\mbox{$\bf{Z}$}}
+
+\DeclareMathOperator*{\argmin}{argmin} %\usepackage{amsmath}를 써야지 정의가능함. 
+\DeclareMathOperator*{\argmax}{argmax} %\usepackage{amsmath}를 써야지 정의가능함. 
+
+\usepackage{titlesec}
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\huge\bfseries}
+\titleformat*{\subsubsection}{\huge\bfseries}
+\titleformat*{\paragraph}{\huge\bfseries}
+\titleformat*{\subparagraph}{\huge\bfseries}
+
+
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+\titlespacing*{\part}{0pt}{50pt}{40pt}
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+\newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=15in]{geometry}
+
+\usepackage{geometry}
+\geometry{
+tmargin=3cm, 
+bmargin=3cm, 
+lmargin=1cm, 
+rmargin=1cm,
+headheight=1.5cm,
+headsep=0.8cm,
+footskip=0.5cm}
+
+\begin{document}
+
+\subsubsection{추정}
+\ck 목표: 미지의 모수 $\theta$를 추정하고 싶음. 
+\ck 추정량 $\hat\theta$을 통하여 미지의 모수 $\theta$를 추정. 
+
+\ex 평균이 $\mu$인 정규분포에서 10개의 샘플을 뽑았다고 하자. 
+\[
+x_1=26.3, x_2=29.2, \dots 
+\]
+우리는 $\mu$를 알고싶다. 
+
+\ck 사람1: 아래와 같이 평균을 추정하자. 
+\[
+\hat\mu= \frac{26.3+\dots+29.2}{10}=28.5
+\]
+\ck 사람2: 아래와 같이 평균을 추정하자. 
+\[
+\hat\mu= \frac{x_{(5)}+x_{(6)}}{2}=\frac{28.0+28.4}{2}=28.2
+\]
+
+\ck 하나의 모수를 추정하는데 여러가지 방법이 있을 수 있다. 
+
+\ck 어떤것이 좋은 추정량인지 판단하는 기준이 필요하다. 
+
+\ck 또한 좋은 추정량들을 구하는 방법도 연구할 필요가 있다. 
+
+\ck 좋은 추정량 구하는 방법: (1) 적률추정법 (2) 최대가능도추정법 (3) 최소분산불편추정법 
+
+\ck 좋은 추정량을 판단하는 기준: (1) 불편성 (2) 효율성 (3) 최소분산성 (4) 일치성 (5) 충분성 
+
+\rdash 
+
+\subsubsection{적률추정법}
+
+\ck 적률추정법은 말그대로 적률을 활용하여 모수를 추정하는 방법을 말함. 적률은 아래와 같은것을 말함.
+\[
+m_1=\frac{1}{n}\sum_{i=1}^{n}X_i
+\]
+\[
+m_2=\frac{1}{n}\sum_{i=1}^{n}X_i^2
+\]
+
+\ex $X_1\dots X_n \overset{iid}{\sim} Gamma(\alpha,\beta)$ 라고 하자. $\alpha,\beta$를 추론해보자. 아래의 관계를 관찰하자. 
+\[
+E(X)=\alpha \beta
+\]
+\[
+V(X)=\alpha \beta^2 + (\alpha\beta)^2 
+\]
+그런데 $E(X)$는 $m_1$으로 추론할 수 있고 $V(X)$는 $m_2-m_1^2$으로 추론할 수 있다. 따라서 아래를 연립하여 풀면 $\alpha$,$\beta$를 추론할 수 있다. 
+\[
+\begin{cases}
+m_1=\alpha \beta \\
+m_2-m_1^2=\alpha \beta^2 + (\alpha\beta)^2 
+\end{cases}
+\]
+
+\ck 장점: 직관적이고 쉽다. WLLN에 의해서 일치성을 보이기 쉽다. 
+\note 일치성: $\hat{\theta} \overset{p}{\to} \theta ~ as~  n \to \infty.$ 
+
+\ck 단점: 유일하지 않을 수 있다. 효율이 좋지 않은 경우가 많다. 
+
+\rdash 
+
+\subsubsection{최대가능도 추정법}
+
+\ex $X_1,X_2,\dots,X_6 \overset{iid}{\sim} Bernoulli(p)$ 이라고 하자. 아래의 샘플을 관찰했다고 하자. 
+\[
+x_1=0,~~ x_2=1, ~~x_3=0, ~~ x_4=0, ~~ x_5=0, ~~ x_6=0.
+\]
+$p$를 추정하고 싶다고 하자. 
+
+\ck 사람1: $p=0.5$ 라고 하자. 
+
+\ck 사람2: $p=0.5$ 보다 $p=0.3$ 이라고 추정하는것이 더 합리적일것 같다. 왜냐하면 $p=0.5$라고 가정하였을때 
+\[
+x_1=0,~~ x_2=1, ~~x_3=0, ~~ x_4=0, ~~ x_5=0, ~~ x_6=0.
+\]
+와 같은 샘플을 얻을 확률은 
+\[
+\frac{5}{10}\times\frac{5}{10}\times \dots \times\frac{5}{10}=0.015625
+\]
+이지만 $p=0.3$이라고 가정하였을 경우는 
+\[
+\frac{7}{10}\times\frac{3}{10}\times \dots \times\frac{7}{10}=0.050421
+\]
+가 된다. 따라서 $p=0.3$ 이라고 추정하는 것이 더 합리적이다. 
+
+\ck 이것이 최대가능도 추정의 모티브이다. 위의 상황을 수식으로 표현하여 보자. 결국 사람2는 아래의 함수를 더 크게 만드는 $p$가 좋은 추정량임을 주장하는 것이다. 
+\[
+L(p)=\prod_{i=1}^{6}pdf(x_i; p)
+\]
+여기에서 $pdf(x_i;p)$는 모수가 $p$라고 가정하였을 경우 $X_i$의 pdf이다. 
+
+\note 위의 예제의 경우 사람1은 $p=0.5$라고 믿고 있으므로 
+\[
+pdf(x_i;p=0.5)=p^{x_i}(1-p)^{1-x_i}
+\]
+이다. 따라서 $pdf(x_1;p=0.5)=\dots=pdf(x_1;p=0.5)=0.5$이다. 따라서 
+\[
+L(0.5)=(0.5)^6=0.015625
+\]
+라고 쓸 수 있다. 
+
+\note 사람2는 $p=0.3$이라고 믿고 있으므로 
+\begin{align*}
+pdf(x_1;p=0.3)=& 0.3^{0}\times 0.7^{1}=0.7 \\ 
+pdf(x_2;p=0.3)=& 0.3^{1}\times 0.7^{0}=0.3 \\ 
+\dots \\ 
+pdf(x_6;p=0.3)=& 0.3^{0}\times 0.7^{1}=0.7
+\end{align*}
+와 같이 된다. 따라서 
+\[
+L(0.3)=(0.7)^5\times(0.3)^1=0.050421
+\]
+이 된다. 
+
+\ck 그런데 사람3이 $p=0.2$라고 주장하였다. 이 주장이 더 합리적인지 판단하기 위해서 $L(p)$를 조사해보자. 조사결과 
+\[
+L(0.2)=0.8^5 \times(0.2)^1=0.065536
+\]
+따라서 사람3의 주장이 더 합리적이다. 
+
+\ck 전략: 어차피 $p \in (0,1)$이므로 모든 $p$에 대하여 아래의 값을 조사하고 이것을 최소화하는 $p$를 구하자. 
+\[
+L(p)=\prod_{i=1}^{n} pdf(x_i; p)=\prod_{i=1}^{n} p^{x_i}(1-p)^{1-x_i}=p^{\sum x_i}(1-p)^{n-\sum_{i=1}^nx_i}
+\]
+로그를 취하면 
+\[
+\log L(p) = \sum_{i=1}^{n}x_i \log p +\left(n-\sum_{i=1}^{n}x_i\right)\log(1-p).
+\]
+미분을 하면 
+\[
+\frac{\partial }{\partial p} \log L(p) = \frac{\sum_{i=1}^{n}x_i }{p} -\frac{n-\sum_{i=1}^{n}x_i}{1-p}.
+\]
+따라서 $\frac{\partial }{\partial p} \log L(p)=0$를 풀면 
+\[
+\frac{\sum_{i=1}^{n}x_i }{p} =\frac{n-\sum_{i=1}^{n}x_i}{1-p}
+\]
+정리하면 
+\[
+p=\frac{1}{n}\sum_{i=1}^{n}x_i=\bar{x}
+\]
+이다. 
+
+\ck 따라서 $p=\bar{x}$로 추정하는게 좋겠다. 즉 
+\[
+\hat{p}=\bar{x}
+\]
+따라서 문제의 경우 
+\[
+\bar{x}=\frac{0+1+0+0+0+0}{6}=\frac{1}{6}
+\]
+로 $p$를 추정하는 것이 가장 합리적이다. 이 결과는 놀라울정도로 직관적이고 당연하다. 6번던져서 한번 성공했다면, 성공확률은 대충 1/6로 보는것이 타당할테니까. 
+
+\ck 여기에서 $L(p)$를 $p$에 대한 likelihood function이라고 한다.
+\note 한글로는 우도함수라고 변역하기도 하고 가능도함수라고 번역하기도 한다. 
+
+\ck $\hat{p}$는 likelihood function을 최대화하여 얻은 $p$의 추정량인데 이러한 이유로 maximum likelihood estimator라고 부르고 줄여서 MLE라고 부른다. 
+
+\note 한글로는 최대가능도추정량, 혹은 최대우도추정량이라고 말한다. 
+
+\ck 따라서 $\hat{p}$이 어떠한 방식으로 얻은 추정량인지 더 명확하게 하기위해서 아래와 같이 표기하기도 한다.
+\[
+\hat{p}^{MLE}
+\]
+
+\ck 참고로 $p$를 적률추정법 (method of moments estimator) 으로 추정한다고 하자. 베르누이 분포의 경우
+\[
+EX=p
+\]
+이고 $EX$는 $m_1$ 즉 $\bar{x}$로 추정할 수 있으므로 
+\[
+\hat{p}^{MME}=\bar{x}
+\]
+가 된다. 따라서 베르누이 분포의 경우 적률추정법과 최대가능도 추정법은 같다. 
+
+\end{document}
