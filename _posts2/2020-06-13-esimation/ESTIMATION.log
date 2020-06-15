@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  15 JUN 2020 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  15 JUN 2020 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,11 +701,11 @@ LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <17.28> not available
  [5] [6]
 [7] [8] [9] (./ESTIMATION.aux) ) 
 Here is how much of TeX's memory you used:
- 10181 strings out of 481239
- 160270 string characters out of 5920378
+ 10183 strings out of 481239
+ 160329 string characters out of 5920378
  544911 words of memory out of 5000000
- 25144 multiletter control sequences out of 15000+600000
- 577345 words of font info for 141 fonts, out of 8000000 for 9000
+ 25146 multiletter control sequences out of 15000+600000
+ 577647 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,12n,46p,471b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/
@@ -782,7 +782,7 @@ texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/palatino/uplr8a.pfb>
-Output written on ESTIMATION.pdf (9 pages, 2805943 bytes).
+Output written on ESTIMATION.pdf (9 pages, 2835877 bytes).
 PDF statistics:
  341 PDF objects out of 1000 (max. 8388607)
  251 compressed objects within 3 object streams

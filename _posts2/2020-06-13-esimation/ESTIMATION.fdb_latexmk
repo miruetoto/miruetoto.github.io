@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1592209438 "ESTIMATION.tex" "ESTIMATION.pdf" "ESTIMATION" 1592209440
+["pdflatex"] 1592209618 "ESTIMATION.tex" "ESTIMATION.pdf" "ESTIMATION" 1592209619
   "/etc/texmf/web2c/texmf.cnf" 1588735733 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -258,9 +258,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1588735775 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1588735815 8256229 bc1212c8b345a0a4119dd4eacaa2ed9e ""
-  "ESTIMATION.aux" 1592209439 8348 d11771cad21677b92741a636a22c9673 "pdflatex"
-  "ESTIMATION.tex" 1592209437 24453 a300cd56080f0eafb3040b44c88ff32d ""
+  "ESTIMATION.aux" 1592209619 8013 b07585d0c7f08b3001ce9c3b461bc984 "pdflatex"
+  "ESTIMATION.tex" 1592209617 23952 0d1b52d953eefaa3379a2589229ad284 ""
   (generated)
-  "ESTIMATION.aux"
-  "ESTIMATION.log"
   "ESTIMATION.pdf"
+  "ESTIMATION.log"
+  "ESTIMATION.aux"
