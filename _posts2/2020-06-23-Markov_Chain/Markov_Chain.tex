@@ -260,7 +260,7 @@ expansion=true]{microtype}
 \titlespacing*{\chapter} {0pt}{50pt}{40pt}
 
 \newcommand*\initfamily{\usefont{U}{Acorn}{xl}{n}}
-\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=20in]{geometry}
+\usepackage[left=10px,right=10px,top=10px,bottom=10px,paperwidth=8in,paperheight=15in]{geometry}
 
 \usepackage{geometry}
 \geometry{
@@ -273,170 +273,40 @@ headsep=0.8cm,
 footskip=0.5cm}
 \linespread{1}
 \begin{document}
-\subsubsection{Big-$O_p$, little-$o_p$ 와 Delta-method 활용예제.}
-\ck 이번에는 Big-$O_p$, little-$o_p$ 와 Delta-method를 활용한 예제를 살펴보겠다. 
-\ck 김우철 수리통계학 교재의 연습문제를 참고함. 
 
-\dash
+\subsubsection{Definitions}
 
-\subsubsection{연습문제 5.14.}
-\ck $\begin{pmatrix}X_1 \\ Y_1 \end{pmatrix},\dots,\begin{pmatrix}X_n \\ Y_n \end{pmatrix} \overset{idd}{\sim} F$ with
-\one $EX_1=EY_1=0$,
-\two $EX_1^2=EY_1^2=1$,
-\three $EX_1Y_1=\rho$,
-\four $EX_1^4<\infty$, $EY_1^4<\infty$. 
+\subsubsection{Examples}
 
-\ck $\hat{\rho}_n=\frac{\sum_{i=1}^{n}(X_i-\bar{X})(Y_i-\bar{Y})}{\sqrt{\sum_{i=1}^{n}(X_i-\bar{X})^2}\sqrt{\sum_{i=1}^{n}(Y_i-\bar{Y})^2}}.$ 
+\subsubsection{Extensions of the Markov Property}
 
-\ck 아래와 같은 기호를 약속하자. 
-\one $\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_i$.
-\two $\bar{X^2}=\frac{1}{n}\sum_{i=1}^{n}X_i^2$.
-\three $\overline{XY}=\frac{1}{n}\sum_{i=1}^{n}X_iY_i$.
+\subsubsection{Recurrence and Transience}
 
-\rdash 
-
-\cka $\sqrt{n} \bar{X}\bar{Y} \overset{p}{\to} 0$ 임을 보여라.  
-
-\sol 
-
-\ck $\sqrt{n}\bar{X}=O_p(1)$, $\bar{Y}=o_p(1)$ 이므로 자명함. 여기에서 $\sqrt{n}\bar{X}=O_p(1)$ 는 CLT에 의해서 성립하고 $\bar{Y}=o_p(1)$ 는 큰수의 법칙 즉 WLLN에 의해서 성립한다. 
-
-\note 추가적으로 $\bar{XY}-\bar{X}\bar{Y}=\bar{XY}+o_p(\frac{1}{\sqrt{n}})$ 임도 알 수 있다. 
-
-\rdash 
-
-\ckb 아래가 성립함을 보여라. 
+\subsubsection{Stationary Measures}
+\ck staionary measure 가 (1) 존재하고 (2) 유일하다는 것이 조사되었다고 하자. 이제 다음 관심사는 아래식을 만족하는 staionary distribution $\pi$이다. 
 \[
-\sqrt{m_2-m_1^2} - \sqrt{m_2}=\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}
-\]
-이때 $m_1=\bar{X}$, $m_2=\bar{X^2}$ 라고 하자. 
-
-\sol (자명하다)
-
-\rdash 
-
-\note 추가적으로 아래를 확인가능하다. 
-\[
-\sqrt{m_2-m_1^2} =\sqrt{m_2}+\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-\pf 
-\ck $\sqrt{n}m_1^2=\sqrt{n}m_1 m_1 = O_p(1)o_p(1)=o_p(1)$ $\quad \therefore m_1^2=o_p(\frac{1}{\sqrt{n}})$.
-
-\ck $m_2=1+o_p(1)$ 이다. 즉 $m_2 \overset{p}{\to} 1$이다. 또한 $m_1^2=o_p(\frac{1}{\sqrt{n}})$ 이다. 따라서 
-\[
-\frac{-m_1^2}{\sqrt{m_2-m_1^2}+\sqrt{m_2}}=o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-이다. 왜냐하면 분모는 1로 확률수렴하고 (continuous mappting thm) 분자는 $o_p(\frac{1}{\sqrt{n}})$이기 때문. 
-
-\rdash 
-
-\ckc 아래가 성립함을 보여라. 
-\[
-\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-\sol 
-
-\ck 아래식을 관찰하라. 
-\[
-\sqrt{m_2}-1=\frac{m_2-1}{\sqrt{m_2}+1}=\frac{m_2-1}{2}+\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1)
+\pi p =\pi
 \]
 
-\ck 이제 아래를 보이면 된다. 
+\thm $p$가 irreducible 하다는 것과 아래는 동치이다. (듀렛 Thm 6.5.6.)
+\one .
+\two stationary distribution이 존재한다. 
+\three . 
+
+
+\subsubsection{Asymptotic Behavior}
+\thm \textbf{(Convergence theorem)} $p$가 (1) irreducible 하고 (2) aperiodic 하며 (3) stationary distribution $\pi$를 가진다고 하자. 그러면 아래가 성립한다. 
 \[
-\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1):=r_{3n}=o_p\left(\frac{1}{\sqrt{n}}\right)
+p^{n}(x,y) \to \pi(y) \quad as~ n\to \infty .
 \]
-따라서 아래를 보이면 된다. 
-\[
-\sqrt{n}\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)(m_2-1)=o_p(1)
-\]
+\note $p$가 irreducible 인것만 보이면 stationary distribution $\pi$를 가진다는 것은 정리 6.5.6에 의해서 성립한다. 따라서 (1)-(2)만 조건으로 사용해도 위의 정리는 성립한다. 
 
-\ck 그런데 CLT에 의해서 $\sqrt{n}(m_2-1)=O_p(1)$ 가 성립한다. 
+\ck $S^2=S\times S$. 
 
-\ck continuous mapping thm에 의해서 아래가 성립한다. 
-\[
-m_2 \overset{p}{\to} 1 \quad \Longrightarrow 
-\quad \left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right) \overset{p}{\to} 0
-\]
+\subsubsection{Periodicity, Tail $\sigma$-field}
 
-\ck 따라서 
-\[
-\left(\frac{1}{\sqrt{m_2}+1}-\frac{1}{2}\right)=o_p(1)
-\]
-
-\ck 따라서 증명이 끝난다. 
-
-\rdash 
-
-\ckd 아래를 보여라. 
-\[
-c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}= c_1-\rho\frac{m_2+s_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-이때 $c_1=\bar{XY}$, $s_1=\bar{Y}$, $s_2=\bar{Y^2}$이다. 
-
-\sol 
-
-\ck (b)의 결과로부터 아래가 성립한다. 
-\[
-\sqrt{m_2-m_1^2}=\sqrt{m_2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck (c)의 결과로부터 아래가 성립한다. 
-\[
-\sqrt{m_2}-1=\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck 둘을 종합하면 
-\[
-\sqrt{m_2-m_1^2}=1+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck 따라서 
-\[
-\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}
-\]
-는 아래식들의 합이다. 
-\one $1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})$
-\two $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})+o_p(\frac{1}{\sqrt{n}})$
-\note $O_p(\frac{1}{\sqrt{n}})O_p(\frac{1}{\sqrt{n}})=\frac{1}{\sqrt{n}}\frac{1}{\sqrt{n}}O_p(1)=\frac{1}{\sqrt{n}}o_p(1)=o_p(\frac{1}{\sqrt{n}})$
-\two 따라서 결국 $\frac{m_2-1}{2}\left(1+\frac{s_2-1}{2}+o_p(\frac{1}{\sqrt{n}})\right)=\frac{m_2-1}{2}+o_p(\frac{1}{\sqrt{n}}).$
-\three $o_p(1/\sqrt{n})\left(1+\frac{s_2-1}{2}+o_p(1/\sqrt{n})\right)=o_p(\frac{1}{\sqrt{n}})$
-
-\ck 따라서 
-\[
-\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=1+\frac{s_2-1}{2}+\frac{m_2-1}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-정리하면 
-\[
-\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}=\frac{s_2+m_2}{2}+o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-\ck 한편 (a) 로부터 
-\[
-m_1s_1=\bar{X}\bar{Y}=o_p\left(\frac{1}{\sqrt{n}}\right)
-\]
-
-\ck 따라서 증명이 끝난다. 
-
-\rdash 
-
-\cke $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\bar{W}+o_p(1)$ 임을 보여라. 단 
-\[
-W=XY-\frac{\rho(X^2+Y^2)}{2}.
-\]
-
-\sol 
-
-\ck ${\bar W}=\bar{XY}-\frac{\rho({\bar X}^2+{\bar Y}^2)}{2}=c_1-\frac{\rho(m_2+s_2)}{2}$.
-
-\ck $\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-m_1s_1-\rho\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}{\sqrt{m_2-m_1^2}\sqrt{s_2-s_1^2}}$ 
-
-\ck (d)에 의해서 $\mbox{"분자"}=c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})$
-
-\ck 분모는 1로 확률수렴한다. 
-
-\ck 따라서 
-\[
-\sqrt{n}(\hat{\rho}_n-\rho)=\sqrt{n}\times \frac{c_1-\frac{\rho(m_2+s_2)}{2}+o_p(\frac{1}{\sqrt{n}})}{1+o_p(1)}= \frac{\sqrt{n}\bar{W}+o_p(1)}{1+o_p(1)}=\sqrt{n}\bar{W}+o_p(1)
-\]
+\subsubsection{General State}
 
 
 \end{document}
+
