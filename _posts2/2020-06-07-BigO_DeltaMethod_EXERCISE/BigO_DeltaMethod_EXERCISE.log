@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  10 JUN 2020 20:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  22 JUN 2020 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -696,22 +696,22 @@ This may cause the page layout to be inconsistent, however.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 Overfull \hbox (4.97174pt too wide) detected at line 439
 []\OT1/cmr/m/n/17.28 ([] \OMS/cmsy/m/n/17.28 ^^@ \OML/cmm/m/it/17.28 ^^Z\OT1/cm
 r/m/n/17.28 ) = [] \OMS/cmsy/m/n/17.28 ^^B [] \OT1/cmr/m/n/17.28 = [] = [][] + 
 \OML/cmm/m/it/17.28 o[]\OT1/cmr/m/n/17.28 (1)
  []
 
-[3] (./BigO_DeltaMethod_EXERCISE.aux) ) 
+[4] (./BigO_DeltaMethod_EXERCISE.aux) ) 
 Here is how much of TeX's memory you used:
  10115 strings out of 481239
  158799 string characters out of 5920378
- 549941 words of memory out of 5000000
+ 548941 words of memory out of 5000000
  25103 multiletter control sequences out of 15000+600000
  571293 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,12n,46p,419b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,12n,46p,419b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc
 /dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
@@ -763,10 +763,10 @@ e/texlive/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/palatino/uplr8a.pfb>
-Output written on BigO_DeltaMethod_EXERCISE.pdf (3 pages, 1767373 bytes).
+Output written on BigO_DeltaMethod_EXERCISE.pdf (4 pages, 1768857 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 227 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  9729 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1591870073 "SARIMA_ACF.tex" "SARIMA_ACF.pdf" "SARIMA_ACF" 1591870074
+["pdflatex"] 1592792756 "SARIMA_ACF.tex" "SARIMA_ACF.pdf" "SARIMA_ACF" 1592792757
   "/etc/texmf/web2c/texmf.cnf" 1588735733 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -208,9 +208,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1588735775 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1588735815 8256229 bc1212c8b345a0a4119dd4eacaa2ed9e ""
-  "SARIMA_ACF.aux" 1591870073 3336 88127a27ee7724ea8381c8959764d985 "pdflatex"
-  "SARIMA_ACF.tex" 1591870073 16519 39c8374bff601e613690f52e26a85ed1 ""
+  "SARIMA_ACF.aux" 1592792756 3336 f27d5ea1089aa6b1b0706ce3c88ce116 "pdflatex"
+  "SARIMA_ACF.tex" 1592792755 16536 cfb8e8972a5a4a6eaed2b48b7a4f1ed0 ""
   (generated)
   "SARIMA_ACF.log"
-  "SARIMA_ACF.aux"
   "SARIMA_ACF.pdf"
+  "SARIMA_ACF.aux"

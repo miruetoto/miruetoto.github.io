@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1591788834 "BigO_DeltaMethod_EXERCISE.tex" "BigO_DeltaMethod_EXERCISE.pdf" "BigO_DeltaMethod_EXERCISE" 1591788835
+["pdflatex"] 1592792703 "BigO_DeltaMethod_EXERCISE.tex" "BigO_DeltaMethod_EXERCISE.pdf" "BigO_DeltaMethod_EXERCISE" 1592792703
   "/etc/texmf/web2c/texmf.cnf" 1588735733 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -209,9 +209,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1588735775 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1588735815 8256229 bc1212c8b345a0a4119dd4eacaa2ed9e ""
-  "BigO_DeltaMethod_EXERCISE.aux" 1591788834 4841 22a0aadc85d3121b73a7996211f44f87 "pdflatex"
-  "BigO_DeltaMethod_EXERCISE.tex" 1591788242 14859 71a7638e753aa1104b50d81976b64cce ""
+  "BigO_DeltaMethod_EXERCISE.aux" 1592792703 4841 5e16ff13a7b5237993cd9b3b1b5c6276 "pdflatex"
+  "BigO_DeltaMethod_EXERCISE.tex" 1592792702 14875 93b45a01057ea9ae4499e1ce7b138261 ""
   (generated)
   "BigO_DeltaMethod_EXERCISE.aux"
-  "BigO_DeltaMethod_EXERCISE.pdf"
   "BigO_DeltaMethod_EXERCISE.log"
+  "BigO_DeltaMethod_EXERCISE.pdf"

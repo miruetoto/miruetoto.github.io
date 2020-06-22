@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  18 JUN 2020 10:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.6)  22 JUN 2020 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,12 +694,12 @@ This may cause the page layout to be inconsistent, however.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
 LaTeX Font Info:    Font shape `LUC/nanummj/b/n' in size <17.28> not available
 (Font)              Font shape `LUC/nanummj/bx/n' tried instead on input line 4
 99.
- [5] [6]
-[7] [8] [9] [10]
+
+[7] [8] [9] [10] [11] [12] [13] [14]
 Overfull \hbox (7.69997pt too wide) in paragraph at lines 696--697
 [] []\T1/pplj/b/n/17.28 (2)[] \LUC/nanummj/m/n/17.28/c1 \LUC/nanummj/m/n/17.28
 /c9 È\LUC/nanummj/m/n/17.28/b4 ^^\ \LUC/nanummj/m/n/17.28/c6 D\LUC/nanummj/m/n/
@@ -718,7 +718,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 700--701
 
  []
 
-[11] [12] [13]
+[15] [16] [17] [18] [19]
 Overfull \hbox (35.12016pt too wide) in paragraph at lines 811--812
 \LUC/nanummj/m/n/17.28/d5 X\LUC/nanummj/m/n/17.28/c7 \T1/pplj/m/n/17.28 . \LUC
 /nanummj/m/n/17.28/ad ø\LUC/nanummj/m/n/17.28/b9 ¬\LUC/nanummj/m/n/17.28/ac à \
@@ -752,11 +752,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 825--826
 
  []
 
-[14] [15] (./ESTIMATION.aux) ) 
+[20] [21] (./ESTIMATION.aux) ) 
 Here is how much of TeX's memory you used:
  10208 strings out of 481239
  161006 string characters out of 5920378
- 546911 words of memory out of 5000000
+ 545911 words of memory out of 5000000
  25168 multiletter control sequences out of 15000+600000
  580938 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -838,10 +838,10 @@ mf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
 latino/uplr8a.pfb>
-Output written on ESTIMATION.pdf (15 pages, 3044273 bytes).
+Output written on ESTIMATION.pdf (21 pages, 3049202 bytes).
 PDF statistics:
- 372 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
+ 391 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  8705 words of extra memory for PDF output out of 10000 (max. 10000000)
 

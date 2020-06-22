@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1591788316 "BigO_DeltaMethod.tex" "BigO_DeltaMethod.pdf" "BigO_DeltaMethod" 1591788317
+["pdflatex"] 1592792667 "BigO_DeltaMethod.tex" "BigO_DeltaMethod.pdf" "BigO_DeltaMethod" 1592792668
   "/etc/texmf/web2c/texmf.cnf" 1588735733 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -221,8 +221,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1588735775 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1588735815 8256229 bc1212c8b345a0a4119dd4eacaa2ed9e ""
-  "BigO_DeltaMethod.aux" 1591788317 6343 e0ac509db548de1952cdf306cacfa272 "pdflatex"
-  "BigO_DeltaMethod.tex" 1591593093 15180 c4f693a70a6fa33856ea0d6282b8c566 ""
+  "BigO_DeltaMethod.aux" 1592792667 6343 836a561fdf77819bc6940b063957f0a8 "pdflatex"
+  "BigO_DeltaMethod.tex" 1592792666 15197 31428fc1dd747d7d510b9463f0fa74b6 ""
   (generated)
   "BigO_DeltaMethod.log"
   "BigO_DeltaMethod.pdf"
