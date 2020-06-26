@@ -82,29 +82,13 @@ expansion=true]{microtype}
 \usepackage{amssymb}
 
 \def\ck{\paragraph{\Large$\bullet$}\Large}
-\def\goal{\paragraph{\Large(목표)}\Large}
-\def\observe{\paragraph{\Large(관찰)}\Large}
-\def\assume{\paragraph{\Large(가정)}\Large}
-\def\summary{\paragraph{\Large(요약)}\Large}
-\def\EX{\paragraph{\Large(예제)}\Large}
-\def\guess{\paragraph{\Large(추측)}\Large}
-\def\thus{\paragraph{\Large(결론)}\Large}
-
-\def\prob{\paragraph{\Large(문제)}\Large}
 \def\sol{\paragraph{\Large(sol)}\Large}
 \def\pf{\paragraph{\Large(pf)}\Large}
-
-\def\dfn{\paragraph{\Large(정의)}\Large}
-\def\thm{\paragraph{\Large(정리)}\Large}
-\def\lem{\paragraph{\Large(레마)}\Large}
-\def\promise{\paragraph{\Large(약속)}\Large}
-\def\property{\paragraph{\Large(특징)}\Large}
-\def\fl{\paragraph{\Large(느낌)}\Large}
-\def\memo{\paragraph{\Large(암기)}\Large}
-
 \def\note{\paragraph{\Large\textit{\underline{note:}}}\Large}
 \def\ex{\paragraph{\Large\textit{example:}}\Large}
-
+\newcommand{\para}[1]{\paragraph{\Large(#1)}\Large}
+\newcommand{\parablue}[1]{\paragraph{\Large\textcolor{blue}{(#1)}}\Large}
+\newcommand{\parared}[1]{\paragraph{\Large\textcolor{red}{(#1)}}\Large}
 
 \def\one{\paragraph{\Large(1)}\Large}
 \def\two{\paragraph{\Large(2)}\Large}
@@ -288,20 +272,20 @@ footskip=0.5cm}
 \pi p =\pi
 \]
 
-\thm $p$가 irreducible 하다는 것과 아래는 동치이다. (듀렛 Thm 6.5.6.)
+\parablue{정리 6.5.6.} $p$가 irreducible 하다는 것과 아래는 동치이다. 
 \one .
 \two stationary distribution이 존재한다. 
 \three . 
 
 
 \subsubsection{Asymptotic Behavior}
-\lem $d_x=1$이라면 $m_0$보다 큰 모든 $m$에 대하여 
+\parablue{레마 6.6.3.} $d_x=1$이라면 $m_0$보다 큰 모든 $m$에 대하여 
 \[
 p^m(x,x)>0
 \]
 를 만족시킬 수 있다. 
 
-\thm \textbf{(Convergence theorem)} $p$가 (1) irreducible 하고 (2) aperiodic 하며 (3) stationary distribution $\pi$를 가진다고 하자. 그러면 아래가 성립한다. 
+\parablue{정리 6.6.4.} $p$가 (1) irreducible 하고 (2) aperiodic 하며 (3) stationary distribution $\pi$를 가진다고 하자. 그러면 아래가 성립한다. 
 \[
 p^{n}(x,y) \to \pi(y) \quad as~ n\to \infty .
 \]
@@ -316,7 +300,8 @@ p^{n}(x,y) \to \pi(y) \quad as~ n\to \infty .
 \bar{p}\big((x_1,y_1),(x_2,y_2)\big)=p(x_1,x_2)p(y_1,y_2)
 \]
 \note 이는 각각의 coordinate가 독립적으로 움직인다는 것을 의미한다. 
-\ck (step1) 먼저 $\bar{p}$가 이리듀시블임을 보이자. (이는 너무 당연해서 바보같은 증명으로 보이지만 정리의 에이피리오딕조건을 사용하는 유일한 과정이다.) 우선 $p$가 이리듀시블하다는 조건으로부터 아래를 만족하는 적당한 $K,L$이 존재함을 알 수 있다. 
+\parared{step 1} 
+\ck 먼저 $\bar{p}$가 이리듀시블임을 보이자. (이는 너무 당연해서 바보같은 증명으로 보이지만 정리의 에이피리오딕조건을 사용하는 유일한 과정이다.) 우선 $p$가 이리듀시블하다는 조건으로부터 아래를 만족하는 적당한 $K,L$이 존재함을 알 수 있다. 
 \[
 p^K(x_1,x_2)>0 \quad \mbox {and}\quad p^L(y_1,y_2)>0.
 \]
@@ -329,12 +314,30 @@ p^{L+M}(x_1,x_2)>0 \quad \mbox {and}\quad p^{K+M}(y_1,y_2)>0.
 \bar{p}^{K+L+M}\big((x_1,y_1),(x_2,y_2) \big)>0
 \]
 
-\ck (step2) 두 코디네이츠가 독립이므로 ${\bar p}$의 stationary distribution을 아래와 같이 정의할 수 있다. 
+\parared{step 2} 
+\ck 두 코디네이츠가 독립이므로 ${\bar p}$의 stationary distribution을 아래와 같이 정의할 수 있다. 
 \[
 \bar{\pi}(a,b)=\pi(a)\pi(b).
 \]
 
 \ck 정리 6.5.4에 의해서 $\bar{p}$의 stationary distribution이 존재한다는 것은 $\bar{p}$의 모든상태가 recurrent하다는 것을 의미한다. 
+
+\ck $(X_n,Y_n)$을 $S \times S$에서의 체인이라고 하자. 
+
+\ck $T$를 이 체인이 처음으로 대각 $\{(y,y)\in S\}$을 치는 시간이라고 하자. 
+
+\ck $T(x,x)$를 $(x,x)$를 hit하는 시간이라고하자. 
+
+\ck $\bar{p}$가 (1) irreducible 하고 (2) recurrent 하므로 $T(x,x)<\infty ~ a.s.$ 이고 따라서 $T <\infty ~ a.s.$ 이다. 
+
+\parared{step 3} 
+
+\ck 우선 두개의 코디네이트 $(X_n,Y_n)$가 $\{T\leq n\}$에서 같은 분포를 가진다는 것을 관찰하자. 
+
+\ck $(X_n,Y_n)$이 첫 교차점을 가지는 시간과 장소를 고려하여보자. 마코프성질을 이용하면 
+\[
+P(X_n=y,T\leq n)= \sum_{m=1}^{n}\sum_xP(T=m,X_m=x,X_n=y)
+\]
 
 
 \subsubsection{Periodicity, Tail $\sigma$-field}
