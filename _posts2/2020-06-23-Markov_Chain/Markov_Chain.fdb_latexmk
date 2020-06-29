@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1592877255 "Markov_Chain.tex" "Markov_Chain.pdf" "Markov_Chain" 1592877257
-  "/dev/null" 1592877256 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1592877255 "Markov_Chain.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.pdf" "Markov_Chain" 1593166224
+  "/dev/null" 1592724295 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -214,9 +214,11 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1575460061 4259636 f91d0808553694200501966019ec0bc5 ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Markov_Chain.aux" 1592877256 4268 2f0fe685647ecf5ff3d0a2dd5f144c1a "pdflatex"
-  "Markov_Chain.tex" 1592877252 12426 9796c0d142e01ca013cf144f4b02458b ""
+  "Markov_Chain.aux" 1593166214 4268 2f0fe685647ecf5ff3d0a2dd5f144c1a ""
+  "Markov_Chain.tex" 1593166214 12426 9796c0d142e01ca013cf144f4b02458b ""
   (generated)
   "Markov_Chain.pdf"
-  "Markov_Chain.log"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.pdf"
   "Markov_Chain.aux"
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.log"
+  "Markov_Chain.log"
