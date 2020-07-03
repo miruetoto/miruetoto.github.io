@@ -259,6 +259,68 @@ footskip=0.5cm}
 \begin{document}
 
 \subsubsection{Definitions}
+\parablue{def} $(S,{\cal S})$를 measurable space라고 하자. $X_n:(\Omega,{\cal F}) \to (S,{\cal S})$이라고 하자. 편하게 
+\[
+(S,{\cal S})=(\mathbb{R},{\cal R})
+\]
+이라고 생각해도 무방하다. 어떠한 확률변수열 $\{X_n\}$이 filtration ${\cal F}_n:=\sigma(X_0,\dots,X_n)$에서 정의되어 있다고 하자. 확률변수열 $\{X_n\}$이 마코프체인이라는 것은 아래와 같이 정의한다. 
+\begin{align*}
+& \{X_n\} \mbox{ is Markovchain w.r.t. } {\cal F}_n \\
+& \overset{def}{\Longleftrightarrow} \mbox{for all $B\in {\cal S}$:}\quad 
+P(X_{n+1}\in B | {\cal F}_n)=P(X_{n+1}\in B | X_n)
+\end{align*}
+
+\note 확률변수열 $X_1,X_2,\dots$의 값이 바로 이전의 값에 의해서만 결정되면 마코프체인이라고 한다. 즉 $X_2$의 값을 알기 위해서는 $X_1$의 값에 대한 정보만 있으면 되고 $X_3$의 값을 알기 위해서는 $X_2$에 대한 정보만 있으면 될때 $X_1,X_2,\dots$을 마코프체인이라고 한다. 
+
+\ck $4\times 4$ 그리드 세계를 가정하자. 
+\[
+S=\Omega=\{(1,1),\dots,(4,4)\}
+\]
+$X_1$은 
+\[
+X_1\big((1,1)\big)=1, X_2\big((1,2))=2, \dots, X_1\big((4,4)\big)=16
+\]
+와 같이 정의하는 확률변수라고 하자. 따라서 
+\[
+X_1=1, X_2=2
+\]
+가 의미하는 것은 처음에는 $(1,1)$의 위치에 있다가 그다음에는 $(1,2)$의 위치로 이동하였다는 것을 의미한다. 이제 $(1,1)$의 위치에서 $(1,2)$의 위치로 이동하는 transition probability를 $p$라고 정의하자. 여기에서 $p$는 확률공간을 구성하는 $P$이지 pmf를 의미하는 것이 아님을 기억하자. 즉 $p$는 아래와 같이 정의할 수 있다. 
+\[
+p:(S,{\cal S}) \to \mathbb{R}
+\]
+기호로는 아래와 같이 쓴다. 
+\[
+p(x,A)
+\]
+여기에서 $x \in S$, $A \in {\cal S}$이다. 
+
+\ex $x=1$, $A=\{1,2,5\}$이라고 하자. 
+\begin{align*}
+& x=1 \Leftrightarrow X(\omega)=1 \Leftrightarrow \omega=(1,1) \\ 
+& A=\{1,2,5\} \Leftrightarrow \{\omega:X(\omega) \in A\}=\{(1,1),(1,2),(2,1)\}
+\end{align*}
+임을 주목하라. 따라서 
+\[
+p(x,A)
+\] 
+는 점 $(1,1)$에서 출발했는데 점 $(1,1),(1,2),(2,1)$중 하나에 도착할 확률이므로 
+\[
+p(x,A)=1
+\]
+이라고 볼 수 있다. 
+
+\ck transition probability의 정의를 사용하면 아래를 만족하는 확률변수열 $\{X_n\}$을 마코프체인이라 정의할 수 있다. 
+\[
+P(X_{n+1}\in B|{\cal F}_n)=p_n(X_n,B)
+\]
+여기에서 $p_n$은 $n$번째에 어떠한 위치 $X_n$에서 $B$ 의 부분집합중 하나의 위치로 이동할 확률을 의미한다. 
+
+\parared{thm} 만약에 (1) $(S,{\cal S})$이 \textcolor{red}{\emph{nice space}} 이고 (2) $\{p_n\}$이 잘 정의되며 (3) $(S,{\cal S})$에서의 initional distribution이 잘 정의되면 Kolmogorov's theorem에 의해서 우리는 임의의 $j$에 대하여서도 consistence set of finite dimensional distribution을 아래와 같이 잘 정의할 수 있다. 
+\begin{align*}
+& P(X_j \in B, 0\leq j \leq n)\\
+& =P(X_1\in B_1, X_2\in B_2, \dots, X_n \in B_n)  \\
+& = \int_{B_0}\mu(dx_0)\int_{B_1}p_0\big(x_0,\mu(dx_1)\big)\dots\int_{B_n}p_{n-1}\big(x_{n-1},\mu(dx_n)\big)
+\end{align*}
 
 \subsubsection{Examples}
 
@@ -267,10 +329,21 @@ footskip=0.5cm}
 \subsubsection{Recurrence and Transience}
 
 \subsubsection{Stationary Measures}
-\ck staionary measure 가 (1) 존재하고 (2) 유일하다는 것이 조사되었다고 하자. 이제 다음 관심사는 아래식을 만족하는 staionary distribution $\pi$이다. 
+\ck 아래식을 만족하는 measure $\mu$를 stationary measure라고 한다. 
+\[
+\sum_x\mu(x)p(x,y)=\mu(y)
+\]
+\note $p(x,y)$: 노드 $x$에서 다음 노드 $y$로 이동할 확률
+\note $\mu(x)$: 노드 $x$에 있을 확률
+\note 따라서 stationary measure는 특정노드에 있을 확률을 측정하는 메져라 생각할 수 있다. 
+
+
+\ck stationary measure(=stationary distribution)가 (1) 존재하고 (2) 유일하다는 것이 조사되었다고 하자. 이제 다음 관심사는 아래식을 만족하는 staionary distribution $\pi$이다. 
 \[
 \pi p =\pi
 \]
+
+\parablue{정리 6.5.6.} 
 
 \parablue{정리 6.5.6.} $p$가 irreducible 하다는 것과 아래는 동치이다. 
 \one .
