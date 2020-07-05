@@ -80,6 +80,7 @@ expansion=true]{microtype}
 \usepackage{titlesec}
 \usepackage{cite, url}
 \usepackage{amssymb}
+\usepackage{xcolor}
 
 \def\ck{\paragraph{\Large$\bullet$}\Large}
 \def\sol{\paragraph{\Large(sol)}\Large}
@@ -258,7 +259,7 @@ footskip=0.5cm}
 \linespread{1}
 \begin{document}
 
-\subsubsection{Definitions}
+\subsubsection{1. Definitions}
 \parablue{def} $(S,{\cal S})$를 measurable space라고 하자. $X_n:(\Omega,{\cal F}) \to (S,{\cal S})$이라고 하자. 편하게 
 \[
 (S,{\cal S})=(\mathbb{R},{\cal R})
@@ -274,17 +275,24 @@ P(X_{n+1}\in B | {\cal F}_n)=P(X_{n+1}\in B | X_n)
 
 \ck $4\times 4$ 그리드 세계를 가정하자. 
 \[
-S=\Omega=\{(1,1),\dots,(4,4)\}
+\Omega=\{(1,1),\dots,(4,4)\}
 \]
-$X_1$은 
+이고 
 \[
-X_1\big((1,1)\big)=1, X_2\big((1,2))=2, \dots, X_1\big((4,4)\big)=16
+S=\{1,2,3\dots,16\}
 \]
-와 같이 정의하는 확률변수라고 하자. 따라서 
+이라고 하자. 확률변수 $X_1:(\Omega,{\cal F}) \to (S, {\cal S})$은 아래와 같이 정의할 수 있는 맵핑이라고 하자. 
+\begin{align*}
+& X_1\big((1,1)\big)=1\\ 
+& X_2\big((1,2))=2\\ 
+& \dots \\
+& X_1\big((4,4)\big)=16
+\end{align*}
+따라서 
 \[
 X_1=1, X_2=2
 \]
-가 의미하는 것은 처음에는 $(1,1)$의 위치에 있다가 그다음에는 $(1,2)$의 위치로 이동하였다는 것을 의미한다. 이제 $(1,1)$의 위치에서 $(1,2)$의 위치로 이동하는 transition probability를 $p$라고 정의하자. 여기에서 $p$는 확률공간을 구성하는 $P$이지 pmf를 의미하는 것이 아님을 기억하자. 즉 $p$는 아래와 같이 정의할 수 있다. 
+가 의미하는 것은 처음에는 $(1,1)$의 위치에 있다가 그다음에는 $(1,2)$의 위치로 이동하였다는 것을 의미한다. 이제 $(1,1)$의 위치에서 $(1,2)$의 위치로 이동하는 transition probability를 $p$라고 정의하자. 여기에서 $p$는 확률공간을 구성하는 $P$이지 pmf를 의미하는 것이 아님을 기억하자. $p$는 아래와 같이 정의할 수 있다. 
 \[
 p:(S,{\cal S}) \to \mathbb{R}
 \]
@@ -309,16 +317,63 @@ p(x,A)=1
 \]
 이라고 볼 수 있다. 
 
-\ck transition probability의 정의를 사용하면 아래를 만족하는 확률변수열 $\{X_n\}$을 마코프체인이라 정의할 수 있다. 
+\parablue{def} transition probability의 정의를 사용하면 아래를 만족하는 확률변수열 $\{X_n\}$을 마코프체인이라 정의할 수 있다. 
 \[
 P(X_{n+1}\in B|{\cal F}_n)=p_n(X_n,B)
 \]
-여기에서 $p_n$은 $n$번째에 어떠한 위치 $X_n$에서 $B$ 의 부분집합중 하나의 위치로 이동할 확률을 의미한다. 
+여기에서 $p_n$은 $n$번째에 어떠한 위치 $X_n$에서 $B$의 부분집합중 하나의 위치로 이동할 확률을 의미한다. 
 
-\parared{thm} 만약에 (1) $(S,{\cal S})$이 \textcolor{red}{\emph{nice space}} 이고 (2) $\{p_n\}$이 잘 정의되며 (3) $(S,{\cal S})$에서의 initional distribution이 잘 정의되면 Kolmogorov's theorem에 의해서 우리는 임의의 $j$에 대하여서도 consistence set of finite dimensional distribution을 아래와 같이 잘 정의할 수 있다. 
+\parared{결론1,2,3의 가정} 만약에 (1) $(S,{\cal S})$이 \textcolor{red}{\emph{nice space}} 이고 (2) $\{p_n\}$이 잘 정의되며 (3) $(S,{\cal S})$에서의 initional distribution $\mu$가 잘 정의된다고 하자. 
+
+\parared{결론1} 일단 유한개의 확률변수열 $\{X_n\}$에 대하여 consistence set of finite dimensional distribution을 아래와 같이 잘 정의할 수 있다. 
 \begin{align*}
-& P(X_j \in B, 0\leq j \leq n)\\
-& =P(X_1\in B_1, X_2\in B_2, \dots, X_n \in B_n)  \\
+& \mbox{Prob}(X_1\in B_1, X_2\in B_2, \dots, X_n \in B_n)\\
+& = P(X_1\in B_1, X_2\in B_2, \dots, X_n \in B_n)\\
+& = \int_{B_0}\mu(dx_0)\int_{B_1}p_0\big(x_0,\mu(dx_1)\big)\dots\int_{B_n}p_{n-1}\big(x_{n-1},\mu(dx_n)\big)
+\end{align*}
+\note 이때 $\mbox{Prob}(X_1\in B_1, X_2\in B_2, \dots, X_n \in B_n)$와 같은 표현은 이해하기 쉽지만 수학적으로 엄밀하지 않은 표현이다. 따라서 엄밀하게 하려면 아래의 공간에서 정의되는 확률측도 $P$를 사용하여 표현해야한다. 
+\[
+(S_0\times S_1 \dots \times S_n, {\cal S}_0\times {\cal S}_1 \dots \times {\cal S}_n)
+\]
+이 공간은 간단하게 아래와 같이 표현하기도 한다. 
+\[
+\left(S^{\{0,1,\dots,n\}},{\cal S}^{\{0,1,\dots,n\}}\right)
+\]
+
+\note 즉 결론1은 $\left(S^{\{0,1,\dots,n\}},{\cal S}^{\{0,1,\dots,n\}}\right)$에서의 확률측도 $P$는 (혹은 임의의 유한 확률변수열 $\{X_n\}$에 대한 확률측도 $P$는) 초기분포 $\mu$와 $p_n$만 잘 정의하면 모순없이 정의가능하다는 것을 의미한다.
+
+\ck 하지만 무한일 경우에도 잘 정의될까? 
+
+\parared{결론2} (1)-(3)의 가정하에 Kolmogorov's theorem은 확률변수열 $\{X_n\}$이 무한수열을 가지더라도 아래와 같은 확률이 잘 정의됨을 보여준다. 
+\[
+\mbox{Prob}(X_1\in B_1, X_2\in B_2, \dots, )
+\]
+즉 이는 $\mu$와 $\{p_n\}$만 잘 정의되면 위의 같은 확률들을 모순없이 정의할 수 있음을 의미한다. 교재에서는 유한인 경우와 구분하기 위해서 위의 확률을 표현하는 확률측도를 특별히 $P_{\mu}$라고 하였다. 즉 아래와 같이 써야 올바르다. 
+\[
+P_{\mu}(X_1\in B_1, X_2\in B_2, \dots)
+\]
+이때 $P_{\mu}$는 $\left(S^{\{0,1,\dots\}},{\cal S}^{\{0,1,\dots,\}}\right)$에서의 확률측도이다. 
+
+\note 아래의 기호는 외우는 것이 좋겠다. 
+\begin{align*}
+& \mbox{Prob}(X_0\in B_0)= \int_{B_0} \mu(dx_0)\\ 
+& \mbox{Prob}(X_0\in B_0,X_1 \in B_1)= \int_{B_0} \mu(d(x_0)) \int_{B_1} p\big(x_0,\mu(dx_1)\big) \\ 
+\end{align*}
+
+\ck 지금까지는 콜모고로프의 정리덕에 $P_{\mu}$가 잘 정의된다는 사실까지 살펴보았다. 즉 (1) 초기분포 $\mu$와 (2) transition 확률 $\{p_n\}$이 잘 정의되면 무한하게 눈을 쌓아도 $P_{\mu}$가 잘 정의된다. 
+
+\parared{결론3, Thm 6.1.1} (1)-(3)의 조건하에 $\{X_n\}$이 마코프체인이 된다. 
+\pf 아래의 기호를 정의하면서 증명을 시작하자. 
+\parablue{notation}
+$\mu=\delta_x$를 $x$에서의 포인트매스라고 하자. 그리고 기호 $P_x=P_{\delta_x}$라고 정의하자. $P_x$가 정의되면 아래와 같이 $P_{\mu}$를 정의할 수 있다. 
+\[
+P_{\mu}(A)=\int \mu(dx)P_x(A), \quad A \in {\cal S}^{\{0,1,\dots,\}}
+\]
+
+\parared{Thm 6.1.2, 결론1의 변형} (1)-(3)의 조건중 체크하기 까다로운 것은 (1)이다. 오히려 (1)의 조건대신에 $\{X_n\}$이 마코프체인임을 가정하면 결론2와 동일한 결과를 얻을 수 있다. 즉 (1) $\{X_n\}$이 마코프체인이고 (2) transition prob $\{p_n\}$이 주어졌고 (3) initional distribution $\mu$ 가 주어졌다면 \textcolor{red}{\emph{finite dimensional distribution}}이 아래와 같이 주어진다. 
+\begin{align*}
+& P(X_j \in B_j, 0\leq j \leq n) \\ 
+& = P(X_1\in B_1, X_2\in B_2, \dots, X_n \in B_n)\\
 & = \int_{B_0}\mu(dx_0)\int_{B_1}p_0\big(x_0,\mu(dx_1)\big)\dots\int_{B_n}p_{n-1}\big(x_{n-1},\mu(dx_n)\big)
 \end{align*}
 
