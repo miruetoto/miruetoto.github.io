@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1593960165 "Markov_Chain.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.pdf" "Markov_Chain" 1593960166
+["pdflatex"] 1593967056 "Markov_Chain.tex" "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.pdf" "Markov_Chain" 1593967057
   "/etc/texmf/web2c/texmf.cnf" 1592726594 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.aux" 1593960165 8937 738422b7508c22790cc345edd763e05a ""
+  "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.aux" 1593967057 8937 738422b7508c22790cc345edd763e05a ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1480098688 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -246,11 +246,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1592726625 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1592726649 4127276 c8b04964f56de0b23cf97b10fdb500c8 ""
-  "Markov_Chain.aux" 1593960165 8937 738422b7508c22790cc345edd763e05a ""
-  "Markov_Chain.tex" 1593960164 26959 91a3baeb50bc52efa3afe6852640ee4f ""
+  "Markov_Chain.aux" 1593967057 8937 738422b7508c22790cc345edd763e05a ""
+  "Markov_Chain.tex" 1593967056 26962 bb53744d0825ae6bfee0686eee376ae0 ""
   (generated)
-  "Markov_Chain.aux"
   "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.pdf"
   "/home/cgb/Documents/GitHub/miruetoto.github.io/_posts2/2020-06-23-Markov_Chain/Markov_Chain.log"
-  "Markov_Chain.log"
   "Markov_Chain.pdf"
+  "Markov_Chain.aux"
+  "Markov_Chain.log"

@@ -344,9 +344,11 @@ $\cal E$는 시그마필드이고 모든 원소가 퍼뮤터블하다.
 왜냐하면 적당히 큰 $n$에 대하여 $S_n(\omega)=S_n(\pi\omega)$이 성립하기 때문이다. 
 
 \note 참고로 아래표현을 기억하면 위의 state를 이해하기에 좋다. 
-\[
-\{\omega:S_n(\omega) \in B, ~i.o.\}=\bigcap_{n=1}^{\infty}\bigcup_{k\geq n}\{\omega: S_k(\omega)\in B\}
-\]
+\begin{align*}
+& S_n \in B, ~i.o. \\
+& \Longleftrightarrow S_n \in B^c, ~ a.b.f. \\ 
+& \Longleftrightarrow S_n \in B^c, ~ \mbox{for all } n\geq N_0
+\end{align*}
 
 \note $S_n(\omega)=S_n(\pi\omega)$은 그냥 모든 $n$에 대하여 성립하는것 아닌가? 하는 착각을 하지 않기를 바란다. 물론 
 \[
@@ -366,11 +368,11 @@ S(\omega)=S(\pi\omega)
 \[
 S_n(\omega)=S_n(\pi\omega)
 \]
-임을 주장할 수 있다. 즉 적당히 큰 수 $M$이 존재하여 $n\geq M$인 모든 $n$에 대하여 
+임을 주장할 수 있다. 즉 적당히 큰 수 $N_0$가 존재하여 $n\geq N_0$인 모든 $n$에 대하여 
 \[
 S_n(\omega)=S_n(\pi\omega)
 \]
-가 성립함을 보일 수 있다. 그도 그럴것이 $\pi$는 유한개의 인덱스를 서로 바꾸는 역할을 하므로 적당히 큰 수 $M$이상으로는 그 유한개의 바꿈이 없다고 보일수 있다. 이때 큰 수 $M$의 존재성은 "유한"개의 바꿈이라는 조건때문에 증명된다. 예를들어 100을 1로 1을 100으로 바꾼다고 하자. 그러면 $M=100$이 존재하여 $n \geq M$에서는 모두 
+가 성립함을 보일 수 있다. 그도 그럴것이 $\pi$는 유한개의 인덱스를 서로 바꾸는 역할을 하므로 적당히 큰 수 $N_0$이상으로는 그 유한개의 바꿈이 없다고 보일수 있다. 이때 큰 수 $N_0$의 존재성은 "유한"개의 바꿈이라는 조건때문에 증명된다. 예를들어 100을 1로 1을 100으로 바꾼다고 하자. 그러면 $M=100$이 존재하여 $n \geq N_0$에서는 모두 
 \[
 S_n(\omega)=S_n(\pi\omega)
 \]
@@ -391,11 +393,11 @@ S_n(\omega)=S_n(\pi\omega)
 
 \ck 위의 정리의 역은 성립하지 않는다. 즉 퍼뮤터블한 사건이 항상 테일시그마 필드의 원소는 아니다. 아까 소개한 바 있는 아래의 사건
 \[
-\{\omega:S_n(\omega) \in B, ~i.o.\}=\bigcap_{n=1}^{\infty}\bigcup_{k\geq n}\{\omega: S_k(\omega)\in B\}
+\{\omega:S_n(\omega) \in B, ~i.o.\}
 \]
-은 ${\cal E}$에 속하지만(=퍼뮤터블하지만) ${\cal T}$에 속하지 않는(=테일시그마필드의 원소는아닌) 사건이다. 
+은 ${\cal E}$에 속하지만(=퍼뮤터블하지만) ${\cal T}$에 속하지 않는(=테일시그마필드의 원소는아닌) 사건이다. (왜???)
 
-\ck 만약에 확률변수열 $X_1,X_2,\dots$ 이 iid 라면 ${\cal E}$와 ${\cal T}$는 차이가 없다. 이게 바로 휴이트-새비지의 정리이다. (그냥 ${\cal E}={\cal T}$라는 소리인가? 교재에서는 there is no difference between ${\cal E}$ and ${\cal T}$라고 써있긴한데..)
+\ck 만약에 확률변수열 $X_1,X_2,\dots$ 이 iid 라면 ${\cal E}$와 ${\cal T}$는 차이가 없다. 이게 바로 휴이트-새비지의 정리이다. (그냥 ${\cal E}={\cal T}$라는 소리인가??? 교재에서는 there is no difference between ${\cal E}$ and ${\cal T}$라고 써있긴한데..)
 
 \parared{Theorem 4.1.1. Hewitt-Savage 0-1 law.} 
 (1) $X_1,X_2,\dots$ 이 i.i.d.이고 (2) $A \in {\cal E}$ 이라면 
