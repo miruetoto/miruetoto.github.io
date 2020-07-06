@@ -337,18 +337,63 @@ $\cal E$는 시그마필드이고 모든 원소가 퍼뮤터블하다.
 
 \parablue{def} ${\cal E}$를 \emph{\textcolor{blue}{exchangeable}} 시그마필드라고 말한다. 즉 어떠한 시그마필드를 구성하는 모든 사건이 퍼뮤터블하면 익스체인지어블하다고 말한다. 
 
-\ex 퍼뮤터블이벤트에 대한 예제를 좀더 살펴보자. (교재에 있는 예제이다.) 아래의 사건은 퍼뮤터블하다. 
+\ex 
+\ck 
+퍼뮤터블이벤트에 대한 예제를 좀더 살펴보자. (교재에 있는 예제이다.) 아래의 사건은 퍼뮤터블하다. 
 \[
 \{\omega:S_n(\omega) \in B, ~i.o.\}
 \]
-왜냐하면 적당히 큰 $n$에 대하여 $S_n(\omega)=S_n(\pi\omega)$이 성립하기 때문이다. 
-
-\note 참고로 아래표현을 기억하면 위의 state를 이해하기에 좋다. 
+위의 사건이 의미하는 것은 유한개의 $n$을 제외하고 모두 
+\[
+S_n \in B^c
+\]
+라는 의미이다. 왜냐하면 
 \begin{align*}
 & S_n \in B, ~i.o. \\
 & \Longleftrightarrow S_n \in B^c, ~ a.b.f. \\ 
 & \Longleftrightarrow S_n \in B^c, ~ \mbox{for all } n\geq N_0
 \end{align*}
+이기 때문이다. 
+
+\ck 이제 편의상 확률변수열 $\{X_n\}$에서 유한개의 인덱스를 서로 바꾸어 확률변수열 $\{\tilde{X}_n\}$을 만들었다고 가정하자. 그리고 
+\[
+S_n=X_1+\dots+X_n=X_1(\omega)+\dots+X_n(\omega)
+\]
+이라고 하고 
+\[
+\tilde{S}_n=\tilde{X}_1+\dots+\tilde{X}_n=X_1(\pi\omega)+\dots+X_n(\pi\omega) 
+\]
+이라고 하자. 유한개의 $n$을 제외하면 
+\[
+S_n\equiv S_n(\omega)=S_n(\pi\omega)\equiv \tilde{S}_n
+\]
+임을 주장할 수 있다. 즉 
+\[
+\exists N_0 \quad s.t. \quad \forall n \geq N_0: ~~ S_n=\tilde{S}_n
+\]
+가 성립함을 보일 수 있다. 그도 그럴것이 $\pi$는 유한개의 인덱스를 서로 바꾸는 역할을 하므로 적당히 큰 수 $N_0$이상으로는 그 유한개의 바꿈이 없다고 보일수 있다. (이때 큰 수 $N_0$의 존재성은 "유한"개의 바꿈이라는 조건때문에 증명된다.) 예를들어 100을 1로 1을 100으로 바꾼다고 하자. 그러면 $N_0=100$이 존재하여 
+\[
+\forall n \geq 100: ~~ S_n=\tilde{S}_n
+\]
+라고 주장할 수 있다. 
+
+\ck 이제 
+\[
+\exists N_0 \quad s.t. \quad \forall n \geq N_0: ~~ S_n=\tilde{S}_n
+\]
+를 이용하면 아래를 얻을 수 있다. (풀이라기보다 표현들을 익숙하게 하기 위해 한번 쓴 것)
+\begin{align*}
+& \{S_n(\omega) \in B, ~i.o.\} \\
+& =\{S_n(\omega) \in B^c, ~a.b.f.\} \\ 
+& =\{\tilde{S}_n(\omega) \in B^c, ~a.b.f.\} \\ 
+& =\{S_n(\pi\omega) \in B^c, ~a.b.f.\} \\ 
+& =\{S_n(\pi\omega) \in B, ~i.o.\}
+\end{align*}
+따라서 사건 $A=\{\omega:S_n(\omega) \in B, ~i.o.\}$에 대하여 
+\[
+\omega \in A \Longleftrightarrow \pi\omega \in A
+\]
+이다. 
 
 \note $S_n(\omega)=S_n(\pi\omega)$은 그냥 모든 $n$에 대하여 성립하는것 아닌가? 하는 착각을 하지 않기를 바란다. 물론 
 \[
@@ -362,21 +407,7 @@ S(\omega)=S(\pi\omega)
 & S_1(\omega)=X_1 \mbox{ and } S_1(\pi\omega)=X_{100} \\& S_2(\omega)=X_1+X_2 \mbox{ and } S_2(\pi\omega)=X_{100}+X_2 \\
 \dots
 \end{align*}
-이므로 $n< 100$에 대하여서는 $S_n(\omega)\neq S_n(\pi\omega)$이다. 
-
-\note 여기에서 적당히 큰 $n$에 대하여 
-\[
-S_n(\omega)=S_n(\pi\omega)
-\]
-임을 주장할 수 있다. 즉 적당히 큰 수 $N_0$가 존재하여 $n\geq N_0$인 모든 $n$에 대하여 
-\[
-S_n(\omega)=S_n(\pi\omega)
-\]
-가 성립함을 보일 수 있다. 그도 그럴것이 $\pi$는 유한개의 인덱스를 서로 바꾸는 역할을 하므로 적당히 큰 수 $N_0$이상으로는 그 유한개의 바꿈이 없다고 보일수 있다. 이때 큰 수 $N_0$의 존재성은 "유한"개의 바꿈이라는 조건때문에 증명된다. 예를들어 100을 1로 1을 100으로 바꾼다고 하자. 그러면 $M=100$이 존재하여 $n \geq N_0$에서는 모두 
-\[
-S_n(\omega)=S_n(\pi\omega)
-\]
-라고 주장할 수 있다. 
+이므로 $n<100$에 대하여서는 $S_n(\omega)\neq S_n(\pi\omega)$이다. 
 
 \ex 아래의 사건도 퍼뮤터블하다. 
 \[
@@ -389,15 +420,55 @@ S_n(\omega)=S_n(\pi\omega)
 {\cal T}=\bigcap_{n=1}^{\infty}{\cal F}'_n \quad \mbox{where ${\cal F}'_n=\sigma(X_n,X_{n+1},X_{n+2},\dots)$}
 \]
 
-\note 어떠한 이벤트 $A$가 $A\in{\cal T}$라는 것은 임의의 유한개의 realization의 결과를 완전히 바꾸어도 event가 동일함을 의미한다. 즉 $X_1,X_{100}$의 순서만 바꾸는 것이 아니고 $X_1$의 값과 $X_{100}$을 아예 임의의 다른값으로 바꾸어도 된다는 의미이다. 
+\note 어떠한 이벤트 $A$가 $A\in{\cal T}$라는 것은 임의의 유한개의 realization의 결과를 \textbf{몰라도(=삭제하여도, 아무값이나 넣어도)} event $A$가 동일하게 정의될 수 있음을 의미한다. 
 
 \ck 위의 정리의 역은 성립하지 않는다. 즉 퍼뮤터블한 사건이 항상 테일시그마 필드의 원소는 아니다. 아까 소개한 바 있는 아래의 사건
 \[
 \{\omega:S_n(\omega) \in B, ~i.o.\}
 \]
-은 ${\cal E}$에 속하지만(=퍼뮤터블하지만) ${\cal T}$에 속하지 않는(=테일시그마필드의 원소는아닌) 사건이다. (왜???)
+은 ${\cal E}$에 속하지만(=퍼뮤터블하지만) ${\cal T}$에 속하지 않는(=테일시그마필드의 원소는아닌) 사건이다. 이를 이해하기 위해 좀 더 구체적인 예로 생각해보자. 아래와 같은 구조에서 확률변수가 생성된다고 하자. 
+\begin{align*}
+& X_1 \sim Ber(p) \\ 
+& X_2 = -X_1  \\ 
+& X_n = 0 \mbox{ for } n\geq 3.
+\end{align*}
+관측가능한 확률변수열 $\{X_n\}$은 아래의 2경우 뿐이다. 
+\[
+-1,1,0,0,0,0,\dots
+\] 
+\[
+1,-1,0,0,0,0,\dots
+\] 
+사건 $A_n$를 아래와 같이 정의하자. 
+\[
+A_n=\{S_n(\omega) \in B, ~ i.o.\} \quad B=\{0\}
+\] 
+이라고 하자. 사건 $A_n$는 퍼뮤터블하다. 왜냐하면 확률변수열의 순서를 임의로 바꾸어도 적당히 큰 $n$에 대하여 (구체적으로는 $n\geq 2$에 대하여) 
+\[
+0=S_n=\tilde{S}_n=0
+\]
+이 성립하기 때문이다. 즉 $X_1+X_2+\dots+X_n=0$이라는 사실은 확률변수열의 순서를 아무리 바꾸어도 $n\geq 2$에서 항상 성립한다. 하지만 사건 $A$는 테일시그마필드의 원소가 아니다. 왜냐하면 첫번째 값 $X_1$을 삭제한다면 
+\begin{align*}
+& S_n=X_2+X_3+\dots+X_n=1 \\
+& \Longrightarrow P(A_n)=P(S_n \in B,~i.o.)=P(S_n=0, ~i.o.)=0
+\end{align*}
+만약에 $X_2$를 삭제한다면 
+\begin{align*}
+& S_n=X_1+X_3+\dots+X_n=1 \\
+& \Longrightarrow P(A_n)=P(S_n \in B,~i.o.)=P(S_n=0, ~i.o.)=0
+\end{align*}
 
-\ck 만약에 확률변수열 $X_1,X_2,\dots$ 이 iid 라면 ${\cal E}$와 ${\cal T}$는 차이가 없다. 이게 바로 \textbf{휴이트-새비지}의 정리이다. 
+이 되어서 $P(A_n\in B, ~i.o.)=0$ 이 되며 만약에 $X_1,X_2$를 모두 삭제한다면 
+\[
+X_3+X_4+\dots+X_n=0
+\]
+이 되어서 $P(A_n\in B, ~i.o.)=1$ 이 되는 등 사건 $A_n$
+\[
+B=\{X_1+X_2+\dots \in (-\infty, \infty) \}
+\]
+와 같이 정의하면 라면 이 사건은 퍼뮤터블하고 테일시그마필드의 원소가 된다. 
+
+\ck 만약에 확률변수열 $X_1,X_2,\dots$이 iid 라면 ${\cal E}$와 ${\cal T}$는 차이가 없다. 이게 바로 \textbf{휴이트-새비지}의 정리이다. 
 
 \parared{Theorem 4.1.1. Hewitt-Savage 0-1 law.} 
 (1) $X_1,X_2,\dots$ 이 i.i.d.이고 (2) $A \in {\cal E}$ 이라면 
