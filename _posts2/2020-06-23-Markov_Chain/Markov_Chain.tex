@@ -447,7 +447,7 @@ A_n=\{S_n(\omega) \in B, ~ i.o.\} \quad B=\{0\}
 \[
 0=S_n=\tilde{S}_n=0
 \]
-이 성립하기 때문이다. 즉 $X_1+X_2+\dots+X_n=0$이라는 사실은 확률변수열의 순서를 아무리 바꾸어도 $n\geq 2$에서 항상 성립한다. 하지만 사건 $A$는 테일시그마필드의 원소가 아니다. 왜냐하면 첫번째 값 $X_1$을 삭제한다면 
+이 성립하기 때문이다. 즉 $X_1+X_2+\dots+X_n=0$이라는 사실은 확률변수열의 순서를 아무리 바꾸어도 $n\geq 2$에서 항상 성립한다. 하지만 사건 $A_n$는 테일시그마필드의 원소가 아니다. 왜냐하면 $A_n$가 테일시그마필드의 원소라면 특정 값을 삭제해도 그 결과가 균일하게 정의되어야 하는데 첫번째 값 $X_1$을 삭제한다면 
 \begin{align*}
 & S_n=X_2+X_3+\dots+X_n=1 \\
 & \Longrightarrow P(A_n)=P(S_n \in B,~i.o.)=P(S_n=0, ~i.o.)=0
@@ -457,12 +457,15 @@ A_n=\{S_n(\omega) \in B, ~ i.o.\} \quad B=\{0\}
 & S_n=X_1+X_3+\dots+X_n=1 \\
 & \Longrightarrow P(A_n)=P(S_n \in B,~i.o.)=P(S_n=0, ~i.o.)=0
 \end{align*}
+$X_1,X_2$를 모두 삭제하면 
+\begin{align*}
+& S_n=X_3+X_4+\dots+X_n=0 \\
+& \Longrightarrow P(A_n)=P(S_n \in B,~i.o.)=P(S_n=0, ~i.o.)=0
+\end{align*}
+이 되어서 $A_n$을 균일하게 정의할 수 없다. 
 
-이 되어서 $P(A_n\in B, ~i.o.)=0$ 이 되며 만약에 $X_1,X_2$를 모두 삭제한다면 
-\[
-X_3+X_4+\dots+X_n=0
-\]
-이 되어서 $P(A_n\in B, ~i.o.)=1$ 이 되는 등 사건 $A_n$
+
+
 \[
 B=\{X_1+X_2+\dots \in (-\infty, \infty) \}
 \]
