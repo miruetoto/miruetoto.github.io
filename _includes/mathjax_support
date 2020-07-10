@@ -6,6 +6,7 @@ extensions: ["AMSmath.js", "AMSsymbols.js","autobold.js"]
 TeX: {
     Macros: {
       RR: "{\\bf R}",
+      ck: "$\bullet$",
       bold: ["{\\bf #1}",1]
     }
 },
