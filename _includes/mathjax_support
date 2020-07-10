@@ -3,14 +3,6 @@ MathJax.Hub.Config({
 TeX: {
 extensions: ["AMSmath.js", "AMSsymbols.js","autobold.js"]
 },
-TeX: {
-    Macros: {
-      RR: "{\\bf R}",
-      bold: ["{\\bf #1}",1],
-      _{: "_ {",
-      ^{: "^ {"
-    }
-},
 tex2jax: {
   inlineMath: [['$','$'], ['\\(','\\)']],
   displayMath: [ ['$$','$$'], ['\[','\]']],
