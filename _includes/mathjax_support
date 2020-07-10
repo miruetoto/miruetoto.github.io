@@ -5,7 +5,7 @@ extensions: ["AMSmath.js", "AMSsymbols.js","autobold.js"]
 },
 tex2jax: {
   inlineMath: [['$','$'], ['\\(','\\)']],
-  displayMath: [ ['$$','$$'], ['\[','\]']],
+  displayMath: [ ['$$','$$'] ],
   processEscapes: true
   }
 });
