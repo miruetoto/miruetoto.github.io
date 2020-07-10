@@ -2,6 +2,10 @@
 MathJax.Hub.Config({
 TeX: {
 extensions: ["AMSmath.js", "AMSsymbols.js","autobold.js"]
+    Macros: {
+      RR: "{\\bf R}",
+      bold: ["{\\bf #1}",1]
+    }
 },
 tex2jax: {
   inlineMath: [['$','$'], ['\\(','\\)']],
