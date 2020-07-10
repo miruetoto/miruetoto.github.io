@@ -4,8 +4,8 @@ TeX: {
 extensions: ["AMSmath.js", "AMSsymbols.js","autobold.js"]
 },
 tex2jax: {
-  inlineMath: [['$','$'], ['\\(','\\)']],
-  displayMath: [ ['$$','$$']],
+  inlineMath: [['$','$']],
+  displayMath:  [ ['$$','$$'], ['\[','\]'] ],
   processEscapes: true
   }
 });
