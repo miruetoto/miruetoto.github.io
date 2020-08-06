@@ -1,7 +1,3 @@
-###########################################################################
-###########################################################################
-###########################################################################
-
 pkgs<-c(
 	"tidyverse",
 	"lubridate",
@@ -14,10 +10,6 @@ pkgs<-c(
 not_installed_packages <- pkgs[ (  pkgs %in% installed.packages()[,1]  ) == 0]
 install.packages(not_installed_packages,repos="https://cran.rstudio.com/")
 for(i in pkgs) library(i,character.only = T)
-
-###########################################################################
-###########################################################################
-###########################################################################
 
 ### funstions such that length of funtions names = 3
 # clv is clean variable name 
@@ -64,21 +56,15 @@ mms<-function(vector,range=c(0,1)){
 	vectorshift/max(vectorshift)*range[2]
 }
 
-###########################################################################
-###########################################################################
-###########################################################################
+#
+info<-function(x){
+  print(str_c("len: " len(x)))
+  print(str_c("dim: " dim(x)))
+  print(str_c("mode: " mode(x)))
+  print(str_c("type: " type(x)))
+}
 
-### funstions such that length of funtions names = 5 
-# make product space : sprod in python 
-# sprod<-function(index){
-
-# }
-
-###########################################################################
-###########################################################################
-###########################################################################
-
-### ggplots
+# ggplots
 myggplot<-function(...){
   ggplot(...)+theme(
          axis.title.x=element_blank(),
