@@ -59,7 +59,7 @@ mms<-function(vector,range=c(0,1)){
 #
 info<-function(x){
   print("mode");print(mode(x))
-  print("type");print(type(x))
+  print("class");print(class(x))
   print("len");print(len(x))
   print("dim");print(dim(x))
 }
