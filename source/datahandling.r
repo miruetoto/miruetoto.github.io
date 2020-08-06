@@ -58,10 +58,10 @@ mms<-function(vector,range=c(0,1)){
 
 #
 info<-function(x){
-  print(str_c("len: ", len(x)))
-  print(str_c("dim: ", dim(x)))
-  print(str_c("mode: ", mode(x)))
-  print(str_c("type: ", type(x)))
+  print("mode");print(mode(x))
+  print("type");print(type(x))
+  print("len");print(len(x))
+  print("dim");print(dim(x))
 }
 
 # ggplots
