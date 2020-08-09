@@ -16,7 +16,7 @@ def checkgpu(mode=1):
         try: torch.cuda.get_device_name(0)
         except AssertionError as e: print('GPU check 4 Pytorch: ')
         else: print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
-    else: print("mode=1: tensorflow(default) / mode=2: pytorch") 
+    else: print("Type correct mode. Note that 'mode=1' means tensorflow(default) and 'mode=2' means pytorch") 
 
 ############################## python functions ##############################
 def cc(start=0,end=1,samplingFreq=1):
