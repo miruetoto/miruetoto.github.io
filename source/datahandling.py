@@ -12,7 +12,9 @@ def checkgpu():
     import tensorflow as tf 
     print('GPU check 4 TensorFlow: '+ str(tf.test.gpu_device_name()))
     import torch
-    print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
+    try: torch.cuda.get_device_name(0)
+    except AssertionError as e: print('GPU check 4 Pytorch: ')
+    else: print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
 
 ############################## python functions ##############################
 def cc(start=0,end=1,samplingFreq=1):
