@@ -7,10 +7,12 @@ import warnings
 ############################## python system ##############################
 warnings.filterwarnings(action='ignore')
 
-def checkgpu():
+def tfgpu():
     ## 5. Check GPU
     import tensorflow as tf 
     print('GPU check 4 TensorFlow: '+ str(tf.test.gpu_device_name()))
+
+def torchgpu():
     import torch
     try: torch.cuda.get_device_name(0)
     except AssertionError as e: print('GPU check 4 Pytorch: ')
