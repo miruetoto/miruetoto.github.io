@@ -10,7 +10,7 @@ warnings.filterwarnings(action='ignore')
 def checkgpu():
     ## 5. Check GPU
     import tensorflow as tf 
-    print('GPU check 4 Tensorflow: '+ str(tf.test.gpu_device_name())
+    print('GPU check 4 Tensorflow: '+ str(tf.test.gpu_device_name()))
     import torch
     print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
 
