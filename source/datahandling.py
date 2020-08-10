@@ -7,12 +7,16 @@ import warnings
 ############################## python system ##############################
 warnings.filterwarnings(action='ignore')
 
-def checkgpu():
-    ## 5. Check GPU
-    from keras import backend as K
-    print('GPU check 4 Keras: '+ str(K.tensorflow_backend._get_available_gpus()))
-    import torch
-    print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
+def checkgpu(mode=1):
+    if mode==1:
+        import tensorflow as tf 
+        print('GPU check 4 TensorFlow: '+ str(tf.test.gpu_device_name()))
+    elif mode==2:
+        import torch
+        try: torch.cuda.get_device_name(0)
+        except AssertionError as e: print('GPU check 4 Pytorch: ')
+        else: print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
+    else: print("Type correct mode. Note that 'mode=1' means tensorflow(default) and 'mode=2' means pytorch") 
 
 ############################## python functions ##############################
 def cc(start=0,end=1,samplingFreq=1):
