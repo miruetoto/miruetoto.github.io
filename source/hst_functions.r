@@ -137,6 +137,7 @@ vis4wc<-function(V,W,step=30,
          vertex.shape="none",vertex.label.degree=-pi/2,
          edge.color=Ecol,edge.lty=Elty,edge.curved=Ecurved)
     #dev.off()
+    wc
 }
 
 vis4mcu3d<-function(V,W,f,hh,maxtau){
