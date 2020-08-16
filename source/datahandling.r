@@ -63,7 +63,7 @@ info<-function(x){
 
 # ggplots
 myggplot<-function(...){
-  ggplot(...)+theme_void()+theme(
+  ggplot(...)+theme_bw()+theme(
          axis.title.x=element_blank(),
          axis.title.y=element_blank(),
          axis.text.y=element_text(family="Times",face="bold.italic",colour="blue"),
