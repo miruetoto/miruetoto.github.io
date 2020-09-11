@@ -287,9 +287,11 @@ savedecomposeplots<-function(f,W,V=1:length(f),textsizethresh=30){
         textsize<-(textalpha/sd(textalpha)>1 & abs(fhat)>textsizethresh)*3
         componentsplt[[k]]<-ggplot(data.frame(V=V,fhat=fhat),aes(1:n,fhat))+
                             ylab("")+xlab("")+theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-                            geom_line(lty=2)+geom_point()+geom_hline(aes(yintercept=0),col=2,lty=3,lwd=0.5)+
+                            geom_line(lty=2,col="gray60")+geom_point()+geom_hline(aes(yintercept=0),col=2,lty=3,lwd=0.5)+
                             geom_text_repel(aes(label=V),fontface=4,size=textsize,alpha=1)+
-                            theme(axis.ticks.x=element_blank(),axis.text.x=element_blank())+ggtitle(str_c("component ",k))+theme_classic()
+                            theme(axis.ticks.x=element_blank(),axis.text.x=element_blank())+
+                            ggtitle(str_c("component ",k,", lambda=",round(λinverse[k],2),", power=",round(sum(fhat^2),3)))+
+                            theme_classic()
     }
     componentsplt
 }
