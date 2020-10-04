@@ -143,7 +143,7 @@ def datavis4sct(v1,v2,nodename=None,groupindex=None,
             if text!=None: ax.text(v1[i-1],v2[i-1],'%s'% nodename[i-1], **style) # numbering index of nodes 
         rtn=Fig 
     rtn.savefig(figname+'.pdf')
- 
+
 def pca4vis3d(Σ,nodename=None,groupindex=None,
            figname='temp',title=None,figsize=(1,1),dpi=1,cex=1,
            xlim=None,ylim=None,zlim=None,text=None,fade=0.5,
