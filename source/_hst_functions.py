@@ -46,7 +46,7 @@ def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
 def hhmat(hstresult):
     τ=int((hstresult.shape[1]-2))
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
-    return rtn 
+    return rtn
 
 def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
     hhlike=np.array(hhlike)
@@ -197,7 +197,7 @@ def pca4vis3d(Σ,nodename=None,groupindex=None,
         if prnt==True: print('\n'+'end')
     Fig.savefig(figname+'.pdf')
     rtn=Fig
-    
+
 def pca4msvis3d(hstresult,τlist,
               nodename=None,groupindex=None,
               figname='temp',figsize=(1,1),dpi=1,cex=1,text=None,fade=1,
