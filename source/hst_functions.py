@@ -1,47 +1,56 @@
-### 1. hst: calculation
-def hst1walk(f,W,u,b,binit,γ,p0): #supporting hst
-    d=m2a(apply(W,'np.sum'))
-    rtn=f.copy()
-    n=len(rtn)
-    # 1. f(u) <- f(u)+b : update current node 
-    rtn[u]=rtn[u]+b
-    # 2. check that: are there any nodes to which snow can flow from u. 
-    Nu=np.where(W[u,:]>0)[1] ## Nu is np.array
-    if len(Nu)==0: Uu=np.array([])
-    else: Uu=Nu[list((np.where(rtn[Nu]<=rtn[u]))[0])]
-    # 3. check Uu=emptyset 
-    if len(Uu)==0: 
-        v=a2s(np.random.choice(n, 1, p=p0))
-        b=binit
-    else:
-        v=a2s(np.random.choice(list(Uu),1))
-        b=b*γ
-    return [rtn,b,v]
+### 1. hst 
+def hst(f,W,V,τ,fluidity=20): #samefunction with hst1realization except print
+    #from random import sample
 
-def hst(gdata,τ,b,γ=1): #samefunction with hst1realization except print
-    from random import sample     
-    vname=gdata[0]
-    E=gdata[1]
-    W=gdata[2]    
-    f=gdata[3]
     n=len(f)
-    binit=b
-    d=m2a(apply(W,'np.sum'))
-    p0=d/sum(d)
-    u=a2s(np.random.choice(n, 1, p=p0))
-    rtn=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
-    rtn['Nodename(=v)']=vname
-    rtn['h0']=f
+    b=m2s(np.sort(f,axis=0)[1]-np.sort(f,axis=0)[0])
+    E=W>0
+    trajectory = cc(0,τ)*0
+    flowcount= cc(0,τ)*0
+    
+    # 1. calculate π0, i.e.,  
+    d=np.sum(np.array(W),0)
+    π0=d/np.sum(d) ## stationary dist
+    
+    # 2. Define hst_onewalk function 
+    def hst_onewalk(h,W,currentnode,flowcount): #supporting hst
+        hnext=h.copy()
+        # 1. h(u) <- h(u)+b : update current node 
+        hnext[currentnode]=hnext[currentnode]+b
+        # 2. check that: are there any nodes to which snow can flow from u. 
+        neighbor=np.where(W[currentnode,:]>0)[1] ## Nu is np.array
+        if len(neighbor)==0: downstream=np.array([])
+        else: downstream=neighbor[list((np.where(hnext[neighbor]<=hnext[currentnode]))[0])]
+        # 3. check flowable 
+        flowable = len(downstream)>0 and flowcount < fluidity 
+        # 4. determine flow or block
+        if flowable==0: # block!
+            nextnode=a2s(np.random.choice(n, 1, p=π0))
+            flowcount=0
+        else: #flow
+            nextnode=a2s(np.random.choice(list(downstream),1))
+            flowcount=flowcount+1
+        return [hnext,flowcount,nextnode]
+   
+    # 2. h^0
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
+    trajectory[0]=a2s(np.random.choice(n,1,p=π0)) # first node 
+    flowcount[0]=0 
+    hst_results=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
+    hst_results['Nodename(=v)']=V
+    hst_results['h0']=f    
+    
+    # 3. h^1 ~ h^τ
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
-        Wtemp=W>init('u',(n,n))
-        hstwalkrslt=hst1walk(f=rtn['h'+str(ℓ-1)],W=Wtemp,u=u,b=b,binit=binit,γ=γ,p0=p0)
-        rtn['h'+str(ℓ)]=hstwalkrslt[0]
-        b=hstwalkrslt[1]
-        u=hstwalkrslt[2]
+        Wthreshed=W>init('u',(n,n))
+        hstwalkrslt=hst_onewalk(h=hst_results['h'+str(ℓ-1)],W=Wthreshed,currentnode=trajectory[ℓ-1],flowcount=flowcount[ℓ-1])
+        hst_results['h'+str(ℓ)]=hstwalkrslt[0]
+        flowcount[ℓ]=hstwalkrslt[1]
+        trajectory[ℓ]=hstwalkrslt[2]
     print('\n'+'hst end')
-    return rtn
+    
+    return hst_results
 
 def hhmat(hstresult):
     τ=int((hstresult.shape[1]-2))
