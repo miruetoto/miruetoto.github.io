@@ -4,6 +4,7 @@ def hst(f,W,V,τ,fluidity=20): #samefunction with hst1realization except print
 
     n=len(f)
     b=m2s(np.sort(f,axis=0)[1]-np.sort(f,axis=0)[0])
+    if b==0: b=1
     E=W>0
     trajectory = cc(0,τ)*0
     flowcount= cc(0,τ)*0
