@@ -29,4 +29,11 @@ P(n)
 \begin{align}
 \|\pi(1)-\pi(0)\|
 \end{align}
-는 $\pi(1)-\pi(0)$라는 행벡터의 모든 원소의 합과 같다. 
+는 $\pi(1)-\pi(0)$라는 행벡터의 모든 원소의 합과 같다. 아무튼 아래와 같은 차이열을 구했으면 
+\begin{align}
+\|\pi(1)-\pi(0)\|,\|\pi(2)-\pi(1)\|\dots
+\end{align}
+이제 해야할 일은 위의 차이열의 모든합이 유한하다는 것을 증명해야 한다. 즉 아래를 보여야 한다. 
+\begin{align}
+\sum_{n=0}^{\infty}\|\pi(n+1)-\pi(n)\|<\infty
+\end{align}
