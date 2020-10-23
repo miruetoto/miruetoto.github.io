@@ -281,7 +281,7 @@ def init(typ,dim):
 # - 데이터프레임형태의 입력은 받지 않도록 한다. 데이터프레임형태의 입려은 판다스에 내장된 .transform 메소드를 사용하는것이 더 나음. 
 # - 왜냐하면 데이터프레임->매트릭스로의 변환이 자유롭지 않기 때문에 이로 인한 오류가 발생할 수 있음. 
 
-def transform(X,fun,show=True):
+def transform(X,fun,show=False):
     Xmat=np.asmatrix(X)
     # identifying dim of input X
     if Xmat.shape[0]==1 and Xmat.shape[1]==1: Xtype='scala'
@@ -321,7 +321,7 @@ def transform(X,fun,show=True):
 # - 데이터프레임형태의 입력은 받지 않도록 한다. 이 경우는 판다스에 내장된 .apply 메소드를 사용하는것이 더 나음. 
 # - 특히 데이터프레임->매트릭스로의 변환이 자유롭지 않아 여기에서 에러가 발생할 수 있다. 
 # - 입력의 형태는 매트릭스로 고정한다. 벡터나 스칼라 입력은 받지않는다. 이 경우 apply 를 쓸 이유 자체가 없음. 
-def apply(X,fun,axis=0,show=True):     # axis=0: column-wise / axis=1: row-wise. 
+def apply(X,fun,axis=0,show=False):     # axis=0: column-wise / axis=1: row-wise. 
     Xmat=np.asmatrix(X)
     # identifying dim of input X
     if Xmat.shape[0]==1 and Xmat.shape[1]==1: Xtype='scala'
