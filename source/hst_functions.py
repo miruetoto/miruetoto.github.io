@@ -59,7 +59,7 @@ def hhmat(hstresult):
 def hmat(hstresult):
     τ=int((hstresult.shape[1]-2))
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
-    rtn=
+    rtn=rtn-apply(rtn,"np.mean",axis=1)
     return rtn
 
 def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
@@ -217,7 +217,7 @@ def pca4msvis3d(hstresult,τlist,
               figname='temp',figsize=(1,1),dpi=1,cex=1,text=None,fade=1,
               prnt=False,logscale=(False,False,False)): # size=(size of obs representation, size of text which represent obs index)
     Σresult=τlist.copy()
-    hh=hhmat(hstresult)
+    hh=hmat(hstresult)
     M=len(τlist)
     from sklearn.decomposition import PCA 
     pca=PCA(n_components=3) # PCA start 
