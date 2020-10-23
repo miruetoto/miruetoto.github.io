@@ -24,16 +24,16 @@ def hst(f,W,V,τ,b,fluidity=20): #samefunction with hst1realization except print
         flowable = len(downstream)>0 and flowcount < fluidity 
         # 4. determine flow or block
         if flowable==0: # block!
-            nextnode=a2s(np.random.choice(n, 1, p=π0))
+            nextnode=np.asscalar(np.random.choice(n, 1, p=π0))
             flowcount=0
         else: #flow
-            nextnode=a2s(np.random.choice(list(downstream),1))
+            nextnode=np.asscalar(np.random.choice(list(downstream),1))
             flowcount=flowcount+1
         return [hnext,flowcount,nextnode]
    
     # 2. h^0
     print('hst start (' +'τ='+str(τ)+', b='+str(b)+')')
-    trajectory[0]=a2s(np.random.choice(n,1,p=π0)) # first node 
+    trajectory[0]=np.asscalar(np.random.choice(n,1,p=π0)) # first node 
     flowcount[0]=0 
     hst_results=initpd("0",n=n,p=2,vname=['Nodename(=v)','h0'])
     hst_results['Nodename(=v)']=V
