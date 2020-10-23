@@ -56,6 +56,12 @@ def hhmat(hstresult):
     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
     return rtn
 
+def hmat(hstresult):
+    τ=int((hstresult.shape[1]-2))
+    rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
+    rtn=
+    return rtn
+
 def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p 
     hhlike=np.array(hhlike)
     n=len(hhlike)
