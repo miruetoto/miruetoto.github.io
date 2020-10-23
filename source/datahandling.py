@@ -321,7 +321,7 @@ def transform(X,fun,show=False):
 # - 데이터프레임형태의 입력은 받지 않도록 한다. 이 경우는 판다스에 내장된 .apply 메소드를 사용하는것이 더 나음. 
 # - 특히 데이터프레임->매트릭스로의 변환이 자유롭지 않아 여기에서 에러가 발생할 수 있다. 
 # - 입력의 형태는 매트릭스로 고정한다. 벡터나 스칼라 입력은 받지않는다. 이 경우 apply 를 쓸 이유 자체가 없음. 
-def apply(X,fun,axis=0,show=False):     # axis=0: column-wise / axis=1: row-wise. 
+def apply(X,fun,axis="down",show=False):     # axis=down: column-wise / axis=right: row-wise. 
     Xmat=np.asmatrix(X)
     # identifying dim of input X
     if Xmat.shape[0]==1 and Xmat.shape[1]==1: Xtype='scala'
@@ -339,30 +339,30 @@ def apply(X,fun,axis=0,show=False):     # axis=0: column-wise / axis=1: row-wise
     if resultoftest.shape[0]>1 and resultoftest.shape[1]>1: funtype='array2matrix'
     
     # axis=0: column-wise
-    if axis==0 and Xtype=='matrix' and funtype=='array2scala':
+    if axis=="down" and Xtype=='matrix' and funtype=='array2scala':
         disp=pd.DataFrame(Xmat)
         rtn=eval('disp.apply('+fun+')')
         disp=disp.T
         disp['result']=rtn
         rtn=np.asmatrix(rtn)
         disp=disp.T
-    elif axis==0 and Xtype=='matrix' and funtype=='array2array':
+    elif axis=="down" and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).apply('+fun+'))')
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
-    elif axis==0 and Xtype=='matrix' and funtype=='array2matrix':
+    elif axis=="down" and Xtype=='matrix' and funtype=='array2matrix':
         print('The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.')
         rtn=Xmat
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
         
-    # axis=1: row-wise
-    elif axis==1 and Xtype=='matrix' and funtype=='array2scala':
+    # axis="right": row-wise
+    elif axis=="right" and Xtype=='matrix' and funtype=='array2scala':
         disp=pd.DataFrame(Xmat)
         disp['result']=eval('disp.apply('+fun+',axis=1)')
         rtn=np.asmatrix(disp['result']).T
-    elif axis==1 and Xtype=='matrix' and funtype=='array2array':
+    elif axis=="right" and Xtype=='matrix' and funtype=='array2array':
         rtn=eval('np.asmatrix(pd.DataFrame(Xmat).T.apply('+fun+')).T')
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
-    elif axis==1 and Xtype=='matrix' and funtype=='array2matrix':
+    elif axis=="right" and Xtype=='matrix' and funtype=='array2matrix':
         print('The "array2matrix" type operator is not supported. Since no operation is performed, the output value is the same as the input value.')
         rtn=Xmat
         disp=pd.concat([pd.DataFrame(Xmat),pd.DataFrame(rtn)],keys=['input','result'])
