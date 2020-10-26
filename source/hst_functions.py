@@ -51,10 +51,10 @@ def hst(f,W,V,τ,b,fluidity=20): #samefunction with hst1realization except print
     
     return hst_results
 
-def hhmat(hstresult):
-    τ=int((hstresult.shape[1]-2))
-    rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
-    return rtn
+# def hhmat(hstresult):
+#     τ=int((hstresult.shape[1]-2))
+#     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
+#     return rtn
 
 def hmat(hstresult):
     τ=int((hstresult.shape[1]-2))
