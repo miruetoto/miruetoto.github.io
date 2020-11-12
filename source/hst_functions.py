@@ -51,10 +51,10 @@ def hst(f,W,V,τ,b,fluidity=20): #samefunction with hst1realization except print
     
     return hst_results
 
-# def hhmat(hstresult):
-#     τ=int((hstresult.shape[1]-2))
-#     rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
-#     return rtn
+def hhmat(hstresult):
+    τ=int((hstresult.shape[1]-2))
+    rtn=np.asmatrix(hstresult[sprod('h',cc(0,τ))])
+    return rtn
 
 def hmat(hstresult):
     τ=int((hstresult.shape[1]-2))
@@ -77,7 +77,6 @@ def L2dist(hhlike,prnt=False): #supporting snowdist, #hh:=n*p
     return np.asmatrix(rtn)
 
 def Sigma(hh,τmax=None,prnt=False): 
-    #hh=hhmat(hstresult)
     if τmax==None: rtn=L2dist(hh,prnt=prnt)
     else: rtn=L2dist(hh[:,0:(τmax+1)],prnt=prnt)
     return rtn
