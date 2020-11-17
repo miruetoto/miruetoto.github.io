@@ -1,5 +1,5 @@
 ### 1. hst 
-def hst(f,W,V,τ,b,γ=0.49,T=20): #samefunction with hst1realization except print
+def hst(f,W,V,τ,b,γ=0.49,T=200000000): #samefunction with hst1realization except print
     #from random import sample
 
     n=len(f)
@@ -43,7 +43,7 @@ def hst(f,W,V,τ,b,γ=0.49,T=20): #samefunction with hst1realization except prin
     for ℓ in cc(1,τ): 
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
         Wthreshed=W>init('u',(n,n))
-        hstwalkrslt=hst_onewalk(h=hst_results['h'+str(ℓ-1)],W=Wthreshed,b=b**flowcount[ℓ-1], currentnode=trajectory[ℓ-1],flowcount=flowcount[ℓ-1])
+        hstwalkrslt=hst_onewalk(h=hst_results['h'+str(ℓ-1)],W=Wthreshed,b=b*γ**flowcount[ℓ-1], currentnode=trajectory[ℓ-1],flowcount=flowcount[ℓ-1])
         hst_results['h'+str(ℓ)]=hstwalkrslt[0]
         flowcount[ℓ]=hstwalkrslt[1]
         trajectory[ℓ]=hstwalkrslt[2]
