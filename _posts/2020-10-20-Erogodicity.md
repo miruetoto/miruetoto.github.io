@@ -11,7 +11,7 @@ title : (정리) 에르고디시티
 
 ### Measure-preserving mapping 
 
-- 확률공간 $(\Omega,{\cal F},P)$를 정의하자. 
+- 확률공간 $(\Omega,{\cal F},P)$를 정의하자. 그리고 메저러블한 변환 $T:\Omega\to\Omega$를 정의하자.
 
 - 아래와 같은 역변환쌍을 정의하자. 
 \begin{align}
