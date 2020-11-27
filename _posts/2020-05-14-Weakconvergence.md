@@ -1,6 +1,6 @@
 ---
 layout : post 
-title : (정리) 분포수렴과 확률수렴
+title : (정리) 분포수렴
 ---
 ### About this doc
 
@@ -85,33 +85,3 @@ at all continuity points $y$ of $F$.
 (2) [$\dots$]의 내용을 이용하면 $F_n(\cdot)$의 극한 $G(\cdot)$도 점프가 기껏해야 유한개임을 쉽게 유추할 수 있다. <br/>
 (3) 점프가 있는 곳에서 $G(\cdot)$가 오른쪽 연속이 아닐수도 있는데 이를 오른쪽 연속이 되도록 수정하면 $G(\cdot)$과 기껏해야 유한개의 점에서만 함수값이 차이는 새로운 함수 $F(\cdot)$을 만들 수 있다. 
 
-### 확률수렴 
-
-- (정리 5.2.1) 확률변수열 $Y_n$의 극한분포가 상수 $c$의 분포일 조건은 아래와 같다. 
-\begin{align}
-Y_n \overset{d}{\to} Y , \quad P(Y=c)=1 \Longleftrightarrow \lim_{n\to\infty} P(|Y_n-c|\leq \epsilon)=0,~ \forall epsilon>0
-\end{align}
-
-- (정의) 확률변수열 $Y_n$이 어떠한 상수 $c$로 수렴한다는 의미는 아래와 같다. 
-\begin{align}
-Y_n \overset{p}{\to} c \overset{def}{\Longleftrightarrow} \lim_{n\to\infty}P(\|X_n-c\|\leq \epsilon)=0, ~ \forall \epsilon>0
-\end{align}
-
-- (대수의법칙) $X_1,X_2,\dots$ 이 *iid*이고 $E|X_1|<\infty$이면 아래가 성립한다. 
-\begin{align}
-\frac{1}{n}\sum_{i=1}^{n}X_i \to EX_1
-\end{align}
-
-- (정리 5.2.3) $k$-차원 확률벡터열을 아래와 같이 정의하자. 
-\begin{align}
-\boldsymbol{Y}_ n=\begin{bmatrix}
-Y_{n1} \\\\ \\
-Y_{n2} \\\\ \\
-\dots \\\\ \\
-Y_{nk}
-\end{bmatrix}
-\end{align}
-아래의 조건들은 동치이다. 
-\begin{align}
-\boldsymbol{Y}_ 1
-\end{align}
