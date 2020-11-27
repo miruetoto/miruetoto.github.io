@@ -4,9 +4,9 @@ pkgs<-c(
     "ggplot2",
     "ggforce",
     "ggrepel",
-    "igraph",
-    "plot3D",
-    "MBA"
+    "igraph"
+#    "plot3D",
+#    "MBA"
     )
 not_installed_packages <- pkgs[ (  pkgs %in% installed.packages()[,1]  ) == 0]
 install.packages(not_installed_packages,repos="https://cran.rstudio.com/")
