@@ -7,16 +7,16 @@ import warnings
 ############################## python system ##############################
 warnings.filterwarnings(action='ignore')
 
-def checkgpu(mode=1):
-    if mode==1:
-        import tensorflow as tf 
-        print('GPU check 4 TensorFlow: '+ str(tf.test.gpu_device_name()))
-    elif mode==2:
-        import torch
-        try: torch.cuda.get_device_name(0)
-        except AssertionError as e: print('GPU check 4 Pytorch: ')
-        else: print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
-    else: print("Type correct mode. Note that 'mode=1' means tensorflow(default) and 'mode=2' means pytorch") 
+# def checkgpu(mode=1):
+#     if mode==1:
+#         import tensorflow as tf 
+#         print('GPU check 4 TensorFlow: '+ str(tf.test.gpu_device_name()))
+#     elif mode==2:
+#         import torch
+#         try: torch.cuda.get_device_name(0)
+#         except AssertionError as e: print('GPU check 4 Pytorch: ')
+#         else: print('GPU check 4 Pytorch: '+ str(torch.cuda.get_device_name(0)))
+#     else: print("Type correct mode. Note that 'mode=1' means tensorflow(default) and 'mode=2' means pytorch") 
 
 ############################## python functions ##############################
 def cc(start=0,end=1,samplingFreq=1):
@@ -427,6 +427,9 @@ def initpd(typ,n,p=1,vname=None):
     rtn.columns=vname
     return rtn   
 
+def ids(pddata):
+    push(pddata.columns,"vname")
+    print(r2p(ro.r("str_c(str_c('(',str_c(1:length(vname)-1),') ',vname),collapse='\n')"))[0])
 
 ############################## Interaction between R and python ##############################
 
@@ -517,12 +520,8 @@ def r2p(A):
 def pull(r):
     return r2p(ro.globalenv[r])
 
-def ids(pddata):
-    push(pddata.columns,"vname")
-    print(r2p(ro.r("str_c(str_c('(',str_c(1:length(vname)-1),') ',vname),collapse='\n')"))[0])
-
-
 ### plots 
-## python 
-import matplotlib as mpl 
+#import matplotlib as mpl 
 import matplotlib.pyplot as plt 
+from matplotlib.pyplot import plot 
+from matplotlib.pyplot import imshow

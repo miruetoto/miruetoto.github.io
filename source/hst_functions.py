@@ -1,5 +1,5 @@
 ### 1. hst 
-def hst(f,W,V,τ,b,γ=0.49,T=200000000): #samefunction with hst1realization except print
+def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization except print
     #from random import sample
 
     n=len(f)
@@ -25,6 +25,7 @@ def hst(f,W,V,τ,b,γ=0.49,T=200000000): #samefunction with hst1realization exce
         # 4. determine flow or block
         if flowable==0: # block!
             nextnode=np.asscalar(np.random.choice(n, 1, p=π0))
+            hnext[currentnode]=hnext[currentnode]+b ### important!! update current node again
             flowcount=0
         else: #flow
             nextnode=np.asscalar(np.random.choice(list(downstream),1))
