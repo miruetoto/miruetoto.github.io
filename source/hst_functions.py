@@ -24,7 +24,7 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
         flowable = len(downstream)>0 and flowcount < T 
         # 4. determine flow or block
         if flowable==0: # block!
-            hnext[currentnode]=hnext[currentnode]+b ### important!! update current node again
+            #hnext[currentnode]=hnext[currentnode]+b ### important!! update current node again
             _node0=np.asscalar(np.random.choice(n, 1, p=π0))
             _neighbor=np.where(W[_node0,:]>0)[1] 
             _downstream=_neighbor[list((np.where(hnext[_neighbor]<=hnext[_node0]))[0])]
