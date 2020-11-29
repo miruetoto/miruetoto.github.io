@@ -15,7 +15,7 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
     def hst_onewalk(h,W,b,currentnode,flowcount): #supporting hst
         hnext=h.copy()
         # 1. h(u) <- h(u)+b : update current node when flowcound > 0 
-        hnext[currentnode]=hnext[currentnode]+b*(flowcount>0)
+        hnext[currentnode]=hnext[currentnode]+b
         # 2. check that: are there any nodes to which snow can flow from u. 
         neighbor=np.where(W[currentnode,:]>0)[1] ## Nu is np.array
         if len(neighbor)==0: downstream=np.array([])
@@ -24,8 +24,12 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
         flowable = len(downstream)>0 and flowcount < T 
         # 4. determine flow or block
         if flowable==0: # block!
-            nextnode=np.asscalar(np.random.choice(n, 1, p=π0))
             hnext[currentnode]=hnext[currentnode]+b ### important!! update current node again
+            node0_=np.asscalar(np.random.choice(n, 1, p=π0))
+            neighbor_=np.where(W[node0_,:]>0)[1] ## Nu is np.array
+            if len(neighbor_)==0: downstream_=np.array([])
+            else: downstream_=neighbor_[list((np.where(hnext[neighbor_]<=hnext[node0_]))[0])]
+            nextnode=np.asscalar(np.random.choice(list(downstream_),1))
             flowcount=0
         else: #flow
             nextnode=np.asscalar(np.random.choice(list(downstream),1))
