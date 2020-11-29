@@ -25,11 +25,7 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
         # 4. determine flow or block
         if flowable==0: # block!
             hnext[currentnode]=hnext[currentnode]+b ### important!! update current node again
-            node0_=np.asscalar(np.random.choice(n, 1, p=π0))
-            neighbor_=np.where(W[node0_,:]>0)[1] ## Nu is np.array
-            if len(neighbor_)==0: downstream_=np.array([])
-            else: downstream_=neighbor_[list((np.where(hnext[neighbor_]<=hnext[node0_]))[0])]
-            nextnode=np.asscalar(np.random.choice(list(downstream_),1))
+            nextnode=np.asscalar(np.random.choice(n, 1, p=π0))
             flowcount=0
         else: #flow
             nextnode=np.asscalar(np.random.choice(list(downstream),1))
@@ -51,6 +47,7 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
         hstwalkrslt=hst_onewalk(h=hst_results['h'+str(ℓ-1)],W=Wthreshed,b=b*γ**flowcount[ℓ-1], currentnode=trajectory[ℓ-1],flowcount=flowcount[ℓ-1])
         if (hstwalkrslt[1]>1):
             hst_results['h'+str(ℓ)]=hstwalkrslt[0]
+        else: ℓ=ℓ-1
         flowcount[ℓ]=hstwalkrslt[1]
         trajectory[ℓ]=hstwalkrslt[2]
     print('\n'+'hst end')
