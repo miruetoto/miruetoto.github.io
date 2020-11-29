@@ -14,8 +14,8 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
     # 2. Define hst_onewalk function 
     def hst_onewalk(h,W,b,currentnode,flowcount): #supporting hst
         hnext=h.copy()
-        # 1. h(u) <- h(u)+b : update current node 
-        hnext[currentnode]=hnext[currentnode]+b
+        # 1. h(u) <- h(u)+b : update current node when flowcound > 0 
+        hnext[currentnode]=hnext[currentnode]+b*(flowcount>0)
         # 2. check that: are there any nodes to which snow can flow from u. 
         neighbor=np.where(W[currentnode,:]>0)[1] ## Nu is np.array
         if len(neighbor)==0: downstream=np.array([])
