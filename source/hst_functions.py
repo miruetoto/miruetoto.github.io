@@ -45,7 +45,8 @@ def hst(f,W,V,τ,b,γ=0.5,T=999999999): #samefunction with hst1realization excep
         print('\r'+str(ℓ)+'/'+str(τ),sep='',end='')
         Wthreshed=W>init('u',(n,n))
         hstwalkrslt=hst_onewalk(h=hst_results['h'+str(ℓ-1)],W=Wthreshed,b=b*γ**flowcount[ℓ-1], currentnode=trajectory[ℓ-1],flowcount=flowcount[ℓ-1])
-        hst_results['h'+str(ℓ)]=hstwalkrslt[0]
+        if (hstwalkrslt[1]>1):
+            hst_results['h'+str(ℓ)]=hstwalkrslt[0]
         flowcount[ℓ]=hstwalkrslt[1]
         trajectory[ℓ]=hstwalkrslt[2]
     print('\n'+'hst end')
