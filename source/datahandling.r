@@ -51,7 +51,7 @@ itb<-function(n,p=1,vname=str_c('X',1:p)){
 }
 
 # minmaxscaling
-minmaxscale<-function(vector,range=c(0,1)){
+mms<-function(vector,range=c(0,1)){
 	vectorshift<-vector-min(vector)+range[1]
 	vectorshift/max(vectorshift)*range[2]
 }
