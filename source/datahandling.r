@@ -77,3 +77,14 @@ plt<-function(...){
 pltset<-function(w,h,r){
     options(repr.plot.width=w, repr.plot.height=h,repr.plot.res=r)
 }
+
+
+# substitue something
+sbt<-function(x,rule){
+    y<-x
+    n<-dim(rule)[1]
+    for(i in 1:n){
+        y[x==rule$before[i]]<-rule$after[i]
+    }
+    y
+}
