@@ -57,7 +57,7 @@ mms<-function(vector,range=c(0,1)){
 }
 
 #
-info<-function(x){
+wht<-function(x){
   print(list(mode=mode(x),class=class(x),len=len(x),dim=dim(x)))
 }
 
@@ -74,7 +74,8 @@ plt<-function(...){
         )
 }
 
-pltset<-function(w,h,r){
+# plot setting
+pst<-function(w,h,r){
     options(repr.plot.width=w, repr.plot.height=h,repr.plot.res=r)
 }
 
