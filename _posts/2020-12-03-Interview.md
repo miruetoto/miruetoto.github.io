@@ -25,23 +25,25 @@ title : (정리) 여러가지 공간들
 
 (1) 두 가지 이유가 있다. 
 	
-	- There are two reasons for applying for a professor. 
+	There are two reasons for applying for a professor. 
 
 (2) 연구욕심: 
 
 첫 번째는 좀 더 자유롭고 독립적인 연구환경을 가지고 싶은 마음이다. 
 
-	- The first reason is to want to have a more free and independent research environment.
+	The first reason is to want to have a more free and independent research environment.
 
 연구소에서 하는 연구는 본인이 연구하고 싶은것보다 회사가 원하는 연구를 해야한다. 
 
-	- In a company, I should do the research that the company wants rather than what I want to do. 
+	In a company, I should do the research that the company wants rather than what I want to do. 
 
 그에 비하여 교수는 상대적으로 독립적인 연구를 할 수 있다는 것이 매력적으로 느껴졌다. 
 
-	- It is attractive that professors can conduct their own independent research.
+	It is attractive that professors can conduct their own independent research.
 
-최근에 내가 연구하고 싶은 분야는 기하학적 딥러닝인데 임용이 된다면 이 분야에 대하여 좀 더 깊게 관심을 가지고 연구하고 싶다. (The field I want to study recently is geometric deep learning. The company is not very interested in this field. If I am appointed as a professor at Chonbuk National University, I would like to study this field.)
+최근에 내가 연구하고 싶은 분야는 기하학적 딥러닝인데 임용이 된다면 이 분야에 대하여 좀 더 깊게 관심을 가지고 연구하고 싶다. 
+	
+	The field I want to study recently is geometric deep learning. The company is not very interested in this field. If I am appointed as a professor at Chonbuk National University, I would like to study this field.
 
 (3) 교육욕심:
 
