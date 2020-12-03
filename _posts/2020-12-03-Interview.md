@@ -5,34 +5,41 @@ title : (정리) 여러가지 공간들
 
 ### 자기소개 간략한버전 
 
-자기소개: 2021년 1학기 전북대학교 통계학과에 지원한 최규빈입니다. 
+(1) 자기소개: 2021년 1학기 전북대학교 통계학과에 지원한 최규빈입니다. 
 	
 	- I am Gyubin Choi who applied to the Department of Statistics at Chonbuk National University in the first semester of 2021//twenty twentyone.
 
-감사말씀: 최종면접의 기회를 주셔서 감사합니다. 
+(2) 감사말씀: 최종면접의 기회를 주셔서 감사합니다. 
 	
 	- Thank you for giving me an interview. 
 
-이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다. 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다. 입사 이후 딥러닝 알고리즘 전반에 걸쳐서 프로젝트를 수행했고 현재는 강화학습관련 업무를 중점적으로 맡아서 하고 있습니다. 
+(3) 이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다. 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다. 입사 이후 딥러닝 알고리즘 전반에 걸쳐서 프로젝트를 수행했고 현재는 강화학습관련 업무를 중점적으로 맡아서 하고 있습니다. 
 	
 	- I got my Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ for 6 months at Seoul National University. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project. Currently, I focus on tasks related to deep learning and reinforcement learning. 
 
-** 강화학습을 하는 이유? 
+### 강화학습을 하는 이유?
+
 강화학습팀을 이끄는 상무님과 몇번 세미나를 했었는데 저를 좋게 보셔서 데려가셨다. + 저도 새로운 것을 공부하기를 좋아하는 편인데 강화학습은 제가 지금까지 공부해온 분야와 약간 다른 매력이 있어서 관심이 있었다. 빅데이터/AI 시대에 대비하여 통계학과 역시 딥러닝 관련 알고리즘에 정통해야 한다고 생각하는데 CNN, RNN 등과 같은 모형이 비하여 강화학습은 깊게 공부할 기회가 없을 것 같다고 생각했는데 새로운 것을 배울 좋은 기회라 생각했다. 
 
-# 교수 지원 이유? 
+### 교수 지원 이유? 
 
-(1) 두 가지 이유가 있다. (There are two reasons for applying for a professor.)
+(1) 두 가지 이유가 있다. 
+	
+	- There are two reasons for applying for a professor. 
 
-(2) 연구욕심:
+(2) 연구욕심: 
+
 첫 번째는 좀 더 자유롭고 독립적인 연구환경을 가지고 싶은 마음이다. 
-(The first reason is to want to have a more free and independent research environment.)
+
+	- The first reason is to want to have a more free and independent research environment.
 
 연구소에서 하는 연구는 본인이 연구하고 싶은것보다 회사가 원하는 연구를 해야한다. 
-(In a company, I should do the research that the company wants rather than what I want to do.)
+
+	- In a company, I should do the research that the company wants rather than what I want to do. 
 
 그에 비하여 교수는 상대적으로 독립적인 연구를 할 수 있다는 것이 매력적으로 느껴졌다. 
-(It is attractive that professors can conduct their own independent research.)
+
+	- It is attractive that professors can conduct their own independent research.
 
 최근에 내가 연구하고 싶은 분야는 기하학적 딥러닝인데 임용이 된다면 이 분야에 대하여 좀 더 깊게 관심을 가지고 연구하고 싶다. (The field I want to study recently is geometric deep learning. The company is not very interested in this field. If I am appointed as a professor at Chonbuk National University, I would like to study this field.)
 
