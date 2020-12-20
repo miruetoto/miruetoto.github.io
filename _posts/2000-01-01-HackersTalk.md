@@ -25,11 +25,12 @@ I'm used to my government betraying me. (심슨)
 ### I'm not saying(telling) $\sim$ 
 
 - `I'm not saying`은 뒤에 `주어+동사`를 연결할 수 있어서 편리한 표현이다.  
-- `주어+동사`를 연결하는것보다 `주어+to V`를 연결하는 것이 더 자연스럽고 간단해 보일 수 있다. 하지만 둘다 맞는 표현이다. 
+- `주어+동사`를 연결하는것보다 `주어+to V`를 연결하는 것이 더 자연스럽고 간단해 보일 수 있다. 
 ```
 I'm not telling you to be the perfect person.
 I'm not saying you should be the perfect person. 
 ```
+물론 둘다 맞는 표현이다. 
 
 ### I'm 
 
