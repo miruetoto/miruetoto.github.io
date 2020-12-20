@@ -43,7 +43,6 @@ I was no longer there.
 I was no longer working. 
 I was no longer interested. 
 ```
-위에서부터 명사, 형용사, 부사, 현재분사, 과거분사. 
 
 - 나의표현:  
 ```
@@ -112,7 +111,7 @@ There is a possibility that you don't know.
 
 ### There is something $\sim$ 
 
-- 한국말로는 `한가지 $\sim$해야 하는게 있어`의 뉘앙스.  
+- 한국말로는 `한가지 ~ 해야 하는게 있어`의 뉘앙스.  
 
 - 예시 
 ```
@@ -137,4 +136,46 @@ I haven't seen the memo.
 
 ### I have come to $\sim$ 
 
-- 
+- 뭔가 쉬운표현같은데 현재완료형이어서 그런지 잘 안쓰게된다. 
+
+- 표현 
+```
+I have come to learn. 
+I have come to help. 
+I have come to see you.
+I have come to take you home. 
+```
+등. 
+
+### I have decided to $\sim$ 
+
+- 막 $\sim$ 하기로 결심한것이니까 현재완료형으로 써야함. 
+
+- 뒤에 `decided`에서 `디드`를 명확하게 발음해야하는 것에 유의하자. `have decide`처럼 발음하지 않게 유의하자. 
+
+- 표현
+```
+I have decided to take it. 
+```
+뭔가를 받아들이기로 했다라는 표현. 
+```
+I have decided to take J's behavior. 
+```
+
+### It has nothing to do with $\sim$
+
+- 상관없다라는 표현. 
+
+- 예제 
+```
+It has nothing to do with money.  
+```
+돈 문제는 아니란뜻. 
+
+- 나의 표현 
+```
+The reason for being a professor has nothing to do with money.
+```
+돈 때문에 교수가 되려는 것은 아니야. 
+
+### 
