@@ -178,4 +178,83 @@ The reason for being a professor has nothing to do with money.
 ```
 돈 때문에 교수가 되려는 것은 아니야. 
 
-### 
+### I don't think I should $\sim$ 
+
+- $\sim$ 해야한다고 생각하진 않아. 즉 $\sim$하면 안될것 같아. 
+
+- 예제 
+```
+I don't think I should say it. 
+I don't think I should eat this. 
+```
+
+### Don't even think about $\sim$ 
+
+- $\sim$할 생각도 하지마. 
+
+- 주로 `동명사`를 받는다. 
+```
+Don't even think about leaving. 
+Don't even think about trying. 
+Don't even think about doing it. 
+```
+
+### What do you say to $\sim$? 
+
+- 맨 마지막의 `to`는 to부정사이다. 따라서 뒤에 명사가 온다. 
+```
+What do you say to my plan?
+What do you say to (goint for) a walk?
+```
+
+- $\sim$에 대해서 니 생각은 어때? 를 영어로 옮긴 구문이다. 보통은 `How about`으로 대체가능한 것 같다.
+```
+How about my plan?
+How about going for a walk? 
+``` 
+
+### How come $\sim$? 
+
+- (안 그럴것 같은 일이) 어쩌다 일이 그렇게 되었지? 정도의 뉘앙스 인것 같다. 
+
+- 예제1
+```
+How come you don't like it? 
+```
+어떻게 그걸 안좋아할수 있어? (보통은 다들 좋아한다구?) 
+
+- 예제2
+```
+How come you don't call me? 
+```
+어떻게 나한테 전화 안할수가 있어?? 
+
+### How do you know $\sim$? 
+
+- 니가 그걸 어떻게 알아? (모를거 같은데?)
+```
+How do you know that? 
+```
+
+- 그게 사실인지 아닌지 어떻게 알어? (모르지 않냐?) 
+```
+How do you know if it's true? 
+```
+
+- 어떻게 서로를 알아? 
+```
+How do you know each other?
+```
+
+### I'd rather
+
+- 차라리... 더러워서.. 등의 뉘앙스. 
+```
+I'd rather not.
+```
+차라리 안할래. (더러워서 안해)
+
+- 차라리 혼자가 좋아. 
+```
+I'd rather be alone. 
+```
