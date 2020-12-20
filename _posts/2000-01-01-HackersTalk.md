@@ -10,7 +10,6 @@ title: (영어) 해커스톡
 - http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.prdNo=286384007&gclid=Cj0KCQiA5vb-BRCRARIsAJBKc6JyeNecMRtC4aC8uYGSrbFlpHuVzigppXqAYWfGAyK6T71ZLXK0wIAaAkOkEALw_wcB
 
 ---
----
 
 ### I'm used to $\sim$  
 
@@ -32,11 +31,21 @@ I'm not telling you to be the perfect person.
 I'm not saying you should be the perfect person. 
 ```
 물론 둘다 맞는 표현이다. 
-
-### I'm 
-
-
+ 
 
 ### I was no longer $\sim$ 
 
 - `I was no longer $\sim$` 에서 $\sim$에 올 수 있는 형태는 `no longer`를 제외하였을때 말이 되는 모든 형태이다. 즉 `I was $\sim$`에서 올 수 있는 모든 형태이다. 예를들면 `명사, 형용사, 현재분사, 과거분사`가 가능하다.  
+```
+I was no longer a child. 
+I was no longer sure. 
+I was no longer there. 
+I was no longer working. 
+I was no longer interested. 
+```
+
+- ㅇ
+
+### It's about how $\sim$  
+
+- 
