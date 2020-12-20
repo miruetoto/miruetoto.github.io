@@ -258,3 +258,72 @@ I'd rather not.
 ```
 I'd rather be alone. 
 ```
+
+### I would say $\sim$ 
+
+- 아주 약한 생각. $\sim$라고 볼 수 도 있지. 
+```
+I would say it's crazy.
+```
+혹시 미친거 아닐까? 
+
+- `It would say`라고 표현해도 괜찮다. (아래는 바이든의 연설)
+```
+It could say that I’m a lousy candidate, that I didn’t do a good job,” Biden said. 
+```
+여기에서 *lousy*는 형편없는 이라는 뜻. 
+
+### I can not help but $\sim$ 
+
+- $\sim$하지 않을 수 없다. 
+
+- 그렇게 생각 안할 수가 없는데? 
+```
+I can not help but think that.
+```
+
+- 이렇게 느낄수밖에 없는데? 
+```
+A: Why are you so angry? I don't understand. 
+B: I can not help but feel this way. You lied to me.  
+```
+화가 안날수가 없지않나? 
+
+### May I help you $\sim$? 
+
+- `May I help you`로 끝나는것이 아니고 뒤에 먼가 이어져야 한다. 보통은 뒤에 `with`가 이어진다. 
+```
+May I help you with anything? 
+May I help you with that?
+```
+
+- `May I help you`뒤에 `동사`가 이어지는 경우도 있다. 
+```
+May I help you find something?
+```
+
+### You might think $\sim$ 
+
+- 논문에서 내가 잘 쓰는 표현이 나왔다. 
+
+- 뒤에 `주어+동사`를 배치하면 된다. 
+
+### It seems like $\sim$ 
+
+- 이것도 내가 즐겨쓰는 표현. 어떠한 문법적인 변환없이 뒤에 `명사`와 `주어+동사`모두를 받을 수 있어 매우 좋다. 
+```
+It seems like a good idea. 
+It seems like you are busy. 
+It seems like people are angry. 
+It seems like everything is getting better. 
+``` 
+
+### I came up with $\sim$
+
+- 읽을때는 아는데, 쓰지는 않는 이상한 표현이다. 딱히 대체할 표현도 없는데 말이다. 
+
+- 예제: 
+```
+A: Is there still a problem with that project? 
+B: No. I came up with a solution. It's OK now.
+```
