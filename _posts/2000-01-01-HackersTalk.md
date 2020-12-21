@@ -6,8 +6,6 @@ title: (영어) 해커스 구문독해 100
 ### About this doc
 
 > 이 문서는 `해커스톡 구문독해 100`의 요약이다. 
- 
-> http://www.yes24.com/Product/Goods/74218991
 
 ---
 
@@ -26,6 +24,7 @@ regretted (that)
 found (that)
 heard (that) 
 ```
+
 
 ### 유닛 14
 
