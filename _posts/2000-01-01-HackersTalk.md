@@ -15,7 +15,7 @@ title: (영어) 해커스톡
 
 - 3형식 혹은 5형식 동사의 목적어 자리에 `that절`이 올 수 있다. 이때 `that`은 생략가능하다. 
 
-- 유용하다. 
+- 유용하다.
 ```
 They think (that) he talks too loudly.
 show (that) 
@@ -37,7 +37,7 @@ She found that it is hard to use chopsticks.
 She found it hard to use chopsticks. 
 ```
 
-- 예문1 
+- 예문1
 ```
 I consider that it is brave moving to a foreign country. 
 I consider it brave moving to a foreign country. 
@@ -49,7 +49,7 @@ I consider it brave moving to a foreign country.
 
 - `is`의 주격보어 자리에 `that절(명사절)`이 올 수 있다.  
 
-- `~는 아래와 같아`와 같은 표현을 가능하게 하므로 나한테 매우 유용한 사기적인 표현이다. 
+- `~는 아래와 같아`와 같은 표현을 가능하게 하므로 나한테 매우 유용한 사기적인 표현이다.
 ```
 The problem is that she forgot the lyrics. 
 The bad news is that 
