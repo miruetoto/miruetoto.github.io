@@ -79,7 +79,7 @@ conda create -name py20190129 python=3.7.6
 
 ### 주피터 원격제어
 
-- 콘다 가상환경에서 주피터랩을 설치한다. 
+> 콘다 가상환경에서 주피터랩을 설치한다. 
 ```
 ~conda activate py20190129~
 conda install jupyterlab
