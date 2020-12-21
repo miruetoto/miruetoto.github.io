@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (영어) 해커스톡 
+title: (영어) 해커스 구문독해 100 
 ---
 
 ### About this doc
