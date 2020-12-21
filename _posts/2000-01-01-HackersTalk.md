@@ -13,9 +13,7 @@ title: (영어) 해커스톡
 
 ### 유닛 13  
 
-- 3형식 혹은 5형식 동사의 목적어 자리에 `that절`이 올 수 있다. 이때 `that`은 생략가능하다. 
-
-- 유용하다.
+- 3형식 혹은 5형식 동사의 목적어 자리에 `that절`이 올 수 있다. 이때 `that`은 생략가능하다. 개인적으로 유닛 17과 함께 가장 즐겨쓰는 표현이다. 
 ```
 They think (that) he talks too loudly.
 show (that) 
@@ -113,19 +111,17 @@ Frank had neither a suit nor a tie, so he bought them for a job interview.
 
 - `if + S V`와 `whether + S V`는 `명사`이다. 따라서 거의 모든 상황에서 명사절을 이끄는 `that절`로 바꿀 수 있다. 
 
-- 예문1
+- 예문1: `ask`의 목적어로 `if + S V`를 사용함. 
 ```
 Tom is asking if the dish is spicy. 
 Tom is asked that the dish is spicy. 
 ```
-`ask`의 목적어로 `if + S V`를 사용함. 
 
-- 예문2
+- 예문2: 여기에서는 `know`의 목적어로 `if + S V`를 사용함. 
 ```
 I want to know whether he will go to the party tonight. 
 I want to know that he will go to the party tonight or not.  
 ```
-여기에서는 `know`의 목적어로 `if + S V`를 사용함. 
 
 - 예문1과 2의 예처럼 3형식의 목적어로 `if + S V` 나 `whether + S V`가 사용되는 경우가 많다. 이경우 대부분 명사절을 이끄는 `that절`로 대치하여도 문장이 잘 만들어 진다. 즉 굳이 쓸 필요가 없다는 뜻. 
 
@@ -136,7 +132,7 @@ It is uncertain that Sam and Mary will get married or not.
 ```
 어쨋든 문장자체는 잘 만들어짐. 
 
--  `is`의 주격보어 자리를 차지할 수 있다. 유닛 17처럼. 
+- `is`의 주격보어 자리를 차지할 수 있다. 유닛 17처럼. 
 ```
 Katherine's major concern is if she will arrive at the airport on time.
 Katherine's major concern is that she will arrive at the airport on time or not.
