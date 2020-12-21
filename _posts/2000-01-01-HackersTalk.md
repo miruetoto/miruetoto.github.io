@@ -34,6 +34,11 @@ heard (that)
 She found that it is hard to use chopsticks. 
 She found it hard to use chopsticks. 
 ```
+잘생각해보면 원래 that은 생략가능했다. 즉 아래와 같이 표현할 수 있다. 
+```
+She found ~that~ it is hard to use chopsticks. 
+```
+이 상태에서 `is`를 굳이 발음안하거나 약하게 발음해도 둘다 말이 된다는 것이다. 
 
 > 유용한 예문들은 아래와 같다. 
 ```
