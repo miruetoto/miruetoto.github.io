@@ -107,3 +107,46 @@ Neither Tina nor Linda wears high heels.
 ```
 Frank had neither a suit nor a tie, so he bought them for a job interview.
 ```
+
+
+### 유닛 52
+
+- `if + S V`와 `whether + S V`는 `명사`이다. 따라서 거의 모든 상황에서 명사절을 이끄는 `that절`로 바꿀 수 있다. 
+
+- 예문1
+```
+Tom is asking if the dish is spicy. 
+Tom is asked that the dish is spicy. 
+```
+`ask`의 목적어로 `if + S V`를 사용함. 
+
+- 예문2
+```
+I want to know whether he will go to the party tonight. 
+I want to know that he will go to the party tonight or not.  
+```
+여기에서는 `know`의 목적어로 `if + S V`를 사용함. 
+
+- 예문1과 2의 예처럼 3형식의 목적어로 `if + S V` 나 `whether + S V`가 사용되는 경우가 많다. 이경우 대부분 명사절을 이끄는 `that절`로 대치하여도 문장이 잘 만들어 진다. 즉 굳이 쓸 필요가 없다는 뜻. 
+
+- 하지만 경우에 따라서는 주어위치에 올 수도 있다. 이게 명사절을 이끄는 `that절`과 차이점인데, 명사절을 이끄는 `that절`은 주어자리에 올 수 없고 가주어로 받아야한다. 
+```
+Whether Sam and Mary will get married is uncertain. 
+It is uncertain that Sam and Mary will get married or not. 
+```
+어쨋든 문장자체는 잘 만들어짐. 
+
+-  `is`의 주격보어 자리를 차지할 수 있다. 유닛 17처럼. 
+```
+Katherine's major concern is if she will arrive at the airport on time.
+Katherine's major concern is that she will arrive at the airport on time or not.
+```
+
+- 여러모로 `if`, `whether`는 쓸모없어 보이는데 `that`절로 받을 경우 유닛 16을 응용하면 아래와 같은 문장도 만들 수 있다. 
+```
+Katherine's major concern is (for her) to arrive at the airport on time or not. 
+Katherine's major concern is (for her) arriving at the airport on time or not. 
+```
+그런데 이와 같은 축약을 `if + S V`나 `whether + S V`로는 할 수 없다. 
+
+- 
