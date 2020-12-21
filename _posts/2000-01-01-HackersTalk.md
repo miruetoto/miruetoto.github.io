@@ -93,3 +93,17 @@ Dylan bought apples and (Dylan bought) bananas.
 He did not like my opinion but (he) accepted it. 
 Eve will buy a red skirt or (Eve will buy) blue pants.
 ```
+
+### 유닛 50 
+
+- `Neither A nor B + 단수동사` 
+
+- 예문 
+```
+Neither Tina nor Linda wears high heels.
+```
+
+- `Neither A nor B`를 하나의 `단수명사`로 취급하면 용이하다. 위의 예문처럼 주어로 올수도 있지만 목적어로 올수도 있다. 
+```
+Frank had neither a suit nor a tie, so he bought them for a job interview.
+```
