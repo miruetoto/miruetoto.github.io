@@ -29,7 +29,7 @@ heard (that)
 
 ### 유닛 14
 
-- 유닛 13과 같은 표현중 5형식의 문장은 아래와 같이 줄일 수 있다. 
+> 유닛 13과 같은 표현중 5형식의 문장은 아래와 같이 줄일 수 있다. 
 ```
 She found that it is hard to use chopsticks. 
 She found it hard to use chopsticks. 
