@@ -5,15 +5,15 @@ title: (영어) 해커스 구문독해 100
 
 ### About this doc
 
-- 이 문서는 `해커스톡 구문독해 100`의 요약이다. 
+> 이 문서는 `해커스톡 구문독해 100`의 요약이다. 
  
-- http://www.yes24.com/Product/Goods/74218991
+> http://www.yes24.com/Product/Goods/74218991
 
 ---
 
 ### 유닛 13  
 
-- 3형식 혹은 5형식 동사의 목적어 자리에 `that절`이 올 수 있다. 이때 `that`은 생략가능하다. 개인적으로 유닛 17과 함께 가장 즐겨쓰는 표현이다. 
+> 3형식 혹은 5형식 동사의 목적어 자리에 `that절`이 올 수 있다. 이때 `that`은 생략가능하다. 개인적으로 유닛 17과 함께 가장 즐겨쓰는 표현이다. 
 ```
 They think (that) he talks too loudly.
 show (that) 
@@ -35,13 +35,13 @@ She found that it is hard to use chopsticks.
 She found it hard to use chopsticks. 
 ```
 
-- 예문1
+> 예문1
 ```
 I consider that it is brave moving to a foreign country. 
 I consider it brave moving to a foreign country. 
 ```
 
-- 나는 그냥 안줄이고 쓰는게 편한것 같다. 
+> 나는 그냥 안줄이고 쓰는게 편한것 같다. 
 
 ### 유닛 17 
 
