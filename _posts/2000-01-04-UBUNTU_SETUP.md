@@ -170,11 +170,10 @@ IRkernel::installspec()
 ```
 (py20190129) sudo apt install uuid
 (py20190129) sudo apt install git
-(py20190129) ßgit clone https://github.com/grst/rstudio-server-conda.git
+(py20190129) git clone https://github.com/grst/rstudio-server-conda.git
 ```
 위에 두줄은 [이사람](https://github.com/grst/rstudio-server-conda)이 만든 어떤 프로그램을 쓰기 위한 사전준비작업이다. 마지막줄을 실행하면 [이사람](https://github.com/grst/rstudio-server-conda)이 만든 프로그램이 다운받아진다. 이게 프로그램 설치가 완료된것이다. 이제 컴퓨터 껐다 킬때마다 아래를 실행한다. 
 ```
-(py20190129) conda activate py20190129
 (py20190129) ~/rstudio-server-conda/start_rstudio_server.sh 8787 # use any free port number here. 
 ```
 이제 `192.168.0.4:8787` 따위의 주소로 접속하면 `Rstudio`를 쓸 수 있다. 참고로 system-wide Rstudio server를 죽여야 할 때가 있다. 그럴땐 아래 명령을 치면 된다. 
@@ -187,7 +186,7 @@ IRkernel::installspec()
 
 > Rstudio를 쓰기전에 커맨드에 가서 아래를 실행하자. 
 ```
-(base) sudo ln -s /bin/tar /bin/gtar
+(py20190129) sudo ln -s /bin/tar /bin/gtar
 ```
 이렇게 해야 나중에 R스튜디오에서 `devtools::install_github()`로 패키지를 깔때 잘깔린다. 예를들면 `kormaps2014`와 같은 패키지. 
 
@@ -225,13 +224,15 @@ Would you like to install Miniconda? [Y/n]: n
 ```
 
 ### `plotly`
-> `plotly`를 설치하기 위해서는 `nodejs`를 깔아야한다. 
+> `plotly`를 설치하기 위해서는 아래를 순서대로 설치해야 한다.  
 ```
 (py20190129) pip install plotly==4.8.0
 (py20190129) pip install dash==1.13.3
 (py20190129) pip install jupyter-dash
+(py20190129) conda install nodejs
 (py20190129) jupyter lab build
-(py20190129) conda install 
+(py20190129) pip install jupyterlab "ipywidgets>=7.5"
+(py20190129) jupyter labextension install jupyterlab-plotly@4.8.2
 ```
 
 ### `julia` 
