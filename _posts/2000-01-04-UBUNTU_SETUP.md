@@ -68,21 +68,19 @@ bash Anaconda3-2019.03-Linux-x86_64.sh
 
 > 커맨드를 키고  아래를 실행한다. 
 ```
-conda create -n py20190129
-conda create -name py20190129
+(base) conda create -n py20190129
+(base) conda create -name py20190129
 ```
 둘 중 아무거나 실행해도 된다. 파이썬 환경이 너무 높으면 나중에 `conda tensorflow-gpu`가 먹히지 않으니 환경을 만들때 파이썬버전을 3.7.6으로 통일하자. (현시점 2020년 2월28일기준 3.8.x이면 `conda tensorflow-gpu` 가 동작하지 않음.)
 ```
-conda create -n py20190129 python=3.7.6
-conda create -name py20190129 python=3.7.6
+(base) conda create -n py20190129 python=3.7.6
 ```
 
 ### 주피터 원격제어
 
 > 콘다 가상환경에서 주피터랩을 설치한다. 
 ```
-~conda activate py20190129~
-conda install jupyterlab
+(py20190129) conda install jupyterlab
 ```
 사실 위에서 주피터랩을 따로 설치안해도 주피터랩이 잘만 실행된다. 하지만 이렇게하니까 나중에 R커널을 만들기위해 `IRkernel::installspec()`을 실행할때 아래와 같은 에러가 난다. 
 ```
@@ -91,8 +89,7 @@ Error in IRkernel::installspec(user = FALSE) :
 ```
 그러니까 그냥 남들하는대로 주피터랩 설치하고 넘어가자. 주피터랩은 보통 로칼로 접속하는데 이를 원격으로 접속할 수 있게 만들어보자. 우선 커맨드에서 아래를 실행하자.
 ```
-~conda activate py20190129~
-jupyter notebook --generate-config
+(py20190129) jupyter notebook --generate-config
 ```
 이렇게 하면 `/home/cgb/.jupyter` 디렉토리에 `jupyter_notebook_config.py` 파일이 만들어진다. 나중에 이 파일에 접근해서 뭔가를 바꿔야하는데 우선 그전에 파이썬을 실행하자. 그리고 아래를 입력한다. 
 ```python
@@ -104,7 +101,7 @@ passwd()
 
 > 이제 처음에 생성한 `/home/cgb/.jupyter/jupyter_notebook_config.py` 파일을 연다. 이 파일에 접근하기 위해서는 아래의 순서를 따른다. (1) 파일관리자를 키고 홈탭을 누른다. (이러면 자동으로 `/home/cgb` 폴더로 접근함.) (2) `컨트롤+h`를 누른다. (여기에서 `.jupyter` 는 숨겨진 폴더라서 바로는 안보이고 `컨트롤+h`를 눌러야 보인다.) (3) `jupyter_notebook_config.py`를 더블클릭한다. 또는 그냥 단순히 아래를 실행한다. 
 ```
-sudo nano ~/.jupyter/jupyter_notebook_config.py
+(py20190129) sudo nano ~/.jupyter/jupyter_notebook_config.py
 ```
 
 > 원하는대로 수정하면 되는데 아래는 꼭 수정한다. 
@@ -124,22 +121,21 @@ jupyter lab --LabApp.token='' --LabApp.password=''
 ### `CUDA`, `cuDNN`, `tensorflow-gpu`, `pytorch`
 > 콘다환경으로 가서아래를 실행한다. 
 ```
-conda install pytorch-gpu
-conda install tensorflow-gpu
+(py20190129) conda install pytorch-gpu
+(py20190129) conda install tensorflow-gpu
 ```
 그러면 알아서 `CUDA`, `cuDNN`, `pytorch`, `tensorflow-gpu`가 깔린다. 현재는 파이썬 환경이 너무 높으면 깔리지 않는 현상이 있으니 환경을 만들때 파이썬버전을 `3.7.6`으로 통일하자. 참고로 gpu사용량은 아래와 같이 모니터링 할 수 있다.
 ```
-watch -n 5 nvidia-smi -a --display=utilization
+(py20190129) watch -n 5 nvidia-smi -a --display=utilization
 ```
 
 ### 주피터에 R커널 연결 
 > 콘다환경으로 가서 아래를 실행한다. 
 ```
-conda install -c r r
+(py20190129) conda install -c r r
 ```
-이러면 콘다환경에는 R이 깔리고 base에는 R이 깔리지 않는다. 그리고 콘다환경에서 R을 실행한다. Rstudio가 아니라 커맨드에서 R을 실행해야한다. 그리고 `devtools`와 `IRkernel`을 설치한다. (`devtools`는 지금 당장 꼭 설치할 필요는 없다.) 
+이러면 콘다환경에는 R이 깔리고 base에는 R이 깔리지 않는다. 그리고 콘다환경에서 R을 실행한다. Rstudio가 아니라 커맨드에서 R을 실행해야한다. 그리고 `IRkernel`을 설치한다.  
 ```r
-install.packages("devtools")
 install.packages("IRkernel")
 ```
 그리고 아래를 실행하면 주피터랩과 R환경이 연결된다. 
@@ -148,41 +144,49 @@ IRkernel::installspec()
 ```
 이제 주피터랩에서 R kernel을 사용할 수 있다. 
 
+### R에서 `devtools`와 `tidyverse`설치하기 
+
+> 현재는(2020-12-25) 종속성 지옥으로 인해 `devtools`가 `R`에서 설치되지 않는다. 그래서 아래와 같이 `conda install`을 사용하여 `devtools`를 설치한 뒤 `tidyverse`을 설치하는 것이 좋다. 
+```
+(py20190129) conda install -c r r-devtools
+(py20190129) R 
+> install.packages("tidyverse")
+```
+
 ### Rstudio server 
 > 이제 Rstudio server를 설치한다. 이건 콘다환경의 `R`과 연결이 안된다. 그래서 보통은 `(base)`에 R을 깔고 그 R과 연결해야한다. 하지만 우분투 18.04는 `(base)`에서 R을 깔기 위해서 아래와 같이 실행하면 기본적으로 R이 3.4버전으로 깔린다. 
 ```
-~sudo apt install r-base~ ## 이걸 실행하지 말자. 
+(base) sudo apt install r-base~ ## 이걸 실행하지 말자. 
 ```
 그러니까 위와 같이 실행하지 말자. `(base)`에 높은 버전의 R을 억지로 까는 방법이 있긴 있다. 추천하는 방법은 아니다. 대신 콘다환경 `(py20190129)`에서 가서 억지로 Rstudio를 연결하는 방법을 알아보자. 관련내용은 [여기](https://github.com/grst/rstudio-server-conda)를 참고했다. 
 
 > 먼저 Rstudio를 깐다. 참고로 Rstudio server 설치하는법은 [여기](https://rstudio.com/products/rstudio/download-server/debian-ubuntu/)를 참고하라. 
 ```
-sudo apt-get install gdebi-core
-wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.5033-amd64.deb
-sudo gdebi rstudio-server-1.2.5033-amd64.deb
+(py20190129) sudo apt-get install gdebi-core
+(py20190129) wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.2.5033-amd64.deb
+(py20190129) sudo gdebi rstudio-server-1.2.5033-amd64.deb
 ```
 보통 여기까지하면 Rstudio 설치가 끝난다. 이제 아래를 실행한다. 
 ```
-sudo apt install uuid
-sudo apt install git
-git clone https://github.com/grst/rstudio-server-conda.git
+(py20190129) sudo apt install uuid
+(py20190129) sudo apt install git
+(py20190129) git clone https://github.com/grst/rstudio-server-conda.git
 ```
 위에 두줄은 [이사람](https://github.com/grst/rstudio-server-conda)이 만든 어떤 프로그램을 쓰기 위한 사전준비작업이다. 마지막줄을 실행하면 [이사람](https://github.com/grst/rstudio-server-conda)이 만든 프로그램이 다운받아진다. 이게 프로그램 설치가 완료된것이다. 이제 컴퓨터 껐다 킬때마다 아래를 실행한다. 
 ```
-conda activate py20190129
-~/rstudio-server-conda/start_rstudio_server.sh 8787 # use any free port number here. 
+(py20190129) ~/rstudio-server-conda/start_rstudio_server.sh 8787 # use any free port number here. 
 ```
 이제 `192.168.0.4:8787` 따위의 주소로 접속하면 `Rstudio`를 쓸 수 있다. 참고로 system-wide Rstudio server를 죽여야 할 때가 있다. 그럴땐 아래 명령을 치면 된다. 
 ```
-sudo systemctl disable rstudio-server.service
-sudo systemctl stop rstudio-server.service
+(py20190129) sudo systemctl disable rstudio-server.service
+(py20190129) sudo systemctl stop rstudio-server.service
 ```
 
 ### `Rstudio`셋팅이후 하면 좋은것: `devtools::install_github()`가 먹히지 않을 경우대비 
 
 > Rstudio를 쓰기전에 커맨드에 가서 아래를 실행하자. 
 ```
-sudo ln -s /bin/tar /bin/gtar
+(py20190129) sudo ln -s /bin/tar /bin/gtar
 ```
 이렇게 해야 나중에 R스튜디오에서 `devtools::install_github()`로 패키지를 깔때 잘깔린다. 예를들면 `kormaps2014`와 같은 패키지. 
 
@@ -208,16 +212,27 @@ Would you like to install Miniconda? [Y/n]: n
 ### `rpy2`
 > 콘다환경에서 아래와 같이 입력하여 설치한다. 
 ```
-pip install rpy2
+(py20190129) pip install rpy2
 ```
 절대로 `conda install rpy2`로 설치하지말자. 기본적으로 낮은버전 `rpy2`가 설치되는데 내가 만든 `push`등 여러파일들이 3.0 이상에서 동작하도록 만들어져 있다. 따라서 코드가 모두 꼬여버린다. 
 
 ### `pandas`, `matplotlib`
 > 이제 콘다환경에서 나머지 패키지들을 깔아보자. 
 ```
-conda activate py20190129
-conda install pandas
-conda install matplotlib
+(py20190129) conda install pandas
+(py20190129) conda install matplotlib
+```
+
+### `plotly`
+> `plotly`를 설치하기 위해서는 아래를 순서대로 설치해야 한다.  
+```
+(py20190129) pip install plotly==4.8.0
+(py20190129) pip install dash==1.13.3
+(py20190129) pip install jupyter-dash
+(py20190129) conda install nodejs
+(py20190129) jupyter lab build
+(py20190129) pip install jupyterlab "ipywidgets>=7.5"
+(py20190129) jupyter labextension install jupyterlab-plotly@4.8.2
 ```
 
 ### `julia` 
