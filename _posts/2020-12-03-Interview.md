@@ -7,15 +7,15 @@ title : (정리) 인터뷰대비
 
 (1) 자기소개: 2021년 1학기 전북대학교 통계학과에 지원한 최규빈입니다. 
 	
-	- I am Guebin Choi, who is appling for the faculty position at department of statistics at Chonbuk National University.
+	I am Guebin Choi, who is appling for the faculty position at department of statistics at Chonbuk National University.
 
 (2) 감사말씀: 최종면접의 기회를 주셔서 감사합니다. 
 	
-	- Thank you for giving me this great opportunity. 
+	Thank you for giving me this great opportunity. 
 
 (3) 이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다(***got***). 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다(***did, join***). 입사 이후 딥러닝 알고리즘 전반에 걸쳐서 프로젝트를 수행했고 현재는 강화학습관련 업무를 중점적으로 맡아서 하고 있습니다(***has worked on, focus on***).  
 	
-	- I got my Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ for 6 months at Seoul National University. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project. Currently, I focus on tasks related to deep learning and reinforcement learning. 
+	I got my Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ for 6 months at Seoul National University. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project. Currently, I focus on tasks related to deep learning and reinforcement learning. 
 
 ### 강화학습을 하는 이유?
 
