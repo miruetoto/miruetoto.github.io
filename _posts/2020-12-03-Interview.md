@@ -15,56 +15,60 @@ title : (정리) 인터뷰대비
 
 (3) 이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다(***got***). 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다(***did, join***). 입사 이후 딥러닝 알고리즘과 관련된 프로젝트를 수행하고 있습니다.   
 	
-	I got Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ at Seoul National University for 6 months. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project.
+> I got Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ at Seoul National University for 6 months. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project.
 
 (4) 전북대학교 장점소개: 지원과정 중 전북대학교 교수가 되는 상상을 종종 하였습니다(***often imagined becoming***). 전북대학교는 장점이 매우 많은 학교라 생각합니다. 
 
-	During the application process, I often imagined becoming a professor at Jeonbuk National University. And I realized that being a professor at Jeonbuk National University has many advantages.
+> During the application process, I often imagined becoming a professor at Jeonbuk National University. And I realized that being a professor at Jeonbuk National University has many advantages.
 
 (5) 장점1,2: 첫번째 장점은 우수한 학생들을 지도할 수 있다는 점입니다(***is possible to guide***). 두번째 장점은 연구환경과 관련되어 있습니다. 전북대학교는 (교원들에게) 좋은 연구환경을 제공하며 우수논문에 대한 보상이 명확합니다. 
 
-	First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. Jeonbuk National University provide good research environment to professor and rewards about high-quaility paper is clear.
+> First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. Jeonbuk National University provide good research environment to professor and rewards about high-quaility paper is clear.
 
 이는 여러교수님들이 이미 잘 알고 계시는 내용이고 다른 지원자들 역시 전북대의 장점이라고 생각하는 핵심요소일 것이라 믿습니다. 
 
-	In fact, those are well-known advantages. I believe that other applicants also think those two strengths as key factor of making Jeonbuk national University attractive. 
+> In fact, those are well-known advantages. I believe that other applicants also think those two strengths as key factor of making Jeonbuk national University attractive. 
 
 (7) 장점3: 언급한 두가지 장점 이외에, 제가 주목한 장점이 또 하나 있습니다. 제가 전북대 교수가 된다면 지역사회에 공헌하면서 동시에 제가 원하는 연구를 할 수 있는 기회가 많다는 점입니다. 
 
-	In addition to above two, there is another point that catches my attention. The point is, there are many opportunities to contribute to the local government while doing my own research.
+> In addition to above two, there is another point that catches my attention. The point is, there are many opportunities to contribute to the local government while doing my own research.
 	
 특히 제가 관심을 가지는 분야는 공공데이터를 활용한 데이터분석입니다. 
 
-	Particularly, I am interested in stistical analysis with public data.
+> Particularly, I am interested in stistical analysis with public data.
 
 최근에 정부에서 추전중인 "디지털뉴딜정책"으로 인하여 양질의 공공데이터가 축적되고 있습니다. 
 	
-	Due to the recent “Digital New Deal Policy” being promoted by the government, high-quality public data is accumulating rapidly.
+> Due to the recent “Digital New Deal Policy” being promoted by the government, high-quality public data is accumulating rapidly.
 
 저는 한명의 통계학자(스탯 티스 티션)로서 "데이터는 항상 삶의 질을 향상시키는 서비스를 제공한다"라는 신념을 가지고 있습니다. 
 	
-	As a statistician, I have the belief that "data always provides a service that improves the quality of life."
+> As a statistician, I have the belief that "data always provides a service that improves the quality of life."
+
+	- 통계학자: 스탯 티스 티션 
+	- 삶의 질: 콸리티 오브 라이프 
 
 이러한 신념을 뒷받침하는 사례는 많습니다. 
 	
-	There are many examples to support this belief. 
+> There are many examples to support this belief. 
 
 서울시는 서울시민의 휴대전화 발신기록을 바탕으로 심야버스 수요를 예측하여 시민들의 삶의 질을 크게 높인 바 있습니다. 예를들면 서신동에 사는 학생이 전북대에서 10시쯤 다른 누군가와 통화를 한 기록이 있다면 전북대에서 서신동으로 향하는 심야버스 수요가 있을것이라고 생각하고 전주시에서 그에 맞추어 야간버스 노선을 정비하는 방식입니다. 
 	
-	The Seoul Metropolitan Government has significantly improved the quality of life of citizens by predicting the demand for late-night buses based on the number of mobile phone calls made by Seoul citizens.
+> The Seoul Metropolitan Government has significantly improved the quality of life of citizens by predicting the demand for late-night buses based on the number of mobile phone calls made by Seoul citizens.
 
-
+- 서울시: 더 서울 메트로팔러턴 가버먼트 
 - 심야버스수요: 디멘드 포어 레이트 나이트 버시스 
+- 휴대전화 발신기록에 근거: 베이스드 온 넘버 오브 모바일 폰콜 메이드 바이 서울 시티즌 
 - 시민들의 삶의 질: 콸러티 오브 라이프 오브 시티즌. 
 
 
 이것은 지역사회와 대학의 윈윈모델이 될 수 있습니다. 교수는 양질의 데이터로 연구를 할 수 있어 행복할것입니다. 또한 정부와 지역단체는 데이터를 관리하여 지역주민의 삶을 개선할 수 있어 이득일 것입니다. 
 
-	This can be a win-win model for local governments and universities. Professors will be happy to be able to do research with quality data. In addition, it would be good for the government and local organizations to improve the lives of local residents.
+> This can be a win-win model for local governments and universities. Professors will be happy to be able to do research with quality data. In addition, it would be good for the government and local organizations to improve the lives of local residents.
 
 이처럼 원하는 연구를 하면서도 지역사회 혹은 국가를 위해 공헌할 수 있는 기회가 많다는 점이 매력적이라고 생각합니다. 
 	
-	I think it is attractive that there are many opportunities to contribute to the local community or the country while doing desired research.
+> I think it is attractive that there are many opportunities to contribute to the local community or the country while doing desired research.
 	
 --- 
 
