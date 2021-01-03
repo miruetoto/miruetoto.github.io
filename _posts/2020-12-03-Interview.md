@@ -45,8 +45,8 @@ title : (정리) 인터뷰대비
 	
 > As a statistician, I have the belief that "data always provides a service that improves the quality of life."
 
-	- 통계학자: 스탯 티스 티션 
-	- 삶의 질: 콸리티 오브 라이프 
+- 통계학자: 스탯 티스 티션 
+- 삶의 질: 콸리티 오브 라이프 
 
 이러한 신념을 뒷받침하는 사례는 많습니다. 
 	
