@@ -7,7 +7,7 @@ title : (정리) 인터뷰대비
 
 (1) 자기소개: 안녕하십니까, 저는 2021년 1학기 전북대학교 통계학과에 지원한 최규빈입니다. 
 	
-	I am Guebin Choi, who is appling for the faculty position at department of statistics at Chonbuk National University.
+	I am Guebin Choi, who is appling for the faculty position at department of statistics at Jeonbuk National University.
 
 (2) 감사말씀: 먼저 저에게 최종면접의 기회를 주셔서 감사하다는 말씀을 전하고 싶습니다. 
 	
@@ -15,25 +15,25 @@ title : (정리) 인터뷰대비
 
 (3) 이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다(***got***). 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다(***did, join***). 입사 이후 딥러닝 알고리즘과 관련된 프로젝트를 수행하고 있습니다.   
 	
-	I got Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ for 6 months at Seoul National University. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project.
+	I got Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ at Seoul National University for 6 months. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project.
 
 (4) 전북대학교 장점소개: 지원과정 중 전북대학교 교수가 되는 상상을 종종 하였습니다(***often imagined becoming***). 전북대학교는 장점이 매우 많은 학교라 생각합니다. 
 
-	During the application process, I often imagined becoming a professor at Chonbuk National University.
+	During the application process, I often imagined becoming a professor at Jeonbuk National University. And I realized that Jeonbuk National University has many advantages.
 
-(5) 장점1,2: 지방거점국립대학이기 때문에, 우수한 학생들을 지도할 수 있다는 점, 그리고 우수논문에 대한 보상이 명확하고 연구환경이 좋다는 점이 장점입니다.
+(5) 장점1,2: 첫번째 장점은 우수한 학생들을 지도할 수 있다는 점입니다(***is possible to guide***). 두번째 장점은 연구환경과 관련되어 있습니다. 전북대학교는 (교원들에게) 좋은 연구환경을 제공하며 우수논문에 대한 보상이 명확합니다. 
 
-	Since it is a national university with a local base, it is possible to guide excellent students, and the benefits of excellent paper are clear and the research environment is good.
+	First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. Jeonbuk National University provide good research environment to professor and rewards about high-quaility paper is clear.
 
-(6) 요약: 이는 여러교수님들이 이미 잘 알고 계시는 내용이고 다른 지원자들 역시 전북대의 장점이라고 생각하는 핵심요소일 것이라 믿습니다. 
+이는 여러교수님들이 이미 잘 알고 계시는 내용이고 다른 지원자들 역시 전북대의 장점이라고 생각하는 핵심요소일 것이라 믿습니다. 
 
-	In fact, this is an advantage that many people already know, including you in front of me and I believe that other applicants also think those two strengths as key factor of making Jeonbuk national University attractive. 
+	In fact, those are well-known advantages. I believe that other applicants also think those two strengths as key factor of making Jeonbuk national University attractive. 
 
-(7) 장점3: 저는 그외에도 지역사회 나아가 국가에 기여할 수 있는 기회가 많다는 점이 매력적으로 느껴졌습니다.  
+(7) 장점3: 언급한 두가지 장점 이외에, 제가 주목한 장점이 또 하나 있습니다. 제가 전북대 교수가 된다면 지역사회에 공헌하면서 동시에 제가 원하는 연구를 할 수 있는 기회가 많다는 점입니다. 
 
-	In addition to the two advantages mentioned above, I notice that the Joenbuk university has another merit such that there are many opportunities to contribute to the local community and the country.
+	In addition to the two advantages mentioned above, there is another point that I have noticed. If I become a professor at Jeonbuk National University, I have many opportunities to contribute to the local government while doing the research I want.
 	
-(8) 나의 관심: 특히 제가 관심을 가지는 분야는 공공데이터를 활용한 데이터분석입니다. 
+특히 제가 관심을 가지는 분야는 공공데이터를 활용한 데이터분석입니다. 
 
 	Particularly, I am interested in data analysis using public data.
 
