@@ -209,10 +209,31 @@ title : (정리) 인터뷰대비
 
 현재진행중인 논문이 4편이 있다. 
 
-기하학적 딥러닝을 연구하겠다. 
+> I have 4 working papers. 
 
-기하학적 딥러닝은 넌유클리드 자료에 통계 혹은 기계학습 방법론을 적용하는 연구분야이다. 
+그 중 하나인 Heavy-snow transform은 기하학적 딥러닝의 이론적인 성질을 서포트하는 논문이다. 
 
+> I would like to introduce one of them, named heavy-snow transform. Heavy-snow transform deals the theoritical properties which can support the fields in geometric deep learning. 
+
+기하학적 딥러닝은 비유클리드 자료를 분석하는 새로운 머신러닝 방법론이다. 
+
+> Geometric deep learning is a new emerging field which can analysis the non-Euclidian data. 
+
+나는 기하학적 딥러닝에 관심이 있는데 이는 그래프나 매니폴드와 같이 다양한 형태의 데이터를 다룰 수 있는 방법론이기 때문이다. 
+
+> I am interested in Geometric deep learning because it can handle the un-structured data such as graph and manifold. 
+
+나는 연구중인 Heavy-snow transform을 잘 마무리해서 향후 연구에 대한 좋은 이론적 토대를 만들고 싶다. 
+
+> I would like to wrap up the heavy-snow transform neatly, and make it as theoritical base for future works. 
+
+이후에는 그래프, 매니폴드, 시공간자료 등 정형화된 공분산 구조를 모델링하기 어려운 자료를 분석하는 실용적인 방법론들을 개발하고 싶다. 
+
+> After that, I would like develope the methodology, which fits the data whose covariance structure are unclear, such as graph, manifold, and spatio-temporal data. 
+
+궁극적으로 원하는 것은 이러한 자료에 적용가능한 다중척도 방법론을 다시 설계하는 것이다. 
+
+> The ultimate something that I want is designing multiscale analysis which can deal with those data. 
 
 
 ### 최근논문요약 (쓴논문요약) 
@@ -234,7 +255,7 @@ title : (정리) 인터뷰대비
 
 ### 박사학위논문요약 
 
-박사학위 논문은 크게 두 개의 중심 주제로로 구성되어 있습니다. 
+박사학위 논문은 크게 두 개의 중심 주제로 구성되어 있습니다. 
 
 첫번째 주제는 Elastic band transform 이다. 
 
