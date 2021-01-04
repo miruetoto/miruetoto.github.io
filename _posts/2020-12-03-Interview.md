@@ -18,7 +18,7 @@ title : (정리) 인터뷰대비
 
 (1) 자기소개: 안녕하십니까, 저는 2021년 1학기 전북대학교 통계학과에 지원한 최규빈입니다. 
 	
-> I am Guebin Choi, who is appling for the faculty position at department of statistics at Jeonbuk National University.
+> I am Guebin Choi, who is appling for the faculty position at Jeonbuk National University.
 
 (2) 감사말씀: 먼저 저에게 최종면접의 기회를 주셔서 감사하다는 말씀을 전하고 싶습니다. 
 	
@@ -73,7 +73,6 @@ title : (정리) 인터뷰대비
 - 심야버스수요: 디멘드 포어 레이트 나이트 버시스 
 - 휴대전화 발신기록에 근거: 베이스드 온 넘버 오브 모바일 폰콜 메이드 바이 서울 시티즌 
 - 시민들의 삶의 질: 콸러티 오브 라이프 오브 시티즌. 
-
 
 이것은 지역사회와 대학의 윈윈모델이 될 수 있습니다. 교수는 양질의 데이터로 연구를 할 수 있어 행복할것입니다. 또한 정부와 지역단체는 데이터를 관리하여 지역주민의 삶을 개선할 수 있어 이득일 것입니다. 
 
@@ -167,9 +166,30 @@ title : (정리) 인터뷰대비
 
 ### 학생에게 무엇이 가장 중요한가? 
 
-진부한 표현이지만 교수의 관심과 사랑이라고 생각한다. 개인적으로 학생들은 지식전달 이외의 진로에 대한 교수의 넓은 시야와 다양한 경험을 전수받아야 한다고 생각한다. 왜냐하면 대학입학이후 진로에 대한 매우 다양한 선택지가 갑자기 학생앞에 펼쳐지기 때문이다. 
+상담상대. 
+> I think, student needs counselor. 
 
-대부분의 학생들은 부모, 선배, 친구 등 다양한 주변인물로부터 진로에 조언을 받겠지만 학생들의 고민을 진지하게 들어주고 의사결정을 도와주는 교수가 그렇게 많지 않다. 그 이유는 학생들이 교수를 친숙하게 생각하지 않아서 그런것 같다. 학생들과 지속적인 상담 및 간담회를 통하여 학생들과 친해지고 학생들이 편하게 진로에 대한 고민을 털어 놓을 수 있는 교수가 되고 싶다.
+대학교에 오면 학생들은 다양한 상황을 접한다. 
+> When enterering university, students may be encount the various situation, which have been never experienced before. 
+
+좋아하는 이성이 생길수도, 진로를 탐색할수도 있다. 
+> There are some possibility that they are interested in the opposite sex. Or they could be interested in their own career path. 
+
+이러한 상황에 학생들은 혼란을 느끼고 보통 친구, 선배, 부모등과 상담하며 안정감을 찾는다. 
+> In those situation, student often feel confused, and they ask for advise, to get inner peace. 
+
+상담상대중에 교수가 포함되어야 한다고 생각한다. 
+> I think the professor should be included in the list of counselors. 
+
+교수는 친구 선배 부모가 제시하는 관점과 다른 시각에서 학생에게 조언할 수 있다. 
+> Professor can advise the student, with something new view point,  which is different from that of friends, senior student, and parents. 
+
+학생들은 다양한 조언을 받으며 성장할 수 있다. 
+> Student can grow up by taking various advise. 
+
+만약에 교수가 된다면 단순 지식전달 이외에 다양한 비지식적인 교육을 함으로서 학생들을 지원해야 하고 싶다. 
+> Becoming professor of JB national univ, I would like to support student by providing non-knowledge education. 
+
 
 ### 대학원생에게 어떤 토픽을 주겠는가?
 
