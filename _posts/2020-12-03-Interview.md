@@ -32,7 +32,7 @@ title : (정리) 인터뷰대비
 
 (4) 전북대학교 장점소개: 지원과정 중 전북대학교 교수가 되는 상상을 종종 하였습니다. 그리고 나는 전북대학교 교수가 됨으로서 얻는 장점 매우 많다는 것을 알게 되었다. 
 
-> While applying Joenbuk University, I often imagined becoming a professor at JBNU. And I realized that being a professor at JBNU has many advantages.
+> During the application process, I often imagined becoming a professor at JBNU. And I have realized that being a professor at JBNU has many merits.
 
 (5) 장점1,2: 첫번째 장점은 우수한 학생들을 지도할 수 있다는 점입니다. 두번째 장점은 연구환경과 관련되어 있습니다. 전북대학교는 (교원들에게) 좋은 연구환경을 제공하며 우수논문에 대한 보상이 명확합니다. 
 
