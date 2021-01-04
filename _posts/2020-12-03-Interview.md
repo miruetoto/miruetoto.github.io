@@ -185,10 +185,10 @@ title : (정리) 인터뷰대비
 > Professor can advise the student, with something new view point,  which is different from that of friends, senior student, and parents. 
 
 학생들은 다양한 조언을 받으며 성장할 수 있다. 
-> Student can grow up by taking various advise. 
+> Student can grow up by taking various advise including professor's advise. 
 
 만약에 교수가 된다면 단순 지식전달 이외에 다양한 비지식적인 교육을 함으로서 학생들을 지원해야 하고 싶다. 
-> Becoming professor of JB national univ, I would like to support student by providing non-knowledge education. 
+> Becoming professor of JB national univ, I would like to support student by providing such a non-knowledge education, I mean, counseling.
 
 
 ### 대학원생에게 어떤 토픽을 주겠는가?
