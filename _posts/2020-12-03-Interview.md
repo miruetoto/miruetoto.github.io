@@ -16,35 +16,37 @@ title : (정리) 인터뷰대비
 
 ## 1. 자기소개 관련  
 
+### 자기소개해보세요 
+
 (1) 자기소개: 안녕하십니까, 저는 2021년 1학기 전북대학교 통계학과에 지원한 최규빈입니다. 
 	
-> I am Guebin Choi, who is appling for the faculty position at Jeonbuk National University.
+> I am Guebin Choi, who is appling for the faculty position at JBNU.
 
 (2) 감사말씀: 먼저 저에게 최종면접의 기회를 주셔서 감사하다는 말씀을 전하고 싶습니다. 
 	
 > Thank you for giving me this great opportunity. 
 
-(3) 이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다(***got***). 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다(***did, join***). 입사 이후 딥러닝 알고리즘과 관련된 프로젝트를 수행하고 있습니다.   
+(3) 이력소개: 저는 2018년 8월에 박사학위를 취득하였습니다. 박사학위 취득 이후에 6개월간의 박사후과정을 거쳐서 LG전자 인공지능연구소에서 입사했습니다. 입사 이후 딥러닝 알고리즘과 관련된 프로젝트를 수행하고 있습니다.   
 	
-> I got Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ at Seoul National University for 6 months. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I has worked on a deep learning algorithm project.
+> I got Ph.D. in August 2018. After obtaining my doctorate, I did a POSDAQ at Seoul National University for 6 months. After that, I joined LG Electronics' Artificial Intelligence Research Center. Since joining the company, I am working on projects related with a deep learning.
 
-(4) 전북대학교 장점소개: 지원과정 중 전북대학교 교수가 되는 상상을 종종 하였습니다(***often imagined becoming***). 그리고 나는 전북대학교 교수가 됨으로서 얻는 장점 매우 많다는 것을 알게 되었다. 
+(4) 전북대학교 장점소개: 지원과정 중 전북대학교 교수가 되는 상상을 종종 하였습니다. 그리고 나는 전북대학교 교수가 됨으로서 얻는 장점 매우 많다는 것을 알게 되었다. 
 
-> While applying Joenbuk University, I often imagined becoming a professor at Jeonbuk National University. And I realized that being a professor at Jeonbuk National University has many advantages.
+> While applying Joenbuk University, I often imagined becoming a professor at JBNU. And I realized that being a professor at JBNU has many advantages.
 
-(5) 장점1,2: 첫번째 장점은 우수한 학생들을 지도할 수 있다는 점입니다(***is possible to guide***). 두번째 장점은 연구환경과 관련되어 있습니다. 전북대학교는 (교원들에게) 좋은 연구환경을 제공하며 우수논문에 대한 보상이 명확합니다. 
+(5) 장점1,2: 첫번째 장점은 우수한 학생들을 지도할 수 있다는 점입니다. 두번째 장점은 연구환경과 관련되어 있습니다. 전북대학교는 (교원들에게) 좋은 연구환경을 제공하며 우수논문에 대한 보상이 명확합니다. 
 
-> First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. Jeonbuk National University provide good research environment to professor and rewards about high-quaility paper is clear.
+> First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. JBNU provide good research environment to professor and rewards about high-quaility paper is clear.
 
 이는 여러교수님들이 이미 잘 알고 계시는 내용이고 다른 지원자들 역시 전북대의 장점이라고 생각하는 핵심요소일 것이라 믿습니다. 
 
-> This is something that many professors already know well, and I believe that other applicants also think those two strengths as key factor of making Jeonbuk national University attractive. 
+> I think, this is well-known advantages of JBNU, and I believe that other applicants also think those two strengths as key factor of making JBNU attractive. 
 
 - 다른지원자: 아더 앺리컨스 
 
-(7) 장점3: 언급한 두가지 장점 이외에, 제가 주목한 장점이 또 하나 있습니다. 제가 전북대 교수가 된다면 지역사회에 공헌하면서 동시에 제가 원하는 연구를 할 수 있는 기회가 많다는 점입니다. 
+(7) 장점3: 나아가서, 전북대는 저의 관심을 끄는 또 다른 장점을 가지고 있습니다. 전북대의 세번째 장점은 바로 자신이 원하는 연구를 하면서 동시에 지역사회를 위해 공헌할 수 있다는 점입니다. 
 
-> In addition to above two, there is another point that catches my attention. The point is, there are many opportunities to contribute to the local government while doing my own research.
+> Futhermore, JBNU has another merit catching my attention. The third advantage is that there are many opportunities to contribute to the local government doing my own research.
 	
 특히 제가 관심을 가지는 분야는 공공데이터를 활용한 데이터분석입니다. 
 
@@ -56,32 +58,57 @@ title : (정리) 인터뷰대비
 
 저는 한명의 통계학자(스탯 티스 티션)로서 "데이터는 항상 삶의 질을 향상시키는 서비스를 제공한다"라는 신념을 가지고 있습니다. 
 	
-> As a statistician, I have the belief that "data always provides a service that improves the quality of life."
+> As a statistician, I have the belief that "data always provides a service which improves the quality of life."
 
 - 통계학자: 스탯 티스 티션 
 - 삶의 질: 콸리티 오브 라이프 
 
-이러한 신념을 뒷받침하는 사례는 많습니다. 
-	
-> There are many examples to support this belief. 
+교수가 되면, 양질의 데이터로 연구를 하고, 동시에 지역 주민들을 위한 서비스를 제안하여 대학과 지역사회간의 윈윈 모델을 성공적으로 구축하고 싶다. 
 
-서울시는 서울시민의 휴대전화 발신기록을 바탕으로 심야버스 수요를 예측하여 시민들의 삶의 질을 크게 높인 바 있습니다. 예를들면 서신동에 사는 학생이 전북대에서 10시쯤 다른 누군가와 통화를 한 기록이 있다면 전북대에서 서신동으로 향하는 심야버스 수요가 있을것이라고 생각하고 전주시에서 그에 맞추어 야간버스 노선을 정비하는 방식입니다. 
-	
-> The Seoul Metropolitan Government has significantly improved the quality of life of citizens by predicting the demand for late-night buses based on the number of mobile phone calls made by Seoul citizens.
+> If I got a chance to research in JBNU, I would like to construct the win-win model that professor do their own research with high-quality public data, and at the same time, provide local residents with service which makes their own lives improved. 
+
+- SB에게 STH을 제공하다: provide SB with STH = provide STH to SB 
+
+
+### 추가질문? 공공데이터 분석이 지역주민의 삶을 개선하는 사례? 
+
+서울시의 사례를 예로 들 수 있다.
+
+서울시는 서울시민들의 심야버스 수요를 예측하여 적절하게 버스노선을 확충하고 싶어했다. 
+
+하지만 심야버스 수요를 예측할만 자료는 없었다. 
+
+그래서 서울시는 휴대전화 발신기록을 바탕으로 가짜자료를 만들고, 이를 이용해 심야버스 수요를 예측하여 시민들의 삶의 질을 크게 높였다. 
+
+분석한 방법을 잠시 소개하면 다음과 같다. 
+
+휴대전화 요금 수령지가 서신동이 한 고객이 있다고 하자. 따라서 이 고객의 집은 서신동이다. 
+
+이 고객이 밤 11시쯤에 전북대학교에서 누군가와 통화를 했다고 하자. 
+
+그럼 현재 이 고객의 위치는 전북대학교이다. 
+
+이 고객은 결국 집으로 가야하므로, 11시에 전북대학교에서 서신동으로 가는 심야버스 수요가 하나 있다고 해석할 수 있다. 
+
+이러한 방식으로 가짜자료를 만들어서 심야버스 수요를 예측하였다. 
+
+이는 적절한 데이터 분석을 통하여 주민들의 삶의 질을 개선한 사례라 생각할 수 있는데, 전북대 교원이 되면 이러한 분석을 많이 수행하고 싶다. 
 
 - 서울시: 더 서울 메트로팔러턴 가버먼트 
 - 심야버스수요: 디멘드 포어 레이트 나이트 버시스 
 - 휴대전화 발신기록에 근거: 베이스드 온 넘버 오브 모바일 폰콜 메이드 바이 서울 시티즌 
 - 시민들의 삶의 질: 콸러티 오브 라이프 오브 시티즌. 
 
-이것은 지역사회와 대학의 윈윈모델이 될 수 있습니다. 교수는 양질의 데이터로 연구를 할 수 있어 행복할것입니다. 또한 정부와 지역단체는 데이터를 관리하여 지역주민의 삶을 개선할 수 있어 이득일 것입니다. 
+### 추가질문2? 왜 꼭 전북대에서만 그런것을 할 수 있음? 다른 대학에서는 그러한 분석 못하나? 
 
-> This can be a win-win model for local governments and universities. Professors will be happy to be able to do research with quality data. In addition, it would be good for the government and local organizations to improve the lives of local residents.
+당연히 다른대학에서 이런 분석을 할 수 없는 것은 아니다. 
 
-이처럼 원하는 연구를 하면서도 지역사회 혹은 국가를 위해 공헌할 수 있는 기회가 많다는 점이 매력적이라고 생각합니다. 
-	
-> I think it is attractive that there are many opportunities to contribute to the local community or the country while doing desired research.
-	
+다만 지역거점대학은 그 특성상, 그 지역내에서 독보적인 연구력을 가지고 있다.
+
+따라서 지역사회의 분석의뢰나 자문이 상대적으로 많이 몰릴것으로 기대한다. 
+
+또한 지역대학은 이러한 요청에 적극적으로 부응할 필요가 있다고 생각한다. 
+
 
 ## 2. 교육자로서의 인격과 품위 (총장님 질문 예상)
 
@@ -127,7 +154,7 @@ title : (정리) 인터뷰대비
 
 이론은 너무 쉬운내용만을 골라서 가르치지는 않을것임. 학문에 뜻이 있는 학생들이 대학원이 진학하였을 경우, 대학원 내용을 무리없이 배울 수 있을 정도의 수준을 배양하는 것이 목표임. 
 
-실습은 모든 학생들이 내 수업을 따라오도록 가급적 기초부터 차근차근 가르칠 생각임. 실습의 목표는 어떠한 기업에 학생들이 취업하더라도 실무적인 역량때문에 혼돈이 생기지 않을 정도의 기본기를 착실하게 다진다는 생각으로 수업할 계획임. 
+실습은 모든 학생들이 내 수업을 따라오도록 가급적 기초부터 차근차근 가르칠 생각임. 실습의 목표는 어떠한 기업에 학생들이 취업하더라도 실무적 어려움을 가지지 않게 하는것이 목표임. 따라서 기본기를 착실하게 다진다는 생각으로 수업할 계획임. 
 
 통계학 과목이외의 교양과목개설에도 관심이 있음. 
 
@@ -136,11 +163,11 @@ title : (정리) 인터뷰대비
 
 ### 취업지도계획  
 
-최근에 4차산업혁명의 여파로 인공지능과 IT분야에서 통계학도에 대한 수요가 급증
+최근에 4차산업혁명의 여파로 인공지능과 IT분야에서 통계학도에 대한 수요가 급증. 
 
-전통적으로 통계학과학생들이 선호하는 금융, 품질관리, 의약학 이외의 IT계열로 진로를 희망하는 학생들이 증가
+전통적으로 통계학과학생들이 선호하는 금융, 품질관리, 의약학 이외의 IT계열로 진로를 희망하는 학생들이 증가.
 
-이러한 학생들을 위해 IT회사에서 학생들에게 요구하는 역량, 회사에서 수행하는 업무등을 본인의 경험을 바탕으로 소개 
+이러한 학생들을 위해 IT회사에서 학생들에게 요구하는 역량, 회사에서 수행하는 업무등을 본인의 경험을 바탕으로 소개. 
 
 학생들의 진로선택의 폭을 넓히는데 도움이 될것으로 기대함. 
 
@@ -175,25 +202,28 @@ title : (정리) 인터뷰대비
 > I think, student needs counselor. 
 
 대학교에 오면 학생들은 다양한 상황을 접한다. 
-> When enterering university, students may be encount the various situation, which have been never experienced before. 
+> When enterering university, students may encounter the various situation, which have never been experienced before. 
 
 좋아하는 이성이 생길수도, 진로를 탐색할수도 있다. 
 > There are some possibility that they are interested in the opposite sex. Or they could be interested in their own career path. 
 
-이러한 상황에 학생들은 혼란을 느끼고 보통 친구, 선배, 부모등과 상담하며 안정감을 찾는다. 
-> In those situation, student often feel confused, and they ask for advise, to get inner peace. 
+이러한 상황에 학생들은 혼란을 느낄 것이다. 그리고 이러한 문제에 대한 조언을 구하고 의논할 카운셀로를 찾을 것이다. 
+> In those situation, student often feel confused, and they want to find counseler who can advise and discuss about such topic. 
 
-상담상대중에 교수가 포함되어야 한다고 생각한다. 
-> I think the professor should be included in the list of counselors. 
+일반적으로 학생들이 카운셀러 리스트는 친구, 선배, 부모로 구성되어있다. 
+> In generally, student's list consists of friends, senior student, and parents. 
+
+나는 상담상대중에 교수가 포함되어야 한다고 생각한다. 
+> I think, the professor should be included in the list of counselors, 
 
 교수는 친구 선배 부모가 제시하는 관점과 다른 시각에서 학생에게 조언할 수 있다. 
-> Professor can advise the student, with something new view point,  which is different from that of friends, senior student, and parents. 
+> because professor can advise the student, with something new view point, which is different from that of friends, senior student, and parents. 
 
 학생들은 다양한 조언을 받으며 성장할 수 있다. 
 > Student can grow up by taking various advise including professor's advise. 
 
-만약에 교수가 된다면 단순 지식전달 이외에 다양한 비지식적인 교육을 함으로서 학생들을 지원해야 하고 싶다. 
-> Becoming professor of JB national univ, I would like to support student by providing such a non-knowledge education, I mean, counseling.
+만약에 교수가 된다면 단순 지식전달 이외에 다양한 비지식적인 교육을 함으로서 학생들을 지원하고 싶다. 
+> Becoming professor of JBNU, I would like to support student by providing such a non-knowledge education, I mean, counseling.
 
 
 ### 대학원생에게 어떤 토픽을 주겠는가?
@@ -211,7 +241,7 @@ title : (정리) 인터뷰대비
 
 > I have 4 working papers. 
 
-그 중 하나인 Heavy-snow transform은 기하학적 딥러닝의 이론적인 성질을 서포트하는 논문이다. 
+그 중 하나인 Heavy-snow transform를 소개하고 싶다. HST 기하학적 딥러닝의 이론적인 성질을 서포트하는 논문이다. 
 
 > I would like to introduce one of them, named heavy-snow transform. Heavy-snow transform deals the theoritical properties which can support the fields in geometric deep learning. 
 
@@ -221,7 +251,7 @@ title : (정리) 인터뷰대비
 
 나는 기하학적 딥러닝에 관심이 있는데 이는 그래프나 매니폴드와 같이 다양한 형태의 데이터를 다룰 수 있는 방법론이기 때문이다. 
 
-> I am interested in Geometric deep learning because it can handle the un-structured data such as graph and manifold. 
+> I am interested in geometric deep learning because it can handle the unstructured data such as graph and manifold. 
 
 나는 연구중인 Heavy-snow transform을 잘 마무리해서 향후 연구에 대한 좋은 이론적 토대를 만들고 싶다. 
 
@@ -293,23 +323,23 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 내가 연구하는 분야는 비정형데이터에 대한 기계학습방법론인 기하학적 딥러닝이다. 
 
-> The field I am interested is geometric deep learning which can handle the Non-Euclid data such as graph, manifold, and spatio-temporal data. 
+> The field I am interested is geometric deep learning which can handle the non-Euclid data such as graph, manifold, and spatio-temporal data. 
 
 내 연구분야에 대한 전망은 매우 밝다고 생각한다.
 
->  I think my research field is promising. 
+>  I think my research field is promising, 
 
 왜냐하면 비유클리드 자료가 최근에 빠르게 축적되고 있기 때문이다. 
 
-> Because, non-Euclida data has been accumulated rapidly in these days. 
+> because non-Euclida data has been accumulated rapidly in these days. 
 
 새로운 형태의 데이터는 항상 새로운 통계적 방법론의 개발을 요구한다. 
 
-> I think, a new type of data always invoke the devoloping a new statistical methodology which can handle the new type of data. 
+> I think, a new type of data always invoke the devoloping a new statistical methodology, and vice versa. 
 
 사물인터넷과 발전된 통신기술이 이러한 사이클을 더욱 가속화 할것입니다. 
 
-> The IoT system and advanced communications networks accelerate such a research cycle. 
+> The IoT system and advanced communications networks could accelerate such a research cycle. 
 
 따라서 내 연구분야는 유망하다고 생각한다. 
 
@@ -335,9 +365,9 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 세번째가 연구이다. 
 
-교육과 기타업무로 인하여 연구할 시간이 부족하다면 잠을 줄여서 부족한 시간을 보충해야한다. 
+교육과 기타업무로 인하여 연구할 시간이 부족할수도 있다. 
 
-시간을 잘 활용한다면 생각보다 연구에 투자할 시간이 많다. 
+하지만 시간을 잘 활용한다면 생각보다 연구에 투자할 시간이 많다. 
 
 지난학기에 교육 회사업무 연구를 병행한 적이 있다. 
 
@@ -363,7 +393,11 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 나에 대한 학교측의 지원이 부족하다는 것은 한정적인 자원이 더 필요한곳에 투입되기 때문이라 생각한다. 
 
-학교라는 큰 조직의 입장에서 올바른 선택을 한 것이고 결국 전북대학교가 잘되는 것이 내가 잘되는 길이기도 하다.
+학교라는 큰 조직의 입장에서 올바른 선택을 한 것이다. 
+
+이는 궁극적으로 전북대에게 더 옳은 선택일 것이다. 
+
+전북대학교가 잘되는 것이 내가 잘되는 길이기도 하다.
 
 불편함이 좀 있더라도 감수하고 함께 이겨나가는 지혜가 필요하다. 
 
@@ -397,7 +431,25 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 ### 학과의 선임교수들이 비합리적인 요구를 할 때 대처방법은?
 
-2가지 경우가 있다. (1) 합리적인 사람인데 비합리적 요구를 하는 경우. (2) 비합리적 사람이고, 그래서 비합리적 요구를 하는 경우. 대부분의 경우는 전자라고 생각한다. 이 경우는 사실 비합리적 요구가 아니라 그 사람 나름은 합리적인 요구였는데, 내가 그 사람이 그러한 요구를 하는 백그라운드를 제대로 파악하기 못해서 비합리적이게 느끼는 경우가 많다. 이럴때는 그 선임교수님과 진솔한 대화를 통하여 상항을 이해하려고 노력해야 한다고 생각한다. 내 경험상 이러한 과정을 거치면 많은 비합리적요구가 합리적요구로 탈바꿈한다. 두번째 케이스는 비합리적인 사람이어서 비합리적 요구를 하는 경우인데, 사실 이런 경우는 별로 없다. 만약에 있다면 그 사람은 합리적인 설득으로 변화시킬 수 없다. 왜냐하면 당사자가 비합리적인 사람이니까. 즉 마치 자연재해 같이 어떠한 노력으로도 주어진 상황을 개선시키거나 변화시킬 수 없을텐데, 그럴때는 그냥 받아들이고 빠르게 다른것에 집중하는 것이 좋다고 생각한다. 
+대부분의 경우, 선임교수가 비합리적 요구를 한 것이 아닐 경우가 많다. 
+
+보통은 단지 내가 선임교수님의 의도를 잘 파악하지 못하여 생기는 오해이다. 
+
+따라서 대화를 통하여 입장차이를 이해하려고 노력해야 해야함. 
+
+그러면 대부분의 비합리적인 요구가 이해가능한 요구로 탈바꿈 한다. 
+
+***(추가질문) 대화를 통해서도 설득이 되지 않는다면?***
+
+거의 경험해본적 없지만, 경우에 따라서 그럴수도 있다고 본다.
+
+만약에 그런 경우가 생기면 최대한 빠르게 의견을 수용하여 서로간의 불필요한 감정소모를 줄이는것이 현명하다고 생각. 
+
+이러한 상황이라면 그 선임교수님과 인간적인 친밀감을 느끼기는 어려울듯. 
+
+하지만 업무적으로 불협화음을 내는것은 조직에서 바람직하지 않음. 
+
+최대한 빠르게 의견을 수용하여 조직내에서 잘 융화되는것이 중요. 
 
 
 ## 5. 임용 후 본교 기여 가능성 (총장질문+산학협력단)
@@ -414,23 +466,49 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 ### 외부로부터 연구자금을 받은 경험은? (산단)
 
-없다. 교수가 되면 하고 싶다. 구체적으로는 ICT환경구축과 그로인한 센서데이터를 분석하는 연구에 관심이 있다. 현재 내가 연구중인 기하학적 딥러닝을 적용하기 좋은 분야라 생각한다. / 그리고 차량용배터리 수명예측과 같이 국민의 미래 먹거리와 관련된 과제에 관심이 있다. 이는 그 특정기업뿐만 아니라 국가에 도움이 될 과제라 생각한다. 
+없다. 교수가 되면 하고 싶다. 
+
+구체적으로는 ICT환경구축과 그로인한 센서데이터를 분석하는 연구에 관심이 있다. 
+
+현재 내가 연구중인 기하학적 딥러닝을 적용하기 좋은 분야라 생각한다. 
 
 ### 학교에 어떻게 기여하겠는가? (총장)
 
 (1) 연구: 우수논문을 써서 학교의 이름을 빛내고 싶다. 개인적으로 인용수가 100회 넘는 논문을 출간하는 것이 목표이다. 
+
 (2) 교육: 진심과 정성을 가지고 학생들을 지도하여 우수한 인재를 양성해내겠다. 최소한 3명의 학생은 나로 인하여 인생이 크게 바뀌었으면 좋겠다. 
+
 (3) 지역사회를 위한 봉사: 지역주민에게 학교의 긍정적 에너지를 심어줄수 있는 다양한 활동을 적극적으로 하겠다. 
+
 공공데이터를 활용한 분석으로 지역사회에 기여, 주민들을 대상으로 한 인공지능 교육과 같은 활동을 예로 들수 있다. 
 
-왜 이런활동을 하는지? 첫째: 국가 혹은 공익을 위해 봉사하고 싶은 개인적 성향을 가지고 있음. 그러한 일이 보람차고 나를 기쁘게함. 둘째: 좀더 계산적인 이유인 결국 지역사회에 환원하는 선순환이 있어야 대학이 잘된다고 생각함.  
+***(추가질문) 왜 이런활동을 하는지?***
+
+첫째: 국가 혹은 공익을 위해 봉사하고 싶은 개인적 성향을 가지고 있음. 
+
+그러한 일이 보람차고 나를 기쁘게함. 
+
+둘째: 두번째는 좀더 계산적인 이유임. 
+
+결국 지역사회에 환원하는 선순환이 있어야 대학이 잘된다고 생각함.  
 
 
 ### 당신의 목표는 무엇인가? (총장)
 
-- 연구: 우수한 연구활동을 지속하여 전북대의 이름을 빛내고 싶다. 인용수가 100회가 넘는 논문을 쓰고 싶다. 
-- 교육: 또한 진심과 성의를 다해서 학생을 지도하여 학생들이 후에 마음속으로 한번씩 감사할만한 그런 교수가 되고 싶다. 제자와 지속적으로 연락을 할 수 있는 그런 교수가 되고싶다. 제자가 자식을 낳았을때 그 자녀의 이름을 알았으면 좋겠다. 
-- 국가: 가급적이면 많은사람들에게 공헌을 하는 교수가 되고싶다. 지역주민 혹은 국가를 위해서 할 수 있는 일이 있다면 좋겠다. 관심을 가지고 있는 것은 공공데이터를 활용한 통계분석으로 지역주민의 삶의 질을 향상시키는 것이다.  
+(1) 연구: 우수한 연구활동을 지속하여 전북대의 이름을 빛내고 싶다. 
+
+인용수가 100회가 넘는 논문을 쓰고 싶다. 
+
+
+(2) 교육: 또한 진심과 성의를 다해서 학생을 지도하겠다. 그리고 학생들이 후에 마음속으로 한번씩 감사할만한 교수가 되고 싶다. 
+
+최소한 3명의 학생을 인생을 바꿀수 있으면 좋겠다. 
+
+(3) 국가: 가급적이면 많은사람들에게 공헌을 하는 교수가 되고싶다. 
+
+지역주민 혹은 국가를 위해서 할 수 있는 일이 있다면 좋겠다. 
+
+관심을 가지고 있는 것은 공공데이터를 활용한 통계분석으로 지역주민의 삶의 질을 향상시키는 것이다.  
 
 ### 전북대가 나아갈 방향? 전략? (총장)
 
@@ -442,13 +520,12 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 ### 영어교육의 중요성은? (총장)
 
-세계대학랭킹을 상승할 수 있기에 매우 중요함. 
+매우중요. 
 
-해외학생들과 교류. 
+특히 최근 코로나로 인해 온라인교육컨텐트 증가 
 
-코로나로 인해 온라인교육컨텐트 증가 -> 교육장벽이 허물어짐. 
+온라인교육컨텐츠를 영어로 제작한다면 JBNU의 우수교육과정을 전세계에 소개할 기회라고도 생각함. 
 
-전세계 학생들에게 전북대의 우수한 강의를 전파할 수 있다는 점에서 긍정적이라 생각함. 
 
 ### 지방대학의 어려움을 아는가? (총장)
 
@@ -464,25 +541,6 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 국제학회 참석. 컨퍼런스를 통하여 인맥쌓음. 학생들도 참여. (포닥, 박사과정중 연수연구, 취업등 기회확보) 
 
 ## 6. 기타질문 (그냥 면접평가와 관련없이 나올만한 질문드)
-
-### 왜 전북대? 
-
-일일히 열거하기 힘들 정도로 장점이 너무 많은 학교다. 세 가지만 말하겠다. 
-
-첫번째, 지방거점국립대학이기 때문에 타학교대비 우수한 학생들을 지도할 수 있다는 점. 
-두번째, 연구환경에 대한 지원이 상대적으로 규모가 크고 인센티브가 명확하다는점. 
-
-앞의 두 개는 대학평가에서 전북대가 꾸준히 순위를 올리는 비결이기도 해서 교수님들이 이미 잘 알고계시는 장점이라 생각한다. 
-
-개인적으로 마지막이 가장 매력적인 이유인데, 지역거점대학이기 때문에 지역사회 나아가 나라를 위해서 봉사할 수 있는 기회가 상대적으로 많이 주어진다는 것이다. 
-
-구체적으로 관심이 있는 분야는 공공데이터를 활용한 데이터분석이다. 
-최근에 정부에서 디지털뉴딜 사업의 일환으로 양질의 공공데이터가 축적되고 있다. 
-통계학자로서 "데이터는 항상 삶의 질을 향상시키는 서비스를 제공한다"라는 신념을 가지고 있는데 공공데이터를 활용한 분석으로 도민들의 삶의 질을 높을 수 있다고 생각한다. 
-하나의 사례로 서울시 같은 경우는 서울시민의 휴대전화 발신기록을 바탕으로 심야버스 수요를 예측하는 독특한해석으로, 심야버스 노선 적재적소에 확충하여 시민들의 삶의 질을 크게 높인 바 있다. 나 역시 기회가 된다면 전북도민들과 머리를 맞대어 도민들에게 유용한 공공서비스를 제공하는데 기여하고 싶다. 
-
-그외의 개인적 이유
-아름다운 도시 전주에 위치한 점, 맛있는 명소가 많아서 현 부인과 연애할때 자주 방문했던 도시 -> 삶의 만족도가 높아질것으로 기대 
 
 ### 전북대에 대하여 아는것? 
 (1) 건학이념: 
@@ -554,13 +612,31 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 ### 회사 그만 두고 온 이유? 회사 계속 다니지? 왜 굳이 교수해야해? 
 
-(1) 연구: 주도적연구를 할 수 있음. 
-(2) 교육: 사내교육과 학생들을 지도하는것은 다름. 
-사내교육: 단순한 지식전달. 
-학생지도: 취업 및 진로지도 그리고 인생전반에 대한 지도도 포함. -> 취업이 잘되었을때 학생이 잘살아갈 때 더 큰 보람과 기쁨을 느낌. 
-(3) 국가에 대한 봉사: 개인적 성향=국가의 이익 혹은 공익을 위해서 일하고 싶어함. 
-우리회사는 국민의 삶을 높여주는 회사라는 자부심이 있음. 
-교수: 지역주민들에게 좀더 직접적으로 봉사할 기회가 많음. (데이터분석을 통한 삶의 질 향상, 교육과 같은 사회환원 프로그램)
+(1) 연구측면에서 차이점: 
+
+회사에서는 회사가 원하는 연구를 해야함.
+
+학교에서는 내가 원하는 연구를 주도적으로 할 수 있음. 
+
+(2) 교육측면에서 차이점:
+
+회사에서도 사내교육을 하였음.
+
+교육에 대한 최고의 기쁨은 피수강자의 긍정적 피드백이라 생각함. 
+
+회사에서는 "개념을 잘 알려줘서 고맙다" 의 피드백을 많이 받았음. 
+
+숭실대에서 강의한적이 있는데, 그때는 피드백의 질이 달랐음. 
+
+예를들면 
+
+"덕분에 통계가 재미있어 졌다." 
+
+"계리사쪽으로만 진로를 생각했는데 데이터 과학자로서의 진로도 매력적으로 생각하게 되었다."
+
+등이 있음. 
+
+이는 교수만 경험할 수 있는 특별한 경험임. 왜냐하면 교수는 단순한 지식전달뿐만 아니라 진로/학습상담과 같은 비지식적인 교육역시 수행하기 때문. 
 
 ### 논문이 왜케 적음?
 
@@ -579,9 +655,27 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 ### 나중에 서울학교로 옮기는것 아니야? 
 
-아니다. 서울학교로 옮길이유가 없다. 아마도 수도권이 아닌 지역에 있는 교수들이 서울학교로 옮기는 주된 이유는 (1) 타학교의 연구인프라등이 우수해서 (2) 본인 혹은 가족이 서울생활을 선호하기 때문 (예를들면 와이프의 직장이 서울이라든가?)이라 생각한다. 
+아니다. 서울학교로 옮길이유가 없다. 
 
-(1) 전북대학교의 연구인프라는 국내최상위 수준이며 연구에 대한 인센티브 또한 우수한 것으로 알고 있다. 그래서 각종 대학평가에서 최근 10년간 꾸준히 좋은 평가를 받아 순위가 급상승한 대학 중 하나이다. 현재 교수당자체연구비가 국내5위수준으로 최상위권이고 논문당 피인용횟수등의 연구지표도 10위권 초반으로 알고 있다. 또한 지역거점이라는 특성으로 인해서 지역사회와의 연계도 좋다. 연구하기에 매우 좋은 학교라고 생각한다. 
+아마도 수도권이 아닌 지역에 있는 교수들이 서울학교로 옮기는 주된 이유는 (1) 타학교의 연구인프라등이 우수해서 (2) 본인 혹은 가족이 서울생활을 선호하기 때문 (예를들면 와이프의 직장이 서울이라든가?)이라 생각한다. 
 
-(2) 가족이 서울생활을 더 선호하지는 않으며 본인 또한 서울에서의 생활을 그렇게 선호하는 편은 아니다. 대부분의 시간을 학교와 집에서 보내며 강의준비 및 연구에 매진한다. 그렇기 때문에 개인적으로는 연구와 교육에 매진할수 있고 가끔 머리식히기 위해 강아지와 산책할 수 있는 공간이 군데군데 존재하는 지역을 선호하는데 이런면에서 전북대학교와 전주는 오히려 서울보다 제 라이프스타일에 적합하다고 생각한다. 
+(1) 전북대학교의 연구인프라는 국내최상위 수준이며 연구에 대한 인센티브 또한 우수한 것으로 알고 있다. 
+
+그래서 각종 대학평가에서 최근 10년간 꾸준히 좋은 평가를 받아 순위가 급상승한 대학 중 하나이다. 
+
+현재 교수당자체연구비가 국내5위수준으로 최상위권이고 논문당 피인용횟수등의 연구지표도 10위권 초반으로 알고 있다. 
+
+또한 지역거점이라는 특성으로 인해서 지역사회와의 연계도 좋다. 
+
+따라서 연구하기에 매우 좋은 학교라고 생각한다. 
+
+(2) 가족이 서울생활을 더 선호하지는 않는다.
+
+본인 또한 서울에서의 생활을 그렇게 선호하는 편은 아니다. 
+
+대부분의 시간을 학교와 집에서 보내며 강의준비 및 연구에 매진한다. 
+
+그렇기 때문에 개인적으로는 연구와 교육에 매진할수 있고 가끔 머리식히기 위해 강아지와 산책할 수 있는 공간이 군데군데 존재하는 지역을 선호한다.
+
+전북대학교와 전주는 이러한 제 라이프스타일과 맞는 충분히 매력적인 장소라 생각한다. 
 
