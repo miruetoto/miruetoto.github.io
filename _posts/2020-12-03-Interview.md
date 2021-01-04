@@ -291,13 +291,29 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 ### 향후 10년 정도 당신 분야의 산업 전망은?
 
-매우 밝다. 
+내가 연구하는 분야는 비정형데이터에 대한 기계학습방법론인 기하학적 딥러닝이다. 
 
-(1) 다양한 학문분야와 융합이 예상된다. -> 4차산업혁명의 핵심 학문중 하나에 통계학이 포함된다고 생각. 학문간융합교육도 필요.  
+> The field I am interested is geometric deep learning which can handle the Non-Euclid data such as graph, manifold, and spatio-temporal data. 
 
-(2) 지역사회에 기여할 수 있는 방법이 많이 있다. -> 특히 공공데이터를 활용한 분석이 지역주민의 삶의 질을 향상시킬것임. 
+내 연구분야에 대한 전망은 매우 밝다고 생각한다.
 
-(3) 학생들이 선호하는 인기학과가 될 것이다. -> 학생들이 필요로 하는 융합과목을 지속적으로 개발할 필요성 있음. 
+>  I think my research field is promising. 
+
+왜냐하면 비유클리드 자료가 최근에 빠르게 축적되고 있기 때문이다. 
+
+> Because, non-Euclida data has been accumulated rapidly in these days. 
+
+새로운 형태의 데이터는 항상 새로운 통계적 방법론의 개발을 요구한다. 
+
+> I think, a new type of data always invoke the devoloping a new statistical methodology which can handle the new type of data. 
+
+사물인터넷과 발전된 통신기술이 이러한 사이클을 더욱 가속화 할것입니다. 
+
+> The IoT system and advanced communications networks accelerate such a research cycle. 
+
+따라서 내 연구분야는 유망하다고 생각한다. 
+
+> Thus, I think that my research area is promising. 
 
 --- 
 
@@ -518,6 +534,8 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 ### 취미가 무엇인가?
 
 식물키우기, 물고기키우기. 
+
+연구중 받는 스트레스를 해소하기에 좋다. 
 
 ### 학교나 학과에 대한 질문이 있나요?
 
