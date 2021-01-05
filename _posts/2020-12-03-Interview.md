@@ -38,6 +38,8 @@ title : (정리) 인터뷰대비
 
 > First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. JBNU provide good research environment to professor and rewards about high-quaility paper is clear.
 
+- 장점: 어드베너지 
+
 이는 여러교수님들이 이미 잘 알고 계시는 내용이고 다른 지원자들 역시 전북대의 장점이라고 생각하는 핵심요소일 것이라 믿습니다. 
 
 > I think, this is well-known advantages of JBNU, and I believe that other applicants also think those two strengths as key factor of making JBNU attractive. 
@@ -117,7 +119,7 @@ title : (정리) 인터뷰대비
 - adaptability: 어댑터빌러티 
 
 학교, 대기업, 군대와 같 다양한 조직을 경험해봤는데 적응에 어려움을 겪은 적은 없었다. 
-> I have been experience various organization, such as school, company, army. I have never been trouble in adapting those circumstances. 
+> I have been experienced various organization, such as school, company, army. I have never been trouble in adapting those circumstances. 
 
 특히 군대에서는 통신병을 하다가 취사병으로 보직이 바뀌는 와중에서도 잘 적응했다. 
 
@@ -137,11 +139,11 @@ title : (정리) 인터뷰대비
 
 ### 우리가 널 왜 뽑아야하나? 
 
-교육에 대한 열정과 철학이 분명하다. 
-
-그래서 학생들을 잘 지도할 수 있다고 생각한다. 
+교육에 대한 열정이 있고 철학이 분명하다. 그래서 학생들을 잘 지도할 수 있다고 생각한다. 
+> I have passion for education, and I also have my own educational philosophy, so I think, I can educate students well. 
 
 특히 인공지능연구소에서 근무한 경험은 통계학과 학생들이 IT계열로 진로를 원할때 적절한 조언을 해줄 수 있다고 생각한다. 
+> Specifically, working experiance in AI lab make good advise for students who want to make their career path in AI. 
 
 이는 매우 중요한 장점이라고 생각합니다. 
 
@@ -158,15 +160,21 @@ title : (정리) 인터뷰대비
 
 ### 교수란 무엇인가? 
 
-교수는 길을 찾는 직업. 
+교수는 진리로 향하는 길을 찾는 사람이다. (교수는 길을 만드는 직업인것 같습니다.) 
+> A professor is a person who finds their own way. 
 
-이는 매우 매력적인 일이라고 생각하는데 그 이유는 다른사람들에게 긍정적인 영향을 주기 때문. 
+이는 매우 매력적인 일이라고 생각한다.  
+> I think it is very valuable works. 
 
-찾은 길로 인해 여러사람을 이롭게하는 기술을 개발할수 있음.
+그 길에서 교수는 여러사람을 이롭게하는 기술을 개발할 수 있음.
+> On the that road, professor could develope some technology which makes world convinient.  
 
-다른사람들이 그 길을 걷게함으로써 후학양성을 할수있음.  
+그 길을 교수는 제자와 함께 공부하며 후학을 기를 수 있다.   
+> Or the professor could educate their successors by studying together on his way. 
+- 후학: 썩세서 
 
-나 역시 많은 사람들을 이롭게하는 나만의 길을 전북대에서 개척하고싶음. 
+기회나 역시 많은 사람들을 이롭게하는 나만의 길을 전북대에서 개척하고싶음. 
+> If I got a chance to work on JBNU, I would like to construct my own way. 
 
 ### 강의철학
 
@@ -186,11 +194,14 @@ title : (정리) 인터뷰대비
 
 숭실대 경험:
 
-숭실대에서 지난학기에 강의할 기회가 있었는데, 나도 그 교수님처럼 학생과 소통하려고 노력했다. 
+숭실대에서 지난학기에 강의할 기회가 있었다. 
+> I have lecture experience at SSU, in spring semester in 2020. 
 
-온라인 강의라서 주로 과제풀이에 대한 채점과 동시에 학생의 풀이를 보고 느낀 여러가지 생각들을 첨삭하여 피드백했다. 
+(나도 그 교수님처럼 소통을 중시하고 싶었다) 하지만 코로나로 인해 온라인으로만 학생을 지도해야 했다. 
+> Due to COVID, I had to teach my students with online. 
 
-또한 이메일을 통하여 수업내용에 대한 질문과 답을 활발하게 진행하였다. 
+온라인 강의라서 학생과 소통하는것이 힘들었지만 이메일과 과제첨삭을 활용하여 최대한 학생들과 소통함; (과제첨삭: 과제풀이에 대한 채점과 동시에 학생의 풀이를 보고 느낀 여러가지 생각들을 피드백) 
+> It is difficult to communicating with student on online, but using email, and feedback to report, I do my effort to communicating with them. 
 
 개인적으로 학생들의 방법에 대하여 피드백을 주고 소통을 하는 것이 학생들의 학습의욕을 좀 더 높여주는것 같다고 믿는다. 
 
@@ -379,7 +390,7 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 왜냐하면 비유클리드 자료가 최근에 빠르게 축적되고 있기 때문이다. 
 
-> because non-Euclida data has been accumulated rapidly in these days. 
+> because non-Euclida data has been accumulated rapidly in these days, thus demand for developing statistical method is increasing. 
 
 새로운 형태의 데이터는 항상 새로운 통계적 방법론의 개발을 요구한다. 
 
