@@ -127,7 +127,6 @@ title : (정리) 인터뷰대비
 
 다양한 학문분야에 빠르게 적응하고 해석하며 응용하는 능력이 뛰어나다고 생각한다. 
 
-
 이는 다양한 학문과 융합연구를 해야하는 통계학과의 특성과 매우 부합하는 장점이라 생각한다.  
 > I think, this is key strength for statistician, since statistician often do fusion research with professor in other department such as bio, economy, AI. 
 
@@ -135,7 +134,7 @@ title : (정리) 인터뷰대비
 
 교육에 대한 열정과 철학이 분명하다. 
 
-학생들을 잘 지도할 수 있다고 생각한다. 
+그래서 학생들을 잘 지도할 수 있다고 생각한다. 
 
 특히 인공지능연구소에서 근무한 경험은 통계학과 학생들이 IT계열로 진로를 원할때 적절한 조언을 해줄 수 있다고 생각한다. 
 
@@ -171,15 +170,14 @@ title : (정리) 인터뷰대비
 
 본인의 경험: 
 
-대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셧다. 
+대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셨다. 
 > I would like to introduce a professor remained in my memory. He always want to communicate student with their mid-term answer paper. 
 
-면담내용은 주로 "이 문제는 다른학생들과 다르게 독특한 풀이로 풀었다." 
-> s
+면담내용이 그렇게 특별하지는 않았다. 단지 내가 푼 답안지를 보며, 잘못된 수학개념을 바로잡아주시고, 매우가끔씩 독창적인 풀이를 칭찬해 주시기도하고 내 학습방법에 대하여 토론을 하는 것이었다.  
+> The contents of consult is not special, he just comment about my answer sheet, and adjust my wrong mathematical concept, and praise my creative solution, very occasionally, and discuss about my way of studying. 
 
-혹은 "이 문제를 이렇게 푼걸로 보니, 개념을 잘못 이해한 것 같다 혹은 학습태도가 잘못된것 같다" 등이었다. 
-
-저는 이러한 교수님과의 면담을 통하여 학습상황에 대한 전반적인 피드백을 상세하게 받을수 있었습니다. 
+이러한 경험으로 나는 해당 개념을 명확하게 이해할 수 있었고 아울러 좋은 학습태도를 가지게 되었다. 이때 형성한 자세는 지금도 나의 큰 자산이 되고있다. 나도 교수가 되면 내가 경험했던 것처럼 이처럼 학생들과 소통하며 올바르게 지도하고 싶다. 
+> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leave to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
 
 숭실대 경험:
 
