@@ -380,28 +380,15 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 ### 향후 10년 정도 당신 분야의 산업 전망은?
 
-내가 연구하는 분야는 비정형데이터에 대한 기계학습방법론인 기하학적 딥러닝이다. 
-
-> The field I am interested is geometric deep learning which can handle the non-Euclid data such as graph, manifold, and spatio-temporal data. 
-
 내 연구분야에 대한 전망은 매우 밝다고 생각한다.
 
 >  I think my research field is promising, 
 
-왜냐하면 비유클리드 자료가 최근에 빠르게 축적되고 있기 때문이다. 
+내가 연구하는 분야는 비정형데이터에 대한 기계학습방법론인 기하학적 딥러닝이다. 기하학적 딥러닝은 비정형, 비정형자료를 분석하는 연구분야이다. 최근에 통신시스템의 발달로 이러한 비정형 자료가 빠르게 축적되고 있어 이러한 자료분석에 대한 수요가 급증하고 있다. 
 
-> because non-Euclida data has been accumulated rapidly in these days, thus demand for developing statistical method is increasing. 
+> The field I am interested is geometric deep learning which can handle the unstructred data. In these days, that type of data is accumulating very fast, due to advanced comunication technology and IoT environment, thus demand for developing statistical method which can handle those data increased dramatically.   
 
-새로운 형태의 데이터는 항상 새로운 통계적 방법론의 개발을 요구한다. 
-
-> I think, a new type of data always invoke the devoloping a new statistical methodology, and vice versa. 
-
-사물인터넷과 발전된 통신기술이 이러한 사이클을 더욱 가속화 할것입니다. 
-
-> The IoT system and advanced communications networks could accelerate such a research cycle. 
-
-따라서 내 연구분야는 유망하다고 생각한다. 
-
+따러서 나는 내 연구분야가 전망있다고 생각한다. 
 > Thus, I think that my research area is promising. 
 
 --- 
@@ -475,10 +462,16 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 특별히 스트레스를 받지는 않는다. 
 
 대부분의 교수가 그렇겠지만 연구가 뜻대로 되지 않을때 스트레스를 받곤한다. 
+> I am upset when the research I am currently working is not going well. I think, many other professors may feel same thing with me. 
 
 스트레스를 해소하는 방법은 산책을 하며 기분전환을 하는 것이다. 
+> In my case, the way of releasing stress is making hobby. ;
 
-또는 강아지와 물고기를 돌보고, 식물들을 기르면서 기분전환을 하기도 한다. 
+나는 무엇인가를 키우는것을 좋아한다. 
+> My hobby is growing something. 
+
+나는 개를키우고, 물고기를 키우며 식물을 키운다. 개와 산책을 하고 물고기에게 먹이를 주고 식물에게 물을 주는 일은 나에게 즐거운 일이다. 이러한 일들은 내가 연구중 받은 스트레스를 줄여주는데 도움이 된다. 
+> I grow dog, fish, and plant. Walking with puppy and feeding fish, watering plants are happy things for me. It help me reduce the stress which is obtained from research. 
 
 ### 연구할 때 힘든점? 
 
@@ -534,7 +527,7 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 연구비: 우수논문을 써서 학교의 이름을 빛내고 싶다. 개인적으로 인용수가 100회 넘는 논문을 출간하는 것이 목표이다. 
 
-연구비수주: 이러한 연구성과를 바탕으로 정부와 민간과제를 수주하기 위해 노력하겠다. 임용초기에는 생어첫연구와 신진연구를 목표로 하겠다. 이후에는 삼성 기초이학 과제에 지원할 예정이다. 2019년에 지원했다가 떨어진 기억이 있는데 다시 도전할 생각이다. 그뒤에는 좀더 이론적인 연구성과를 바탕으로 중견연구비를 지속적으로 수주할 예정이다. 
+연구비수주: 이러한 연구성과를 바탕으로 정부와 민간과제를 수주하기 위해 노력하겠다. 임용초기에는 생어첫연구와 신진연구를 목표로 하겠다. 이후에는 삼성전에서 주관하는 기초이학 과제에 지원할 예정이다. 2019년에 지원했다가 떨어진 기억이 있는데 다시 도전할 생각이다. 그뒤에는 좀더 이론적인 연구성과를 바탕으로 중견연구비를 지속적으로 수주할 예정이다. 
 
 교육: 진심과 정성을 가지고 학생들을 지도하여 우수한 인재를 양성해내겠다. 특히 인공지능분야에 관심이 있는 통계학과학생들에게 진로에 대한 전문적인 상담을 제공. 
 
@@ -632,12 +625,13 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 아울러 다양한 데이터를 다루면서, 데이터를 다루는 스킬과 분석을 하는 기법이 더욱 풍부해진것 같다. 
 
-
 ### 취미가 무엇인가?
 
 식물키우기, 물고기키우기. 
+> Growing plants and fish is my hobby.  
 
 연구중 받는 스트레스를 해소하기에 좋다. 
+> I think it is useful to relax stress which is obtained from research. 
 
 ### 학교나 학과에 대한 질문이 있나요?
 
@@ -658,33 +652,38 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 (1) 연구측면에서 차이점: 
 
-회사에서는 회사가 원하는 연구를 해야함.
+회사에서는 회사가 원하는 연구를 해야함. 학교에서는 내가 원하는 연구를 주도적으로 할 수 있음. 
 
-학교에서는 내가 원하는 연구를 주도적으로 할 수 있음. 
+> In company I have to do the research company want, but in JBNU, I can do my own research that I want. 
 
-(2) 교육측면에서 차이점:
+이런 점이 나에게 장점으로 다가옴. 
 
-회사에서도 사내교육을 하였음.
+> This fact is come to me as an advantage. 
 
-교육에 대한 최고의 기쁨은 피수강자의 긍정적 피드백이라 생각함. 
+(2) 교육측면에서 차이점: 
+
+교수가 되면 생기는 또다른 장점이 있다. 바로 교육을 할 기회가 주어진다는것이다. 학생들을 가르치고, 지도하는것은 나에게 즐거운 일이다. 내가 만약에 전북대에서 교육측면에서도 기쁨이 있다. 전북대에 내 직업이 주어진다면, 나는 좋은 교수가 되고 싶다. 
+> Furthermore, there is an another advantage to being professor. That is, I can got a chance to teach student. Educating and consulting the students is happy things to me. If I got a position in JBNU, I would like to be a good teacher for student.  
+
+물론, 회사에서도 사내교육을 하였음.
+
+개인적으로 교육에 대한 최고의 기쁨은 피수강자의 긍정적 피드백이라 생각함. 
 
 회사에서는 "개념을 잘 알려줘서 고맙다" 의 피드백을 많이 받았음. 
 
-숭실대에서 강의한적이 있는데, 그때는 피드백의 질이 달랐음. 
+하지만 교육을 하면 그보다 좀더 나를 기쁘게 하는 피드백을 받을 수 있다 생각. 
 
-예를들면 
-
-"덕분에 통계가 재미있어 졌다." 
+숭실대에서 강의한적이 있는데 
 
 "계리사쪽으로만 진로를 생각했는데 데이터 과학자로서의 진로도 매력적으로 생각하게 되었다."
 
-등이 있음. 
+등의 피드백을 받았음. 내가 한 학생의 인생에 뭔가 긍정적인 영향을 준것 같아 뿌듯하였음. 
 
-이는 교수만 경험할 수 있는 특별한 경험임. 왜냐하면 교수는 단순한 지식전달뿐만 아니라 진로/학습상담과 같은 비지식적인 교육역시 수행하기 때문. 
+이는 강사가 아닌 교수만 경험할 수 있는 특별한 경험이라 생각함. 
 
 ### 논문이 왜케 적음?
 
-두가지 이유가 있을것 같다. 
+두 가지 이유가 있을것 같다. 
 
 첫째: 나의 능력부족
 
