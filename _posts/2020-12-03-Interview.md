@@ -116,19 +116,23 @@ title : (정리) 인터뷰대비
 > My strength is adaptability. 
 
 학교, 대기업, 군대, 인력사무소 등 다양한 조직을 경험해봤는데 적응에 어려움을 겪은 적은 없었다. 
-> I have been experience various organization, such as school, company, army. I have never been trouble in adapte those circumstances. 
+> I have been experience various organization, such as school, company, army. I have never been trouble in adapting those circumstances. 
 
 특히 군대에서는 통신병을 하다가 취사병으로 보직이 바뀌는 와중에서도 잘 적응했다. 
 
 그 여파로 현재도 요리하는 것을 매우 좋아한다. 
 
+이러한 적응력은 전북대학교에서 잘 적응할 수 있도록 도와줄 것이다. 
+> I think this advantage makes me adjust in JBNU well. 
+
 이러한 적응력은 연구에도 적용된다. 
 > This adaptation can be also applied in research. 
 
-다양한 학문분야에 빠르게 적응하고 해석하며 응용하는 능력이 뛰어나다고 생각한다. 
+다양한 학문분야를 빠르게 학습; 내 연구에 적용; 
+> I can learn other research area fastly, and find some connection with my reasearch. 
 
-이는 다양한 학문과 융합연구를 해야하는 통계학과의 특성과 매우 부합하는 장점이라 생각한다.  
-> I think, this is key strength for statistician, since statistician often do fusion research with professor in other department such as bio, economy, AI. 
+이는 다양한 학과는 교수님들 (바이오, 경제, AI)과 융합연구를 자주하는 통계학과의 특성과 매우 부합하는 장점이라 생각한다.  
+> I think, this is key strength for statistician, since statistician often do fusion research with professor in other department such as BIO, economy, AI. 
 
 ### 우리가 널 왜 뽑아야하나? 
 
@@ -333,20 +337,16 @@ title : (정리) 인터뷰대비
 ### 박사학위논문요약 
 
 박사학위 논문은 크게 두 개의 중심 주제로 구성되어 있습니다. 
+> My thesis consists of two main subject. 
 
-첫번째 주제는 Elastic band transform 이다. 
+첫번째 주제는 Elastic band transform 이다. EBT는 시계열 자료에 대한 여러가지 멀티스케일 방법을 다루었다. 
+> First subject is Elastic-band transform. EBT deals some multiscale method which can analysis the chracteristics of timeseries.
 
-두번째 주제는 Heavy snow transform 이다. 
+두번째 주제는 (나는 두번째 주제가 더 흥미있음) Heavy snow transform 이다. HST는 유클리드 자료에서의 "거리" 혹은 "비유사성"에 대한 개념을 그래프자료로 확장했다. 
+> Second subjuct, which is more interesting to me, is Heavy-snow transform. HST generalize the concept of distance at Euclid data into the graphical data. 
 
-두 논문 모두 멀티스케일방법을 다룬 논문이다. 
-
-Elastic band transform은 시계열 자료에 대한 여러가지 멀티스케일 방법을 다루었다. 
-
-Heavy-snow transform은 그래프자료에 대한 여러가지 멀티스케일 방법을 다루었다. 
-
-그래프자료가 시계열자료를 포함하므로 Heavy-snow transform이 좀 더 실용적이며 Elastic band transform의 발전된 논문이라 볼 수 있다. 
-
-현재는 Heavy-snow transform의 연장선에서 계속해 연구하고 있다. 
+현재는 Heavy-snow transform의 연구를 이어서 기하학적 딥러닝에 적용가능한 통계적 방법론을 개발중임. 
+> Recently, I am interested in some methodology of geometric deep learning, which is next works of heavy snow transform. 
 
 
 ### 내가 생각하기에 가장 우수한 연구는? 
@@ -470,10 +470,10 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 ### 연구할 때 힘든점? 
 
-원하는 데이터를 구하는 과정이 힘들다. 
+방법론을 개발하고 이론을 만드는것은 재미있다. 하지만 나의 연구업정을 입증할만한 원하는 데이터를 구하는 과정이 종좀 힘들게 느껴질때가 있다. 
+> Making the methodology and constructing the theoritical support is interesting. However, sometimes, it feels difficult to get a suitable data to demonstrate the contribution of my research. 
 
-교수가 되어 다양한 프로젝트를 수행한다면 좀 더 흥미로운 데이터를 많이 접할 수 있을것 같아 기대 중. 
-
+교수가 되어 다양한 프로젝트를 수행한다면 좀 더 흥미로운 데이터를 많이 접할 수 있을것 같아 기대중. 
 
 ### 학과의 선임교수들이 비합리적인 요구를 할 때 대처방법은?
 
@@ -546,7 +546,6 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 (1) 연구: 우수한 연구활동을 지속하여 전북대의 이름을 빛내고 싶다. 
 
 인용수가 100회가 넘는 논문을 쓰고 싶다. 
-
 
 (2) 교육: 또한 진심과 성의를 다해서 학생을 지도하겠다. 그리고 학생들이 후에 마음속으로 한번씩 감사할만한 교수가 되고 싶다. 
 
