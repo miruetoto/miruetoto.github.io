@@ -65,9 +65,8 @@ title : (정리) 인터뷰대비
 - 통계학자: 스탯 티스 티션 
 - 삶의 질: 콸리티 오브 라이프 
 
-이러한 신념에 근거하여, 전북대에서 연구할 기회가 주어진다면, 지역 주민들의 삶을 개선하는 통계분석을 해 대학과 지역사회간의 윈윈 모델을 성공적으로 구축하고 싶다. 
-
-> Based on those belief, if I got a chance to research in JBNU, I would like to analyze public data and provide service to local residence to succesfully construct win-win model between university and local goverments.
+이러한 신념에 근거하여, 전북대에서 연구할 기회가 주어진다면, 대학과 지역주민들 사이의 윈윈 모델을 성공적으로 구축하기 위해서, 공공데이터로 통계분석을 하고, 지역 주민들의 삶을 향상시키고 싶다. 
+> Based on those belief, if I got a chance to research in JBNU, I would like to analyze public data and provide service to local residence, to succesfully construct win-win model between university and local goverments.
 
 ### (추가질문1) 공공데이터 분석이 지역주민의 삶을 개선하는 사례? 
 
