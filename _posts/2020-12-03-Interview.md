@@ -48,7 +48,7 @@ title : (정리) 인터뷰대비
 
 (7) 장점3: 나아가서, 전북대는 저의 관심을 끄는 또 다른 장점을 가지고 있습니다. 전북대의 세번째 장점은 바로 자신이 원하는 연구를 하면서 동시에 지역사회를 위해 공헌할 수 있다는 점입니다. 
 
-> Futhermore, I have found another merit in JBNU. The third advantage is that there are many opportunities to contribute to the local government doing my own research.
+> Furthermore, I have found another merit in JBNU. The third advantage is that there are many opportunities to contribute to the local government doing my own research.
 
 특히 제가 관심을 가지는 분야는 공공데이터를 활용한 데이터분석입니다. 
 
@@ -658,12 +658,12 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 이런 점이 나에게 장점으로 다가옴. 
 
-> This fact is come to me as an advantage. 
+> This fact comes to me as an advantage. 
 
 (2) 교육측면에서 차이점: 
 
 교수가 되면 생기는 또다른 장점이 있다. 바로 교육을 할 기회가 주어진다는것이다. 학생들을 가르치고, 지도하는것은 나에게 즐거운 일이다. 내가 만약에 전북대에서 교육측면에서도 기쁨이 있다. 전북대에 내 직업이 주어진다면, 나는 좋은 교수가 되고 싶다. 
-> Furthermore, there is an another advantage to being professor. That is, I can got a chance to teach student. Educating and consulting the students is happy things to me. If I got a position in JBNU, I would like to be a good teacher for student.  
+> Furthermore, there is an another advantage to being professor. That is, there are many chance to teach student. Educating and consulting the students is happy things to me. If I got a position in JBNU, I would like to be a good teacher for student.  
 
 물론, 회사에서도 사내교육을 하였음.
 
