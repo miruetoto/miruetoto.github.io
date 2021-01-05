@@ -172,8 +172,10 @@ title : (정리) 인터뷰대비
 본인의 경험: 
 
 대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셧다. 
+> I would like to introduce a professor remained in my memory. He always want to communicate student with their mid-term answer paper. 
 
 면담내용은 주로 "이 문제는 다른학생들과 다르게 독특한 풀이로 풀었다." 
+> s
 
 혹은 "이 문제를 이렇게 푼걸로 보니, 개념을 잘못 이해한 것 같다 혹은 학습태도가 잘못된것 같다" 등이었다. 
 
