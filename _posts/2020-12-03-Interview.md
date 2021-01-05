@@ -112,9 +112,11 @@ title : (정리) 인터뷰대비
 ### (추가질문3) 너의강점? 
 
 적응력이 뛰어남. 
-> My strength is adaptability. 
+> I think, my strength is adaptability. 
 
-학교, 대기업, 군대, 인력사무소 등 다양한 조직을 경험해봤는데 적응에 어려움을 겪은 적은 없었다. 
+- adaptability: 어댑터빌러티 
+
+학교, 대기업, 군대와 같 다양한 조직을 경험해봤는데 적응에 어려움을 겪은 적은 없었다. 
 > I have been experience various organization, such as school, company, army. I have never been trouble in adapting those circumstances. 
 
 특히 군대에서는 통신병을 하다가 취사병으로 보직이 바뀌는 와중에서도 잘 적응했다. 
@@ -122,13 +124,13 @@ title : (정리) 인터뷰대비
 그 여파로 현재도 요리하는 것을 매우 좋아한다. 
 
 이러한 적응력은 전북대학교에서 잘 적응할 수 있도록 도와줄 것이다. 
-> I think this advantage makes me adjust in JBNU well. 
+> I think this advantage will help me adjust in JBNU well. 
 
 이러한 적응력은 연구에도 적용된다. 
-> This adaptation can be also applied in research. 
+> This adaptability can be also applied in research. 
 
 다양한 학문분야를 빠르게 학습; 내 연구에 적용; 
-> I can learn other research area fastly, and find some connection with my reasearch. 
+> I can learn other research area fastly, find some connection with statistics, and adapt it to my reasearch. 
 
 이는 다양한 학과는 교수님들 (바이오, 경제, AI)과 융합연구를 자주하는 통계학과의 특성과 매우 부합하는 장점이라 생각한다.  
 > I think, this is key strength for statistician, since statistician often do fusion research with professor in other department such as BIO, economy, AI. 
