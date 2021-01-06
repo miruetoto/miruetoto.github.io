@@ -348,18 +348,19 @@ title : (정리) 인터뷰대비
 
 ### 박사학위논문요약 
 
-박사학위 논문은 크게 두 개의 중심 주제로 구성되어 있습니다. 
-> My thesis consists of two main subject. 
+박사학위 논문은 크게 두 개의 중심 주제로 구성되어 있습니다. 하나는 고무줄변환이고 다른하나는 쌓인눈 변환입니다. 
+> My thesis consists of two main subject. The one is Elastic band transform and the other is heavy snow transform. 
 
-첫번째 주제는 Elastic band transform 이다. EBT는 시계열 자료에 대한 여러가지 멀티스케일 방법을 다루었다. 
-> First subject is Elastic-band transform. EBT deals some multiscale method which can analysis the chracteristics of timeseries.
+먼저 고무줄 변환부터 설명하겠습니다. 고무줄변환은 시계열자료에 대한 통계적 방법론을 다룹니다. 변화점 탐지, 시각화, 분해등을 커버합니다. 
+> First of all I would like to explain Elastic band transform. EBT deals statistical methodology for timeseries data. It covers changes point detection, time-frequency visualization and decomposition. 
 
-두번째 주제는 (나는 두번째 주제가 더 흥미있음) Heavy snow transform 이다. HST는 유클리드 자료에서의 "거리" 혹은 "비유사성"에 대한 개념을 그래프자료로 확장했다. 
-> Second subjuct, which is more interesting to me, is Heavy-snow transform. HST generalize the concept of distance at Euclid data into the graphical data. 
+두번째 주제는 (나는 두번째 주제가 더 흥미있음) Heavy snow transform 이다. HST는 그래프자료에 적용가능한 새로운 멀티스케일 방법론을 다룬다. 
+> Second subjuct, which is more interesting to me, is Heavy-snow transform. HST is a new multiscale method which can handle the graphical data. 
 
-현재는 Heavy-snow transform의 연구를 이어서 기하학적 딥러닝에 적용가능한 통계적 방법론을 개발중임. 
-> Recently, I am interested in some methodology of geometric deep learning, which is next works of heavy snow transform. 
+현재는 비유클리드 자료에 적용가능한 또다른 다중척도방법론에 관심을 가지고 있다. 전북대에서 이런 연구를 이어나가고싶다. 
+> Recently, I am interested in another multiscale method which can be applied to non-Euclid data such as manifold and spatio-temporal data. I would like to research this subject more in JBNU. 
 
+- 생어표: more 
 
 ### 내가 생각하기에 가장 우수한 연구는? 
 
@@ -383,6 +384,8 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 내 연구분야에 대한 전망은 매우 밝다고 생각한다.
 
 >  I think my research field is promising, 
+
+- 생어표: my reserch field. 
 
 내가 연구하는 분야는 비정형데이터에 대한 기계학습방법론인 기하학적 딥러닝이다. 기하학적 딥러닝은 비정형, 비정형자료를 분석하는 연구분야이다. 최근에 통신시스템의 발달로 이러한 비정형 자료가 빠르게 축적되고 있어 이러한 자료분석에 대한 수요가 급증하고 있다. 
 
@@ -461,24 +464,24 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 특별히 스트레스를 받지는 않는다. 
 
-대부분의 교수가 그렇겠지만 연구가 뜻대로 되지 않을때 스트레스를 받곤한다. 
-> I am upset when the research I am currently working is not going well. I think, many other professors may feel same thing with me. 
+연구가 뜻대로 되지 않을때 스트레스를 받곤한다. 
+> I am upset when the research I am currently working is not going well. 
 
-스트레스를 해소하는 방법은 산책을 하며 기분전환을 하는 것이다. 
-> In my case, the way of releasing stress is making hobby. ;
+내 경우에 스트레스를 줄이는 방법은 취미를 만드는 것이다. 
+> In my case, the way of releasing stress is making hobby. 
 
 나는 무엇인가를 키우는것을 좋아한다. 
 > My hobby is growing something. 
 
 나는 개를키우고, 물고기를 키우며 식물을 키운다. 개와 산책을 하고 물고기에게 먹이를 주고 식물에게 물을 주는 일은 나에게 즐거운 일이다. 이러한 일들은 내가 연구중 받은 스트레스를 줄여주는데 도움이 된다. 
-> I grow dog, fish, and plant. Walking with puppy and feeding fish, watering plants are happy things for me. It help me reduce the stress which is obtained from research. 
+> Currently, I grow dog, fish, and plant. Walking with puppy and feeding fish, watering plants are happy things in my life. I control my stress with my hobby. It help me reduce the stress which is obtained from research activity. 
 
 ### 연구할 때 힘든점? 
 
 데이터 구하는것이 힘들다. 방법론을 개발하고 이론을 만드는것은 재미있다. 하지만 나의 연구업정을 입증할만한 원하는 데이터를 구하는 과정이 종좀 힘들게 느껴질때가 있다. 
 > Getting suitable data is difficult. I like to make the methodology and construct the theory to support it. However, sometimes, it feels difficult to get a suitable data to demonstrate the contribution of my research. 
 
-* 생각하기 어려운단어: contribution of my research. 
+* 생어: contribution of my research. 
 
 교수가 되어 다양한 프로젝트를 수행한다면 좀 더 흥미로운 데이터를 많이 접할 수 있을것 같아 기대중. 
 
