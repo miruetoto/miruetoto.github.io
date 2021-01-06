@@ -476,7 +476,7 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 ### 연구할 때 힘든점? 
 
 데이터 구하는것이 힘들다. 방법론을 개발하고 이론을 만드는것은 재미있다. 하지만 나의 연구업정을 입증할만한 원하는 데이터를 구하는 과정이 종좀 힘들게 느껴질때가 있다. 
-> Getting suitable data is difficult. I like to makethe methodology and construct the theory. However, sometimes, it feels difficult to get a suitable data to demonstrate the contribution of my research. 
+> Getting suitable data is difficult. I like to make the methodology and construct the theory to support it. However, sometimes, it feels difficult to get a suitable data to demonstrate the contribution of my research. 
 
 * 생각하기 어려운단어: contribution of my research. 
 
