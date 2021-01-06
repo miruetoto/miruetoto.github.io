@@ -258,14 +258,14 @@ JBNU에 잘 적응하다.
 
 ### 누구를 제일 존경하나? (영어답변)
 
-가장 본받고 싶은 분은 지도교수님이다. 
+나이팅게일. 
 > I respect my advisor,  
 
-학문적인 영역외에 인간적인 면에서도 본받을 점이 많다. 
-> My advisor has many things to learn, not only academic but also personally.
+한장의 도표로 세상을 바꾸었기 때문이다. 
 
-전북대 교수가 되면 나도 존경받을만한 교수가 되고싶다. 
-> If I got a chance to being professor of JBNU, I would like to do my effort for being respectable professor like my advisor. 
+잘알려진 나이팅게일의 도표는 장미도표로 불리며 이후로도 여러 통계학자들에게 많이 이용되었다. 
+
+나역시 세상을 바꿀수있는 설득력을 가진 학자로 성장하고 싶다. 
 
 
 ### 왜 존경하는지? (영어추가질문)
