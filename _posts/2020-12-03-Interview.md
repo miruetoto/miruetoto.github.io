@@ -283,7 +283,7 @@ JBNU에 잘 적응하다.
 > The contents of consult is not special, he just comment about my answer sheet, and adjust my wrong mathematical concept, and praise my creative solution, very occasionally, and discuss about my way of studying. 
 
 이러한 경험으로 나는 해당 개념을 명확하게 이해할 수 있었고 아울러 좋은 학습태도를 가지게 되었다. 이때 형성한 자세는 지금도 나의 큰 자산이 되고있다. 나도 교수가 되면 내가 경험했던 것처럼 이처럼 학생들과 소통하며 올바르게 지도하고 싶다. 
-> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leave to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
+> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leaves to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
 
 숭실대 경험:
 
