@@ -33,8 +33,8 @@ HST는 향후연구에 대한 시금석으로 사용할 수 있다.
 최선을 다하다. 
 > do my effort. 
 
-...에 잘 적응하다. 
-> adapt well to the
+JBNU에 잘 적응하다. 
+> adapt well to the JBNU.
 
 다양한 학과에 소속된 다른 교수님
 > other professors belonging to various departments
@@ -44,6 +44,11 @@ HST는 향후연구에 대한 시금석으로 사용할 수 있다.
 
 나는 전북대교원에 알맞다. 
 > I am a right fit for faculty position at JBNU. 
+
+내 연구의 구성재료로 만들다. 
+> make it ingredients of my research. 
+
+
 
 ## 1. 자기소개 관련  
 
@@ -150,14 +155,14 @@ HST는 향후연구에 대한 시금석으로 사용할 수 있다.
 - adaptability: 어댑터빌러티 
 
 학교, 대기업, 군대와 같 다양한 조직을 경험해봤는데 적응에 어려움을 겪은 적은 없었다. 
-> I have been experienced various organization, such as school, company, army. I have never been trouble in adapting those circumstances. 
+> I have been experienced various organization, such as school, company, army. And I think that I made never trouble in adapting those circumstances. 
 
 특히 군대에서는 통신병을 하다가 취사병으로 보직이 바뀌는 와중에서도 잘 적응했다. 
 
 그 여파로 현재도 요리하는 것을 매우 좋아한다. 
 
 이러한 적응력은 전북대학교에서 잘 적응할 수 있도록 도와줄 것이다. 
-> I think this advantage will help me adjust in JBNU well. 
+> I think this adaptability can help me adjust in JBNU well. 
 
 이러한 적응력은 연구에도 적용된다. 
 > This adaptability can be also applied in research. 
@@ -250,6 +255,23 @@ HST는 향후연구에 대한 시금석으로 사용할 수 있다.
 
 새로운 시각이었음. 
 
+
+### 누구를 제일 존경하나? (영어답변)
+
+가장 본받고 싶은 분은 지도교수님이다. 
+> I respect my advisor,  
+
+학문적인 영역외에 인간적인 면에서도 본받을 점이 많다. 
+> My advisor has many things to learn, not only academic but also personally.
+
+전북대 교수가 되면 나도 존경받을만한 교수가 되고싶다. 
+> If I got a chance to being professor of JBNU, I would like to do my effort for being respectable professor like my advisor. 
+
+
+### 왜 존경하는지? (영어추가질문)
+
+
+
 --- 
 
 ## 3. 교육능력 (교무무에서 하지 않을까?)
@@ -276,6 +298,20 @@ HST는 향후연구에 대한 시금석으로 사용할 수 있다.
 
 이러한 과목은 IT회사에서 근무를 하며 얻은 여러가지 현장경험을 학생에게 전수할 수 있을 것으로 기대함. 
 
+
+### 전반적 교육계획(영어답변)
+
+여러가지 통계학적 방법론을 알기쉽게 설명할 것임. 
+> I will do my best to explain about methodology which can deal with various data. 
+
+또한 통계학은 실습이 중요하기 때문에 R과 파이썬같은 실습능력을 충분히 배양할 것임. 
+> at the same time, I would like to grow programing skill such as Python and R, since statistician should be skilled in those languages. 
+
+추가적으로 학생맞춤형 진로상담을 진행할 것임. 
+> Furthermore, I will offer customized counseling with vivid field experience and professional knowledge. 
+
+진로상담을 통해 학생의 목표를 명확하게 설정하면 학습태도도 좋아지고 동기부여도 될것으로 기대함. 
+> I expect that it can help students to make a their goal cleary.  
 
 ### 취업지도계획  
 
