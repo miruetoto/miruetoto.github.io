@@ -475,8 +475,10 @@ Heavy snow transform은 이러한 세계적인 연구흐름과 일치하기에, 
 
 ### 연구할 때 힘든점? 
 
-방법론을 개발하고 이론을 만드는것은 재미있다. 하지만 나의 연구업정을 입증할만한 원하는 데이터를 구하는 과정이 종좀 힘들게 느껴질때가 있다. 
-> Making the methodology and constructing the theoritical support is interesting. However, sometimes, it feels difficult to get a suitable data to demonstrate the contribution of my research. 
+데이터 구하는것이 힘들다. 방법론을 개발하고 이론을 만드는것은 재미있다. 하지만 나의 연구업정을 입증할만한 원하는 데이터를 구하는 과정이 종좀 힘들게 느껴질때가 있다. 
+> Getting suitable data is difficult. I like to makethe methodology and construct the theory. However, sometimes, it feels difficult to get a suitable data to demonstrate the contribution of my research. 
+
+* 생각하기 어려운단어: contribution of my research. 
 
 교수가 되어 다양한 프로젝트를 수행한다면 좀 더 흥미로운 데이터를 많이 접할 수 있을것 같아 기대중. 
 
@@ -654,7 +656,7 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 회사에서는 회사가 원하는 연구를 해야함. 학교에서는 내가 원하는 연구를 주도적으로 할 수 있음. 
 
-> In company I have to do the research company want, but in JBNU, I can do my own research that I want. 
+> In company I have to do the research company want, but in JBNU, I can do my own research that I want.  
 
 이런 점이 나에게 장점으로 다가옴. 
 
@@ -663,7 +665,7 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 (2) 교육측면에서 차이점: 
 
 교수가 되면 생기는 또다른 장점이 있다. 바로 교육을 할 기회가 주어진다는것이다. 학생들을 가르치고, 지도하는것은 나에게 즐거운 일이다. 내가 만약에 전북대에서 교육측면에서도 기쁨이 있다. 전북대에 내 직업이 주어진다면, 나는 좋은 교수가 되고 싶다. 
-> Furthermore, there is an another advantage to being professor. That is, there are many chance to teach student. Educating and consulting the students is happy things to me. If I got a position in JBNU, I would like to be a good teacher for student.  
+> Another point is realated with education. Teaching statistical subject and disscussing it is happy things to me. If I got a position in JBNU, I would like to be a good teacher for student.  
 
 물론, 회사에서도 사내교육을 하였음.
 
