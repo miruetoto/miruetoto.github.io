@@ -264,17 +264,23 @@ JBNU에 잘 적응하다.
 그녀는 따듯한 마음과 뛰어난 통계적재능으로 세상을 바꾸었다. 
 > Because she save the world with a warm heart and outstanding sense for statistics.  
 
-그녀는 위생의 중요성을 역설하기 위해 매우 유명한 한장의 통계그림을 고안하였다.  
-> She invented a very famous statistical picture, named rose plot, to emphasize the importance of hygiene.
+그녀는 위생의 중요성을 인지했지만, 위생시설을 갖출만한 돈이 없었다. 
+> She think that the hygiene is very import in treatment process. However budget is not sufficient to maintain hygiene as high-quality. 
 
 - hygiene: 하이진 
 
-그리고 의회를 설득하여 예산을 확보하는데 성공하였다.  
-> and she successfuly made money by persuading Congress with rose plot.
+그녀는 이것을 의회에 아규했지만 실패하였다. 
+> She argue it to Congress but it fails. 
+
+그녀는 포기하지 않고 사람들을 이해시키기 위해 매우 유명한 통계도표를 고안한다. 참고로 이 도표는 후에 장미도표로 불리게 된다. 
+> But she does not give up and invent a very famous statistical plots to understand people. For reference, those diagrams is called as rose diagram in later. 
+
+어쨌든, 그이후에, 그녀는 장미도표로 의회를 설득하는데 성공하였고, 위생을 위한 충분한 예산을 확보하였다. 
+> Anyway, after that, she persuaded Congress with rose diagram, and made a sufficient budget to maintain the quality of hygiene. 
 
 - 의회: Congress
 
-나 역시 세상을 바꿀수있는 설득력을 가진 학자로 성장하고 싶다. 
+나는 그녀를 존경한다. 왜냐하면 그녀는 세상을 바꿀만큼 훌륭한 통계학자라 생각하기 때문이다. 
 > I respect her since she is a statistician great enough to change the world. 
 
 
