@@ -258,17 +258,24 @@ JBNU에 잘 적응하다.
 
 ### 누구를 제일 존경하나? (영어답변)
 
-나이팅게일. 
-> I respect my advisor,  
+한명의 통계학자로서 나이팅게일을 존경함. 
+> I respect Nightingale. 
 
-한장의 도표로 세상을 바꾸었기 때문이다. 
+그녀는 따듯한 마음과 뛰어난 통계적재능으로 세상을 바꾸었다. 
+> Because she save the world with a warm heart and outstanding sense for statistics.  
 
-잘알려진 나이팅게일의 도표는 장미도표로 불리며 이후로도 여러 통계학자들에게 많이 이용되었다. 
+그녀는 위생의 중요성을 역설하기 위해 매우 유명한 한장의 통계그림을 고안하였다.  
+> She invented a very famous statistical picture, named rose plot, to emphasize the importance of hygiene.
 
-나역시 세상을 바꿀수있는 설득력을 가진 학자로 성장하고 싶다. 
+- hygiene: 하이진 
 
+그리고 의회를 설득하여 예산을 확보하는데 성공하였다.  
+> and she successfuly made money by persuading Congress with rose plot.
 
-### 왜 존경하는지? (영어추가질문)
+- 의회: Congress
+
+나 역시 세상을 바꿀수있는 설득력을 가진 학자로 성장하고 싶다. 
+> I respect her since she is a statistician great enough to change the world. 
 
 
 
