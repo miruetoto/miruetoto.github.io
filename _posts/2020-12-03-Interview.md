@@ -221,37 +221,7 @@ JBNU에 잘 적응하다.
 
 기회나 역시 많은 사람들을 이롭게하는 나만의 길을 전북대에서 개척하고싶음. 
 > If I got a chance to work on JBNU, I would like to construct my own way. 
-
-### 강의철학
-
-소통이 중요하다. 
-> I think, communicating with student is important for education. 
-
-본인의 경험: 
-
-대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셨다. 
-> I would like to introduce a professor remained in my memory. He always want to communicate student with their mid-term answer paper. 
-
-면담내용이 그렇게 특별하지는 않았다. 단지 내가 푼 답안지를 보며, 잘못된 수학개념을 바로잡아주시고, 매우가끔씩 독창적인 풀이를 칭찬해 주시기도하고 내 학습방법에 대하여 토론을 하는 것이었다.  
-> The contents of consult is not special, he just comment about my answer sheet, and adjust my wrong mathematical concept, and praise my creative solution, very occasionally, and discuss about my way of studying. 
-
-이러한 경험으로 나는 해당 개념을 명확하게 이해할 수 있었고 아울러 좋은 학습태도를 가지게 되었다. 이때 형성한 자세는 지금도 나의 큰 자산이 되고있다. 나도 교수가 되면 내가 경험했던 것처럼 이처럼 학생들과 소통하며 올바르게 지도하고 싶다. 
-> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leave to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
-
-숭실대 경험:
-
-숭실대에서 지난학기에 강의할 기회가 있었다. 
-> I have lecture experience at SSU, in spring semester in 2020. 
-
-(나도 그 교수님처럼 소통을 중시하고 싶었다) 하지만 코로나로 인해 온라인으로만 학생을 지도해야 했다. 
-> Due to COVID, I had to teach my students with online. 
-
-온라인 강의라서 학생과 소통하는것이 힘들었지만 이메일과 과제첨삭을 활용하여 최대한 학생들과 소통함; (과제첨삭: 과제풀이에 대한 채점과 동시에 학생의 풀이를 보고 느낀 여러가지 생각들을 피드백) 
-> It is difficult to communicating with student on online, but using email, and feedback to report, I do my effort to communicating with them. 
-
-개인적으로 학생들의 방법에 대하여 피드백을 주고 소통을 하는 것이 학생들의 학습의욕을 좀 더 높여주는것 같다고 믿는다. 
-
-전북대 교원이 되어서도 학생들과 많은 소통을 하는 교원이 되도록 노력하고싶다.  
+ 
 
 ### 누구를 제일 존경하나?
 
@@ -298,6 +268,37 @@ JBNU에 잘 적응하다.
 --- 
 
 ## 3. 교육능력 (교무무에서 하지 않을까?)
+
+### 강의철학
+
+소통이 중요하다. 
+> I think, communicating with student is important for education. 
+
+본인의 경험: 
+
+대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셨다. 
+> I would like to introduce a professor remained in my memory. He always want to communicate student with their mid-term answer paper. 
+
+면담내용이 그렇게 특별하지는 않았다. 단지 내가 푼 답안지를 보며, 잘못된 수학개념을 바로잡아주시고, 매우가끔씩 독창적인 풀이를 칭찬해 주시기도하고 내 학습방법에 대하여 토론을 하는 것이었다.  
+> The contents of consult is not special, he just comment about my answer sheet, and adjust my wrong mathematical concept, and praise my creative solution, very occasionally, and discuss about my way of studying. 
+
+이러한 경험으로 나는 해당 개념을 명확하게 이해할 수 있었고 아울러 좋은 학습태도를 가지게 되었다. 이때 형성한 자세는 지금도 나의 큰 자산이 되고있다. 나도 교수가 되면 내가 경험했던 것처럼 이처럼 학생들과 소통하며 올바르게 지도하고 싶다. 
+> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leave to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
+
+숭실대 경험:
+
+숭실대에서 지난학기에 강의할 기회가 있었다. 
+> I have lecture experience at SSU, in spring semester in 2020. 
+
+(나도 그 교수님처럼 소통을 중시하고 싶었다) 하지만 코로나로 인해 온라인으로만 학생을 지도해야 했다. 
+> Due to COVID, I had to teach my students with online. 
+
+온라인 강의라서 학생과 소통하는것이 힘들었지만 이메일과 과제첨삭을 활용하여 최대한 학생들과 소통함; (과제첨삭: 과제풀이에 대한 채점과 동시에 학생의 풀이를 보고 느낀 여러가지 생각들을 피드백) 
+> It is difficult to communicating with student on online, but using email, and feedback to report, I do my effort to communicating with them. 
+
+개인적으로 학생들의 방법에 대하여 피드백을 주고 소통을 하는 것이 학생들의 학습의욕을 좀 더 높여주는것 같다고 믿는다. 
+
+전북대 교원이 되어서도 학생들과 많은 소통을 하는 교원이 되도록 노력하고싶다. 
 
 ### 전반적 교육계획
 
