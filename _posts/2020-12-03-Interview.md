@@ -277,7 +277,7 @@ JBNU에 잘 적응하다.
 본인의 경험: 
 
 대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셨다. 
-> I would like to introduce a professor remained in my memory. He always want to communicate student with their mid-term answer paper. 
+> I would like to introduce a professor remained in my memory. He always want to communicate with his student about their mid-term answer paper. 
 
 면담내용이 그렇게 특별하지는 않았다. 단지 내가 푼 답안지를 보며, 잘못된 수학개념을 바로잡아주시고, 매우가끔씩 독창적인 풀이를 칭찬해 주시기도하고 내 학습방법에 대하여 토론을 하는 것이었다.  
 > The contents of consult is not special, he just comment about my answer sheet, and adjust my wrong mathematical concept, and praise my creative solution, very occasionally, and discuss about my way of studying. 
