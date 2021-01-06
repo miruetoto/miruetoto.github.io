@@ -552,13 +552,14 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 ### 당신의 목표는 무엇인가? (총장)
 
-(1) 연구: 우수한 연구활동을 지속하여 전북대의 이름을 빛내고 싶다. 
+(1) 연구: 우수한 연구활동을 지속하여 전북대의 이름을 빛내고 싶다. 인용수가 100회가 넘는 논문을 쓰고 싶다. 
+> First goal is related with research. I would like to publish very powerful paper with more than 100 citation. 
 
-인용수가 100회가 넘는 논문을 쓰고 싶다. 
+(2) 교육: 또한 진심과 성의를 다해서 학생을 지도하겠다. 그리고 학생들이 후에 마음속으로 한번씩 감사할만한 교수가 되고 싶다. 최소한 3명의 학생을 인생을 바꿀수 있으면 좋겠다. 
+> Second goal is related with education. I would like to cultivate many student into a good person. Here, the meaning of good is not restricted in academic ability. It covers, attitude toward research, etiquette for people, et cetera.  
 
-(2) 교육: 또한 진심과 성의를 다해서 학생을 지도하겠다. 그리고 학생들이 후에 마음속으로 한번씩 감사할만한 교수가 되고 싶다. 
-
-최소한 3명의 학생을 인생을 바꿀수 있으면 좋겠다. 
+이 2가지가 나의 목표이다. 
+> Those two are my goal. 
 
 ### 전북대가 나아갈 방향? 전략? (총장)
 
@@ -615,17 +616,22 @@ HST와 EBT는 이론적인 방법론을 다룬 논문이다.
 
 ### 회사에서 경험이 전북대에 어떤 기여를 할지? 
 
-현업의 목소리를 경험했음. 
+현업의 목소리를 경험했음. 그래서 회사가 무엇을 원하는지 알고있음.  
+> I have experience the voice of fields. So I understand well what company needs. 
 
 학생들이 직장에 갔을때 반드시 필요한 역량, 혹은 요구받게되는 역량이 어떤것인지 알고있다. 
 
-이러한 경험을 전수하면 학생들의 취업활동에 도움이 될것이라 생각한다. 
+이러한 경험을 바탕으로 AI쪽에 직업을 가지기 희망하는 학생들에게 조언을 잘해줄수있다. 
+> So I think I can advise well to my students, if they want to get a job in field of AI. 
+
 
 ### 산업체에서 근무한 경험을 얘기하세요.
 
 회사에서 딥러닝 관련 프로젝트를 다수 수행했다. 
+> In the AI lab in LG electronic, I do the research which is related with deep learning. 
 
-대학원에서는 좀더 이론적인 연구를 많이 수행했는데, 내가 연구한 분야가 실제데이터 분석에 잘 활용되어서 신기했다. 
+대학원에서는 좀더 이론적인 연구를 많이 수행했는데, 회사에서는 좀더 실제자료를 분석할 기회가 많았다. 이는 나에게 특별한 경험이었다. 내가 연구한 분야가 실제데이터 분석에 잘 활용되어서 신기했다. 
+> When I was Ph.D candidate, I'm study more in theorical properties. After the joining company I got a many chance to analyze real data. It was special experience for me. I am excited the fact that the theory I studies is quite well applied in real fields. 
 
 아울러 다양한 데이터를 다루면서, 데이터를 다루는 스킬과 분석을 하는 기법이 더욱 풍부해진것 같다. 
 
