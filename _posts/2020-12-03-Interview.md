@@ -174,7 +174,7 @@ JBNU에 잘 적응하다.
 > I think, this is key strength for statistician, since statistician often do fusion research with other professors belonging to various departments such as BIO, economy, AI. 
 
 ### 우리가 널 왜 뽑아야하나? 
-
+(1) 교육: 
 교육에 대한 열정이 있고 철학이 분명하다. 그래서 학생들을 잘 지도할 수 있다고 생각한다. 
 > I have passion for education, and I also have my own educational philosophy, so I think, I can educate students well. 
 
@@ -191,6 +191,16 @@ JBNU에 잘 적응하다.
 
 이러한 학생들의 수요를 맞출 수 있다는 점에서 유의미. 
 
+(2) 연구:
+연구분야가 매우 유망하다. 
+
+내연구분야는 기하학적 딥러닝이고, 기하학적 딥러닝은 비유클리드 자료를 다루는 새로운 방법론이다. 
+
+최근에서, 발전된 통신기술과 IoT 환경으로 인해, 다양한 형태의 자료를 분석하는 방법론에 대한 수요가 증가하고 있다. 
+
+기하학적 딥러닝은 매우 유연한 프레임웤이기 때문에 이러한 자료를 다루는데 유리하다. 
+
+그래서 나는 내 연구분야가 유망하다고 생각한다. 
 
 ## 2. 교육자로서의 인격과 품위 (총장님 질문 예상)
 
