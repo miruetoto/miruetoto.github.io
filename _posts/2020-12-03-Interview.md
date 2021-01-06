@@ -13,6 +13,37 @@ title : (정리) 인터뷰대비
 
 - 임용 후 본교 기여 가능성: 연구비수주계획? 니가 본교에 어떻게 기여할것임? 
 
+## 0. 영어표현들 
+
+HST는 향후연구에 대한 시금석으로 사용할 수 있다. 
+> HST can be used as touchstone for future research. 
+
+최근에 급부상하는 기술, 예를들면 
+> Recently emerging technology such as 
+
+이러한 현상
+> those phenomenon 
+
+통계학 박사학위
+> doctorate in statistics
+
+지역주민들의 삶을 개선하는 서비스를 제공하다. 
+> provide service to local residents, which makes their quality of life improved. 
+
+최선을 다하다. 
+> do my effort. 
+
+...에 잘 적응하다. 
+> adapt well to the
+
+다양한 학과에 소속된 다른 교수님
+> other professors belonging to various departments
+
+생생한 현장경험과 전문적인 지식으로 
+> with vivid field experience and professional knowledge
+
+나는 전북대교원에 알맞다. 
+> I am a right fit for faculty position at JBNU. 
 
 ## 1. 자기소개 관련  
 
@@ -38,7 +69,7 @@ title : (정리) 인터뷰대비
 
 > First advantage is that it is possible to guide excellent students, and the second advantage is realated with research environment. JBNU provide good research environment to professor and rewards about high-quaility paper is clear.
 
-- 장점: 어드베너지 
+- 장점: 어드배지 
 
 이는 여러교수님들이 이미 잘 알고 계시는 내용이고 다른 지원자들 역시 전북대의 장점이라고 생각하는 핵심요소일 것이라 믿습니다. 
 
@@ -132,10 +163,10 @@ title : (정리) 인터뷰대비
 > This adaptability can be also applied in research. 
 
 다양한 학문분야를 빠르게 학습; 내 연구에 적용; 
-> I can learn other research area fastly, find some connection with statistics, and adapt it to my reasearch. 
+> I am used to learn other research area fastly, find some connection with statistics, and adapt it to my reasearch. 
 
 이는 다양한 학과는 교수님들 (바이오, 경제, AI)과 융합연구를 자주하는 통계학과의 특성과 매우 부합하는 장점이라 생각한다.  
-> I think, this is key strength for statistician, since statistician often do fusion research with professor in other department such as BIO, economy, AI. 
+> I think, this is key strength for statistician, since statistician often do fusion research with other professors belonging to various departments such as BIO, economy, AI. 
 
 ### 우리가 널 왜 뽑아야하나? 
 
