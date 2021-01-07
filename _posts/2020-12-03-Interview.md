@@ -277,13 +277,13 @@ JBNU에 잘 적응하다.
 본인의 경험: 
 
 대학원때 시험이 끝나고 나서 항상 학생과 면담을 통해 소통하는 교수님이 계셨다. 
-> I would like to introduce a professor remained in my memory. He always want to communicate student with their mid-term answer paper. 
+> I would like to introduce a professor remained in my memory. He always want to communicate with his student about their mid-term answer paper. 
 
 면담내용이 그렇게 특별하지는 않았다. 단지 내가 푼 답안지를 보며, 잘못된 수학개념을 바로잡아주시고, 매우가끔씩 독창적인 풀이를 칭찬해 주시기도하고 내 학습방법에 대하여 토론을 하는 것이었다.  
 > The contents of consult is not special, he just comment about my answer sheet, and adjust my wrong mathematical concept, and praise my creative solution, very occasionally, and discuss about my way of studying. 
 
 이러한 경험으로 나는 해당 개념을 명확하게 이해할 수 있었고 아울러 좋은 학습태도를 가지게 되었다. 이때 형성한 자세는 지금도 나의 큰 자산이 되고있다. 나도 교수가 되면 내가 경험했던 것처럼 이처럼 학생들과 소통하며 올바르게 지도하고 싶다. 
-> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leave to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
+> Those experience makes me more clearly understand mathmetical concept, and form a right attitude for learning and research. I think, this is assets he leaves to me. If I got a chance to guide students in JBNU, I would like to communicate with student in the same way I have experienced. 
 
 숭실대 경험:
 
