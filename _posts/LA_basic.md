@@ -1,0 +1,183 @@
+---
+layout: post 
+title: (정리) 선형대수학 - 기본
+---
+
+### About this post
+
+- 통계공부 
+
+- 학부수준 혹은 대학원1-2학년 수준 
+
+- 이번에는 선형대수학의 기본연산들을 다룬다. 구체적으로는 행렬의 곱셉 따위를 다룬다. 이 부분이 너무 당연해 보이고 쓸모 없어보일 수도 있지만 몇 가지 기호를 정리하는 측면에서 가치가 있다. 나한테는 의외로 유용한 포스팅이다. 
+
+- 본 포스트에서는 나만 쓰는 notation이 있다. 예를들면 $rbind(c(1,2),c(2,4))$라든가 ${\bf X}[,1]$과 같은 식의 기호이다. 이것은 R프로그래머라면 익숙한 기호이지만 그렇지 않은사람에게는 낯설 수 있다. 나는 이러한 notation이 익숙하여 내맘대로 쓰겠다.
+
+### 매트릭스 표현법
+
+- 이 챕터에서는 일반적인 매트릭스를 ${\bf X}_ {n\times p}$와 같이 인덱스가 없는 대문자 볼드체로 종종 표시할 것이다. 이때 매트릭스 ${\bf X}$의 차원은 통상적으로 통계학과에서 정의하는대로 $n \times p$라고 생각하자. 매트릭스 ${\bf X}$의 column은 $X_1, X_2, \dots, X_p$와 같이 인덱스가 있는 대문자로 종종 표시할 것이다. 즉 아래와 같다. 
+\begin{align}
+{\bf X}=cbind(X_1, X_2, \dots, X_p)
+\end{align}
+한편 ${\bf V}_ {n\times n}$와 같이 선대책에 많이 나오는 매트릭스의 경우는 일반적인 표현법대로 column 벡터를 소문자 볼드체로 표현하는 것이 더 좋다. 따라서 아래와 같이 표현할 수 있다. 
+\begin{align}
+{\bf V}=cbind({\boldsymbol v}_ 1, {\boldsymbol v}_ 2, \dots, {\boldsymbol v}_ n)
+\end{align}
+즉 따라서 정리하면 아래와 같은 표현 모두 가능하다. 
+\begin{align}
+{\bf X}_ {n\times p}=cbind(X_1, X_2, \dots, X_p)=cbind({\boldsymbol x}_ 1, {\boldsymbol x}_ 2, \dots, {\boldsymbol x}_ p)
+\end{align}
+\begin{align}
+{\bf V}_ {n\times n}=cbind(V_1, V_2, \dots, V_n)=cbind({\boldsymbol v}_ 1, {\boldsymbol v}_ 2, \dots, {\boldsymbol v}_ n)
+\end{align}
+다만 가급적이면 $cbind({\boldsymbol x}_ 1, {\boldsymbol x}_ 2, \dots, {\boldsymbol x}_ p)$이라든가 $cbind(V_1, V_2, \dots, V_n)$이런 표현은 어색하니 지양하자. 특히 $cbind({\boldsymbol x}_ 1, {\boldsymbol x}_ 2, \dots, {\boldsymbol x}_ p)$와 같은 표현은 통계학과에 너무 헷갈리는 표현이다. 
+
+- 매트릭스 ${\bf X}$의 row는 ${\boldsymbol x}_ 1, {\boldsymbol x}_ 2, \dots$와 같은 방식으로 종종 표시할 것이다. 이것은 헷갈리는 표현인데 언급하였듯이 일반적인 교재에서 ${\bf x}_ 1$와 같이 소문자로 표시된 것은 일반적으로 col-vector를 의미하기 때문이다(여기서는 row-vector). 즉 아래를 잘 구분하자. 
+\begin{align}
+{\bf X}=cbind({\boldsymbol x}_ 1, {\boldsymbol x}_ 2, \dots, {\boldsymbol x}_ p)=rbind({\bf x}_ 1, {\bf x}_ 2, \dots, {\bf x}_ n) 
+\end{align}
+
+- cbind, rbind는 아래와 같이 표현할 수 있다. 
+\begin{align}
+{\bf X}=cbind(X_1,\dots,X_p)=[X_1,\dots,X_p]
+\end{align}
+\begin{align}
+{\bf X}=rbind({\bf x}_1,\dots,{\bf x}_n)=\begin{pmatrix} {\bf x}_1 \\\\ ... \\\\ {\bf x}_n\end{pmatrix} 
+\end{align}
+즉 매트릭스를 컬럼별로 묶을경우 [ ]로 표시하고 매트릭스를 row별로 묶을경우 ( )로 표시하기로 하자. 
+
+- 이인석교수님의 교재에서는 매트릭스 ${\bf X}$를 아래와 같이 표현가능하다. 이 역시 매우 유용한 표현이다. 
+\begin{align}
+{\bf X}=\left\\{x_{ij}\right\\}
+\end{align}
+처음에는 이러한 표현이 매우 헷갈렸지만 나중에는 이 표현을 안쓰는 것이 더 고통을 주므로 그냥 쓰기로 결정하였다. 
+
+- 위의 내용을 종합하면 보통 통계학과에서 사용하는 디자인매트릭스 ${\bf X}_ {n \times p}$를 아래와 같이 표현가능하다. 
+\begin{align}
+{\bf X}=cbind(X_1,\dots,X_p)=rbind({\bf x}_ 1, \dots, {\bf x}_ n)=\left\\{x_{ij}\right\\}
+\end{align}
+R문법으로 해석하면 여기에서 $X_p ={\bf X}[,p]$이고, ${\bf x}_ n = {\bf X}[n,]$이고 $x_{ij}={\bf X}[i,j]$가 된다. 이때 ${\bf x}_ n$은 row-vector임을 유의하자. 
+
+- 일반적인 col-vector ${\boldsymbol y}_ {n \times 1}$는 아래와 같이 표현할 수 있다. 
+\begin{align}
+{\boldsymbol y}=rbind(y_1,\dots,y_n)=\begin{pmatrix} y_1 \\\\ ... \\\\ y_n\end{pmatrix}. 
+\end{align}
+이와 유사한 논리로 row-vector 역시 표현할 수 있다. 예를들어 임의의 디자인매트릭스 ${\bf X}_ {n \times p}$의 첫번째 row-vector ${\bf x}_ 1$은 아래와 같이 표현가능하다. 
+\begin{align}
+{\bf x}_ 1=cbind(x_{11},\dots,x_{1p})=[x_{11},\dots,x_{1p}].
+\end{align}
+
+### 트랜스포즈 
+
+- 매트릭스 ${\bf X}$의 트랜스포즈는 보통 ${\bf X}^T$로 표시한다. 혼란의 여지가 없을 경우 노테이션의 간략화를 위하여 ${\bf X}'$와 같이 표현할 수 있다. 매트릭스 ${\bf X}$가 복소행렬일 경우는 트랜스포즈를 사용하지 않고 **컨쥬게이트-트랜스포즈**(conjugate transpose)를 사용한다. 컨쥬게이트-트랜스포즈는 **에르미트-트랜스포즈**(Hermitian transpose), **에르미트-어드조인트**(Hermitian adjoint) 등으로 불리기도 한다. 기호로는 ${\bf X}^H$로 표시한다. 
+
+- 임의의 매트릭스 ${\bf X}_ {n \times p}$에 대하여 ${\bf X}'$는 아래와 같이 표현할 수 있다. <br/><br/>
+***case 1***: ${\bf X}$가 col-vector의 결합으로 표현된 경우 <br/>
+\begin{align}
+{\bf X}=&cbind(X_1,\dots,X_p)=[X_1, \dots, X_p] \\\\ 
+{\bf X}'=&rbind(X_1',\dots,X_p')=\begin{pmatrix} X_1' \\\\ \dots \\\\ X_p' \end{pmatrix}.
+\end{align}
+***case 2***: ${\bf X}$가 row-vector의 결합으로 표현된 경우 <br/>
+\begin{align}
+{\bf X}=&rbind({\bf x}_ 1,\dots,{\bf x}_ n)=\begin{pmatrix}{\bf x}_ 1 \\\\ \dots \\\\ {\bf x}_ n\end{pmatrix} \\\\ 
+{\bf X}'=&cbind({\bf x}_ 1',\dots,{\bf x}_ n')=[{\bf x}_ 1', \dots, {\bf x}_ n'],
+\end{align}
+***case 3***: ${\bf X}$가 이인석교수님 스타일로 표현된 경우 <br/>
+\begin{align}
+{\bf X}=&\left\\{x_{ij}\right\\} \\\\ 
+{\bf X}'=&\left\\{x_{ji}\right\\}.
+\end{align}
+
+- 트랜스포즈는 보통 $L_2$-norm을 구할때 사용할 수 있다. 당연한 소리지만 col-vector일 경우와 row-vector일 경우 $L_2$-norm의 정의가 다르다. 즉 
+\begin{align}
+\\| {\boldsymbol y} \\|_ 2^2={\boldsymbol y}'{\boldsymbol y}
+\end{align}
+이고 
+\begin{align}
+\\| {\bf x}_ n \\|_ 2^2={\bf x}_ n {\bf x}_ n'
+\end{align}
+이다.
+
+### 행렬곱
+
+- 임의의 행렬 ${\bf A}_ {n \times p}$, ${\bf B}_ {p \times q}$에 대하여 행렬곱 ${\bf A}{\bf B}$은 아래와 같은 다양한 방법으로 정의할 수 있다. <br/><br/> 
+**(1)** 다음과 같이 이인석교수님 스타일의 행렬로 정의할 수 있다. 이 방법은 일반적인 행렬의 곱셉법인 "rows $\times$ cols"의 꼴로 표현한 것이다. 
+\begin{align}
+{\bf A}{\bf B}=\left\\{ \sum_{j=1}^{p} a_{ij}b_{jk} \right\\} ,~ ~ where ~ ~  i=1,2,\dots,n ~ ~ and ~ ~ k=1,2,\dots,q. 
+\end{align}<br/>
+위의 표현방법은 아래와 같은 방식으로도 표현할수 있다. 행렬곱결과에서 $(i,k)$-th 콤포넌트를 매우 컴팩트하게 표현할 수 있는 장점이 있다. 
+\begin{align}
+{\bf A}{\bf B}=\begin{pmatrix}A[1,] \\\\ \dots \\\\ A[n,]\end{pmatrix}\Big[B[,1]\dots,B[,q]\Big] = \Big\\{ A[i,]B[,k] \Big\\}, 
+\end{align}
+단 여기에서 $i=1,2,\dots,n$ 이고 $k=1,2,\dots,q$ 이다. 즉 ${\bf A}{\bf B}$의 (i,k)번째 component는 ${\bf A}$의 i번째 row와 ${\bf B}$의 k번째 column의 내적과 같다. <br/><br/>
+**(2)** 또한 아래와 같이 행렬곱을 "cols $\times$ rows"로 표현할 수도 있다. 이것은 행렬곱의 결과를 **행렬들의 합**꼴로 표현할 수 있는 장점이 있다. 
+\begin{align}
+{\bf A}{\bf B}=\Big[A[,1],\dots A[,p]\Big] \begin{pmatrix} B[1,] \\\\ \dots \\\\ B[p,]\end{pmatrix} = \sum_{j=1}^{p} A[,j]B[j,]= \sum \begin{pmatrix} \star \\\\ \star \\\\ \star  \end{pmatrix} [\star \star \star]
+\end{align}
+즉 두 행렬 ${\bf A}{\bf B}$의 곱은 (i,j,k중 j번째 인덱스를 기준으로 잡고) ${\bf A}$의 j번째 칼럼과 ${\bf B}$의 j번째 로우를 곱해서 구한 행렬들을 $j=1,\dots,p$까지 더한 합이다. <br/><br/>
+**(3)** 행렬곱을 아래와 같이 "rows $\times$ matrix"의 꼴로 표현할 수도 있다. 
+\begin{align}
+{\bf A}{\bf B}=\begin{pmatrix}A[1,] \\\\ \dots \\\\ A[n,]\end{pmatrix} {\bf B} = \begin{pmatrix}A[1,]{\bf B} \\\\ \dots \\\\ A[n,] {\bf B}\end{pmatrix}=\begin{pmatrix} [\star,\star,\star] \begin{bmatrix} \star \star \star \\\\ \star \star \star \\\\ \star \star \star \end{bmatrix} \\\\ \dots \\\\ [\star,\star,\star] \begin{bmatrix} \star \star \star \\\\ \star \star \star \\\\ \star \star \star \end{bmatrix} \end{pmatrix}.
+\end{align}
+맨 마지막 모양을 잘 기억했다가 연상하자.  <br/><br/>
+**(4)** 행렬곱을 아래과 같이 "matrix $\times$ cols"의 꼴로 표현할 수도 있다. 
+\begin{align}
+{\bf A}{\bf B}={\bf A} \Big[B[,1] \dots,B[,q]\Big] = \Big[{\bf A}B[,1],\dots,{\bf A}B[,q]\Big]=\left[ \begin{bmatrix} \star \star \star \\\\ \star \star \star \\\\ \star \star \star \end{bmatrix}\begin{pmatrix}\star \\\\ \star \\\\ \star \end{pmatrix}, \dots, \begin{bmatrix} \star \star \star \\\\ \star \star \star \\\\ \star \star \star \end{bmatrix}\begin{pmatrix}\star \\\\ \star \\\\ \star \end{pmatrix} \right]
+\end{align}
+맨 마지막 모양을 잘 기억했다가 연상하자.  <br/><br/>
+
+- 통계학과에서는 ${\bf X}'{\bf X}$를 계산할 일이 자주 생긴다. ${\bf X}'{\bf X}$는 아래와 같이 표현할 수 있다. 이러한 표현방법들을 잘 숙지해두면 도움이 된다. <br/> 
+\begin{align}
+{\bf X}'{\bf X} &= \Big\\{X_ {j_1}'X_ {j_2} \Big\\}, \mbox{ for all } j_1,j_2=1,2,\dots,p. \\\\ 
+&=[{\bf x}_ 1',\dots, {\bf x}_ n']\begin{pmatrix} {\bf x}_ 1 \\\\ \dots \\\\ {\bf x}_ n \end{pmatrix}=\sum_{i=1}^{n} {\bf x}_ i' {\bf x}_ i \\\\ 
+&=\begin{pmatrix}X_1' \\\\ \dots \\\\ X_ p'\end{pmatrix} {\bf X} = \begin{pmatrix} X_1'{\bf X} \\\\ \dots \\\\ X_p' {\bf X}\end{pmatrix} \\\\\\
+&={\bf X}' [X_1,\dots,X_p]=  [{\bf X}'X_1,\dots,{\bf X}'X_p]
+\end{align}
+
+- 대각행렬이 있을 경우의 곱셈법을 숙지하는것도 매우 중요하다. 대각행렬 ${\bf D}$는 
+\begin{align}
+{\bf D}=diag(\lambda_1,\dots,\lambda_p)
+\end{align}
+와 같이 표시한다. 대각행렬의 경우 임의의 행렬 ${\bf C}_ {n \times p}$와 행렬 ${\bf E}_ {p \times q}$에 대하여 아래의 식이 성립함을 기억하면 편리하다. (좀 헷갈릴 수 있는데 그냥 외우는게 속편함) <br/><br/>
+**(1)** "cols $\times$ diag" 와 같은 경우 아래와 같이 쓸 수 있다. 
+\begin{align}
+{\bf C}{\bf \Lambda}=cbind(C[,1], \dots, C[,p])diag(\lambda_1,\dots,\lambda_p)=cbind(C[,1] \lambda_1 ,\dots,C[,p] \lambda_p )
+\end{align}
+아래를 관찰하면 이 결과는 매우 상식적이다. 
+\begin{align}
+{\bf C}{\bf \Lambda}=[C_1, C_2, C_3]\begin{bmatrix} \lambda_1 & 0 & 0  \\\\ 0 & \lambda_2 & 0  \\\\ 0 & 0 & \lambda_3 \end{bmatrix} =[C_1\lambda_1 ,C_2\lambda_2, C_3\lambda_3] 
+\end{align}<br/>
+**(2)** "diag $\times$ rows" 와 같은 경우 아래와 같이 쓸 수 있다. 
+\begin{align}
+{\bf \Lambda}{\bf E}=diag(\lambda_1,\dots,\lambda_p)rbind(E[1,], \dots, E[p,])=rbind(\lambda_1E[1,], \dots, \lambda_pE[p,])
+\end{align}
+아래를 관찰하면 이 결과는 매우 상식적이다. 
+\begin{align}
+{\bf \Lambda}{\bf E}=\begin{bmatrix} \lambda_1 & 0 & 0  \\\\ 0 & \lambda_2 & 0  \\\\ 0 & 0 & \lambda_3 \end{bmatrix}\begin{pmatrix}\bf e_1 \\\\ \bf e_2 \\\\ \bf e_3 \end{pmatrix} =\begin{pmatrix}\lambda_1{\bf e_1} \\\\ \lambda_2{\bf e_2} \\\\ \lambda_3{\bf e_3} \end{pmatrix}
+\end{align}<br/>
+**(3)** SVD를 전개할 경우 아래와 같은 표현들이 자주 나온다. 
+\begin{align}
+{\bf U} {\bf \Lambda}=cbind(U_1,\dots, U_p)diag(\lambda_1,\dots,\lambda_p)=cbind(U_1 \lambda_1,\dots, U_p \lambda_p)
+\end{align}
+\begin{align}
+{\bf \Lambda}{\bf V}'=diag(\lambda_1,\dots,\lambda_p)rbind(V_1', \dots, V_p')=rbind(\lambda_1V_ 1', \dots, \lambda_pV_ p')
+\end{align}
+궁극적으로는 아래의 식을 기억하면 편리하다. 
+\begin{align}
+{\bf U}{\bf \Lambda}{\bf V}'= \sum_{i =1}^{p} U_i \lambda_i  V_i'= \sum_{i =1}^{p} {\boldsymbol u}_i \lambda_i  {\boldsymbol v}_i'.
+\end{align}
+
+### 트레이스 
+
+- $tr({\bf A})=tr({\bf A}')$
+
+- $tr({\bf A}{\bf B}{\bf C})=tr({\bf B}{\bf C}{\bf A})=tr({\bf C}{\bf A}{\bf B})$
+
+- 임의의 col-vector $X_1$에 대하여 아래식이 성립한다. 
+\begin{align}
+X_1'X_1=tr(X_1X_1')
+\end{align}
+또한 임의의 row-vector ${\bf x}_ 1$에 대하여 아래식이 성립한다. 
+\begin{align}
+{\bf x}_ 1 {\bf x}_ 1'=tr({\bf x}_ 1'{\bf x}_ 1).
+\end{align}

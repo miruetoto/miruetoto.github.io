@@ -1,0 +1,233 @@
+---
+layout: post
+title: (리뷰) SAC 
+--- 
+
+### About this doc
+
+- 논문리뷰 / 강화학습 공부 
+
+- 학부수준 혹은 대학원 1-2학년수준. 
+
+- 이 포스팅은 아래 논문의 리뷰이다. <br/>
+Haarnoja, T., Zhou, A., Hartikainen, K., Tucker, G., Ha, S., Tan, J., ... & Levine, S. (2018). Soft actor-critic algorithms and applications. arXiv preprint arXiv:1812.05905.
+
+- 개인적으로 정말 잘 쓴 논문이라고 생각한다. 알고리즘을 유도하는 과정에 있어서 논리적 비약이 없으며 기호 하나하나 첨자 하나하나도 매우 신경써서 신중하게 사용하였음이 느껴진다. 실용적인 면은 모르겠으나 논리전개나 수식적인 완성도  노테이션의 깔끔함은 NAS 와는 비교불가이다. 
+
+- 따라서 이번 포스트에서는 논문에 대한 일체의 비판없이 있는 그대로 받아들이고 그것을 그대로 이해하는것에만 초점을 맞출것이다. 
+
+### Preliminaries
+
+- MDP 는 $({\cal S},{\cal A},p,r)$ 이고 state space $\cal S$와 action space $\cal A$는 모두 연속이다. $p$는 state transition probability 이며 현재상태 ${\bf s}_ t \in {\cal S}$ 에서 특정한 액션 ${\bf a}_ t \in {\cal A}$ 를 취해서 다음상태 ${\bf s}_ {t+1} \in {\cal S}$ 로 갈 probability density를 의미한다. 따라서 
+\begin{align}
+p:{\cal S} \times {\cal S} \times {\cal A} \to [0,\infty) 
+\end{align}
+이다. 환경은 현재상태 ${\bf s}_ t $ 와 액션 ${\bf a}_ t$에 따라서 보상 $r:{\cal S}\times{\cal A} \to [r_{min}, r_{max}]$ 를 주게 된다. 
+
+- 여기에서 폴리쉬 $\pi({\bf a}_ t | {\bf s}_ t)$ 가 기븐일 경우 아래와 같은 확률을 정의할 수 있는데
+\begin{align}
+p({\bf s}_ t \| \pi), \quad p({\bf s}_ t,{\bf a}_ t \| \pi) 
+\end{align}
+이 논문에서는 이를 각각 $\rho_{\pi}({\bf s}_ t)$ 와 $\rho_{\pi}({\bf s}_ t, {\bf a}_ t)$ 로 표시한다. 그리고 이것들을 각각 아래와 같이 부른다. <br/>
+$\cdot ~ \rho_{\pi}({\bf s}_ t)$: *state* marginals of the trajectory distribution induced by a polish $\pi({\bf a}_ t | {\bf s}_ t)$ <br/>
+$\cdot ~ \rho_{\pi}({\bf s}_ t, {\bf a}_ t)$: *state-action* marginals of the trajectory distribution induced by a polish $\pi({\bf a}_ t | {\bf s}_ t)$
+
+- 통상적으로 우리의 목표는 아래값을 최대로 하는 적절한 $\pi({\bf a}_ t | {\bf s}_ t)$를 학습하는 것이었다.
+\begin{align}
+\sum_{t} \mathbb{E}_ {({\bf s}_ t, {\bf a}_ t) \sim \rho_\pi} \big[r({\bf s}_ t, {\bf a}_ t) \big] 
+\end{align}
+
+- 논문에서는 위의 오브젝티브 함수에 엔트로피개념의 패널티텀을 추가하여 아래와 같은 오브젝트 함수를 최대화 하는 문제를 푸는것에 관심을 가진다. 
+\begin{align}
+\sum_{t} \mathbb{E}_ {({\bf s}_ t, {\bf a}_ t) \sim \rho_\pi} \big[r({\bf s}_ t, {\bf a}_ t) 
++\alpha {\cal H}\big(\pi(\cdot \| {\bf s}_ t) \big) \big] 
+\end{align}
+여기에서 ${\cal H}(\pi(\cdot \| {\bf s}_ t))$ 는 분포 $\pi(\cdot \| {\bf s}_ t)$의 정보량이다. 
+
+### Soft Policy Iteration
+
+- (잠깐복습) 원래 큐펑션에 대한 벨만이퀘이션은 아래와 같다. (셔튼교재 p.83) 
+\begin{align}
+q_{\pi}(s,a)=&\sum_{s',r}p(s',r \| s,a)\big[r+\gamma v_{\pi}(s') \big] \\\\ \\
+=&\sum_{r} \sum_{s'} p(s',r \| s,a) \big[r+\gamma v_{\pi}(s') \big] \\\\ 
+=&\sum_{r} r \sum_{s'} p(s',r \| s,a) + \sum_{r} \sum_{s'}\gamma v_{\pi}(s') p(s',r \| s,a) \\\\ 
+=&r(s,a) + \sum_{s'}\gamma v_{\pi}(s') p(s' \| s,a) \\\\ 
+=&r(s,a) + \mathbb{E}_ {s' \sim p} \gamma v_{\pi}(s') \\\\ 
+\end{align}
+여기에서 $v_{\pi}(s')$ 는 밸류펑션이며 아래의 식을 만족하는 값으로 정의된다. 
+\begin{align}
+v_{\pi}(s)=&\sum_{a}\pi(a|s)\sum_{s',r}p(s',r|s,a)\Big[r+\gamma v_{\pi}(s')\Big] \\\\ \\ 
+=&\sum_{a}\pi(a|s)q_{\pi}(s,a) \\\\ \\ 
+=& ~ \mathbb{E}_ {a \sim \pi}q_{\pi}(s,a)
+\end{align}
+따라서 위의 식을 연립하여 정리하면 
+\begin{align}
+q_{\pi}(s,a)=r(s,a) +  \gamma \mathbb{E}_ {s' \sim p} &\mathbb{E}_ {a'\sim \pi} q_{\pi}(s',a') 
+\end{align}
+와 같이 되고 특정한 정책 $\pi$에 대하여 $q_{\pi}$를 구하는 방법은 수렴할때 까지 아래를 반복하는 것이다. 
+\begin{align}
+q_{\pi}^{(k+1)}(s,a) = r(s,a) +  \gamma \mathbb{E}_ {s' \sim p} &\mathbb{E}_ {a'\sim \pi} q_{\pi}^{(k)}(s',a') 
+\end{align}
+이때 ***backup operator*** ${\cal T}^{\pi}$ 라는걸 도입하여 위의 식을 아래와 같이 재 표현할 수 있다. 
+\begin{align}
+{\cal T}^{\pi} q_{\pi}^{(k)}(s,a) = r(s,a) +  \gamma \mathbb{E}_ {s' \sim p} &\mathbb{E}_ {a'\sim \pi} q_{\pi}^{(k)}(s',a')
+\end{align}
+보는것처럼 ${\cal T}^{\pi} q_{\pi}^{(k)}(s,a)=q_{\pi}^{(k+1)}(s,a)$ 을 만족한다. 그런데 만약에 $q_{\pi}^{(k)}$ 가 정책 $\pi$에 대한 큐펑션이 맞다면(근사치가 아니라 정확한 값이라면) ${\cal T}^{\pi} q_{\pi}^{(k)}(s,a)=q_{\pi}^{(k)}(s,a)$ 가 성립하게 된다. 즉 정확한 큐펑션은 백업오퍼레이터의 ***fixed point*** 이다. 따라서 벨만이퀘이션
+\begin{align}
+q_{\pi}(s,a) = r(s,a) +  \gamma \mathbb{E}_ {s' \sim p} &\mathbb{E}_ {a'\sim \pi} q_{\pi}(s',a') 
+\end{align}
+은 아래와 같이 표현할 수 있다. 
+\begin{align}
+{\cal T}^{\pi} q_{\pi}(s,a) = r(s,a) +  \gamma \mathbb{E}_ {s' \sim p} &\mathbb{E}_ {a'\sim \pi} q_{\pi}(s',a').
+\end{align}
+
+- 그런데 논문에서는 아래와 같이 정의되는 ***soft state value function*** 을 정의한다. 
+\begin{align}
+v_{\pi}(s)= \mathbb{E}_ {a \sim \pi} \big[ q_{\pi}(s,a) -\alpha \log \pi(a|s) \big]
+\end{align}
+그리고 이런 소프트-스테이트-밸류펑션을 대입하여 ***soft q-value*** 라는 것을 아래와 같이 정의한다. 
+\begin{align}
+{\cal T}^{\pi} q_{\pi}(s,a) = r(s,a) +  \gamma \mathbb{E}_ {s' \sim p} \mathbb{E}_ {a'\sim \pi} \big[  q_{\pi}(s',a')-\alpha \log \pi(a' \| s') \big].
+\end{align}
+논문식으로 표현하면 아래와 같다. (논문의 수식 (2)-(3)) 
+\begin{align}
+{\cal T}^{\pi} Q_{\pi} ({\bf s}_ t,{\bf a}_ t)= r({\bf s}_ t,{\bf a}_ t) + \gamma \mathbb{E}_ { {\bf s}_ {t+1} \sim p} \mathbb{E}_ { {\bf a}_ {t+1} \sim \pi} \big[  Q_{\pi}( {\bf s}_ {t+1}, {\bf a}_ {t+1} )-\alpha \log \pi( {\bf a}_ {t+1} \| {\bf s}_ {t+1}) \big].
+\end{align}
+
+- 소프트-큐펑션을 구하는 방식도 일반적인 큐함수를 구하는 방식과 동일하게 임의의 $Q^{(0)}$ 로 시작하여 아래식을 반복하여 구할 수 있음이 알려져 있다. (논문의 레마1) 
+\begin{align}
+ Q_{\pi}^{(k+1)} ({\bf s}_ t,{\bf a}_ t)= r({\bf s}_ t,{\bf a}_ t) + \gamma \mathbb{E}_ { {\bf s}_ {t+1} \sim p} \mathbb{E}_ { {\bf a}_ {t+1} \sim \pi} \big[  Q_{\pi}^{(k)}( {\bf s}_ {t+1}, {\bf a}_ {t+1} )-\alpha \log \pi( {\bf a}_ {t+1} \| {\bf s}_ {t+1}) \big].
+\end{align}
+이 결과는 직관적인 편이라 받아들이기 쉽다. 
+
+- 정책을 업데이트 하는 방법에 대하여 논의하자. 논문에서는 모든 정책을 고려하지 않고 특정 정책들의 집합 ${\bf \Pi}$ 에서 최적의 정책을 찾는 방식을 제안한다. 구체적으로는 아래와 같은 크라이테리온을 만든다. 
+\begin{align}
+\pi_{new} = \underset{\pi' \in \Pi}{\operatorname{argmin}} D_{KL} \bigg( \pi'(\cdot \| {\bf s}_ {t}) \bigg\\| \frac{\exp\big( \frac{1}{\alpha}Q_{\pi_{old} } ({\bf s}_ t, \cdot) \big)}{Z_{\pi_ {old} }({\bf s}_ t)} \bigg).
+\end{align}
+
+- 위의 크라이테리온은 언뜻 보기에 직관적이지 않다. 하지만 쿨백라이블러-다이버전스를 풀면 위의 식보다는 다소 직관적인 수식을 얻을 수 있다. 
+\begin{align}
+D_{KL} & \bigg( \pi'(\cdot \| {\bf s}_ {t}) \bigg\\| \frac{\exp\big( \frac{1}{\alpha}Q_{\pi_{old} } ({\bf s}_ t, \cdot) \big)}{Z_{\pi_ {old} }({\bf s}_ t)} \bigg) \\\\ \\
+& := - \mathbb{E}_ { {\bf a}_ t \sim \pi'} \Bigg[ \log \Bigg(\frac{\exp\big( \frac{1}{\alpha}Q_{\pi_{old} } ({\bf s}_ t, {\bf a}_ t) \big)}{\pi'({\bf a}_ t \| {\bf s}_ t) Z_{\pi_ {old} }({\bf s}_ t)} \Bigg)\Bigg] \\\\ 
+& = \log Z_{\pi_{old} } ({\bf s}_ t) +  \mathbb{E}_ { {\bf a}_ t \sim \pi'} \bigg( \log \pi'({\bf a}_ t \| {\bf s}_ t) -\frac{1}{\alpha} Q_{\pi_{old} } ({\bf s}_ t , {\bf a}_ t) \bigg) 
+\end{align}
+앞에 나온 $Z$ 는 $\pi'$ 에 독립이므로 고려대상이 아니고 뒤의 텀은 소프트-큐펑션의 음수꼴로 보아도 무방하므로 사실상 더 나은 액션 $\pi'$을 선택하는 방법은 소프트-큐펑션을 최대화하는 $\pi'$를 선택하는 방법으로 해석가능하다. 따라서 기존의 강화학습 셋팅과 일맥상통한다. 여기에서 $Z$의 역할은 그냥 아래식
+\begin{align}
+\frac{\exp\big( \frac{1}{\alpha}Q_{\pi_{old} } ({\bf s}_ t, \cdot) \big)}{Z_{\pi_ {old} }({\bf s}_ t)} 
+\end{align}
+이 ***pdf*** 가 되도록 만들어주는 상수라고 보면 될것같다. (쿨백라이블러에 넣기위해서는 각 요소가 ***pdf*** 이어야 하므로) 
+
+- 아무튼 레마2에 의하면 위의 크라이테리온으로 업데이트한 $\pi_{new}$ 가 아래의 식을 만족한다고 한다. 
+\begin{align}
+Q_{\pi_{new} } ({\bf s}_ t, {\bf a}_ t) \geq Q_{\pi_ {old} } ({\bf s}_ t, {\bf a}_ t)
+\end{align}
+또한 Thm1 에 의하면 이런식으로 계속 폴리쉬를 업데이트하다보면 최적의 폴리쉬 $\pi^* $ 를 찾을 수 있다고 한다. 논문의 언급을 보면 $\pi^* $ 는 반드시 $\bf \Pi$ 의 원소일 필요는 없는것 같다. 
+
+### Soft Actor-Crititc 
+
+- 이번에는 ***parameterized soft q-fucntion*** $Q_{\theta}({\bf s}_ t, {\bf a}_ t)$ 와 ***tractable policy*** $\pi_{\phi}({\bf a}_ t \| {\bf s}_ t)$ 를 논의하겠다. 파라메터화된 소프트-$q$펑션은 아무래도 큐함수를 어떠한 파라메터 $\theta$ 로 표현한 것이고 (따라서 $Q^{(k)}$를 업데이트하는 것이 아니라 $\theta^{(k)}$를 업데이트 할 생각임) 트랙터블-폴리쉬는 파라메터 $\phi$ 로 표현가능한 어떠한 폴리쉬인데 아마 이런 폴리쉬가 다루기가 손쉬워서 트랙터블이라는 이름이 붙은것 같다.  
+
+- 먼저 파라메터화된 소프트-$q$ 펑션의 파라메터 $\theta$를 훈련시키는 방법에 대하여 알아보자. 여기에서 $\pi_{\phi}$는 기븐되었다고 생각한다. 모수 $\theta$ 에 대한 훈련이 잘되어있을수록 아래식이 성립함을 관찰하자. 
+\begin{align}
+Q_{\pi_{\phi},\theta} ({\bf s}_ t,{\bf a}_ t) \approx r({\bf s}_ t,{\bf a}_ t) + \gamma \mathbb{E}_ { {\bf s}_ {t+1} \sim p} \mathbb{E}_ { {\bf a}_ {t+1} \sim \pi_{\phi} } \big[  Q_{\pi_{\phi},\theta}( {\bf s}_ {t+1}, {\bf a}_ {t+1} )-\alpha \log \pi_{\phi}( {\bf a}_ {t+1} \| {\bf s}_ {t+1}) \big].
+\end{align}
+여기에서 데이터를 잘보고 적당히 $\mathbb{E}_ { {\bf s}_ {t+1} \sim p} \mathbb{E}_ { {\bf a}_ {t+1} \sim \pi_{\phi} }$ 에 대한 평균들을 계산할수 있다. 따라서 아래와 같이 근사할수 있다. 
+\begin{align}
+Q_{\pi_{\phi},\theta} ({\bf s}_ t,{\bf a}_ t) \approx r({\bf s}_ t,{\bf a}_ t) + \gamma \big[  Q_{\pi_{\phi},\bar \theta}( {\bf s}_ {t+1}, {\bf a}_ {t+1} )-\alpha \log \pi_{\phi}( {\bf a}_ {t+1} \| {\bf s}_ {t+1}) \big].
+\end{align}
+여기에서 $\bar \theta$ 는 ***exponentially moving average of the soft $Q$-function weights*** 로 계산한 값이다. 구체적으로 멀 어떻게 구했다는 것인지 모르겠지만 대충 데이터를 보고 적당한 방식으로 $\theta$를 추정해낸 초기값인것 같다. 아무튼 이걸 이용하면 논문의 수식 (5)에 해당하는 크라이테리온을 잡을 수 있고 그걸 미분하여 (6) 을 얻어낼 수 있다. 
+
+- 이제 트랙터블-폴리쉬를 결정하는 파라메터 $\phi$를 훈련시키는 방법을 논의해보자. 즉 쿨백라이블러로부터 아래와 같은 크라이테리안을 잡을 수 있다. 
+\begin{align}
+J_{\pi}(\phi)=\mathbb{E}_ { {\bf s}_ t \sim {\cal D} } \big( \mathbb{E}_ { {\bf a}_ t \sim \pi_{\phi} }\alpha \log\pi_{\phi} ( {\bf a}_ t \| {\bf s}_ t ) -Q_{\theta} ({\bf s}_ t, {\bf a}_ t) \big) 
+\end{align}
+이것이 논문의 수식 (7) 이다. 보면 알겠지만 논문의 $Q_{\theta} ({\bf s}_ t, {\bf a}_ t)$ 은 오타이다. 그리고 ${\bf a}_ t$ 는 아래와 같이 딥뉴럴네트워크로 근사시킨다. 
+\begin{align}
+{\bf a}_ t = f_{\phi}(\epsilon_t; {\bf s}_ t).
+\end{align}
+따라서 논문의 수식 (7)은 수식 (9)와 같이도 쓸 수 있으며 그걸을 미분하면 수식 (10)이 된다. 
+
+
+### Automating Entropy Adjustment for Maximum Entropy RL 
+
+- 우리가 풀기를 원하는 형태는 결국 아래와 같다. 
+\begin{align}
+\max_{\pi_0,\dots,\pi_T} \mathbb{E}_ {\rho_{\pi} } \bigg(\sum_{t=0}^T r({\bf s}_ t, {\bf a}_ t) \bigg) \quad s.t. \quad 
+\mathbb{E}_ {({\bf s}_ t,{\bf a}_ t) \sim \rho_{\pi} } \big(-\log\pi_t ({\bf a}_ t \| {\bf s}_ t) \big) \leq {\cal H} , ~ \forall t 
+\end{align}
+
+- 논의를 간단하게 하기 위해서 $T=1$ 라고 하자. 아래식 
+\begin{align}
+\max_{\pi_0,\pi_1} \mathbb{E}_ {\rho_{\pi} } \bigg(\sum_{t=0}^1 r({\bf s}_ t, {\bf a}_ t) \bigg)
+\end{align}
+을 최대하는 문제는 다이내믹프로그램의 아이디어를 이용하여 다음과 같은 최대화 문제로 바꿔서 풀 수 있다. 
+\begin{align}
+\max_{\pi_0} \bigg( \mathbb{E}_ {({\bf s}_ 0,{\bf a}_ 0) \sim \rho_{\pi} } r({\bf s}_ 0, {\bf a}_ 0) +\max_{\pi_1} \mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } r({\bf s}_ 1, {\bf a}_ 1)  \bigg)
+\end{align}
+
+- 이는 결국 뒤의 시점부터 리컬시브하게 풀어내면 원하는걸 풀어낼 수 있다는 의미이다. 따라서 이제 아래를 푸는방법에 대하여 집중하여 보자. 
+\begin{align}
+\max_{\pi_1} \mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } r({\bf s}_ 1, {\bf a}_ 1)  \quad s.t. \quad 
+\mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } \big(-\log\pi_1 ({\bf a}_ 1 \| {\bf s}_ 1) \big) \leq {\cal H}.
+\end{align}
+라그랑지안을 아래와 같이 정의하자. 
+\begin{align}
+{\cal L}:= \\mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } 
+\bigg(
+r({\bf s}_ 1, {\bf a}_ 1)  -\alpha_1  \log\pi_1 ({\bf a}_ 1 \| {\bf s}_ 1) 
+\bigg) -\alpha_1{\cal H}
+\end{align}
+이제 $\frac{ \partial \cal L}{\partial \pi_1 }=0$ 와 $\frac{ \partial \cal L}{\partial \alpha_1 }=0$ 을 연립해서 풀면 된다. 그리고 풀어서 나온 해를 각각 $\pi_1^* $ 와 $\alpha_1^* $ 라고 하자. 
+
+- 방금 내가 한 아규먼트는 논문의 내용이랑 살짝 다르다. 논문에서는 ${\cal L}$ 을 정의한뒤 미분하여 구하는 일반적인 테크닉을 사용하지 않고 제약된 최적화의 동치조건을 듀얼프라블럼으로 구했다. 아마도 미분이 불가능한 함수들의 클라스에 대하여서도 커버하고 싶어서 그런것 같다. 아무튼 아래를 연립해서 푸는것은 
+\begin{align}
+\begin{cases}
+\frac{ \partial \cal L}{\partial \pi_1 }=0 \\\\ \\
+\frac{ \partial \cal L}{\partial \alpha_1 }=0
+\end{cases}
+\end{align}
+논문의 수식 (13) 의 우변을 푸는것과 동치이다. 그리고 논문에서 폴리쉬는 위의 방식으로 업데이트 하지 않고 파라메터 $\phi$ 로 모델링해서 업데이트 할것이기 때문에 실제적으로 풀어야 할 식은 위의 연립이 아니고 ($\pi_1$ 을 어떻게 구했다고 치고) $\frac{\partial \cal L}{\partial \alpha_1}=0$ 를 정리하여 푸는일만 남는다. 그리고 이 식을 푸는일은 아래의 수식을 푸는것과 동치이다. 
+\begin{align}
+\alpha_1^* = \underset{\alpha_1}{\operatorname{argmin} } 
+\mathbb{E}_ { {\bf a}_ 1 \sim {\pi}_ 1^* }  \big(-\alpha_1 \log\pi_1^* ({\bf a}_ 1 |{\bf s}_ 1 ; \alpha_1)-\alpha_1 {\cal H} \big) 
+\end{align}
+참고로 위의 수식을 일반화하면 논문에서 수식 (14) 가 된다. 그리고 수식 (14) 에서 $\pi_T^* ({\bf a}_ T\| {\bf s}_ T)$ 가 아니라 $\pi_T^* ({\bf a}_ T\| {\bf s}_ T; \alpha_T)$ 로 표현한 이유는 $\pi_T^* $ 가 $\alpha_T$ 에 따라 달라지는 값임을 명시하기 위한것이다(원래는 연립방정식의 해이어야 하므로 function of $\alpha_T$ 임). 바로 이런것이 이 논문의 우수한점인데 헷갈리는 부분을 적은량의 노테이션으로 아주 우아하게 정리한다. 
+
+- 이제 $\pi_0,\alpha_0,\pi_1,\alpha_1$ 를 동시에 최적화하는 문제를 생각하여 보자. 즉 아래가 제약인 상황에서 
+\begin{align}
+\begin{cases}
+\mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } \big(-\log\pi_1 ({\bf a}_ 1 \| {\bf s}_ 1) \big) \leq {\cal H} \\\\ \\
+\mathbb{E}_ {({\bf s}_ 0,{\bf a}_ 0) \sim \rho_{\pi} } \big(-\log\pi_0 ({\bf a}_ 0 \| {\bf s}_ 0) \big) \leq {\cal H}
+\end{cases}
+\end{align}
+아래의 오브젝트를 최대화 하는 것에 관심을 가지자. (요게 논문의 수식 (16)의 첫번째 라인임)
+\begin{align}
+\max_{\pi_0} \bigg( \mathbb{E}_ {({\bf s}_ 0,{\bf a}_ 0) \sim \rho_{\pi} } r({\bf s}_ 0, {\bf a}_ 0) +\max_{\pi_1} \mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } r({\bf s}_ 1, {\bf a}_ 1)  \bigg) \\\\ 
+\end{align}
+우측에 $\max_{\pi_1} \mathbb{E}_ {({\bf s}_ 1,{\bf a}_ 1) \sim \rho_{\pi} } r({\bf s}_ 1, {\bf a}_ 1)$ 은 기븐이라고 q볼 수 있으므로 결국 아래를 풀면 된다. 
+\begin{align}
+\max_{\pi_0} \mathbb{E}_ {({\bf s}_ 0,{\bf a}_ 0) \sim \rho_{\pi} } r({\bf s}_ 0, {\bf a}_ 0) \quad s.t. ~ 
+\mathbb{E}_ {({\bf s}_ 0,{\bf a}_ 0) \sim \rho_{\pi} } \big(-\log\pi_0 ({\bf a}_ 0 \| {\bf s}_ 0) \big) \leq {\cal H}
+\end{align}
+따라서 이는 앞의 논의와 동일하게 아래의 수식이 나오게 된다. (이걸 일반화 하면 논문의 수식 (17)이 된다.)
+\begin{align}
+\alpha_0^* = \underset{\alpha_0}{\operatorname{argmin} } 
+\mathbb{E}_ { {\bf a}_ 0 \sim {\pi}_ 0^* }  \big(-\alpha_0 \log\pi_0^* ({\bf a}_ 0 |{\bf s}_ 0 ; \alpha_0)-\alpha_0 {\cal H} \big) 
+\end{align}
+
+- 논문에서는 내가 방금한 아규먼트보다 다소 엄밀하게 논의하였다. 수식 (16) 이 그 내용이다. 간단히 체크만해보자. 수식 (16)의 첫번째 줄에서 두번째 줄로 넘어가는 것은 아래의 수식과 (이는 논문의 수식 (15)에서 $t=0, T=1$을 대입하면 얻을 수 있음) 수식 (13)의 우변을 이용하면 된다. 
+\begin{align}
+\begin{cases}
+Q_0^* ({\bf s}_ 0, {\bf a}_ 0 ; \pi_1^* ,\alpha_1^* ) &= \mathbb{E}_ {({\bf s}_ 0, {\bf a}_ 0) \sim \rho_{\pi} } r({\bf s}_ 0, {\bf a}_ 0) + \mathbb{E}_ {({\bf s}_ 1, {\bf a}_ 1) \sim \rho_{\pi} } \bigg( 
+Q_1^* ({\bf s}_ 1, {\bf a}_ 1) - \alpha_1^* \log \pi_1^* ({\bf a}_ 1 \| {\bf s}_ 1) 
+\bigg) \\\\ \\
+Q_1^* ({\bf s}_ 1, {\bf a}_ 1) &= \mathbb{E}_ {({\bf s}_ 1, {\bf a}_ 1) \sim \rho_{\pi} } r({\bf s}_ 1, {\bf a}_ 1)
+\end{cases}
+\end{align}
+그리고 같은 수식들을 이용하여 수식 (16)의 첫번째줄에서 바로 세번째줄로 넘어갈수도 있다. 체크하는것은 그다지 어렵지 않음. 참고로 논문의 수식 (16) 두번째줄의 $\alpha_T$는 오타이다(원래는 $\alpha_T^* $가 되어야함). 
+
+- 지금까지 내용을 종합하면 알고리즘 1이 유도되어야 함은 매우 자명하다. 
+
+### 요약 
+
+- 전체적으로 매우 잘 쓴 논문인 것 같다. 다만 5장의 도입을 보면 마치 ${\cal H}$를 스스로 결정하는것 처럼 읽혀졌는데 논문의 알고리즘에서는 그러한 부분이 없어서 좀 헷갈린다. 
