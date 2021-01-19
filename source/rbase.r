@@ -75,8 +75,8 @@ plt<-function(...){
 }
 
 # plot setting
-pst<-function(w,h,r){
-    options(repr.plot.width=w, repr.plot.height=h,repr.plot.res=r)
+pst<-function(w=1,h=1,r=1){
+    options(repr.plot.width=w*10, repr.plot.height=h*5,repr.plot.res=r*300)
 }
 
 
