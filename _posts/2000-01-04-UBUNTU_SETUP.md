@@ -71,9 +71,9 @@ bash Anaconda3-2019.03-Linux-x86_64.sh
 (base) conda create -n py20190129
 (base) conda create -name py20190129
 ```
-둘 중 아무거나 실행해도 된다. 파이썬 환경이 너무 높으면 나중에 `conda tensorflow-gpu`가 먹히지 않으니 환경을 만들때 파이썬버전을 3.7.6으로 통일하자. (현시점 2020년 2월28일기준 3.8.x이면 `conda tensorflow-gpu` 가 동작하지 않음.)
+둘 중 아무거나 실행해도 된다. 파이썬 환경이 너무 높으면 나중에 `conda tensorflow-gpu`가 먹히지 않으니 환경을 만들때 파이썬버전을 3.8.x로 하자. (현시점 2021년 2월25일기준 3.9.x이면 `conda tensorflow-gpu` 가 동작하지 않음.)
 ```
-(base) conda create -n py20190129 python=3.7.6
+(base) conda create -n py20190129 python=3.8
 ```
 
 ### 주피터 원격제어
@@ -132,7 +132,7 @@ jupyter lab --LabApp.token='' --LabApp.password=''
 ### 주피터에 R커널 연결 
 > 콘다환경으로 가서 아래를 실행한다. 
 ```
-(py20190129) conda install -c r r
+(py20190129) conda install -c conda-forge r-essentials=4.0
 ```
 이러면 콘다환경에는 R이 깔리고 base에는 R이 깔리지 않는다. 그리고 콘다환경에서 R을 실행한다. Rstudio가 아니라 커맨드에서 R을 실행해야한다. 그리고 `IRkernel`을 설치한다.  
 ```r
@@ -143,15 +143,6 @@ install.packages("IRkernel")
 IRkernel::installspec()
 ```
 이제 주피터랩에서 R kernel을 사용할 수 있다. 
-
-### R에서 `devtools`와 `tidyverse`설치하기 
-
-> 현재는(2020-12-25) 종속성 지옥으로 인해 `devtools`가 `R`에서 설치되지 않는다. 그래서 아래와 같이 `conda install`을 사용하여 `devtools`를 설치한 뒤 `tidyverse`을 설치하는 것이 좋다. 
-```
-(py20190129) conda install -c r r-devtools
-(py20190129) R 
-> install.packages("tidyverse")
-```
 
 ### Rstudio server 
 > 이제 Rstudio server를 설치한다. 이건 콘다환경의 `R`과 연결이 안된다. 그래서 보통은 `(base)`에 R을 깔고 그 R과 연결해야한다. 하지만 우분투 18.04는 `(base)`에서 R을 깔기 위해서 아래와 같이 실행하면 기본적으로 R이 3.4버전으로 깔린다. 
@@ -219,8 +210,8 @@ Would you like to install Miniconda? [Y/n]: n
 ### `pandas`, `matplotlib`
 > 이제 콘다환경에서 나머지 패키지들을 깔아보자. 
 ```
-(py20190129) conda install pandas
-(py20190129) conda install matplotlib
+(py20190129) pip install pandas
+(py20190129) pip install matplotlib
 ```
 
 ### `plotly`
